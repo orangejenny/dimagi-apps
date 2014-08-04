@@ -84,7 +84,7 @@
         </text>
       </template>
     </field>
-    <field>
+    <field relevant="current()/gender = 'male'">
       <header>
         <text>
           <locale id="m0.case_long.case_dob_2.header"/>
