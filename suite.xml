@@ -132,6 +132,14 @@
 			      <x function="hours"/>
 			      <y function="heart_rate"/>
 			  </series>
+			  <series nodeset="instance('heart-rate-thresholds')/thresholds/series[@id='min']/point">
+			      <x function="x"/>
+			      <y function="y"/>
+			  </series>
+			  <series nodeset="instance('heart-rate-thresholds')/thresholds/series[@id='max']/point">
+			      <x function="x"/>
+			      <y function="y"/>
+			  </series>
 		  </graph>
 	  </template>
     </field>
@@ -143,6 +151,19 @@
       </header>
       <template form="graph">
           <graph type="xy">
+			  <series nodeset="instance('dilation-thresholds')/thresholds/series[@id='alert']/point">
+			      <x function="x"/>
+			      <y function="y"/>
+			  </series>
+			  <series nodeset="instance('dilation-thresholds')/thresholds/series[@id='action']/point">
+			      <x function="x"/>
+			      <y function="y"/>
+			  </series>
+			  <series nodeset="instance('dilation-thresholds')/thresholds/series[@id='whitespace']/point">
+			      <x function="x"/>
+			      <y function="y"/>
+			  </series>
+
 			  <series nodeset="instance('casedb')/casedb/case[index/parent=current()/@case_id]">
 			      <x function="hours"/>
 			      <y function="dilation"/>
@@ -231,6 +252,8 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
+    <instance id="dilation-thresholds" src="jr://instance/fixture/dilation-thresholds" />
+    <instance id="heart-rate-thresholds" src="jr://instance/fixture/heart-rate-thresholds" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m0_case_short" detail-confirm="m0_case_long"/>
     </session>
@@ -243,6 +266,8 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
+    <instance id="dilation-thresholds" src="jr://instance/fixture/dilation-thresholds" />
+    <instance id="heart-rate-thresholds" src="jr://instance/fixture/heart-rate-thresholds" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m0_case_short" detail-confirm="m0_case_long"/>
     </session>
@@ -255,6 +280,8 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
+    <instance id="dilation-thresholds" src="jr://instance/fixture/dilation-thresholds" />
+    <instance id="heart-rate-thresholds" src="jr://instance/fixture/heart-rate-thresholds" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m0_case_short" detail-confirm="m0_case_long"/>
     </session>
@@ -266,6 +293,8 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
+    <instance id="dilation-thresholds" src="jr://instance/fixture/dilation-thresholds" />
+    <instance id="heart-rate-thresholds" src="jr://instance/fixture/heart-rate-thresholds" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m0_case_short" detail-confirm="m0_case_long"/>
     </session>
@@ -278,6 +307,8 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
+    <instance id="dilation-thresholds" src="jr://instance/fixture/dilation-thresholds" />
+    <instance id="heart-rate-thresholds" src="jr://instance/fixture/heart-rate-thresholds" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='measurement'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
     </session>
@@ -298,4 +329,70 @@
     </text>
     <command id="m1-f0"/>
   </menu>
+  <fixture id="heart-rate-thresholds">
+      <thresholds>
+          <series id="min">
+              <point>
+                  <x>0</x>
+                  <y>100</y>
+              </point>
+              <point>
+                  <x>12</x>
+                  <y>100</y>
+              </point>
+          </series>
+          <series id="max">
+              <point>
+                  <x>0</x>
+                  <y>180</y>
+              </point>
+              <point>
+                  <x>12</x>
+                  <y>180</y>
+              </point>
+          </series>
+      </thresholds>
+  </fixture>
+  <fixture id="dilation-thresholds"> <!-- TODO: max x values here, and above, need to be flexible -->
+      <thresholds>
+	      <series id="alert">
+	          <point>
+	              <x>0</x>
+	              <y>4</y>
+	          </point>
+	          <point>
+	              <x>6</x>
+	              <y>10</y>
+	          </point>
+	          <point>
+	              <x>12</x>
+	              <y>10</y>
+	          </point>
+	      </series>
+	      <series id="action">
+	          <point>
+	              <x>4</x>
+	              <y>4</y>
+	          </point>
+	          <point>
+	              <x>10</x>
+	              <y>10</y>
+	          </point>
+	          <point>
+	              <x>12</x>
+	              <y>10</y>
+	          </point>
+	      </series>
+	      <series id="whitespace">
+	          <point>
+	              <x>0</x>
+	              <y>4</y>
+	          </point>
+	          <point>
+	              <x>12</x>
+	              <y>4</y>
+	          </point>
+	      </series>
+	  </thresholds>
+  </fixture>
 </suite>
