@@ -159,10 +159,20 @@
 			      <y function="heart_rate"/>
 			  </series>
 			  <series nodeset="instance('heart-rate-thresholds')/thresholds/series[@id='min']/point">
+			      <configuration>
+			          <text id="show-points">
+			              <xpath function="false()"/>
+			          </text>
+			      </configuration>
 			      <x function="x"/>
 			      <y function="y"/>
 			  </series>
 			  <series nodeset="instance('heart-rate-thresholds')/thresholds/series[@id='max']/point">
+			      <configuration>
+			          <text id="show-points">
+			              <xpath function="false()"/>
+			          </text>
+			      </configuration>
 			      <x function="x"/>
 			      <y function="y"/>
 			  </series>
@@ -201,14 +211,47 @@
                   </text>
               </configuration>
 			  <series nodeset="instance('dilation-thresholds')/thresholds/series[@id='alert']/point">
+			      <configuration>
+			          <text id="fill-below">
+			              <value>#ffdddd00</value>
+			          </text>
+			          <text id="line-color">
+			              <value>#00000000</value>
+			          </text>
+			          <text id="show-points">
+			              <xpath function="false()"/>
+			          </text>
+			      </configuration>
 			      <x function="x"/>
 			      <y function="y"/>
 			  </series>
 			  <series nodeset="instance('dilation-thresholds')/thresholds/series[@id='action']/point">
+			      <configuration>
+			          <text id="fill-below">
+			              <value>#ffdd0000</value>
+			          </text>
+			          <text id="line-color">
+			              <value>#00000000</value>
+			          </text>
+			          <text id="show-points">
+			              <xpath function="false()"/>
+			          </text>
+			      </configuration>
 			      <x function="x"/>
 			      <y function="y"/>
 			  </series>
 			  <series nodeset="instance('dilation-thresholds')/thresholds/series[@id='whitespace']/point">
+			      <configuration>
+			          <text id="fill-below">
+			              <value>#ffffffff</value>
+			          </text>
+			          <text id="line-color">
+			              <value>#00000000</value>
+			          </text>
+			          <text id="show-points">
+			              <xpath function="false()"/>
+			          </text>
+			      </configuration>
 			      <x function="x"/>
 			      <y function="y"/>
 			  </series>
