@@ -245,17 +245,6 @@
     </session>
   </entry>
   <entry>
-    <command id="m0-case-list">
-      <text>
-        <locale id="case_lists.m0"/>
-      </text>
-    </command>
-    <instance id="casedb" src="jr://instance/casedb"/>
-    <session>
-      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m0_case_short" detail-confirm="m0_case_long"/>
-    </session>
-  </entry>
-  <entry>
     <form>http://openrosa.org/formdesigner/3EFCB26E-EE4D-462D-B599-BF3F8C1EC8BE</form>
     <command id="m1-f0">
       <text>
@@ -275,7 +264,6 @@
     <command id="m0-f1"/>
     <command id="m0-f2"/>
     <command id="m0-f3"/>
-    <command id="m0-case-list"/>
   </menu>
   <menu id="root">
     <text>
