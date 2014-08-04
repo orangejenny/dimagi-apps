@@ -120,6 +120,25 @@
         </text>
       </template>
     </field>
+    <field>
+      <header>
+        <text>
+          <value></value>
+        </text>
+      </header>
+      <template form="graph">
+          <graph type="xy">
+			  <series nodeset="instance('casedb')/casedb/case[index/parent=current()/@case_id]">
+			      <x function="hours"/>
+			      <y function="dilation"/>
+			  </series>
+			  <series nodeset="instance('casedb')/casedb/case[index/parent=current()/@case_id]">
+			      <x function="hours"/>
+			      <y function="descent"/>
+			  </series>
+		  </graph>
+	  </template>
+    </field>
   </detail>
   <detail id="m1_case_short">
     <title>
