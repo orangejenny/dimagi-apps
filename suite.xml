@@ -123,6 +123,21 @@
     <field>
       <header>
         <text>
+            <value>Partograph</value>
+        </text>
+      </header>
+      <template form="graph">
+          <graph type="xy">
+			  <series nodeset="instance('casedb')/casedb/case[index/parent=current()/@case_id]">
+			      <x function="hours"/>
+			      <y function="heart_rate"/>
+			  </series>
+		  </graph>
+	  </template>
+    </field>
+    <field>
+      <header>
+        <text>
           <value></value>
         </text>
       </header>
