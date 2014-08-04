@@ -84,6 +84,9 @@
         <locale id="m0.case_long.title"/>
       </text>
     </title>
+    <variables>
+        <xmax function="12"/>
+    </variables>
     <field>
       <header>
         <text>
@@ -128,6 +131,29 @@
       </header>
       <template form="graph">
           <graph type="xy">
+	          <configuration>
+	              <text id="x-label-count">
+	                  <value>13</value>
+	              </text>
+	              <text id="y-label-count">
+	                  <value>13</value>
+	              </text>
+	              <text id="y-axis-title">
+	                  <value>Heart Rate</value>
+	              </text>
+	              <text id="x-axis-min">
+	                  <value>0</value>
+	              </text>
+	              <text id="x-axis-max">
+	                  <xpath function="$xmax"/>
+	              </text>
+	              <text id="y-axis-min">
+	                  <value>80</value>
+	              </text>
+	              <text id="y-axis-max">
+	                  <value>200</value>
+	              </text>
+	          </configuration>
 			  <series nodeset="instance('casedb')/casedb/case[index/parent=current()/@case_id]">
 			      <x function="hours"/>
 			      <y function="heart_rate"/>
@@ -151,6 +177,29 @@
       </header>
       <template form="graph">
           <graph type="xy">
+              <configuration>
+	              <text id="x-label-count">
+	                  <value>13</value>
+	              </text>
+	              <text id="y-label-count">
+	                  <value>11</value>
+	              </text>
+	              <text id="y-axis-title">
+	                  <value>Dilation (cm)</value>
+	              </text>
+                  <text id="x-axis-min">
+                      <value>0</value>
+                  </text>
+                  <text id="x-axis-max">
+                      <xpath function="$xmax"/>
+                  </text>
+                  <text id="y-axis-min">
+                      <value>0</value>
+                  </text>
+                  <text id="y-axis-max">
+                      <value>10</value>
+                  </text>
+              </configuration>
 			  <series nodeset="instance('dilation-thresholds')/thresholds/series[@id='alert']/point">
 			      <x function="x"/>
 			      <y function="y"/>
@@ -183,6 +232,32 @@
       </header>
       <template form="graph">
           <graph type="bubble">
+	          <configuration>
+	              <text id="x-label-count">
+	                  <value>13</value>
+	              </text>
+	              <text id="y-label-count">
+	                  <value>5</value>
+	              </text>
+	              <text id="x-axis-title">
+	                  <value>Hours</value>
+	              </text>
+	              <text id="y-axis-title">
+	                  <value>Contractions</value>
+	              </text>
+	              <text id="x-axis-min">
+	                  <value>0</value>
+	              </text>
+	              <text id="x-axis-max">
+	                  <xpath function="$xmax"/>
+	              </text>
+	              <text id="y-axis-min">
+	                  <value>0</value>
+	              </text>
+	              <text id="y-axis-max">
+	                  <value>5</value>
+	              </text>
+	          </configuration>
 			  <series nodeset="instance('casedb')/casedb/case[index/parent=current()/@case_id]">
 			      <x function="hours" />
 			      <y function="contraction_frequency" />
