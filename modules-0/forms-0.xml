@@ -32,7 +32,7 @@
 			<setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/>
 			<setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/>
 			<setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/>
-			<pollsensor event="xforms-ready" ref="/data/meta/location"/><bind nodeset="/data/meta/location" type="xsd:geopoint"/>
+			<orx:pollsensor event="xforms-ready" ref="/data/meta/location"/><bind nodeset="/data/meta/location" type="xsd:geopoint"/>
 		</model>
 	</h:head>
 	<h:body>
