@@ -160,8 +160,8 @@
 			  </series>
 			  <series nodeset="instance('heart-rate-thresholds')/thresholds/series[@id='min']/point">
 			      <configuration>
-			          <text id="show-points">
-			              <xpath function="false()"/>
+			          <text id="point-style">
+			              <value>none</value>
 			          </text>
 			      </configuration>
 			      <x function="x"/>
@@ -169,8 +169,8 @@
 			  </series>
 			  <series nodeset="instance('heart-rate-thresholds')/thresholds/series[@id='max']/point">
 			      <configuration>
-			          <text id="show-points">
-			              <xpath function="false()"/>
+			          <text id="point-style">
+			              <value>none</value>
 			          </text>
 			      </configuration>
 			      <x function="x"/>
@@ -218,8 +218,8 @@
 			          <text id="line-color">
 			              <value>#00000000</value>
 			          </text>
-			          <text id="show-points">
-			              <xpath function="false()"/>
+			          <text id="point-style">
+			              <value>none</value>
 			          </text>
 			      </configuration>
 			      <x function="x"/>
@@ -233,8 +233,8 @@
 			          <text id="line-color">
 			              <value>#00000000</value>
 			          </text>
-			          <text id="show-points">
-			              <xpath function="false()"/>
+			          <text id="point-style">
+			              <value>none</value>
 			          </text>
 			      </configuration>
 			      <x function="x"/>
@@ -248,14 +248,19 @@
 			          <text id="line-color">
 			              <value>#00000000</value>
 			          </text>
-			          <text id="show-points">
-			              <xpath function="false()"/>
+			          <text id="point-style">
+			              <value>none</value>
 			          </text>
 			      </configuration>
 			      <x function="x"/>
 			      <y function="y"/>
 			  </series>
 			  <series nodeset="instance('casedb')/casedb/case[index/parent=current()/@case_id]">
+			      <configuration>
+			          <text id="point-style">
+			              <value>x</value>
+			          </text>
+			      </configuration>
 			      <x function="hours"/>
 			      <y function="dilation"/>
 			  </series>
