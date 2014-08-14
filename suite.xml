@@ -195,7 +195,7 @@
 	                  <value>11</value>
 	              </text>
 	              <text id="y-axis-title">
-	                  <value>Dilation (cm)</value>
+	                  <value>Dilation / Descent of Head (cm)</value>
 	              </text>
                   <text id="x-axis-min">
                       <value>0</value>
