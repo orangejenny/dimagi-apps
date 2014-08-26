@@ -77,6 +77,93 @@
         </text>
       </template>
     </field>
+    <field>
+      <header>
+        <text>
+          <value>Partograph</value>
+        </text>
+      </header>
+      <template form="graph">
+          <graph type="xy">
+	          <configuration>
+	              <text id="x-label-count">
+	                  <value>0</value>
+	              </text>
+	              <text id="y-label-count">
+	                  <value>0</value>
+	              </text>
+	          </configuration>
+			  <series nodeset="instance('dilation-thresholds')/thresholds/series[@id='alert']/point">
+			      <configuration>
+			          <text id="fill-below">
+			              <value>#ffdddd00</value>
+			          </text>
+			          <text id="line-color">
+			              <value>#00000000</value>
+			          </text>
+			          <text id="point-style">
+			              <value>none</value>
+			          </text>
+			      </configuration>
+			      <x function="x"/>
+			      <y function="y"/>
+			  </series>
+			  <series nodeset="instance('dilation-thresholds')/thresholds/series[@id='action']/point">
+			      <configuration>
+			          <text id="fill-below">
+			              <value>#ffdd0000</value>
+			          </text>
+			          <text id="line-color">
+			              <value>#00000000</value>
+			          </text>
+			          <text id="point-style">
+			              <value>none</value>
+			          </text>
+			      </configuration>
+			      <x function="x"/>
+			      <y function="y"/>
+			  </series>
+			  <series nodeset="instance('dilation-thresholds')/thresholds/series[@id='whitespace']/point">
+			      <configuration>
+			          <text id="fill-below">
+			              <value>#ffffffff</value>
+			          </text>
+			          <text id="line-color">
+			              <value>#00000000</value>
+			          </text>
+			          <text id="point-style">
+			              <value>none</value>
+			          </text>
+			      </configuration>
+			      <x function="x"/>
+			      <y function="y"/>
+			  </series>
+			  <series nodeset="instance('casedb')/casedb/case[index/parent=current()/@case_id]">
+			      <configuration>
+			          <text id="point-style">
+			              <value>x</value>
+			          </text>
+			      </configuration>
+			      <x function="hours"/>
+			      <y function="dilation"/>
+			  </series>
+			  <series nodeset="instance('casedb')/casedb/case[index/parent=current()/@case_id]">
+			      <x function="hours"/>
+			      <y function="descent"/>
+			  </series>
+			  <annotation>
+			      <x><text><value>5</value></text></x>
+			      <y><text><value>7</value></text></y>
+			      <text><value>Alert</value></text>
+			  </annotation>
+			  <annotation>
+			      <x><text><value>10</value></text></x>
+			      <y><text><value>7</value></text></y>
+			      <text><value>Action</value></text>
+			  </annotation>
+		  </graph>
+	  </template>
+    </field>
   </detail>
   <detail id="m0_case_long">
     <title>
