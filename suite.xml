@@ -80,7 +80,7 @@
     <field>
       <header>
         <text>
-          <value>Partograph</value>
+          <value>Fetal Heart Rate</value>
         </text>
       </header>
       <template form="graph">
@@ -92,75 +92,50 @@
 	              <text id="y-label-count">
 	                  <value>0</value>
 	              </text>
+	              <text id="x-axis-min">
+	                  <value>0</value>
+	              </text>
+	              <text id="x-axis-max">
+	                  <xpath function="12"/>
+	              </text>
+	              <text id="y-axis-min">
+	                  <value>80</value>
+	              </text>
+	              <text id="y-axis-max">
+	                  <value>200</value>
+	              </text>
+	              <text id="show-grid">
+	                  <xpath function="false()"/>
+	              </text>
 	          </configuration>
-			  <series nodeset="instance('dilation-thresholds')/thresholds/series[@id='alert']/point">
-			      <configuration>
-			          <text id="fill-below">
-			              <value>#ffdddd00</value>
-			          </text>
-			          <text id="line-color">
-			              <value>#00000000</value>
-			          </text>
-			          <text id="point-style">
-			              <value>none</value>
-			          </text>
-			      </configuration>
-			      <x function="x"/>
-			      <y function="y"/>
-			  </series>
-			  <series nodeset="instance('dilation-thresholds')/thresholds/series[@id='action']/point">
-			      <configuration>
-			          <text id="fill-below">
-			              <value>#ffdd0000</value>
-			          </text>
-			          <text id="line-color">
-			              <value>#00000000</value>
-			          </text>
-			          <text id="point-style">
-			              <value>none</value>
-			          </text>
-			      </configuration>
-			      <x function="x"/>
-			      <y function="y"/>
-			  </series>
-			  <series nodeset="instance('dilation-thresholds')/thresholds/series[@id='whitespace']/point">
-			      <configuration>
-			          <text id="fill-below">
-			              <value>#ffffffff</value>
-			          </text>
-			          <text id="line-color">
-			              <value>#00000000</value>
-			          </text>
-			          <text id="point-style">
-			              <value>none</value>
-			          </text>
-			      </configuration>
-			      <x function="x"/>
-			      <y function="y"/>
-			  </series>
-			  <series nodeset="instance('casedb')/casedb/case[index/parent=current()/@case_id]">
-			      <configuration>
-			          <text id="point-style">
-			              <value>x</value>
-			          </text>
-			      </configuration>
+			  <series nodeset="instance('casedb')/casedb/case[@case_type='measurement'][index/parent=current()/@case_id]">
 			      <x function="hours"/>
-			      <y function="dilation"/>
+			      <y function="heart_rate"/>
 			  </series>
-			  <series nodeset="instance('casedb')/casedb/case[index/parent=current()/@case_id]">
-			      <x function="hours"/>
-			      <y function="descent"/>
+			  <series nodeset="instance('heart-rate-thresholds')/thresholds/series[@id='min']/point">
+			      <configuration>
+			          <text id="point-style">
+			              <value>none</value>
+			          </text>
+			          <text id="line-color">
+			              <value>#33000000</value>
+			          </text>
+			      </configuration>
+			      <x function="x"/>
+			      <y function="y"/>
 			  </series>
-			  <annotation>
-			      <x><text><value>5</value></text></x>
-			      <y><text><value>7</value></text></y>
-			      <text><value>Alert</value></text>
-			  </annotation>
-			  <annotation>
-			      <x><text><value>10</value></text></x>
-			      <y><text><value>7</value></text></y>
-			      <text><value>Action</value></text>
-			  </annotation>
+			  <series nodeset="instance('heart-rate-thresholds')/thresholds/series[@id='max']/point">
+			      <configuration>
+			          <text id="point-style">
+			              <value>none</value>
+			          </text>
+			          <text id="line-color">
+			              <value>#33000000</value>
+			          </text>
+			      </configuration>
+			      <x function="x"/>
+			      <y function="y"/>
+			  </series>
 		  </graph>
 	  </template>
     </field>
@@ -171,9 +146,6 @@
         <locale id="m0.case_long.title"/>
       </text>
     </title>
-    <variables>
-        <xmax function="12"/>
-    </variables>
     <field>
       <header>
         <text>
@@ -232,7 +204,7 @@
 	                  <value>0</value>
 	              </text>
 	              <text id="x-axis-max">
-	                  <xpath function="$xmax"/>
+	                  <xpath function="12"/>
 	              </text>
 	              <text id="y-axis-min">
 	                  <value>80</value>
@@ -288,7 +260,7 @@
                       <value>0</value>
                   </text>
                   <text id="x-axis-max">
-                      <xpath function="$xmax"/>
+                      <xpath function="12"/>
                   </text>
                   <text id="y-axis-min">
                       <value>0</value>
@@ -393,7 +365,7 @@
 	                  <value>0</value>
 	              </text>
 	              <text id="x-axis-max">
-	                  <xpath function="$xmax"/>
+	                  <xpath function="12"/>
 	              </text>
 	              <text id="y-axis-min">
 	                  <value>0</value>
