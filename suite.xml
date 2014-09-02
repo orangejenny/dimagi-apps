@@ -191,6 +191,9 @@
       <template form="graph">
           <graph type="xy">
 	          <configuration>
+	              <text id="zoom">
+	                  <xpath function="true()" />
+	              </text>
 	              <text id="x-label-count">
 	                  <value>13</value>
 	              </text>
