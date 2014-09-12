@@ -105,6 +105,9 @@
         <template form="graph">
             <graph type="xy">
                 <configuration>
+	                  <text id="zoom">
+	                      <xpath function="true()" />
+   	              </text>
                     <text id="x-label-count">
                         <value>13</value>
                     </text>
@@ -128,46 +131,13 @@
                     <x function="age"/>
                     <y function="weight"/>
                 </series>
-                <series nodeset="instance('weight-for-age-girls')/thresholds/series[@id='3rd']/point">
+                <series nodeset="instance('weight-for-age-girls')/thresholds/series[@id='top']/point">
                     <configuration>
                         <text id="line-color">
+                            <value>#00000000</value>
+                        </text>
+                        <text id="fill-below">
                             <value>#dd0000</value>
-                        </text>
-                        <text id="point-style">
-                            <value>none</value>
-                        </text>
-                    </configuration>
-                    <x function="x"/>
-                    <y function="y"/>
-                </series>
-                <series nodeset="instance('weight-for-age-girls')/thresholds/series[@id='15th']/point">
-                    <configuration>
-                        <text id="line-color">
-                            <value>#dddd00</value>
-                        </text>
-                        <text id="point-style">
-                            <value>none</value>
-                        </text>
-                    </configuration>
-                    <x function="x"/>
-                    <y function="y"/>
-                </series>
-                <series nodeset="instance('weight-for-age-girls')/thresholds/series[@id='50th']/point">
-                    <configuration>
-                        <text id="line-color">
-                            <value>#009900</value>
-                        </text>
-                        <text id="point-style">
-                            <value>none</value>
-                        </text>
-                    </configuration>
-                    <x function="x"/>
-                    <y function="y"/>
-                </series>
-                <series nodeset="instance('weight-for-age-girls')/thresholds/series[@id='85th']/point">
-                    <configuration>
-                        <text id="line-color">
-                            <value>#dddd00</value>
                         </text>
                         <text id="point-style">
                             <value>none</value>
@@ -179,6 +149,69 @@
                 <series nodeset="instance('weight-for-age-girls')/thresholds/series[@id='97th']/point">
                     <configuration>
                         <text id="line-color">
+                            <value>#00000000</value>
+                        </text>
+                        <text id="fill-below">
+                            <value>#dddd00</value>
+                        </text>
+                        <text id="point-style">
+                            <value>none</value>
+                        </text>
+                    </configuration>
+                    <x function="x"/>
+                    <y function="y"/>
+                </series>
+                <series nodeset="instance('weight-for-age-girls')/thresholds/series[@id='85th']/point">
+                    <configuration>
+                        <text id="line-color">
+                            <value>#00000000</value>
+                        </text>
+                        <text id="fill-below">
+                            <value>#009900</value>
+                        </text>
+                        <text id="point-style">
+                            <value>none</value>
+                        </text>
+                    </configuration>
+                    <x function="x"/>
+                    <y function="y"/>
+                </series>
+                <series nodeset="instance('weight-for-age-girls')/thresholds/series[@id='50th']/point">
+                    <configuration>
+                        <text id="line-color">
+                            <value>#00000000</value>
+                        </text>
+                        <text id="fill-below">
+                            <value>#009900</value>
+                        </text>
+                        <text id="point-style">
+                            <value>none</value>
+                        </text>
+                    </configuration>
+                    <x function="x"/>
+                    <y function="y"/>
+                </series>
+                <series nodeset="instance('weight-for-age-girls')/thresholds/series[@id='15th']/point">
+                    <configuration>
+                        <text id="line-color">
+                            <value>#00000000</value>
+                        </text>
+                        <text id="fill-below">
+                            <value>#dddd00</value>
+                        </text>
+                        <text id="point-style">
+                            <value>none</value>
+                        </text>
+                    </configuration>
+                    <x function="x"/>
+                    <y function="y"/>
+                </series>
+                <series nodeset="instance('weight-for-age-girls')/thresholds/series[@id='3rd']/point">
+                    <configuration>
+                        <text id="line-color">
+                            <value>#00000000</value>
+                        </text>
+                        <text id="fill-below">
                             <value>#dd0000</value>
                         </text>
                         <text id="point-style">
@@ -1080,6 +1113,10 @@
 			<point><x>58</x><y>23.9</y></point>
 			<point><x>59</x><y>24.2</y></point>
 			<point><x>60</x><y>24.4</y></point>
+		</series>
+		<series id="top">
+			<point><x>0</x><y>25</y></point>
+			<point><x>60</x><y>25</y></point>
 		</series>
      </thresholds> 
   </fixture>
