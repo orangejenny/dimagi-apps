@@ -1,0 +1,2355 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:vellum="http://commcarehq.org/xforms/vellum">
+	<h:head>
+		<h:title>Register New Patient</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/91D2D5F3-3DF5-4F25-A418-E5D0DF848A15" uiVersion="1" version="258" name="Register New Patient">
+					<patient_info_list>
+						<patient_info_label/>
+						<name/>
+						<reg_num/>
+						<wife_of/>
+						<patient_age/>
+						<para/>
+						<gravida/>
+						<admit_date/>
+						<admit_time/>
+						<membrane_rupture/>
+						<membrane_date/>
+						<rupture_time/>
+						<lmp/>
+						<edd_label/>
+					</patient_info_list>
+					<t_f_labour>
+						<tf_labour/>
+						<true_false_checklist/>
+						<false_checklist/>
+						<true_labour/>
+						<false_labour/>
+					</t_f_labour>
+					<high_risk_list>
+						<high_risk_label/>
+						<age_risk_label/>
+						<age_risk_question/>
+						<age_risk/>
+						<para_hr/>
+						<para_risk/>
+						<height_risk/>
+						<height_risk_label/>
+						<prev_outcome/>
+						<risk_history_label/>
+						<weight_risk/>
+						<weight_risk_label/>
+						<risk_lbw/>
+						<lbw_risk_label/>
+						<prev_conditions/>
+						<high_risk_score_label/>
+						<high_risk_flag/>
+					</high_risk_list>
+					<initial_vitals>
+						<record_initial/>
+					</initial_vitals>
+					<temp_list>
+						<initial_temp/>
+					</temp_list>
+					<pulse_list>
+						<initial_pulse/>
+						<pulse_warning/>
+					</pulse_list>
+					<bp_list>
+						<initial_bp/>
+						<systolic/>
+						<diastolic/>
+					</bp_list>
+					<bp_alert>
+						<bp_alert_text/>
+						<bp_alert_suggestion/>
+						<bp_alert_choice/>
+					</bp_alert>
+					<bp_record_actions>
+						<bp_actions_taken/>
+					</bp_record_actions>
+					<respiration_list>
+						<respiration/>
+					</respiration_list>
+					<urine_list>
+						<urine_vol/>
+						<urine_contains/>
+					</urine_list>
+					<initial_cd>
+						<cd_intial/>
+					</initial_cd>
+					<initial_contractions>
+						<frequency_initial/>
+						<duration_initial/>
+					</initial_contractions>
+					<membrane_indicator>
+						<mem_ruptured/>
+						<copy-1-of-rupture_time/>
+						<mem_ruptured_label/>
+					</membrane_indicator>
+					<initial_af>
+						<af_initial/>
+					</initial_af>
+					<af_alert>
+						<af_alert_text/>
+						<af_alert_suggestion/>
+						<af_alert_choice/>
+					</af_alert>
+					<af_record_actions>
+						<af_actions_taken/>
+					</af_record_actions>
+					<initial_abdom_exam>
+						<abdom_exam_initial/>
+					</initial_abdom_exam>
+					<initial_fhs>
+						<fhs_initial/>
+					</initial_fhs>
+					<fhs_alert>
+						<fhs_alert_text/>
+						<fhs_alert_suggestion/>
+						<fhs_alert_choice/>
+					</fhs_alert>
+					<fhs_record_actions>
+						<fhs_actions_taken/>
+					</fhs_record_actions>
+					<abdominal_exam>
+						<fetal_lie_select/>
+						<fetal_presentation/>
+						<descent_initial/>
+					</abdominal_exam>
+					<initial_ve>
+						<ve_initial/>
+					</initial_ve>
+					<pv_exam>
+						<dilation/>
+						<station_head/>
+						<moulding_initial/>
+						<moulding_warning/>
+					</pv_exam>
+					<emergency_signs>
+						<emergency_signs_list/>
+					</emergency_signs>
+					<es_alert>
+						<es_alert_text/>
+						<es_alert_suggestion/>
+						<es_alert_choice/>
+					</es_alert>
+					<es_record_actions>
+						<es_actions_taken/>
+					</es_record_actions>
+					<high_risk/>
+					<time_measured/>
+					<age/>
+					<cd/>
+					<contractions_number/>
+					<contractions_duration/>
+					<fhs/>
+					<moulding/>
+					<amniotic_fluid/>
+					<pulse/>
+					<temp/>
+					<bp/>
+					<last_measured/>
+					<minutes_to_next_exam/>
+					<edd/>
+					<age_risk_1/>
+					<height_risk_1/>
+					<para_risk_1/>
+					<risk_history_2/>
+					<weight_risk_3/>
+					<lbw_risk_1/>
+					<risk_uterine_surgery_2/>
+					<risk_aph_pph_2/>
+					<risk_manual_placenta_2/>
+					<risk_anaemia_3/>
+					<risk_febrile_ailment_1/>
+					<risk_hypertension_2/>
+					<risk_medical_condition_2/>
+					<risk_bleeding_2/>
+					<risk_presentation_2/>
+					<risk_maturity_2/>
+					<risk_prom_2/>
+					<risk_fetal_distress_2/>
+					<risk_prolonged_labour_2/>
+					<risk_uterine_size_2/>
+					<risk_dai_2/>
+					<risk_pre_eclampsia_2/>
+					<risk_eclampsia_2/>
+					<high_risk_score/>
+					<false_labour_flag/>
+					<urine_passed/>
+					<membranes_ruptured/>
+					<no_emergency_signs/>
+					<first_measured_time/>
+					<nurse_flag/>
+					<overall_hours/>
+					<station_head/>
+				<subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>indicators</case_type></create><update><cd_update/><contraction_duration_update/><contraction_num_update/><fhs_update/><hours/><station_head/></update><index><parent case_type="patient"/></index></case></subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>patient</case_type></create><update><admit_date/><admit_time/><age/><amniotic_fluid/><bp/><cd/><contractions_duration/><contractions_number/><fhs/><first_measured_time/><high_risk/><last_measured/><membrane_rupture/><minutes_to_next_exam/><moulding/><prev_pregnancy_outcome/><pulse/><station_head/><temp/><time_measured/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance id="commcaresession" src="jr://instance/session"/>
+			<bind nodeset="/data/patient_info_list"/>
+			<bind nodeset="/data/patient_info_list/patient_info_label"/>
+			<bind nodeset="/data/patient_info_list/name" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/patient_info_list/reg_num" type="xsd:int"/>
+			<bind nodeset="/data/patient_info_list/wife_of" type="xsd:string"/>
+			<bind nodeset="/data/patient_info_list/patient_age" type="xsd:int"/>
+			<bind nodeset="/data/patient_info_list/para"/>
+			<bind nodeset="/data/patient_info_list/gravida"/>
+			<bind nodeset="/data/patient_info_list/admit_date" type="xsd:date"/>
+			<bind nodeset="/data/patient_info_list/admit_time" type="xsd:time"/>
+			<bind nodeset="/data/patient_info_list/membrane_rupture"/>
+			<bind nodeset="/data/patient_info_list/membrane_date" type="xsd:date" relevant="/data/patient_info_list/membrane_rupture = 'rupture_yes'"/>
+			<bind nodeset="/data/patient_info_list/rupture_time" type="xsd:time" relevant="/data/patient_info_list/membrane_rupture = 'rupture_yes'"/>
+			<bind nodeset="/data/patient_info_list/lmp" type="xsd:date"/>
+			<bind nodeset="/data/patient_info_list/edd_label" relevant="/data/edd != ''"/>
+			<bind nodeset="/data/t_f_labour"/>
+			<bind nodeset="/data/t_f_labour/tf_labour"/>
+			<bind nodeset="/data/t_f_labour/true_false_checklist"/>
+			<bind nodeset="/data/t_f_labour/false_checklist"/>
+			<bind nodeset="/data/t_f_labour/true_labour" relevant="count-selected(/data/t_f_labour/true_false_checklist) &gt; 0"/>
+			<bind nodeset="/data/t_f_labour/false_labour" relevant="/data/false_labour_flag = 'yes'"/>
+			<bind nodeset="/data/high_risk_list"/>
+			<bind nodeset="/data/high_risk_list/high_risk_label"/>
+			<bind nodeset="/data/high_risk_list/age_risk_label" relevant="/data/age != &quot;&quot;"/>
+			<bind nodeset="/data/high_risk_list/age_risk_question" type="xsd:int" relevant="/data/age = &quot;&quot;"/>
+			<bind nodeset="/data/high_risk_list/age_risk" relevant="/data/age_risk_1 = 1"/>
+			<bind nodeset="/data/high_risk_list/para_hr" relevant="count-selected(/data/patient_info_list/para) = 0"/>
+			<bind nodeset="/data/high_risk_list/para_risk" relevant="/data/para_risk_1 = 1"/>
+			<bind nodeset="/data/high_risk_list/height_risk" type="xsd:int"/>
+			<bind nodeset="/data/high_risk_list/height_risk_label" relevant="/data/height_risk_1 = 1"/>
+			<bind nodeset="/data/high_risk_list/prev_outcome" relevant="/data/patient_info_list/gravida != 'primi'"/>
+			<bind nodeset="/data/high_risk_list/risk_history_label" relevant="/data/risk_history_2 = 2"/>
+			<bind nodeset="/data/high_risk_list/weight_risk" type="xsd:int"/>
+			<bind nodeset="/data/high_risk_list/weight_risk_label" relevant="/data/weight_risk_3 = 3"/>
+			<bind nodeset="/data/high_risk_list/risk_lbw" relevant="/data/patient_info_list/para != 'primi'"/>
+			<bind nodeset="/data/high_risk_list/lbw_risk_label" relevant="/data/lbw_risk_1 = 1"/>
+			<bind nodeset="/data/high_risk_list/prev_conditions" relevant="/data/patient_info_list/gravida != 'primi'"/>
+			<bind nodeset="/data/high_risk_list/high_risk_score_label"/>
+			<bind nodeset="/data/high_risk_list/high_risk_flag" relevant="/data/high_risk = 'yes'"/>
+			<bind nodeset="/data/initial_vitals"/>
+			<bind nodeset="/data/initial_vitals/record_initial"/>
+			<bind nodeset="/data/temp_list" relevant="/data/initial_vitals/record_initial = 'initial_yes'"/>
+			<bind nodeset="/data/temp_list/initial_temp" type="xsd:double"/>
+			<bind nodeset="/data/pulse_list" relevant="/data/initial_vitals/record_initial = 'initial_yes'"/>
+			<bind nodeset="/data/pulse_list/initial_pulse" type="xsd:int"/>
+			<bind nodeset="/data/pulse_list/pulse_warning" relevant="/data/pulse_list/initial_pulse &lt; 60 or /data/pulse_list/initial_pulse &gt; 110"/>
+			<bind nodeset="/data/bp_list" relevant="/data/initial_vitals/record_initial = 'initial_yes'"/>
+			<bind nodeset="/data/bp_list/initial_bp"/>
+			<bind nodeset="/data/bp_list/systolic" type="xsd:int"/>
+			<bind nodeset="/data/bp_list/diastolic" type="xsd:int"/>
+			<bind nodeset="/data/bp_alert" relevant="/data/bp_list/systolic &gt;= 140 and /data/bp_list/diastolic &gt;= 90"/>
+			<bind nodeset="/data/bp_alert/bp_alert_text"/>
+			<bind nodeset="/data/bp_alert/bp_alert_suggestion"/>
+			<bind nodeset="/data/bp_alert/bp_alert_choice" required="true()"/>
+			<bind nodeset="/data/bp_record_actions" relevant="/data/bp_alert/bp_alert_choice = 'record_action'"/>
+			<bind nodeset="/data/bp_record_actions/bp_actions_taken" type="xsd:string"/>
+			<bind nodeset="/data/respiration_list"/>
+			<bind nodeset="/data/respiration_list/respiration" type="xsd:int"/>
+			<bind nodeset="/data/urine_list"/>
+			<bind nodeset="/data/urine_list/urine_vol" type="xsd:int"/>
+			<bind nodeset="/data/urine_list/urine_contains"/>
+			<bind nodeset="/data/initial_cd" relevant="/data/initial_vitals/record_initial = 'initial_yes'"/>
+			<bind nodeset="/data/initial_cd/cd_intial" type="xsd:int"/>
+			<bind nodeset="/data/initial_contractions" relevant="/data/initial_vitals/record_initial = 'initial_yes'"/>
+			<bind nodeset="/data/initial_contractions/frequency_initial" type="xsd:int"/>
+			<bind nodeset="/data/initial_contractions/duration_initial" type="xsd:int"/>
+			<bind nodeset="/data/membrane_indicator" relevant="/data/initial_vitals/record_initial = 'initial_yes'"/>
+			<bind nodeset="/data/membrane_indicator/mem_ruptured" relevant="/data/membranes_ruptured = 'no'"/>
+			<bind nodeset="/data/membrane_indicator/copy-1-of-rupture_time" type="xsd:time" relevant="/data/membrane_indicator/mem_ruptured = 'mem_yes'"/>
+			<bind nodeset="/data/membrane_indicator/mem_ruptured_label" relevant="/data/membranes_ruptured = 'yes'"/>
+			<bind nodeset="/data/initial_af" relevant="/data/initial_vitals/record_initial = 'initial_yes'"/>
+			<bind nodeset="/data/initial_af/af_initial"/>
+			<bind nodeset="/data/af_alert" relevant="/data/initial_af/af_initial = 'meconium_stained' or /data/initial_af/af_initial = 'blood_stained'"/>
+			<bind nodeset="/data/af_alert/af_alert_text"/>
+			<bind nodeset="/data/af_alert/af_alert_suggestion"/>
+			<bind nodeset="/data/af_alert/af_alert_choice" required="true()"/>
+			<bind nodeset="/data/af_record_actions" relevant="/data/af_alert/af_alert_choice = 'record_action'"/>
+			<bind nodeset="/data/af_record_actions/af_actions_taken" type="xsd:string"/>
+			<bind nodeset="/data/initial_abdom_exam"/>
+			<bind nodeset="/data/initial_abdom_exam/abdom_exam_initial"/>
+			<bind nodeset="/data/initial_fhs" relevant="/data/initial_abdom_exam/abdom_exam_initial = 'abdom_exam_yes'"/>
+			<bind nodeset="/data/initial_fhs/fhs_initial" type="xsd:int"/>
+			<bind nodeset="/data/fhs_alert" relevant="/data/initial_fhs/fhs_initial &gt; 160 or /data/initial_fhs/fhs_initial &lt; 110"/>
+			<bind nodeset="/data/fhs_alert/fhs_alert_text"/>
+			<bind nodeset="/data/fhs_alert/fhs_alert_suggestion"/>
+			<bind nodeset="/data/fhs_alert/fhs_alert_choice" required="true()"/>
+			<bind nodeset="/data/fhs_record_actions" relevant="/data/fhs_alert/fhs_alert_choice = 'record_action'"/>
+			<bind nodeset="/data/fhs_record_actions/fhs_actions_taken" type="xsd:string"/>
+			<bind nodeset="/data/abdominal_exam" relevant="/data/initial_abdom_exam/abdom_exam_initial = 'abdom_exam_yes'"/>
+			<bind nodeset="/data/abdominal_exam/fetal_lie_select"/>
+			<bind nodeset="/data/abdominal_exam/fetal_presentation"/>
+			<bind nodeset="/data/abdominal_exam/descent_initial" relevant="1=2"/>
+			<bind nodeset="/data/initial_ve"/>
+			<bind nodeset="/data/initial_ve/ve_initial"/>
+			<bind nodeset="/data/pv_exam" relevant="/data/initial_ve/ve_initial = 've_yes'"/>
+			<bind nodeset="/data/pv_exam/dilation" type="xsd:int"/>
+			<bind nodeset="/data/pv_exam/station_head"/>
+			<bind nodeset="/data/pv_exam/moulding_initial"/>
+			<bind nodeset="/data/pv_exam/moulding_warning" relevant="/data/pv_exam/moulding_initial = 'severe_overlap'"/>
+			<bind nodeset="/data/emergency_signs"/>
+			<bind nodeset="/data/emergency_signs/emergency_signs_list" required="true()"/>
+			<bind nodeset="/data/es_alert" relevant="selected(/data/emergency_signs/emergency_signs_list, 'difficulty_breathing') or selected(/data/emergency_signs/emergency_signs_list, 'shock') or /data/emergency_signs/emergency_signs_list = 'vaginal_bleeding' or /data/emergency_signs/emergency_signs_list = 'convulsions_unconsciousness' or /data/emergency_signs/emergency_signs_list = 'prolapsed_cord' or /data/emergency_signs/emergency_signs_list = 'fetal_distress'"/>
+			<bind nodeset="/data/es_alert/es_alert_text"/>
+			<bind nodeset="/data/es_alert/es_alert_suggestion"/>
+			<bind nodeset="/data/es_alert/es_alert_choice" required="true()"/>
+			<bind nodeset="/data/es_record_actions" relevant="/data/es_alert/es_alert_choice = 'record_action'"/>
+			<bind nodeset="/data/es_record_actions/es_actions_taken" type="xsd:string"/>
+			<bind nodeset="/data/high_risk" calculate="if(/data/high_risk_score &lt; 4, &quot;no&quot;, &quot;yes&quot;)"/>
+			<bind nodeset="/data/time_measured" calculate="double(now())"/>
+			<bind nodeset="/data/age" calculate="/data/patient_info_list/patient_age"/>
+			<bind nodeset="/data/cd"/>
+			<bind nodeset="/data/contractions_number"/>
+			<bind nodeset="/data/contractions_duration"/>
+			<bind nodeset="/data/fhs"/>
+			<bind nodeset="/data/moulding"/>
+			<bind nodeset="/data/amniotic_fluid"/>
+			<bind nodeset="/data/pulse"/>
+			<bind nodeset="/data/temp"/>
+			<bind nodeset="/data/bp" calculate="concat(/data/bp_list/systolic,'/', /data/bp_list/diastolic)"/>
+			<bind nodeset="/data/last_measured" calculate="double(now())-double(/data/time_measured)"/>
+			<bind nodeset="/data/minutes_to_next_exam" calculate="30 - int(((/data/last_measured * 24) - int(/data/last_measured * 24)) * 60)"/>
+			<bind nodeset="/data/edd" calculate="date(/data/patient_info_list/lmp + 274)"/>
+			<bind nodeset="/data/age_risk_1" calculate="if((/data/age &lt; 18) or (/data/age &gt; 35), 1, 0)"/>
+			<bind nodeset="/data/height_risk_1" calculate="if(/data/high_risk_list/height_risk &lt; 145, 1, 0)"/>
+			<bind nodeset="/data/para_risk_1" calculate="if((/data/patient_info_list/para = &quot;primi&quot;) or (/data/patient_info_list/para = &quot;multi&quot;), 1, 0)"/>
+			<bind nodeset="/data/risk_history_2" calculate="if((/data/high_risk_list/prev_outcome = &quot;still_birth&quot;) or (/data/high_risk_list/prev_outcome = &quot;miscarriage&quot;) or (/data/high_risk_list/prev_outcome = &quot;spont_abortion&quot;), 2, 0)"/>
+			<bind nodeset="/data/weight_risk_3" calculate="if((/data/high_risk_list/weight_risk &lt; 45) or (/data/high_risk_list/weight_risk &gt; 90), 3, 0)"/>
+			<bind nodeset="/data/lbw_risk_1" calculate="if(/data/high_risk_list/risk_lbw = &quot;lbw_yes&quot;, 1, 0)"/>
+			<bind nodeset="/data/risk_uterine_surgery_2" calculate="if(/data/high_risk_list/prev_conditions = &quot;risk_previous_uterine_surgery&quot;, 2, 0)"/>
+			<bind nodeset="/data/risk_aph_pph_2" calculate="if(/data/high_risk_list/prev_conditions = &quot;risk_aph_pph&quot;, 2, 0)"/>
+			<bind nodeset="/data/risk_manual_placenta_2" calculate="if(/data/high_risk_list/prev_conditions = &quot;risk_manual_placenta&quot;, 2, 0)"/>
+			<bind nodeset="/data/risk_anaemia_3" calculate="if(/data/high_risk_list/prev_conditions = &quot;risk_anaemia&quot;, 3, 0)"/>
+			<bind nodeset="/data/risk_febrile_ailment_1" calculate="if(/data/high_risk_list/prev_conditions = &quot;risk_febrile_ailment&quot;, 1, 0)"/>
+			<bind nodeset="/data/risk_hypertension_2" calculate="if(/data/high_risk_list/prev_conditions = &quot;risk_hypertension&quot;, 2, 0)"/>
+			<bind nodeset="/data/risk_medical_condition_2" calculate="if(/data/high_risk_list/prev_conditions = &quot;risk_medical_condition&quot;, 2, 0)"/>
+			<bind nodeset="/data/risk_bleeding_2" calculate="if(/data/high_risk_list/prev_conditions = &quot;risk_bleeding&quot;, 2, 0)"/>
+			<bind nodeset="/data/risk_presentation_2" calculate="if(/data/high_risk_list/prev_conditions = &quot;risk_presentation&quot;, 2, 0)"/>
+			<bind nodeset="/data/risk_maturity_2" calculate="if(/data/high_risk_list/prev_conditions = &quot;risk_maturity&quot;, 2, 0)"/>
+			<bind nodeset="/data/risk_prom_2" calculate="if(/data/high_risk_list/prev_conditions = &quot;risk_prom&quot;, 2, 0)"/>
+			<bind nodeset="/data/risk_fetal_distress_2" calculate="if(/data/high_risk_list/prev_conditions = &quot;risk_fetal_distress&quot;, 2, 0)"/>
+			<bind nodeset="/data/risk_prolonged_labour_2" calculate="if(/data/high_risk_list/prev_conditions = &quot;risk_prolonged_labour&quot;, 2, 0)"/>
+			<bind nodeset="/data/risk_uterine_size_2" calculate="if(/data/high_risk_list/prev_conditions = &quot;risk_uterine_size&quot;, 2, 0)"/>
+			<bind nodeset="/data/risk_dai_2" calculate="if(/data/high_risk_list/prev_conditions = &quot;risk_dai&quot;, 2, 0)"/>
+			<bind nodeset="/data/risk_pre_eclampsia_2" calculate="if(/data/high_risk_list/prev_conditions = &quot;preeclampsia&quot;, 2, 0)"/>
+			<bind nodeset="/data/risk_eclampsia_2" calculate="if(/data/high_risk_list/prev_conditions = &quot;eclampsia&quot;, 2, 0)"/>
+			<bind nodeset="/data/high_risk_score" calculate="/data/age_risk_1 + /data/height_risk_1 + /data/para_risk_1 + /data/risk_history_2 + /data/weight_risk_3 + /data/lbw_risk_1 + /data/risk_uterine_surgery_2 + /data/risk_aph_pph_2 + /data/risk_manual_placenta_2 + /data/risk_anaemia_3 + /data/risk_febrile_ailment_1 + /data/risk_hypertension_2 + /data/risk_medical_condition_2 + /data/risk_bleeding_2 + /data/risk_presentation_2 + /data/risk_maturity_2 + /data/risk_prom_2 + /data/risk_fetal_distress_2 + /data/risk_prolonged_labour_2 + /data/risk_uterine_size_2 + /data/risk_dai_2 + /data/risk_pre_eclampsia_2 + /data/risk_eclampsia_2"/>
+			<bind nodeset="/data/false_labour_flag" calculate="if(count-selected(/data/t_f_labour/true_false_checklist) &lt; 1 and count-selected(/data/t_f_labour/false_checklist) &gt;= 1, 'yes', 'no')"/>
+			<bind nodeset="/data/urine_passed" calculate="if(/data/urine_list/urine_vol != 0, 'yes', 'no')"/>
+			<bind nodeset="/data/membranes_ruptured" calculate="if(/data/patient_info_list/membrane_rupture = &quot;rupture_yes&quot;, 'yes', 'no')"/>
+			<bind nodeset="/data/no_emergency_signs" calculate="if(selected(/data/emergency_signs/emergency_signs_list, &quot;none&quot;), 'yes', 'no')"/>
+			<bind nodeset="/data/first_measured_time" calculate="if(/data/initial_vitals/record_initial = 'yes', double(now), &quot;&quot;)"/>
+			<bind nodeset="/data/nurse_flag" calculate="if(/data/bp_alert/bp_alert_choice = &quot;flag_patient&quot; or /data/af_alert/af_alert_choice = &quot;flag_patient&quot; or /data/fhs_alert/fhs_alert_choice = &quot;flag_patient&quot;, 'yes', 'no')"/>
+			<bind nodeset="/data/overall_hours" calculate="if(/data/first_measured_time = &quot;&quot;, &quot;&quot;, 0)"/>
+			<bind nodeset="/data/station_head"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="patient_info_label-label">
+						<value>PATIENT INFORMATION</value>
+					</text>
+					<text id="name-label">
+						<value>Name:</value>
+					</text>
+					<text id="reg_num-label">
+						<value>MRD:</value>
+					</text>
+					<text id="wife_of-label">
+						<value>Wife of (W/O):</value>
+					</text>
+					<text id="patient_age-label">
+						<value>Age:</value>
+					</text>
+					<text id="para-label">
+						<value>Parity</value>
+					</text>
+					<text id="para-primi-label">
+						<value>Primi para</value>
+					</text>
+					<text id="para-second-label">
+						<value>Second para</value>
+					</text>
+					<text id="para-third-label">
+						<value>Third para</value>
+					</text>
+					<text id="para-fourth-label">
+						<value>Fourth para</value>
+					</text>
+					<text id="para-multi-label">
+						<value>Multi para</value>
+					</text>
+					<text id="gravida-label">
+						<value>Gravida</value>
+					</text>
+					<text id="gravida-primi-label">
+						<value>Primi gravida</value>
+					</text>
+					<text id="gravida-second-label">
+						<value>Second gravida</value>
+					</text>
+					<text id="gravida-third-label">
+						<value>Third gravida</value>
+					</text>
+					<text id="gravida-fourth-label">
+						<value>Fourth gravida</value>
+					</text>
+					<text id="gravida-multi-label">
+						<value>Multi gravida</value>
+					</text>
+					<text id="admit_date-label">
+						<value>Date of Admission</value>
+					</text>
+					<text id="admit_time-label">
+						<value>Time of Admission</value>
+					</text>
+					<text id="membrane_rupture-label">
+						<value>Membranes Ruptured?</value>
+					</text>
+					<text id="membrane_date-label">
+						<value>Date of membrane rupture</value>
+					</text>
+					<text id="rupture_time-label">
+						<value>Time of membrane rupture</value>
+					</text>
+					<text id="lmp-label">
+						<value>LMP</value>
+					</text>
+					<text id="edd_label-label">
+						<value>EDD: <output value="/data/edd"/></value>
+					</text>
+					<text id="tf_labour-label">
+						<value>DETERMINE TRUE/FALSE LABOUR</value>
+					</text>
+					<text id="true_false_checklist-label">
+						<value>Select all that apply:</value>
+					</text>
+					<text id="true_false_checklist-true_one-label">
+						<value>Begins irregularly but becomes regular and predictable</value>
+					</text>
+					<text id="true_false_checklist-true_two-label">
+						<value>Felt first in the lower back and sweeps around to the abdomen in a wave pattern</value>
+					</text>
+					<text id="true_false_checklist-true_three-label">
+						<value>Continues no matter what the woman's level of activity</value>
+					</text>
+					<text id="true_false_checklist-true_four-label">
+						<value>Increases in duration, frequency and intensity with the passage of time</value>
+					</text>
+					<text id="true_false_checklist-true_five-label">
+						<value>Accompanied by 'show' (blood stained mucus discharge)</value>
+					</text>
+					<text id="true_false_checklist-true_six-label">
+						<value>Achieves cervical effacement and cervical dilation</value>
+					</text>
+					<text id="true_false_checklist-false_one-label">
+						<value>Begins irregularly and remains irregular</value>
+					</text>
+					<text id="true_false_checklist-false_two-label">
+						<value>Felt first abdominally and remains confined to the abdomen and groin</value>
+					</text>
+					<text id="true_false_checklist-false_three-label">
+						<value>Often disappears with ambulation or sleep</value>
+					</text>
+					<text id="true_false_checklist-false_four-label">
+						<value>Does not increase in duration, frequency or intensity with the passage of time</value>
+					</text>
+					<text id="true_false_checklist-false_five-label">
+						<value>Show absent</value>
+					</text>
+					<text id="true_false_checklist-false_six-label">
+						<value>Does not achieve cervical effacement and cervical dilation</value>
+					</text>
+					<text id="true_labour-label">
+						<value>This patient is in labour. Continue to high-risk screening.</value>
+					</text>
+					<text id="false_labour-label">
+						<value>This patient is NOT in labour. This case will not be saved.</value>
+					</text>
+					<text id="high_risk_label-label">
+						<value>HIGH RISK SCREENING</value>
+					</text>
+					<text id="age_risk_question-label">
+						<value>Age <output value="/data/age"/></value>
+					</text>
+					<text id="high_risk_list/age_risk_question-label">
+						<value>What is her age?</value>
+					</text>
+					<text id="age_risk-label">
+						<value>Age is less than 18 or greater than 35, +1</value>
+					</text>
+					<text id="para_risk-label">
+						<value>Primi or multi para, +1</value>
+					</text>
+					<text id="height_risk-label">
+						<value>What is her height (cm)?</value>
+					</text>
+					<text id="height_risk_label-label">
+						<value>Height is less than 145cm, +1</value>
+					</text>
+					<text id="prev_outcome-label">
+						<value>What was the outcome of her previous pregnancy?</value>
+					</text>
+					<text id="prev_outcome-normal-label">
+						<value>Normal delivery</value>
+					</text>
+					<text id="prev_outcome-assisted-label">
+						<value>Assisted</value>
+					</text>
+					<text id="prev_outcome-cesarean-label">
+						<value>C-section</value>
+					</text>
+					<text id="prev_outcome-still_birth-label">
+						<value>Still birth</value>
+					</text>
+					<text id="prev_outcome-miscarriage-label">
+						<value>Miscarriage</value>
+					</text>
+					<text id="prev_outcome-spont_abortion-label">
+						<value>Spontaneous abortion</value>
+					</text>
+					<text id="risk_history_label-label">
+						<value>Patient has a high risk obstetrical history, +2</value>
+					</text>
+					<text id="weight_risk-label">
+						<value>What is her weight (kg)?</value>
+					</text>
+					<text id="weight_risk_label-label">
+						<value>Weight is less than 45Kg or more than 90Kg, +3</value>
+					</text>
+					<text id="risk_lbw-label">
+						<value>History of low birth weight?</value>
+					</text>
+					<text id="lbw_risk_label-label">
+						<value>History of low birth weight, +1</value>
+					</text>
+					<text id="prev_conditions-label">
+						<value>Has the patient experienced any of the following in previous pregnancies?</value>
+					</text>
+					<text id="prev_conditions-preeclampsia-label">
+						<value>Pre-eclampsia</value>
+					</text>
+					<text id="prev_conditions-eclampsia-label">
+						<value>Eclampsia</value>
+					</text>
+					<text id="prev_conditions-risk_previous_uterine_surgery-label">
+						<value>Uterine surgery</value>
+					</text>
+					<text id="prev_conditions-risk_aph_pph-label">
+						<value>APH or PPH (puerperal sepsis)</value>
+					</text>
+					<text id="prev_conditions-risk_manual_placenta-label">
+						<value>Manual removal of placenta</value>
+					</text>
+					<text id="prev_conditions-risk_anaemia-label">
+						<value>Anaemia (less than 6gm%)</value>
+					</text>
+					<text id="prev_conditions-risk_febrile_ailment-label">
+						<value>Febrile ailment in pregnancy</value>
+					</text>
+					<text id="prev_conditions-risk_hypertension-label">
+						<value>Pregnancy associated with hypertension</value>
+					</text>
+					<text id="prev_conditions-risk_medical_condition-label">
+						<value>Medical condition with pregnancy (TB, diabetes, thyroid disorder, asthma)</value>
+					</text>
+					<text id="prev_conditions-risk_bleeding-label">
+						<value>Bleeding P/V (APH Abortion)</value>
+					</text>
+					<text id="prev_conditions-risk_presentation-label">
+						<value>Abnormal presentation (apart from cephalic)</value>
+					</text>
+					<text id="prev_conditions-risk_maturity-label">
+						<value>Maturity &lt; 37 weeks or maturity &gt; 45 weeks</value>
+					</text>
+					<text id="prev_conditions-risk_prom-label">
+						<value>PROM (premature rupture of membranes)</value>
+					</text>
+					<text id="prev_conditions-risk_fetal_distress-label">
+						<value>Fetal distress</value>
+					</text>
+					<text id="prev_conditions-risk_prolonged_labour-label">
+						<value>Prolonged labour &gt; 24 hours</value>
+					</text>
+					<text id="prev_conditions-risk_uterine_size-label">
+						<value>Uterine size &lt; period of gestation</value>
+					</text>
+					<text id="prev_conditions-risk_dai-label">
+						<value>Dai handling / Outside interference</value>
+					</text>
+					<text id="high_risk_score_label-label">
+						<value>High Risk Score: <output value="/data/high_risk_score"/></value>
+					</text>
+					<text id="high_risk_flag-label">
+						<value>This patient is HIGH RISK.</value>
+						<value form="image">jr://file/commcare/image/data/high_risk_history_icon.png</value>
+					</text>
+					<text id="record_initial-label">
+						<value>Would you like to record initial maternal indicators for this patient now?</value>
+					</text>
+					<text id="temp_list-label">
+						<value>Temperature</value>
+					</text>
+					<text id="initial_temp-label">
+						<value>What is her temperature (&#176;C)?</value>
+					</text>
+					<text id="pulse_list-label">
+						<value>Pulse</value>
+					</text>
+					<text id="initial_pulse-label">
+						<value>What is her pulse?</value>
+					</text>
+					<text id="pulse_warning-label">
+						<value>Warning! Pulse is less than 60 or greater than 110.</value>
+						<value form="image">jr://file/commcare/image/data/alert_icon.png</value>
+					</text>
+					<text id="bp_list-label">
+						<value>Blood Pressure</value>
+					</text>
+					<text id="initial_bp-label">
+						<value>What is her blood pressure?</value>
+					</text>
+					<text id="systolic-label">
+						<value>Systolic:</value>
+					</text>
+					<text id="diastolic-label">
+						<value>Diastolic:</value>
+					</text>
+					<text id="bp_alert/bp_alert_text-label">
+						<value>Warning! A BP of 140/90 may indicate pre-eclampsia.</value>
+						<value form="image">jr://file/commcare/image/data/alert_icon.png</value>
+					</text>
+					<text id="bp_alert/bp_alert_suggestion-label">
+						<value>Suggested Action: ????????</value>
+					</text>
+					<text id="bp_alert/bp_alert_choice-label">
+						<value>What would you like to do?</value>
+					</text>
+					<text id="bp_alert/bp_alert_choice-flag_patient-label">
+						<value>Flag this patient for increased monitoring. Continue exam.</value>
+					</text>
+					<text id="bp_alert/bp_alert_choice-record_action-label">
+						<value>Record your actions. Continue exam.</value>
+					</text>
+					<text id="bp_alert/bp_alert_choice-dismiss-label">
+						<value>Dismiss warning. Continue Exam.</value>
+					</text>
+					<text id="bp_alert/bp_alert_choice-doctor_call-label">
+						<value>Call a doctor. Stop exam.</value>
+					</text>
+					<text id="bp_record_actions-label">
+						<value>Record actions taken in response to warning:</value>
+					</text>
+					<text id="respiration_list-label">
+						<value>Respiration</value>
+					</text>
+					<text id="respiration-label">
+						<value>Record respirations per minute:</value>
+					</text>
+					<text id="urine_list-label">
+						<value>Urine</value>
+					</text>
+					<text id="urine_vol-label">
+						<value>Urine output (ml)?</value>
+					</text>
+					<text id="urine_contains-label">
+						<value>Did urine contain:</value>
+					</text>
+					<text id="urine_contains-protein-label">
+						<value>Protein?</value>
+					</text>
+					<text id="urine_contains-albumin-label">
+						<value>Albumin?</value>
+					</text>
+					<text id="urine_contains-sugar-label">
+						<value>Sugar?</value>
+					</text>
+					<text id="initial_cd-label">
+						<value>Cervial Dilation</value>
+					</text>
+					<text id="cd_intial-label">
+						<value>What is the initial cervical dilation (cm)?</value>
+					</text>
+					<text id="initial_contractions-label">
+						<value>Contractions</value>
+					</text>
+					<text id="frequency_initial-label">
+						<value>How many contractions in 10 minutes?</value>
+					</text>
+					<text id="duration_initial-label">
+						<value>How many seconds is each contraction?</value>
+					</text>
+					<text id="membrane_indicator-label">
+						<value>Membranes</value>
+					</text>
+					<text id="mem_ruptured-label">
+						<value>Were the membranes ruptured?</value>
+					</text>
+					<text id="copy-1-of-rupture_time-label">
+						<value>Time of membrane rupture</value>
+					</text>
+					<text id="mem_ruptured_label-label">
+						<value>Membranes were ruptured at <output value="/data/patient_info_list/rupture_time"/></value>
+					</text>
+					<text id="initial_af-label">
+						<value>Amniotic Fluid</value>
+					</text>
+					<text id="af_initial-label">
+						<value>What is the colour of the amniotic fluid?</value>
+					</text>
+					<text id="af_initial-clear-label">
+						<value>Clear</value>
+					</text>
+					<text id="af_initial-meconium_stained-label">
+						<value>Meconium Stained</value>
+					</text>
+					<text id="af_initial-blood_stained-label">
+						<value>Blood Stained</value>
+					</text>
+					<text id="af_initial-absent-label">
+						<value>Absent</value>
+					</text>
+					<text id="copy-1-of-bp_alert/bp_alert_text-label">
+						<value>Warning! Meconium or Blood Stained amniotic fluid indicates severe fetal distress.</value>
+						<value form="image">jr://file/commcare/image/data/alert_icon.png</value>
+					</text>
+					<text id="copy-1-of-bp_alert/bp_alert_suggestion-label">
+						<value>Suggested Action: Call a doctor. Prepare for cesarean section.</value>
+					</text>
+					<text id="copy-1-of-bp_alert/bp_alert_choice-doctor_call-label">
+						<value>Call a doctor. Stop exam.</value>
+					</text>
+					<text id="af_record_actions-label">
+						<value>Record actions taken in response to warning:</value>
+					</text>
+					<text id="abdom_exam_initial-label">
+						<value>Would you like to do an abdominal exam for this patient now?</value>
+					</text>
+					<text id="abdom_exam_initial-abdom_exam_yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="abdom_exam_initial-abdom_exam_no-label">
+						<value>No</value>
+					</text>
+					<text id="initial_fhs-label">
+						<value>Fetal Heart Rate</value>
+					</text>
+					<text id="initial_fhs/fhs_initial-label">
+						<value>What is the current fetal heart rate?</value>
+					</text>
+					<text id="copy-1-of-af_alert/af_alert_text-label">
+						<value>Warning! A fetal heart rate of more than 160 or less than 110 indicates fetal distress.</value>
+						<value form="image">jr://file/commcare/image/data/alert_icon.png</value>
+					</text>
+					<text id="copy-1-of-af_alert/af_alert_suggestion-label">
+						<value>Suggested Action: Increase monitoring frequency to every 15 minutes.</value>
+					</text>
+					<text id="abdominal_exam-label">
+						<value>Abdominal Exam Continued...</value>
+					</text>
+					<text id="fetal_lie_select-label">
+						<value>Fetal Lie</value>
+					</text>
+					<text id="fetal_lie_select-longitudinal-label">
+						<value>Longitudinal</value>
+					</text>
+					<text id="fetal_lie_select-oblique-label">
+						<value>Oblique</value>
+					</text>
+					<text id="fetal_lie_select-transverse-label">
+						<value>Transverse</value>
+					</text>
+					<text id="fetal_presentation-label">
+						<value>Fetal Presentation</value>
+						<value form="image">jr://file/commcare/image/data/fetal_presentation.png</value>
+					</text>
+					<text id="fetal_presentation-loa-label">
+						<value>LOA (left occipital anterior)</value>
+					</text>
+					<text id="fetal_presentation-roa-label">
+						<value>ROA (rear occipital anterior)</value>
+					</text>
+					<text id="fetal_presentation-lop-label">
+						<value>LOP (left occipital posterior)</value>
+					</text>
+					<text id="fetal_presentation-rop-label">
+						<value>ROP (rear occipital posterior)</value>
+					</text>
+					<text id="descent_initial-label">
+						<value>What is the current descent of the fetal head?</value>
+						<value form="image">jr://file/commcare/image/data/descent_initial.png</value>
+					</text>
+					<text id="descent_initial-descent_5-label">
+						<value>5/5 - head is completely above the pelvic brim</value>
+					</text>
+					<text id="descent_initial-descent_4-label">
+						<value>4/5</value>
+					</text>
+					<text id="descent_initial-descent_3-label">
+						<value>3/5</value>
+					</text>
+					<text id="descent_initial-descent_2-label">
+						<value>2/5 - head is engaged</value>
+					</text>
+					<text id="descent_initial-descent_1-label">
+						<value>1/5</value>
+					</text>
+					<text id="descent_initial-descent_0-label">
+						<value>0/5 - head is completely visible</value>
+					</text>
+					<text id="ve_initial-label">
+						<value>Would you like to do a vaginal exam for this patient now?</value>
+					</text>
+					<text id="pv_exam-label">
+						<value>PER VAGINAL EXAM</value>
+					</text>
+					<text id="dilation-label">
+						<value>Dilation (fingers? cm?)</value>
+						<value form="image">jr://file/commcare/image/data/dilation.png</value>
+					</text>
+					<text id="station_head-label">
+						<value>What is the station of the head?</value>
+						<value form="image">jr://file/commcare/image/data/descent_initial.png</value>
+					</text>
+					<text id="station_head-neg_3-label">
+						<value>-3</value>
+					</text>
+					<text id="station_head-neg_2-label">
+						<value>-2</value>
+					</text>
+					<text id="station_head-neg_1-label">
+						<value>-1</value>
+					</text>
+					<text id="station_head-zero-label">
+						<value>0</value>
+					</text>
+					<text id="station_head-pos_1-label">
+						<value>+1</value>
+					</text>
+					<text id="station_head-pos_2-label">
+						<value>+2</value>
+					</text>
+					<text id="station_head-pos_3-label">
+						<value>+3</value>
+					</text>
+					<text id="moulding_initial-label">
+						<value>What is the current state of moulding of the fetal skull bones?</value>
+					</text>
+					<text id="moulding_initial-separated-label">
+						<value>0 - bones are separated</value>
+					</text>
+					<text id="moulding_initial-touching-label">
+						<value>1 - bones just touching</value>
+					</text>
+					<text id="moulding_initial-overlapping-label">
+						<value>2 - bones overlapping</value>
+					</text>
+					<text id="moulding_initial-severe_overlap-label">
+						<value>3 - bones severely overlapping</value>
+					</text>
+					<text id="moulding_warning-label">
+						<value>Warning! Severe overlap indicates further action!</value>
+					</text>
+					<text id="emergency_signs-label">
+						<value>Emergency Signs</value>
+					</text>
+					<text id="emergency_signs_list-label">
+						<value>Identify if the patient has any of the following emergency signs:</value>
+					</text>
+					<text id="emergency_signs_list-difficulty_breathing-label">
+						<value>1. Difficulty in breathing</value>
+					</text>
+					<text id="emergency_signs_list-shock-label">
+						<value>2. Shock</value>
+					</text>
+					<text id="emergency_signs_list-vaginal_bleeding-label">
+						<value>3. Vaginal bleeding</value>
+					</text>
+					<text id="emergency_signs_list-convulsions_unconsciousness-label">
+						<value>4. Convulsions or unconsciousness</value>
+					</text>
+					<text id="emergency_signs_list-prolapsed_cord-label">
+						<value>5. Prolapsed cord</value>
+					</text>
+					<text id="emergency_signs_list-fetal_distress-label">
+						<value>6. Fetal distress</value>
+					</text>
+					<text id="emergency_signs_list-none-label">
+						<value>7. None of the above</value>
+					</text>
+					<text id="copy-1-of-af_alert/af_alert_text-label2">
+						<value>Warning! Emergency signs recorded.</value>
+						<value form="image">jr://file/commcare/image/data/alert_icon.png</value>
+					</text>
+					<text id="copy-1-of-af_alert/af_alert_suggestion-label2">
+						<value>Call an expert for help or refer patient!</value>
+					</text>
+					<text id="copy-1-of-af_alert/af_alert_choice-label2">
+						<value>What would you like to do?</value>
+					</text>
+					<text id="copy-1-of-af_alert/af_alert_choice-flag_patient-label2">
+						<value>Flag this patient for increased monitoring. Continue exam.</value>
+					</text>
+					<text id="copy-1-of-af_alert/af_alert_choice-record_action-label2">
+						<value>Record your actions. Continue exam.</value>
+					</text>
+					<text id="copy-1-of-af_alert/af_alert_choice-dismiss-label2">
+						<value>Dismiss warning. Continue Exam.</value>
+					</text>
+					<text id="copy-1-of-af_alert/af_alert_choice-doctor_call-label2">
+						<value>Call a doctor. Stop exam.</value>
+					</text>
+					<text id="es_record_actions-label">
+						<value>Record actions taken in response to warning:</value>
+					</text>
+				</translation>
+				<translation lang="hin">
+					<text id="patient_info_label-label">
+						<value>&#2350;&#2352;&#2368;&#2395; &#2325;&#2368; &#2332;&#2366;&#2344;&#2325;&#2352;&#2368;
+</value>
+					</text>
+					<text id="name-label">
+						<value>&#2344;&#2366;&#2350;
+</value>
+					</text>
+					<text id="reg_num-label">
+						<value>&#2346;&#2306;&#2332;&#2368;&#2325;&#2352;&#2339; &#2360;&#2306;&#2326;&#2381;&#2351;&#2366;
+</value>
+					</text>
+					<text id="wife_of-label">
+						<value>&#2346;&#2340;&#2367;
+</value>
+					</text>
+					<text id="patient_age-label">
+						<value>&#2313;&#2350;&#2381;&#2352;
+</value>
+					</text>
+					<text id="para-label">
+						<value>&#2346;&#2361;&#2354;&#2375; &#2346;&#2381;&#2352;&#2360;&#2357;&#2379; &#2325;&#2368; &#2327;&#2367;&#2344;&#2340;&#2368;</value>
+					</text>
+					<text id="para-primi-label">
+						<value>&#2346;&#2361;&#2354; &#2346;&#2381;&#2352;&#2360;&#2357;</value>
+					</text>
+					<text id="para-second-label">
+						<value>&#2342;&#2370;&#2360;&#2352;&#2366; &#2346;&#2381;&#2352;&#2360;&#2357;</value>
+					</text>
+					<text id="para-third-label">
+						<value>&#2340;&#2368;&#2360;&#2352;&#2366; &#2346;&#2381;&#2352;&#2360;&#2357;</value>
+					</text>
+					<text id="para-fourth-label">
+						<value>&#2330;&#2380;&#2341;&#2366; &#2346;&#2381;&#2352;&#2360;&#2357;</value>
+					</text>
+					<text id="para-multi-label">
+						<value>&#2330;&#2366;&#2352; &#2360;&#2375; &#2332;&#2364;&#2381;&#2351;&#2366;&#2342;&#2366; &#2348;&#2366;&#2352; &#2346;&#2381;&#2352;&#2360;&#2357; &#2325;&#2368; &#2327;&#2367;&#2344;&#2340;&#2368;</value>
+					</text>
+					<text id="gravida-label">
+						<value>&#2327;&#2352;&#2381;&#2349; &#2343;&#2366;&#2352;&#2339; &#2325;&#2352;&#2344;&#2375; &#2325;&#2366; &#2327;&#2367;&#2344;&#2340;&#2368;</value>
+					</text>
+					<text id="gravida-primi-label">
+						<value>&#2346;&#2361;&#2354;&#2366; &#2327;&#2352;&#2381;&#2349;&#2343;&#2366;&#2352;&#2339;</value>
+					</text>
+					<text id="gravida-second-label">
+						<value>&#2342;&#2370;&#2360;&#2352;&#2366; &#2327;&#2352;&#2381;&#2349;&#2343;&#2366;&#2352;&#2339;</value>
+					</text>
+					<text id="gravida-third-label">
+						<value>&#2340;&#2368;&#2360;&#2352;&#2366; &#2327;&#2352;&#2381;&#2349;&#2343;&#2366;&#2352;&#2339;</value>
+					</text>
+					<text id="gravida-fourth-label">
+						<value>&#2330;&#2380;&#2341;&#2366; &#2327;&#2352;&#2381;&#2349;&#2343;&#2366;&#2352;&#2339;</value>
+					</text>
+					<text id="gravida-multi-label">
+						<value>&#2330;&#2366;&#2352; &#2360;&#2375; &#2332;&#2364;&#2381;&#2351;&#2366;&#2342;&#2366; &#2327;&#2352;&#2381;&#2349;&#2343;&#2366;&#2352;&#2339;</value>
+					</text>
+					<text id="admit_date-label">
+						<value>&#2349;&#2352;&#2381;&#2340;&#2368; &#2325;&#2352;&#2344;&#2375; &#2325;&#2368; &#2340;&#2366;&#2352;&#2368;&#2326;
+</value>
+					</text>
+					<text id="admit_time-label">
+						<value>&#2349;&#2352;&#2381;&#2340;&#2368; &#2325;&#2352;&#2344;&#2375; &#2325;&#2366; &#2360;&#2350;&#2351;
+</value>
+					</text>
+					<text id="membrane_rupture-label">
+						<value>&#2325;&#2381;&#2351;&#2366; &#2346;&#2366;&#2344;&#2368; &#2325;&#2368; &#2341;&#2375;&#2354;&#2368; &#2347;&#2335;&#2368; &#2361;&#2369;&#2312; &#2341;&#2368;?</value>
+					</text>
+					<text id="membrane_date-label">
+						<value>&#2341;&#2376;&#2354;&#2368; &#2347;&#2335;&#2344;&#2375; &#2325;&#2368; &#2340;&#2366;&#2352;&#2368;&#2326;
+
+
+</value>
+					</text>
+					<text id="rupture_time-label">
+						<value>&#2341;&#2376;&#2354;&#2368; &#2347;&#2335;&#2344;&#2375; &#2325;&#2366; &#2360;&#2350;&#2351; 
+
+</value>
+					</text>
+					<text id="lmp-label">
+						<value>&#2310;&#2326;&#2367;&#2352;&#2368; &#2350;&#2366;&#2361;&#2357;&#2366;&#2352;&#2368; &#2325;&#2368; &#2340;&#2366;&#2352;&#2368;&#2326;
+</value>
+					</text>
+					<text id="edd_label-label">
+						<value>&#2346;&#2381;&#2352;&#2360;&#2357; &#2325;&#2368; &#2309;&#2344;&#2369;&#2350;&#2366;&#2344;&#2367;&#2340; &#2340;&#2366;&#2352;&#2368;&#2326;: <output value="/data/edd"/>
+</value>
+					</text>
+					<text id="tf_labour-label">
+						<value>&#2344;&#2367;&#2352;&#2381;&#2343;&#2366;&#2352;&#2367;&#2340; &#2360;&#2361;&#2368; &#2361;&#2376; &#2351;&#2366; &#2327;&#2354;&#2340;
+
+</value>
+					</text>
+					<text id="true_false_checklist-label">
+						<value>&#2354;&#2366;&#2327;&#2370; &#2361;&#2379;&#2344;&#2375; &#2357;&#2366;&#2354;&#2375; &#2360;&#2349;&#2368; &#2325;&#2366; &#2330;&#2351;&#2344; &#2325;&#2352;&#2375;&#2306;:</value>
+					</text>
+					<text id="true_false_checklist-true_one-label">
+						<value>&#2309;&#2344;&#2367;&#2351;&#2350;&#2367;&#2340; &#2352;&#2370;&#2346; &#2360;&#2375; &#2358;&#2369;&#2352;&#2370; &#2361;&#2379;&#2325;&#2352; &#2344;&#2367;&#2351;&#2366;&#2350;&#2340; &#2324;&#2352; &#2313;&#2350;&#2381;&#2350;&#2368;&#2342; &#2325;&#2375; &#2350;&#2369;&#2340;&#2366;&#2348;&#2367;&#2325; &#2361;&#2379; &#2327;&#2351;&#2366;
+</value>
+					</text>
+					<text id="true_false_checklist-true_two-label">
+						<value>&#2346;&#2361;&#2354;&#2375; &#2346;&#2368;&#2336; &#2325;&#2375; &#2344;&#2367;&#2330;&#2354;&#2375; &#2361;&#2367;&#2360;&#2381;&#2360;&#2375; &#2350;&#2375;&#2306; &#2350;&#2361;&#2360;&#2370;&#2360; &#2325;&#2367;&#2351;&#2366; &#2324;&#2352; &#2347;&#2367;&#2352; &#2319;&#2325; &#2354;&#2361;&#2352; &#2346;&#2376;&#2335;&#2352;&#2381;&#2344; &#2350;&#2375;&#2306; &#2346;&#2375;&#2335; &#2325;&#2375; &#2330;&#2366;&#2352;&#2379;&#2306; &#2323;&#2352; 
+</value>
+					</text>
+					<text id="true_false_checklist-true_three-label">
+						<value>&#2332;&#2366;&#2352;&#2368; &#2352;&#2361;&#2366; &#2350;&#2361;&#2367;&#2354;&#2366; &#2325;&#2375; &#2325;&#2367;&#2360;&#2368; &#2349;&#2368; &#2360;&#2381;&#2340;&#2352; &#2325;&#2368; &#2327;&#2340;&#2367;&#2357;&#2367;&#2343;&#2367; &#2325;&#2352;&#2344;&#2375; &#2325;&#2375; &#2348;&#2366;&#2357;&#2332;&#2370;&#2342;
+</value>
+					</text>
+					<text id="true_false_checklist-true_four-label">
+						<value>&#2360;&#2350;&#2351; &#2348;&#2368;&#2340;&#2344;&#2375; &#2325;&#2375; &#2360;&#2366;&#2341; &#2309;&#2357;&#2343;&#2367; , &#2310;&#2357;&#2371;&#2340;&#2381;&#2340;&#2367; &#2324;&#2352; &#2340;&#2368;&#2357;&#2381;&#2352;&#2340;&#2366; &#2350;&#2375;&#2306; &#2357;&#2371;&#2342;&#2381;&#2343;&#2367;</value>
+					</text>
+					<text id="true_false_checklist-true_five-label">
+						<value>&#2348;&#2354;&#2327;&#2350; &#2325;&#2375; &#2360;&#2366;&#2341; &#2326;&#2370;&#2344; &#2310;&#2344;&#2366; 
+</value>
+					</text>
+					<text id="true_false_checklist-true_six-label">
+						<value>&#2327;&#2381;&#2352;&#2368;&#2357;&#2366; (&#2360;&#2352;&#2381;&#2357;&#2367;&#2325;&#2381;&#2360;) &#2325;&#2366; &#2346;&#2340;&#2354;&#2366; &#2361;&#2379;&#2344;&#2366; &#2324;&#2352; &#2347;&#2375;&#2354;&#2344;&#2366;</value>
+					</text>
+					<text id="true_false_checklist-false_one-label">
+						<value>&#2309;&#2344;&#2367;&#2351;&#2350;&#2367;&#2340; &#2352;&#2370;&#2346; &#2360;&#2375; &#2358;&#2369;&#2352;&#2370; &#2361;&#2379;&#2344;&#2366; &#2324;&#2352; &#2309;&#2344;&#2367;&#2351;&#2350;&#2367;&#2340; &#2352;&#2361;&#2344;&#2366; 
+
+\</value>
+					</text>
+					<text id="true_false_checklist-false_two-label">
+						<value>&#2346;&#2361;&#2354;&#2375; &#2346;&#2375;&#2335; &#2360;&#2375; &#2354;&#2375;&#2325;&#2352; &#2325;&#2350;&#2352; &#2325;&#2375; &#2346;&#2367;&#2331;&#2354;&#2375; &#2361;&#2367;&#2360;&#2381;&#2360;&#2375; &#2340;&#2325; &#2350;&#2361;&#2360;&#2370;&#2360; &#2361;&#2379;&#2344;&#2366; 
+</value>
+					</text>
+					<text id="true_false_checklist-false_three-label">
+						<value>&#2309;&#2325;&#2381;&#2360;&#2352; &#2361;&#2367;&#2354;&#2344;&#2375; &#2337;&#2369;&#2354;&#2344;&#2375; &#2360;&#2375; &#2351;&#2366; &#2360;&#2379;&#2344;&#2375; &#2325;&#2375; &#2360;&#2366;&#2341; &#2327;&#2366;&#2351;&#2348; &#2361;&#2379; &#2332;&#2366;&#2340;&#2366; &#2361;&#2376;</value>
+					</text>
+					<text id="true_false_checklist-false_four-label">
+						<value>&#2360;&#2350;&#2351; &#2348;&#2368;&#2340;&#2344;&#2375; &#2325;&#2375; &#2360;&#2366;&#2341; &#2309;&#2357;&#2343;&#2367; , &#2310;&#2357;&#2371;&#2340;&#2381;&#2340;&#2367; &#2324;&#2352; &#2340;&#2368;&#2357;&#2381;&#2352;&#2340;&#2366; &#2350;&#2375;&#2306; &#2357;&#2371;&#2342;&#2381;&#2343;&#2367; &#2344;&#2361;&#2368;&#2306; &#2361;&#2379;&#2340;&#2368;
+</value>
+					</text>
+					<text id="true_false_checklist-false_five-label">
+						<value>&#2309;&#2344;&#2369;&#2346;&#2360;&#2381;&#2341;&#2367;&#2340;&#2367; &#2342;&#2352;&#2381;&#2358;&#2366;&#2351;&#2375;&#2306;
+</value>
+					</text>
+					<text id="true_false_checklist-false_six-label">
+						<value>&#2327;&#2381;&#2352;&#2368;&#2357;&#2366; (&#2360;&#2352;&#2381;&#2357;&#2367;&#2325;&#2381;&#2360;) &#2325;&#2366; &#2346;&#2340;&#2354;&#2366; &#2325;&#2350;/ &#2344;&#2361;&#2368;&#2306; &#2361;&#2379;&#2344;&#2366; &#2324;&#2352; &#2325;&#2350;/ &#2344;&#2361;&#2368;&#2306; &#2347;&#2375;&#2354;&#2344;&#2366;</value>
+					</text>
+					<text id="true_labour-label">
+						<value>&#2351;&#2361; &#2350;&#2352;&#2368;&#2395; &#2354;&#2375;&#2348;&#2352; &#2350;&#2376;&#2306; &#2361;&#2376;&#2306; | &#2313;&#2330;&#2381;&#2330; &#2332;&#2379;&#2326;&#2367;&#2350; &#2360;&#2381;&#2325;&#2381;&#2352;&#2368;&#2344;&#2367;&#2306;&#2327; &#2325;&#2352;&#2344;&#2375; &#2325;&#2375; &#2354;&#2367;&#2319; &#2310;&#2327;&#2375; &#2348;&#2338;&#2364;&#2375;&#2306; |
+
+</value>
+					</text>
+					<text id="false_labour-label">
+						<value>&#2351;&#2361; &#2350;&#2352;&#2368;&#2395; &#2354;&#2375;&#2348;&#2352; &#2350;&#2375; &#2344;&#2361;&#2368;&#2306; &#2361;&#2376;&#2306;. &#2351;&#2361; &#2325;&#2375;&#2360; &#2332;&#2350;&#2366; &#2344;&#2361;&#2368;&#2306; &#2325;&#2352;&#2366; &#2332;&#2366;&#2351;&#2375;&#2327;&#2366;.
+</value>
+					</text>
+					<text id="high_risk_label-label">
+						<value>&#2313;&#2330;&#2381;&#2330; &#2332;&#2379;&#2326;&#2367;&#2350; &#2360;&#2381;&#2325;&#2381;&#2352;&#2368;&#2344;&#2367;&#2306;&#2327;
+</value>
+					</text>
+					<text id="age_risk_question-label">
+						<value>&#2350;&#2352;&#2368;&#2395; &#2325;&#2368; &#2313;&#2350;&#2381;&#2352; &#2325;&#2381;&#2351;&#2366; &#2361;&#2376;&#2306;? <output value="/data/age"/></value>
+					</text>
+					<text id="high_risk_list/age_risk_question-label">
+						<value>&#2350;&#2352;&#2368;&#2395; &#2325;&#2368; &#2313;&#2350;&#2381;&#2352; &#2325;&#2381;&#2351;&#2366; &#2361;&#2376;&#2306;?</value>
+					</text>
+					<text id="age_risk-label">
+						<value>&#2313;&#2350;&#2381;&#2352; 18 &#2360;&#2366;&#2354; &#2360;&#2375; &#2332;&#2381;&#2351;&#2366;&#2342;&#2366; &#2351;&#2366; 35  &#2360;&#2366;&#2354; &#2360;&#2375; &#2325;&#2350;, +1
+</value>
+					</text>
+					<text id="para_risk-label">
+						<value>&#2346;&#2361;&#2354;&#2366; &#2346;&#2381;&#2352;&#2360;&#2357; &#2351;&#2366; &#2330;&#2366;&#2352; &#2360;&#2375; &#2395;&#2381;&#2351;&#2366;&#2342;&#2366; &#2346;&#2381;&#2352;&#2360;&#2357; &#2325;&#2368; &#2327;&#2367;&#2344;&#2340;&#2367;,+1
+</value>
+					</text>
+					<text id="height_risk-label">
+						<value>&#2350;&#2352;&#2368;&#2395; &#2325;&#2368; &#2354;&#2306;&#2348;&#2366;&#2312; &#2325;&#2367;&#2340;&#2344;&#2368; &#2361;&#2376; (cm) ?
+</value>
+					</text>
+					<text id="height_risk_label-label">
+						<value>&#2350;&#2366;&#2305; &#2325;&#2368; &#2354;&#2350;&#2381;&#2348;&#2366;&#2312; 145 &#2360;&#2375;&#2306;&#2335;&#2368; &#2350;&#2368;&#2335;&#2352; &#2360;&#2375; &#2325;&#2350; &#2361;&#2376;&#2306;, +1
+
+</value>
+					</text>
+					<text id="prev_outcome-label">
+						<value>unke &#2346;&#2367;&#2331;&#2354;&#2375; &#2327;&#2352;&#2381;&#2349;&#2366;&#2357;&#2360;&#2381;&#2341;&#2366; &#2325;&#2366; &#2346;&#2352;&#2367;&#2339;&#2366;&#2350; &#2325;&#2381;&#2351;&#2366; &#2341;&#2366;?
+</value>
+					</text>
+					<text id="prev_outcome-normal-label">
+						<value>&#2360;&#2366;&#2350;&#2366;&#2344;&#2381;&#2351; &#2346;&#2381;&#2352;&#2360;&#2357;
+</value>
+					</text>
+					<text id="prev_outcome-assisted-label">
+						<value>&#2325;&#2367;&#2360;&#2368; &#2360;&#2361;&#2366;&#2351;&#2340;&#2366; &#2360;&#2375; (&#2325;&#2376;&#2306;&#2330;&#2368;, &#2342;&#2348;&#2366;&#2357;)</value>
+					</text>
+					<text id="prev_outcome-cesarean-label">
+						<value>&#2321;&#2346;&#2352;&#2375;&#2358;&#2344;</value>
+					</text>
+					<text id="prev_outcome-still_birth-label">
+						<value>&#2350;&#2371;&#2340; &#2332;&#2344;&#2381;&#2350;&#2366; &#2348;&#2330;&#2381;&#2330;&#2366;
+
+</value>
+					</text>
+					<text id="prev_outcome-miscarriage-label">
+						<value>&#2327;&#2352;&#2381;&#2349;&#2346;&#2366;&#2340;
+</value>
+					</text>
+					<text id="prev_outcome-spont_abortion-label">
+						<value>&#2360;&#2361;&#2332;/ &#2360;&#2381;&#2357;&#2340;&#2307; &#2327;&#2352;&#2381;&#2349;&#2346;&#2366;&#2340; / (&#2348;&#2330;&#2381;&#2330;&#2366; &#2327;&#2367;&#2352;&#2344;&#2366;)</value>
+					</text>
+					<text id="risk_history_label-label">
+						<value>&#2350;&#2352;&#2368;&#2395; &#2325;&#2366; &#2346;&#2381;&#2352;&#2360;&#2357; ka &#2393;&#2352;&#2366;&#2348; &#2311;&#2340;&#2367;&#2361;&#2366;&#2360; &#2352;&#2361;&#2366; &#2361;&#2376;  </value>
+					</text>
+					<text id="weight_risk-label">
+						<value>&#2350;&#2352;&#2368;&#2395; &#2325;&#2366; &#2357;&#2395;&#2344; &#2325;&#2367;&#2340;&#2344;&#2366; &#2361;&#2376; (kg)?</value>
+					</text>
+					<text id="weight_risk_label-label">
+						<value>&#2357;&#2332;&#2344; 45 &#2325;&#2367;&#2354;&#2379;&#2327;&#2381;&#2352;&#2366;&#2350; &#2360;&#2375; &#2325;&#2350; &#2351;&#2366; &#2357;&#2332;&#2344; &gt; 90 &#2325;&#2367;&#2354;&#2379;&#2327;&#2381;&#2352;&#2366;&#2350; &#2360;&#2375; &#2309;&#2343;&#2367;&#2325; &#2361;&#2376;
+ 
+</value>
+					</text>
+					<text id="risk_lbw-label">
+						<value>&#2325;&#2381;&#2351;&#2366; &#2309;&#2340;&#2368;&#2340; &#2350;&#2375;&#2306; &#2332;&#2344;&#2381;&#2350; &#2325;&#2375; &#2360;&#2350;&#2351; &#2325;&#2350; &#2357;&#2332;&#2344; &#2357;&#2366;&#2354;&#2375; &#2348;&#2330;&#2381;&#2330;&#2375; &#2361;&#2369;&#2319; &#2361;&#2376;&#2306;?
+</value>
+					</text>
+					<text id="lbw_risk_label-label">
+						<value>&#2309;&#2340;&#2368;&#2340; &#2350;&#2375;&#2306; &#2332;&#2344;&#2381;&#2350; &#2325;&#2375; &#2360;&#2350;&#2351; &#2325;&#2350; &#2357;&#2332;&#2344; &#2357;&#2366;&#2354;&#2375; &#2348;&#2330;&#2381;&#2330;&#2375; &#2361;&#2369;&#2319; &#2361;&#2376;&#2306; |
+</value>
+					</text>
+					<text id="prev_conditions-label">
+						<value>&#2325;&#2381;&#2351;&#2366; &#2350;&#2352;&#2368;&#2395; &#2344;&#2375; &#2346;&#2367;&#2331;&#2354;&#2375; &#2327;&#2352;&#2381;&#2349;&#2343;&#2366;&#2352;&#2339; &#2350;&#2375;&#2306; &#2344;&#2367;&#2350;&#2381;&#2344; &#2350;&#2375;&#2306; &#2360;&#2375; &#2325;&#2367;&#2360;&#2368; &#2325;&#2366; &#2349;&#2368; &#2309;&#2344;&#2369;&#2349;&#2357; &#2325;&#2367;&#2351;&#2366; &#2361;&#2376;?
+</value>
+					</text>
+					<text id="prev_conditions-preeclampsia-label">
+						<value>&#2346;&#2370;&#2352;&#2381;&#2357; &#2319;&#2325;&#2381;&#2354;&#2366;&#2350;&#2381;&#2346;&#2381;&#2360;&#2367;&#2351;&#2366;
+</value>
+					</text>
+					<text id="prev_conditions-eclampsia-label">
+						<value>&#2319;&#2325;&#2381;&#2354;&#2366;&#2350;&#2381;&#2346;&#2381;&#2360;&#2367;&#2351;&#2366;
+</value>
+					</text>
+					<text id="prev_conditions-risk_previous_uterine_surgery-label">
+						<value>&#2327;&#2352;&#2381;&#2349;&#2366;&#2358;&#2351; &#2325;&#2366; &#2321;&#2346;&#2352;&#2375;&#2358;&#2344;
+</value>
+					</text>
+					<text id="prev_conditions-risk_aph_pph-label">
+						<value>&#2346;&#2381;&#2352;&#2360;&#2357; &#2360;&#2375; &#2346;&#2361;&#2354;&#2375; &#2351;&#2366; &#2348;&#2366;&#2342; &#2350;&#2375;&#2306; &#2309;&#2340;&#2381;&#2351;&#2343;&#2367;&#2325; &#2350;&#2366;&#2340;&#2381;&#2352;&#2366; &#2350;&#2375;&#2306;&#2326;&#2370;&#2344; &#2348;&#2361;&#2344;&#2366; &#2309;&#2341;&#2357;&#2366; &#2346;&#2381;&#2352;&#2360;&#2357; &#2325;&#2375; &#2348;&#2366;&#2342; &#2346;&#2370;&#2352;&#2375; &#2358;&#2352;&#2368;&#2352; &#2350;&#2375;&#2306; &#2360;&#2306;&#2325;&#2381;&#2352;&#2350;&#2339; &#2347;&#2375;&#2354;&#2344;&#2366;</value>
+					</text>
+					<text id="prev_conditions-risk_manual_placenta-label">
+						<value>&#2327;&#2352;&#2381;&#2349;&#2344;&#2366;&#2354; &#2325;&#2379; &#2361;&#2366;&#2341;&#2379;&#2306; &#2360;&#2375; &#2344;&#2367;&#2325;&#2354;&#2344;&#2366;</value>
+					</text>
+					<text id="prev_conditions-risk_anaemia-label">
+						<value>&#2309;&#2344;&#2368;&#2350;&#2367;&#2351;&#2366; (&#2326;&#2370;&#2344; 6gm% &#2360;&#2375; &#2325;&#2350;)
+</value>
+					</text>
+					<text id="prev_conditions-risk_febrile_ailment-label">
+						<value>&#2327;&#2352;&#2381;&#2349;&#2366;&#2357;&#2360;&#2381;&#2341;&#2366; &#2350;&#2375;&#2306; &#2348;&#2369;&#2326;&#2366;&#2352; &#2361;&#2379;&#2344;&#2366; 
+</value>
+					</text>
+					<text id="prev_conditions-risk_hypertension-label">
+						<value>&#2327;&#2352;&#2381;&#2349;&#2366;&#2357;&#2360;&#2381;&#2341;&#2366; &#2325;&#2375; &#2342;&#2380;&#2352;&#2366;&#2344; &#2313;&#2330;&#2381;&#2330; &#2352;&#2325;&#2381;&#2340;&#2330;&#2366;&#2346;
+</value>
+					</text>
+					<text id="prev_conditions-risk_medical_condition-label">
+						<value>&#2327;&#2352;&#2381;&#2349;&#2366;&#2357;&#2360;&#2381;&#2341;&#2366; &#2325;&#2375; &#2342;&#2380;&#2352;&#2366;&#2344; (&#2335;&#2368;&#2348;&#2368; , &#2350;&#2343;&#2369;&#2350;&#2375;&#2361; , &#2341;&#2366;&#2351;&#2352;&#2366;&#2311;&#2337; &#2357;&#2367;&#2325;&#2366;&#2352; , &#2342;&#2350;&#2366; ) &#2332;&#2376;&#2360;&#2375; &#2352;&#2379;&#2327;
+</value>
+					</text>
+					<text id="prev_conditions-risk_bleeding-label">
+						<value>&#2352;&#2325;&#2381;&#2340; &#2360;&#2381;&#2352;&#2366;&#2357; &#2346;&#2368; / &#2357;&#2368; ( &#2320; &#2346;&#2368; &#2319;&#2330; &#2327;&#2352;&#2381;&#2349;&#2346;&#2366;&#2340; )
+</value>
+					</text>
+					<text id="prev_conditions-risk_presentation-label">
+						<value>&#2309;&#2360;&#2366;&#2350;&#2366;&#2344;&#2381;&#2351; &#2346;&#2381;&#2352;&#2360;&#2381;&#2340;&#2369;&#2340;&#2367; 
+</value>
+					</text>
+					<text id="prev_conditions-risk_maturity-label">
+						<value>&#2346;&#2352;&#2367;&#2346;&#2325;&#2381;&#2357; &lt; 37 &#2360;&#2346;&#2381;&#2340;&#2366;&#2361; &#2351;&#2366; &#2346;&#2352;&#2367;&#2346;&#2325;&#2381;&#2357; &gt; 45 &#2360;&#2346;&#2381;&#2340;&#2366;&#2361; 
+</value>
+					</text>
+					<text id="prev_conditions-risk_prom-label">
+						<value>&#2360;&#2350;&#2351; &#2360;&#2375; &#2346;&#2370;&#2352;&#2381;&#2357; &#2346;&#2366;&#2344;&#2368; &#2325;&#2368; &#2341;&#2376;&#2354;&#2368; &#2325;&#2375; &#2347;&#2335;&#2344;&#2375; &#2325;&#2366; &#2309;&#2344;&#2369;&#2349;&#2357;
+</value>
+					</text>
+					<text id="prev_conditions-risk_fetal_distress-label">
+						<value>&#2325;&#2379;&#2326; &#2350;&#2375;&#2306; &#2348;&#2330;&#2381;&#2330;&#2375; &#2325;&#2366; &#2393;&#2352;&#2366;&#2348; &#2361;&#2379;&#2344;&#2366; 
+</value>
+					</text>
+					<text id="prev_conditions-risk_prolonged_labour-label">
+						<value>&#2354;&#2350;&#2381;&#2348;&#2375; &#2360;&#2350;&#2351; &#2360;&#2375; &#2354;&#2376;&#2348;&#2352; &#2325;&#2366; &#2342;&#2352;&#2381;&#2342; &gt; 24 &#2328;&#2306;&#2335;&#2375; &#2360;&#2375; &#2309;&#2343;&#2367;&#2325;
+</value>
+					</text>
+					<text id="prev_conditions-risk_uterine_size-label">
+						<value>&#2327;&#2352;&#2381;&#2349;&#2366;&#2358;&#2351; &#2325;&#2366; &#2310;&#2325;&#2366;&#2352; &lt; &#2327;&#2352;&#2381;&#2349; &#2325;&#2368; &#2309;&#2357;&#2343;&#2367;
+</value>
+					</text>
+					<text id="prev_conditions-risk_dai-label">
+						<value>&#2342;&#2366;&#2312; &#2342;&#2381;&#2357;&#2366;&#2352;&#2366; &#2342;&#2375;&#2326;&#2349;&#2366;&#2354; / &#2348;&#2366;&#2361;&#2352;&#2368; &#2360;&#2361;&#2351;&#2379;&#2327;
+</value>
+					</text>
+					<text id="high_risk_score_label-label">
+						<value>&#2313;&#2330;&#2381;&#2330; &#2332;&#2379;&#2326;&#2367;&#2350; &#2360;&#2381;&#2325;&#2379;&#2352;: <output value="/data/high_risk_score"/>
+</value>
+					</text>
+					<text id="high_risk_flag-label">
+						<value>&#2351;&#2361; &#2350;&#2352;&#2368;&#2395; &#2313;&#2330;&#2381;&#2330; &#2332;&#2379;&#2326;&#2367;&#2350; &#2325;&#2368; &#2360;&#2367;&#2340;&#2381;&#2341;&#2368; &#2350;&#2375;&#2306; &#2361;&#2376;&#2306;
+</value>
+						<value form="image">jr://file/commcare/image/data/high_risk_history_icon.png</value>
+					</text>
+					<text id="record_initial-label">
+						<value>&#2325;&#2381;&#2351;&#2366; &#2310;&#2346; &#2309;&#2348; &#2351;&#2361; &#2350;&#2352;&#2368;&#2395; &#2325;&#2375; &#2354;&#2367;&#2319; &#2346;&#2381;&#2352;&#2366;&#2352;&#2306;&#2349;&#2367;&#2325; &#2350;&#2366;&#2340;&#2371; &#2360;&#2306;&#2325;&#2375;&#2340;&#2325; &#2352;&#2367;&#2325;&#2377;&#2352;&#2381;&#2337; &#2325;&#2352;&#2344;&#2366; &#2330;&#2366;&#2361;&#2340;&#2375; &#2361;&#2376;&#2306;?
+</value>
+					</text>
+					<text id="temp_list-label">
+						<value>&#2340;&#2366;&#2346;&#2350;&#2366;&#2344;
+</value>
+					</text>
+					<text id="initial_temp-label">
+						<value>&#2350;&#2352;&#2368;&#2395; &#2325;&#2366; &#2340;&#2366;&#2346;&#2350;&#2366;&#2344; &#2325;&#2367;&#2340;&#2344;&#2366; &#2361;&#2376;&#2306;?
+
+</value>
+					</text>
+					<text id="pulse_list-label">
+						<value>&#2344;&#2357;&#2381;&#2395;
+</value>
+					</text>
+					<text id="initial_pulse-label">
+						<value>&#2344;&#2357;&#2381;&#2395; &#2325;&#2368; &#2327;&#2340;&#2367; &#2325;&#2367;&#2340;&#2344;&#2368; &#2361;&#2376;?
+</value>
+					</text>
+					<text id="pulse_warning-label">
+						<value>&#2330;&#2375;&#2340;&#2366;&#2357;&#2344;&#2368;! &#2344;&#2357;&#2381;&#2395; &#2325;&#2368; &#2327;&#2340;&#2367; 60 &#2360;&#2375; &#2325;&#2350; &#2351;&#2366; 110 &#2360;&#2375; &#2332;&#2381;&#2351;&#2366;&#2342;&#2366; &#2361;&#2376; 
+</value>
+						<value form="image">jr://file/commcare/image/data/alert_icon.png</value>
+					</text>
+					<text id="bp_list-label">
+						<value>&#2352;&#2325;&#2381;&#2340;&#2330;&#2366;&#2346;
+</value>
+					</text>
+					<text id="initial_bp-label">
+						<value>&#2350;&#2352;&#2368;&#2395; &#2325;&#2366; &#2352;&#2325;&#2381;&#2340;&#2330;&#2366;&#2346; &#2325;&#2367;&#2340;&#2344;&#2366; &#2361;&#2376;?
+</value>
+					</text>
+					<text id="systolic-label">
+						<value>&#2360;&#2367;&#2360;&#2381;&#2335;&#2379;&#2354;&#2367;&#2325; :
+</value>
+					</text>
+					<text id="diastolic-label">
+						<value>&#2337;&#2366;&#2351;&#2360;&#2381;&#2335;&#2379;&#2354;&#2367;&#2325; :
+</value>
+					</text>
+					<text id="bp_alert/bp_alert_text-label">
+						<value>&#2330;&#2375;&#2340;&#2366;&#2357;&#2344;&#2368;! &#2352;&#2326;&#2381;&#2340;&#2381;&#2330;&#2366;&#2346; 140/90 &#2325;&#2366; &#2350;&#2340;&#2354;&#2348; &#2346;&#2381;&#2352;&#2368;-&#2319;&#2325;&#2381;&#2354;&#2375;&#2350;&#2381;&#2346;&#2360;&#2367;&#2351;&#2366; &#2361;&#2379; &#2360;&#2325;&#2340;&#2366; hai</value>
+						<value form="image">jr://file/commcare/image/data/alert_icon.png</value>
+					</text>
+					<text id="bp_alert/bp_alert_suggestion-label">
+						<value>&#2360;&#2369;&#2333;&#2366;&#2357;: </value>
+					</text>
+					<text id="bp_alert/bp_alert_choice-label">
+						<value>&#2310;&#2346; &#2325;&#2381;&#2351;&#2366; &#2325;&#2352;&#2344;&#2366; &#2330;&#2366;&#2361;&#2375;&#2306;&#2327;&#2375;?</value>
+					</text>
+					<text id="bp_alert/bp_alert_choice-flag_patient-label">
+						<value>&#2311;&#2360; &#2350;&#2352;&#2368;&#2395; &#2325;&#2375; &#2354;&#2367;&#2319; &#2330;&#2375;&#2340;&#2366;&#2357;&#2344;&#2368; &#2360;&#2306;&#2325;&#2375;&#2340; &#2324;&#2352; &#2309;&#2343;&#2367;&#2325; &#2344;&#2367;&#2327;&#2352;&#2366;&#2344;&#2368;. &#2346;&#2381;&#2352;&#2358;&#2367;&#2325;&#2381;&#2359;&#2339; &#2332;&#2366;&#2352;&#2368; &#2352;&#2326;&#2375;&#2306;</value>
+					</text>
+					<text id="bp_alert/bp_alert_choice-record_action-label">
+						<value>&#2325;&#2366;&#2352;&#2381;&#2351; &#2342;&#2352;&#2381;&#2332; &#2325;&#2352;&#2375;&#2306; &#2324;&#2352; &#2346;&#2381;&#2352;&#2358;&#2367;&#2325;&#2381;&#2359;&#2339; &#2332;&#2366;&#2352;&#2368; &#2352;&#2326;&#2375;&#2306;</value>
+					</text>
+					<text id="bp_alert/bp_alert_choice-dismiss-label">
+						<value>&#2330;&#2375;&#2340;&#2366;&#2357;&#2344;&#2368; &#2360;&#2306;&#2325;&#2375;&#2340; &#2361;&#2335;&#2366;&#2319;&#2306; &#2324;&#2352; &#2346;&#2381;&#2352;&#2358;&#2367;&#2325;&#2381;&#2359;&#2339; &#2332;&#2366;&#2352;&#2368; &#2352;&#2326;&#2375;&#2306;</value>
+					</text>
+					<text id="bp_alert/bp_alert_choice-doctor_call-label">
+						<value>&#2337;&#2377;&#2325;&#2381;&#2335;&#2352; &#2325;&#2379; &#2348;&#2369;&#2354;&#2366;&#2319;&#2306; &#2324;&#2352; &#2346;&#2381;&#2352;&#2358;&#2375;&#2325;&#2381;&#2359;&#2339; &#2352;&#2379;&#2325; &#2342;&#2375;&#2306;
+</value>
+					</text>
+					<text id="bp_record_actions-label">
+						<value>&#2330;&#2375;&#2340;&#2366;&#2357;&#2344;&#2368; &#2310;&#2344;&#2375; &#2346;&#2375; &#2325;&#2367;&#2351;&#2375; &#2327;&#2319; &#2325;&#2366;&#2352;&#2381;&#2351; &#2325;&#2379; &#2342;&#2352;&#2381;&#2332; &#2325;&#2352;&#2375;&#2306;:</value>
+					</text>
+					<text id="respiration_list-label">
+						<value>&#2358;&#2381;&#2357;&#2360;&#2344;
+</value>
+					</text>
+					<text id="respiration-label">
+						<value>&#2346;&#2381;&#2352;&#2340;&#2367; &#2350;&#2367;&#2344;&#2335; &#2360;&#2366;&#2306;&#2360; &#2354;&#2375;&#2344;&#2375; &#2325;&#2368; &#2327;&#2340;&#2367; &#2352;&#2367;&#2325;&#2377;&#2352;&#2381;&#2337; &#2325;&#2352;&#2375;&#2306;
+
+</value>
+					</text>
+					<text id="urine_list-label">
+						<value>&#2346;&#2375;&#2358;&#2366;&#2348;
+</value>
+					</text>
+					<text id="urine_vol-label">
+						<value>&#2346;&#2375;&#2358;&#2366;&#2348; &#2325;&#2367;&#2340;&#2344;&#2366; &#2325;&#2367;&#2351;&#2366; (&#2350;&#2367;&#2354;)?
+
+
+</value>
+					</text>
+					<text id="urine_contains-label">
+						<value>&#2325;&#2381;&#2351;&#2366; &#2346;&#2375;&#2358;&#2366;&#2348; &#2350;&#2375;&#2306; &#2351;&#2361; &#2341;&#2366;?
+
+</value>
+					</text>
+					<text id="urine_contains-protein-label">
+						<value>&#2346;&#2381;&#2352;&#2379;&#2335;&#2368;&#2344;
+</value>
+					</text>
+					<text id="urine_contains-albumin-label">
+						<value>&#2319;&#2354;&#2381;&#2348;&#2381;&#2351;&#2370;&#2350;&#2367;&#2344;
+</value>
+					</text>
+					<text id="urine_contains-sugar-label">
+						<value>&#2358;&#2369;&#2327;&#2352;
+</value>
+					</text>
+					<text id="initial_cd-label">
+						<value>&#2327;&#2381;&#2352;&#2368;&#2357;&#2366; &#2325;&#2366; &#2347;&#2376;&#2354;&#2366;&#2357;
+</value>
+					</text>
+					<text id="cd_intial-label">
+						<value>&#2346;&#2381;&#2352;&#2366;&#2352;&#2306;&#2349;&#2367;&#2325; &#2327;&#2381;&#2352;&#2368;&#2357;&#2366; &#2347;&#2376;&#2354;&#2366;&#2357; &#2325;&#2367;&#2340;&#2344;&#2366; &#2361;&#2376; (cm)?
+
+</value>
+					</text>
+					<text id="initial_contractions-label">
+						<value>&#2360;&#2306;&#2325;&#2369;&#2330;&#2344;
+</value>
+					</text>
+					<text id="frequency_initial-label">
+						<value>&#2325;&#2367;&#2340;&#2344;&#2375; &#2360;&#2306;&#2325;&#2369;&#2330;&#2344; 10 &#2350;&#2367;&#2344;&#2335; &#2350;&#2375;&#2306; ?
+</value>
+					</text>
+					<text id="duration_initial-label">
+						<value>&#2346;&#2381;&#2352;&#2340;&#2381;&#2351;&#2375;&#2325; &#2360;&#2306;&#2325;&#2369;&#2330;&#2344; &#2325;&#2367;&#2340;&#2344;&#2375; &#2360;&#2375;&#2325;&#2306;&#2337; &#2325;&#2366; &#2341;&#2366; ?
+</value>
+					</text>
+					<text id="membrane_indicator-label">
+						<value>&#2346;&#2366;&#2344;&#2368; &#2325;&#2368; &#2341;&#2375;&#2354;&#2368;</value>
+					</text>
+					<text id="mem_ruptured-label">
+						<value>&#2325;&#2381;&#2351;&#2366; &#2346;&#2366;&#2344;&#2368; &#2325;&#2368; &#2341;&#2375;&#2354;&#2368; &#2347;&#2335;&#2368; &#2361;&#2369;&#2312; &#2341;&#2368;?</value>
+					</text>
+					<text id="copy-1-of-rupture_time-label">
+						<value>&#2346;&#2366;&#2344;&#2368; &#2325;&#2368; &#2341;&#2375;&#2354;&#2368; &#2325;&#2367;&#2360; &#2360;&#2350;&#2351; &#2347;&#2335;&#2368;</value>
+					</text>
+					<text id="mem_ruptured_label-label">
+						<value>&#2346;&#2366;&#2344;&#2368; &#2325;&#2368; &#2341;&#2375;&#2354;&#2368; <output value="/data/patient_info_list/rupture_time"/> &#2347;&#2335;&#2368; &#2341;&#2368; </value>
+					</text>
+					<text id="initial_af-label">
+						<value>&#2327;&#2352;&#2381;&#2349;&#2366;&#2358;&#2351; &#2325;&#2375; &#2346;&#2366;&#2344;&#2368;</value>
+					</text>
+					<text id="af_initial-label">
+						<value>&#2327;&#2352;&#2381;&#2349;&#2366;&#2358;&#2351; &#2325;&#2375; &#2346;&#2366;&#2344;&#2368; &#2325;&#2366; &#2352;&#2306;&#2327; &#2325;&#2381;&#2351;&#2366; &#2361;&#2376;&#2306;?</value>
+					</text>
+					<text id="af_initial-clear-label">
+						<value>&#2360;&#2366;&#2347;</value>
+					</text>
+					<text id="af_initial-meconium_stained-label">
+						<value>&#2349;&#2381;&#2352;&#2370;&#2339; &#2325;&#2368; &#2358;&#2380;&#2330; &#2350;&#2375;&#2306; &#2360;&#2344;&#2366; &#2361;&#2369;&#2310;</value>
+					</text>
+					<text id="af_initial-blood_stained-label">
+						<value>&#2326;&#2370;&#2344; &#2360;&#2375; &#2360;&#2344;&#2366; &#2361;&#2369;&#2310;</value>
+					</text>
+					<text id="af_initial-absent-label">
+						<value>&#2309;&#2344;&#2369;&#2346;&#2360;&#2381;&#2341;&#2367;&#2340; (&#2344;&#2361;&#2368; &#2361;&#2376;&#2306;)</value>
+					</text>
+					<text id="copy-1-of-bp_alert/bp_alert_text-label">
+						<value>&#2330;&#2375;&#2340;&#2366;&#2357;&#2344;&#2368;! &#2327;&#2352;&#2381;&#2349;&#2366;&#2358;&#2351; &#2325;&#2375; &#2346;&#2366;&#2344;&#2368; &#2325;&#2366; &#2352;&#2306;&#2327; &#2309;&#2327;&#2352; &#2349;&#2381;&#2352;&#2370;&#2339; &#2325;&#2368; &#2358;&#2380;&#2330; &#2351;&#2366; &#2326;&#2369;&#2342; &#2360;&#2375; &#2360;&#2344;&#2366; &#2361;&#2379; &#2340;&#2379;&#2361; &#2357;&#2361; &#2349;&#2381;&#2352;&#2370;&#2339; &#2360;&#2306;&#2325;&#2335; &#2342;&#2352;&#2381;&#2358;&#2366;&#2340;&#2366; hai</value>
+						<value form="image">jr://file/commcare/image/data/alert_icon.png</value>
+					</text>
+					<text id="copy-1-of-bp_alert/bp_alert_suggestion-label">
+						<value>&#2360;&#2369;&#2333;&#2366;&#2357;: &#2337;&#2379;&#2325;&#2381;&#2335;&#2352; &#2325;&#2379; &#2348;&#2369;&#2354;&#2366;&#2319;&#2306; &#2324;&#2352; &#2321;&#2346;&#2352;&#2375;&#2358;&#2344; &#2325;&#2368; &#2340;&#2351;&#2381;&#2351;&#2366;&#2352;&#2368; &#2325;&#2352;&#2375;&#2306;
+</value>
+					</text>
+					<text id="copy-1-of-bp_alert/bp_alert_choice-doctor_call-label">
+						<value>&#2337;&#2377;&#2325;&#2381;&#2335;&#2352; &#2325;&#2379; &#2348;&#2369;&#2354;&#2366;&#2319;&#2306; &#2324;&#2352; &#2346;&#2381;&#2352;&#2358;&#2375;&#2325;&#2381;&#2359;&#2339; &#2352;&#2379;&#2325; &#2342;&#2375;&#2306;</value>
+					</text>
+					<text id="af_record_actions-label">
+						<value>&#2330;&#2375;&#2340;&#2366;&#2357;&#2344;&#2368; &#2310;&#2344;&#2375; &#2346;&#2375; &#2325;&#2367;&#2351;&#2375; &#2327;&#2319; &#2325;&#2366;&#2352;&#2381;&#2351; &#2325;&#2379; &#2342;&#2352;&#2381;&#2332; &#2325;&#2352;&#2375;&#2306;:
+</value>
+					</text>
+					<text id="abdom_exam_initial-label">
+						<value>&#2325;&#2381;&#2351;&#2366; &#2310;&#2346; &#2309;&#2348; &#2351;&#2361; &#2350;&#2352;&#2368;&#2395; &#2325;&#2375; &#2354;&#2367;&#2319; &#2319;&#2325; &#2346;&#2375;&#2335; &#2325;&#2368; &#2346;&#2352;&#2368;&#2325;&#2381;&#2359;&#2366; &#2325;&#2352;&#2344;&#2366; &#2330;&#2366;&#2361;&#2340;&#2375; &#2361;&#2376;&#2306;?
+</value>
+					</text>
+					<text id="abdom_exam_initial-abdom_exam_yes-label">
+						<value>&#2361;&#2366;&#2305;
+</value>
+					</text>
+					<text id="abdom_exam_initial-abdom_exam_no-label">
+						<value>&#2344;&#2361;&#2368;&#2306;
+</value>
+					</text>
+					<text id="initial_fhs-label">
+						<value>&#2349;&#2381;&#2352;&#2370;&#2339; &#2325;&#2368; &#2361;&#2381;&#2352;&#2342;&#2351; &#2327;&#2340;&#2367;
+</value>
+					</text>
+					<text id="initial_fhs/fhs_initial-label">
+						<value>&#2349;&#2381;&#2352;&#2370;&#2339; &#2325;&#2368; &#2361;&#2371;&#2342;&#2351; &#2327;&#2340;&#2367; &#2325;&#2367;&#2340;&#2344;&#2368; &#2361;&#2376;?</value>
+					</text>
+					<text id="copy-1-of-af_alert/af_alert_text-label">
+						<value>&#2330;&#2375;&#2340;&#2366;&#2357;&#2344;&#2368;! &#2349;&#2381;&#2352;&#2370;&#2339; &#2325;&#2368; &#2361;&#2381;&#2352;&#2342;&#2351; &#2327;&#2340;&#2367; 160 &#2360;&#2375; &#2332;&#2381;&#2351;&#2366;&#2342;&#2366; &#2351;&#2366; 110 &#2360;&#2375; &#2325;&#2350; &#2361;&#2379;&#2344;&#2366; &#2349;&#2381;&#2352;&#2370;&#2339; &#2360;&#2306;&#2325;&#2335; &#2342;&#2352;&#2381;&#2358;&#2366;&#2340;&#2366; &#2361;&#2376;
+</value>
+						<value form="image">jr://file/commcare/image/data/alert_icon.png</value>
+					</text>
+					<text id="copy-1-of-af_alert/af_alert_suggestion-label">
+						<value>&#2360;&#2369;&#2333;&#2366;&#2357;: &#2344;&#2367;&#2327;&#2352;&#2366;&#2344;&#2368; &#2349;&#2337;&#2366; &#2325;&#2352; &#2361;&#2352; 15 &#2350;&#2367;&#2344;&#2335; &#2325;&#2352; &#2342;&#2375;&#2306;
+</value>
+					</text>
+					<text id="abdominal_exam-label">
+						<value>&#2346;&#2375;&#2335; &#2325;&#2368; &#2346;&#2352;&#2368;&#2325;&#2381;&#2359;&#2366;
+
+</value>
+					</text>
+					<text id="fetal_lie_select-label">
+						<value>&#2349;&#2381;&#2352;&#2370;&#2339; &#2325;&#2368; &#2360;&#2381;&#2341;&#2367;&#2340;&#2367;</value>
+					</text>
+					<text id="fetal_lie_select-longitudinal-label">
+						<value>&#2354;&#2306;&#2348;&#2366;&#2312; &#2350;&#2375;&#2306;</value>
+					</text>
+					<text id="fetal_lie_select-oblique-label">
+						<value>&#2340;&#2367;&#2352;&#2331;&#2368;</value>
+					</text>
+					<text id="fetal_lie_select-transverse-label">
+						<value>&#2310;&#2337;&#2368;</value>
+					</text>
+					<text id="fetal_presentation-label">
+						<value>&#2349;&#2381;&#2352;&#2370;&#2339; &#2325;&#2368; &#2346;&#2381;&#2352;&#2360;&#2381;&#2340;&#2369;&#2340;&#2367;</value>
+						<value form="image">jr://file/commcare/image/data/fetal_presentation.png</value>
+					</text>
+					<text id="fetal_presentation-loa-label">
+						<value>&#2349;&#2381;&#2352;&#2370;&#2339; &#2325;&#2366; &#2360;&#2367;&#2352; &#2344;&#2368;&#2330;&#2375;, &#2350;&#2369;&#2361;&#2346;&#2368;&#2331;&#2375;,&#2346;&#2368;&#2335; &#2350;&#2366; &#2325;&#2368; &#2313;&#2354;&#2381;&#2335;&#2368; &#2340;&#2352;&#2347;&#2364;</value>
+					</text>
+					<text id="fetal_presentation-roa-label">
+						<value>&#2349;&#2381;&#2352;&#2370;&#2339; &#2325;&#2366; &#2360;&#2367;&#2352; &#2344;&#2368;&#2330;&#2375;, &#2350;&#2369;&#2361;&#2346;&#2368;&#2331;&#2375;,&#2346;&#2368;&#2335; &#2350;&#2366; &#2325;&#2368; &#2360;&#2368;&#2343;&#2368; &#2340;&#2352;&#2347;&#2364;</value>
+					</text>
+					<text id="fetal_presentation-lop-label">
+						<value>&#2349;&#2381;&#2352;&#2370;&#2339; &#2325;&#2366; &#2360;&#2367;&#2352; &#2344;&#2368;&#2330;&#2375;, &#2350;&#2369;&#2361; &#2310;&#2327;&#2375;,&#2346;&#2368;&#2335; &#2350;&#2366; &#2325;&#2368; &#2313;&#2354;&#2381;&#2335;&#2368; &#2340;&#2352;&#2347;&#2364;</value>
+					</text>
+					<text id="fetal_presentation-rop-label">
+						<value>&#2349;&#2381;&#2352;&#2370;&#2339; &#2325;&#2366; &#2360;&#2367;&#2352; &#2344;&#2368;&#2330;&#2375;, &#2350;&#2369;&#2361; &#2310;&#2327;&#2375;,&#2346;&#2368;&#2335; &#2350;&#2366; &#2325;&#2368; &#2360;&#2368;&#2343;&#2368; &#2340;&#2352;&#2347;&#2364;</value>
+					</text>
+					<text id="descent_initial-label">
+						<value>&#2349;&#2381;&#2352;&#2370;&#2339; &#2325;&#2375; &#2360;&#2367;&#2352; &#2325;&#2366; &#2309;&#2349;&#2368; &#2325;&#2366; &#2313;&#2340;&#2366;&#2352;&#2325;&#2381;&#2351;&#2366; &#2361;&#2376;&#2306;?</value>
+						<value form="image">jr://file/commcare/image/data/descent_initial.png</value>
+					</text>
+					<text id="descent_initial-descent_5-label">
+						<value>5/5 - &#2360;&#2367;&#2352; &#2358;&#2381;&#2352;&#2379;&#2339;&#2367; (&#2346;&#2375;&#2354;&#2381;&#2357;&#2367;&#2360;) &#2328;&#2375;&#2352;&#2375; &#2360;&#2375; &#2346;&#2370;&#2352;&#2368; &#2340;&#2352;&#2361; &#2313;&#2346;&#2352; &#2361;&#2376;&#2306;</value>
+					</text>
+					<text id="descent_initial-descent_4-label">
+						<value>4/5</value>
+					</text>
+					<text id="descent_initial-descent_3-label">
+						<value>3/5</value>
+					</text>
+					<text id="descent_initial-descent_2-label">
+						<value>2/5 - &#2360;&#2367;&#2352; &#2358;&#2381;&#2352;&#2379;&#2339;&#2367; (&#2346;&#2375;&#2354;&#2381;&#2357;&#2367;&#2360;) &#2328;&#2375;&#2352;&#2375; &#2360;&#2375; &#2344;&#2368;&#2330;&#2375; &#2361;&#2376;&#2306;</value>
+					</text>
+					<text id="descent_initial-descent_1-label">
+						<value>1/5</value>
+					</text>
+					<text id="descent_initial-descent_0-label">
+						<value>0/5 - &#2360;&#2367;&#2352; &#2346;&#2370;&#2352;&#2368; &#2340;&#2352;&#2361; &#2360;&#2375; &#2342;&#2367;&#2326;&#2366;&#2312; &#2342;&#2375;&#2340;&#2366; &#2361;&#2376;&#2306;</value>
+					</text>
+					<text id="ve_initial-label">
+						<value>&#2325;&#2381;&#2351;&#2366; &#2310;&#2346; &#2350;&#2352;&#2368;&#2395; &#2325;&#2368; &#2351;&#2379;&#2344;&#2367; &#2346;&#2352;&#2368;&#2325;&#2381;&#2359;&#2366; &#2325;&#2352;&#2344;&#2366; &#2330;&#2366;&#2361;&#2375;&#2306;&#2327;&#2375;?
+</value>
+					</text>
+					<text id="pv_exam-label">
+						<value>&#2351;&#2379;&#2344;&#2367; &#2325;&#2366; &#2344;&#2368;&#2352;&#2325;&#2381;&#2359;&#2339;( &#2332;&#2366;&#2305;&#2330;)</value>
+					</text>
+					<text id="dilation-label">
+						<value>&#2351;&#2379;&#2344;&#2367;  &#2325;&#2375; &#2350;&#2369;&#2361; &#2325;&#2366; &#2347;&#2375;&#2354;&#2366;&#2357; (&#2313;&#2306;&#2327;&#2354;&#2367;&#2351;&#2366;&#2305;? &#2360;&#2375;&#2306;&#2335;&#2367;&#2350;&#2375;&#2335;&#2375;&#2352;?)</value>
+						<value form="image">jr://file/commcare/image/data/dilation.png</value>
+					</text>
+					<text id="station_head-label">
+						<value>&#2360;&#2367;&#2352; &#2325;&#2366; &#2335;&#2375;&#2361;&#2352;&#2366;&#2357; &#2325;&#2368; &#2360;&#2381;&#2341;&#2367;&#2340;&#2367; &#2325;&#2381;&#2351;&#2366; &#2361;&#2376;&#2306;?</value>
+						<value form="image">jr://file/commcare/image/data/descent_initial.png</value>
+					</text>
+					<text id="station_head-neg_3-label">
+						<value>-3</value>
+					</text>
+					<text id="station_head-neg_2-label">
+						<value>-2</value>
+					</text>
+					<text id="station_head-neg_1-label">
+						<value>-1</value>
+					</text>
+					<text id="station_head-zero-label">
+						<value>0</value>
+					</text>
+					<text id="station_head-pos_1-label">
+						<value>+1</value>
+					</text>
+					<text id="station_head-pos_2-label">
+						<value>+2</value>
+					</text>
+					<text id="station_head-pos_3-label">
+						<value>+3</value>
+					</text>
+					<text id="moulding_initial-label">
+						<value>&#2349;&#2381;&#2352;&#2370;&#2339; &#2325;&#2375; &#2360;&#2367;&#2352; &#2325;&#2368; &#2361;&#2337;&#2381;&#2337;&#2367;&#2351;&#2379;&#2306;&#2325;&#2368; &#2357;&#2352;&#2381;&#2340;&#2350;&#2366;&#2344; &#2338;&#2354;&#2366;&#2312;(&#2313;&#2340;&#2366;&#2352;) &#2325;&#2381;&#2351;&#2366; &#2361;&#2376;&#2306;?</value>
+					</text>
+					<text id="moulding_initial-separated-label">
+						<value>0 - &#2361;&#2337;&#2367;&#2351;&#2366;&#2305; &#2309;&#2354;&#2327; &#2361;&#2376;&#2306;
+</value>
+					</text>
+					<text id="moulding_initial-touching-label">
+						<value>1- &#2361;&#2337;&#2367;&#2351;&#2366;&#2305; &#2331;&#2370; &#2352;&#2361;&#2368;&#2306; &#2361;&#2376;
+</value>
+					</text>
+					<text id="moulding_initial-overlapping-label">
+						<value>2- &#2361;&#2337;&#2367;&#2351;&#2366;&#2305; &#2325;&#2375; &#2342;&#2369;&#2360;&#2352;&#2375; &#2325;&#2375; &#2314;&#2346;&#2352;
+</value>
+					</text>
+					<text id="moulding_initial-severe_overlap-label">
+						<value>&#2409;- &#2361;&#2337;&#2367;&#2351;&#2366;&#2305; &#2319;&#2325; &#2342;&#2369;&#2360;&#2352;&#2375; &#2325;&#2375; &#2348;&#2361;&#2369;&#2340; &#2314;&#2346;&#2352;
+</value>
+					</text>
+					<text id="moulding_warning-label">
+						<value>&#2330;&#2375;&#2340;&#2366;&#2357;&#2344;&#2368;! &#2361;&#2337;&#2367;&#2351;&#2379;&#2306; &#2325;&#2366; &#2332;&#2381;&#2351;&#2366;&#2342;&#2366; &#2319;&#2325; &#2342;&#2369;&#2360;&#2352;&#2375; &#2325;&#2375; &#2314;&#2346;&#2352; &#2361;&#2379;&#2344;&#2366; &#2309;&#2343;&#2367;&#2325; &#2325;&#2352;&#2357;&#2366;&#2312; &#2325;&#2352;&#2344;&#2375; &#2325;&#2366; &#2360;&#2306;&#2325;&#2375;&#2340; &#2361;&#2376;
+</value>
+					</text>
+					<text id="emergency_signs-label">
+						<value>&#2310;&#2346;&#2366;&#2340; &#2360;&#2306;&#2325;&#2375;&#2340;
+
+</value>
+					</text>
+					<text id="emergency_signs_list-label">
+						<value>&#2350;&#2352;&#2368;&#2395; &#2350;&#2375;&#2306; &#2360;&#2375; &#2311;&#2344;&#2350;&#2375; &#2360;&#2375; &#2325;&#2367;&#2360;&#2368; &#2349;&#2368; &#2310;&#2346;&#2366;&#2340; &#2360;&#2306;&#2325;&#2375;&#2340;&#2379;&#2306; &#2325;&#2368; &#2346;&#2361;&#2330;&#2366;&#2344; &#2325;&#2352;&#2375;
+</value>
+					</text>
+					<text id="emergency_signs_list-difficulty_breathing-label">
+						<value>1. &#2360;&#2366;&#2306;&#2360; &#2354;&#2375;&#2344;&#2375; &#2350;&#2375;&#2306; &#2340;&#2325;&#2354;&#2368;&#2347;
+</value>
+					</text>
+					<text id="emergency_signs_list-shock-label">
+						<value>2. &#2333;&#2335;&#2325;&#2375;
+</value>
+					</text>
+					<text id="emergency_signs_list-vaginal_bleeding-label">
+						<value>3. &#2351;&#2379;&#2344;&#2367; &#2360;&#2375; &#2326;&#2370;&#2344; &#2344;&#2367;&#2325;&#2354;&#2344;&#2366;
+</value>
+					</text>
+					<text id="emergency_signs_list-convulsions_unconsciousness-label">
+						<value>4. &#2310;&#2325;&#2381;&#2359;&#2375;&#2346; &#2351;&#2366; &#2348;&#2375;&#2361;&#2379;&#2358;&#2368;
+</value>
+					</text>
+					<text id="emergency_signs_list-prolapsed_cord-label">
+						<value>5. &#2327;&#2352;&#2381;&#2349;&#2344;&#2366;&#2354; &#2325;&#2366; &#2309;&#2346;&#2344;&#2368; &#2332;&#2327;&#2361; &#2360;&#2375; &#2360;&#2352;&#2325;&#2325;&#2352; &#2344;&#2368;&#2330;&#2375; &#2342;&#2367;&#2326;&#2344;&#2366;</value>
+					</text>
+					<text id="emergency_signs_list-fetal_distress-label">
+						<value>6. &#2349;&#2381;&#2352;&#2370;&#2339; &#2360;&#2306;&#2325;&#2335;</value>
+					</text>
+					<text id="emergency_signs_list-none-label">
+						<value>7. &#2311;&#2344; &#2350;&#2375;&#2306; &#2360;&#2375; &#2325;&#2379;&#2312; &#2349;&#2368; &#2344;&#2361;&#2368;&#2306;
+</value>
+					</text>
+					<text id="copy-1-of-af_alert/af_alert_text-label2">
+						<value>&#2330;&#2375;&#2340;&#2366;&#2357;&#2344;&#2368;! &#2310;&#2346;&#2366;&#2340;&#2325;&#2366;&#2354;&#2368;&#2344; &#2360;&#2306;&#2325;&#2375;&#2340; &#2342;&#2352;&#2381;&#2332; &#2325;&#2367;&#2351;&#2375; &#2327;&#2319;
+</value>
+						<value form="image">jr://file/commcare/image/data/alert_icon.png</value>
+					</text>
+					<text id="copy-1-of-af_alert/af_alert_suggestion-label2">
+						<value>&#2350;&#2342;&#2342; &#2351;&#2366; &#2313;&#2354;&#2381;&#2354;&#2375;&#2326; &#2325;&#2375; &#2354;&#2367;&#2319; &#2357;&#2367;&#2358;&#2375;&#2359;&#2332;&#2381;&#2334; &#2360;&#2375; &#2360;&#2306;&#2346;&#2352;&#2381;&#2325; &#2325;&#2352;&#2375;&#2306;!</value>
+					</text>
+					<text id="copy-1-of-af_alert/af_alert_choice-label2">
+						<value>&#2310;&#2346; &#2325;&#2381;&#2351;&#2366; &#2325;&#2352;&#2344;&#2366; &#2330;&#2366;&#2361;&#2375;&#2306;&#2327;&#2375;?
+</value>
+					</text>
+					<text id="copy-1-of-af_alert/af_alert_choice-flag_patient-label2">
+						<value>&#2311;&#2360; &#2350;&#2352;&#2368;&#2395; &#2325;&#2375; &#2354;&#2367;&#2319; &#2330;&#2375;&#2340;&#2366;&#2357;&#2344;&#2368; &#2360;&#2306;&#2325;&#2375;&#2340; &#2324;&#2352; &#2309;&#2343;&#2367;&#2325; &#2344;&#2367;&#2327;&#2352;&#2366;&#2344;&#2368;. &#2346;&#2381;&#2352;&#2358;&#2367;&#2325;&#2381;&#2359;&#2339; &#2332;&#2366;&#2352;&#2368; &#2352;&#2326;&#2375;&#2306;
+</value>
+					</text>
+					<text id="copy-1-of-af_alert/af_alert_choice-record_action-label2">
+						<value>&#2325;&#2366;&#2352;&#2381;&#2351; &#2342;&#2352;&#2381;&#2332; &#2325;&#2352;&#2375;&#2306; &#2324;&#2352; &#2346;&#2381;&#2352;&#2358;&#2367;&#2325;&#2381;&#2359;&#2339; &#2332;&#2366;&#2352;&#2368; &#2352;&#2326;&#2375;&#2306;
+
+</value>
+					</text>
+					<text id="copy-1-of-af_alert/af_alert_choice-dismiss-label2">
+						<value>&#2330;&#2375;&#2340;&#2366;&#2357;&#2344;&#2368; &#2360;&#2306;&#2325;&#2375;&#2340; &#2361;&#2335;&#2366;&#2319;&#2306; &#2324;&#2352; &#2346;&#2381;&#2352;&#2358;&#2367;&#2325;&#2381;&#2359;&#2339; &#2332;&#2366;&#2352;&#2368; &#2352;&#2326;&#2375;&#2306;
+</value>
+					</text>
+					<text id="copy-1-of-af_alert/af_alert_choice-doctor_call-label2">
+						<value>&#2337;&#2377;&#2325;&#2381;&#2335;&#2352; &#2325;&#2379; &#2348;&#2369;&#2354;&#2366;&#2319;&#2306; &#2324;&#2352; &#2346;&#2381;&#2352;&#2358;&#2375;&#2325;&#2381;&#2359;&#2339; &#2352;&#2379;&#2325; &#2342;&#2375;&#2306;
+
+</value>
+					</text>
+					<text id="es_record_actions-label">
+						<value>&#2330;&#2375;&#2340;&#2366;&#2357;&#2344;&#2368; &#2310;&#2344;&#2375; &#2346;&#2375; &#2325;&#2367;&#2351;&#2375; &#2327;&#2319; &#2325;&#2366;&#2352;&#2381;&#2351; &#2325;&#2379; &#2342;&#2352;&#2381;&#2332; &#2325;&#2352;&#2375;&#2306;</value>
+					</text>
+				</translation>
+			</itext>
+		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><bind nodeset="/data/case" relevant="/data/false_labour_flag = 'no'"/><setvalue event="xforms-ready" ref="/data/case/@case_id" value="uuid()"/><bind calculate="/data/patient_info_list/name" nodeset="/data/case/create/case_name"/><bind calculate="/data/meta/userID" nodeset="/data/case/create/owner_id"/><bind calculate="/data/patient_info_list/admit_date" nodeset="/data/case/update/admit_date" relevant="count(/data/patient_info_list/admit_date) &gt; 0"/><bind calculate="/data/patient_info_list/admit_time" nodeset="/data/case/update/admit_time" relevant="count(/data/patient_info_list/admit_time) &gt; 0"/><bind calculate="/data/patient_info_list/patient_age" nodeset="/data/case/update/age" relevant="count(/data/patient_info_list/patient_age) &gt; 0"/><bind calculate="/data/initial_af/af_initial" nodeset="/data/case/update/amniotic_fluid" relevant="count(/data/initial_af/af_initial) &gt; 0"/><bind calculate="/data/temp" nodeset="/data/case/update/bp" relevant="count(/data/temp) &gt; 0"/><bind calculate="/data/initial_cd/cd_intial" nodeset="/data/case/update/cd" relevant="count(/data/initial_cd/cd_intial) &gt; 0"/><bind calculate="/data/initial_contractions/duration_initial" nodeset="/data/case/update/contractions_duration" relevant="count(/data/initial_contractions/duration_initial) &gt; 0"/><bind calculate="/data/initial_contractions/frequency_initial" nodeset="/data/case/update/contractions_number" relevant="count(/data/initial_contractions/frequency_initial) &gt; 0"/><bind calculate="/data/initial_fhs/fhs_initial" nodeset="/data/case/update/fhs" relevant="count(/data/initial_fhs/fhs_initial) &gt; 0"/><bind calculate="/data/first_measured_time" nodeset="/data/case/update/first_measured_time" relevant="count(/data/first_measured_time) &gt; 0"/><bind calculate="/data/high_risk" nodeset="/data/case/update/high_risk" relevant="count(/data/high_risk) &gt; 0"/><bind calculate="/data/last_measured" nodeset="/data/case/update/last_measured" relevant="count(/data/last_measured) &gt; 0"/><bind calculate="/data/patient_info_list/membrane_rupture" nodeset="/data/case/update/membrane_rupture" relevant="count(/data/patient_info_list/membrane_rupture) &gt; 0"/><bind calculate="/data/minutes_to_next_exam" nodeset="/data/case/update/minutes_to_next_exam" relevant="count(/data/minutes_to_next_exam) &gt; 0"/><bind calculate="/data/pv_exam/moulding_initial" nodeset="/data/case/update/moulding" relevant="count(/data/pv_exam/moulding_initial) &gt; 0"/><bind calculate="/data/high_risk_list/prev_outcome" nodeset="/data/case/update/prev_pregnancy_outcome" relevant="count(/data/high_risk_list/prev_outcome) &gt; 0"/><bind calculate="/data/pulse_list/initial_pulse" nodeset="/data/case/update/pulse" relevant="count(/data/pulse_list/initial_pulse) &gt; 0"/><bind calculate="/data/pv_exam/station_head" nodeset="/data/case/update/station_head" relevant="count(/data/pv_exam/station_head) &gt; 0"/><bind calculate="/data/temp_list/initial_temp" nodeset="/data/case/update/temp" relevant="count(/data/temp_list/initial_temp) &gt; 0"/><bind calculate="/data/time_measured" nodeset="/data/case/update/time_measured" relevant="count(/data/time_measured) &gt; 0"/><bind calculate="/data/meta/timeEnd" nodeset="/data/subcase_0/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/subcase_0/case/@user_id"/><setvalue event="xforms-ready" ref="/data/subcase_0/case/@case_id" value="uuid()"/><bind calculate="/data/patient_info_list/name" nodeset="/data/subcase_0/case/create/case_name"/><bind calculate="/data/meta/userID" nodeset="/data/subcase_0/case/create/owner_id"/><bind calculate="/data/pv_exam/dilation" nodeset="/data/subcase_0/case/update/cd_update" relevant="count(/data/pv_exam/dilation) &gt; 0"/><bind calculate="/data/initial_contractions/duration_initial" nodeset="/data/subcase_0/case/update/contraction_duration_update" relevant="count(/data/initial_contractions/duration_initial) &gt; 0"/><bind calculate="/data/initial_contractions/frequency_initial" nodeset="/data/subcase_0/case/update/contraction_num_update" relevant="count(/data/initial_contractions/frequency_initial) &gt; 0"/><bind calculate="/data/initial_fhs/fhs_initial" nodeset="/data/subcase_0/case/update/fhs_update" relevant="count(/data/initial_fhs/fhs_initial) &gt; 0"/><bind calculate="/data/overall_hours" nodeset="/data/subcase_0/case/update/hours" relevant="count(/data/overall_hours) &gt; 0"/><bind calculate="/data/pv_exam/station_head" nodeset="/data/subcase_0/case/update/station_head" relevant="count(/data/pv_exam/station_head) &gt; 0"/><bind calculate="/data/case/@case_id" nodeset="/data/subcase_0/case/index/parent"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<group ref="/data/patient_info_list" appearance="field-list">
+			<trigger ref="/data/patient_info_list/patient_info_label" appearance="minimal">
+				<label ref="jr:itext('patient_info_label-label')"/>
+			</trigger>
+			<input ref="/data/patient_info_list/name">
+				<label ref="jr:itext('name-label')"/>
+			</input>
+			<input ref="/data/patient_info_list/reg_num">
+				<label ref="jr:itext('reg_num-label')"/>
+			</input>
+			<input ref="/data/patient_info_list/wife_of">
+				<label ref="jr:itext('wife_of-label')"/>
+			</input>
+			<input ref="/data/patient_info_list/patient_age">
+				<label ref="jr:itext('patient_age-label')"/>
+			</input>
+			<select1 ref="/data/patient_info_list/para">
+				<label ref="jr:itext('para-label')"/>
+				<item>
+					<label ref="jr:itext('para-primi-label')"/>
+					<value>primi</value>
+				</item>
+				<item>
+					<label ref="jr:itext('para-second-label')"/>
+					<value>second</value>
+				</item>
+				<item>
+					<label ref="jr:itext('para-third-label')"/>
+					<value>third</value>
+				</item>
+				<item>
+					<label ref="jr:itext('para-fourth-label')"/>
+					<value>fourth</value>
+				</item>
+				<item>
+					<label ref="jr:itext('para-multi-label')"/>
+					<value>multi</value>
+				</item>
+			</select1>
+			<select1 ref="/data/patient_info_list/gravida">
+				<label ref="jr:itext('gravida-label')"/>
+				<item>
+					<label ref="jr:itext('gravida-primi-label')"/>
+					<value>primi</value>
+				</item>
+				<item>
+					<label ref="jr:itext('gravida-second-label')"/>
+					<value>second</value>
+				</item>
+				<item>
+					<label ref="jr:itext('gravida-third-label')"/>
+					<value>third</value>
+				</item>
+				<item>
+					<label ref="jr:itext('gravida-fourth-label')"/>
+					<value>fourth</value>
+				</item>
+				<item>
+					<label ref="jr:itext('gravida-multi-label')"/>
+					<value>multi</value>
+				</item>
+			</select1>
+			<input ref="/data/patient_info_list/admit_date">
+				<label ref="jr:itext('admit_date-label')"/>
+			</input>
+			<input ref="/data/patient_info_list/admit_time">
+				<label ref="jr:itext('admit_time-label')"/>
+			</input>
+			<select1 ref="/data/patient_info_list/membrane_rupture">
+				<label ref="jr:itext('membrane_rupture-label')"/>
+				<item>
+					<label ref="jr:itext('abdom_exam_initial-abdom_exam_yes-label')"/>
+					<value>rupture_yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('abdom_exam_initial-abdom_exam_no-label')"/>
+					<value>rupture_no</value>
+				</item>
+			</select1>
+			<input ref="/data/patient_info_list/membrane_date">
+				<label ref="jr:itext('membrane_date-label')"/>
+			</input>
+			<input ref="/data/patient_info_list/rupture_time">
+				<label ref="jr:itext('rupture_time-label')"/>
+			</input>
+			<input ref="/data/patient_info_list/lmp">
+				<label ref="jr:itext('lmp-label')"/>
+			</input>
+			<trigger ref="/data/patient_info_list/edd_label" appearance="minimal">
+				<label ref="jr:itext('edd_label-label')"/>
+			</trigger>
+		</group>
+		<group ref="/data/t_f_labour" appearance="field-list">
+			<trigger ref="/data/t_f_labour/tf_labour" appearance="minimal">
+				<label ref="jr:itext('tf_labour-label')"/>
+			</trigger>
+			<select ref="/data/t_f_labour/true_false_checklist">
+				<label ref="jr:itext('true_false_checklist-label')"/>
+				<item>
+					<label ref="jr:itext('true_false_checklist-true_one-label')"/>
+					<value>true_one</value>
+				</item>
+				<item>
+					<label ref="jr:itext('true_false_checklist-true_two-label')"/>
+					<value>true_two</value>
+				</item>
+				<item>
+					<label ref="jr:itext('true_false_checklist-true_three-label')"/>
+					<value>true_three</value>
+				</item>
+				<item>
+					<label ref="jr:itext('true_false_checklist-true_four-label')"/>
+					<value>true_four</value>
+				</item>
+				<item>
+					<label ref="jr:itext('true_false_checklist-true_five-label')"/>
+					<value>true_five</value>
+				</item>
+				<item>
+					<label ref="jr:itext('true_false_checklist-true_six-label')"/>
+					<value>true_six</value>
+				</item>
+			</select>
+			<select ref="/data/t_f_labour/false_checklist">
+				<item>
+					<label ref="jr:itext('true_false_checklist-false_one-label')"/>
+					<value>false_one</value>
+				</item>
+				<item>
+					<label ref="jr:itext('true_false_checklist-false_two-label')"/>
+					<value>false_two</value>
+				</item>
+				<item>
+					<label ref="jr:itext('true_false_checklist-false_three-label')"/>
+					<value>false_three</value>
+				</item>
+				<item>
+					<label ref="jr:itext('true_false_checklist-false_four-label')"/>
+					<value>false_four</value>
+				</item>
+				<item>
+					<label ref="jr:itext('true_false_checklist-false_five-label')"/>
+					<value>false_five</value>
+				</item>
+				<item>
+					<label ref="jr:itext('true_false_checklist-false_six-label')"/>
+					<value>false_six</value>
+				</item>
+			</select>
+			<trigger ref="/data/t_f_labour/true_labour" appearance="minimal">
+				<label ref="jr:itext('true_labour-label')"/>
+			</trigger>
+			<trigger ref="/data/t_f_labour/false_labour" appearance="minimal">
+				<label ref="jr:itext('false_labour-label')"/>
+			</trigger>
+		</group>
+		<group ref="/data/high_risk_list" appearance="field-list">
+			<trigger ref="/data/high_risk_list/high_risk_label" appearance="minimal">
+				<label ref="jr:itext('high_risk_label-label')"/>
+			</trigger>
+			<trigger ref="/data/high_risk_list/age_risk_label" appearance="minimal">
+				<label ref="jr:itext('age_risk_question-label')"/>
+			</trigger>
+			<input ref="/data/high_risk_list/age_risk_question">
+				<label ref="jr:itext('high_risk_list/age_risk_question-label')"/>
+			</input>
+			<trigger ref="/data/high_risk_list/age_risk" appearance="minimal">
+				<label ref="jr:itext('age_risk-label')"/>
+			</trigger>
+			<select1 ref="/data/high_risk_list/para_hr">
+				<label ref="jr:itext('para-label')"/>
+				<item>
+					<label ref="jr:itext('para-primi-label')"/>
+					<value>primi</value>
+				</item>
+				<item>
+					<label ref="jr:itext('para-second-label')"/>
+					<value>second</value>
+				</item>
+				<item>
+					<label ref="jr:itext('para-third-label')"/>
+					<value>third</value>
+				</item>
+				<item>
+					<label ref="jr:itext('para-fourth-label')"/>
+					<value>fourth</value>
+				</item>
+				<item>
+					<label ref="jr:itext('para-multi-label')"/>
+					<value>multi</value>
+				</item>
+			</select1>
+			<trigger ref="/data/high_risk_list/para_risk" appearance="minimal">
+				<label ref="jr:itext('para_risk-label')"/>
+			</trigger>
+			<input ref="/data/high_risk_list/height_risk">
+				<label ref="jr:itext('height_risk-label')"/>
+			</input>
+			<trigger ref="/data/high_risk_list/height_risk_label" appearance="minimal">
+				<label ref="jr:itext('height_risk_label-label')"/>
+			</trigger>
+			<select1 ref="/data/high_risk_list/prev_outcome">
+				<label ref="jr:itext('prev_outcome-label')"/>
+				<item>
+					<label ref="jr:itext('prev_outcome-normal-label')"/>
+					<value>normal</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prev_outcome-assisted-label')"/>
+					<value>assisted</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prev_outcome-cesarean-label')"/>
+					<value>cesarean</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prev_outcome-still_birth-label')"/>
+					<value>still_birth</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prev_outcome-miscarriage-label')"/>
+					<value>miscarriage</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prev_outcome-spont_abortion-label')"/>
+					<value>spont_abortion</value>
+				</item>
+			</select1>
+			<trigger ref="/data/high_risk_list/risk_history_label" appearance="minimal">
+				<label ref="jr:itext('risk_history_label-label')"/>
+			</trigger>
+			<input ref="/data/high_risk_list/weight_risk">
+				<label ref="jr:itext('weight_risk-label')"/>
+			</input>
+			<trigger ref="/data/high_risk_list/weight_risk_label" appearance="minimal">
+				<label ref="jr:itext('weight_risk_label-label')"/>
+			</trigger>
+			<select1 ref="/data/high_risk_list/risk_lbw">
+				<label ref="jr:itext('risk_lbw-label')"/>
+				<item>
+					<label ref="jr:itext('abdom_exam_initial-abdom_exam_yes-label')"/>
+					<value>lbw_yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('abdom_exam_initial-abdom_exam_no-label')"/>
+					<value>lbw_no</value>
+				</item>
+			</select1>
+			<trigger ref="/data/high_risk_list/lbw_risk_label" appearance="minimal">
+				<label ref="jr:itext('lbw_risk_label-label')"/>
+			</trigger>
+			<select ref="/data/high_risk_list/prev_conditions">
+				<label ref="jr:itext('prev_conditions-label')"/>
+				<item>
+					<label ref="jr:itext('prev_conditions-preeclampsia-label')"/>
+					<value>preeclampsia</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prev_conditions-eclampsia-label')"/>
+					<value>eclampsia</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prev_conditions-risk_previous_uterine_surgery-label')"/>
+					<value>risk_previous_uterine_surgery</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prev_conditions-risk_aph_pph-label')"/>
+					<value>risk_aph_pph</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prev_conditions-risk_manual_placenta-label')"/>
+					<value>risk_manual_placenta</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prev_conditions-risk_anaemia-label')"/>
+					<value>risk_anaemia</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prev_conditions-risk_febrile_ailment-label')"/>
+					<value>risk_febrile_ailment</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prev_conditions-risk_hypertension-label')"/>
+					<value>risk_hypertension</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prev_conditions-risk_medical_condition-label')"/>
+					<value>risk_medical_condition</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prev_conditions-risk_bleeding-label')"/>
+					<value>risk_bleeding</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prev_conditions-risk_presentation-label')"/>
+					<value>risk_presentation</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prev_conditions-risk_maturity-label')"/>
+					<value>risk_maturity</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prev_conditions-risk_prom-label')"/>
+					<value>risk_prom</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prev_conditions-risk_fetal_distress-label')"/>
+					<value>risk_fetal_distress</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prev_conditions-risk_prolonged_labour-label')"/>
+					<value>risk_prolonged_labour</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prev_conditions-risk_uterine_size-label')"/>
+					<value>risk_uterine_size</value>
+				</item>
+				<item>
+					<label ref="jr:itext('prev_conditions-risk_dai-label')"/>
+					<value>risk_dai</value>
+				</item>
+			</select>
+			<trigger ref="/data/high_risk_list/high_risk_score_label" appearance="minimal">
+				<label ref="jr:itext('high_risk_score_label-label')"/>
+			</trigger>
+			<trigger ref="/data/high_risk_list/high_risk_flag" appearance="minimal">
+				<label ref="jr:itext('high_risk_flag-label')"/>
+			</trigger>
+		</group>
+		<group ref="/data/initial_vitals" appearance="field-list">
+			<select1 ref="/data/initial_vitals/record_initial">
+				<label ref="jr:itext('record_initial-label')"/>
+				<item>
+					<label ref="jr:itext('abdom_exam_initial-abdom_exam_yes-label')"/>
+					<value>initial_yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('abdom_exam_initial-abdom_exam_no-label')"/>
+					<value>initial_no</value>
+				</item>
+			</select1>
+		</group>
+		<group ref="/data/temp_list" appearance="field-list">
+			<label ref="jr:itext('temp_list-label')"/>
+			<input ref="/data/temp_list/initial_temp">
+				<label ref="jr:itext('initial_temp-label')"/>
+			</input>
+		</group>
+		<group ref="/data/pulse_list" appearance="field-list">
+			<label ref="jr:itext('pulse_list-label')"/>
+			<input ref="/data/pulse_list/initial_pulse">
+				<label ref="jr:itext('initial_pulse-label')"/>
+			</input>
+			<trigger ref="/data/pulse_list/pulse_warning" appearance="minimal">
+				<label ref="jr:itext('pulse_warning-label')"/>
+			</trigger>
+		</group>
+		<group ref="/data/bp_list" appearance="field-list">
+			<label ref="jr:itext('bp_list-label')"/>
+			<trigger ref="/data/bp_list/initial_bp" appearance="minimal">
+				<label ref="jr:itext('initial_bp-label')"/>
+			</trigger>
+			<input ref="/data/bp_list/systolic">
+				<label ref="jr:itext('systolic-label')"/>
+			</input>
+			<input ref="/data/bp_list/diastolic">
+				<label ref="jr:itext('diastolic-label')"/>
+			</input>
+		</group>
+		<group ref="/data/bp_alert" appearance="field-list">
+			<trigger ref="/data/bp_alert/bp_alert_text" appearance="minimal">
+				<label ref="jr:itext('bp_alert/bp_alert_text-label')"/>
+			</trigger>
+			<trigger ref="/data/bp_alert/bp_alert_suggestion" appearance="minimal">
+				<label ref="jr:itext('bp_alert/bp_alert_suggestion-label')"/>
+			</trigger>
+			<select1 ref="/data/bp_alert/bp_alert_choice">
+				<label ref="jr:itext('bp_alert/bp_alert_choice-label')"/>
+				<item>
+					<label ref="jr:itext('bp_alert/bp_alert_choice-flag_patient-label')"/>
+					<value>flag_patient</value>
+				</item>
+				<item>
+					<label ref="jr:itext('bp_alert/bp_alert_choice-record_action-label')"/>
+					<value>record_action</value>
+				</item>
+				<item>
+					<label ref="jr:itext('bp_alert/bp_alert_choice-dismiss-label')"/>
+					<value>dismiss</value>
+				</item>
+				<item>
+					<label ref="jr:itext('bp_alert/bp_alert_choice-doctor_call-label')"/>
+					<value>doctor_call</value>
+				</item>
+			</select1>
+		</group>
+		<group ref="/data/bp_record_actions" appearance="field-list">
+			<label ref="jr:itext('bp_record_actions-label')"/>
+			<input ref="/data/bp_record_actions/bp_actions_taken"/>
+		</group>
+		<group ref="/data/respiration_list" appearance="field-list">
+			<label ref="jr:itext('respiration_list-label')"/>
+			<input ref="/data/respiration_list/respiration">
+				<label ref="jr:itext('respiration-label')"/>
+			</input>
+		</group>
+		<group ref="/data/urine_list" appearance="field-list">
+			<label ref="jr:itext('urine_list-label')"/>
+			<input ref="/data/urine_list/urine_vol">
+				<label ref="jr:itext('urine_vol-label')"/>
+			</input>
+			<select ref="/data/urine_list/urine_contains">
+				<label ref="jr:itext('urine_contains-label')"/>
+				<item>
+					<label ref="jr:itext('urine_contains-protein-label')"/>
+					<value>protein</value>
+				</item>
+				<item>
+					<label ref="jr:itext('urine_contains-albumin-label')"/>
+					<value>albumin</value>
+				</item>
+				<item>
+					<label ref="jr:itext('urine_contains-sugar-label')"/>
+					<value>sugar</value>
+				</item>
+			</select>
+		</group>
+		<group ref="/data/initial_cd" appearance="field-list">
+			<label ref="jr:itext('initial_cd-label')"/>
+			<input ref="/data/initial_cd/cd_intial">
+				<label ref="jr:itext('cd_intial-label')"/>
+			</input>
+		</group>
+		<group ref="/data/initial_contractions" appearance="field-list">
+			<label ref="jr:itext('initial_contractions-label')"/>
+			<input ref="/data/initial_contractions/frequency_initial">
+				<label ref="jr:itext('frequency_initial-label')"/>
+			</input>
+			<input ref="/data/initial_contractions/duration_initial">
+				<label ref="jr:itext('duration_initial-label')"/>
+			</input>
+		</group>
+		<group ref="/data/membrane_indicator" appearance="field-list">
+			<label ref="jr:itext('membrane_indicator-label')"/>
+			<select1 ref="/data/membrane_indicator/mem_ruptured">
+				<label ref="jr:itext('mem_ruptured-label')"/>
+				<item>
+					<label ref="jr:itext('abdom_exam_initial-abdom_exam_yes-label')"/>
+					<value>mem_yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('abdom_exam_initial-abdom_exam_no-label')"/>
+					<value>mem_no</value>
+				</item>
+			</select1>
+			<input ref="/data/membrane_indicator/copy-1-of-rupture_time">
+				<label ref="jr:itext('copy-1-of-rupture_time-label')"/>
+			</input>
+			<trigger ref="/data/membrane_indicator/mem_ruptured_label" appearance="minimal">
+				<label ref="jr:itext('mem_ruptured_label-label')"/>
+			</trigger>
+		</group>
+		<group ref="/data/initial_af" appearance="field-list">
+			<label ref="jr:itext('initial_af-label')"/>
+			<select1 ref="/data/initial_af/af_initial">
+				<label ref="jr:itext('af_initial-label')"/>
+				<item>
+					<label ref="jr:itext('af_initial-clear-label')"/>
+					<value>clear</value>
+				</item>
+				<item>
+					<label ref="jr:itext('af_initial-meconium_stained-label')"/>
+					<value>meconium_stained</value>
+				</item>
+				<item>
+					<label ref="jr:itext('af_initial-blood_stained-label')"/>
+					<value>blood_stained</value>
+				</item>
+				<item>
+					<label ref="jr:itext('af_initial-absent-label')"/>
+					<value>absent</value>
+				</item>
+			</select1>
+		</group>
+		<group ref="/data/af_alert" appearance="field-list">
+			<trigger ref="/data/af_alert/af_alert_text" appearance="minimal">
+				<label ref="jr:itext('copy-1-of-bp_alert/bp_alert_text-label')"/>
+			</trigger>
+			<trigger ref="/data/af_alert/af_alert_suggestion" appearance="minimal">
+				<label ref="jr:itext('copy-1-of-bp_alert/bp_alert_suggestion-label')"/>
+			</trigger>
+			<select1 ref="/data/af_alert/af_alert_choice">
+				<label ref="jr:itext('bp_alert/bp_alert_choice-label')"/>
+				<item>
+					<label ref="jr:itext('bp_alert/bp_alert_choice-flag_patient-label')"/>
+					<value>flag_patient</value>
+				</item>
+				<item>
+					<label ref="jr:itext('bp_alert/bp_alert_choice-record_action-label')"/>
+					<value>record_action</value>
+				</item>
+				<item>
+					<label ref="jr:itext('bp_alert/bp_alert_choice-dismiss-label')"/>
+					<value>dismiss</value>
+				</item>
+				<item>
+					<label ref="jr:itext('copy-1-of-bp_alert/bp_alert_choice-doctor_call-label')"/>
+					<value>doctor_call</value>
+				</item>
+			</select1>
+		</group>
+		<group ref="/data/af_record_actions" appearance="field-list">
+			<label ref="jr:itext('af_record_actions-label')"/>
+			<input ref="/data/af_record_actions/af_actions_taken"/>
+		</group>
+		<group ref="/data/initial_abdom_exam" appearance="field-list">
+			<select1 ref="/data/initial_abdom_exam/abdom_exam_initial">
+				<label ref="jr:itext('abdom_exam_initial-label')"/>
+				<item>
+					<label ref="jr:itext('abdom_exam_initial-abdom_exam_yes-label')"/>
+					<value>abdom_exam_yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('abdom_exam_initial-abdom_exam_no-label')"/>
+					<value>abdom_exam_no</value>
+				</item>
+			</select1>
+		</group>
+		<group ref="/data/initial_fhs" appearance="field-list">
+			<label ref="jr:itext('initial_fhs-label')"/>
+			<input ref="/data/initial_fhs/fhs_initial">
+				<label ref="jr:itext('initial_fhs/fhs_initial-label')"/>
+			</input>
+		</group>
+		<group ref="/data/fhs_alert" appearance="field-list">
+			<trigger ref="/data/fhs_alert/fhs_alert_text" appearance="minimal">
+				<label ref="jr:itext('copy-1-of-af_alert/af_alert_text-label')"/>
+			</trigger>
+			<trigger ref="/data/fhs_alert/fhs_alert_suggestion" appearance="minimal">
+				<label ref="jr:itext('copy-1-of-af_alert/af_alert_suggestion-label')"/>
+			</trigger>
+			<select1 ref="/data/fhs_alert/fhs_alert_choice">
+				<label ref="jr:itext('bp_alert/bp_alert_choice-label')"/>
+				<item>
+					<label ref="jr:itext('bp_alert/bp_alert_choice-flag_patient-label')"/>
+					<value>flag_patient</value>
+				</item>
+				<item>
+					<label ref="jr:itext('bp_alert/bp_alert_choice-record_action-label')"/>
+					<value>record_action</value>
+				</item>
+				<item>
+					<label ref="jr:itext('bp_alert/bp_alert_choice-dismiss-label')"/>
+					<value>dismiss</value>
+				</item>
+				<item>
+					<label ref="jr:itext('bp_alert/bp_alert_choice-doctor_call-label')"/>
+					<value>doctor_call</value>
+				</item>
+			</select1>
+		</group>
+		<group ref="/data/fhs_record_actions" appearance="field-list">
+			<label ref="jr:itext('es_record_actions-label')"/>
+			<input ref="/data/fhs_record_actions/fhs_actions_taken"/>
+		</group>
+		<group ref="/data/abdominal_exam" appearance="field-list">
+			<label ref="jr:itext('abdominal_exam-label')"/>
+			<select1 ref="/data/abdominal_exam/fetal_lie_select">
+				<label ref="jr:itext('fetal_lie_select-label')"/>
+				<item>
+					<label ref="jr:itext('fetal_lie_select-longitudinal-label')"/>
+					<value>longitudinal</value>
+				</item>
+				<item>
+					<label ref="jr:itext('fetal_lie_select-oblique-label')"/>
+					<value>oblique</value>
+				</item>
+				<item>
+					<label ref="jr:itext('fetal_lie_select-transverse-label')"/>
+					<value>transverse</value>
+				</item>
+			</select1>
+			<select1 ref="/data/abdominal_exam/fetal_presentation">
+				<label ref="jr:itext('fetal_presentation-label')"/>
+				<item>
+					<label ref="jr:itext('fetal_presentation-loa-label')"/>
+					<value>loa</value>
+				</item>
+				<item>
+					<label ref="jr:itext('fetal_presentation-roa-label')"/>
+					<value>roa</value>
+				</item>
+				<item>
+					<label ref="jr:itext('fetal_presentation-lop-label')"/>
+					<value>lop</value>
+				</item>
+				<item>
+					<label ref="jr:itext('fetal_presentation-rop-label')"/>
+					<value>rop</value>
+				</item>
+			</select1>
+			<select1 ref="/data/abdominal_exam/descent_initial">
+				<label ref="jr:itext('descent_initial-label')"/>
+				<item>
+					<label ref="jr:itext('descent_initial-descent_5-label')"/>
+					<value>descent_5</value>
+				</item>
+				<item>
+					<label ref="jr:itext('descent_initial-descent_4-label')"/>
+					<value>descent_4</value>
+				</item>
+				<item>
+					<label ref="jr:itext('descent_initial-descent_3-label')"/>
+					<value>descent_3</value>
+				</item>
+				<item>
+					<label ref="jr:itext('descent_initial-descent_2-label')"/>
+					<value>descent_2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('descent_initial-descent_1-label')"/>
+					<value>descent_1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('descent_initial-descent_0-label')"/>
+					<value>descent_0</value>
+				</item>
+			</select1>
+		</group>
+		<group ref="/data/initial_ve" appearance="field-list">
+			<select1 ref="/data/initial_ve/ve_initial">
+				<label ref="jr:itext('ve_initial-label')"/>
+				<item>
+					<label ref="jr:itext('abdom_exam_initial-abdom_exam_yes-label')"/>
+					<value>ve_yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('abdom_exam_initial-abdom_exam_no-label')"/>
+					<value>ve_no</value>
+				</item>
+			</select1>
+		</group>
+		<group ref="/data/pv_exam" appearance="field-list">
+			<label ref="jr:itext('pv_exam-label')"/>
+			<input ref="/data/pv_exam/dilation">
+				<label ref="jr:itext('dilation-label')"/>
+			</input>
+			<select1 ref="/data/pv_exam/station_head">
+				<label ref="jr:itext('station_head-label')"/>
+				<item>
+					<label ref="jr:itext('station_head-neg_3-label')"/>
+					<value>-3</value>
+				</item>
+				<item>
+					<label ref="jr:itext('station_head-neg_2-label')"/>
+					<value>-2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('station_head-neg_1-label')"/>
+					<value>-1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('station_head-zero-label')"/>
+					<value>0</value>
+				</item>
+				<item>
+					<label ref="jr:itext('station_head-pos_1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('station_head-pos_2-label')"/>
+					<value>2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('station_head-pos_3-label')"/>
+					<value>3</value>
+				</item>
+			</select1>
+			<select1 ref="/data/pv_exam/moulding_initial">
+				<label ref="jr:itext('moulding_initial-label')"/>
+				<item>
+					<label ref="jr:itext('moulding_initial-separated-label')"/>
+					<value>separated</value>
+				</item>
+				<item>
+					<label ref="jr:itext('moulding_initial-touching-label')"/>
+					<value>touching</value>
+				</item>
+				<item>
+					<label ref="jr:itext('moulding_initial-overlapping-label')"/>
+					<value>overlapping</value>
+				</item>
+				<item>
+					<label ref="jr:itext('moulding_initial-severe_overlap-label')"/>
+					<value>severe_overlap</value>
+				</item>
+			</select1>
+			<trigger ref="/data/pv_exam/moulding_warning" appearance="minimal">
+				<label ref="jr:itext('moulding_warning-label')"/>
+			</trigger>
+		</group>
+		<group ref="/data/emergency_signs" appearance="field-list">
+			<label ref="jr:itext('emergency_signs-label')"/>
+			<select ref="/data/emergency_signs/emergency_signs_list">
+				<label ref="jr:itext('emergency_signs_list-label')"/>
+				<item>
+					<label ref="jr:itext('emergency_signs_list-difficulty_breathing-label')"/>
+					<value>difficulty_breathing</value>
+				</item>
+				<item>
+					<label ref="jr:itext('emergency_signs_list-shock-label')"/>
+					<value>shock</value>
+				</item>
+				<item>
+					<label ref="jr:itext('emergency_signs_list-vaginal_bleeding-label')"/>
+					<value>vaginal_bleeding</value>
+				</item>
+				<item>
+					<label ref="jr:itext('emergency_signs_list-convulsions_unconsciousness-label')"/>
+					<value>convulsions_unconsciousness</value>
+				</item>
+				<item>
+					<label ref="jr:itext('emergency_signs_list-prolapsed_cord-label')"/>
+					<value>prolapsed_cord</value>
+				</item>
+				<item>
+					<label ref="jr:itext('emergency_signs_list-fetal_distress-label')"/>
+					<value>fetal_distress</value>
+				</item>
+				<item>
+					<label ref="jr:itext('emergency_signs_list-none-label')"/>
+					<value>none</value>
+				</item>
+			</select>
+		</group>
+		<group ref="/data/es_alert" appearance="field-list">
+			<trigger ref="/data/es_alert/es_alert_text" appearance="minimal">
+				<label ref="jr:itext('copy-1-of-af_alert/af_alert_text-label2')"/>
+			</trigger>
+			<trigger ref="/data/es_alert/es_alert_suggestion" appearance="minimal">
+				<label ref="jr:itext('copy-1-of-af_alert/af_alert_suggestion-label2')"/>
+			</trigger>
+			<select1 ref="/data/es_alert/es_alert_choice">
+				<label ref="jr:itext('copy-1-of-af_alert/af_alert_choice-label2')"/>
+				<item>
+					<label ref="jr:itext('copy-1-of-af_alert/af_alert_choice-flag_patient-label2')"/>
+					<value>flag_patient</value>
+				</item>
+				<item>
+					<label ref="jr:itext('copy-1-of-af_alert/af_alert_choice-record_action-label2')"/>
+					<value>record_action</value>
+				</item>
+				<item>
+					<label ref="jr:itext('copy-1-of-af_alert/af_alert_choice-dismiss-label2')"/>
+					<value>dismiss</value>
+				</item>
+				<item>
+					<label ref="jr:itext('copy-1-of-af_alert/af_alert_choice-doctor_call-label2')"/>
+					<value>doctor_call</value>
+				</item>
+			</select1>
+		</group>
+		<group ref="/data/es_record_actions" appearance="field-list">
+			<label ref="jr:itext('es_record_actions-label')"/>
+			<input ref="/data/es_record_actions/es_actions_taken"/>
+		</group>
+	</h:body>
+</h:html>

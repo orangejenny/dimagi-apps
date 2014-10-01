@@ -1,0 +1,177 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:vellum="http://commcarehq.org/xforms/vellum">
+	<h:head>
+		<h:title>Transfer patient to another IPC</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/6405f702e71776df6fe2ba4e45a41758958927bf" uiVersion="1" version="234" name="Transfer patient to another IPC">
+					<label/>
+					<transfer/>
+					<transfer_reason_list/>
+					<transfer_actions>
+						<time/>
+						<transfer_ipc/>
+						<transfer_provision/>
+						<partograph/>
+					</transfer_actions>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><close/></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data></instance><instance id="commcaresession" src="jr://instance/session"/>
+			<bind nodeset="/data/label"/>
+			<bind nodeset="/data/transfer"/>
+			<bind nodeset="/data/transfer_reason_list"/>
+			<bind nodeset="/data/transfer_actions"/>
+			<bind nodeset="/data/transfer_actions/time"/>
+			<bind nodeset="/data/transfer_actions/transfer_ipc"/>
+			<bind nodeset="/data/transfer_actions/transfer_provision"/>
+			<bind nodeset="/data/transfer_actions/partograph"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="label-label">
+						<value>Transfer patient to another IPC</value>
+					</text>
+					<text id="transfer-label">
+						<value>Would you like to transfer this patient to another IPC?</value>
+					</text>
+					<text id="transfer-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="transfer-no-label">
+						<value>No</value>
+					</text>
+					<text id="transfer_reason_list-label">
+						<value>Select the reason(s) for transferring this patient:</value>
+					</text>
+					<text id="transfer_reason_list-crossed_alert-label">
+						<value>Cervical dilation has crossed the alert line. Indication of abnormal labour (prolonged/obstructed)</value>
+					</text>
+					<text id="transfer_reason_list-fhr_distress-label">
+						<value>Fetal heart rate is less than 110 beats/min or above 160 beats/min.</value>
+					</text>
+					<text id="transfer_reason_list-af_distress-label">
+						<value>Meconium and/or blood stained amniotic fluid</value>
+					</text>
+					<text id="transfer_reason_list-contraction_distress-label">
+						<value>Contractions not increasing in duration, intensity and frequency (e.g., &lt; 2 contractions lasting for &gt; 20 seconds in 10 minutes)</value>
+					</text>
+					<text id="transfer_reason_list-vitals_distress-label">
+						<value>Maternal vital signs cross normal limits (i.e. pulse &gt; 100, blood pressure &gt; 140/90, temperature &gt; 38C)</value>
+					</text>
+					<text id="transfer_actions-label">
+						<value>Actions to be taken:</value>
+					</text>
+					<text id="time-label">
+						<value>1. Note the time when cervical dilation plotting crosses the alert line</value>
+					</text>
+					<text id="transfer_ipc-label">
+						<value>2. Transfer to IPC</value>
+					</text>
+					<text id="transfer_provision-label">
+						<value>3. Ensure provision for transfer</value>
+					</text>
+					<text id="partograph-label">
+						<value>4. Second partograph with patient</value>
+					</text>
+				</translation>
+				<translation lang="hin">
+					<text id="label-label">
+						<value>Transfer patient to another IPC</value>
+					</text>
+					<text id="transfer-label">
+						<value>Would you like to transfer this patient to another IPC?</value>
+					</text>
+					<text id="transfer-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="transfer-no-label">
+						<value>No</value>
+					</text>
+					<text id="transfer_reason_list-label">
+						<value>Select the reason(s) for transferring this patient:</value>
+					</text>
+					<text id="transfer_reason_list-crossed_alert-label">
+						<value>Cervical dilation has crossed the alert line. Indication of abnormal labour (prolonged/obstructed)</value>
+					</text>
+					<text id="transfer_reason_list-fhr_distress-label">
+						<value>Fetal heart rate is less than 110 beats/min or above 160 beats/min.</value>
+					</text>
+					<text id="transfer_reason_list-af_distress-label">
+						<value>Meconium and/or blood stained amniotic fluid</value>
+					</text>
+					<text id="transfer_reason_list-contraction_distress-label">
+						<value>Contractions not increasing in duration, intensity and frequency (e.g., &lt; 2 contractions lasting for &gt; 20 seconds in 10 minutes)</value>
+					</text>
+					<text id="transfer_reason_list-vitals_distress-label">
+						<value>Maternal vital signs cross normal limits (i.e. pulse &gt; 100, blood pressure &gt; 140/90, temperature &gt; 38C)</value>
+					</text>
+					<text id="transfer_actions-label">
+						<value>Actions to be taken:</value>
+					</text>
+					<text id="time-label">
+						<value>1. Note the time when cervical dilation plotting crosses the alert line</value>
+					</text>
+					<text id="transfer_ipc-label">
+						<value>2. Transfer to IPC</value>
+					</text>
+					<text id="transfer_provision-label">
+						<value>3. Ensure provision for transfer</value>
+					</text>
+					<text id="partograph-label">
+						<value>4. Second partograph with patient</value>
+					</text>
+				</translation>
+			</itext>
+		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><bind calculate="instance('commcaresession')/session/data/case_id" nodeset="/data/case/@case_id"/><bind nodeset="/data/case/close" relevant="/data/transfer = 'yes'"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<trigger ref="/data/label" appearance="minimal">
+			<label ref="jr:itext('label-label')"/>
+		</trigger>
+		<select1 ref="/data/transfer">
+			<label ref="jr:itext('transfer-label')"/>
+			<item>
+				<label ref="jr:itext('transfer-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('transfer-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<select ref="/data/transfer_reason_list">
+			<label ref="jr:itext('transfer_reason_list-label')"/>
+			<item>
+				<label ref="jr:itext('transfer_reason_list-crossed_alert-label')"/>
+				<value>crossed_alert</value>
+			</item>
+			<item>
+				<label ref="jr:itext('transfer_reason_list-fhr_distress-label')"/>
+				<value>fhr_distress</value>
+			</item>
+			<item>
+				<label ref="jr:itext('transfer_reason_list-af_distress-label')"/>
+				<value>af_distress</value>
+			</item>
+			<item>
+				<label ref="jr:itext('transfer_reason_list-contraction_distress-label')"/>
+				<value>contraction_distress</value>
+			</item>
+			<item>
+				<label ref="jr:itext('transfer_reason_list-vitals_distress-label')"/>
+				<value>vitals_distress</value>
+			</item>
+		</select>
+		<group ref="/data/transfer_actions" appearance="field-list">
+			<label ref="jr:itext('transfer_actions-label')"/>
+			<trigger ref="/data/transfer_actions/time" appearance="minimal">
+				<label ref="jr:itext('time-label')"/>
+			</trigger>
+			<trigger ref="/data/transfer_actions/transfer_ipc" appearance="minimal">
+				<label ref="jr:itext('transfer_ipc-label')"/>
+			</trigger>
+			<trigger ref="/data/transfer_actions/transfer_provision" appearance="minimal">
+				<label ref="jr:itext('transfer_provision-label')"/>
+			</trigger>
+			<trigger ref="/data/transfer_actions/partograph" appearance="minimal">
+				<label ref="jr:itext('partograph-label')"/>
+			</trigger>
+		</group>
+	</h:body>
+</h:html>
