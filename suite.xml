@@ -193,222 +193,448 @@
         <locale id="m1.case_long.title"/>
       </text>
     </title>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_name_1.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="case_name"/>
-        </text>
-      </template>
-    </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_high_risk_2.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="high_risk"/>
-        </text>
-      </template>
-    </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_time_measured_3.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="30 - int((double(now()) - double(time_measured)) * 24 * 60)"/>
-        </text>
-      </template>
-    </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_time_measured_4.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="240 - int((double(now()) - double(time_measured)) * 24 * 60)"/>
-        </text>
-      </template>
-    </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_age_5.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="age"/>
-        </text>
-      </template>
-    </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_bp_6.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="bp"/>
-        </text>
-      </template>
-    </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_amniotic_fluid_7.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="amniotic_fluid"/>
-        </text>
-      </template>
-    </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_cd_8.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="cd"/>
-        </text>
-      </template>
-    </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_contractions_duration_9.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="contractions_duration"/>
-        </text>
-      </template>
-    </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_contractions_number_10.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="contractions_number"/>
-        </text>
-      </template>
-    </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_descent_11.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="descent"/>
-        </text>
-      </template>
-    </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_drugs_iv_12.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="drugs_iv"/>
-        </text>
-      </template>
-    </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_fhs_13.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="fhs"/>
-        </text>
-      </template>
-    </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_moulding_14.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="moulding"/>
-        </text>
-      </template>
-    </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_oxytocin_15.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="oxytocin"/>
-        </text>
-      </template>
-    </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_pulse_16.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="pulse"/>
-        </text>
-      </template>
-    </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_temp_17.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="temp"/>
-        </text>
-      </template>
-    </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_urine_vol_18.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="urine_vol"/>
-        </text>
-      </template>
-    </field>
+    <detail>
+	    <title>
+	        <text>
+	            <value>Demographics</value>
+	        </text>
+	    </title>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_name_1.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="case_name"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_high_risk_2.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="high_risk"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_time_measured_3.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="30 - int((double(now()) - double(time_measured)) * 24 * 60)"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_time_measured_4.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="240 - int((double(now()) - double(time_measured)) * 24 * 60)"/>
+	        </text>
+	      </template>
+	    </field>
+    </detail>
+    <detail>
+	    <title>
+	        <text>
+	            <value>Medical History</value>
+	        </text>
+	    </title>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_age_5.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="age"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_bp_6.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="bp"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_amniotic_fluid_7.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="amniotic_fluid"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_cd_8.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="cd"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_contractions_duration_9.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="contractions_duration"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_contractions_number_10.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="contractions_number"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_descent_11.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="descent"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_drugs_iv_12.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="drugs_iv"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_fhs_13.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="fhs"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_moulding_14.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="moulding"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_oxytocin_15.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="oxytocin"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_pulse_16.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="pulse"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_temp_17.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="temp"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_urine_vol_18.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="urine_vol"/>
+	        </text>
+	      </template>
+	    </field>
+	  </detail>
+	  <detail>
+	    <title>
+	        <text>
+	            <value>Partograph</value>
+	        </text>
+	    </title>
+	    <field>
+	      <header>
+	        <text>
+	            <value></value>
+	        </text>
+	      </header>
+	      <template form="graph">
+	          <graph type="xy">
+		          <configuration>
+		              <text id="x-label-count">
+		                  <value>13</value>
+		              </text>
+		              <text id="y-label-count">
+		                  <value>13</value>
+		              </text>
+		              <text id="y-axis-title">
+		                  <value>Heart Rate</value>
+		              </text>
+		              <text id="x-axis-min">
+		                  <value>0</value>
+		              </text>
+		              <text id="x-axis-max">
+		                  <xpath function="12"/>
+		              </text>
+		              <text id="y-axis-min">
+		                  <value>80</value>
+		              </text>
+		              <text id="y-axis-max">
+		                  <value>200</value>
+		              </text>
+		          </configuration>
+				  <series nodeset="instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id]">
+				      <x function="hours"/>
+				      <y function="fhs_update"/>
+				  </series>
+				  <series nodeset="instance('heart-rate-thresholds')/thresholds/series[@id='min']/point">
+				      <configuration>
+				          <text id="point-style">
+				              <value>none</value>
+				          </text>
+				      </configuration>
+				      <x function="x"/>
+				      <y function="y"/>
+				  </series>
+				  <series nodeset="instance('heart-rate-thresholds')/thresholds/series[@id='max']/point">
+				      <configuration>
+				          <text id="point-style">
+				              <value>none</value>
+				          </text>
+				      </configuration>
+				      <x function="x"/>
+				      <y function="y"/>
+				  </series>
+			  </graph>
+		  </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <value></value>
+	        </text>
+	      </header>
+	      <template form="graph">
+	          <graph type="xy">
+	              <configuration>
+		              <text id="x-label-count">
+		                  <value>13</value>
+		              </text>
+		              <text id="y-label-count">
+		                  <value>11</value>
+		              </text>
+		              <text id="y-axis-title">
+		                  <value>Dilation / Descent of Head (cm)</value>
+		              </text>
+	                  <text id="x-axis-min">
+	                      <value>0</value>
+	                  </text>
+	                  <text id="x-axis-max">
+	                      <xpath function="12"/>
+	                  </text>
+	                  <text id="y-axis-min">
+	                      <value>0</value>
+	                  </text>
+	                  <text id="y-axis-max">
+	                      <value>10</value>
+	                  </text>
+	              </configuration>
+				  <series nodeset="instance('dilation-thresholds')/thresholds/series[@id='alert']/point">
+				      <configuration>
+				          <text id="fill-below">
+				              <value>#ffdddd00</value>
+				          </text>
+				          <text id="line-color">
+				              <value>#00000000</value>
+				          </text>
+				          <text id="point-style">
+				              <value>none</value>
+				          </text>
+				      </configuration>
+				      <x function="x"/>
+				      <y function="y"/>
+				  </series>
+				  <series nodeset="instance('dilation-thresholds')/thresholds/series[@id='action']/point">
+				      <configuration>
+				          <text id="fill-below">
+				              <value>#ffdd0000</value>
+				          </text>
+				          <text id="line-color">
+				              <value>#00000000</value>
+				          </text>
+				          <text id="point-style">
+				              <value>none</value>
+				          </text>
+				      </configuration>
+				      <x function="x"/>
+				      <y function="y"/>
+				  </series>
+				  <series nodeset="instance('dilation-thresholds')/thresholds/series[@id='whitespace']/point">
+				      <configuration>
+				          <text id="fill-below">
+				              <value>#ffffffff</value>
+				          </text>
+				          <text id="line-color">
+				              <value>#00000000</value>
+				          </text>
+				          <text id="point-style">
+				              <value>none</value>
+				          </text>
+				      </configuration>
+				      <x function="x"/>
+				      <y function="y"/>
+				  </series>
+				  <series nodeset="instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id]">
+				      <configuration>
+				          <text id="point-style">
+				              <value>x</value>
+				          </text>
+				      </configuration>
+				      <x function="hours"/>
+				      <y function="cd_update"/>
+				  </series>
+				  <series nodeset="instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id]">
+				      <x function="hours"/>
+				      <y function="station_head + 3"/>
+				  </series>
+				  <annotation>
+				      <x><text><value>5</value></text></x>
+				      <y><text><value>7</value></text></y>
+				      <text><value>Alert</value></text>
+				  </annotation>
+				  <annotation>
+				      <x><text><value>10</value></text></x>
+				      <y><text><value>7</value></text></y>
+				      <text><value>Action</value></text>
+				  </annotation>
+			  </graph>
+		  </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	            <value/>
+	        </text>
+	      </header>
+	      <template form="graph">
+	          <graph type="bubble">
+		          <configuration>
+		              <text id="x-label-count">
+		                  <value>13</value>
+		              </text>
+		              <text id="y-label-count">
+		                  <value>5</value>
+		              </text>
+		              <text id="x-axis-title">
+		                  <value>Hours</value>
+		              </text>
+		              <text id="y-axis-title">
+		                  <value>Contractions</value>
+		              </text>
+		              <text id="x-axis-min">
+		                  <value>0</value>
+		              </text>
+		              <text id="x-axis-max">
+		                  <xpath function="12"/>
+		              </text>
+		              <text id="y-axis-min">
+		                  <value>0</value>
+		              </text>
+		              <text id="y-axis-max">
+		                  <value>5</value>
+		              </text>
+		          </configuration>
+				  <series nodeset="instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id]">
+				      <configuration>
+		        	      <text id="radius-max">
+		            	      <value>3</value>
+						  </text>
+				      </configuration>
+				      <x function="hours" />
+				      <y function="contraction_num_update" />
+				      <radius function="contraction_duration_update" />
+				  </series>
+			  </graph>
+		  </template>
+	    </field>
+	  </detail>
   </detail>
   <detail id="m2_case_short">
     <title>
@@ -539,6 +765,8 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
+    <instance id="dilation-thresholds" src="jr://instance/fixture/dilation-thresholds" />
+    <instance id="heart-rate-thresholds" src="jr://instance/fixture/heart-rate-thresholds" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
     </session>
@@ -556,6 +784,8 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
+    <instance id="dilation-thresholds" src="jr://instance/fixture/dilation-thresholds" />
+    <instance id="heart-rate-thresholds" src="jr://instance/fixture/heart-rate-thresholds" />
     <instance id="commcaresession" src="jr://instance/session"/>
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
@@ -575,6 +805,8 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
+    <instance id="dilation-thresholds" src="jr://instance/fixture/dilation-thresholds" />
+    <instance id="heart-rate-thresholds" src="jr://instance/fixture/heart-rate-thresholds" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
     </session>
@@ -592,6 +824,8 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
+    <instance id="dilation-thresholds" src="jr://instance/fixture/dilation-thresholds" />
+    <instance id="heart-rate-thresholds" src="jr://instance/fixture/heart-rate-thresholds" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
     </session>
@@ -604,6 +838,8 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
+    <instance id="dilation-thresholds" src="jr://instance/fixture/dilation-thresholds" />
+    <instance id="heart-rate-thresholds" src="jr://instance/fixture/heart-rate-thresholds" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m2_case_short" detail-confirm="m2_case_long"/>
     </session>
@@ -616,6 +852,8 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
+    <instance id="dilation-thresholds" src="jr://instance/fixture/dilation-thresholds" />
+    <instance id="heart-rate-thresholds" src="jr://instance/fixture/heart-rate-thresholds" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m2_case_short" detail-confirm="m2_case_long"/>
     </session>
@@ -628,6 +866,8 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
+    <instance id="dilation-thresholds" src="jr://instance/fixture/dilation-thresholds" />
+    <instance id="heart-rate-thresholds" src="jr://instance/fixture/heart-rate-thresholds" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='indicators'][@status='open']" value="./@case_id" detail-select="m3_case_short" detail-confirm="m3_case_long"/>
     </session>
@@ -660,4 +900,70 @@
     </text>
     <command id="m3-f0"/>
   </menu>
+  <fixture id="heart-rate-thresholds">
+      <thresholds>
+          <series id="min">
+              <point>
+                  <x>0</x>
+                  <y>100</y>
+              </point>
+              <point>
+                  <x>12</x>
+                  <y>100</y>
+              </point>
+          </series>
+          <series id="max">
+              <point>
+                  <x>0</x>
+                  <y>180</y>
+              </point>
+              <point>
+                  <x>12</x>
+                  <y>180</y>
+              </point>
+          </series>
+      </thresholds>
+  </fixture>
+  <fixture id="dilation-thresholds"> <!-- TODO: max x values here, and above, need to be flexible -->
+      <thresholds>
+	      <series id="alert">
+	          <point>
+	              <x>0</x>
+	              <y>4</y>
+	          </point>
+	          <point>
+	              <x>6</x>
+	              <y>10</y>
+	          </point>
+	          <point>
+	              <x>12</x>
+	              <y>10</y>
+	          </point>
+	      </series>
+	      <series id="action">
+	          <point>
+	              <x>4</x>
+	              <y>4</y>
+	          </point>
+	          <point>
+	              <x>10</x>
+	              <y>10</y>
+	          </point>
+	          <point>
+	              <x>12</x>
+	              <y>10</y>
+	          </point>
+	      </series>
+	      <series id="whitespace">
+	          <point>
+	              <x>0</x>
+	              <y>4</y>
+	          </point>
+	          <point>
+	              <x>12</x>
+	              <y>4</y>
+	          </point>
+	      </series>
+	  </thresholds>
+  </fixture>
 </suite>
