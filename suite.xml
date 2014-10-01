@@ -116,6 +116,16 @@
       </text>
     </title>
     <field>
+      <style
+          horz-align="left"
+          vert-align="center"
+          font-size="large">
+      	<grid
+            grid-height="2"
+            grid-width="4"
+            grid-x="0"
+            grid-y="0" />
+       </style>
       <header>
         <text>
           <locale id="m1.case_short.case_name_1.header"/>
@@ -128,6 +138,15 @@
       </template>
     </field>
     <field>
+      <style
+          horz-align="left"
+          font-size="medium">
+      	<grid
+            grid-height="1"
+            grid-width="7"
+            grid-x="4"
+            grid-y="5" />
+       </style>
       <header>
         <text>
           <locale id="m1.case_short.case_time_measured_2.header"/>
@@ -135,7 +154,7 @@
       </header>
       <template>
         <text>
-          <xpath function="30 - int((double(now()) - double(time_measured)) * 24 * 60)"/>
+            <xpath function="concat('&lt;b&gt;Time until next GE: &lt;/b&gt;',30 - int((double(now()) - double(time_measured)) * 24 * 60))"/>
         </text>
       </template>
       <sort type="string" order="3" direction="descending">
@@ -145,6 +164,15 @@
       </sort>
     </field>
     <field>
+      <style
+          horz-align="left"
+          font-size="medium">
+      	<grid
+            grid-height="1"
+            grid-width="7"
+            grid-x="4"
+            grid-y="4" />
+       </style>
       <header>
         <text>
           <locale id="m1.case_short.case_time_measured_3.header"/>
@@ -152,7 +180,54 @@
       </header>
       <template>
         <text>
-          <xpath function="240 - int((double(now()) - double(time_measured)) * 24 * 60)"/>
+          <xpath function="concat('&lt;b&gt;Time until next VE: &lt;/b&gt;', 240 - int((double(now()) - double(time_measured)) * 24 * 60))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <style
+          horz-align="left"
+          font-size="small">
+      	<grid
+            grid-height="1"
+            grid-width="4"
+            grid-x="0"
+            grid-y="2" />
+       </style>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_age_5.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="concat(age, ' years old')"/>
+        </text>
+      </template>
+    </field>
+    <field>
+       <style>
+      	<grid
+            grid-height="2"
+            grid-width="2"
+            grid-x="6"
+            grid-y="0" />
+       </style>
+      <header>
+        <text>
+          <locale id="high.risk.header"/>
+        </text>
+      </header>
+      <template form="image">
+        <text>
+          <xpath function="if(high_risk = 'yes', $ky, $kx)">
+            <variable name="ky">
+              <locale id="image.high.risk"/>
+            </variable>
+            <variable name="kx">
+              <locale id="image.shadow.path"/>
+            </variable>
+          </xpath>
         </text>
       </template>
     </field>
@@ -172,6 +247,58 @@
       </sort>
     </field>
     <field>
+      <style>
+      	<grid
+            grid-height="2"
+            grid-width="2"
+            grid-x="10"
+            grid-y="0" />
+       </style>
+      <header>
+        <text>
+          <locale id="nurse.flag.header"/>
+        </text>
+      </header>
+      <template form="image">
+        <text>
+          <xpath function="if(nurse_flag = 'yes', $ky, $kx)">
+            <variable name="ky">
+              <locale id="image.nurse.flag"/>
+            </variable>
+            <variable name="kx">
+              <locale id="image.shadow.path"/>
+            </variable>
+          </xpath>
+        </text>
+      </template>
+    </field>
+    <field>
+      <style>
+      	<grid
+            grid-height="2"
+            grid-width="2"
+            grid-x="8"
+            grid-y="0" />
+       </style>
+      <header>
+        <text>
+          <locale id="nurse.flag.header"/>
+        </text>
+      </header>
+      <template form="image">
+        <text>
+          <xpath function="if((30 - int((double(now()) - double(time_measured)) * 24 * 60)) &lt;= 0, $ky, $kx)">
+            <variable name="ky">
+              <locale id="image.reminder"/>
+            </variable>
+            <variable name="kx">
+              <locale id="image.shadow.path"/>
+            </variable>
+          </xpath>
+        </text>
+      </template>
+    </field>
+    <field>
       <header width="0">
         <text/>
       </header>
@@ -185,6 +312,111 @@
           <xpath function="nurse_flag"/>
         </text>
       </sort>
+    </field>
+    <field>
+       <style
+          horz-align="left"
+          font-size="medium">
+      	<grid
+            grid-height="1"
+            grid-width="3"
+            grid-x="4"
+            grid-y="2" />
+       </style>
+      <header>
+        <text>
+          <locale id="admit.date.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="concat('&lt;b&gt;Admitted: &lt;/b&gt;',admit_date,' ',admit_time)"/>
+        </text>
+      </template>
+    </field>
+    <field>
+       <style
+          horz-align="left"
+          font-size="medium">
+      	<grid
+            grid-height="1"
+            grid-width="5"
+            grid-x="7"
+            grid-y="2" />
+       </style>
+      <header>
+        <text>
+          <locale id="admit.date.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="admit_date"/>
+        </text>
+      </template>
+    </field>
+    <field>
+    <style
+          horz-align="left"
+          font-size="medium">
+      	<grid
+            grid-height="1"
+            grid-width="5"
+            grid-x="7"
+            grid-y="3" />
+       </style>
+      <header>
+        <text>
+          <locale id="admit.date.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="substr(admit_time,0,8)"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <style
+          horz-align="left"
+          font-size="small">
+      	<grid
+            grid-height="1"
+            grid-width="4"
+            grid-x="0"
+            grid-y="5" />
+       </style>
+      <header>
+        <text>
+          <locale id="parity.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="concat('Parity: ', para)"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <style
+          horz-align="left"
+          font-size="small">
+      	<grid
+            grid-height="1"
+            grid-width="4"
+            grid-x="0"
+            grid-y="4" />
+       </style>
+      <header>
+        <text>
+          <locale id="reg.num.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="concat('Reg Num: ', reg_num)"/>
+        </text>
+      </template>
     </field>
   </detail>
   <detail id="m1_case_long">
@@ -678,6 +910,16 @@
       </text>
     </title>
     <field>
+       <style
+          horz-align="left"
+          vert-align="center"
+          font-size="large">
+      	<grid
+            grid-height="2"
+            grid-width="4"
+            grid-x="0"
+            grid-y="0" />
+       </style>
       <header>
         <text>
           <locale id="m2.case_short.case_name_1.header"/>
