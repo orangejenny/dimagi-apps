@@ -196,7 +196,7 @@
     <detail>
 	    <title>
 	        <text>
-	            <value>Demographics</value>
+	            <locale id="m1.case_long.tab1"/>
 	        </text>
 	    </title>
 	    <field>
@@ -251,7 +251,7 @@
     <detail>
 	    <title>
 	        <text>
-	            <value>Medical History</value>
+	            <locale id="m1.case_long.tab2"/>
 	        </text>
 	    </title>
 	    <field>
@@ -426,7 +426,7 @@
 	  <detail>
 	    <title>
 	        <text>
-	            <value>Partograph</value>
+	            <locale id="m1.case_long.tab3"/>
 	        </text>
 	    </title>
 	    <field>
@@ -445,7 +445,7 @@
 		                  <value>13</value>
 		              </text>
 		              <text id="y-axis-title">
-		                  <value>Heart Rate</value>
+		                  <locale id="m1.case_long.graph1.y_axis_title"/>
 		              </text>
 		              <text id="x-axis-min">
 		                  <value>0</value>
@@ -501,7 +501,7 @@
 		                  <value>11</value>
 		              </text>
 		              <text id="y-axis-title">
-		                  <value>Dilation / Descent of Head (cm)</value>
+		                  <locale id="m1.case_long.graph2.y_axis_title"/>
 		              </text>
 	                  <text id="x-axis-min">
 	                      <value>0</value>
@@ -577,12 +577,12 @@
 				  <annotation>
 				      <x><text><value>5</value></text></x>
 				      <y><text><value>7</value></text></y>
-				      <text><value>Alert</value></text>
+				      <text><locale id="m1.case_long.graph2.annotation1"/></text>
 				  </annotation>
 				  <annotation>
 				      <x><text><value>10</value></text></x>
 				      <y><text><value>7</value></text></y>
-				      <text><value>Action</value></text>
+				      <text><locale id="m1.case_long.graph2.annotation2"/></text>
 				  </annotation>
 			  </graph>
 		  </template>
@@ -603,10 +603,10 @@
 		                  <value>5</value>
 		              </text>
 		              <text id="x-axis-title">
-		                  <value>Hours</value>
+		                  <locale id="m1.case_long.graph3.x_axis_title"/>
 		              </text>
 		              <text id="y-axis-title">
-		                  <value>Contractions</value>
+		                  <locale id="m1.case_long.graph3.y_axis_title"/>
 		              </text>
 		              <text id="x-axis-min">
 		                  <value>0</value>
