@@ -145,7 +145,7 @@
             grid-height="1"
             grid-width="7"
             grid-x="4"
-            grid-y="5" />
+            grid-y="4" />
        </style>
       <header>
         <text>
@@ -154,7 +154,7 @@
       </header>
       <template>
         <text>
-            <xpath function="concat('&lt;b&gt;Time until next GE: &lt;/b&gt;',30 - int((double(now()) - double(time_measured)) * 24 * 60))"/>
+            <xpath function="concat('&lt;b&gt;Time until next GE: &lt;/b&gt;', int((30 - int((double(now()) - double(time_measured)) * 24 * 60)) div 60), ':', substr(((max(int((30 - int((double(now()) - double(time_measured)) * 24 * 60))), -1*int((30 - int((double(now()) - double(time_measured)) * 24 * 60)))) mod 60) + 100),1,3))"/>
         </text>
       </template>
       <sort type="string" order="3" direction="descending">
@@ -171,7 +171,7 @@
             grid-height="1"
             grid-width="7"
             grid-x="4"
-            grid-y="4" />
+            grid-y="3" />
        </style>
       <header>
         <text>
@@ -180,7 +180,28 @@
       </header>
       <template>
         <text>
-          <xpath function="concat('&lt;b&gt;Time until next VE: &lt;/b&gt;', 240 - int((double(now()) - double(time_measured)) * 24 * 60))"/>
+            <xpath function="concat('&lt;b&gt;Time until next VE: &lt;/b&gt;', max(int((30 - int((double(now()) - double(time_measured)) * 24 * 60)) div 60),(-1*int((30 - int((double(now()) - double(time_measured)) * 24 * 60)) div 60))), ':', if(max(int((30 - int((double(now()) - double(time_measured)) * 24 * 60)) mod 60), -1*int((30 - int((double(now()) - double(time_measured)) * 24 * 60)) mod 60)) &gt;= 10, max(int((30 - int((double(now()) - double(time_measured)) * 24 * 60)) mod 60), -1*int((30 - int((double(now()) - double(time_measured)) * 24 * 60)) mod 60)), concat('0',max(int((30 - int((double(now()) - double(time_measured)) * 24 * 60)) mod 60), -1*int((30 - int((double(now()) - double(time_measured)) * 24 * 60)) mod 60)))))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <style
+          horz-align="left"
+          font-size="medium">
+      	<grid
+            grid-height="1"
+            grid-width="7"
+            grid-x="4"
+            grid-y="5" />
+       </style>
+      <header>
+        <text>
+          <locale id="m1.case_short.case_time_measured_3.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+            <xpath function="concat('&lt;b&gt;Time of first VE: &lt;/b&gt;', first_measured_time)" />
         </text>
       </template>
     </field>
@@ -314,12 +335,38 @@
       </sort>
     </field>
     <field>
+       <style>
+      	<grid
+            grid-height="2"
+            grid-width="2"
+            grid-x="4"
+            grid-y="0" />
+       </style>
+      <header>
+        <text>
+          <locale id="image.alert.header"/>
+        </text>
+      </header>
+      <template form="image">
+        <text>
+          <xpath function="if(alert_triggered = 'y', $ky, $kx)">
+            <variable name="ky">
+              <locale id="image.alert.triggered"/>
+            </variable>
+            <variable name="kx">
+              <locale id="image.shadow.path"/>
+            </variable>
+          </xpath>
+        </text>
+      </template>
+    </field>
+    <field>
        <style
           horz-align="left"
           font-size="medium">
       	<grid
             grid-height="1"
-            grid-width="3"
+            grid-width="8"
             grid-x="4"
             grid-y="2" />
        </style>
@@ -330,49 +377,7 @@
       </header>
       <template>
         <text>
-          <xpath function="concat('&lt;b&gt;Admitted: &lt;/b&gt;',admit_date,' ',admit_time)"/>
-        </text>
-      </template>
-    </field>
-    <field>
-       <style
-          horz-align="left"
-          font-size="medium">
-      	<grid
-            grid-height="1"
-            grid-width="5"
-            grid-x="7"
-            grid-y="2" />
-       </style>
-      <header>
-        <text>
-          <locale id="admit.date.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="admit_date"/>
-        </text>
-      </template>
-    </field>
-    <field>
-    <style
-          horz-align="left"
-          font-size="medium">
-      	<grid
-            grid-height="1"
-            grid-width="5"
-            grid-x="7"
-            grid-y="3" />
-       </style>
-      <header>
-        <text>
-          <locale id="admit.date.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="substr(admit_time,0,8)"/>
+          <xpath function="concat('&lt;b&gt;Admitted: &lt;/b&gt;',format-date(admit_date,'%e/%n'),' ',substr(admit_time,0,8))"/>
         </text>
       </template>
     </field>
@@ -414,9 +419,35 @@
       </header>
       <template>
         <text>
-          <xpath function="concat('Reg Num: ', reg_num)"/>
+          <xpath function="concat('MRD#: ', reg_num)"/>
         </text>
       </template>
+    </field>
+    <field>
+      <style
+          horz-align="left"
+          font-size="small">
+      	<grid
+            grid-height="1"
+            grid-width="4"
+            grid-x="0"
+            grid-y="3" />
+       </style>
+      <header>
+        <text>
+          <locale id="room.num.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="concat('Bed #: ', room_num)"/>
+        </text>
+      </template>
+        <background>
+          <text>
+              <xpath function ="if(hours &gt;= cd_update - 4, if(hours &gt;= cd_update, 'red-background','yellow-background'), 'none')" />
+          </text>
+        </background>
     </field>
   </detail>
   <detail id="m1_case_long">
