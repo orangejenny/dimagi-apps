@@ -567,7 +567,7 @@
 				              <value>x</value>
 				          </text>
 				      </configuration>
-				      <x function="hours"/>
+				      <x function="hours + first_dilation - 4"/>
 				      <y function="cd_update"/>
 				  </series>
 				  <series nodeset="instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id]">
