@@ -3,11 +3,12 @@
 		<h:title>Register New Patient</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/91D2D5F3-3DF5-4F25-A418-E5D0DF848A15" uiVersion="1" version="258" name="Register New Patient">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/91D2D5F3-3DF5-4F25-A418-E5D0DF848A15" uiVersion="1" version="294" name="Register New Patient">
 					<patient_info_list>
 						<patient_info_label/>
 						<name/>
 						<reg_num/>
+						<bed_num/>
 						<wife_of/>
 						<patient_age/>
 						<para/>
@@ -122,7 +123,8 @@
 						<ve_initial/>
 					</initial_ve>
 					<pv_exam>
-						<dilation/>
+						<cd_intial/>
+						<cd_entered_from_indicators/>
 						<station_head/>
 						<moulding_initial/>
 						<moulding_warning/>
@@ -185,12 +187,18 @@
 					<nurse_flag/>
 					<overall_hours/>
 					<station_head/>
-				<subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>indicators</case_type></create><update><cd_update/><contraction_duration_update/><contraction_num_update/><fhs_update/><hours/><station_head/></update><index><parent case_type="patient"/></index></case></subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>patient</case_type></create><update><admit_date/><admit_time/><age/><amniotic_fluid/><bp/><cd/><contractions_duration/><contractions_number/><fhs/><first_measured_time/><high_risk/><last_measured/><membrane_rupture/><minutes_to_next_exam/><moulding/><prev_pregnancy_outcome/><pulse/><station_head/><temp/><time_measured/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+					<alert_triggered/>
+					<fhs_alert_triggered/>
+					<af_alert_triggered/>
+					<bp_alert_triggered/>
+					<es_alert_triggered/>
+				<subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>indicators</case_type></create><update><cd_update/><contraction_duration_update/><contraction_num_update/><fhs_update/><hours/><station_head/></update><index><parent case_type="patient"/></index></case></subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>patient</case_type></create><update><admit_date/><admit_time/><age/><alert_triggered/><amniotic_fluid/><bed_num/><bp/><cd/><contractions_duration/><contractions_number/><fhs/><first_dilation/><first_measured_time/><high_risk/><last_measured/><membrane_rupture/><minutes_to_next_exam/><moulding/><prev_pregnancy_outcome/><pulse/><reg_num/><station_head/><temp/><time_measured/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
 			</instance><instance id="commcaresession" src="jr://instance/session"/>
 			<bind nodeset="/data/patient_info_list"/>
 			<bind nodeset="/data/patient_info_list/patient_info_label"/>
 			<bind nodeset="/data/patient_info_list/name" type="xsd:string" required="true()"/>
 			<bind nodeset="/data/patient_info_list/reg_num" type="xsd:int"/>
+			<bind nodeset="/data/patient_info_list/bed_num" type="xsd:int"/>
 			<bind nodeset="/data/patient_info_list/wife_of" type="xsd:string"/>
 			<bind nodeset="/data/patient_info_list/patient_age" type="xsd:int"/>
 			<bind nodeset="/data/patient_info_list/para"/>
@@ -219,7 +227,7 @@
 			<bind nodeset="/data/high_risk_list/height_risk_label" relevant="/data/height_risk_1 = 1"/>
 			<bind nodeset="/data/high_risk_list/prev_outcome" relevant="/data/patient_info_list/gravida != 'primi'"/>
 			<bind nodeset="/data/high_risk_list/risk_history_label" relevant="/data/risk_history_2 = 2"/>
-			<bind nodeset="/data/high_risk_list/weight_risk" type="xsd:int"/>
+			<bind nodeset="/data/high_risk_list/weight_risk" type="xsd:int" constraint=". &lt;= 200"/>
 			<bind nodeset="/data/high_risk_list/weight_risk_label" relevant="/data/weight_risk_3 = 3"/>
 			<bind nodeset="/data/high_risk_list/risk_lbw" relevant="/data/patient_info_list/para != 'primi'"/>
 			<bind nodeset="/data/high_risk_list/lbw_risk_label" relevant="/data/lbw_risk_1 = 1"/>
@@ -229,7 +237,7 @@
 			<bind nodeset="/data/initial_vitals"/>
 			<bind nodeset="/data/initial_vitals/record_initial"/>
 			<bind nodeset="/data/temp_list" relevant="/data/initial_vitals/record_initial = 'initial_yes'"/>
-			<bind nodeset="/data/temp_list/initial_temp" type="xsd:double"/>
+			<bind nodeset="/data/temp_list/initial_temp" type="xsd:double" constraint=". &lt;= 40 and . &gt;= 30" required="false()"/>
 			<bind nodeset="/data/pulse_list" relevant="/data/initial_vitals/record_initial = 'initial_yes'"/>
 			<bind nodeset="/data/pulse_list/initial_pulse" type="xsd:int"/>
 			<bind nodeset="/data/pulse_list/pulse_warning" relevant="/data/pulse_list/initial_pulse &lt; 60 or /data/pulse_list/initial_pulse &gt; 110"/>
@@ -249,7 +257,7 @@
 			<bind nodeset="/data/urine_list/urine_vol" type="xsd:int"/>
 			<bind nodeset="/data/urine_list/urine_contains"/>
 			<bind nodeset="/data/initial_cd" relevant="/data/initial_vitals/record_initial = 'initial_yes'"/>
-			<bind nodeset="/data/initial_cd/cd_intial" type="xsd:int"/>
+			<bind nodeset="/data/initial_cd/cd_intial" type="xsd:int" constraint=". &lt; 10"/>
 			<bind nodeset="/data/initial_contractions" relevant="/data/initial_vitals/record_initial = 'initial_yes'"/>
 			<bind nodeset="/data/initial_contractions/frequency_initial" type="xsd:int"/>
 			<bind nodeset="/data/initial_contractions/duration_initial" type="xsd:int"/>
@@ -282,13 +290,14 @@
 			<bind nodeset="/data/initial_ve"/>
 			<bind nodeset="/data/initial_ve/ve_initial"/>
 			<bind nodeset="/data/pv_exam" relevant="/data/initial_ve/ve_initial = 've_yes'"/>
-			<bind nodeset="/data/pv_exam/dilation" type="xsd:int"/>
+			<bind nodeset="/data/pv_exam/cd_intial" type="xsd:int" constraint=". &lt; 10" relevant="/data/initial_cd/cd_intial &lt;= 0 and /data/initial_cd/cd_intial &gt;= 11"/>
+			<bind nodeset="/data/pv_exam/cd_entered_from_indicators" relevant="/data/initial_cd/cd_intial &gt;= 1 and /data/initial_cd/cd_intial &lt;= 10"/>
 			<bind nodeset="/data/pv_exam/station_head"/>
 			<bind nodeset="/data/pv_exam/moulding_initial"/>
 			<bind nodeset="/data/pv_exam/moulding_warning" relevant="/data/pv_exam/moulding_initial = 'severe_overlap'"/>
 			<bind nodeset="/data/emergency_signs"/>
 			<bind nodeset="/data/emergency_signs/emergency_signs_list" required="true()"/>
-			<bind nodeset="/data/es_alert" relevant="selected(/data/emergency_signs/emergency_signs_list, 'difficulty_breathing') or selected(/data/emergency_signs/emergency_signs_list, 'shock') or /data/emergency_signs/emergency_signs_list = 'vaginal_bleeding' or /data/emergency_signs/emergency_signs_list = 'convulsions_unconsciousness' or /data/emergency_signs/emergency_signs_list = 'prolapsed_cord' or /data/emergency_signs/emergency_signs_list = 'fetal_distress'"/>
+			<bind nodeset="/data/es_alert" relevant="selected(/data/emergency_signs/emergency_signs_list, 'prolapsed_cord') or selected(/data/emergency_signs/emergency_signs_list, 'convulsions_unconsciousness') or selected(/data/emergency_signs/emergency_signs_list, 'vaginal_bleeding') or selected(/data/emergency_signs/emergency_signs_list, 'shock') or selected(/data/emergency_signs/emergency_signs_list, 'difficulty_breathing') or selected(/data/emergency_signs/emergency_signs_list, 'fetal_distress')"/>
 			<bind nodeset="/data/es_alert/es_alert_text"/>
 			<bind nodeset="/data/es_alert/es_alert_suggestion"/>
 			<bind nodeset="/data/es_alert/es_alert_choice" required="true()"/>
@@ -341,6 +350,11 @@
 			<bind nodeset="/data/nurse_flag" calculate="if(/data/bp_alert/bp_alert_choice = &quot;flag_patient&quot; or /data/af_alert/af_alert_choice = &quot;flag_patient&quot; or /data/fhs_alert/fhs_alert_choice = &quot;flag_patient&quot;, 'yes', 'no')"/>
 			<bind nodeset="/data/overall_hours" calculate="if(/data/first_measured_time = &quot;&quot;, &quot;&quot;, 0)"/>
 			<bind nodeset="/data/station_head"/>
+			<bind nodeset="/data/alert_triggered" calculate="if(/data/fhs_alert_triggered = 'yes' or /data/af_alert_triggered = 'yes' or /data/bp_alert_triggered = 'yes' or /data/es_alert_triggered = 'yes', 'yes', 'no')"/>
+			<bind nodeset="/data/fhs_alert_triggered" calculate="if(/data/initial_fhs/fhs_initial &lt; 110 or /data/initial_fhs/fhs_initial &gt; 160, 'yes', 'no')"/>
+			<bind nodeset="/data/af_alert_triggered" calculate="if(selected(/data/initial_af/af_initial, &quot;meconium_stained&quot;) or selected(/data/initial_af/af_initial, &quot;blood_stained&quot;), 'yes', 'no')"/>
+			<bind nodeset="/data/bp_alert_triggered" calculate="if(/data/bp_list/systolic &gt;=140 and /data/bp_list/diastolic &gt;= 90, 'yes', 'no')"/>
+			<bind nodeset="/data/es_alert_triggered" calculate="if(/data/no_emergency_signs = 'no', 'yes', 'no')"/>
 			<itext>
 				<translation lang="en" default="">
 					<text id="patient_info_label-label">
@@ -351,6 +365,9 @@
 					</text>
 					<text id="reg_num-label">
 						<value>MRD:</value>
+					</text>
+					<text id="patient_info_list/bed_num-label">
+						<value>Bed #:</value>
 					</text>
 					<text id="wife_of-label">
 						<value>Wife of (W/O):</value>
@@ -650,16 +667,16 @@
 						<value>Urine output (ml)?</value>
 					</text>
 					<text id="urine_contains-label">
-						<value>Did urine contain:</value>
+						<value>Did urine contain any of the following:</value>
 					</text>
 					<text id="urine_contains-protein-label">
-						<value>Protein?</value>
+						<value>Protein</value>
 					</text>
 					<text id="urine_contains-albumin-label">
-						<value>Albumin?</value>
+						<value>Albumin</value>
 					</text>
 					<text id="urine_contains-sugar-label">
-						<value>Sugar?</value>
+						<value>Sugar</value>
 					</text>
 					<text id="initial_cd-label">
 						<value>Cervial Dilation</value>
@@ -800,9 +817,8 @@
 					<text id="pv_exam-label">
 						<value>PER VAGINAL EXAM</value>
 					</text>
-					<text id="dilation-label">
-						<value>Dilation (fingers? cm?)</value>
-						<value form="image">jr://file/commcare/image/data/dilation.png</value>
+					<text id="pv_exam/cd_entered_from_indicators-label">
+						<value>Cervical dilation was recorded as: <output value="/data/initial_cd/cd_intial"/></value>
 					</text>
 					<text id="station_head-label">
 						<value>What is the station of the head?</value>
@@ -912,6 +928,9 @@
 					<text id="reg_num-label">
 						<value>&#2346;&#2306;&#2332;&#2368;&#2325;&#2352;&#2339; &#2360;&#2306;&#2326;&#2381;&#2351;&#2366;
 </value>
+					</text>
+					<text id="patient_info_list/bed_num-label">
+						<value>Bed #:</value>
 					</text>
 					<text id="wife_of-label">
 						<value>&#2346;&#2340;&#2367;
@@ -1460,9 +1479,8 @@
 					<text id="pv_exam-label">
 						<value>&#2351;&#2379;&#2344;&#2367; &#2325;&#2366; &#2344;&#2368;&#2352;&#2325;&#2381;&#2359;&#2339;( &#2332;&#2366;&#2305;&#2330;)</value>
 					</text>
-					<text id="dilation-label">
-						<value>&#2351;&#2379;&#2344;&#2367;  &#2325;&#2375; &#2350;&#2369;&#2361; &#2325;&#2366; &#2347;&#2375;&#2354;&#2366;&#2357; (&#2313;&#2306;&#2327;&#2354;&#2367;&#2351;&#2366;&#2305;? &#2360;&#2375;&#2306;&#2335;&#2367;&#2350;&#2375;&#2335;&#2375;&#2352;?)</value>
-						<value form="image">jr://file/commcare/image/data/dilation.png</value>
+					<text id="pv_exam/cd_entered_from_indicators-label">
+						<value>Cervical dilation was recorded as: <output value="/data/initial_cd/cd_intial"/></value>
 					</text>
 					<text id="station_head-label">
 						<value>&#2360;&#2367;&#2352; &#2325;&#2366; &#2335;&#2375;&#2361;&#2352;&#2366;&#2357; &#2325;&#2368; &#2360;&#2381;&#2341;&#2367;&#2340;&#2367; &#2325;&#2381;&#2351;&#2366; &#2361;&#2376;&#2306;?</value>
@@ -1582,7 +1600,7 @@
 					</text>
 				</translation>
 			</itext>
-		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><bind nodeset="/data/case" relevant="/data/false_labour_flag = 'no'"/><setvalue event="xforms-ready" ref="/data/case/@case_id" value="uuid()"/><bind calculate="/data/patient_info_list/name" nodeset="/data/case/create/case_name"/><bind calculate="/data/meta/userID" nodeset="/data/case/create/owner_id"/><bind calculate="/data/patient_info_list/admit_date" nodeset="/data/case/update/admit_date" relevant="count(/data/patient_info_list/admit_date) &gt; 0"/><bind calculate="/data/patient_info_list/admit_time" nodeset="/data/case/update/admit_time" relevant="count(/data/patient_info_list/admit_time) &gt; 0"/><bind calculate="/data/patient_info_list/patient_age" nodeset="/data/case/update/age" relevant="count(/data/patient_info_list/patient_age) &gt; 0"/><bind calculate="/data/initial_af/af_initial" nodeset="/data/case/update/amniotic_fluid" relevant="count(/data/initial_af/af_initial) &gt; 0"/><bind calculate="/data/temp" nodeset="/data/case/update/bp" relevant="count(/data/temp) &gt; 0"/><bind calculate="/data/initial_cd/cd_intial" nodeset="/data/case/update/cd" relevant="count(/data/initial_cd/cd_intial) &gt; 0"/><bind calculate="/data/initial_contractions/duration_initial" nodeset="/data/case/update/contractions_duration" relevant="count(/data/initial_contractions/duration_initial) &gt; 0"/><bind calculate="/data/initial_contractions/frequency_initial" nodeset="/data/case/update/contractions_number" relevant="count(/data/initial_contractions/frequency_initial) &gt; 0"/><bind calculate="/data/initial_fhs/fhs_initial" nodeset="/data/case/update/fhs" relevant="count(/data/initial_fhs/fhs_initial) &gt; 0"/><bind calculate="/data/first_measured_time" nodeset="/data/case/update/first_measured_time" relevant="count(/data/first_measured_time) &gt; 0"/><bind calculate="/data/high_risk" nodeset="/data/case/update/high_risk" relevant="count(/data/high_risk) &gt; 0"/><bind calculate="/data/last_measured" nodeset="/data/case/update/last_measured" relevant="count(/data/last_measured) &gt; 0"/><bind calculate="/data/patient_info_list/membrane_rupture" nodeset="/data/case/update/membrane_rupture" relevant="count(/data/patient_info_list/membrane_rupture) &gt; 0"/><bind calculate="/data/minutes_to_next_exam" nodeset="/data/case/update/minutes_to_next_exam" relevant="count(/data/minutes_to_next_exam) &gt; 0"/><bind calculate="/data/pv_exam/moulding_initial" nodeset="/data/case/update/moulding" relevant="count(/data/pv_exam/moulding_initial) &gt; 0"/><bind calculate="/data/high_risk_list/prev_outcome" nodeset="/data/case/update/prev_pregnancy_outcome" relevant="count(/data/high_risk_list/prev_outcome) &gt; 0"/><bind calculate="/data/pulse_list/initial_pulse" nodeset="/data/case/update/pulse" relevant="count(/data/pulse_list/initial_pulse) &gt; 0"/><bind calculate="/data/pv_exam/station_head" nodeset="/data/case/update/station_head" relevant="count(/data/pv_exam/station_head) &gt; 0"/><bind calculate="/data/temp_list/initial_temp" nodeset="/data/case/update/temp" relevant="count(/data/temp_list/initial_temp) &gt; 0"/><bind calculate="/data/time_measured" nodeset="/data/case/update/time_measured" relevant="count(/data/time_measured) &gt; 0"/><bind calculate="/data/meta/timeEnd" nodeset="/data/subcase_0/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/subcase_0/case/@user_id"/><setvalue event="xforms-ready" ref="/data/subcase_0/case/@case_id" value="uuid()"/><bind calculate="/data/patient_info_list/name" nodeset="/data/subcase_0/case/create/case_name"/><bind calculate="/data/meta/userID" nodeset="/data/subcase_0/case/create/owner_id"/><bind calculate="/data/pv_exam/dilation" nodeset="/data/subcase_0/case/update/cd_update" relevant="count(/data/pv_exam/dilation) &gt; 0"/><bind calculate="/data/initial_contractions/duration_initial" nodeset="/data/subcase_0/case/update/contraction_duration_update" relevant="count(/data/initial_contractions/duration_initial) &gt; 0"/><bind calculate="/data/initial_contractions/frequency_initial" nodeset="/data/subcase_0/case/update/contraction_num_update" relevant="count(/data/initial_contractions/frequency_initial) &gt; 0"/><bind calculate="/data/initial_fhs/fhs_initial" nodeset="/data/subcase_0/case/update/fhs_update" relevant="count(/data/initial_fhs/fhs_initial) &gt; 0"/><bind calculate="/data/overall_hours" nodeset="/data/subcase_0/case/update/hours" relevant="count(/data/overall_hours) &gt; 0"/><bind calculate="/data/pv_exam/station_head" nodeset="/data/subcase_0/case/update/station_head" relevant="count(/data/pv_exam/station_head) &gt; 0"/><bind calculate="/data/case/@case_id" nodeset="/data/subcase_0/case/index/parent"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
+		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><bind nodeset="/data/case" relevant="/data/false_labour_flag = 'no'"/><setvalue event="xforms-ready" ref="/data/case/@case_id" value="uuid()"/><bind calculate="/data/patient_info_list/name" nodeset="/data/case/create/case_name"/><bind calculate="/data/meta/userID" nodeset="/data/case/create/owner_id"/><bind calculate="/data/patient_info_list/admit_date" nodeset="/data/case/update/admit_date" relevant="count(/data/patient_info_list/admit_date) &gt; 0"/><bind calculate="/data/patient_info_list/admit_time" nodeset="/data/case/update/admit_time" relevant="count(/data/patient_info_list/admit_time) &gt; 0"/><bind calculate="/data/patient_info_list/patient_age" nodeset="/data/case/update/age" relevant="count(/data/patient_info_list/patient_age) &gt; 0"/><bind calculate="/data/alert_triggered" nodeset="/data/case/update/alert_triggered" relevant="count(/data/alert_triggered) &gt; 0"/><bind calculate="/data/initial_af/af_initial" nodeset="/data/case/update/amniotic_fluid" relevant="count(/data/initial_af/af_initial) &gt; 0"/><bind calculate="/data/patient_info_list/bed_num" nodeset="/data/case/update/bed_num" relevant="count(/data/patient_info_list/bed_num) &gt; 0"/><bind calculate="/data/temp" nodeset="/data/case/update/bp" relevant="count(/data/temp) &gt; 0"/><bind calculate="/data/initial_cd/cd_intial" nodeset="/data/case/update/cd" relevant="count(/data/initial_cd/cd_intial) &gt; 0"/><bind calculate="/data/initial_contractions/duration_initial" nodeset="/data/case/update/contractions_duration" relevant="count(/data/initial_contractions/duration_initial) &gt; 0"/><bind calculate="/data/initial_contractions/frequency_initial" nodeset="/data/case/update/contractions_number" relevant="count(/data/initial_contractions/frequency_initial) &gt; 0"/><bind calculate="/data/initial_fhs/fhs_initial" nodeset="/data/case/update/fhs" relevant="count(/data/initial_fhs/fhs_initial) &gt; 0"/><bind calculate="/data/initial_cd/cd_intial" nodeset="/data/case/update/first_dilation" relevant="count(/data/initial_cd/cd_intial) &gt; 0"/><bind calculate="/data/first_measured_time" nodeset="/data/case/update/first_measured_time" relevant="count(/data/first_measured_time) &gt; 0"/><bind calculate="/data/high_risk" nodeset="/data/case/update/high_risk" relevant="count(/data/high_risk) &gt; 0"/><bind calculate="/data/last_measured" nodeset="/data/case/update/last_measured" relevant="count(/data/last_measured) &gt; 0"/><bind calculate="/data/patient_info_list/membrane_rupture" nodeset="/data/case/update/membrane_rupture" relevant="count(/data/patient_info_list/membrane_rupture) &gt; 0"/><bind calculate="/data/minutes_to_next_exam" nodeset="/data/case/update/minutes_to_next_exam" relevant="count(/data/minutes_to_next_exam) &gt; 0"/><bind calculate="/data/pv_exam/moulding_initial" nodeset="/data/case/update/moulding" relevant="count(/data/pv_exam/moulding_initial) &gt; 0"/><bind calculate="/data/high_risk_list/prev_outcome" nodeset="/data/case/update/prev_pregnancy_outcome" relevant="count(/data/high_risk_list/prev_outcome) &gt; 0"/><bind calculate="/data/pulse_list/initial_pulse" nodeset="/data/case/update/pulse" relevant="count(/data/pulse_list/initial_pulse) &gt; 0"/><bind calculate="/data/patient_info_list/reg_num" nodeset="/data/case/update/reg_num" relevant="count(/data/patient_info_list/reg_num) &gt; 0"/><bind calculate="/data/pv_exam/station_head" nodeset="/data/case/update/station_head" relevant="count(/data/pv_exam/station_head) &gt; 0"/><bind calculate="/data/temp_list/initial_temp" nodeset="/data/case/update/temp" relevant="count(/data/temp_list/initial_temp) &gt; 0"/><bind calculate="/data/time_measured" nodeset="/data/case/update/time_measured" relevant="count(/data/time_measured) &gt; 0"/><bind calculate="/data/meta/timeEnd" nodeset="/data/subcase_0/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/subcase_0/case/@user_id"/><setvalue event="xforms-ready" ref="/data/subcase_0/case/@case_id" value="uuid()"/><bind calculate="/data/patient_info_list/name" nodeset="/data/subcase_0/case/create/case_name"/><bind calculate="/data/meta/userID" nodeset="/data/subcase_0/case/create/owner_id"/><bind calculate="/data/initial_cd/cd_intial" nodeset="/data/subcase_0/case/update/cd_update" relevant="count(/data/initial_cd/cd_intial) &gt; 0"/><bind calculate="/data/initial_contractions/duration_initial" nodeset="/data/subcase_0/case/update/contraction_duration_update" relevant="count(/data/initial_contractions/duration_initial) &gt; 0"/><bind calculate="/data/initial_contractions/frequency_initial" nodeset="/data/subcase_0/case/update/contraction_num_update" relevant="count(/data/initial_contractions/frequency_initial) &gt; 0"/><bind calculate="/data/initial_fhs/fhs_initial" nodeset="/data/subcase_0/case/update/fhs_update" relevant="count(/data/initial_fhs/fhs_initial) &gt; 0"/><bind calculate="/data/overall_hours" nodeset="/data/subcase_0/case/update/hours" relevant="count(/data/overall_hours) &gt; 0"/><bind calculate="/data/pv_exam/station_head" nodeset="/data/subcase_0/case/update/station_head" relevant="count(/data/pv_exam/station_head) &gt; 0"/><bind calculate="/data/case/@case_id" nodeset="/data/subcase_0/case/index/parent"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
 	</h:head>
 	<h:body>
 		<group ref="/data/patient_info_list" appearance="field-list">
@@ -1594,6 +1612,9 @@
 			</input>
 			<input ref="/data/patient_info_list/reg_num">
 				<label ref="jr:itext('reg_num-label')"/>
+			</input>
+			<input ref="/data/patient_info_list/bed_num">
+				<label ref="jr:itext('patient_info_list/bed_num-label')"/>
 			</input>
 			<input ref="/data/patient_info_list/wife_of">
 				<label ref="jr:itext('wife_of-label')"/>
@@ -2229,9 +2250,12 @@
 		</group>
 		<group ref="/data/pv_exam" appearance="field-list">
 			<label ref="jr:itext('pv_exam-label')"/>
-			<input ref="/data/pv_exam/dilation">
-				<label ref="jr:itext('dilation-label')"/>
+			<input ref="/data/pv_exam/cd_intial">
+				<label ref="jr:itext('cd_intial-label')"/>
 			</input>
+			<trigger ref="/data/pv_exam/cd_entered_from_indicators" appearance="minimal">
+				<label ref="jr:itext('pv_exam/cd_entered_from_indicators-label')"/>
+			</trigger>
 			<select1 ref="/data/pv_exam/station_head">
 				<label ref="jr:itext('station_head-label')"/>
 				<item>
