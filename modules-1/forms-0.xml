@@ -3,7 +3,7 @@
 		<h:title>Update Maternal Indicators</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/258633B2-85B5-4D89-A036-B8D7B6A7BC74" uiVersion="1" version="294" name="Update Maternal Indicators">
+ 				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/258633B2-85B5-4D89-A036-B8D7B6A7BC74" uiVersion="1" version="299" name="Update Maternal Indicators">
 					<icon_list>
 						<alert_icon/>
 						<nurse_flag_icon/>

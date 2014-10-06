@@ -3,7 +3,7 @@
 		<h:title>Register New Patient</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/91D2D5F3-3DF5-4F25-A418-E5D0DF848A15" uiVersion="1" version="294" name="Register New Patient">
+ 				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/91D2D5F3-3DF5-4F25-A418-E5D0DF848A15" uiVersion="1" version="299" name="Register New Patient">
 					<patient_info_list>
 						<patient_info_label/>
 						<name/>
@@ -192,7 +192,7 @@
 					<af_alert_triggered/>
 					<bp_alert_triggered/>
 					<es_alert_triggered/>
- 				<subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>indicators</case_type></create><update><cd_update/><contraction_duration_update/><contraction_num_update/><fhs_update/><first_dilation/><hours/><station_head/></update><index><parent case_type="patient"/></index></case></subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>patient</case_type></create><update><admit_date/><admit_time/><age/><alert_triggered/><amniotic_fluid/><bed_num/><bp/><cd/><contractions_duration/><contractions_number/><fhs/><first_dilation/><first_measured_time/><high_risk/><last_measured/><membrane_rupture/><minutes_to_next_exam/><moulding/><prev_pregnancy_outcome/><pulse/><reg_num/><station_head/><temp/><time_measured/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+				<subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>indicators</case_type></create><update><cd_update/><contraction_duration_update/><contraction_num_update/><fhs_update/><first_dilation/><hours/><station_head/></update><index><parent case_type="patient"/></index></case></subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>patient</case_type></create><update><admit_date/><admit_time/><age/><alert_triggered/><amniotic_fluid/><bed_num/><bp/><cd/><contractions_duration/><contractions_number/><fhs/><first_dilation/><first_measured_time/><high_risk/><last_measured/><membrane_rupture/><minutes_to_next_exam/><moulding/><prev_pregnancy_outcome/><pulse/><reg_num/><station_head/><temp/><time_measured/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
 			</instance><instance id="commcaresession" src="jr://instance/session"/>
 			<bind nodeset="/data/patient_info_list"/>
 			<bind nodeset="/data/patient_info_list/patient_info_label"/>

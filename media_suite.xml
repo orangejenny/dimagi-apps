@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<suite version="294" descriptor="Media Suite File">
+<suite version="299" descriptor="Media Suite File">
   <media path="../../commcare/image/data">
     <resource id="media-a6eb196721542ddcba29d9d0b6a70d18-nurse_flag_icon.png" version="146">
       <location authority="local">./commcare/image/data/nurse_flag_icon.png</location>
