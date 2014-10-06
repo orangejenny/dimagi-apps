@@ -766,9 +766,6 @@
 		              <text id="y-axis-title">
 		                  <locale id="m1.case_long.graph2.y_axis_title"/>
 		              </text>
-		              <text id="secondary-y-axis-title">
-		                  <locale id="m1.case_long.graph2.secondary_y_axis_title"/>
-		              </text>
 	                  <text id="x-axis-min">
 	                      <value>0</value>
 	                  </text>
@@ -780,12 +777,6 @@
 	                  </text>
 	                  <text id="y-axis-max">
 	                      <value>10</value>
-	                  </text>
-	                  <text id="secondary-y-axis-min">
-	                      <value>-3</value>
-	                  </text>
-	                  <text id="secondary-y-axis-max">
-	                      <value>7</value>
 	                  </text>
 	              </configuration>
 				  <series nodeset="instance('dilation-thresholds')/thresholds/series[@id='alert']/point">
@@ -843,11 +834,6 @@
 				      <y function="cd_update"/>
 				  </series>
 				  <series nodeset="instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id]">
-				      <configuration>
-				          <text id="secondary-y-axis">
-				              <xpath function="true()"/>
-				          </text>
-				      </configuration>
 				      <x function="hours"/>
 				      <y function="station_head + 3"/>
 				  </series>
