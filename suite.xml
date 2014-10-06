@@ -201,7 +201,7 @@
       </header>
       <template>
         <text>
-            <xpath function="concat('&lt;b&gt;Time of first VE: &lt;/b&gt;', first_measured_time)" />
+            <xpath function="concat('&lt;b&gt;Time of first VE: &lt;/b&gt;', format-date(first_measured_time,'%H:%M'))" />
         </text>
       </template>
     </field>

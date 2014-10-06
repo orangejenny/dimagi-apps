@@ -1,9 +1,10 @@
+
 <h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:vellum="http://commcarehq.org/xforms/vellum">
 	<h:head>
 		<h:title>Register New Patient</h:title>
 		<model>
 			<instance>
- 				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/91D2D5F3-3DF5-4F25-A418-E5D0DF848A15" uiVersion="1" version="299" name="Register New Patient">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/91D2D5F3-3DF5-4F25-A418-E5D0DF848A15" uiVersion="1" version="301" name="Register New Patient">
 					<patient_info_list>
 						<patient_info_label/>
 						<name/>
@@ -346,7 +347,7 @@
 			<bind nodeset="/data/urine_passed" calculate="if(/data/urine_list/urine_vol != 0, 'yes', 'no')"/>
 			<bind nodeset="/data/membranes_ruptured" calculate="if(/data/patient_info_list/membrane_rupture = &quot;rupture_yes&quot;, 'yes', 'no')"/>
 			<bind nodeset="/data/no_emergency_signs" calculate="if(selected(/data/emergency_signs/emergency_signs_list, &quot;none&quot;), 'yes', 'no')"/>
-			<bind nodeset="/data/first_measured_time" calculate="if(/data/initial_vitals/record_initial = 'initial_yes', double(now()), &quot;&quot;)"/>
+			<bind nodeset="/data/first_measured_time" calculate="if(/data/initial_vitals/record_initial = 'yes', now(), &quot;&quot;)"/>
 			<bind nodeset="/data/nurse_flag" calculate="if(/data/bp_alert/bp_alert_choice = &quot;flag_patient&quot; or /data/af_alert/af_alert_choice = &quot;flag_patient&quot; or /data/fhs_alert/fhs_alert_choice = &quot;flag_patient&quot;, 'yes', 'no')"/>
 			<bind nodeset="/data/overall_hours" calculate="if(/data/first_measured_time = &quot;&quot;, &quot;&quot;, 0)"/>
 			<bind nodeset="/data/station_head"/>
