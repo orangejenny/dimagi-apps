@@ -464,6 +464,11 @@
 	            <locale id="m1.case_long.tab1"/>
 	        </text>
 	    </title>
+	    <variables>
+	        <max_hours function="max(instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id][@status='open']/hours)"/>
+	        <x_axis_max function="if($max_hours > 12, $max_hours, 12)"/>
+	        <right_hand_x function="$x_axis_max * .97"/>
+	    </variables>
 	    <field>
 	      <header>
 	        <text>
@@ -486,7 +491,7 @@
 		                  <value>0</value>
 		              </text>
 		              <text id="x-axis-max">
-		                  <xpath function="if(hours > 12, hours, 12)"/>
+		                  <xpath function="$x_axis_max"/>
 		              </text>
 		              <text id="y-axis-min">
 		                  <value>80</value>
@@ -542,7 +547,7 @@
 	                      <value>0</value>
 	                  </text>
 	                  <text id="x-axis-max">
-	                      <xpath function="if(hours > 12, hours, 12)"/>
+	                      <xpath function="$x_axis_max"/>
 	                  </text>
 	                  <text id="y-axis-min">
 	                      <value>0</value>
@@ -620,37 +625,37 @@
 				      <text><locale id="m1.case_long.graph2.annotation2"/></text>
 				  </annotation>
 				  <annotation>
-				      <x><text><value>11.7</value></text></x>
+				      <x><text><xpath function="$right_hand_x"/></text></x>
 				      <y><text><value>0</value></text></y>
 				      <text><value>-3</value></text>
 				  </annotation>
 				  <annotation>
-				      <x><text><value>11.7</value></text></x>
+				      <x><text><xpath function="$right_hand_x"/></text></x>
 				      <y><text><value>1</value></text></y>
 				      <text><value>-2</value></text>
 				  </annotation>
 				  <annotation>
-				      <x><text><value>11.7</value></text></x>
+				      <x><text><xpath function="$right_hand_x"/></text></x>
 				      <y><text><value>2</value></text></y>
 				      <text><value>-1</value></text>
 				  </annotation>
 				  <annotation>
-				      <x><text><value>11.7</value></text></x>
+				      <x><text><xpath function="$right_hand_x"/></text></x>
 				      <y><text><value>3</value></text></y>
 				      <text><value>0</value></text>
 				  </annotation>
 				  <annotation>
-				      <x><text><value>11.7</value></text></x>
+				      <x><text><xpath function="$right_hand_x"/></text></x>
 				      <y><text><value>4</value></text></y>
 				      <text><value>1</value></text>
 				  </annotation>
 				  <annotation>
-				      <x><text><value>11.7</value></text></x>
+				      <x><text><xpath function="$right_hand_x"/></text></x>
 				      <y><text><value>5</value></text></y>
 				      <text><value>2</value></text>
 				  </annotation>
 				  <annotation>
-				      <x><text><value>11.7</value></text></x>
+				      <x><text><xpath function="$right_hand_x"/></text></x>
 				      <y><text><value>6</value></text></y>
 				      <text><value>3</value></text>
 				  </annotation>
@@ -682,7 +687,7 @@
 		                  <value>0</value>
 		              </text>
 		              <text id="x-axis-max">
-		                  <xpath function="if(hours > 12, hours, 12)"/>
+		                  <xpath function="$x_axis_max"/>
 		              </text>
 		              <text id="y-axis-min">
 		                  <value>0</value>
