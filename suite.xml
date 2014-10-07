@@ -465,236 +465,6 @@
 	    <field>
 	      <header>
 	        <text>
-	          <locale id="m1.case_long.case_name_1.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="case_name"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_high_risk_2.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="high_risk"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_time_measured_3.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="30 - int((double(now()) - double(time_measured)) * 24 * 60)"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_time_measured_4.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="240 - int((double(now()) - double(time_measured)) * 24 * 60)"/>
-	        </text>
-	      </template>
-	    </field>
-    </detail>
-    <detail>
-	    <title>
-	        <text>
-	            <locale id="m1.case_long.tab2"/>
-	        </text>
-	    </title>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_age_5.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="age"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_bp_6.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="bp"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_amniotic_fluid_7.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="amniotic_fluid"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_cd_8.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="cd"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_contractions_duration_9.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="contractions_duration"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_contractions_number_10.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="contractions_number"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_descent_11.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="descent"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_drugs_iv_12.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="drugs_iv"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_fhs_13.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="fhs"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_moulding_14.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="moulding"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_oxytocin_15.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="oxytocin"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_pulse_16.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="pulse"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_temp_17.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="temp"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_urine_vol_18.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="urine_vol"/>
-	        </text>
-	      </template>
-	    </field>
-	  </detail>
-	  <detail>
-	    <title>
-	        <text>
-	            <locale id="m1.case_long.tab3"/>
-	        </text>
-	    </title>
-	    <field>
-	      <header>
-	        <text>
 	            <value></value>
 	        </text>
 	      </header>
@@ -931,6 +701,236 @@
 				  </series>
 			  </graph>
 		  </template>
+	    </field>
+    </detail>
+    <detail>
+	    <title>
+	        <text>
+	            <locale id="m1.case_long.tab2"/>
+	        </text>
+	    </title>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_age_5.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="age"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_bp_6.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="bp"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_amniotic_fluid_7.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="amniotic_fluid"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_cd_8.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="cd"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_contractions_duration_9.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="contractions_duration"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_contractions_number_10.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="contractions_number"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_descent_11.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="descent"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_drugs_iv_12.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="drugs_iv"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_fhs_13.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="fhs"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_moulding_14.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="moulding"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_oxytocin_15.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="oxytocin"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_pulse_16.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="pulse"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_temp_17.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="temp"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_urine_vol_18.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="urine_vol"/>
+	        </text>
+	      </template>
+	    </field>
+	  </detail>
+	  <detail>
+	    <title>
+	        <text>
+	            <locale id="m1.case_long.tab3"/>
+	        </text>
+	    </title>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_name_1.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="case_name"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_high_risk_2.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="high_risk"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_time_measured_3.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="30 - int((double(now()) - double(time_measured)) * 24 * 60)"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_time_measured_4.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="240 - int((double(now()) - double(time_measured)) * 24 * 60)"/>
+	        </text>
+	      </template>
 	    </field>
 	  </detail>
   </detail>
