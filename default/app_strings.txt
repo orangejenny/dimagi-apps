@@ -39,6 +39,7 @@ m1.case_long.case_high_risk_2.header=High Risk History
 m1.case_long.case_moulding_14.header=Moulding
 m1.case_long.case_name_1.header=Name
 m1.case_long.case_oxytocin_15.header=Oxytocin
+m1.case_long.case_patient_notes_19.header=Patient Notes
 m1.case_long.case_pulse_16.header=Pulse
 m1.case_long.case_temp_17.header=Temp
 m1.case_long.case_time_measured_3.header=Minutes until next GE
