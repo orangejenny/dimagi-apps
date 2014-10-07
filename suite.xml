@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<suite version="304" descriptor="Suite File">
+<suite version="305" descriptor="Suite File">
   <xform>
     <resource id="74714a8a7a4ba3504eee2c4d0b0f39d754cc4412" version="303" descriptor="Form: (Module mLabour) - Register New Patient">
       <location authority="local">./modules-0/forms-0.xml</location>
@@ -49,19 +49,19 @@
     </resource>
   </xform>
   <locale language="default">
-    <resource id="app_default_strings" version="304" descriptor="Translations: Default Language">
+    <resource id="app_default_strings" version="305" descriptor="Translations: Default Language">
       <location authority="local">./default/app_strings.txt</location>
       <location authority="remote">./default/app_strings.txt</location>
     </resource>
   </locale>
   <locale language="en">
-    <resource id="app_en_strings" version="304" descriptor="Translations: English">
+    <resource id="app_en_strings" version="305" descriptor="Translations: English">
       <location authority="local">./en/app_strings.txt</location>
       <location authority="remote">./en/app_strings.txt</location>
     </resource>
   </locale>
   <locale language="hin">
-    <resource id="app_hin_strings" version="304" descriptor="Translations: Unknown Language (hin)">
+    <resource id="app_hin_strings" version="305" descriptor="Translations: Unknown Language (hin)">
       <location authority="local">./hin/app_strings.txt</location>
       <location authority="remote">./hin/app_strings.txt</location>
     </resource>
@@ -201,7 +201,7 @@
       </header>
       <template>
         <text>
-            <xpath function="concat('&lt;b&gt;Time of first VE: &lt;/b&gt;', first_measured_time)" />
+            <xpath function="concat('&lt;b&gt;Time of first VE: &lt;/b&gt;', format-date(first_measured_time, &quot;%H:%M&quot;))" />
         </text>
       </template>
     </field>
@@ -253,8 +253,10 @@
       </template>
     </field>
     <field>
-      <header width="0">
-        <text/>
+      <header>
+        <text>
+          <locale id="m3.case_short.case_hours_2.header"/>
+        </text>
       </header>
       <template width="0">
         <text>
@@ -680,7 +682,8 @@
 		                  <value>0</value>
 		              </text>
 		              <text id="x-axis-max">
-		                  <xpath function="if(hours > 12, hours, 12)"/>
+		                  <xpath function="if(max(instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id]/hours) > 12, max(instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id]/hours), 12)"/>
+		                  <!--xpath function="if(hours > 12, hours, 12)"/-->
 		              </text>
 		              <text id="y-axis-min">
 		                  <value>0</value>
@@ -1023,10 +1026,12 @@
       </sort>
     </field>
     <field>
-      <header width="0">
-        <text/>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_hours_2.header=Hours"/>
+        </text>
       </header>
-      <template width="0">
+      <template>
         <text>
           <xpath function="hours"/>
         </text>
@@ -1065,6 +1070,66 @@
       <template>
         <text>
           <xpath function="hours"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_fhs_update_3.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="fhs_update"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_cd_update_4.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="cd_update"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_station_head_5.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="station_head"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_contraction_num_update_6.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="contraction_num_update"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_contraction_duration_update_7.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="contraction_duration_update"/>
         </text>
       </template>
     </field>
@@ -1244,7 +1309,7 @@
           </series>
       </thresholds>
   </fixture>
-  <fixture id="dilation-thresholds"> <!-- TODO: max x values here, and above, need to be flexible -->
+  <fixture id="dilation-thresholds">
       <thresholds>
 	      <series id="alert">
 	          <point>
