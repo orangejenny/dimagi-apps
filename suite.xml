@@ -682,8 +682,7 @@
 		                  <value>0</value>
 		              </text>
 		              <text id="x-axis-max">
-		                  <xpath function="if(max(instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id]/hours) > 12, max(instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id]/hours), 12)"/>
-		                  <!--xpath function="if(hours > 12, hours, 12)"/-->
+		                  <xpath function="if(hours > 12, hours, 12)"/>
 		              </text>
 		              <text id="y-axis-min">
 		                  <value>0</value>
@@ -1028,7 +1027,7 @@
     <field>
       <header>
         <text>
-          <locale id="m3.case_long.case_hours_2.header=Hours"/>
+          <locale id="m3.case_long.case_hours_2.header"/>
         </text>
       </header>
       <template>
