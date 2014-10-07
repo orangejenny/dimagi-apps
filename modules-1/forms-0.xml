@@ -1,9 +1,10 @@
+
 <h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:vellum="http://commcarehq.org/xforms/vellum">
 	<h:head>
 		<h:title>Update Maternal Indicators</h:title>
 		<model>
 			<instance>
- 				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/258633B2-85B5-4D89-A036-B8D7B6A7BC74" uiVersion="1" version="299" name="Update Maternal Indicators">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/258633B2-85B5-4D89-A036-B8D7B6A7BC74" uiVersion="1" version="301" name="Update Maternal Indicators">
 					<icon_list>
 						<alert_icon/>
 						<nurse_flag_icon/>
@@ -176,8 +177,8 @@
 					<bp_alert_triggered/>
 					<fhs_alert_triggered/>
 					<es_alert_triggered/>
- 					<first_dilation_load/>
- 					<first_dilation_save/>
+					<first_dilation_load/>
+					<first_dilation_save/>
 				<subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>indicators</case_type></create><update><cd_update/><contraction_duration_update/><contraction_num_update/><fhs_update/><first_dilation/><hours/><station_head/></update><index><parent case_type="patient"/></index></case></subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><update><alert_triggered/><amniotic_fluid/><bp/><cd/><contractions_duration/><contractions_number/><descent/><drugs_iv/><fhs/><first_dilation/><first_measured_time/><moulding/><oxytocin/><pulse/><station_head/><temp/><time_measured/><urine_acetone/><urine_protein/><urine_vol/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
 			</instance><instance id="commcaresession" src="jr://instance/session"/><instance id="casedb" src="jr://instance/casedb"/>
 			<bind nodeset="/data/icon_list" relevant="1=2"/>
@@ -320,7 +321,7 @@
 			<bind nodeset="/data/overall_hours" calculate="int(((double(now())-double(/data/first_measured_time))mod 1)*24)+1"/>
 			<bind nodeset="/data/nurse_flag" calculate="if(/data/bp_alert/bp_alert_choice = &quot;flag_patient&quot; or /data/af_alert/af_alert_choice = &quot;flag_patient&quot; or /data/fhs_alert/fhs_alert_choice = &quot;flag_patient&quot;, 'yes', 'no')"/>
 			<bind nodeset="/data/is_first_time_recorded" calculate="if(/data/first_time = &quot;&quot;, 'no', 'yes')"/>
-			<bind nodeset="/data/first_measured_time" calculate="if(/data/is_first_time_recorded = 'no', double(now()), /data/first_time)"/>
+			<bind nodeset="/data/first_measured_time" calculate="if(/data/is_first_time_recorded = 'no', now(), /data/first_time)"/>
 			<bind nodeset="/data/station_head"/>
 			<bind nodeset="/data/time_now" calculate="double(now())"/>
 			<bind nodeset="/data/minutes_to_next_VE" calculate="240 - int(((/data/last_measured * 24) - int(/data/last_measured * 24)) * 60)"/>
@@ -330,8 +331,8 @@
 			<bind nodeset="/data/bp_alert_triggered" calculate="if(/data/bp_list/systolic &gt;= 140 and /data/bp_list/diastolic &gt;= 90, 'yes', 'no')"/>
 			<bind nodeset="/data/fhs_alert_triggered" calculate="if(/data/fhs_list/fhs_update &lt; 110 or /data/fhs_list/fhs_update &gt; 160, 'yes', 'no')"/>
 			<bind nodeset="/data/es_alert_triggered" calculate="if(/data/no_emergency_signs = 'no', 'yes', 'no')"/>
- 			<bind nodeset="/data/first_dilation_load"/>
- 			<bind nodeset="/data/first_dilation_save" calculate="if(/data/first_dilation_load = &quot;&quot;, /data/cd_list/cd_update, /data/first_dilation_load)"/>
+			<bind nodeset="/data/first_dilation_load"/>
+			<bind nodeset="/data/first_dilation_save" calculate="if(/data/first_dilation_load = &quot;&quot;, /data/cd_list/cd_update, /data/first_dilation_load)"/>
 			<itext>
 				<translation lang="en" default="">
 					<text id="alert_icon-label">
