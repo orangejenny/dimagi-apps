@@ -724,7 +724,7 @@
 		              </text>
 		          </configuration>
 				  <series nodeset="instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id]">
-				      <x function="hours"/>
+				      <x function="hours + first_dilation - 4"/>
 				      <y function="fhs_update"/>
 				  </series>
 				  <series nodeset="instance('heart-rate-thresholds')/thresholds/series[@id='min']/point">
@@ -834,7 +834,7 @@
 				      <y function="cd_update"/>
 				  </series>
 				  <series nodeset="instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id]">
-				      <x function="hours"/>
+				      <x function="hours + first_dilation - 4"/>
 				      <y function="station_head + 3"/>
 				  </series>
 				  <annotation>
@@ -925,7 +925,7 @@
 		            	      <value>3</value>
 						  </text>
 				      </configuration>
-				      <x function="hours" />
+				      <x function="hours + first_dilation - 4" />
 				      <y function="contraction_num_update" />
 				      <radius function="if(contraction_duration_update &lt; 20, 1, if(contraction_duration_update &lt; 40, 2, 3))" />
 				  </series>
