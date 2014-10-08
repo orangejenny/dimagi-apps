@@ -616,7 +616,7 @@
 				  </series>
 				  <series nodeset="instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id][@status='open']">
 				      <x function="hours + first_dilation - 4"/>
-				      <y function="station_head + 3"/>
+				      <y function="station_head * -1 + 3"/>
 				  </series>
 				  <annotation>
 				      <x><text><value>5</value></text></x>
@@ -631,17 +631,17 @@
 				  <annotation>
 				      <x><text><xpath function="$descent_label_x"/></text></x>
 				      <y><text><value>0</value></text></y>
-				      <text><value>-3</value></text>
+				      <text><value>3</value></text>
 				  </annotation>
 				  <annotation>
 				      <x><text><xpath function="$descent_label_x"/></text></x>
 				      <y><text><value>1</value></text></y>
-				      <text><value>-2</value></text>
+				      <text><value>2</value></text>
 				  </annotation>
 				  <annotation>
 				      <x><text><xpath function="$descent_label_x"/></text></x>
 				      <y><text><value>2</value></text></y>
-				      <text><value>-1</value></text>
+				      <text><value>1</value></text>
 				  </annotation>
 				  <annotation>
 				      <x><text><xpath function="$descent_label_x"/></text></x>
@@ -651,17 +651,17 @@
 				  <annotation>
 				      <x><text><xpath function="$descent_label_x"/></text></x>
 				      <y><text><value>4</value></text></y>
-				      <text><value>1</value></text>
+				      <text><value>-1</value></text>
 				  </annotation>
 				  <annotation>
 				      <x><text><xpath function="$descent_label_x"/></text></x>
 				      <y><text><value>5</value></text></y>
-				      <text><value>2</value></text>
+				      <text><value>-2</value></text>
 				  </annotation>
 				  <annotation>
 				      <x><text><xpath function="$descent_label_x"/></text></x>
 				      <y><text><value>6</value></text></y>
-				      <text><value>3</value></text>
+				      <text><value>-3</value></text>
 				  </annotation>
 			  </graph>
 		  </template>
@@ -897,6 +897,18 @@
 	      <template>
 	        <text>
 	          <xpath function="patient_notes"/>
+	        </text>
+	      </template>
+	    </field>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_station_head_20.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="station_head"/>
 	        </text>
 	      </template>
 	    </field>
