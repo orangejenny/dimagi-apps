@@ -467,11 +467,11 @@
 	    <variables>
 	        <max_hours function="max(instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id][@status='open']/hours)"/>
 	        <x_offset function="first_dilation - 4"/>
-	        <x_axis_max function="if($max_hours + $x_offset > 12, $max_hours + $x_offset, 12)"/>
+	        <x_max function="if($max_hours + $x_offset > 12, $max_hours + $x_offset, 12)"/>
 	        <contractions_max function="max(instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id][@status='open']/contraction_num_update)"/>
 	        <fhs_min function="min(instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id][@status='open']/fhs_update)"/>
 	        <fhs_max function="max(instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id][@status='open']/fhs_update)"/>
-	        <descent_label_x function="$x_axis_max * .97"/>
+	        <descent_label_x function="$x_max * .97"/>
 	    </variables>
 	    <field>
 	      <header>
@@ -482,25 +482,25 @@
 	      <template form="graph">
 	          <graph type="xy">
 		          <configuration>
-		              <text id="x-label-count">
+		              <text id="x-labels">
 		                  <value>13</value>
 		              </text>
-		              <text id="y-label-count">
+		              <text id="y-labels">
 		                  <value>13</value>
 		              </text>
-		              <text id="y-axis-title">
-		                  <locale id="m1.case_long.graph1.y_axis_title"/>
+		              <text id="y-title">
+		                  <locale id="m1.case_long.graph1.y_title"/>
 		              </text>
-		              <text id="x-axis-min">
+		              <text id="x-min">
 		                  <value>0</value>
 		              </text>
-		              <text id="x-axis-max">
-		                  <xpath function="$x_axis_max"/>
+		              <text id="x-max">
+		                  <xpath function="$x_max"/>
 		              </text>
-		              <text id="y-axis-min">
+		              <text id="y-min">
 		                  <xpath function="min(80, $fhs_min)"/>
 		              </text>
-		              <text id="y-axis-max">
+		              <text id="y-max">
 		                  <xpath function="max(200, $fhs_max)"/>
 		              </text>
 		          </configuration>
@@ -538,25 +538,42 @@
 	      <template form="graph">
 	          <graph type="xy">
 	              <configuration>
-		              <text id="x-label-count">
+		              <text id="x-labels">
 		                  <value>13</value>
 		              </text>
-		              <text id="y-label-count">
-		                  <value>11</value>
+		              <text id="y-labels">
+		                  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 		              </text>
-		              <text id="y-axis-title">
-		                  <locale id="m1.case_long.graph2.y_axis_title"/>
+		              <text id="secondary-y-labels">
+		                  {
+		                  	"0": "3",
+		                  	"1": "2",
+		                  	"2": "1",
+		                  	"3": "0",
+		                  	"4": "-1",
+		                  	"5": "-2",
+		                  	"6": "-3"
+		                  }
 		              </text>
-	                  <text id="x-axis-min">
+		              <text id="y-title">
+		                  <locale id="m1.case_long.graph2.y_title"/>
+		              </text>
+	                  <text id="x-min">
 	                      <value>0</value>
 	                  </text>
-	                  <text id="x-axis-max">
-	                      <xpath function="$x_axis_max"/>
+	                  <text id="x-max">
+	                      <xpath function="$x_max"/>
 	                  </text>
-	                  <text id="y-axis-min">
+	                  <text id="y-min">
 	                      <value>0</value>
 	                  </text>
-	                  <text id="y-axis-max">
+	                  <text id="y-max">
+	                      <value>10</value>
+	                  </text>
+	                  <text id="secondary-y-min">
+	                      <value>0</value>
+	                  </text>
+	                  <text id="secondary-y-max">
 	                      <value>10</value>
 	                  </text>
 	              </configuration>
@@ -615,6 +632,11 @@
 				      <y function="cd_update"/>
 				  </series>
 				  <series nodeset="instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id][@status='open']">
+				      <configuration>
+				          <text id="secondary-y">
+				              <xpath function="true()"/>
+				          </text>
+				      </configuration>
 				      <x function="hours + first_dilation - 4"/>
 				      <y function="station_head * -1 + 3"/>
 				  </series>
@@ -628,41 +650,6 @@
 				      <y><text><value>7</value></text></y>
 				      <text><locale id="m1.case_long.graph2.annotation2"/></text>
 				  </annotation>
-				  <annotation>
-				      <x><text><xpath function="$descent_label_x"/></text></x>
-				      <y><text><value>0</value></text></y>
-				      <text><value>3</value></text>
-				  </annotation>
-				  <annotation>
-				      <x><text><xpath function="$descent_label_x"/></text></x>
-				      <y><text><value>1</value></text></y>
-				      <text><value>2</value></text>
-				  </annotation>
-				  <annotation>
-				      <x><text><xpath function="$descent_label_x"/></text></x>
-				      <y><text><value>2</value></text></y>
-				      <text><value>1</value></text>
-				  </annotation>
-				  <annotation>
-				      <x><text><xpath function="$descent_label_x"/></text></x>
-				      <y><text><value>3</value></text></y>
-				      <text><value>0</value></text>
-				  </annotation>
-				  <annotation>
-				      <x><text><xpath function="$descent_label_x"/></text></x>
-				      <y><text><value>4</value></text></y>
-				      <text><value>-1</value></text>
-				  </annotation>
-				  <annotation>
-				      <x><text><xpath function="$descent_label_x"/></text></x>
-				      <y><text><value>5</value></text></y>
-				      <text><value>-2</value></text>
-				  </annotation>
-				  <annotation>
-				      <x><text><xpath function="$descent_label_x"/></text></x>
-				      <y><text><value>6</value></text></y>
-				      <text><value>-3</value></text>
-				  </annotation>
 			  </graph>
 		  </template>
 	    </field>
@@ -675,28 +662,28 @@
 	      <template form="graph">
 	          <graph type="bubble">
 		          <configuration>
-		              <text id="x-label-count">
+		              <text id="x-labels">
 		                  <value>13</value>
 		              </text>
-		              <text id="y-label-count">
+		              <text id="y-labels">
 		                  <value>5</value>
 		              </text>
-		              <text id="x-axis-title">
-		                  <locale id="m1.case_long.graph3.x_axis_title"/>
+		              <text id="x-title">
+		                  <locale id="m1.case_long.graph3.x_title"/>
 		              </text>
-		              <text id="y-axis-title">
-		                  <locale id="m1.case_long.graph3.y_axis_title"/>
+		              <text id="y-title">
+		                  <locale id="m1.case_long.graph3.y_title"/>
 		              </text>
-		              <text id="x-axis-min">
+		              <text id="x-min">
 		                  <value>0</value>
 		              </text>
-		              <text id="x-axis-max">
-		                  <xpath function="$x_axis_max"/>
+		              <text id="x-max">
+		                  <xpath function="$x_max"/>
 		              </text>
-		              <text id="y-axis-min">
+		              <text id="y-min">
 		                  <value>0</value>
 		              </text>
-		              <text id="y-axis-max">
+		              <text id="y-max">
 		                  <xpath function="max(5, $contractions_max)"/>
 		              </text>
 		          </configuration>
