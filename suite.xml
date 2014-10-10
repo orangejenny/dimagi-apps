@@ -508,23 +508,23 @@
 				      <x function="hours + first_dilation - 4"/>
 				      <y function="fhs_update"/>
 				  </series>
-				  <series nodeset="instance('heart-rate-thresholds')/thresholds/series[@id='min']/point">
+				  <series nodeset="instance('two-points')/series/point">
 				      <configuration>
 				          <text id="point-style">
 				              <value>none</value>
 				          </text>
 				      </configuration>
-				      <x function="x"/>
-				      <y function="y"/>
+				      <x function="if(index = 0, 0, $x_axis_max)"/>
+				      <y function="100"/>
 				  </series>
-				  <series nodeset="instance('heart-rate-thresholds')/thresholds/series[@id='max']/point">
+				  <series nodeset="instance('two-points')/series/point">
 				      <configuration>
 				          <text id="point-style">
 				              <value>none</value>
 				          </text>
 				      </configuration>
-				      <x function="x"/>
-				      <y function="y"/>
+				      <x function="if(index = 0, 0, $x_axis_max)"/>
+				      <y function="180"/>
 				  </series>
 			  </graph>
 		  </template>
@@ -1171,7 +1171,7 @@
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
     <instance id="dilation-thresholds" src="jr://instance/fixture/dilation-thresholds" />
-    <instance id="heart-rate-thresholds" src="jr://instance/fixture/heart-rate-thresholds" />
+    <instance id="two-points" src="jr://instance/fixture/two-points" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
     </session>
@@ -1190,7 +1190,7 @@
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
     <instance id="dilation-thresholds" src="jr://instance/fixture/dilation-thresholds" />
-    <instance id="heart-rate-thresholds" src="jr://instance/fixture/heart-rate-thresholds" />
+    <instance id="two-points" src="jr://instance/fixture/two-points" />
     <instance id="commcaresession" src="jr://instance/session"/>
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
@@ -1211,7 +1211,7 @@
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
     <instance id="dilation-thresholds" src="jr://instance/fixture/dilation-thresholds" />
-    <instance id="heart-rate-thresholds" src="jr://instance/fixture/heart-rate-thresholds" />
+    <instance id="two-points" src="jr://instance/fixture/two-points" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
     </session>
@@ -1230,7 +1230,7 @@
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
     <instance id="dilation-thresholds" src="jr://instance/fixture/dilation-thresholds" />
-    <instance id="heart-rate-thresholds" src="jr://instance/fixture/heart-rate-thresholds" />
+    <instance id="two-points" src="jr://instance/fixture/two-points" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
     </session>
@@ -1244,7 +1244,7 @@
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
     <instance id="dilation-thresholds" src="jr://instance/fixture/dilation-thresholds" />
-    <instance id="heart-rate-thresholds" src="jr://instance/fixture/heart-rate-thresholds" />
+    <instance id="two-points" src="jr://instance/fixture/two-points" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m2_case_short" detail-confirm="m2_case_long"/>
     </session>
@@ -1258,7 +1258,7 @@
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
     <instance id="dilation-thresholds" src="jr://instance/fixture/dilation-thresholds" />
-    <instance id="heart-rate-thresholds" src="jr://instance/fixture/heart-rate-thresholds" />
+    <instance id="two-points" src="jr://instance/fixture/two-points" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m2_case_short" detail-confirm="m2_case_long"/>
     </session>
@@ -1272,7 +1272,7 @@
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
     <instance id="dilation-thresholds" src="jr://instance/fixture/dilation-thresholds" />
-    <instance id="heart-rate-thresholds" src="jr://instance/fixture/heart-rate-thresholds" />
+    <instance id="two-points" src="jr://instance/fixture/two-points" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='indicators'][@status='open']" value="./@case_id" detail-select="m3_case_short" detail-confirm="m3_case_long"/>
     </session>
@@ -1305,29 +1305,15 @@
     </text>
     <command id="m3-f0"/>
   </menu>
-  <fixture id="heart-rate-thresholds">
-      <thresholds>
-          <series id="min">
-              <point>
-                  <x>0</x>
-                  <y>100</y>
-              </point>
-              <point>
-                  <x>12</x>
-                  <y>100</y>
-              </point>
-          </series>
-          <series id="max">
-              <point>
-                  <x>0</x>
-                  <y>180</y>
-              </point>
-              <point>
-                  <x>12</x>
-                  <y>180</y>
-              </point>
-          </series>
-      </thresholds>
+  <fixture id="two-points">
+      <series>
+          <point>
+              <index>0</index>
+          </point>
+          <point>
+              <index>1</index>
+          </point>
+      </series>
   </fixture>
   <fixture id="dilation-thresholds">
       <thresholds>
