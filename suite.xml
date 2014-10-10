@@ -108,22 +108,22 @@
 	                  <text id="zoom">
 	                      <xpath function="true()" />
    	              </text>
-                    <text id="x-label-count">
+                    <text id="x-labels">
                         <value>13</value>
                     </text>
-                    <text id="y-label-count">
+                    <text id="y-labels">
                         <value>13</value>
                     </text>
-                    <text id="x-axis-min">
+                    <text id="x-min">
                         <value>0</value>
                     </text>
-                    <text id="x-axis-max">
+                    <text id="x-max">
                         <value>60</value>
                     </text>
-                    <text id="y-axis-min">
+                    <text id="y-min">
                         <value>0</value>
                     </text>
-                    <text id="y-axis-max">
+                    <text id="y-max">
                         <value>25</value>
                     </text>
                 </configuration>
@@ -233,22 +233,22 @@
         <template form="graph">
             <graph type="xy">
                 <configuration>
-                    <text id="x-label-count">
+                    <text id="x-labels">
                         <value>13</value>
                     </text>
-                    <text id="y-label-count">
+                    <text id="y-labels">
                         <value>13</value>
                     </text>
-                    <text id="x-axis-min">
+                    <text id="x-min">
                         <value>0</value>
                     </text>
-                    <text id="x-axis-max">
+                    <text id="x-max">
                         <value>60</value>
                     </text>
-                    <text id="y-axis-min">
+                    <text id="y-min">
                         <value>0</value>
                     </text>
-                    <text id="y-axis-max">
+                    <text id="y-max">
                         <value>25</value>
                     </text>
                 </configuration>
