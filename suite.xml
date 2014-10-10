@@ -466,7 +466,7 @@
 	    </title>
 	    <variables>
 	        <max_hours function="max(instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id][@status='open']/hours)"/>
-	        <x_axis_max function="if($max_hours > 12, $max_hours, 12)"/>
+	        <x_max function="if($max_hours > 12, $max_hours, 12)"/>
 	        <contractions_max function="max(instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id][@status='open']/contraction_num_update)"/>
 	        <fhs_min function="min(instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id][@status='open']/fhs_update)"/>
 	        <fhs_max function="max(instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id][@status='open']/fhs_update)"/>
@@ -513,7 +513,7 @@
 				              <value>none</value>
 				          </text>
 				      </configuration>
-				      <x function="if(. = 0, 0, $x_axis_max)"/>
+				      <x function="if(. = 0, 0, $x_max)"/>
 				      <y function="100"/>
 				  </series>
 				  <series nodeset="instance('sequence')/sequence/index[.&lt;2]">
@@ -522,7 +522,7 @@
 				              <value>none</value>
 				          </text>
 				      </configuration>
-				      <x function="if(. = 0, 0, $x_axis_max)"/>
+				      <x function="if(. = 0, 0, $x_max)"/>
 				      <y function="180"/>
 				  </series>
 			  </graph>
@@ -588,7 +588,7 @@
 				              <value>none</value>
 				          </text>
 				      </configuration>
-				      <x function="if(. = 0, 0, if(. = 1, 10 - $first_dilation, $x_axis_max))"/>
+				      <x function="if(. = 0, 0, if(. = 1, 10 - $first_dilation, $x_max))"/>
 				      <y function="if(. = 0, $first_dilation, 10)"/>
 				  </series>
 				  <series nodeset="instance('sequence')/sequence/index[.&lt;3]">
@@ -603,7 +603,7 @@
 				              <value>none</value>
 				          </text>
 				      </configuration>
-				      <x function="if(. = 0, 8 - $first_dilation, if(. = 1, 14 - $first_dilation, $x_axis_max))"/>
+				      <x function="if(. = 0, 8 - $first_dilation, if(. = 1, 14 - $first_dilation, $x_max))"/>
 				      <y function="if(. = 0, 4, 10)"/>
 				  </series>
 				  <series nodeset="instance('sequence')/sequence/index[.&lt;2]">
@@ -618,7 +618,7 @@
 				              <value>none</value>
 				          </text>
 				      </configuration>
-				      <x function="if(. = 0, 0, $x_axis_max)"/>
+				      <x function="if(. = 0, 0, $x_max)"/>
 				      <y function="4"/>
 				  </series>
 				  <series nodeset="instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id][@status='open']">
