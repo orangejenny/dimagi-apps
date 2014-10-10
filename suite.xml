@@ -508,22 +508,22 @@
 				      <x function="hours + first_dilation - 4"/>
 				      <y function="fhs_update"/>
 				  </series>
-				  <series nodeset="instance('two-points')/series/point">
+				  <series nodeset="instance('sequence')/sequence/index[.&lt;2]">
 				      <configuration>
 				          <text id="point-style">
 				              <value>none</value>
 				          </text>
 				      </configuration>
-				      <x function="if(index = 0, 0, $x_axis_max)"/>
+				      <x function="if(. = 0, 0, $x_axis_max)"/>
 				      <y function="100"/>
 				  </series>
-				  <series nodeset="instance('two-points')/series/point">
+				  <series nodeset="instance('sequence')/sequence/index[.&lt;2]">
 				      <configuration>
 				          <text id="point-style">
 				              <value>none</value>
 				          </text>
 				      </configuration>
-				      <x function="if(index = 0, 0, $x_axis_max)"/>
+				      <x function="if(. = 0, 0, $x_axis_max)"/>
 				      <y function="180"/>
 				  </series>
 			  </graph>
@@ -560,7 +560,7 @@
 	                      <value>10</value>
 	                  </text>
 	              </configuration>
-				  <series nodeset="instance('dilation-thresholds')/thresholds/series[@id='alert']/point">
+				  <series nodeset="instance('sequence')/sequence/index[.&lt;3]">
 				      <configuration>
 				          <text id="fill-below">
 				              <value>#ffdddd00</value>
@@ -572,10 +572,10 @@
 				              <value>none</value>
 				          </text>
 				      </configuration>
-				      <x function="x"/>
-				      <y function="y"/>
+				      <x function="if(. = 0, 0, if(. = 1, 6, $x_axis_max))"/>
+				      <y function="if(. = 0, 4, 10)"/>
 				  </series>
-				  <series nodeset="instance('dilation-thresholds')/thresholds/series[@id='action']/point">
+				  <series nodeset="instance('sequence')/sequence/index[.&lt;3]">
 				      <configuration>
 				          <text id="fill-below">
 				              <value>#ffdd0000</value>
@@ -587,10 +587,10 @@
 				              <value>none</value>
 				          </text>
 				      </configuration>
-				      <x function="x"/>
-				      <y function="y"/>
+				      <x function="if(. = 0, 4, if(. = 1, 10, $x_axis_max))"/>
+				      <y function="if(. = 0, 4, 10)"/>
 				  </series>
-				  <series nodeset="instance('dilation-thresholds')/thresholds/series[@id='whitespace']/point">
+				  <series nodeset="instance('sequence')/sequence/index[.&lt;2]">
 				      <configuration>
 				          <text id="fill-below">
 				              <value>#ffffffff</value>
@@ -602,8 +602,8 @@
 				              <value>none</value>
 				          </text>
 				      </configuration>
-				      <x function="x"/>
-				      <y function="y"/>
+				      <x function="if(. = 0, 0, $x_axis_max)"/>
+				      <y function="4"/>
 				  </series>
 				  <series nodeset="instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id][@status='open']">
 				      <configuration>
@@ -1170,8 +1170,7 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-    <instance id="dilation-thresholds" src="jr://instance/fixture/dilation-thresholds" />
-    <instance id="two-points" src="jr://instance/fixture/two-points" />
+    <instance id="sequence" src="jr://instance/fixture/sequence" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
     </session>
@@ -1189,8 +1188,7 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-    <instance id="dilation-thresholds" src="jr://instance/fixture/dilation-thresholds" />
-    <instance id="two-points" src="jr://instance/fixture/two-points" />
+    <instance id="sequence" src="jr://instance/fixture/sequence" />
     <instance id="commcaresession" src="jr://instance/session"/>
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
@@ -1210,8 +1208,7 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-    <instance id="dilation-thresholds" src="jr://instance/fixture/dilation-thresholds" />
-    <instance id="two-points" src="jr://instance/fixture/two-points" />
+    <instance id="sequence" src="jr://instance/fixture/sequence" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
     </session>
@@ -1229,8 +1226,7 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-    <instance id="dilation-thresholds" src="jr://instance/fixture/dilation-thresholds" />
-    <instance id="two-points" src="jr://instance/fixture/two-points" />
+    <instance id="sequence" src="jr://instance/fixture/sequence" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
     </session>
@@ -1243,8 +1239,7 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-    <instance id="dilation-thresholds" src="jr://instance/fixture/dilation-thresholds" />
-    <instance id="two-points" src="jr://instance/fixture/two-points" />
+    <instance id="sequence" src="jr://instance/fixture/sequence" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m2_case_short" detail-confirm="m2_case_long"/>
     </session>
@@ -1257,8 +1252,7 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-    <instance id="dilation-thresholds" src="jr://instance/fixture/dilation-thresholds" />
-    <instance id="two-points" src="jr://instance/fixture/two-points" />
+    <instance id="sequence" src="jr://instance/fixture/sequence" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m2_case_short" detail-confirm="m2_case_long"/>
     </session>
@@ -1271,8 +1265,7 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-    <instance id="dilation-thresholds" src="jr://instance/fixture/dilation-thresholds" />
-    <instance id="two-points" src="jr://instance/fixture/two-points" />
+    <instance id="sequence" src="jr://instance/fixture/sequence" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='indicators'][@status='open']" value="./@case_id" detail-select="m3_case_short" detail-confirm="m3_case_long"/>
     </session>
@@ -1305,56 +1298,11 @@
     </text>
     <command id="m3-f0"/>
   </menu>
-  <fixture id="two-points">
-      <series>
-          <point>
-              <index>0</index>
-          </point>
-          <point>
-              <index>1</index>
-          </point>
-      </series>
-  </fixture>
-  <fixture id="dilation-thresholds">
-      <thresholds>
-	      <series id="alert">
-	          <point>
-	              <x>0</x>
-	              <y>4</y>
-	          </point>
-	          <point>
-	              <x>6</x>
-	              <y>10</y>
-	          </point>
-	          <point>
-	              <x>12</x>
-	              <y>10</y>
-	          </point>
-	      </series>
-	      <series id="action">
-	          <point>
-	              <x>4</x>
-	              <y>4</y>
-	          </point>
-	          <point>
-	              <x>10</x>
-	              <y>10</y>
-	          </point>
-	          <point>
-	              <x>12</x>
-	              <y>10</y>
-	          </point>
-	      </series>
-	      <series id="whitespace">
-	          <point>
-	              <x>0</x>
-	              <y>4</y>
-	          </point>
-	          <point>
-	              <x>12</x>
-	              <y>4</y>
-	          </point>
-	      </series>
-	  </thresholds>
+  <fixture id="sequence">
+      <sequence>
+          <index>0</index>
+          <index>1</index>
+          <index>2</index>
+      </sequence>
   </fixture>
 </suite>
