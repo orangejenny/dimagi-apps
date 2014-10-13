@@ -86,22 +86,22 @@
       <template form="graph">
           <graph type="bubble">
 	          <configuration>
-	              <text id="x-label-count">
+	              <text id="x-labels">
 	                  <value>0</value>
 	              </text>
-	              <text id="y-label-count">
+	              <text id="y-labels">
 	                  <value>0</value>
 	              </text>
-	              <text id="x-axis-min">
+	              <text id="x-min">
 	                  <value>0</value>
 	              </text>
-	              <text id="x-axis-max">
+	              <text id="x-max">
 	                  <xpath function="12"/>
 	              </text>
-	              <text id="y-axis-min">
+	              <text id="y-min">
 	                  <value>0</value>
 	              </text>
-	              <text id="y-axis-max">
+	              <text id="y-max">
 	                  <value>5</value>
 	              </text>
 	              <text id="show-grid">
@@ -177,7 +177,7 @@
 	            <value>Partograph</value>
 	        </text>
 	    </title>
-	    <field>
+	    <!--field>
 	      <header>
 	        <text>
 	            <value></value>
@@ -189,25 +189,25 @@
 		              <text id="zoom">
 		                  <xpath function="true()" />
 		              </text>
-		              <text id="x-label-count">
+		              <text id="x-labels">
 		                  <value>13</value>
 		              </text>
-		              <text id="y-label-count">
+		              <text id="y-labels">
 		                  <value>13</value>
 		              </text>
-		              <text id="y-axis-title">
+		              <text id="y-title">
 		                  <value>Heart Rate</value>
 		              </text>
-		              <text id="x-axis-min">
+		              <text id="x-min">
 		                  <value>0</value>
 		              </text>
-		              <text id="x-axis-max">
+		              <text id="x-max">
 		                  <xpath function="12"/>
 		              </text>
-		              <text id="y-axis-min">
+		              <text id="y-min">
 		                  <value>80</value>
 		              </text>
-		              <text id="y-axis-max">
+		              <text id="y-max">
 		                  <value>200</value>
 		              </text>
 		          </configuration>
@@ -235,7 +235,7 @@
 				  </series>
 			  </graph>
 		  </template>
-	    </field>
+	    </field-->
 	    <field>
 	      <header>
 	        <text>
@@ -245,25 +245,28 @@
 	      <template form="graph">
 	          <graph type="xy">
 	              <configuration>
-		              <text id="x-label-count">
+	                  <text id="zoom">
+	                      <xpath function="true()"/>
+	                  </text>
+		              <text id="x-labels">
 		                  <value>13</value>
 		              </text>
-		              <text id="y-label-count">
+		              <text id="y-labels">
 		                  <value>11</value>
 		              </text>
-		              <text id="y-axis-title">
+		              <text id="y-title">
 		                  <value>Dilation / Descent of Head (cm)</value>
 		              </text>
-	                  <text id="x-axis-min">
+	                  <text id="x-min">
 	                      <value>0</value>
 	                  </text>
-	                  <text id="x-axis-max">
+	                  <text id="x-max">
 	                      <xpath function="12"/>
 	                  </text>
-	                  <text id="y-axis-min">
+	                  <text id="y-min">
 	                      <value>0</value>
 	                  </text>
-	                  <text id="y-axis-max">
+	                  <text id="y-max">
 	                      <value>10</value>
 	                  </text>
 	              </configuration>
@@ -272,9 +275,6 @@
 				          <text id="fill-below">
 				              <value>#ffdddd00</value>
 				          </text>
-				          <text id="line-color">
-				              <value>#00000000</value>
-				          </text>
 				          <text id="point-style">
 				              <value>none</value>
 				          </text>
@@ -282,13 +282,10 @@
 				      <x function="x"/>
 				      <y function="y"/>
 				  </series>
-				  <series nodeset="instance('dilation-thresholds')/thresholds/series[@id='action']/point">
+				  <!--series nodeset="instance('dilation-thresholds')/thresholds/series[@id='action']/point">
 				      <configuration>
 				          <text id="fill-below">
 				              <value>#ffdd0000</value>
-				          </text>
-				          <text id="line-color">
-				              <value>#00000000</value>
 				          </text>
 				          <text id="point-style">
 				              <value>none</value>
@@ -334,11 +331,11 @@
 				      <x><text><value>10</value></text></x>
 				      <y><text><value>7</value></text></y>
 				      <text><value>Action</value></text>
-				  </annotation>
+				  </annotation-->
 			  </graph>
 		  </template>
 	    </field>
-	    <field>
+	    <!--field>
 	      <header>
 	        <text>
 	            <value/>
@@ -347,28 +344,28 @@
 	      <template form="graph">
 	          <graph type="bubble">
 		          <configuration>
-		              <text id="x-label-count">
+		              <text id="x-labels">
 		                  <value>13</value>
 		              </text>
-		              <text id="y-label-count">
+		              <text id="y-labels">
 		                  <value>5</value>
 		              </text>
-		              <text id="x-axis-title">
+		              <text id="x-title">
 		                  <value>Hours</value>
 		              </text>
-		              <text id="y-axis-title">
+		              <text id="y-title">
 		                  <value>Contractions</value>
 		              </text>
-		              <text id="x-axis-min">
+		              <text id="x-min">
 		                  <value>0</value>
 		              </text>
-		              <text id="x-axis-max">
+		              <text id="x-max">
 		                  <xpath function="12"/>
 		              </text>
-		              <text id="y-axis-min">
+		              <text id="y-min">
 		                  <value>0</value>
 		              </text>
-		              <text id="y-axis-max">
+		              <text id="y-max">
 		                  <value>5</value>
 		              </text>
 		          </configuration>
@@ -384,7 +381,7 @@
 				  </series>
 			  </graph>
 		  </template>
-	    </field>
+	    </field-->
 	</detail>
   </detail>
   <detail id="m1_case_short">
@@ -558,10 +555,10 @@
 	              <x>6</x>
 	              <y>10</y>
 	          </point>
-	          <point>
+	          <!--point>
 	              <x>12</x>
 	              <y>10</y>
-	          </point>
+	          </point-->
 	      </series>
 	      <series id="action">
 	          <point>
