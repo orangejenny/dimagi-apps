@@ -85,131 +85,131 @@
       </text>
     </title>
     <detail>
-	    <title>
+      <title>
          <display>
            <text>
              <value>Tab1</value>
            </text>
-	        <media image="jr://file/commcare/image/data/icon1.png"/>
+          <media image="jr://file/commcare/image/data/icon1.png"/>
          </display>
-	    </title>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m0.case_long.case_name_1.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="case_name"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m0.case_long.case_artist_2.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="artist"/>
-	        </text>
-	      </template>
-	    </field>
-	</detail>
-	<detail>
-	    <title>
+      </title>
+      <field>
+        <header>
+          <text>
+            <locale id="m0.case_long.case_name_1.header"/>
+          </text>
+        </header>
+        <template>
+          <text>
+            <xpath function="case_name"/>
+          </text>
+        </template>
+      </field>
+      <field>
+        <header>
+          <text>
+            <locale id="m0.case_long.case_artist_2.header"/>
+          </text>
+        </header>
+        <template>
+          <text>
+            <xpath function="artist"/>
+          </text>
+        </template>
+      </field>
+  </detail>
+  <detail>
+      <title>
          <display>
            <text>
              <value>Tab2</value>
            </text>
-	        <media image="jr://file/commcare/image/data/icon2.png"/>
+          <media image="jr://file/commcare/image/data/icon2.png"/>
          </display>
-	    </title>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m0.case_long.case_rating_3.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="rating"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m0.case_long.case_mood_4.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="mood"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m0.case_long.case_energy_5.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="energy"/>
-	        </text>
-	      </template>
-	    </field>
-	</detail>
-	<detail>
-	    <title>
+      </title>
+      <field>
+        <header>
+          <text>
+            <locale id="m0.case_long.case_rating_3.header"/>
+          </text>
+        </header>
+        <template>
+          <text>
+            <xpath function="rating"/>
+          </text>
+        </template>
+      </field>
+      <field>
+        <header>
+          <text>
+            <locale id="m0.case_long.case_mood_4.header"/>
+          </text>
+        </header>
+        <template>
+          <text>
+            <xpath function="mood"/>
+          </text>
+        </template>
+      </field>
+      <field>
+        <header>
+          <text>
+            <locale id="m0.case_long.case_energy_5.header"/>
+          </text>
+        </header>
+        <template>
+          <text>
+            <xpath function="energy"/>
+          </text>
+        </template>
+      </field>
+  </detail>
+  <detail>
+      <title>
          <display>
            <text>
              <value>Tab3</value>
            </text>
-	        <media image="jr://file/commcare/image/data/icon3.png"/>
+          <media image="jr://file/commcare/image/data/icon3.png"/>
          </display>
-	    </title>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m0.case_long.case_date-opened_6.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="date_opened"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m0.case_long.case_date-opened_7.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="date_opened"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m0.case_long.case_plays_8.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="plays"/>
-	        </text>
-	      </template>
-	    </field>
-	 </detail>
+      </title>
+      <field>
+        <header>
+          <text>
+            <locale id="m0.case_long.case_date-opened_6.header"/>
+          </text>
+        </header>
+        <template>
+          <text>
+            <xpath function="date_opened"/>
+          </text>
+        </template>
+      </field>
+      <field>
+        <header>
+          <text>
+            <locale id="m0.case_long.case_date-opened_7.header"/>
+          </text>
+        </header>
+        <template>
+          <text>
+            <xpath function="date_opened"/>
+          </text>
+        </template>
+      </field>
+      <field>
+        <header>
+          <text>
+            <locale id="m0.case_long.case_plays_8.header"/>
+          </text>
+        </header>
+        <template>
+          <text>
+            <xpath function="plays"/>
+          </text>
+        </template>
+      </field>
+   </detail>
   </detail>
   <entry>
     <form>http://openrosa.org/formdesigner/B520859B-BE3D-4DAB-B8E9-585C3E1019C5</form>
