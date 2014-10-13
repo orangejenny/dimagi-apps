@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<suite version="19" descriptor="Suite File">
+<suite version="47" descriptor="Suite File">
   <xform>
     <resource id="9b203a10dd4059ea0413807e1686a6a41d60e955" version="19" descriptor="Form: (Module Songs) - Add Song">
       <location authority="local">./modules-0/forms-0.xml</location>
@@ -7,19 +7,25 @@
     </resource>
   </xform>
   <xform>
-    <resource id="7cb79b36ad01f4fd538ad1b0469b9085599aeb21" version="19" descriptor="Form: (Module Songs) - Play Song">
+    <resource id="7cb79b36ad01f4fd538ad1b0469b9085599aeb21" version="25" descriptor="Form: (Module Songs) - Play Song">
       <location authority="local">./modules-0/forms-1.xml</location>
       <location authority="remote">./modules-0/forms-1.xml</location>
     </resource>
   </xform>
+  <xform>
+    <resource id="141cb65a09b44fe19f026941b7e46f4c7f7f0137" version="47" descriptor="Form: (Module Songs) - Media">
+      <location authority="local">./modules-0/forms-2.xml</location>
+      <location authority="remote">./modules-0/forms-2.xml</location>
+    </resource>
+  </xform>
   <locale language="default">
-    <resource id="app_default_strings" version="19" descriptor="Translations: Default Language">
+    <resource id="app_default_strings" version="47" descriptor="Translations: Default Language">
       <location authority="local">./default/app_strings.txt</location>
       <location authority="remote">./default/app_strings.txt</location>
     </resource>
   </locale>
   <locale language="en">
-    <resource id="app_en_strings" version="19" descriptor="Translations: English">
+    <resource id="app_en_strings" version="47" descriptor="Translations: English">
       <location authority="local">./en/app_strings.txt</location>
       <location authority="remote">./en/app_strings.txt</location>
     </resource>
@@ -78,6 +84,15 @@
         <locale id="m0.case_long.title"/>
       </text>
     </title>
+     <detail>
+       <title>
+          <display>
+            <text>
+              <value>Tab1</value>
+            </text>
+           <media image="jr://file/commcare/image/data/icon1.png"/>
+          </display>
+       </title>
     <field>
       <header>
         <text>
@@ -102,6 +117,16 @@
         </text>
       </template>
     </field>
+   </detail>
+   <detail>
+       <title>
+          <display>
+            <text>
+              <value>Tab2</value>
+            </text>
+           <media image="jr://file/commcare/image/data/icon2.png" audio="jr://file/commcare/audio/data/audio.mp3"/>
+          </display>
+       </title>
     <field>
       <header>
         <text>
@@ -138,6 +163,16 @@
         </text>
       </template>
     </field>
+   </detail>
+   <detail>
+       <title>
+          <display>
+            <text>
+              <value>Tab3</value>
+            </text>
+           <media image="jr://file/commcare/image/data/icon3.png"/>
+          </display>
+       </title>
     <field>
       <header>
         <text>
@@ -153,7 +188,19 @@
     <field>
       <header>
         <text>
-          <locale id="m0.case_long.case_plays_7.header"/>
+          <locale id="m0.case_long.case_date-opened_7.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="date_opened"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_long.case_plays_8.header"/>
         </text>
       </header>
       <template>
@@ -162,6 +209,7 @@
         </text>
       </template>
     </field>
+  </detail>
   </detail>
   <entry>
     <form>http://openrosa.org/formdesigner/B520859B-BE3D-4DAB-B8E9-585C3E1019C5</form>
@@ -174,14 +222,25 @@
   <entry>
     <form>http://openrosa.org/formdesigner/EBAB623F-3DF8-421B-A083-ED7CEF5A9A97</form>
     <command id="m0-f1">
-      <text>
-        <locale id="forms.m0f1"/>
-      </text>
+      <display>
+        <text>
+          <locale id="forms.m0f1"/>
+        </text>
+        <media image="jr://file/commcare/image/data/question5.png" audio="jr://file/commcare/audio/data/audio.mp3"/>
+      </display>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='song'][@status='open']" value="./@case_id" detail-select="m0_case_short" detail-confirm="m0_case_long"/>
     </session>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/52624C27-ED22-4FB7-8442-51D739FFDA6A</form>
+    <command id="m0-f2">
+      <text>
+        <locale id="forms.m0f2"/>
+      </text>
+    </command>
   </entry>
   <menu id="root">
     <text>
@@ -189,5 +248,6 @@
     </text>
     <command id="m0-f0"/>
     <command id="m0-f1"/>
+    <command id="m0-f2"/>
   </menu>
 </suite>
