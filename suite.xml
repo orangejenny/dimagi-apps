@@ -85,11 +85,13 @@
       </text>
     </title>
     <detail>
-	    <title xform="image">
-	      <text>
-	        <!--value>jr://file/commcare/image/data/icon1.png</value-->
-	        <value>Tab1</value>
-	      </text>
+	    <title>
+         <display>
+           <text>
+             <value>Tab1</value>
+           </text>
+	        <media image="jr://file/commcare/image/data/icon1.png"/>
+         </display>
 	    </title>
 	    <field>
 	      <header>
@@ -117,11 +119,13 @@
 	    </field>
 	</detail>
 	<detail>
-	    <title xform="image">
-	      <text>
-	        <!--value>jr://file/commcare/image/data/icon2.png</value-->
-	        <value>Tab2</value>
-	      </text>
+	    <title>
+         <display>
+           <text>
+             <value>Tab2</value>
+           </text>
+	        <media image="jr://file/commcare/image/data/icon2.png"/>
+         </display>
 	    </title>
 	    <field>
 	      <header>
@@ -161,11 +165,13 @@
 	    </field>
 	</detail>
 	<detail>
-	    <title xform="image">
-	      <text>
-	        <!--value>jr://file/commcare/image/data/icon3.png</value-->
-	        <value>Usage</value>
-	      </text>
+	    <title>
+         <display>
+           <text>
+             <value>Tab3</value>
+           </text>
+	        <media image="jr://file/commcare/image/data/icon3.png"/>
+         </display>
 	    </title>
 	    <field>
 	      <header>
