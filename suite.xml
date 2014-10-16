@@ -1,33 +1,51 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<suite version="305" descriptor="Suite File">
+<suite version="427" descriptor="Suite File">
   <xform>
-    <resource id="74714a8a7a4ba3504eee2c4d0b0f39d754cc4412" version="303" descriptor="Form: (Module mLabour) - Register New Patient">
+    <resource id="74714a8a7a4ba3504eee2c4d0b0f39d754cc4412" version="410" descriptor="Form: (Module mLabour) - Register New Patient">
       <location authority="local">./modules-0/forms-0.xml</location>
       <location authority="remote">./modules-0/forms-0.xml</location>
     </resource>
   </xform>
   <xform>
-    <resource id="d9acc860d2398aa600f8a37f7b685a04eb81af6b" version="303" descriptor="Form: (Module Active Patients) - Update Maternal Indicators">
+    <resource id="cd8dfb5c6453b1e7e7897e74cddcb888b3d620d3" version="427" descriptor="Form: (Module Active Patients) - General Exam">
       <location authority="local">./modules-1/forms-0.xml</location>
       <location authority="remote">./modules-1/forms-0.xml</location>
     </resource>
   </xform>
   <xform>
-    <resource id="39f5e5dafb1b9442899f8e1d04101104fd758bf6" version="234" descriptor="Form: (Module Active Patients) - Add Patient Notes">
+    <resource id="d9acc860d2398aa600f8a37f7b685a04eb81af6b" version="427" descriptor="Form: (Module Active Patients) - Update Maternal Indicators - (New VE)">
       <location authority="local">./modules-1/forms-1.xml</location>
       <location authority="remote">./modules-1/forms-1.xml</location>
     </resource>
   </xform>
   <xform>
-    <resource id="14232d06b4587b0727d306b05d9c1d57ce20364e" version="234" descriptor="Form: (Module Active Patients) - Update Patient Info">
+    <resource id="6522bbea5d08e06c792ae7ccccef37ea0b55bac6" version="410" descriptor="Form: (Module Active Patients) - Vaginal Exam">
       <location authority="local">./modules-1/forms-2.xml</location>
       <location authority="remote">./modules-1/forms-2.xml</location>
     </resource>
   </xform>
   <xform>
-    <resource id="ed9b7df90176d92385489873cfacf9ce8b9ada8b" version="234" descriptor="Form: (Module Active Patients) - Record Delivery">
+    <resource id="feefb6f764981740adbc8baf320cd642d8fafdaf" version="410" descriptor="Form: (Module Active Patients) - Update Maternal Indicators">
       <location authority="local">./modules-1/forms-3.xml</location>
       <location authority="remote">./modules-1/forms-3.xml</location>
+    </resource>
+  </xform>
+  <xform>
+    <resource id="39f5e5dafb1b9442899f8e1d04101104fd758bf6" version="410" descriptor="Form: (Module Active Patients) - Add Patient Notes">
+      <location authority="local">./modules-1/forms-4.xml</location>
+      <location authority="remote">./modules-1/forms-4.xml</location>
+    </resource>
+  </xform>
+  <xform>
+    <resource id="14232d06b4587b0727d306b05d9c1d57ce20364e" version="410" descriptor="Form: (Module Active Patients) - Update Patient Info">
+      <location authority="local">./modules-1/forms-5.xml</location>
+      <location authority="remote">./modules-1/forms-5.xml</location>
+    </resource>
+  </xform>
+  <xform>
+    <resource id="ed9b7df90176d92385489873cfacf9ce8b9ada8b" version="410" descriptor="Form: (Module Active Patients) - Record Delivery">
+      <location authority="local">./modules-1/forms-6.xml</location>
+      <location authority="remote">./modules-1/forms-6.xml</location>
     </resource>
   </xform>
   <xform>
@@ -49,19 +67,19 @@
     </resource>
   </xform>
   <locale language="default">
-    <resource id="app_default_strings" version="305" descriptor="Translations: Default Language">
+    <resource id="app_default_strings" version="427" descriptor="Translations: Default Language">
       <location authority="local">./default/app_strings.txt</location>
       <location authority="remote">./default/app_strings.txt</location>
     </resource>
   </locale>
   <locale language="en">
-    <resource id="app_en_strings" version="305" descriptor="Translations: English">
+    <resource id="app_en_strings" version="427" descriptor="Translations: English">
       <location authority="local">./en/app_strings.txt</location>
       <location authority="remote">./en/app_strings.txt</location>
     </resource>
   </locale>
   <locale language="hin">
-    <resource id="app_hin_strings" version="305" descriptor="Translations: Unknown Language (hin)">
+    <resource id="app_hin_strings" version="427" descriptor="Translations: Unknown Language (hin)">
       <location authority="local">./hin/app_strings.txt</location>
       <location authority="remote">./hin/app_strings.txt</location>
     </resource>
@@ -149,7 +167,7 @@
        </style>
       <header>
         <text>
-          <locale id="m1.case_short.case_time_measured_2.header"/>
+          <locale id="m1.case_short.case_time_measured_GE_2.header"/>
         </text>
       </header>
       <template>
@@ -333,6 +351,21 @@
       <sort type="string" order="2" direction="descending">
         <text>
           <xpath function="nurse_flag"/>
+        </text>
+      </sort>
+    </field>
+    <field>
+      <header width="0">
+        <text/>
+      </header>
+      <template width="0">
+        <text>
+          <xpath function="time_measured"/>
+        </text>
+      </template>
+      <sort type="string" order="3" direction="descending">
+        <text>
+          <xpath function="time_measured"/>
         </text>
       </sort>
     </field>
@@ -706,198 +739,186 @@
 	            <locale id="m1.case_long.tab2"/>
 	        </text>
 	    </title>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_age_5.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="age"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_bp_6.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="bp"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_amniotic_fluid_7.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="amniotic_fluid"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_cd_8.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="cd"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_contractions_duration_9.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="contractions_duration"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_contractions_number_10.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="contractions_number"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_descent_11.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="descent"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_drugs_iv_12.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="drugs_iv"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_fhs_13.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="fhs"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_moulding_14.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="moulding"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_oxytocin_15.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="oxytocin"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_pulse_16.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="pulse"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_temp_17.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="temp"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_urine_vol_18.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="urine_vol"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_patient_notes_19.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="patient_notes"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_station_head_20.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="station_head"/>
-	        </text>
-	      </template>
-	    </field>
+       <field>
+         <header>
+           <text>
+             <locale id="m1.case_long.case_age_3.header"/>
+           </text>
+         </header>
+         <template>
+           <text>
+             <xpath function="age"/>
+           </text>
+         </template>
+       </field>
+       <field>
+         <header>
+           <text>
+             <locale id="m1.case_long.case_bp_4.header"/>
+           </text>
+         </header>
+         <template>
+           <text>
+             <xpath function="bp"/>
+           </text>
+         </template>
+       </field>
+       <field>
+         <header>
+           <text>
+             <locale id="m1.case_long.case_amniotic_fluid_5.header"/>
+           </text>
+         </header>
+         <template>
+           <text>
+             <xpath function="amniotic_fluid"/>
+           </text>
+         </template>
+       </field>
+       <field>
+         <header>
+           <text>
+             <locale id="m1.case_long.case_cd_6.header"/>
+           </text>
+         </header>
+         <template>
+           <text>
+             <xpath function="cd"/>
+           </text>
+         </template>
+       </field>
+       <field>
+         <header>
+           <text>
+             <locale id="m1.case_long.case_contractions_duration_7.header"/>
+           </text>
+         </header>
+         <template>
+           <text>
+             <xpath function="contractions_duration"/>
+           </text>
+         </template>
+       </field>
+       <field>
+         <header>
+           <text>
+             <locale id="m1.case_long.case_contractions_number_8.header"/>
+           </text>
+         </header>
+         <template>
+           <text>
+             <xpath function="contractions_number"/>
+           </text>
+         </template>
+       </field>
+       <field>
+         <header>
+           <text>
+             <locale id="m1.case_long.case_descent_9.header"/>
+           </text>
+         </header>
+         <template>
+           <text>
+             <xpath function="descent"/>
+           </text>
+         </template>
+       </field>
+       <field>
+         <header>
+           <text>
+             <locale id="m1.case_long.case_drugs_iv_10.header"/>
+           </text>
+         </header>
+         <template>
+           <text>
+             <xpath function="drugs_iv"/>
+           </text>
+         </template>
+       </field>
+       <field>
+         <header>
+           <text>
+             <locale id="m1.case_long.case_fhs_11.header"/>
+           </text>
+         </header>
+         <template>
+           <text>
+             <xpath function="fhs"/>
+           </text>
+         </template>
+       </field>
+       <field>
+         <header>
+           <text>
+             <locale id="m1.case_long.case_moulding_12.header"/>
+           </text>
+         </header>
+         <template>
+           <text>
+             <xpath function="moulding"/>
+           </text>
+         </template>
+       </field>
+       <field>
+         <header>
+           <text>
+             <locale id="m1.case_long.case_oxytocin_13.header"/>
+           </text>
+         </header>
+         <template>
+           <text>
+             <xpath function="oxytocin"/>
+           </text>
+         </template>
+       </field>
+       <field>
+         <header>
+           <text>
+             <locale id="m1.case_long.case_pulse_14.header"/>
+           </text>
+         </header>
+         <template>
+           <text>
+             <xpath function="pulse"/>
+           </text>
+         </template>
+       </field>
+       <field>
+         <header>
+           <text>
+             <locale id="m1.case_long.case_temp_15.header"/>
+           </text>
+         </header>
+         <template>
+           <text>
+             <xpath function="temp"/>
+           </text>
+         </template>
+       </field>
+       <field>
+         <header>
+           <text>
+             <locale id="m1.case_long.case_urine_vol_16.header"/>
+           </text>
+         </header>
+         <template>
+           <text>
+             <xpath function="urine_vol"/>
+           </text>
+         </template>
+       </field>
+       <field>
+         <header>
+           <text>
+             <locale id="m1.case_long.case_patient_notes_17.header"/>
+           </text>
+         </header>
+         <template>
+           <text>
+             <xpath function="patient_notes"/>
+           </text>
+         </template>
+       </field>
 	  </detail>
 	  <detail>
 	    <title>
@@ -917,42 +938,42 @@
 	        </text>
 	      </template>
 	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_high_risk_2.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="high_risk"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_time_measured_3.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="30 - int((double(now()) - double(time_measured)) * 24 * 60)"/>
-	        </text>
-	      </template>
-	    </field>
-	    <field>
-	      <header>
-	        <text>
-	          <locale id="m1.case_long.case_time_measured_4.header"/>
-	        </text>
-	      </header>
-	      <template>
-	        <text>
-	          <xpath function="240 - int((double(now()) - double(time_measured)) * 24 * 60)"/>
-	        </text>
-	      </template>
-	    </field>
+       <field>
+         <header>
+           <text>
+             <locale id="m1.case_long.case_high_risk_2.header"/>
+           </text>
+         </header>
+         <template>
+           <text>
+             <xpath function="high_risk"/>
+           </text>
+         </template>
+       </field>
+       <field>
+         <header>
+           <text>
+             <locale id="m1.case_long.case_time_measured_GE_18.header"/>
+           </text>
+         </header>
+         <template>
+           <text>
+             <xpath function="30 - int(double(now()) - double(time_measured_GE))"/>
+           </text>
+         </template>
+       </field>
+       <field>
+         <header>
+           <text>
+             <locale id="m1.case_long.case_time_measured_VE_19.header"/>
+           </text>
+         </header>
+         <template>
+           <text>
+             <xpath function="240 - int((double(now()) - double(time_measured_VE)) * 24 * 60)"/>
+           </text>
+         </template>
+       </field>
 	  </detail>
   </detail>
   <detail id="m2_case_short">
@@ -1143,13 +1164,16 @@
   <entry>
     <form>http://openrosa.org/formdesigner/91D2D5F3-3DF5-4F25-A418-E5D0DF848A15</form>
     <command id="m0-f0">
-      <text>
-        <locale id="forms.m0f0"/>
-      </text>
+      <display>
+        <text>
+          <locale id="forms.m0f0"/>
+        </text>
+        <media image="jr://file/commcare/image/register_new_patient.png"/>
+      </display>
     </command>
   </entry>
   <entry>
-    <form>http://openrosa.org/formdesigner/258633B2-85B5-4D89-A036-B8D7B6A7BC74</form>
+    <form>http://openrosa.org/formdesigner/cd8dfb5c6453b1e7e7897e74cddcb888b3d620d3</form>
     <command id="m1-f0">
       <text>
         <locale id="forms.m1f0"/>
@@ -1157,6 +1181,7 @@
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
     <instance id="sequence" src="jr://instance/fixture/sequence" />
+    <instance id="commcaresession" src="jr://instance/session"/>
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
     </session>
@@ -1167,15 +1192,73 @@
     </stack>
   </entry>
   <entry>
-    <form>http://openrosa.org/formdesigner/19987B7C-76CE-4996-A566-607EB6B94766</form>
+    <form>http://openrosa.org/formdesigner/258633B2-85B5-4D89-A036-B8D7B6A7BC74</form>
     <command id="m1-f1">
+      <display>
+        <text>
+          <locale id="forms.m1f1"/>
+        </text>
+        <media image="jr://file/commcare/image/update_maternal_indicators.png"/>
+      </display>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <instance id="sequence" src="jr://instance/fixture/sequence" />
+    <instance id="commcaresession" src="jr://instance/session"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
+    </session>
+    <stack>
+      <create>
+        <command>m1</command>
+      </create>
+    </stack>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/6522bbea5d08e06c792ae7ccccef37ea0b55bac6</form>
+    <command id="m1-f2">
       <text>
-        <locale id="forms.m1f1"/>
+        <locale id="forms.m1f2"/>
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
     <instance id="sequence" src="jr://instance/fixture/sequence" />
     <instance id="commcaresession" src="jr://instance/session"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
+    </session>
+    <stack>
+      <create>
+        <command>m1</command>
+      </create>
+    </stack>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/feefb6f764981740adbc8baf320cd642d8fafdaf</form>
+    <command id="m1-f3">
+      <text>
+        <locale id="forms.m1f3"/>
+      </text>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <instance id="sequence" src="jr://instance/fixture/sequence" />
+    <instance id="commcaresession" src="jr://instance/session"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
+    </session>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/19987B7C-76CE-4996-A566-607EB6B94766</form>
+    <command id="m1-f4">
+      <display>
+        <text>
+          <locale id="forms.m1f4"/>
+        </text>
+        <media image="jr://file/commcare/image/add_patient_notes.png"/>
+      </display>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <instance id="commcaresession" src="jr://instance/session"/>
+    <instance id="sequence" src="jr://instance/fixture/sequence" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
     </session>
@@ -1188,12 +1271,16 @@
   </entry>
   <entry>
     <form>http://openrosa.org/formdesigner/14232d06b4587b0727d306b05d9c1d57ce20364e</form>
-    <command id="m1-f2">
-      <text>
-        <locale id="forms.m1f2"/>
-      </text>
+    <command id="m1-f5">
+      <display>
+        <text>
+          <locale id="forms.m1f5"/>
+        </text>
+        <media image="jr://file/commcare/image/update_patient_info.png"/>
+      </display>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
+    <instance id="commcaresession" src="jr://instance/session"/>
     <instance id="sequence" src="jr://instance/fixture/sequence" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
@@ -1206,16 +1293,25 @@
   </entry>
   <entry>
     <form>http://openrosa.org/formdesigner/E2564278-89E0-4BD1-A773-5B10DFF97098</form>
-    <command id="m1-f3">
-      <text>
-        <locale id="forms.m1f3"/>
-      </text>
+    <command id="m1-f6">
+      <display>
+        <text>
+          <locale id="forms.m1f6"/>
+        </text>
+        <media image="jr://file/commcare/image/record_delivery.png"/>
+      </display>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
+    <instance id="commcaresession" src="jr://instance/session"/>
     <instance id="sequence" src="jr://instance/fixture/sequence" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
     </session>
+    <stack>
+      <create>
+        <command>m1</command>
+      </create>
+    </stack>
   </entry>
   <entry>
     <form>http://openrosa.org/formdesigner/6405f702e71776df6fe2ba4e45a41758958927bf</form>
@@ -1267,9 +1363,12 @@
       <locale id="modules.m1"/>
     </text>
     <command id="m1-f0"/>
-    <command id="m1-f1"/>
-    <command id="m1-f2"/>
+    <command id="m1-f1" relevant="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/first_measured_time_GE != &quot;&quot;"/>
+    <command id="m1-f2" relevant="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/first_measured_time_GE != &quot;&quot;"/>
     <command id="m1-f3"/>
+    <command id="m1-f4"/>
+    <command id="m1-f5"/>
+    <command id="m1-f6"/>
   </menu>
   <menu id="root">
     <text>

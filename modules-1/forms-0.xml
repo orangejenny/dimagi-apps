@@ -1,26 +1,26 @@
-
 <h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:vellum="http://commcarehq.org/xforms/vellum">
 	<h:head>
-		<h:title>Update Maternal Indicators</h:title>
+		<h:title>General Exam</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/258633B2-85B5-4D89-A036-B8D7B6A7BC74" uiVersion="1" version="303" name="Update Maternal Indicators">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/cd8dfb5c6453b1e7e7897e74cddcb888b3d620d3" uiVersion="1" version="427" name="General Exam">
 					<icon_list>
 						<alert_icon/>
 						<nurse_flag_icon/>
 						<reminder_icon/>
 						<high_risk_history_icon/>
 					</icon_list>
-					<pulse_list>
-						<pulse_recent/>
-						<pulse_update/>
-					</pulse_list>
-					<contractions_list>
-						<contractions_label/>
-						<contractions_recent/>
-						<contraction_num_update/>
-						<contraction_duration_update/>
-					</contractions_list>
+					<emergency_signs_list>
+						<emergency_signs/>
+					</emergency_signs_list>
+					<es_alert>
+						<es_alert_text/>
+						<es_alert_suggestion/>
+						<es_alert_choice/>
+					</es_alert>
+					<es_record_actions>
+						<es_actions_taken/>
+					</es_record_actions>
 					<fhs_list>
 						<fhs_label/>
 						<fhs_recent/>
@@ -34,26 +34,34 @@
 					<fhs_record_actions>
 						<fhs_actions_taken/>
 					</fhs_record_actions>
-					<emergency_signs_list>
-						<emergency_signs/>
-					</emergency_signs_list>
-					<es_alert>
-						<es_alert_text/>
-						<es_alert_suggestion/>
-						<es_alert_choice/>
-					</es_alert>
-					<es_record_actions>
-						<es_actions_taken/>
-					</es_record_actions>
-					<cd_list>
-						<cd_label/>
-						<cd_recent/>
-						<cd_update/>
-					</cd_list>
-					<temp_list>
-						<temp_recent/>
-						<temp_update/>
-					</temp_list>
+					<amniotic_fluid_list>
+						<amniotic_fluid_label/>
+						<amniotic_fluid_recent/>
+						<amniotic_fluid_color/>
+					</amniotic_fluid_list>
+					<af_alert>
+						<af_alert_text/>
+						<af_alert_suggestion/>
+						<af_alert_choice/>
+					</af_alert>
+					<af_record_actions>
+						<af_actions_taken/>
+					</af_record_actions>
+					<moulding_list>
+						<moulding_recent/>
+						<moulding_update/>
+					</moulding_list>
+					<contractions_list>
+						<contractions_label/>
+						<contractions_recent/>
+						<contraction_num_update/>
+						<contraction_duration_update/>
+					</contractions_list>
+					<oxytocin_list>
+						<oxytocin_recent/>
+						<oxytocin_update/>
+						<oxy_update/>
+					</oxytocin_list>
 					<bp_list>
 						<bp_recent/>
 						<bp_update/>
@@ -68,29 +76,14 @@
 					<bp_record_actions>
 						<bp_actions_taken/>
 					</bp_record_actions>
-					<moulding_list>
-						<moulding_recent/>
-						<moulding_update/>
-					</moulding_list>
-					<amniotic_fluid_list>
-						<amniotic_fluid_label/>
-						<amniotic_fluid_recent/>
-						<amniotic_fluid_color/>
-					</amniotic_fluid_list>
-					<af_alert>
-						<af_alert_text/>
-						<af_alert_suggestion/>
-						<af_alert_choice/>
-					</af_alert>
-					<af_record_actions>
-						<af_actions_taken/>
-					</af_record_actions>
-					<descent_list>
-						<descent_label/>
-						<descent_recent/>
-						<descent_update/>
-						<station_head/>
-					</descent_list>
+					<pulse_list>
+						<pulse_recent/>
+						<pulse_update/>
+					</pulse_list>
+					<temp_list>
+						<temp_recent/>
+						<temp_update/>
+					</temp_list>
 					<urine_list>
 						<urine_recent/>
 						<urine_output/>
@@ -98,20 +91,22 @@
 						<urine_protein_update/>
 						<urine_acetone_update/>
 					</urine_list>
-					<oxytocin_list>
-						<oxytocin_recent/>
-						<oxytocin_update/>
-						<oxy_update/>
-					</oxytocin_list>
 					<other_drugs>
 						<drugs_iv_recent/>
 						<drugs_iv_update/>
 						<druvs_iv_update/>
 					</other_drugs>
 					<time_measured/>
-					<cd/>
-					<cd_hours/>
-					<cd_minutes/>
+					<time_measured_GE/>
+					<time_measured_VE/>
+					<first_measured_time_GE/>
+					<first_measured_time_VE/>
+					<current_hour/>
+					<current_minutes/>
+					<current_hour_rounded/>
+					<current_hour_temp/>
+					<minutes_until_next_GE/>
+					<minutes_until_next_VE/>
 					<contractions_number/>
 					<contractions_duration/>
 					<contractions_time/>
@@ -125,8 +120,6 @@
 					<urine_acetone/>
 					<urine_vol/>
 					<urine_time/>
-					<descent/>
-					<descent_time/>
 					<pulse/>
 					<pulse_time/>
 					<bp/>
@@ -138,14 +131,11 @@
 					<drugs_iv/>
 					<drugs_iv_time/>
 					<last_measured/>
-					<minutes_to_next_exam/>
-					<cd_time/>
 					<contractions_hours/>
 					<af_hours/>
 					<moulding_hours/>
 					<fhs_hours/>
 					<urine_hours/>
-					<descent_hours/>
 					<pulse_hours/>
 					<bp_hours/>
 					<temp_hours/>
@@ -156,7 +146,6 @@
 					<moulding_minutes/>
 					<fhs_minutes/>
 					<urine_minutes/>
-					<descent_minutes/>
 					<pulse_minutes/>
 					<bp_minutes/>
 					<temp_minutes/>
@@ -164,7 +153,6 @@
 					<drugs_iv_minutes/>
 					<name/>
 					<first_time/>
-					<overall_hours/>
 					<nurse_flag/>
 					<is_first_time_recorded/>
 					<first_measured_time/>
@@ -177,33 +165,16 @@
 					<bp_alert_triggered/>
 					<fhs_alert_triggered/>
 					<es_alert_triggered/>
-					<first_dilation_load/>
 					<first_dilation_save/>
-				<subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>indicators</case_type></create><update><cd_update/><contraction_duration_update/><contraction_num_update/><fhs_update/><first_dilation/><hours/><station_head/></update><index><parent case_type="patient"/></index></case></subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><update><alert_triggered/><amniotic_fluid/><bp/><cd/><contractions_duration/><contractions_number/><descent/><drugs_iv/><fhs/><first_dilation/><first_measured_time/><moulding/><nurse_flag/><oxytocin/><pulse/><station_head/><temp/><time_measured/><urine_acetone/><urine_protein/><urine_vol/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+					<cd_from_last_ve/>
+					<station_from_last_ve/>
+				<subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>indicators</case_type></create><update><cd_update/><contraction_duration_update/><contraction_num_update/><fhs_update/><hours/><station_head/></update><index><parent case_type="patient"/></index></case></subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><update><alert_triggered/><amniotic_fluid/><bp/><contractions_duration/><contractions_number/><current_hour/><drugs_iv/><fhs/><first_measured_time_GE/><first_measured_time_VE/><moulding/><nurse_flag/><oxytocin/><pulse/><temp/><time_measured_GE/><time_measured_VE/><urine_acetone/><urine_protein/><urine_vol/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
 			</instance><instance id="commcaresession" src="jr://instance/session"/><instance id="casedb" src="jr://instance/casedb"/>
 			<bind nodeset="/data/icon_list" relevant="1=2"/>
 			<bind nodeset="/data/icon_list/alert_icon" type="xsd:string"/>
 			<bind nodeset="/data/icon_list/nurse_flag_icon" type="xsd:string"/>
 			<bind nodeset="/data/icon_list/reminder_icon" type="xsd:string"/>
 			<bind nodeset="/data/icon_list/high_risk_history_icon" type="xsd:string"/>
-			<bind nodeset="/data/pulse_list"/>
-			<bind nodeset="/data/pulse_list/pulse_recent"/>
-			<bind nodeset="/data/pulse_list/pulse_update" type="xsd:int"/>
-			<bind nodeset="/data/contractions_list"/>
-			<bind nodeset="/data/contractions_list/contractions_label"/>
-			<bind nodeset="/data/contractions_list/contractions_recent"/>
-			<bind nodeset="/data/contractions_list/contraction_num_update" type="xsd:int"/>
-			<bind nodeset="/data/contractions_list/contraction_duration_update" type="xsd:int"/>
-			<bind nodeset="/data/fhs_list"/>
-			<bind nodeset="/data/fhs_list/fhs_label"/>
-			<bind nodeset="/data/fhs_list/fhs_recent"/>
-			<bind nodeset="/data/fhs_list/fhs_update" type="xsd:int" constraint="regex(.,'^[0-9]+$')"/>
-			<bind nodeset="/data/fhs_alert" relevant="/data/fhs_list/fhs_update &gt; 160 or /data/fhs_list/fhs_update &lt; 110"/>
-			<bind nodeset="/data/fhs_alert/fhs_alert_text"/>
-			<bind nodeset="/data/fhs_alert/fhs_alert_suggestion"/>
-			<bind nodeset="/data/fhs_alert/fhs_alert_choice" required="true()"/>
-			<bind nodeset="/data/fhs_record_actions" relevant="/data/fhs_alert/fhs_alert_choice = 'record_action'"/>
-			<bind nodeset="/data/fhs_record_actions/fhs_actions_taken" type="xsd:string"/>
 			<bind nodeset="/data/emergency_signs_list"/>
 			<bind nodeset="/data/emergency_signs_list/emergency_signs" required="true()"/>
 			<bind nodeset="/data/es_alert" relevant="selected(/data/emergency_signs_list/emergency_signs, 'difficulty_breathing') or selected(/data/emergency_signs_list/emergency_signs, 'shock') or selected(/data/emergency_signs_list/emergency_signs, 'vaginal_bleeding') or selected(/data/emergency_signs_list/emergency_signs, 'convulsions_unconsciousness') or selected(/data/emergency_signs_list/emergency_signs, 'prolapsed_cord') or selected(/data/emergency_signs_list/emergency_signs, 'fetal_distress')"/>
@@ -212,27 +183,16 @@
 			<bind nodeset="/data/es_alert/es_alert_choice" required="true()"/>
 			<bind nodeset="/data/es_record_actions" relevant="/data/es_alert/es_alert_choice = 'record_action'"/>
 			<bind nodeset="/data/es_record_actions/es_actions_taken" type="xsd:string"/>
-			<bind nodeset="/data/cd_list"/>
-			<bind nodeset="/data/cd_list/cd_label"/>
-			<bind nodeset="/data/cd_list/cd_recent"/>
-			<bind nodeset="/data/cd_list/cd_update" type="xsd:int" constraint=". &lt;= 10"/>
-			<bind nodeset="/data/temp_list"/>
-			<bind nodeset="/data/temp_list/temp_recent"/>
-			<bind nodeset="/data/temp_list/temp_update" type="xsd:double" constraint=". &lt;= 40 and . &gt; 30"/>
-			<bind nodeset="/data/bp_list"/>
-			<bind nodeset="/data/bp_list/bp_recent"/>
-			<bind nodeset="/data/bp_list/bp_update"/>
-			<bind nodeset="/data/bp_list/systolic" type="xsd:int"/>
-			<bind nodeset="/data/bp_list/diastolic" type="xsd:int"/>
-			<bind nodeset="/data/bp_alert" relevant="/data/bp_list/systolic &gt;= 140 and /data/bp_list/diastolic &gt;= 90"/>
-			<bind nodeset="/data/bp_alert/bp_alert_text"/>
-			<bind nodeset="/data/bp_alert/bp_alert_suggestion"/>
-			<bind nodeset="/data/bp_alert/bp_alert_choice" required="true()"/>
-			<bind nodeset="/data/bp_record_actions" relevant="/data/bp_alert/bp_alert_choice = 'record_action'"/>
-			<bind nodeset="/data/bp_record_actions/bp_actions_taken" type="xsd:string"/>
-			<bind nodeset="/data/moulding_list"/>
-			<bind nodeset="/data/moulding_list/moulding_recent"/>
-			<bind nodeset="/data/moulding_list/moulding_update"/>
+			<bind nodeset="/data/fhs_list"/>
+			<bind nodeset="/data/fhs_list/fhs_label"/>
+			<bind nodeset="/data/fhs_list/fhs_recent"/>
+			<bind nodeset="/data/fhs_list/fhs_update" type="xsd:int" constraint="regex(.,'^[0-9]+$')" required="true()"/>
+			<bind nodeset="/data/fhs_alert" relevant="/data/fhs_list/fhs_update &gt; 160 or /data/fhs_list/fhs_update &lt; 110"/>
+			<bind nodeset="/data/fhs_alert/fhs_alert_text"/>
+			<bind nodeset="/data/fhs_alert/fhs_alert_suggestion"/>
+			<bind nodeset="/data/fhs_alert/fhs_alert_choice" required="true()"/>
+			<bind nodeset="/data/fhs_record_actions" relevant="/data/fhs_alert/fhs_alert_choice = 'record_action'"/>
+			<bind nodeset="/data/fhs_record_actions/fhs_actions_taken" type="xsd:string"/>
 			<bind nodeset="/data/amniotic_fluid_list"/>
 			<bind nodeset="/data/amniotic_fluid_list/amniotic_fluid_label"/>
 			<bind nodeset="/data/amniotic_fluid_list/amniotic_fluid_recent"/>
@@ -243,29 +203,56 @@
 			<bind nodeset="/data/af_alert/af_alert_choice" required="true()"/>
 			<bind nodeset="/data/af_record_actions" relevant="/data/af_alert/af_alert_choice = 'record_action'"/>
 			<bind nodeset="/data/af_record_actions/af_actions_taken" type="xsd:string"/>
-			<bind nodeset="/data/descent_list"/>
-			<bind nodeset="/data/descent_list/descent_label"/>
-			<bind nodeset="/data/descent_list/descent_recent"/>
-			<bind nodeset="/data/descent_list/descent_update" relevant="1=2"/>
-			<bind nodeset="/data/descent_list/station_head"/>
+			<bind nodeset="/data/moulding_list"/>
+			<bind nodeset="/data/moulding_list/moulding_recent"/>
+			<bind nodeset="/data/moulding_list/moulding_update"/>
+			<bind nodeset="/data/contractions_list"/>
+			<bind nodeset="/data/contractions_list/contractions_label"/>
+			<bind nodeset="/data/contractions_list/contractions_recent"/>
+			<bind nodeset="/data/contractions_list/contraction_num_update" type="xsd:int" required="true()"/>
+			<bind nodeset="/data/contractions_list/contraction_duration_update" type="xsd:int" required="true()"/>
+			<bind nodeset="/data/oxytocin_list"/>
+			<bind nodeset="/data/oxytocin_list/oxytocin_recent"/>
+			<bind nodeset="/data/oxytocin_list/oxytocin_update" required="true()"/>
+			<bind nodeset="/data/oxytocin_list/oxy_update" type="xsd:int" relevant="/data/oxytocin_list/oxytocin_update = 'oxy_yes'"/>
+			<bind nodeset="/data/bp_list" required="true()"/>
+			<bind nodeset="/data/bp_list/bp_recent"/>
+			<bind nodeset="/data/bp_list/bp_update"/>
+			<bind nodeset="/data/bp_list/systolic" type="xsd:int" required="true()"/>
+			<bind nodeset="/data/bp_list/diastolic" type="xsd:int" required="true()"/>
+			<bind nodeset="/data/bp_alert" relevant="/data/bp_list/systolic &gt;= 140 and /data/bp_list/diastolic &gt;= 90"/>
+			<bind nodeset="/data/bp_alert/bp_alert_text"/>
+			<bind nodeset="/data/bp_alert/bp_alert_suggestion"/>
+			<bind nodeset="/data/bp_alert/bp_alert_choice" required="true()"/>
+			<bind nodeset="/data/bp_record_actions" relevant="/data/bp_alert/bp_alert_choice = 'record_action'"/>
+			<bind nodeset="/data/bp_record_actions/bp_actions_taken" type="xsd:string"/>
+			<bind nodeset="/data/pulse_list"/>
+			<bind nodeset="/data/pulse_list/pulse_recent"/>
+			<bind nodeset="/data/pulse_list/pulse_update" type="xsd:int"/>
+			<bind nodeset="/data/temp_list"/>
+			<bind nodeset="/data/temp_list/temp_recent"/>
+			<bind nodeset="/data/temp_list/temp_update" type="xsd:double" constraint=". &lt;= 40 and . &gt; 30"/>
 			<bind nodeset="/data/urine_list"/>
 			<bind nodeset="/data/urine_list/urine_recent"/>
 			<bind nodeset="/data/urine_list/urine_output"/>
 			<bind nodeset="/data/urine_list/urine_update" type="xsd:int" relevant="/data/urine_list/urine_output = 'urine_yes'"/>
 			<bind nodeset="/data/urine_list/urine_protein_update" relevant="/data/urine_list/urine_output = 'urine_yes'"/>
 			<bind nodeset="/data/urine_list/urine_acetone_update" relevant="/data/urine_list/urine_output = 'urine_yes'"/>
-			<bind nodeset="/data/oxytocin_list"/>
-			<bind nodeset="/data/oxytocin_list/oxytocin_recent"/>
-			<bind nodeset="/data/oxytocin_list/oxytocin_update"/>
-			<bind nodeset="/data/oxytocin_list/oxy_update" type="xsd:int" relevant="/data/oxytocin_list/oxytocin_update = 'oxy_yes'"/>
 			<bind nodeset="/data/other_drugs"/>
 			<bind nodeset="/data/other_drugs/drugs_iv_recent"/>
-			<bind nodeset="/data/other_drugs/drugs_iv_update"/>
-			<bind nodeset="/data/other_drugs/druvs_iv_update" type="xsd:string" relevant="/data/other_drugs/drugs_iv_update = 'drugs_iv_yes'"/>
+			<bind nodeset="/data/other_drugs/drugs_iv_update" required="true()"/>
+			<bind nodeset="/data/other_drugs/druvs_iv_update" type="xsd:string" relevant="/data/other_drugs/drugs_iv_update = 'drugs_iv_yes'" required="true()"/>
 			<bind nodeset="/data/time_measured"/>
-			<bind nodeset="/data/cd"/>
-			<bind nodeset="/data/cd_hours" calculate="int((/data/time_measured mod 1) * 24) + 1"/>
-			<bind nodeset="/data/cd_minutes" calculate="int(((/data/time_measured*24) - int(/data/time_measured * 24)) * 60)"/>
+			<bind nodeset="/data/time_measured_GE" calculate="if(/data/time_measured = '', '', /data/time_measured)"/>
+			<bind nodeset="/data/time_measured_VE"/>
+			<bind nodeset="/data/first_measured_time_GE" calculate="if(/data/first_time = '', double(now()), /data/first_time)"/>
+			<bind nodeset="/data/first_measured_time_VE"/>
+			<bind nodeset="/data/current_hour"/>
+			<bind nodeset="/data/current_minutes" calculate="if(/data/current_hour = '', '', double(now()) - (/data/current_hour * 60))"/>
+			<bind nodeset="/data/current_hour_rounded" calculate="if(/data/current_hour_temp = '','', if(/data/current_minutes mod 60 &gt; 44, /data/current_hour_temp + 1, /data/current_hour_temp))"/>
+			<bind nodeset="/data/current_hour_temp" calculate="if(/data/current_minutes = '', '', int(/data/current_minutes div 60))"/>
+			<bind nodeset="/data/minutes_until_next_GE" calculate="if(/data/last_measured = '', 0, 30 - int(((/data/last_measured * 24) - int(/data/last_measured * 24)) * 60))"/>
+			<bind nodeset="/data/minutes_until_next_VE" calculate="if(/data/last_measured ='', 0, 240 - int(((/data/last_measured * 24) - int(/data/last_measured * 24)) * 60))"/>
 			<bind nodeset="/data/contractions_number"/>
 			<bind nodeset="/data/contractions_duration"/>
 			<bind nodeset="/data/contractions_time" calculate="/data/time_measured"/>
@@ -279,8 +266,6 @@
 			<bind nodeset="/data/urine_acetone" calculate="/data/urine_list/urine_acetone_update"/>
 			<bind nodeset="/data/urine_vol"/>
 			<bind nodeset="/data/urine_time" calculate="/data/time_measured"/>
-			<bind nodeset="/data/descent"/>
-			<bind nodeset="/data/descent_time" calculate="/data/time_measured"/>
 			<bind nodeset="/data/pulse"/>
 			<bind nodeset="/data/pulse_time" calculate="/data/time_measured"/>
 			<bind nodeset="/data/bp" calculate="concat(/data/bp_list/systolic,'/',/data/bp_list/diastolic)"/>
@@ -291,15 +276,12 @@
 			<bind nodeset="/data/oxytocin_time" calculate="/data/time_measured"/>
 			<bind nodeset="/data/drugs_iv"/>
 			<bind nodeset="/data/drugs_iv_time" calculate="/data/time_measured"/>
-			<bind nodeset="/data/last_measured" calculate="double(now()) - double(/data/time_measured)"/>
-			<bind nodeset="/data/minutes_to_next_exam" calculate="30 - int(((/data/last_measured * 24) - int(/data/last_measured * 24)) * 60)"/>
-			<bind nodeset="/data/cd_time" calculate="/data/time_measured"/>
+			<bind nodeset="/data/last_measured" calculate="if(/data/time_measured_GE = '', '', double(now()) - double(/data/time_measured_GE))"/>
 			<bind nodeset="/data/contractions_hours" calculate="int((/data/time_measured mod 1) * 24) + 1"/>
 			<bind nodeset="/data/af_hours" calculate="int((/data/time_measured mod 1) * 24) + 1"/>
 			<bind nodeset="/data/moulding_hours" calculate="int((/data/time_measured mod 1) * 24) + 1"/>
 			<bind nodeset="/data/fhs_hours" calculate="int((/data/time_measured mod 1) * 24) + 1"/>
 			<bind nodeset="/data/urine_hours" calculate="int((/data/time_measured mod 1) * 24) + 1"/>
-			<bind nodeset="/data/descent_hours" calculate="int((/data/time_measured mod 1) * 24) + 1"/>
 			<bind nodeset="/data/pulse_hours" calculate="int((/data/time_measured mod 1) * 24) + 1"/>
 			<bind nodeset="/data/bp_hours" calculate="int((/data/time_measured mod 1) * 24) + 1"/>
 			<bind nodeset="/data/temp_hours" calculate="int((/data/time_measured mod 1) * 24) + 1"/>
@@ -310,7 +292,6 @@
 			<bind nodeset="/data/moulding_minutes" calculate="int(((/data/time_measured*24) - int(/data/time_measured * 24)) * 60)"/>
 			<bind nodeset="/data/fhs_minutes" calculate="int(((/data/time_measured*24) - int(/data/time_measured * 24)) * 60)"/>
 			<bind nodeset="/data/urine_minutes" calculate="int(((/data/time_measured*24) - int(/data/time_measured * 24)) * 60)"/>
-			<bind nodeset="/data/descent_minutes" calculate="int(((/data/time_measured*24) - int(/data/time_measured * 24)) * 60)"/>
 			<bind nodeset="/data/pulse_minutes" calculate="int(((/data/time_measured*24) - int(/data/time_measured * 24)) * 60)"/>
 			<bind nodeset="/data/bp_minutes" calculate="int(((/data/time_measured*24) - int(/data/time_measured * 24)) * 60)"/>
 			<bind nodeset="/data/temp_minutes" calculate="int(((/data/time_measured*24) - int(/data/time_measured * 24)) * 60)"/>
@@ -318,7 +299,6 @@
 			<bind nodeset="/data/drugs_iv_minutes" calculate="int(((/data/time_measured*24) - int(/data/time_measured * 24)) * 60)"/>
 			<bind nodeset="/data/name" required="true()"/>
 			<bind nodeset="/data/first_time"/>
-			<bind nodeset="/data/overall_hours" calculate="int(((double(now())-double(/data/first_measured_time))mod 1)*24)+1"/>
 			<bind nodeset="/data/nurse_flag" calculate="if(/data/bp_alert/bp_alert_choice = &quot;flag_patient&quot; or /data/af_alert/af_alert_choice = &quot;flag_patient&quot; or /data/fhs_alert/fhs_alert_choice = &quot;flag_patient&quot;, 'yes', 'no')"/>
 			<bind nodeset="/data/is_first_time_recorded" calculate="if(/data/first_time = &quot;&quot;, 'no', 'yes')"/>
 			<bind nodeset="/data/first_measured_time" calculate="if(/data/is_first_time_recorded = 'no', now(), /data/first_time)"/>
@@ -331,8 +311,9 @@
 			<bind nodeset="/data/bp_alert_triggered" calculate="if(/data/bp_list/systolic &gt;= 140 and /data/bp_list/diastolic &gt;= 90, 'yes', 'no')"/>
 			<bind nodeset="/data/fhs_alert_triggered" calculate="if(/data/fhs_list/fhs_update &lt; 110 or /data/fhs_list/fhs_update &gt; 160, 'yes', 'no')"/>
 			<bind nodeset="/data/es_alert_triggered" calculate="if(/data/no_emergency_signs = 'no', 'yes', 'no')"/>
-			<bind nodeset="/data/first_dilation_load"/>
-			<bind nodeset="/data/first_dilation_save" calculate="if(/data/first_dilation_load = &quot;&quot;, /data/cd_list/cd_update, /data/first_dilation_load)"/>
+			<bind nodeset="/data/first_dilation_save"/>
+			<bind nodeset="/data/cd_from_last_ve"/>
+			<bind nodeset="/data/station_from_last_ve"/>
 			<itext>
 				<translation lang="en" default="">
 					<text id="alert_icon-label">
@@ -350,44 +331,6 @@
 					<text id="high_risk_history_icon-label">
 						<value>high risk history icon</value>
 						<value form="image">jr://file/commcare/image/data/high_risk_history_icon.png</value>
-					</text>
-					<text id="pulse_recent-label">
-						<value>Last recorded pulse: <output value="/data/pulse"/>
-Time recorded: <output value="/data/pulse_hours"/>:<output value="/data/pulse_minutes"/></value>
-					</text>
-					<text id="pulse_update-label">
-						<value>What is the current pulse?</value>
-					</text>
-					<text id="contractions_label-label">
-						<value>CONTRACTIONS</value>
-					</text>
-					<text id="contractions_recent-label">
-						<value>Last measured contraction count: <output value="/data/contractions_number"/>
-Last measured contraction duration: <output value="/data/contractions_duration"/>
-Time recorded: <output value="/data/contractions_hours"/>:<output value="/data/contractions_minutes"/></value>
-					</text>
-					<text id="contraction_num_update-label">
-						<value>What is the current number of contractions per 10 minutes?</value>
-					</text>
-					<text id="contraction_duration_update-label">
-						<value>What is the current duration of a contraction?</value>
-					</text>
-					<text id="fhs_label-label">
-						<value>FETAL HEART RATE</value>
-					</text>
-					<text id="fhs_recent-label">
-						<value>Last measured fetal heart rate : <output value="/data/fhs"/>
-Time recorded: <output value="/data/fhs_hours"/>:<output value="/data/fhs_minutes"/></value>
-					</text>
-					<text id="fhs_update-label">
-						<value>What is the current fetal heart rate?</value>
-					</text>
-					<text id="fhs_alert/fhs_alert_text-label">
-						<value>Warning! A fetal heart rate of more than 160 or less than 110 indicates fetal distress.</value>
-						<value form="image">jr://file/commcare/image/data/alert_icon.png</value>
-					</text>
-					<text id="fhs_alert/fhs_alert_suggestion-label">
-						<value>Suggested Action: Increase monitoring frequency to every 15 minutes.</value>
 					</text>
 					<text id="emergency_signs_list-label">
 						<value>Emergency Signs</value>
@@ -441,67 +384,22 @@ Time recorded: <output value="/data/fhs_hours"/>:<output value="/data/fhs_minute
 					<text id="es_record_actions-label">
 						<value>Record actions taken in response to warning:</value>
 					</text>
-					<text id="cd_label-label">
-						<value>CERVICAL DILATION</value>
+					<text id="fhs_label-label">
+						<value>FETAL HEART RATE</value>
 					</text>
-					<text id="cd_recent-label">
-						<value>Last measured cervical dilation: <output value="/data/cd"/>
-Time recorded: <output value="/data/cd_hours"/>:<output value="/data/cd_minutes"/></value>
+					<text id="fhs_recent-label">
+						<value>Last measured fetal heart rate : <output value="/data/fhs"/>
+Time recorded: <output value="/data/fhs_hours"/>:<output value="/data/fhs_minutes"/></value>
 					</text>
-					<text id="cd_update-label">
-						<value>What is the current cervical dilation?</value>
+					<text id="fhs_update-label">
+						<value>What is the current fetal heart rate?</value>
 					</text>
-					<text id="temp_recent-label">
-						<value>Last recorded temperature: <output value="/data/temp"/>
-Time recorded: <output value="/data/temp_hours"/>:<output value="/data/temp_minutes"/></value>
-					</text>
-					<text id="temp_update-label">
-						<value>What is her current temperature?</value>
-					</text>
-					<text id="bp_recent-label">
-						<value>Last recorded blood pressure: <output value="/data/bp"/>
-Time recorded: <output value="/data/bp_hours"/>:<output value="/data/bp_minutes"/></value>
-					</text>
-					<text id="bp_update-label">
-						<value>What is the current blood pressure?</value>
-					</text>
-					<text id="systolic-label">
-						<value>Systolic:</value>
-					</text>
-					<text id="diastolic-label">
-						<value>Diastolic:</value>
-					</text>
-					<text id="bp_alert/bp_alert_text-label">
-						<value>Warning! A BP of 140/90 may indicate pre-eclampsia.</value>
+					<text id="fhs_alert/fhs_alert_text-label">
+						<value>Warning! A fetal heart rate of more than 160 or less than 110 indicates fetal distress.</value>
 						<value form="image">jr://file/commcare/image/data/alert_icon.png</value>
 					</text>
-					<text id="bp_alert/bp_alert_suggestion-label">
-						<value>Suggested Action: ????????</value>
-					</text>
-					<text id="bp_alert/bp_alert_choice-doctor_call-label">
-						<value>Call a doctor. Stop exam.</value>
-					</text>
-					<text id="bp_record_actions-label">
-						<value>Record actions taken in response to warning:</value>
-					</text>
-					<text id="moulding_recent-label">
-						<value>Last recorded moulding: <output value="/data/moulding"/>
-Time recorded: <output value="/data/moulding_hours"/>:<output value="/data/moulding_minutes"/></value>
-					</text>
-					<text id="moulding_update-label">
-						<value>What is the current moulding of fetal skull bones?</value>
-					</text>
-					<text id="moulding_update-moulding_separated-label">
-						<value>0 - bones are separated</value>
-					</text>
-					<text id="moulding_update-moulding_touching-label">
-						<value>1 - bones just touching</value>
-					</text>
-					<text id="moulding_update-moulding_overlapping-label">
-						<value>2 - bones overlapping</value>
-					</text>
-					<text id="moulding_update-moulding_severe_overlap-label">
-						<value>3 - bones severely overlapping</value>
+					<text id="fhs_alert/fhs_alert_suggestion-label">
+						<value>Suggested Action: Increase monitoring frequency to every 15 minutes.</value>
 					</text>
 					<text id="amniotic_fluid_label-label">
 						<value>AMNIOTIC FLUID</value>
@@ -550,58 +448,88 @@ Time recorded: <output value="/data/af_hours"/>:<output value="/data/af_minutes"
 					<text id="af_record_actions-label">
 						<value>Record actions taken in response to warning:</value>
 					</text>
-					<text id="descent_label-label">
-						<value>DESCENT OF FETAL HEAD</value>
+					<text id="moulding_recent-label">
+						<value>Last recorded moulding: <output value="/data/moulding"/>
+Time recorded: <output value="/data/moulding_hours"/>:<output value="/data/moulding_minutes"/></value>
 					</text>
-					<text id="descent_recent-label">
-						<value>Last measured descent: <output value="/data/station_head"/>
-Time recorded: <output value="/data/descent_hours"/>:<output value="/data/descent_minutes"/></value>
+					<text id="moulding_update-label">
+						<value>What is the current moulding of fetal skull bones?</value>
 					</text>
-					<text id="descent_update-label">
-						<value>What is the current descent of the fetal head?</value>
+					<text id="moulding_update-moulding_separated-label">
+						<value>0 - bones are separated</value>
 					</text>
-					<text id="descent_update-5/5-label">
-						<value>5/5 - completely above pelvic brim</value>
+					<text id="moulding_update-moulding_touching-label">
+						<value>1 - bones just touching</value>
 					</text>
-					<text id="descent_update-4/5-label">
-						<value>04-May</value>
+					<text id="moulding_update-moulding_overlapping-label">
+						<value>2 - bones overlapping</value>
 					</text>
-					<text id="descent_update-3/5-label">
-						<value>03-May</value>
+					<text id="moulding_update-moulding_severe_overlap-label">
+						<value>3 - bones severely overlapping</value>
 					</text>
-					<text id="descent_update-2/5-label">
-						<value>2/5 - head is engaged</value>
+					<text id="contractions_label-label">
+						<value>CONTRACTIONS</value>
 					</text>
-					<text id="descent_update-1/5-label">
-						<value>01-May</value>
+					<text id="contractions_recent-label">
+						<value>Last measured contraction count: <output value="/data/contractions_number"/>
+Last measured contraction duration: <output value="/data/contractions_duration"/>
+Time recorded: <output value="/data/contractions_hours"/>:<output value="/data/contractions_minutes"/></value>
 					</text>
-					<text id="descent_update-0/5-label">
-						<value>0/5 - head is completely visible</value>
+					<text id="contraction_num_update-label">
+						<value>What is the current number of contractions per 10 minutes?</value>
 					</text>
-					<text id="descent_list/station_head-label">
-						<value>What is the station of the head?</value>
-						<value form="image">jr://file/commcare/image/data/descent_initial.png</value>
+					<text id="contraction_duration_update-label">
+						<value>What is the current duration of a contraction?</value>
 					</text>
-					<text id="descent_list/station_head--3-label">
-						<value>-3</value>
+					<text id="oxytocin_recent-label">
+						<value>Previous oxytocin given: <output value="/data/oxytocin"/>
+Time recorded: <output value="/data/oxytocin_hours"/>:<output value="/data/oxytocin_minutes"/></value>
 					</text>
-					<text id="descent_list/station_head--2-label">
-						<value>-2</value>
+					<text id="oxytocin_update-label">
+						<value>Has oxytocin been administered during the current exam?</value>
 					</text>
-					<text id="descent_list/station_head--1-label">
-						<value>-1</value>
+					<text id="oxy_update-label">
+						<value>How many drops per minute were administered?</value>
 					</text>
-					<text id="descent_list/station_head-0-label">
-						<value>0</value>
+					<text id="bp_recent-label">
+						<value>Last recorded blood pressure: <output value="/data/bp"/>
+Time recorded: <output value="/data/bp_hours"/>:<output value="/data/bp_minutes"/></value>
 					</text>
-					<text id="descent_list/station_head-1-label">
-						<value>+1</value>
+					<text id="bp_update-label">
+						<value>What is the current blood pressure?</value>
 					</text>
-					<text id="descent_list/station_head-2-label">
-						<value>+2</value>
+					<text id="systolic-label">
+						<value>Systolic:</value>
 					</text>
-					<text id="descent_list/station_head-3-label">
-						<value>+3</value>
+					<text id="diastolic-label">
+						<value>Diastolic:</value>
+					</text>
+					<text id="bp_alert/bp_alert_text-label">
+						<value>Warning! A BP of 140/90 may indicate pre-eclampsia.</value>
+						<value form="image">jr://file/commcare/image/data/alert_icon.png</value>
+					</text>
+					<text id="bp_alert/bp_alert_suggestion-label">
+						<value>Suggested Action: ????????</value>
+					</text>
+					<text id="bp_alert/bp_alert_choice-doctor_call-label">
+						<value>Call a doctor. Stop exam.</value>
+					</text>
+					<text id="bp_record_actions-label">
+						<value>Record actions taken in response to warning:</value>
+					</text>
+					<text id="pulse_recent-label">
+						<value>Last recorded pulse: <output value="/data/pulse"/>
+Time recorded: <output value="/data/pulse_hours"/>:<output value="/data/pulse_minutes"/></value>
+					</text>
+					<text id="pulse_update-label">
+						<value>What is the current pulse?</value>
+					</text>
+					<text id="temp_recent-label">
+						<value>Last recorded temperature: <output value="/data/temp"/>
+Time recorded: <output value="/data/temp_hours"/>:<output value="/data/temp_minutes"/></value>
+					</text>
+					<text id="temp_update-label">
+						<value>What is her current temperature?</value>
 					</text>
 					<text id="urine_recent-label">
 						<value>Last recorded urine output: <output value="/data/urine_vol"/>
@@ -618,16 +546,6 @@ Time recorded: <output value="/data/urine_hours"/>:<output value="/data/urine_mi
 					</text>
 					<text id="urine_acetone_update-label">
 						<value>Was there acetone in the urine sample?</value>
-					</text>
-					<text id="oxytocin_recent-label">
-						<value>Previous oxytocin given: <output value="/data/oxytocin"/>
-Time recorded: <output value="/data/oxytocin_hours"/>:<output value="/data/oxytocin_minutes"/></value>
-					</text>
-					<text id="oxytocin_update-label">
-						<value>Has oxytocin been administered during the current exam?</value>
-					</text>
-					<text id="oxy_update-label">
-						<value>How many drops per minute were administered?</value>
 					</text>
 					<text id="drugs_iv_recent-label">
 						<value>Administered drugs and IV fluids: <output value="/data/drugs_iv"/>
@@ -662,44 +580,6 @@ Time recorded: <output value="/data/drugs_iv_hours"/>:<output value="/data/drugs
 					<text id="high_risk_history_icon-label">
 						<value>&#2332;&#2364;&#2381;&#2351;&#2366;&#2342;&#2366; &#2332;&#2379;&#2326;&#2367;&#2350; &#2357;&#2366;&#2354;&#2368; &#2361;&#2367;&#2360;&#2381;&#2335;&#2352;&#2368; &#2325;&#2375; &#2354;&#2319; &#2360;&#2306;&#2325;&#2375;&#2340;</value>
 						<value form="image">jr://file/commcare/image/data/high_risk_history_icon.png</value>
-					</text>
-					<text id="pulse_recent-label">
-						<value>&#2310;&#2326;&#2352;&#2368; &#2342;&#2352;&#2381;&#2332;&#2381;&#2395; &#2344;&#2357;&#2381;&#2395; &#2325;&#2368; &#2342;&#2352;: <output value="/data/pulse"/>
-Time recorded: <output value="/data/pulse_hours"/>:<output value="/data/pulse_minutes"/></value>
-					</text>
-					<text id="pulse_update-label">
-						<value>What is the current pulse?</value>
-					</text>
-					<text id="contractions_label-label">
-						<value>&#2360;&#2306;&#2325;&#2369;&#2330;&#2344;</value>
-					</text>
-					<text id="contractions_recent-label">
-						<value>&#2310;&#2326;&#2352;&#2368; &#2360;&#2306;&#2325;&#2369;&#2330;&#2344; &#2325;&#2368; &#2327;&#2367;&#2344;&#2340;&#2367;: <output value="/data/contractions_number"/>
-Last measured contraction duration: <output value="/data/contractions_duration"/>
-Time recorded: <output value="/data/contractions_hours"/>:<output value="/data/contractions_minutes"/></value>
-					</text>
-					<text id="contraction_num_update-label">
-						<value>&#2361;&#2352; &#2342;&#2360; &#2350;&#2367;&#2344;&#2367;&#2335; &#2350;&#2375;&#2306; &#2360;&#2306;&#2325;&#2369;&#2330;&#2344; &#2325;&#2368; &#2360;&#2306;&#2326;&#2381;&#2351;&#2366; &#2325;&#2381;&#2351;&#2366; &#2361;&#2376;&#2306;?</value>
-					</text>
-					<text id="contraction_duration_update-label">
-						<value>&#2319;&#2325; &#2360;&#2306;&#2325;&#2369;&#2330;&#2344; &#2325;&#2368; &#2350;&#2380;&#2332;&#2370;&#2342;&#2366; &#2309;&#2357;&#2343;&#2367; &#2325;&#2381;&#2351;&#2366; &#2361;&#2376;?</value>
-					</text>
-					<text id="fhs_label-label">
-						<value>&#2349;&#2381;&#2352;&#2370;&#2339; &#2325;&#2368; &#2361;&#2371;&#2342;&#2351; &#2327;&#2340;&#2367;</value>
-					</text>
-					<text id="fhs_recent-label">
-						<value>&#2310;&#2326;&#2352;&#2368; &#2342;&#2352;&#2381;&#2395; &#2349;&#2381;&#2352;&#2370;&#2339; &#2325;&#2368; &#2361;&#2371;&#2342;&#2351; &#2327;&#2340;&#2367; : <output value="/data/fhs"/>
-Time recorded: <output value="/data/fhs_hours"/>:<output value="/data/fhs_minutes"/></value>
-					</text>
-					<text id="fhs_update-label">
-						<value>&#2350;&#2380;&#2332;&#2370;&#2342;&#2366; &#2349;&#2381;&#2352;&#2370;&#2339; &#2325;&#2368; &#2361;&#2371;&#2342;&#2351; &#2327;&#2340;&#2367; &#2325;&#2381;&#2351;&#2366; &#2361;&#2376;?</value>
-					</text>
-					<text id="fhs_alert/fhs_alert_text-label">
-						<value>&#2330;&#2375;&#2340;&#2366;&#2357;&#2344;&#2368;! &#2349;&#2381;&#2352;&#2370;&#2339; &#2325;&#2368; &#2361;&#2381;&#2352;&#2342;&#2351; &#2327;&#2340;&#2367; 160 &#2360;&#2375; &#2332;&#2381;&#2351;&#2366;&#2342;&#2366; &#2351;&#2366; 110 &#2360;&#2375; &#2325;&#2350; &#2361;&#2379;&#2344;&#2366; &#2349;&#2381;&#2352;&#2370;&#2339; &#2360;&#2306;&#2325;&#2335; &#2342;&#2352;&#2381;&#2358;&#2366;&#2340;&#2366; &#2361;&#2376;</value>
-						<value form="image">jr://file/commcare/image/data/alert_icon.png</value>
-					</text>
-					<text id="fhs_alert/fhs_alert_suggestion-label">
-						<value>&#2360;&#2369;&#2333;&#2366;&#2357;: &#2344;&#2367;&#2327;&#2352;&#2366;&#2344;&#2368; &#2349;&#2337;&#2366; &#2325;&#2352; &#2361;&#2352; 15 &#2350;&#2367;&#2344;&#2335; &#2325;&#2352; &#2342;&#2375;&#2306;</value>
 					</text>
 					<text id="emergency_signs_list-label">
 						<value>&#2310;&#2346;&#2366;&#2340; &#2360;&#2306;&#2325;&#2375;&#2340;</value>
@@ -760,72 +640,22 @@ Time recorded: <output value="/data/fhs_hours"/>:<output value="/data/fhs_minute
 					<text id="es_record_actions-label">
 						<value>&#2330;&#2375;&#2340;&#2366;&#2357;&#2344;&#2368; &#2310;&#2344;&#2375; &#2346;&#2375; &#2325;&#2367;&#2351;&#2375; &#2327;&#2319; &#2325;&#2366;&#2352;&#2381;&#2351; &#2325;&#2379; &#2342;&#2352;&#2381;&#2332; &#2325;&#2352;&#2375;&#2306;</value>
 					</text>
-					<text id="cd_label-label">
-						<value>&#2327;&#2381;&#2352;&#2368;&#2357;&#2366;(&#2360;&#2352;&#2381;&#2357;&#2367;&#2325;&#2381;&#2360;) &#2347;&#2375;&#2354;&#2344;&#2375; </value>
+					<text id="fhs_label-label">
+						<value>&#2349;&#2381;&#2352;&#2370;&#2339; &#2325;&#2368; &#2361;&#2371;&#2342;&#2351; &#2327;&#2340;&#2367;</value>
 					</text>
-					<text id="cd_recent-label">
-						<value>&#2327;&#2381;&#2352;&#2368;&#2357;&#2366;(&#2360;&#2352;&#2381;&#2357;&#2367;&#2325;&#2381;&#2360;) &#2347;&#2375;&#2354;&#2344;&#2375; &#2325;&#2366; &#2346;&#2367;&#2331;&#2354;&#2366; &#2350;&#2366;&#2346;: <output value="/data/cd"/>
-Time recorded: <output value="/data/cd_hours"/>:<output value="/data/cd_minutes"/></value>
+					<text id="fhs_recent-label">
+						<value>&#2310;&#2326;&#2352;&#2368; &#2342;&#2352;&#2381;&#2395; &#2349;&#2381;&#2352;&#2370;&#2339; &#2325;&#2368; &#2361;&#2371;&#2342;&#2351; &#2327;&#2340;&#2367; : <output value="/data/fhs"/>
+Time recorded: <output value="/data/fhs_hours"/>:<output value="/data/fhs_minutes"/></value>
 					</text>
-					<text id="cd_update-label">
-						<value>&#2327;&#2381;&#2352;&#2368;&#2357;&#2366;(&#2360;&#2352;&#2381;&#2357;&#2367;&#2325;&#2381;&#2360;) &#2347;&#2375;&#2354;&#2344;&#2375; &#2325;&#2366; &#2309;&#2349;&#2368; &#2325;&#2366; &#2350;&#2366;&#2346;?</value>
+					<text id="fhs_update-label">
+						<value>&#2350;&#2380;&#2332;&#2370;&#2342;&#2366; &#2349;&#2381;&#2352;&#2370;&#2339; &#2325;&#2368; &#2361;&#2371;&#2342;&#2351; &#2327;&#2340;&#2367; &#2325;&#2381;&#2351;&#2366; &#2361;&#2376;?</value>
 					</text>
-					<text id="temp_recent-label">
-						<value>&#2310;&#2326;&#2352;&#2368; &#2342;&#2352;&#2381;&#2395; &#2340;&#2366;&#2346;&#2350;&#2366;&#2344; : <output value="/data/temp"/>
-Time recorded: <output value="/data/temp_hours"/>:<output value="/data/temp_minutes"/></value>
-					</text>
-					<text id="temp_update-label">
-						<value>&#2350;&#2352;&#2368;&#2395; &#2325;&#2366; &#2350;&#2380;&#2332;&#2370;&#2342;&#2366; &#2340;&#2366;&#2346;&#2350;&#2366;&#2344; &#2325;&#2381;&#2351;&#2366; &#2361;&#2376;?</value>
-					</text>
-					<text id="bp_recent-label">
-						<value>&#2310;&#2326;&#2352;&#2368; &#2342;&#2352;&#2381;&#2395; &#2352;&#2325;&#2381;&#2340;&#2330;&#2366;&#2346;: <output value="/data/bp"/>
-Time recorded: <output value="/data/bp_hours"/>:<output value="/data/bp_minutes"/></value>
-					</text>
-					<text id="bp_update-label">
-						<value>&#2350;&#2352;&#2368;&#2395; &#2325;&#2366; &#2350;&#2380;&#2332;&#2370;&#2342;&#2366; &#2352;&#2325;&#2381;&#2340;&#2330;&#2366;&#2346; &#2325;&#2381;&#2351;&#2366; &#2361;&#2376;?</value>
-					</text>
-					<text id="systolic-label">
-						<value>&#2360;&#2367;&#2360;&#2381;&#2335;&#2379;&#2354;&#2367;&#2325;:</value>
-					</text>
-					<text id="diastolic-label">
-						<value>&#2337;&#2366;&#2351;&#2366;&#2360;&#2381;&#2335;&#2379;&#2354;&#2367;&#2325;:</value>
-					</text>
-					<text id="bp_alert/bp_alert_text-label">
-						<value>&#2330;&#2375;&#2340;&#2366;&#2357;&#2344;&#2368;! &#2352;&#2326;&#2381;&#2340;&#2381;&#2330;&#2366;&#2346; 140/90 &#2325;&#2366; &#2350;&#2340;&#2354;&#2348; &#2346;&#2381;&#2352;&#2368;-&#2319;&#2325;&#2381;&#2354;&#2375;&#2350;&#2381;&#2346;&#2360;&#2367;&#2351;&#2366; &#2361;&#2379; &#2360;&#2325;&#2340;&#2366; &#2361;&#2376; </value>
+					<text id="fhs_alert/fhs_alert_text-label">
+						<value>&#2330;&#2375;&#2340;&#2366;&#2357;&#2344;&#2368;! &#2349;&#2381;&#2352;&#2370;&#2339; &#2325;&#2368; &#2361;&#2381;&#2352;&#2342;&#2351; &#2327;&#2340;&#2367; 160 &#2360;&#2375; &#2332;&#2381;&#2351;&#2366;&#2342;&#2366; &#2351;&#2366; 110 &#2360;&#2375; &#2325;&#2350; &#2361;&#2379;&#2344;&#2366; &#2349;&#2381;&#2352;&#2370;&#2339; &#2360;&#2306;&#2325;&#2335; &#2342;&#2352;&#2381;&#2358;&#2366;&#2340;&#2366; &#2361;&#2376;</value>
 						<value form="image">jr://file/commcare/image/data/alert_icon.png</value>
 					</text>
-					<text id="bp_alert/bp_alert_suggestion-label">
-						<value>&#2360;&#2369;&#2333;&#2366;&#2357;: </value>
-					</text>
-					<text id="bp_alert/bp_alert_choice-doctor_call-label">
-						<value>&#2337;&#2377;&#2325;&#2381;&#2335;&#2352; &#2325;&#2379; &#2348;&#2369;&#2354;&#2366;&#2319;&#2306; &#2324;&#2352; &#2346;&#2381;&#2352;&#2358;&#2375;&#2325;&#2381;&#2359;&#2339; &#2352;&#2379;&#2325; &#2342;&#2375;&#2306;
-</value>
-					</text>
-					<text id="bp_record_actions-label">
-						<value>&#2330;&#2375;&#2340;&#2366;&#2357;&#2344;&#2368; &#2310;&#2344;&#2375; &#2346;&#2375; &#2325;&#2367;&#2351;&#2375; &#2327;&#2319; &#2325;&#2366;&#2352;&#2381;&#2351; &#2325;&#2379; &#2342;&#2352;&#2381;&#2332; &#2325;&#2352;&#2375;&#2306;:</value>
-					</text>
-					<text id="moulding_recent-label">
-						<value>&#2346;&#2367;&#2331;&#2354;&#2368; &#2348;&#2366;&#2352; &#2342;&#2352;&#2381;&#2332;&#2364; &#2325;&#2367;&#2351;&#2366; &#2327;&#2351;&#2366; &#2360;&#2367;&#2352; &#2325;&#2366; &#2313;&#2340;&#2366;&#2352;: <output value="/data/moulding"/>
-Time recorded: <output value="/data/moulding_hours"/>:<output value="/data/moulding_minutes"/></value>
-					</text>
-					<text id="moulding_update-label">
-						<value>&#2349;&#2381;&#2352;&#2370;&#2339; &#2325;&#2375; &#2360;&#2367;&#2352; &#2325;&#2368; &#2361;&#2337;&#2381;&#2337;&#2367;&#2351;&#2379;&#2306;&#2325;&#2368; &#2357;&#2352;&#2381;&#2340;&#2350;&#2366;&#2344; &#2338;&#2354;&#2366;&#2312;(&#2313;&#2340;&#2366;&#2352;) &#2325;&#2381;&#2351;&#2366; &#2361;&#2376;&#2306;?</value>
-					</text>
-					<text id="moulding_update-moulding_separated-label">
-						<value>0 - &#2361;&#2337;&#2367;&#2351;&#2366;&#2305; &#2309;&#2354;&#2327; &#2361;&#2376;&#2306;
-</value>
-					</text>
-					<text id="moulding_update-moulding_touching-label">
-						<value>1- &#2361;&#2337;&#2367;&#2351;&#2366;&#2305; &#2331;&#2370; &#2352;&#2361;&#2368;&#2306; &#2361;&#2376;
-</value>
-					</text>
-					<text id="moulding_update-moulding_overlapping-label">
-						<value>2- &#2361;&#2337;&#2367;&#2351;&#2366;&#2305; &#2325;&#2375; &#2342;&#2369;&#2360;&#2352;&#2375; &#2325;&#2375; &#2314;&#2346;&#2352;
-</value>
-					</text>
-					<text id="moulding_update-moulding_severe_overlap-label">
-						<value>&#2409;- &#2361;&#2337;&#2367;&#2351;&#2366;&#2305; &#2319;&#2325; &#2342;&#2369;&#2360;&#2352;&#2375; &#2325;&#2375; &#2348;&#2361;&#2369;&#2340; &#2314;&#2346;&#2352;
-</value>
+					<text id="fhs_alert/fhs_alert_suggestion-label">
+						<value>&#2360;&#2369;&#2333;&#2366;&#2357;: &#2344;&#2367;&#2327;&#2352;&#2366;&#2344;&#2368; &#2349;&#2337;&#2366; &#2325;&#2352; &#2361;&#2352; 15 &#2350;&#2367;&#2344;&#2335; &#2325;&#2352; &#2342;&#2375;&#2306;</value>
 					</text>
 					<text id="amniotic_fluid_label-label">
 						<value>&#2327;&#2352;&#2381;&#2349;&#2366;&#2358;&#2351; &#2325;&#2366; &#2346;&#2366;&#2344;&#2368; </value>
@@ -876,58 +706,93 @@ Time recorded: <output value="/data/af_hours"/>:<output value="/data/af_minutes"
 						<value>&#2330;&#2375;&#2340;&#2366;&#2357;&#2344;&#2368; &#2310;&#2344;&#2375; &#2346;&#2375; &#2325;&#2367;&#2351;&#2375; &#2327;&#2319; &#2325;&#2366;&#2352;&#2381;&#2351; &#2325;&#2379; &#2342;&#2352;&#2381;&#2332; &#2325;&#2352;&#2375;&#2306;:
 </value>
 					</text>
-					<text id="descent_label-label">
-						<value>&#2349;&#2381;&#2352;&#2370;&#2339; &#2325;&#2375; &#2360;&#2367;&#2352; &#2325;&#2366; &#2313;&#2340;&#2366;&#2352;</value>
+					<text id="moulding_recent-label">
+						<value>&#2346;&#2367;&#2331;&#2354;&#2368; &#2348;&#2366;&#2352; &#2342;&#2352;&#2381;&#2332;&#2364; &#2325;&#2367;&#2351;&#2366; &#2327;&#2351;&#2366; &#2360;&#2367;&#2352; &#2325;&#2366; &#2313;&#2340;&#2366;&#2352;: <output value="/data/moulding"/>
+Time recorded: <output value="/data/moulding_hours"/>:<output value="/data/moulding_minutes"/></value>
 					</text>
-					<text id="descent_recent-label">
-						<value>&#2310;&#2326;&#2352;&#2368; &#2342;&#2352;&#2381;&#2332; &#2325;&#2367;&#2351;&#2366; &#2327;&#2351;&#2366; &#2325;&#2366;  &#2349;&#2381;&#2352;&#2370;&#2339; &#2313;&#2340;&#2366;&#2352;: <output value="/data/station_head"/>
-Time recorded: <output value="/data/descent_hours"/>:<output value="/data/descent_minutes"/></value>
+					<text id="moulding_update-label">
+						<value>&#2349;&#2381;&#2352;&#2370;&#2339; &#2325;&#2375; &#2360;&#2367;&#2352; &#2325;&#2368; &#2361;&#2337;&#2381;&#2337;&#2367;&#2351;&#2379;&#2306;&#2325;&#2368; &#2357;&#2352;&#2381;&#2340;&#2350;&#2366;&#2344; &#2338;&#2354;&#2366;&#2312;(&#2313;&#2340;&#2366;&#2352;) &#2325;&#2381;&#2351;&#2366; &#2361;&#2376;&#2306;?</value>
 					</text>
-					<text id="descent_update-label">
-						<value>&#2349;&#2381;&#2352;&#2370;&#2339; &#2325;&#2375; &#2360;&#2367;&#2352; &#2325;&#2366; &#2309;&#2349;&#2368; &#2325;&#2366; &#2313;&#2340;&#2366;&#2352;&#2325;&#2381;&#2351;&#2366; &#2361;&#2376;&#2306;?</value>
+					<text id="moulding_update-moulding_separated-label">
+						<value>0 - &#2361;&#2337;&#2367;&#2351;&#2366;&#2305; &#2309;&#2354;&#2327; &#2361;&#2376;&#2306;
+</value>
 					</text>
-					<text id="descent_update-5/5-label">
-						<value>5/5 - &#2360;&#2367;&#2352; &#2358;&#2381;&#2352;&#2379;&#2339;&#2367; (&#2346;&#2375;&#2354;&#2381;&#2357;&#2367;&#2360;) &#2328;&#2375;&#2352;&#2375; &#2360;&#2375; &#2346;&#2370;&#2352;&#2368; &#2340;&#2352;&#2361; &#2313;&#2346;&#2352; &#2361;&#2376;&#2306;</value>
+					<text id="moulding_update-moulding_touching-label">
+						<value>1- &#2361;&#2337;&#2367;&#2351;&#2366;&#2305; &#2331;&#2370; &#2352;&#2361;&#2368;&#2306; &#2361;&#2376;
+</value>
 					</text>
-					<text id="descent_update-4/5-label">
-						<value>04-May</value>
+					<text id="moulding_update-moulding_overlapping-label">
+						<value>2- &#2361;&#2337;&#2367;&#2351;&#2366;&#2305; &#2325;&#2375; &#2342;&#2369;&#2360;&#2352;&#2375; &#2325;&#2375; &#2314;&#2346;&#2352;
+</value>
 					</text>
-					<text id="descent_update-3/5-label">
-						<value>03-May</value>
+					<text id="moulding_update-moulding_severe_overlap-label">
+						<value>&#2409;- &#2361;&#2337;&#2367;&#2351;&#2366;&#2305; &#2319;&#2325; &#2342;&#2369;&#2360;&#2352;&#2375; &#2325;&#2375; &#2348;&#2361;&#2369;&#2340; &#2314;&#2346;&#2352;
+</value>
 					</text>
-					<text id="descent_update-2/5-label">
-						<value>2/5 - &#2360;&#2367;&#2352; &#2358;&#2381;&#2352;&#2379;&#2339;&#2367; (&#2346;&#2375;&#2354;&#2381;&#2357;&#2367;&#2360;) &#2328;&#2375;&#2352;&#2375; &#2360;&#2375; &#2344;&#2368;&#2330;&#2375; &#2361;&#2376;&#2306;</value>
+					<text id="contractions_label-label">
+						<value>&#2360;&#2306;&#2325;&#2369;&#2330;&#2344;</value>
 					</text>
-					<text id="descent_update-1/5-label">
-						<value>01-May</value>
+					<text id="contractions_recent-label">
+						<value>&#2310;&#2326;&#2352;&#2368; &#2360;&#2306;&#2325;&#2369;&#2330;&#2344; &#2325;&#2368; &#2327;&#2367;&#2344;&#2340;&#2367;: <output value="/data/contractions_number"/>
+Last measured contraction duration: <output value="/data/contractions_duration"/>
+Time recorded: <output value="/data/contractions_hours"/>:<output value="/data/contractions_minutes"/></value>
 					</text>
-					<text id="descent_update-0/5-label">
-						<value>0/5 - &#2360;&#2367;&#2352; &#2346;&#2370;&#2352;&#2368; &#2340;&#2352;&#2361; &#2360;&#2375; &#2342;&#2367;&#2326;&#2366;&#2312; &#2342;&#2375;&#2340;&#2366; &#2361;&#2376;&#2306;</value>
+					<text id="contraction_num_update-label">
+						<value>&#2361;&#2352; &#2342;&#2360; &#2350;&#2367;&#2344;&#2367;&#2335; &#2350;&#2375;&#2306; &#2360;&#2306;&#2325;&#2369;&#2330;&#2344; &#2325;&#2368; &#2360;&#2306;&#2326;&#2381;&#2351;&#2366; &#2325;&#2381;&#2351;&#2366; &#2361;&#2376;&#2306;?</value>
 					</text>
-					<text id="descent_list/station_head-label">
-						<value>&#2360;&#2367;&#2352; &#2325;&#2366; &#2335;&#2375;&#2361;&#2352;&#2366;&#2357; &#2325;&#2368; &#2360;&#2381;&#2341;&#2367;&#2340;&#2367; &#2325;&#2381;&#2351;&#2366; &#2361;&#2376;&#2306;?</value>
-						<value form="image">jr://file/commcare/image/data/descent_initial.png</value>
+					<text id="contraction_duration_update-label">
+						<value>&#2319;&#2325; &#2360;&#2306;&#2325;&#2369;&#2330;&#2344; &#2325;&#2368; &#2350;&#2380;&#2332;&#2370;&#2342;&#2366; &#2309;&#2357;&#2343;&#2367; &#2325;&#2381;&#2351;&#2366; &#2361;&#2376;?</value>
 					</text>
-					<text id="descent_list/station_head--3-label">
-						<value>-3</value>
+					<text id="oxytocin_recent-label">
+						<value>&#2310;&#2326;&#2352;&#2368; &#2348;&#2366;&#2352; &#2323;&#2325;&#2381;&#2360;&#2367;&#2335;&#2379;&#2360;&#2367;&#2344;: <output value="/data/oxytocin"/>
+Time recorded: <output value="/data/oxytocin_hours"/>:<output value="/data/oxytocin_minutes"/></value>
 					</text>
-					<text id="descent_list/station_head--2-label">
-						<value>-2</value>
+					<text id="oxytocin_update-label">
+						<value>&#2321;&#2325;&#2381;&#2360;&#2368;&#2335;&#2379;&#2360;&#2367;&#2344; &#2357;&#2352;&#2381;&#2340;&#2350;&#2366;&#2344; &#2346;&#2352;&#2368;&#2325;&#2381;&#2359;&#2366; &#2325;&#2375; &#2342;&#2380;&#2352;&#2366;&#2344; &#2346;&#2381;&#2352;&#2358;&#2366;&#2360;&#2367;&#2340; &#2325;&#2367;&#2351;&#2366; &#2327;&#2351;&#2366; &#2361;&#2376;?</value>
 					</text>
-					<text id="descent_list/station_head--1-label">
-						<value>-1</value>
+					<text id="oxy_update-label">
+						<value>&#2348;&#2370;&#2305;&#2342; &#2346;&#2381;&#2352;&#2340;&#2367; &#2350;&#2367;&#2344;&#2335; &#2325;&#2376;&#2360;&#2375; &#2346;&#2381;&#2352;&#2358;&#2366;&#2360;&#2367;&#2340; &#2325;&#2368; &#2327;&#2351;&#2368; &#2341;&#2368;?</value>
 					</text>
-					<text id="descent_list/station_head-0-label">
-						<value>0</value>
+					<text id="bp_recent-label">
+						<value>&#2310;&#2326;&#2352;&#2368; &#2342;&#2352;&#2381;&#2395; &#2352;&#2325;&#2381;&#2340;&#2330;&#2366;&#2346;: <output value="/data/bp"/>
+Time recorded: <output value="/data/bp_hours"/>:<output value="/data/bp_minutes"/></value>
 					</text>
-					<text id="descent_list/station_head-1-label">
-						<value>+1</value>
+					<text id="bp_update-label">
+						<value>&#2350;&#2352;&#2368;&#2395; &#2325;&#2366; &#2350;&#2380;&#2332;&#2370;&#2342;&#2366; &#2352;&#2325;&#2381;&#2340;&#2330;&#2366;&#2346; &#2325;&#2381;&#2351;&#2366; &#2361;&#2376;?</value>
 					</text>
-					<text id="descent_list/station_head-2-label">
-						<value>+2</value>
+					<text id="systolic-label">
+						<value>&#2360;&#2367;&#2360;&#2381;&#2335;&#2379;&#2354;&#2367;&#2325;:</value>
 					</text>
-					<text id="descent_list/station_head-3-label">
-						<value>+3</value>
+					<text id="diastolic-label">
+						<value>&#2337;&#2366;&#2351;&#2366;&#2360;&#2381;&#2335;&#2379;&#2354;&#2367;&#2325;:</value>
+					</text>
+					<text id="bp_alert/bp_alert_text-label">
+						<value>&#2330;&#2375;&#2340;&#2366;&#2357;&#2344;&#2368;! &#2352;&#2326;&#2381;&#2340;&#2381;&#2330;&#2366;&#2346; 140/90 &#2325;&#2366; &#2350;&#2340;&#2354;&#2348; &#2346;&#2381;&#2352;&#2368;-&#2319;&#2325;&#2381;&#2354;&#2375;&#2350;&#2381;&#2346;&#2360;&#2367;&#2351;&#2366; &#2361;&#2379; &#2360;&#2325;&#2340;&#2366; &#2361;&#2376; </value>
+						<value form="image">jr://file/commcare/image/data/alert_icon.png</value>
+					</text>
+					<text id="bp_alert/bp_alert_suggestion-label">
+						<value>&#2360;&#2369;&#2333;&#2366;&#2357;: </value>
+					</text>
+					<text id="bp_alert/bp_alert_choice-doctor_call-label">
+						<value>&#2337;&#2377;&#2325;&#2381;&#2335;&#2352; &#2325;&#2379; &#2348;&#2369;&#2354;&#2366;&#2319;&#2306; &#2324;&#2352; &#2346;&#2381;&#2352;&#2358;&#2375;&#2325;&#2381;&#2359;&#2339; &#2352;&#2379;&#2325; &#2342;&#2375;&#2306;
+</value>
+					</text>
+					<text id="bp_record_actions-label">
+						<value>&#2330;&#2375;&#2340;&#2366;&#2357;&#2344;&#2368; &#2310;&#2344;&#2375; &#2346;&#2375; &#2325;&#2367;&#2351;&#2375; &#2327;&#2319; &#2325;&#2366;&#2352;&#2381;&#2351; &#2325;&#2379; &#2342;&#2352;&#2381;&#2332; &#2325;&#2352;&#2375;&#2306;:</value>
+					</text>
+					<text id="pulse_recent-label">
+						<value>&#2310;&#2326;&#2352;&#2368; &#2342;&#2352;&#2381;&#2332;&#2381;&#2395; &#2344;&#2357;&#2381;&#2395; &#2325;&#2368; &#2342;&#2352;: <output value="/data/pulse"/>
+Time recorded: <output value="/data/pulse_hours"/>:<output value="/data/pulse_minutes"/></value>
+					</text>
+					<text id="pulse_update-label">
+						<value>What is the current pulse?</value>
+					</text>
+					<text id="temp_recent-label">
+						<value>&#2310;&#2326;&#2352;&#2368; &#2342;&#2352;&#2381;&#2395; &#2340;&#2366;&#2346;&#2350;&#2366;&#2344; : <output value="/data/temp"/>
+Time recorded: <output value="/data/temp_hours"/>:<output value="/data/temp_minutes"/></value>
+					</text>
+					<text id="temp_update-label">
+						<value>&#2350;&#2352;&#2368;&#2395; &#2325;&#2366; &#2350;&#2380;&#2332;&#2370;&#2342;&#2366; &#2340;&#2366;&#2346;&#2350;&#2366;&#2344; &#2325;&#2381;&#2351;&#2366; &#2361;&#2376;?</value>
 					</text>
 					<text id="urine_recent-label">
 						<value>&#2310;&#2326;&#2352;&#2368; &#2342;&#2352;&#2381;&#2332; &#2346;&#2375;&#2358;&#2366;&#2348; &#2325;&#2368; &#2350;&#2366;&#2340;&#2381;&#2352;&#2366; : <output value="/data/urine_vol"/>
@@ -944,16 +809,6 @@ Time recorded: <output value="/data/urine_hours"/>:<output value="/data/urine_mi
 					</text>
 					<text id="urine_acetone_update-label">
 						<value>&#2325;&#2381;&#2351;&#2366; &#2346;&#2375;&#2358;&#2366;&#2348; &#2350;&#2375;&#2306; &#2319;&#2360;&#2368;&#2335;&#2379;&#2344; &#2341;&#2366;?</value>
-					</text>
-					<text id="oxytocin_recent-label">
-						<value>&#2310;&#2326;&#2352;&#2368; &#2348;&#2366;&#2352; &#2323;&#2325;&#2381;&#2360;&#2367;&#2335;&#2379;&#2360;&#2367;&#2344;: <output value="/data/oxytocin"/>
-Time recorded: <output value="/data/oxytocin_hours"/>:<output value="/data/oxytocin_minutes"/></value>
-					</text>
-					<text id="oxytocin_update-label">
-						<value>&#2321;&#2325;&#2381;&#2360;&#2368;&#2335;&#2379;&#2360;&#2367;&#2344; &#2357;&#2352;&#2381;&#2340;&#2350;&#2366;&#2344; &#2346;&#2352;&#2368;&#2325;&#2381;&#2359;&#2366; &#2325;&#2375; &#2342;&#2380;&#2352;&#2366;&#2344; &#2346;&#2381;&#2352;&#2358;&#2366;&#2360;&#2367;&#2340; &#2325;&#2367;&#2351;&#2366; &#2327;&#2351;&#2366; &#2361;&#2376;?</value>
-					</text>
-					<text id="oxy_update-label">
-						<value>&#2348;&#2370;&#2305;&#2342; &#2346;&#2381;&#2352;&#2340;&#2367; &#2350;&#2367;&#2344;&#2335; &#2325;&#2376;&#2360;&#2375; &#2346;&#2381;&#2352;&#2358;&#2366;&#2360;&#2367;&#2340; &#2325;&#2368; &#2327;&#2351;&#2368; &#2341;&#2368;?</value>
 					</text>
 					<text id="drugs_iv_recent-label">
 						<value>&#2346;&#2381;&#2352;&#2358;&#2366;&#2360;&#2367;&#2340; &#2342;&#2357;&#2366;&#2312;&#2351;&#2366;&#2306; &#2324;&#2352; &#2310;&#2311;&#2319;&#2357;&#2368; &#2347;&#2381;&#2354;&#2370;&#2311;&#2337; : <output value="/data/drugs_iv"/>
@@ -973,7 +828,7 @@ Time recorded: <output value="/data/drugs_iv_hours"/>:<output value="/data/drugs
 					</text>
 				</translation>
 			</itext>
-		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><bind calculate="instance('commcaresession')/session/data/case_id" nodeset="/data/case/@case_id"/><bind calculate="/data/alert_triggered" nodeset="/data/case/update/alert_triggered" relevant="count(/data/alert_triggered) &gt; 0"/><bind calculate="/data/amniotic_fluid_list/amniotic_fluid_color" nodeset="/data/case/update/amniotic_fluid" relevant="count(/data/amniotic_fluid_list/amniotic_fluid_color) &gt; 0"/><bind calculate="/data/bp" nodeset="/data/case/update/bp" relevant="count(/data/bp) &gt; 0"/><bind calculate="/data/cd_list/cd_update" nodeset="/data/case/update/cd" relevant="count(/data/cd_list/cd_update) &gt; 0"/><bind calculate="/data/contractions_list/contraction_duration_update" nodeset="/data/case/update/contractions_duration" relevant="count(/data/contractions_list/contraction_duration_update) &gt; 0"/><bind calculate="/data/contractions_list/contraction_num_update" nodeset="/data/case/update/contractions_number" relevant="count(/data/contractions_list/contraction_num_update) &gt; 0"/><bind calculate="/data/descent_list/descent_update" nodeset="/data/case/update/descent" relevant="count(/data/descent_list/descent_update) &gt; 0"/><bind calculate="/data/other_drugs/druvs_iv_update" nodeset="/data/case/update/drugs_iv" relevant="count(/data/other_drugs/druvs_iv_update) &gt; 0"/><bind calculate="/data/fhs_list/fhs_update" nodeset="/data/case/update/fhs" relevant="count(/data/fhs_list/fhs_update) &gt; 0"/><bind calculate="/data/first_dilation_save" nodeset="/data/case/update/first_dilation" relevant="count(/data/first_dilation_save) &gt; 0"/><bind calculate="/data/first_measured_time" nodeset="/data/case/update/first_measured_time" relevant="count(/data/first_measured_time) &gt; 0"/><bind calculate="/data/moulding_list/moulding_update" nodeset="/data/case/update/moulding" relevant="count(/data/moulding_list/moulding_update) &gt; 0"/><bind calculate="/data/nurse_flag" nodeset="/data/case/update/nurse_flag" relevant="count(/data/nurse_flag) &gt; 0"/><bind calculate="/data/oxytocin_list/oxy_update" nodeset="/data/case/update/oxytocin" relevant="count(/data/oxytocin_list/oxy_update) &gt; 0"/><bind calculate="/data/pulse_list/pulse_update" nodeset="/data/case/update/pulse" relevant="count(/data/pulse_list/pulse_update) &gt; 0"/><bind calculate="/data/descent_list/station_head" nodeset="/data/case/update/station_head" relevant="count(/data/descent_list/station_head) &gt; 0"/><bind calculate="/data/temp_list/temp_update" nodeset="/data/case/update/temp" relevant="count(/data/temp_list/temp_update) &gt; 0"/><bind calculate="/data/time_now" nodeset="/data/case/update/time_measured" relevant="count(/data/time_now) &gt; 0"/><bind calculate="/data/urine_list/urine_acetone_update" nodeset="/data/case/update/urine_acetone" relevant="count(/data/urine_list/urine_acetone_update) &gt; 0"/><bind calculate="/data/urine_list/urine_protein_update" nodeset="/data/case/update/urine_protein" relevant="count(/data/urine_list/urine_protein_update) &gt; 0"/><bind calculate="/data/urine_list/urine_update" nodeset="/data/case/update/urine_vol" relevant="count(/data/urine_list/urine_update) &gt; 0"/><setvalue event="xforms-ready" ref="/data/descent" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/descent"/><setvalue event="xforms-ready" ref="/data/station_head" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/station_head"/><setvalue event="xforms-ready" ref="/data/urine_vol" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/urine_vol"/><setvalue event="xforms-ready" ref="/data/amniotic_fluid" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/amniotic_fluid"/><setvalue event="xforms-ready" ref="/data/first_time" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/first_measured_time"/><setvalue event="xforms-ready" ref="/data/bp" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/bp"/><setvalue event="xforms-ready" ref="/data/temp" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/temp"/><setvalue event="xforms-ready" ref="/data/urine_protein" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/urine_protein"/><setvalue event="xforms-ready" ref="/data/contractions_duration" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/contractions_duration"/><setvalue event="xforms-ready" ref="/data/pulse" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/pulse"/><setvalue event="xforms-ready" ref="/data/drugs_iv" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/drugs_iv"/><setvalue event="xforms-ready" ref="/data/urine_acetone" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/urine_acetone"/><setvalue event="xforms-ready" ref="/data/cd" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/cd"/><setvalue event="xforms-ready" ref="/data/cd_time" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/cd_time"/><setvalue event="xforms-ready" ref="/data/moulding" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/moulding"/><setvalue event="xforms-ready" ref="/data/nurse_flag" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/nurse_flag"/><setvalue event="xforms-ready" ref="/data/name" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/case_name"/><setvalue event="xforms-ready" ref="/data/fhs" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/fhs"/><setvalue event="xforms-ready" ref="/data/oxytocin" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/oxytocin"/><setvalue event="xforms-ready" ref="/data/time_measured" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/time_measured"/><setvalue event="xforms-ready" ref="/data/contractions_number" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/contractions_number"/><setvalue event="xforms-ready" ref="/data/first_dilation_load" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/first_dilation"/><bind calculate="/data/meta/timeEnd" nodeset="/data/subcase_0/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/subcase_0/case/@user_id"/><setvalue event="xforms-ready" ref="/data/subcase_0/case/@case_id" value="uuid()"/><bind calculate="/data/name" nodeset="/data/subcase_0/case/create/case_name"/><bind calculate="/data/meta/userID" nodeset="/data/subcase_0/case/create/owner_id"/><bind calculate="/data/cd_list/cd_update" nodeset="/data/subcase_0/case/update/cd_update" relevant="count(/data/cd_list/cd_update) &gt; 0"/><bind calculate="/data/contractions_list/contraction_duration_update" nodeset="/data/subcase_0/case/update/contraction_duration_update" relevant="count(/data/contractions_list/contraction_duration_update) &gt; 0"/><bind calculate="/data/contractions_list/contraction_num_update" nodeset="/data/subcase_0/case/update/contraction_num_update" relevant="count(/data/contractions_list/contraction_num_update) &gt; 0"/><bind calculate="/data/fhs_list/fhs_update" nodeset="/data/subcase_0/case/update/fhs_update" relevant="count(/data/fhs_list/fhs_update) &gt; 0"/><bind calculate="/data/first_dilation_save" nodeset="/data/subcase_0/case/update/first_dilation" relevant="count(/data/first_dilation_save) &gt; 0"/><bind calculate="/data/overall_hours" nodeset="/data/subcase_0/case/update/hours" relevant="count(/data/overall_hours) &gt; 0"/><bind calculate="/data/descent_list/station_head" nodeset="/data/subcase_0/case/update/station_head" relevant="count(/data/descent_list/station_head) &gt; 0"/><bind calculate="/data/case/@case_id" nodeset="/data/subcase_0/case/index/parent"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
+		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><bind calculate="instance('commcaresession')/session/data/case_id" nodeset="/data/case/@case_id"/><bind calculate="/data/alert_triggered" nodeset="/data/case/update/alert_triggered" relevant="count(/data/alert_triggered) &gt; 0"/><bind calculate="/data/amniotic_fluid_list/amniotic_fluid_color" nodeset="/data/case/update/amniotic_fluid" relevant="count(/data/amniotic_fluid_list/amniotic_fluid_color) &gt; 0"/><bind calculate="/data/bp" nodeset="/data/case/update/bp" relevant="count(/data/bp) &gt; 0"/><bind calculate="/data/contractions_list/contraction_duration_update" nodeset="/data/case/update/contractions_duration" relevant="count(/data/contractions_list/contraction_duration_update) &gt; 0"/><bind calculate="/data/contractions_list/contraction_num_update" nodeset="/data/case/update/contractions_number" relevant="count(/data/contractions_list/contraction_num_update) &gt; 0"/><bind calculate="/data/current_hour_rounded" nodeset="/data/case/update/current_hour" relevant="count(/data/current_hour_rounded) &gt; 0"/><bind calculate="/data/other_drugs/druvs_iv_update" nodeset="/data/case/update/drugs_iv" relevant="count(/data/other_drugs/druvs_iv_update) &gt; 0"/><bind calculate="/data/fhs_list/fhs_update" nodeset="/data/case/update/fhs" relevant="count(/data/fhs_list/fhs_update) &gt; 0"/><bind calculate="/data/first_measured_time_GE" nodeset="/data/case/update/first_measured_time_GE" relevant="count(/data/first_measured_time_GE) &gt; 0"/><bind calculate="/data/first_measured_time_VE" nodeset="/data/case/update/first_measured_time_VE" relevant="count(/data/first_measured_time_VE) &gt; 0"/><bind calculate="/data/moulding_list/moulding_update" nodeset="/data/case/update/moulding" relevant="count(/data/moulding_list/moulding_update) &gt; 0"/><bind calculate="/data/nurse_flag" nodeset="/data/case/update/nurse_flag" relevant="count(/data/nurse_flag) &gt; 0"/><bind calculate="/data/oxytocin_list/oxy_update" nodeset="/data/case/update/oxytocin" relevant="count(/data/oxytocin_list/oxy_update) &gt; 0"/><bind calculate="/data/pulse_list/pulse_update" nodeset="/data/case/update/pulse" relevant="count(/data/pulse_list/pulse_update) &gt; 0"/><bind calculate="/data/temp_list/temp_update" nodeset="/data/case/update/temp" relevant="count(/data/temp_list/temp_update) &gt; 0"/><bind calculate="/data/time_now" nodeset="/data/case/update/time_measured_GE" relevant="count(/data/time_now) &gt; 0"/><bind calculate="/data/time_measured_VE" nodeset="/data/case/update/time_measured_VE" relevant="count(/data/time_measured_VE) &gt; 0"/><bind calculate="/data/urine_list/urine_acetone_update" nodeset="/data/case/update/urine_acetone" relevant="count(/data/urine_list/urine_acetone_update) &gt; 0"/><bind calculate="/data/urine_list/urine_protein_update" nodeset="/data/case/update/urine_protein" relevant="count(/data/urine_list/urine_protein_update) &gt; 0"/><bind calculate="/data/urine_list/urine_update" nodeset="/data/case/update/urine_vol" relevant="count(/data/urine_list/urine_update) &gt; 0"/><setvalue event="xforms-ready" ref="/data/urine_vol" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/urine_vol"/><setvalue event="xforms-ready" ref="/data/amniotic_fluid" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/amniotic_fluid"/><setvalue event="xforms-ready" ref="/data/first_time" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/first_measured_time_GE"/><setvalue event="xforms-ready" ref="/data/bp" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/bp"/><setvalue event="xforms-ready" ref="/data/nurse_flag" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/nurse_flag"/><setvalue event="xforms-ready" ref="/data/temp" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/temp"/><setvalue event="xforms-ready" ref="/data/urine_protein" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/urine_protein"/><setvalue event="xforms-ready" ref="/data/contractions_duration" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/contractions_duration"/><setvalue event="xforms-ready" ref="/data/pulse" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/pulse"/><setvalue event="xforms-ready" ref="/data/drugs_iv" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/drugs_iv"/><setvalue event="xforms-ready" ref="/data/urine_acetone" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/urine_acetone"/><setvalue event="xforms-ready" ref="/data/first_measured_time_VE" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/first_measured_time_VE"/><setvalue event="xforms-ready" ref="/data/time_measured_VE" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/time_measured_VE"/><setvalue event="xforms-ready" ref="/data/current_hour" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/current_hour"/><setvalue event="xforms-ready" ref="/data/cd_from_last_ve" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/cd"/><setvalue event="xforms-ready" ref="/data/moulding" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/moulding"/><setvalue event="xforms-ready" ref="/data/station_from_last_ve" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/station_head"/><setvalue event="xforms-ready" ref="/data/name" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/case_name"/><setvalue event="xforms-ready" ref="/data/fhs" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/fhs"/><setvalue event="xforms-ready" ref="/data/oxytocin" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/oxytocin"/><setvalue event="xforms-ready" ref="/data/time_measured" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/time_measured_GE"/><setvalue event="xforms-ready" ref="/data/contractions_number" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/contractions_number"/><bind calculate="/data/meta/timeEnd" nodeset="/data/subcase_0/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/subcase_0/case/@user_id"/><setvalue event="xforms-ready" ref="/data/subcase_0/case/@case_id" value="uuid()"/><bind calculate="/data/name" nodeset="/data/subcase_0/case/create/case_name"/><bind calculate="/data/meta/userID" nodeset="/data/subcase_0/case/create/owner_id"/><bind calculate="/data/cd_from_last_ve" nodeset="/data/subcase_0/case/update/cd_update" relevant="count(/data/cd_from_last_ve) &gt; 0"/><bind calculate="/data/contractions_list/contraction_duration_update" nodeset="/data/subcase_0/case/update/contraction_duration_update" relevant="count(/data/contractions_list/contraction_duration_update) &gt; 0"/><bind calculate="/data/contractions_list/contraction_num_update" nodeset="/data/subcase_0/case/update/contraction_num_update" relevant="count(/data/contractions_list/contraction_num_update) &gt; 0"/><bind calculate="/data/fhs_list/fhs_update" nodeset="/data/subcase_0/case/update/fhs_update" relevant="count(/data/fhs_list/fhs_update) &gt; 0"/><bind calculate="/data/current_hour_rounded" nodeset="/data/subcase_0/case/update/hours" relevant="count(/data/current_hour_rounded) &gt; 0"/><bind calculate="/data/station_from_last_ve" nodeset="/data/subcase_0/case/update/station_head" relevant="count(/data/station_from_last_ve) &gt; 0"/><bind calculate="/data/case/@case_id" nodeset="/data/subcase_0/case/index/parent"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
 	</h:head>
 	<h:body>
 		<group ref="/data/icon_list">
@@ -989,70 +844,6 @@ Time recorded: <output value="/data/drugs_iv_hours"/>:<output value="/data/drugs
 			<input ref="/data/icon_list/high_risk_history_icon">
 				<label ref="jr:itext('high_risk_history_icon-label')"/>
 			</input>
-		</group>
-		<group ref="/data/pulse_list" appearance="field-list">
-			<trigger ref="/data/pulse_list/pulse_recent" appearance="minimal">
-				<label ref="jr:itext('pulse_recent-label')"/>
-			</trigger>
-			<input ref="/data/pulse_list/pulse_update">
-				<label ref="jr:itext('pulse_update-label')"/>
-			</input>
-		</group>
-		<group ref="/data/contractions_list" appearance="field-list">
-			<trigger ref="/data/contractions_list/contractions_label" appearance="minimal">
-				<label ref="jr:itext('contractions_label-label')"/>
-			</trigger>
-			<trigger ref="/data/contractions_list/contractions_recent" appearance="minimal">
-				<label ref="jr:itext('contractions_recent-label')"/>
-			</trigger>
-			<input ref="/data/contractions_list/contraction_num_update">
-				<label ref="jr:itext('contraction_num_update-label')"/>
-			</input>
-			<input ref="/data/contractions_list/contraction_duration_update">
-				<label ref="jr:itext('contraction_duration_update-label')"/>
-			</input>
-		</group>
-		<group ref="/data/fhs_list" appearance="field-list">
-			<trigger ref="/data/fhs_list/fhs_label" appearance="minimal">
-				<label ref="jr:itext('fhs_label-label')"/>
-			</trigger>
-			<trigger ref="/data/fhs_list/fhs_recent" appearance="minimal">
-				<label ref="jr:itext('fhs_recent-label')"/>
-			</trigger>
-			<input ref="/data/fhs_list/fhs_update">
-				<label ref="jr:itext('fhs_update-label')"/>
-			</input>
-		</group>
-		<group ref="/data/fhs_alert" appearance="field-list">
-			<trigger ref="/data/fhs_alert/fhs_alert_text" appearance="minimal">
-				<label ref="jr:itext('fhs_alert/fhs_alert_text-label')"/>
-			</trigger>
-			<trigger ref="/data/fhs_alert/fhs_alert_suggestion" appearance="minimal">
-				<label ref="jr:itext('fhs_alert/fhs_alert_suggestion-label')"/>
-			</trigger>
-			<select1 ref="/data/fhs_alert/fhs_alert_choice">
-				<label ref="jr:itext('af_alert/af_alert_choice-label')"/>
-				<item>
-					<label ref="jr:itext('af_alert/af_alert_choice-flag_patient-label')"/>
-					<value>flag_patient</value>
-				</item>
-				<item>
-					<label ref="jr:itext('af_alert/af_alert_choice-record_action-label')"/>
-					<value>record_action</value>
-				</item>
-				<item>
-					<label ref="jr:itext('af_alert/af_alert_choice-dismiss-label')"/>
-					<value>dismiss</value>
-				</item>
-				<item>
-					<label ref="jr:itext('bp_alert/bp_alert_choice-doctor_call-label')"/>
-					<value>doctor_call</value>
-				</item>
-			</select1>
-		</group>
-		<group ref="/data/fhs_record_actions" appearance="field-list">
-			<label ref="jr:itext('es_record_actions-label')"/>
-			<input ref="/data/fhs_record_actions/fhs_actions_taken"/>
 		</group>
 		<group ref="/data/emergency_signs_list" appearance="field-list">
 			<label ref="jr:itext('emergency_signs_list-label')"/>
@@ -1119,47 +910,25 @@ Time recorded: <output value="/data/drugs_iv_hours"/>:<output value="/data/drugs
 			<label ref="jr:itext('es_record_actions-label')"/>
 			<input ref="/data/es_record_actions/es_actions_taken"/>
 		</group>
-		<group ref="/data/cd_list" appearance="field-list">
-			<trigger ref="/data/cd_list/cd_label" appearance="minimal">
-				<label ref="jr:itext('cd_label-label')"/>
+		<group ref="/data/fhs_list" appearance="field-list">
+			<trigger ref="/data/fhs_list/fhs_label" appearance="minimal">
+				<label ref="jr:itext('fhs_label-label')"/>
 			</trigger>
-			<trigger ref="/data/cd_list/cd_recent" appearance="minimal">
-				<label ref="jr:itext('cd_recent-label')"/>
+			<trigger ref="/data/fhs_list/fhs_recent" appearance="minimal">
+				<label ref="jr:itext('fhs_recent-label')"/>
 			</trigger>
-			<input ref="/data/cd_list/cd_update">
-				<label ref="jr:itext('cd_update-label')"/>
+			<input ref="/data/fhs_list/fhs_update">
+				<label ref="jr:itext('fhs_update-label')"/>
 			</input>
 		</group>
-		<group ref="/data/temp_list" appearance="field-list">
-			<trigger ref="/data/temp_list/temp_recent" appearance="minimal">
-				<label ref="jr:itext('temp_recent-label')"/>
+		<group ref="/data/fhs_alert" appearance="field-list">
+			<trigger ref="/data/fhs_alert/fhs_alert_text" appearance="minimal">
+				<label ref="jr:itext('fhs_alert/fhs_alert_text-label')"/>
 			</trigger>
-			<input ref="/data/temp_list/temp_update">
-				<label ref="jr:itext('temp_update-label')"/>
-			</input>
-		</group>
-		<group ref="/data/bp_list" appearance="field-list">
-			<trigger ref="/data/bp_list/bp_recent" appearance="minimal">
-				<label ref="jr:itext('bp_recent-label')"/>
+			<trigger ref="/data/fhs_alert/fhs_alert_suggestion" appearance="minimal">
+				<label ref="jr:itext('fhs_alert/fhs_alert_suggestion-label')"/>
 			</trigger>
-			<trigger ref="/data/bp_list/bp_update" appearance="minimal">
-				<label ref="jr:itext('bp_update-label')"/>
-			</trigger>
-			<input ref="/data/bp_list/systolic">
-				<label ref="jr:itext('systolic-label')"/>
-			</input>
-			<input ref="/data/bp_list/diastolic">
-				<label ref="jr:itext('diastolic-label')"/>
-			</input>
-		</group>
-		<group ref="/data/bp_alert" appearance="field-list">
-			<trigger ref="/data/bp_alert/bp_alert_text" appearance="minimal">
-				<label ref="jr:itext('bp_alert/bp_alert_text-label')"/>
-			</trigger>
-			<trigger ref="/data/bp_alert/bp_alert_suggestion" appearance="minimal">
-				<label ref="jr:itext('bp_alert/bp_alert_suggestion-label')"/>
-			</trigger>
-			<select1 ref="/data/bp_alert/bp_alert_choice">
+			<select1 ref="/data/fhs_alert/fhs_alert_choice">
 				<label ref="jr:itext('af_alert/af_alert_choice-label')"/>
 				<item>
 					<label ref="jr:itext('af_alert/af_alert_choice-flag_patient-label')"/>
@@ -1179,33 +948,9 @@ Time recorded: <output value="/data/drugs_iv_hours"/>:<output value="/data/drugs
 				</item>
 			</select1>
 		</group>
-		<group ref="/data/bp_record_actions" appearance="field-list">
-			<label ref="jr:itext('bp_record_actions-label')"/>
-			<input ref="/data/bp_record_actions/bp_actions_taken"/>
-		</group>
-		<group ref="/data/moulding_list" appearance="field-list">
-			<trigger ref="/data/moulding_list/moulding_recent" appearance="minimal">
-				<label ref="jr:itext('moulding_recent-label')"/>
-			</trigger>
-			<select1 ref="/data/moulding_list/moulding_update">
-				<label ref="jr:itext('moulding_update-label')"/>
-				<item>
-					<label ref="jr:itext('moulding_update-moulding_separated-label')"/>
-					<value>moulding_separated</value>
-				</item>
-				<item>
-					<label ref="jr:itext('moulding_update-moulding_touching-label')"/>
-					<value>moulding_touching</value>
-				</item>
-				<item>
-					<label ref="jr:itext('moulding_update-moulding_overlapping-label')"/>
-					<value>moulding_overlapping</value>
-				</item>
-				<item>
-					<label ref="jr:itext('moulding_update-moulding_severe_overlap-label')"/>
-					<value>moulding_severe_overlap</value>
-				</item>
-			</select1>
+		<group ref="/data/fhs_record_actions" appearance="field-list">
+			<label ref="jr:itext('es_record_actions-label')"/>
+			<input ref="/data/fhs_record_actions/fhs_actions_taken"/>
 		</group>
 		<group ref="/data/amniotic_fluid_list" appearance="field-list">
 			<trigger ref="/data/amniotic_fluid_list/amniotic_fluid_label" appearance="minimal">
@@ -1265,71 +1010,123 @@ Time recorded: <output value="/data/drugs_iv_hours"/>:<output value="/data/drugs
 			<label ref="jr:itext('af_record_actions-label')"/>
 			<input ref="/data/af_record_actions/af_actions_taken"/>
 		</group>
-		<group ref="/data/descent_list" appearance="field-list">
-			<trigger ref="/data/descent_list/descent_label" appearance="minimal">
-				<label ref="jr:itext('descent_label-label')"/>
+		<group ref="/data/moulding_list" appearance="field-list">
+			<trigger ref="/data/moulding_list/moulding_recent" appearance="minimal">
+				<label ref="jr:itext('moulding_recent-label')"/>
 			</trigger>
-			<trigger ref="/data/descent_list/descent_recent" appearance="minimal">
-				<label ref="jr:itext('descent_recent-label')"/>
-			</trigger>
-			<select1 ref="/data/descent_list/descent_update">
-				<label ref="jr:itext('descent_update-label')"/>
+			<select1 ref="/data/moulding_list/moulding_update">
+				<label ref="jr:itext('moulding_update-label')"/>
 				<item>
-					<label ref="jr:itext('descent_update-5/5-label')"/>
-					<value>5</value>
+					<label ref="jr:itext('moulding_update-moulding_separated-label')"/>
+					<value>moulding_separated</value>
 				</item>
 				<item>
-					<label ref="jr:itext('descent_update-4/5-label')"/>
-					<value>4</value>
+					<label ref="jr:itext('moulding_update-moulding_touching-label')"/>
+					<value>moulding_touching</value>
 				</item>
 				<item>
-					<label ref="jr:itext('descent_update-3/5-label')"/>
-					<value>3</value>
+					<label ref="jr:itext('moulding_update-moulding_overlapping-label')"/>
+					<value>moulding_overlapping</value>
 				</item>
 				<item>
-					<label ref="jr:itext('descent_update-2/5-label')"/>
-					<value>2</value>
-				</item>
-				<item>
-					<label ref="jr:itext('descent_update-1/5-label')"/>
-					<value>1</value>
-				</item>
-				<item>
-					<label ref="jr:itext('descent_update-0/5-label')"/>
-					<value>0</value>
+					<label ref="jr:itext('moulding_update-moulding_severe_overlap-label')"/>
+					<value>moulding_severe_overlap</value>
 				</item>
 			</select1>
-			<select1 ref="/data/descent_list/station_head">
-				<label ref="jr:itext('descent_list/station_head-label')"/>
+		</group>
+		<group ref="/data/contractions_list" appearance="field-list">
+			<trigger ref="/data/contractions_list/contractions_label" appearance="minimal">
+				<label ref="jr:itext('contractions_label-label')"/>
+			</trigger>
+			<trigger ref="/data/contractions_list/contractions_recent" appearance="minimal">
+				<label ref="jr:itext('contractions_recent-label')"/>
+			</trigger>
+			<input ref="/data/contractions_list/contraction_num_update">
+				<label ref="jr:itext('contraction_num_update-label')"/>
+			</input>
+			<input ref="/data/contractions_list/contraction_duration_update">
+				<label ref="jr:itext('contraction_duration_update-label')"/>
+			</input>
+		</group>
+		<group ref="/data/oxytocin_list" appearance="field-list">
+			<trigger ref="/data/oxytocin_list/oxytocin_recent" appearance="minimal">
+				<label ref="jr:itext('oxytocin_recent-label')"/>
+			</trigger>
+			<select1 ref="/data/oxytocin_list/oxytocin_update">
+				<label ref="jr:itext('oxytocin_update-label')"/>
 				<item>
-					<label ref="jr:itext('descent_list/station_head--3-label')"/>
-					<value>-3</value>
+					<label ref="jr:itext('drugs_iv_update-drugs_iv_yes-label')"/>
+					<value>oxy_yes</value>
 				</item>
 				<item>
-					<label ref="jr:itext('descent_list/station_head--2-label')"/>
-					<value>-2</value>
-				</item>
-				<item>
-					<label ref="jr:itext('descent_list/station_head--1-label')"/>
-					<value>-1</value>
-				</item>
-				<item>
-					<label ref="jr:itext('descent_list/station_head-0-label')"/>
-					<value>0</value>
-				</item>
-				<item>
-					<label ref="jr:itext('descent_list/station_head-1-label')"/>
-					<value>1</value>
-				</item>
-				<item>
-					<label ref="jr:itext('descent_list/station_head-2-label')"/>
-					<value>2</value>
-				</item>
-				<item>
-					<label ref="jr:itext('descent_list/station_head-3-label')"/>
-					<value>3</value>
+					<label ref="jr:itext('drugs_iv_update-drugs_iv_no-label')"/>
+					<value>oxy_no</value>
 				</item>
 			</select1>
+			<input ref="/data/oxytocin_list/oxy_update">
+				<label ref="jr:itext('oxy_update-label')"/>
+			</input>
+		</group>
+		<group ref="/data/bp_list" appearance="field-list">
+			<trigger ref="/data/bp_list/bp_recent" appearance="minimal">
+				<label ref="jr:itext('bp_recent-label')"/>
+			</trigger>
+			<trigger ref="/data/bp_list/bp_update" appearance="minimal">
+				<label ref="jr:itext('bp_update-label')"/>
+			</trigger>
+			<input ref="/data/bp_list/systolic">
+				<label ref="jr:itext('systolic-label')"/>
+			</input>
+			<input ref="/data/bp_list/diastolic">
+				<label ref="jr:itext('diastolic-label')"/>
+			</input>
+		</group>
+		<group ref="/data/bp_alert" appearance="field-list">
+			<trigger ref="/data/bp_alert/bp_alert_text" appearance="minimal">
+				<label ref="jr:itext('bp_alert/bp_alert_text-label')"/>
+			</trigger>
+			<trigger ref="/data/bp_alert/bp_alert_suggestion" appearance="minimal">
+				<label ref="jr:itext('bp_alert/bp_alert_suggestion-label')"/>
+			</trigger>
+			<select1 ref="/data/bp_alert/bp_alert_choice">
+				<label ref="jr:itext('af_alert/af_alert_choice-label')"/>
+				<item>
+					<label ref="jr:itext('af_alert/af_alert_choice-flag_patient-label')"/>
+					<value>flag_patient</value>
+				</item>
+				<item>
+					<label ref="jr:itext('af_alert/af_alert_choice-record_action-label')"/>
+					<value>record_action</value>
+				</item>
+				<item>
+					<label ref="jr:itext('af_alert/af_alert_choice-dismiss-label')"/>
+					<value>dismiss</value>
+				</item>
+				<item>
+					<label ref="jr:itext('bp_alert/bp_alert_choice-doctor_call-label')"/>
+					<value>doctor_call</value>
+				</item>
+			</select1>
+		</group>
+		<group ref="/data/bp_record_actions" appearance="field-list">
+			<label ref="jr:itext('bp_record_actions-label')"/>
+			<input ref="/data/bp_record_actions/bp_actions_taken"/>
+		</group>
+		<group ref="/data/pulse_list" appearance="field-list">
+			<trigger ref="/data/pulse_list/pulse_recent" appearance="minimal">
+				<label ref="jr:itext('pulse_recent-label')"/>
+			</trigger>
+			<input ref="/data/pulse_list/pulse_update">
+				<label ref="jr:itext('pulse_update-label')"/>
+			</input>
+		</group>
+		<group ref="/data/temp_list" appearance="field-list">
+			<trigger ref="/data/temp_list/temp_recent" appearance="minimal">
+				<label ref="jr:itext('temp_recent-label')"/>
+			</trigger>
+			<input ref="/data/temp_list/temp_update">
+				<label ref="jr:itext('temp_update-label')"/>
+			</input>
 		</group>
 		<group ref="/data/urine_list" appearance="field-list">
 			<trigger ref="/data/urine_list/urine_recent" appearance="minimal">
@@ -1371,25 +1168,6 @@ Time recorded: <output value="/data/drugs_iv_hours"/>:<output value="/data/drugs
 					<value>u_acetone_no</value>
 				</item>
 			</select1>
-		</group>
-		<group ref="/data/oxytocin_list" appearance="field-list">
-			<trigger ref="/data/oxytocin_list/oxytocin_recent" appearance="minimal">
-				<label ref="jr:itext('oxytocin_recent-label')"/>
-			</trigger>
-			<select1 ref="/data/oxytocin_list/oxytocin_update">
-				<label ref="jr:itext('oxytocin_update-label')"/>
-				<item>
-					<label ref="jr:itext('drugs_iv_update-drugs_iv_yes-label')"/>
-					<value>oxy_yes</value>
-				</item>
-				<item>
-					<label ref="jr:itext('drugs_iv_update-drugs_iv_no-label')"/>
-					<value>oxy_no</value>
-				</item>
-			</select1>
-			<input ref="/data/oxytocin_list/oxy_update">
-				<label ref="jr:itext('oxy_update-label')"/>
-			</input>
 		</group>
 		<group ref="/data/other_drugs" appearance="field-list">
 			<trigger ref="/data/other_drugs/drugs_iv_recent" appearance="minimal">
