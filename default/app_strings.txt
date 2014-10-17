@@ -131,6 +131,7 @@ m1.case_long.title=Cases
 m1.case_short.case_name_1.header=Name
 m1.case_short.case_time_measured_GE_2.header=Minutes Until Next GE
 m1.case_short.case_time_measured_VE_3.header=Minutes Until Next VE
+m1.case_short.case_time_measured_VE_3=Minutes Until Next VE
 m1.case_short.title=Cases
 m1.ref_long.title=Referrals
 m1.ref_short.title=Referrals
