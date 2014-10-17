@@ -3,7 +3,7 @@
 		<h:title>Register New Patient</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/91D2D5F3-3DF5-4F25-A418-E5D0DF848A15" uiVersion="1" version="410" name="Register New Patient">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/91D2D5F3-3DF5-4F25-A418-E5D0DF848A15" uiVersion="1" version="450" name="Register New Patient">
 					<patient_info_list>
 						<patient_info_label/>
 						<name/>
@@ -79,7 +79,6 @@
 							<urine_contains/>
 						</urine_list>
 						<abdominal_exam>
-							<abdominal_examination/>
 							<initial_fhs>
 								<fhs_initial/>
 							</initial_fhs>
@@ -144,7 +143,6 @@
 					<first_measured_time_GE/>
 					<first_measured_time_VE/>
 					<current_hour/>
-					<current_hour_old/>
 					<age/>
 					<cd/>
 					<contractions_number/>
@@ -155,7 +153,6 @@
 					<pulse/>
 					<temp/>
 					<bp/>
-					<minutes_to_next_exam/>
 					<edd/>
 					<age_risk_1/>
 					<height_risk_1/>
@@ -192,7 +189,9 @@
 					<af_alert_triggered/>
 					<bp_alert_triggered/>
 					<es_alert_triggered/>
-				<subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>indicators</case_type></create><update><cd_update/><contraction_duration_update/><contraction_num_update/><fhs_update/><first_dilation/><hours/><nurse_flag/><station_head/></update><index><parent case_type="patient"/></index></case></subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>patient</case_type></create><update><admit_date/><admit_time/><age/><alert_triggered/><bed_num/><bp/><cd/><contractions_duration/><contractions_number/><current_hour/><fhs/><first_dilation/><first_measured_time_GE/><first_measured_time_VE/><high_risk/><membrane_rupture/><minutes_to_next_exam/><moulding/><prev_pregnancy_outcome/><pulse/><reg_num/><station_head/><temp/><time_measured_GE/><time_measured_VE/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+					<minutes_until_next_GE/>
+					<minutes_until_next_VE/>
+				<subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>indicators</case_type></create><update><cd_update/><contraction_duration_update/><contraction_num_update/><fhs_update/><hours/><station_head/></update><index><parent case_type="patient"/></index></case></subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>patient</case_type></create><update><admit_date/><admit_time/><age/><alert_triggered/><bed_num/><bp/><cd/><contractions_duration/><contractions_number/><current_hour/><fhs/><first_dilation/><first_measured_time_GE/><first_measured_time_VE/><high_risk/><membrane_rupture/><minutes_until_next_GE/><minutes_until_next_VE/><moulding/><prev_pregnancy_outcome/><pulse/><reg_num/><station_head/><temp/><time_measured_GE/><time_measured_VE/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
 			</instance><instance id="commcaresession" src="jr://instance/session"/>
 			<bind nodeset="/data/patient_info_list"/>
 			<bind nodeset="/data/patient_info_list/patient_info_label"/>
@@ -259,7 +258,6 @@
 			<bind nodeset="/data/vitals_abdominal_exam/urine_list/urine_vol" type="xsd:int"/>
 			<bind nodeset="/data/vitals_abdominal_exam/urine_list/urine_contains"/>
 			<bind nodeset="/data/vitals_abdominal_exam/abdominal_exam"/>
-			<bind nodeset="/data/vitals_abdominal_exam/abdominal_exam/abdominal_examination"/>
 			<bind nodeset="/data/vitals_abdominal_exam/abdominal_exam/initial_fhs" relevant="/data/record_initial = 'initial_yes'" required="true()"/>
 			<bind nodeset="/data/vitals_abdominal_exam/abdominal_exam/initial_fhs/fhs_initial" type="xsd:int"/>
 			<bind nodeset="/data/vitals_abdominal_exam/abdominal_exam/fhs_alert" relevant="/data/vitals_abdominal_exam/abdominal_exam/initial_fhs/fhs_initial &gt; 160 or /data/vitals_abdominal_exam/abdominal_exam/initial_fhs/fhs_initial &lt; 110"/>
@@ -303,12 +301,11 @@
 			<bind nodeset="/data/es_record_actions" relevant="/data/es_alert/es_alert_choice = 'record_action'"/>
 			<bind nodeset="/data/es_record_actions/es_actions_taken" type="xsd:string"/>
 			<bind nodeset="/data/high_risk" calculate="if(/data/high_risk_score &lt; 4, &quot;no&quot;, &quot;yes&quot;)"/>
-			<bind nodeset="/data/time_measured_GE" calculate="if(/data/record_initial = 'initial_yes', double(now()), '')"/>
-			<bind nodeset="/data/time_measured_VE" calculate="if(/data/ve_initial=&quot;ve_yes&quot;,double(now()),&quot;&quot;)"/>
+			<bind nodeset="/data/time_measured_GE" calculate="if(/data/record_initial = &quot;initial_yes&quot;, double(now()), '')"/>
+			<bind nodeset="/data/time_measured_VE" calculate="if(/data/ve_initial=&quot;ve_yes&quot;,double(now()),'')"/>
 			<bind nodeset="/data/first_measured_time_GE" calculate="if(/data/record_initial = 'initial_yes', double(now()), '')"/>
 			<bind nodeset="/data/first_measured_time_VE" calculate="if(/data/ve_initial=&quot;ve_yes&quot;,double(now()),&quot;&quot;)"/>
-			<bind nodeset="/data/current_hour" calculate="if(/data/vaginal_exam/pv_exam/cd_intial &gt; 3, 0, '')"/>
-			<bind nodeset="/data/current_hour_old" calculate="if(/data/first_measured_time_GE = '', '', 0)"/>
+			<bind nodeset="/data/current_hour" calculate="if(/data/first_measured_time_GE = '', '', 0)"/>
 			<bind nodeset="/data/age" calculate="/data/patient_info_list/patient_age"/>
 			<bind nodeset="/data/cd"/>
 			<bind nodeset="/data/contractions_number"/>
@@ -319,7 +316,6 @@
 			<bind nodeset="/data/pulse"/>
 			<bind nodeset="/data/temp"/>
 			<bind nodeset="/data/bp" calculate="concat(/data/vitals_abdominal_exam/bp_list/systolic, '/', /data/vitals_abdominal_exam/bp_list/diastolic)"/>
-			<bind nodeset="/data/minutes_to_next_exam" calculate="30 - int(((/data/last_measured * 24) - int(/data/last_measured * 24)) * 60)"/>
 			<bind nodeset="/data/edd" calculate="date(/data/patient_info_list/lmp + 274)"/>
 			<bind nodeset="/data/age_risk_1" calculate="if((/data/age &lt; 18) or (/data/age &gt; 35), 1, 0)"/>
 			<bind nodeset="/data/height_risk_1" calculate="if(/data/high_risk_list/height_risk &lt; 145, 1, 0)"/>
@@ -356,6 +352,8 @@
 			<bind nodeset="/data/af_alert_triggered" calculate="if(selected(/data/vitals_abdominal_exam/abdominal_exam/initial_af/af_initial, 'meconium_stained') or selected(/data/vitals_abdominal_exam/abdominal_exam/initial_af/af_initial, 'blood_stained'), 'yes', 'no')"/>
 			<bind nodeset="/data/bp_alert_triggered" calculate="if(/data/vitals_abdominal_exam/bp_list/systolic &gt;= 140 and /data/vitals_abdominal_exam/bp_list/diastolic &gt;= 90, 'yes', 'no')"/>
 			<bind nodeset="/data/es_alert_triggered" calculate="if(/data/no_emergency_signs = 'no', 'yes', 'no')"/>
+			<bind nodeset="/data/minutes_until_next_GE" calculate="if(/data/time_measured_GE = '', 0, 10 - int(((/data/time_measured_GE * 24) - int(/data/time_measured_GE * 24)) * 60)) &#10;&#10; "/>
+			<bind nodeset="/data/minutes_until_next_VE" calculate="if(/data/time_measured_VE = '', 0, 25 - int(((/data/time_measured_VE * 24) - int(/data/time_measured_VE * 24)) * 60)) &#10;&#10; "/>
 			<itext>
 				<translation lang="en" default="">
 					<text id="patient_info_label-label">
@@ -670,9 +668,6 @@
 					</text>
 					<text id="abdominal_exam-label">
 						<value>Abdominal Exam</value>
-					</text>
-					<text id="abdominal_exam_1/abdominal_examination-label">
-						<value>Abdominal Examination</value>
 					</text>
 					<text id="initial_fhs-label">
 						<value>Fetal Heart Rate</value>
@@ -1316,10 +1311,6 @@
 						<value>&#2346;&#2375;&#2335; &#2325;&#2368; &#2332;&#2366;&#2305;&#2330;
 </value>
 					</text>
-					<text id="abdominal_exam_1/abdominal_examination-label">
-						<value>&#2346;&#2375;&#2335; &#2325;&#2368; &#2332;&#2366;&#2305;&#2330;
-</value>
-					</text>
 					<text id="initial_fhs-label">
 						<value>&#2349;&#2381;&#2352;&#2370;&#2339; &#2325;&#2368; &#2361;&#2381;&#2352;&#2342;&#2351; &#2327;&#2340;&#2367;
 </value>
@@ -1616,7 +1607,7 @@
 					</text>
 				</translation>
 			</itext>
-		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><bind nodeset="/data/case" relevant="/data/false_labour_flag = 'no'"/><setvalue event="xforms-ready" ref="/data/case/@case_id" value="uuid()"/><bind calculate="/data/patient_info_list/name" nodeset="/data/case/create/case_name"/><bind calculate="/data/meta/userID" nodeset="/data/case/create/owner_id"/><bind calculate="/data/patient_info_list/admit_date" nodeset="/data/case/update/admit_date" relevant="count(/data/patient_info_list/admit_date) &gt; 0"/><bind calculate="/data/patient_info_list/admit_time" nodeset="/data/case/update/admit_time" relevant="count(/data/patient_info_list/admit_time) &gt; 0"/><bind calculate="/data/patient_info_list/patient_age" nodeset="/data/case/update/age" relevant="count(/data/patient_info_list/patient_age) &gt; 0"/><bind calculate="/data/alert_triggered" nodeset="/data/case/update/alert_triggered" relevant="count(/data/alert_triggered) &gt; 0"/><bind calculate="/data/patient_info_list/bed_num" nodeset="/data/case/update/bed_num" relevant="count(/data/patient_info_list/bed_num) &gt; 0"/><bind calculate="/data/temp" nodeset="/data/case/update/bp" relevant="count(/data/temp) &gt; 0"/><bind calculate="/data/vaginal_exam/pv_exam/cd_intial" nodeset="/data/case/update/cd" relevant="count(/data/vaginal_exam/pv_exam/cd_intial) &gt; 0"/><bind calculate="/data/vitals_abdominal_exam/abdominal_exam/initial_contractions/duration_initial" nodeset="/data/case/update/contractions_duration" relevant="count(/data/vitals_abdominal_exam/abdominal_exam/initial_contractions/duration_initial) &gt; 0"/><bind calculate="/data/vitals_abdominal_exam/abdominal_exam/initial_contractions/frequency_initial" nodeset="/data/case/update/contractions_number" relevant="count(/data/vitals_abdominal_exam/abdominal_exam/initial_contractions/frequency_initial) &gt; 0"/><bind calculate="/data/current_hour" nodeset="/data/case/update/current_hour" relevant="count(/data/current_hour) &gt; 0"/><bind calculate="/data/vitals_abdominal_exam/abdominal_exam/initial_fhs/fhs_initial" nodeset="/data/case/update/fhs" relevant="count(/data/vitals_abdominal_exam/abdominal_exam/initial_fhs/fhs_initial) &gt; 0"/><bind calculate="/data/vaginal_exam/pv_exam/cd_intial" nodeset="/data/case/update/first_dilation" relevant="count(/data/vaginal_exam/pv_exam/cd_intial) &gt; 0"/><bind calculate="/data/first_measured_time_GE" nodeset="/data/case/update/first_measured_time_GE" relevant="count(/data/first_measured_time_GE) &gt; 0"/><bind calculate="/data/first_measured_time_VE" nodeset="/data/case/update/first_measured_time_VE" relevant="count(/data/first_measured_time_VE) &gt; 0"/><bind calculate="/data/high_risk" nodeset="/data/case/update/high_risk" relevant="count(/data/high_risk) &gt; 0"/><bind calculate="/data/patient_info_list/membrane_rupture" nodeset="/data/case/update/membrane_rupture" relevant="count(/data/patient_info_list/membrane_rupture) &gt; 0"/><bind calculate="/data/minutes_to_next_exam" nodeset="/data/case/update/minutes_to_next_exam" relevant="count(/data/minutes_to_next_exam) &gt; 0"/><bind calculate="/data/vaginal_exam/pv_exam/moulding_initial" nodeset="/data/case/update/moulding" relevant="count(/data/vaginal_exam/pv_exam/moulding_initial) &gt; 0"/><bind calculate="/data/high_risk_list/prev_outcome" nodeset="/data/case/update/prev_pregnancy_outcome" relevant="count(/data/high_risk_list/prev_outcome) &gt; 0"/><bind calculate="/data/vitals_abdominal_exam/pulse_list/initial_pulse" nodeset="/data/case/update/pulse" relevant="count(/data/vitals_abdominal_exam/pulse_list/initial_pulse) &gt; 0"/><bind calculate="/data/patient_info_list/reg_num" nodeset="/data/case/update/reg_num" relevant="count(/data/patient_info_list/reg_num) &gt; 0"/><bind calculate="/data/vaginal_exam/pv_exam/station_head" nodeset="/data/case/update/station_head" relevant="count(/data/vaginal_exam/pv_exam/station_head) &gt; 0"/><bind calculate="/data/vitals_abdominal_exam/temp_list/initial_temp" nodeset="/data/case/update/temp" relevant="count(/data/vitals_abdominal_exam/temp_list/initial_temp) &gt; 0"/><bind calculate="/data/time_measured_GE" nodeset="/data/case/update/time_measured_GE" relevant="count(/data/time_measured_GE) &gt; 0"/><bind calculate="/data/time_measured_VE" nodeset="/data/case/update/time_measured_VE" relevant="count(/data/time_measured_VE) &gt; 0"/><bind calculate="/data/meta/timeEnd" nodeset="/data/subcase_0/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/subcase_0/case/@user_id"/><setvalue event="xforms-ready" ref="/data/subcase_0/case/@case_id" value="uuid()"/><bind calculate="/data/patient_info_list/name" nodeset="/data/subcase_0/case/create/case_name"/><bind calculate="/data/meta/userID" nodeset="/data/subcase_0/case/create/owner_id"/><bind calculate="/data/vaginal_exam/pv_exam/cd_intial" nodeset="/data/subcase_0/case/update/cd_update" relevant="count(/data/vaginal_exam/pv_exam/cd_intial) &gt; 0"/><bind calculate="/data/vitals_abdominal_exam/abdominal_exam/initial_contractions/duration_initial" nodeset="/data/subcase_0/case/update/contraction_duration_update" relevant="count(/data/vitals_abdominal_exam/abdominal_exam/initial_contractions/duration_initial) &gt; 0"/><bind calculate="/data/vitals_abdominal_exam/abdominal_exam/initial_contractions/frequency_initial" nodeset="/data/subcase_0/case/update/contraction_num_update" relevant="count(/data/vitals_abdominal_exam/abdominal_exam/initial_contractions/frequency_initial) &gt; 0"/><bind calculate="/data/vitals_abdominal_exam/abdominal_exam/initial_fhs/fhs_initial" nodeset="/data/subcase_0/case/update/fhs_update" relevant="count(/data/vitals_abdominal_exam/abdominal_exam/initial_fhs/fhs_initial) &gt; 0"/><bind calculate="/data/vaginal_exam/pv_exam/cd_intial" nodeset="/data/subcase_0/case/update/first_dilation" relevant="count(/data/vaginal_exam/pv_exam/cd_intial) &gt; 0"/><bind calculate="/data/current_hour" nodeset="/data/subcase_0/case/update/hours" relevant="count(/data/current_hour) &gt; 0"/><bind calculate="/data/nurse_flag" nodeset="/data/subcase_0/case/update/nurse_flag" relevant="count(/data/nurse_flag) &gt; 0"/><bind calculate="/data/vaginal_exam/pv_exam/station_head" nodeset="/data/subcase_0/case/update/station_head" relevant="count(/data/vaginal_exam/pv_exam/station_head) &gt; 0"/><bind calculate="/data/case/@case_id" nodeset="/data/subcase_0/case/index/parent"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
+		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><bind nodeset="/data/case" relevant="/data/false_labour_flag = 'no'"/><setvalue event="xforms-ready" ref="/data/case/@case_id" value="uuid()"/><bind calculate="/data/patient_info_list/name" nodeset="/data/case/create/case_name"/><bind calculate="/data/meta/userID" nodeset="/data/case/create/owner_id"/><bind calculate="/data/patient_info_list/admit_date" nodeset="/data/case/update/admit_date" relevant="count(/data/patient_info_list/admit_date) &gt; 0"/><bind calculate="/data/patient_info_list/admit_time" nodeset="/data/case/update/admit_time" relevant="count(/data/patient_info_list/admit_time) &gt; 0"/><bind calculate="/data/patient_info_list/patient_age" nodeset="/data/case/update/age" relevant="count(/data/patient_info_list/patient_age) &gt; 0"/><bind calculate="/data/alert_triggered" nodeset="/data/case/update/alert_triggered" relevant="count(/data/alert_triggered) &gt; 0"/><bind calculate="/data/patient_info_list/bed_num" nodeset="/data/case/update/bed_num" relevant="count(/data/patient_info_list/bed_num) &gt; 0"/><bind calculate="/data/temp" nodeset="/data/case/update/bp" relevant="count(/data/temp) &gt; 0"/><bind calculate="/data/vaginal_exam/pv_exam/cd_intial" nodeset="/data/case/update/cd" relevant="count(/data/vaginal_exam/pv_exam/cd_intial) &gt; 0"/><bind calculate="/data/vitals_abdominal_exam/abdominal_exam/initial_contractions/duration_initial" nodeset="/data/case/update/contractions_duration" relevant="count(/data/vitals_abdominal_exam/abdominal_exam/initial_contractions/duration_initial) &gt; 0"/><bind calculate="/data/vitals_abdominal_exam/abdominal_exam/initial_contractions/frequency_initial" nodeset="/data/case/update/contractions_number" relevant="count(/data/vitals_abdominal_exam/abdominal_exam/initial_contractions/frequency_initial) &gt; 0"/><bind calculate="/data/current_hour" nodeset="/data/case/update/current_hour" relevant="count(/data/current_hour) &gt; 0"/><bind calculate="/data/vitals_abdominal_exam/abdominal_exam/initial_fhs/fhs_initial" nodeset="/data/case/update/fhs" relevant="count(/data/vitals_abdominal_exam/abdominal_exam/initial_fhs/fhs_initial) &gt; 0"/><bind calculate="/data/vaginal_exam/pv_exam/cd_intial" nodeset="/data/case/update/first_dilation" relevant="count(/data/vaginal_exam/pv_exam/cd_intial) &gt; 0"/><bind calculate="/data/first_measured_time_GE" nodeset="/data/case/update/first_measured_time_GE" relevant="count(/data/first_measured_time_GE) &gt; 0"/><bind calculate="/data/first_measured_time_VE" nodeset="/data/case/update/first_measured_time_VE" relevant="count(/data/first_measured_time_VE) &gt; 0"/><bind calculate="/data/high_risk" nodeset="/data/case/update/high_risk" relevant="count(/data/high_risk) &gt; 0"/><bind calculate="/data/patient_info_list/membrane_rupture" nodeset="/data/case/update/membrane_rupture" relevant="count(/data/patient_info_list/membrane_rupture) &gt; 0"/><bind calculate="/data/minutes_until_next_GE" nodeset="/data/case/update/minutes_until_next_GE" relevant="count(/data/minutes_until_next_GE) &gt; 0"/><bind calculate="/data/minutes_until_next_VE" nodeset="/data/case/update/minutes_until_next_VE" relevant="count(/data/minutes_until_next_VE) &gt; 0"/><bind calculate="/data/vaginal_exam/pv_exam/moulding_initial" nodeset="/data/case/update/moulding" relevant="count(/data/vaginal_exam/pv_exam/moulding_initial) &gt; 0"/><bind calculate="/data/high_risk_list/prev_outcome" nodeset="/data/case/update/prev_pregnancy_outcome" relevant="count(/data/high_risk_list/prev_outcome) &gt; 0"/><bind calculate="/data/vitals_abdominal_exam/pulse_list/initial_pulse" nodeset="/data/case/update/pulse" relevant="count(/data/vitals_abdominal_exam/pulse_list/initial_pulse) &gt; 0"/><bind calculate="/data/patient_info_list/reg_num" nodeset="/data/case/update/reg_num" relevant="count(/data/patient_info_list/reg_num) &gt; 0"/><bind calculate="/data/vaginal_exam/pv_exam/station_head" nodeset="/data/case/update/station_head" relevant="count(/data/vaginal_exam/pv_exam/station_head) &gt; 0"/><bind calculate="/data/vitals_abdominal_exam/temp_list/initial_temp" nodeset="/data/case/update/temp" relevant="count(/data/vitals_abdominal_exam/temp_list/initial_temp) &gt; 0"/><bind calculate="/data/time_measured_GE" nodeset="/data/case/update/time_measured_GE" relevant="count(/data/time_measured_GE) &gt; 0"/><bind calculate="/data/time_measured_VE" nodeset="/data/case/update/time_measured_VE" relevant="count(/data/time_measured_VE) &gt; 0"/><bind calculate="/data/meta/timeEnd" nodeset="/data/subcase_0/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/subcase_0/case/@user_id"/><setvalue event="xforms-ready" ref="/data/subcase_0/case/@case_id" value="uuid()"/><bind calculate="/data/patient_info_list/name" nodeset="/data/subcase_0/case/create/case_name"/><bind calculate="/data/meta/userID" nodeset="/data/subcase_0/case/create/owner_id"/><bind calculate="/data/vaginal_exam/pv_exam/cd_intial" nodeset="/data/subcase_0/case/update/cd_update" relevant="count(/data/vaginal_exam/pv_exam/cd_intial) &gt; 0"/><bind calculate="/data/vitals_abdominal_exam/abdominal_exam/initial_contractions/duration_initial" nodeset="/data/subcase_0/case/update/contraction_duration_update" relevant="count(/data/vitals_abdominal_exam/abdominal_exam/initial_contractions/duration_initial) &gt; 0"/><bind calculate="/data/vitals_abdominal_exam/abdominal_exam/initial_contractions/frequency_initial" nodeset="/data/subcase_0/case/update/contraction_num_update" relevant="count(/data/vitals_abdominal_exam/abdominal_exam/initial_contractions/frequency_initial) &gt; 0"/><bind calculate="/data/vitals_abdominal_exam/abdominal_exam/initial_fhs/fhs_initial" nodeset="/data/subcase_0/case/update/fhs_update" relevant="count(/data/vitals_abdominal_exam/abdominal_exam/initial_fhs/fhs_initial) &gt; 0"/><bind calculate="/data/current_hour" nodeset="/data/subcase_0/case/update/hours" relevant="count(/data/current_hour) &gt; 0"/><bind calculate="/data/vaginal_exam/pv_exam/station_head" nodeset="/data/subcase_0/case/update/station_head" relevant="count(/data/vaginal_exam/pv_exam/station_head) &gt; 0"/><bind calculate="/data/case/@case_id" nodeset="/data/subcase_0/case/index/parent"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
 	</h:head>
 	<h:body>
 		<group ref="/data/patient_info_list" appearance="field-list">
@@ -2034,9 +2025,6 @@
 			</group>
 			<group ref="/data/vitals_abdominal_exam/abdominal_exam">
 				<label ref="jr:itext('abdominal_exam-label')"/>
-				<trigger ref="/data/vitals_abdominal_exam/abdominal_exam/abdominal_examination" appearance="minimal">
-					<label ref="jr:itext('abdominal_exam_1/abdominal_examination-label')"/>
-				</trigger>
 				<group ref="/data/vitals_abdominal_exam/abdominal_exam/initial_fhs" appearance="field-list">
 					<label ref="jr:itext('initial_fhs-label')"/>
 					<input ref="/data/vitals_abdominal_exam/abdominal_exam/initial_fhs/fhs_initial">
