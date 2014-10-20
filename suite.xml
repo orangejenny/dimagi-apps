@@ -172,7 +172,7 @@
       </header>
       <template>
         <text>
-            <xpath function="concat('&lt;b&gt;Time until next GE: &lt;/b&gt;', int((30 - int((double(now()) - double(time_measured_GE)) * 24 * 60)) div 60), ':', substr(((max(int((30 - int((double(now()) - double(time_measured_GE)) * 24 * 60))), -1*int((30 - int((double(now()) - double(time_measured_GE)) * 24 * 60)))) mod 60) + 100),1,3))"/>
+             <xpath function="concat('&lt;b&gt;Time until next GE: &lt;/b&gt;', 10 -  int((double(now()) - double(time_measured_GE)) * 24 * 60))"/>
         </text>
       </template>
       <sort type="string" order="3" direction="descending">
@@ -198,7 +198,7 @@
       </header>
       <template>
         <text>
-            <xpath function="concat('&lt;b&gt;Time until next VE: &lt;/b&gt;', max(int((30 - int((double(now()) - double(time_measured_VE)) * 24 * 60)) div 60),(-1*int((30 - int((double(now()) - double(time_measured_VE)) * 24 * 60)) div 60))), ':', if(max(int((30 - int((double(now()) - double(time_measured_VE)) * 24 * 60)) mod 60), -1*int((30 - int((double(now()) - double(time_measured_VE)) * 24 * 60)) mod 60)) &gt;= 10, max(int((30 - int((double(now()) - double(time_measured_VE)) * 24 * 60)) mod 60), -1*int((30 - int((double(now()) - double(time_measured_VE)) * 24 * 60)) mod 60)), concat('0',max(int((30 - int((double(now()) - double(time_measured_VE)) * 24 * 60)) mod 60), -1*int((30 - int((double(now()) - double(time_measured_VE)) * 24 * 60)) mod 60)))))"/>
+             <xpath function="concat('&lt;b&gt;Time until next VE: &lt;/b&gt;', 25 - int((double(now()) - double(time_measured_VE)) * 24 * 60))"/>
         </text>
       </template>
     </field>
@@ -219,7 +219,7 @@
       </header>
       <template>
         <text>
-            <xpath function="concat('&lt;b&gt;Time of first VE: &lt;/b&gt;', format-date(first_measured_time, &quot;%H:%M&quot;))" />
+            <xpath function="concat('&lt;b&gt;Time of first VE: &lt;/b&gt;', format-date(first_measured_times &quot;%H:%M&quot;))" />
         </text>
       </template>
     </field>
@@ -328,7 +328,7 @@
       </header>
       <template form="image">
         <text>
-          <xpath function="if((30 - int((double(now()) - double(time_measured)) * 24 * 60)) &lt;= 0, $ky, $kx)">
+          <xpath function="if((10 - int((double(now()) - double(time_measured_GE)) * 24 * 60)) &lt;= 0, $ky, $kx)">
             <variable name="ky">
               <locale id="image.reminder"/>
             </variable>
@@ -360,12 +360,12 @@
       </header>
       <template width="0">
         <text>
-          <xpath function="time_measured"/>
+          <xpath function="time_measured_GE"/>
         </text>
       </template>
       <sort type="string" order="3" direction="descending">
         <text>
-          <xpath function="time_measured"/>
+          <xpath function="time_measured_GE"/>
         </text>
       </sort>
     </field>
@@ -454,7 +454,7 @@
       </header>
       <template>
         <text>
-          <xpath function="concat('MRD#: ', reg_num)"/>
+          <xpath function="concat('MRD #: ', reg_num)"/>
         </text>
       </template>
     </field>
