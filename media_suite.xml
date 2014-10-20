@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<suite version="450" descriptor="Media Suite File">
+<suite version="465" descriptor="Media Suite File">
   <media path="../../commcare/image/data">
     <resource id="media-a6eb196721542ddcba29d9d0b6a70d18-nurse_flag_icon.png" version="146">
       <location authority="local">./commcare/image/data/nurse_flag_icon.png</location>
@@ -58,6 +58,12 @@
     <resource id="media-2771ca32d59d00191c32ade8b2784567-reminder_icon.png" version="146">
       <location authority="local">./commcare/image/data/reminder_icon.png</location>
       <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/82c441fa89bf7a05bec4adcd7d22cc73/reminder_icon.png</location>
+    </resource>
+  </media>
+  <media path="../../commcare/image">
+    <resource id="media-fe9a43e0f01c13f7b5d9c59bd94fcf1e-generalexam.png" version="455">
+      <location authority="local">./commcare/image/generalexam.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/4501a2064b419e7e472fa9a747001211/generalexam.png</location>
     </resource>
   </media>
   <media path="../../commcare/image">
