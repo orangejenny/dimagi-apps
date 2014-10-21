@@ -314,7 +314,7 @@
 			<bind nodeset="/data/time_measured_VE" calculate="if(/data/ve_initial=&quot;ve_yes&quot;,double(now()),'')"/>
 			<bind nodeset="/data/first_measured_time_GE" calculate="if(/data/record_initial = 'initial_yes', double(now()), '')"/>
 			<bind nodeset="/data/first_measured_time_VE" calculate="if(/data/ve_initial=&quot;ve_yes&quot;,double(now()),&quot;&quot;)"/>
-			<bind nodeset="/data/first_measured_time_VE_display" calculate="if(/data/ve_initial=&quot;ve_yes&quot;,now(),&quot;&quot;)"/>
+			<bind nodeset="/data/first_measured_time_VE_display" calculate="if(/data/ve_initial=&quot;ve_yes&quot;,format-date(now(), '%H:%M'),&quot;&quot;)"/>
 			<bind nodeset="/data/current_hour" calculate="if(/data/first_measured_time_GE = '', '', 0)"/>
 			<bind nodeset="/data/age" calculate="/data/patient_info_list/patient_age"/>
 			<bind nodeset="/data/cd"/>
@@ -2487,3 +2487,4 @@
 		</group>
 	</h:body>
 </h:html>
+

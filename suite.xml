@@ -133,6 +133,23 @@
         <locale id="m1.case_short.title"/>
       </text>
     </title>
+	 <variables>
+	   <first_dilation function="coalesce(first_dilation, 4)"/>
+      <ge_frequency function="10"/>
+      <ve_frequency function="25"/>
+
+      <next_ge function="$ge_frequency -  int((double(now()) - double(time_measured_GE)) * 24 * 60)"/>
+	   <next_ge_abs function="if($next_ge &lt; 0, $next_ge * -1, $next_ge)"/>
+	   <next_ge_hours function="int($next_ge_abs div 60)"/>
+	   <next_ge_minutes function="$next_ge_abs mod 60"/>
+	   <next_ge_string function="concat($next_ge_hours, ':', if($next_ge_minutes &lt; 10, '0', ''), $next_ge_minutes)"/>
+
+      <next_ve function="$ve_frequency - int((double(now()) - double(time_measured_VE)) * 24 * 60)"/>
+	   <next_ve_abs function="if($next_ve &lt; 0, $next_ve * -1, $next_ve)"/>
+	   <next_ve_hours function="int($next_ve_abs div 60)"/>
+	   <next_ve_minutes function="$next_ve_abs mod 60"/>
+	   <next_ve_string function="concat($next_ve_hours, ':', if($next_ve_minutes &lt; 10, '0', ''), $next_ve_minutes)"/>
+	 </variables>
     <field>
       <style
           horz-align="left"
@@ -172,7 +189,7 @@
       </header>
       <template>
         <text>
-             <xpath function="concat('&lt;b&gt;Time until next GE: &lt;/b&gt;', 10 -  int((double(now()) - double(time_measured_GE)) * 24 * 60))"/>
+             <xpath function="if($next_ge &lt; 0, concat('&lt;b&gt;GE late by ', $next_ge_string, '&lt;/b&gt;'), concat('Time until next GE: ', $next_ge_string))"/>
         </text>
       </template>
       <sort type="string" order="3" direction="descending">
@@ -198,7 +215,7 @@
       </header>
       <template>
         <text>
-             <xpath function="concat('&lt;b&gt;Time until next VE: &lt;/b&gt;', 25 - int((double(now()) - double(time_measured_VE)) * 24 * 60))"/>
+             <xpath function="if($next_ve &lt; 0, concat('&lt;b&gt;VE late by ', $next_ve_string, '&lt;/b&gt;'), concat('Time until next VE: ', $next_ve_string))"/>
         </text>
       </template>
     </field>
@@ -219,8 +236,7 @@
       </header>
       <template>
         <text>
-            <!--xpath function="concat('&lt;b&gt;Time of first VE: &lt;/b&gt;', format-date(first_measured_time_VE_display, &quot;%H:%M&quot;))"/-->
-            <value/>
+            <xpath function="concat('Time of first VE: ', first_measured_time_VE_display)"/>
         </text>
       </template>
     </field>
@@ -329,7 +345,7 @@
       </header>
       <template form="image">
         <text>
-          <xpath function="if((10 - int((double(now()) - double(time_measured_GE)) * 24 * 60)) &lt;= 0, $ky, $kx)">
+          <xpath function="if($next_ge &lt; 0 or $next_ve &lt; 0, $ky, $kx)">
             <variable name="ky">
               <locale id="image.reminder"/>
             </variable>
@@ -413,7 +429,7 @@
       </header>
       <template>
         <text>
-          <xpath function="concat('&lt;b&gt;Admitted: &lt;/b&gt;',format-date(admit_date,'%e/%n'),' ',substr(admit_time,0,8))"/>
+          <xpath function="concat('Admitted: ',format-date(admit_date,'%e/%n'),' ',substr(admit_time,0,8))"/>
         </text>
       </template>
     </field>
@@ -455,7 +471,7 @@
       </header>
       <template>
         <text>
-          <xpath function="concat('MRD #: ', reg_num)"/>
+          <xpath function="concat('MRD #', reg_num)"/>
         </text>
       </template>
     </field>
@@ -476,12 +492,12 @@
       </header>
       <template>
         <text>
-          <xpath function="concat('Bed #: ', bed_num)"/>
+          <xpath function="concat('Bed #', bed_num)"/>
         </text>
       </template>
         <background>
           <text>
-              <xpath function ="if(hours &gt;= cd_update - 4, if(hours &gt;= cd_update, 'red-background','yellow-background'), 'none')" />
+              <xpath function ="if(hours &gt; cd_update - $first_dilation, if(hours &gt; cd_update, 'red-background','yellow-background'), 'none')" />
           </text>
         </background>
     </field>
@@ -499,13 +515,29 @@
 	        </text>
 	    </title>
 	    <variables>
+	        <testing_x_factor function="10"/>
+
+	        <ge_frequency function="10"/>
+	        <ve_frequency function="25"/>
 	        <max_hours function="max(instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id][@status='open']/hours)"/>
-	        <x_max function="if($max_hours > 12, $max_hours, 12)"/>
+	        <x_max function="if($max_hours > 12, $max_hours, 12) * $testing_x_factor"/>
 	        <contractions_max function="max(instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id][@status='open']/contraction_num_update)"/>
 	        <fhs_min function="min(instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id][@status='open']/fhs_update)"/>
 	        <fhs_max function="max(instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id][@status='open']/fhs_update)"/>
 	        <first_dilation function="coalesce(first_dilation, 4)"/>
 	    </variables>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_name_1.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="case_name"/>
+	        </text>
+	      </template>
+	    </field>
 	    <field>
 	      <header>
 	        <text>
@@ -538,7 +570,7 @@
 		              </text>
 		          </configuration>
 				  <series nodeset="instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id][@status='open']">
-				      <x function="hours"/>
+				      <x function="hours * $testing_x_factor"/>
 				      <y function="fhs_update"/>
 				  </series>
 				  <series nodeset="instance('sequence')/sequence/index[.&lt;2]">
@@ -613,7 +645,7 @@
 				  <series nodeset="instance('sequence')/sequence/index[.&lt;3]">
 				      <configuration>
 				          <text id="fill-below">
-				              <value>#ffdddd00</value>
+				              <value>#ffffff99</value>
 				          </text>
 				          <text id="line-color">
 				              <value>#00000000</value>
@@ -628,7 +660,7 @@
 				  <series nodeset="instance('sequence')/sequence/index[.&lt;3]">
 				      <configuration>
 				          <text id="fill-below">
-				              <value>#ffdd0000</value>
+				              <value>#ffee5555</value>
 				          </text>
 				          <text id="line-color">
 				              <value>#00000000</value>
@@ -661,7 +693,7 @@
 				              <value>x</value>
 				          </text>
 				      </configuration>
-				      <x function="hours"/>
+				      <x function="hours * $testing_x_factor"/>
 				      <y function="cd_update"/>
 				  </series>
 				  <series nodeset="instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id][@status='open']">
@@ -670,7 +702,7 @@
 				              <xpath function="true()"/>
 				          </text>
 				      </configuration>
-				      <x function="hours"/>
+				      <x function="hours * $testing_x_factor"/>
 				      <y function="station_head * -1 + 3"/>
 				  </series>
 				  <annotation>
@@ -717,7 +749,7 @@
 		                  <value>0</value>
 		              </text>
 		              <text id="y-max">
-		                  <xpath function="max(5, $contractions_max)"/>
+		                  <xpath function="max(6, $contractions_max)"/>
 		              </text>
 		          </configuration>
 				  <series nodeset="instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id][@status='open']">
@@ -726,7 +758,7 @@
 		            	      <value>3</value>
 						  </text>
 				      </configuration>
-				      <x function="hours" />
+				      <x function="hours * $testing_x_factor"/>
 				      <y function="contraction_num_update" />
 				      <radius function="if(contraction_duration_update &lt; 20, 1, if(contraction_duration_update &lt; 40, 2, 3))" />
 				  </series>
@@ -740,6 +772,18 @@
 	            <locale id="m1.case_long.tab2"/>
 	        </text>
 	    </title>
+	    <field>
+	      <header>
+	        <text>
+	          <locale id="m1.case_long.case_name_1.header"/>
+	        </text>
+	      </header>
+	      <template>
+	        <text>
+	          <xpath function="case_name"/>
+	        </text>
+	      </template>
+	    </field>
        <field>
          <header>
            <text>
@@ -959,7 +1003,7 @@
          </header>
          <template>
            <text>
-             <xpath function="10 -  int((double(now()) - double(time_measured_GE)) * 24 * 60)"/>
+             <xpath function="$ge_frequency -  int((double(now()) - double(time_measured_GE)) * 24 * 60)"/>
            </text>
          </template>
        </field>
@@ -971,7 +1015,7 @@
          </header>
          <template>
            <text>
-             <xpath function="25 - int((double(now()) - double(time_measured_VE)) * 24 * 60)"/>
+             <xpath function="$ve_frequency - int((double(now()) - double(time_measured_VE)) * 24 * 60)"/>
            </text>
          </template>
        </field>

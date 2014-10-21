@@ -341,7 +341,7 @@
 			<bind nodeset="/data/time_measured_GE" calculate="if(/data/time_measured_2 = '', '', /data/time_measured_2)"/>
 			<bind nodeset="/data/time_measured_VE" calculate="if(/data/time_measured = '', '', /data/time_measured)"/>
 			<bind nodeset="/data/first_measured_time_VE" calculate="if(/data/first_time = '', double(now()), /data/first_time)"/>
-			<bind nodeset="/data/first_measured_time_VE_display" calculate="if(/data/first_time = '', now(), /data/first_time)"/>
+			<bind nodeset="/data/first_measured_time_VE_display" calculate="if(/data/first_time = '', format-date(now(), '%H:%M'), /data/first_time)"/>
 			<bind nodeset="/data/first_measured_time_GE" calculate="if(/data/first_time = '', double(now()), /data/first_time)"/>
 			<bind nodeset="/data/minutes_until_next_VE" calculate="if(/data/last_measured ='', 0, 25 - int(((/data/last_measured * 24) - int(/data/last_measured * 24)) * 60))"/>
 			<bind nodeset="/data/minutes_until_next_GE" calculate="if(/data/last_measured = '', 0, 10 - int(((/data/last_measured * 24) - int(/data/last_measured * 24)) * 60))"/>
