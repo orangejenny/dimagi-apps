@@ -37,19 +37,7 @@
     </resource>
   </xform>
   <xform>
-    <resource id="14232d06b4587b0727d306b05d9c1d57ce20364e" version="410" descriptor="Form: (Module Active Patients) - Update Patient Info">
-      <location authority="local">./modules-1/forms-5.xml</location>
-      <location authority="remote">./modules-1/forms-5.xml</location>
-    </resource>
-  </xform>
-  <xform>
-    <resource id="ed9b7df90176d92385489873cfacf9ce8b9ada8b" version="410" descriptor="Form: (Module Active Patients) - Record Delivery">
-      <location authority="local">./modules-1/forms-6.xml</location>
-      <location authority="remote">./modules-1/forms-6.xml</location>
-    </resource>
-  </xform>
-  <xform>
-    <resource id="6405f702e71776df6fe2ba4e45a41758958927bf" version="234" descriptor="Form: (Module Transfer Patient) - Transfer patient to another IPC">
+    <resource id="6405f702e71776df6fe2ba4e45a41758958927bf" version="234" descriptor="Form: (Module Transfer Patient) - Transfer Patient to Another Clinician">
       <location authority="local">./modules-2/forms-0.xml</location>
       <location authority="remote">./modules-2/forms-0.xml</location>
     </resource>
@@ -1297,56 +1285,11 @@
     </session>
   </entry>
   <entry>
-    <form>http://openrosa.org/formdesigner/19987B7C-76CE-4996-A566-607EB6B94766</form>
+    <form>http://openrosa.org/formdesigner/E2564278-89E0-4BD1-A773-5B10DFF97098</form>
     <command id="m1-f4">
       <display>
         <text>
           <locale id="forms.m1f4"/>
-        </text>
-        <media image="jr://file/commcare/image/add_patient_notes.png"/>
-      </display>
-    </command>
-    <instance id="casedb" src="jr://instance/casedb"/>
-    <instance id="commcaresession" src="jr://instance/session"/>
-    <instance id="sequence" src="jr://instance/fixture/sequence" />
-    <session>
-      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
-    </session>
-    <stack>
-      <create>
-        <command>m1</command>
-        <datum id="case_id" value="instance('commcaresession')/session/data/case_id"/>
-      </create>
-    </stack>
-  </entry>
-  <entry>
-    <form>http://openrosa.org/formdesigner/14232d06b4587b0727d306b05d9c1d57ce20364e</form>
-    <command id="m1-f5">
-      <display>
-        <text>
-          <locale id="forms.m1f5"/>
-        </text>
-        <media image="jr://file/commcare/image/update_patient_info.png"/>
-      </display>
-    </command>
-    <instance id="casedb" src="jr://instance/casedb"/>
-    <instance id="commcaresession" src="jr://instance/session"/>
-    <instance id="sequence" src="jr://instance/fixture/sequence" />
-    <session>
-      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
-    </session>
-    <stack>
-      <create>
-        <command>m1</command>
-      </create>
-    </stack>
-  </entry>
-  <entry>
-    <form>http://openrosa.org/formdesigner/E2564278-89E0-4BD1-A773-5B10DFF97098</form>
-    <command id="m1-f6">
-      <display>
-        <text>
-          <locale id="forms.m1f6"/>
         </text>
         <media image="jr://file/commcare/image/record_delivery.png"/>
       </display>
@@ -1366,9 +1309,12 @@
   <entry>
     <form>http://openrosa.org/formdesigner/6405f702e71776df6fe2ba4e45a41758958927bf</form>
     <command id="m2-f0">
-      <text>
-        <locale id="forms.m2f0"/>
-      </text>
+      <display>
+        <text>
+          <locale id="forms.m2f0"/>
+        </text>
+        <media image="jr://file/commcare/image/transfer_patient_to_another_clinician.png"/>
+      </display>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
     <instance id="sequence" src="jr://instance/fixture/sequence" />
@@ -1379,9 +1325,12 @@
   <entry>
     <form>http://openrosa.org/formdesigner/e996974bfc4e89c26db4f1dc99c864bc1be8f444</form>
     <command id="m2-f1">
-      <text>
-        <locale id="forms.m2f1"/>
-      </text>
+      <display>
+        <text>
+          <locale id="forms.m2f1"/>
+        </text>
+        <media image="jr://file/commcare/image/transfer_patient_facility.png"/>
+      </display>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
     <instance id="sequence" src="jr://instance/fixture/sequence" />
@@ -1414,11 +1363,9 @@
     </text>
     <command id="m1-f0"/>
     <command id="m1-f1" relevant="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/first_measured_time_GE != &quot;&quot;"/>
-    <command id="m1-f2" relevant="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/first_measured_time_GE != &quot;&quot;"/>
+    <command id="m1-f2"/>
     <command id="m1-f3"/>
     <command id="m1-f4"/>
-    <command id="m1-f5"/>
-    <command id="m1-f6"/>
   </menu>
   <menu id="root">
     <text>

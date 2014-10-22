@@ -1,68 +1,216 @@
 <h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:vellum="http://commcarehq.org/xforms/vellum">
 	<h:head>
-		<h:title>Add Patient Notes</h:title>
+		<h:title>Record Delivery</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/19987B7C-76CE-4996-A566-607EB6B94766" uiVersion="1" version="410" name="Add Patient Notes">
-					<nurse_name/>
-					<flag/>
-					<patient_notes/>
-					<nurse_flag/>
-				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><update><nurse_flag/><patient_notes/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/E2564278-89E0-4BD1-A773-5B10DFF97098" uiVersion="1" version="522" name="Record Delivery">
+					<delivery_type/>
+					<apgar/>
+					<cried/>
+					<baby_weight/>
+					<baby_height/>
+					<birth/>
+					<synto/>
+					<placenta/>
+					<bleeding/>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><close/></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
 			</instance><instance id="commcaresession" src="jr://instance/session"/>
-			<bind nodeset="/data/nurse_name" type="xsd:string"/>
-			<bind nodeset="/data/flag"/>
-			<bind nodeset="/data/patient_notes" type="xsd:string"/>
-			<bind nodeset="/data/nurse_flag" calculate="if(selected(/data/flag, &quot;flag_yes&quot;), 'yes', 'no')"/>
+			<bind nodeset="/data/delivery_type"/>
+			<bind nodeset="/data/apgar" type="xsd:int"/>
+			<bind nodeset="/data/cried"/>
+			<bind nodeset="/data/baby_weight" type="xsd:double"/>
+			<bind nodeset="/data/baby_height" type="xsd:double"/>
+			<bind nodeset="/data/birth" type="xsd:dateTime"/>
+			<bind nodeset="/data/synto"/>
+			<bind nodeset="/data/placenta"/>
+			<bind nodeset="/data/bleeding"/>
 			<itext>
 				<translation lang="en" default="">
-					<text id="nurse_name-label">
-						<value>Nurse Name:</value>
+					<text id="delivery_type-label">
+						<value>Delivery type:</value>
 					</text>
-					<text id="flag-label">
-						<value>Click below to indicate that this patient needs closer monitoring.</value>
+					<text id="delivery_type-normal_vd-label">
+						<value>Full-term normal vaginal delivery</value>
 					</text>
-					<text id="flag-flag_yes-label">
-						<value>Flag this patient for closer monitoring</value>
+					<text id="delivery_type-vd_epi-label">
+						<value>Normal vaginal delivery with episiotomy</value>
 					</text>
-					<text id="patient_notes-label">
-						<value>Patient Notes:</value>
+					<text id="delivery_type-vd_malpresentation-label">
+						<value>Vaginal delivery in malpresentation</value>
+					</text>
+					<text id="delivery_type-assisted-label">
+						<value>Assisted delivery (forceps or vent use)</value>
+					</text>
+					<text id="delivery_type-cs-label">
+						<value>Cesarean section</value>
+					</text>
+					<text id="apgar-label">
+						<value>APGAR score:</value>
+					</text>
+					<text id="cried-label">
+						<value>Baby cried immediately after birth?</value>
+					</text>
+					<text id="baby_weight-label">
+						<value>Weight (kg):</value>
+					</text>
+					<text id="baby_height-label">
+						<value>Height (cm):</value>
+					</text>
+					<text id="birth-label">
+						<value>Time and date of birth:</value>
+					</text>
+					<text id="synto-label">
+						<value>Administered 10 units of Synto?</value>
+					</text>
+					<text id="placenta-label">
+						<value>Placenta delivered completely?</value>
+					</text>
+					<text id="bleeding-label">
+						<value>Bleeding within normal limits (&lt;500ml)?</value>
+					</text>
+					<text id="bleeding-bleeding_yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="bleeding-bleeding_no-label">
+						<value>No</value>
 					</text>
 				</translation>
 				<translation lang="hin">
-					<text id="nurse_name-label">
-						<value>&#2344;&#2352;&#2381;&#2360; &#2325;&#2366; &#2344;&#2366;&#2350;:
+					<text id="delivery_type-label">
+						<value>&#2346;&#2381;&#2352;&#2360;&#2357; &#2325;&#2366; &#2346;&#2381;&#2352;&#2325;&#2366;&#2352;</value>
+					</text>
+					<text id="delivery_type-normal_vd-label">
+						<value>&#2346;&#2370;&#2352;&#2381;&#2339; &#2309;&#2357;&#2343;&#2367; &#2360;&#2366;&#2350;&#2366;&#2344;&#2381;&#2351; &#2351;&#2379;&#2344;&#2367; &#2346;&#2381;&#2352;&#2360;&#2357;</value>
+					</text>
+					<text id="delivery_type-vd_epi-label">
+						<value>&#2319;&#2346;&#2367;&#2360;&#2367;&#2335;&#2379;&#2350;&#2368; &#2325;&#2352;&#2325;&#2375; &#2360;&#2366;&#2350;&#2366;&#2344;&#2381;&#2351; &#2346;&#2381;&#2352;&#2360;&#2357;
 </value>
 					</text>
-					<text id="flag-label">
-						<value>&#2311;&#2360; &#2350;&#2352;&#2368;&#2332; &#2325;&#2379; &#2309;&#2327;&#2352; &#2325;&#2352;&#2368;&#2348; &#2344;&#2367;&#2327;&#2352;&#2366;&#2344;&#2368; &#2325;&#2368; &#2332;&#2352;&#2370;&#2352;&#2340; &#2361;&#2376; &#2340;&#2379; &#2344;&#2368;&#2330;&#2375; &#2325;&#2381;&#2354;&#2367;&#2325; &#2325;&#2352;&#2375;&#2306;
+					<text id="delivery_type-vd_malpresentation-label">
+						<value>&#2351;&#2379;&#2344;&#2368; &#2360;&#2375; &#2346;&#2381;&#2352;&#2360;&#2357; (&#2348;&#2330;&#2381;&#2330;&#2375; &#2325;&#2375; &#2346;&#2376;&#2352; &#2346;&#2361;&#2354;&#2375;)</value>
+					</text>
+					<text id="delivery_type-assisted-label">
+						<value>&#2325;&#2367;&#2360;&#2368; &#2360;&#2361;&#2366;&#2351;&#2340;&#2366; &#2360;&#2375; (&#2325;&#2376;&#2306;&#2330;&#2368;, &#2342;&#2348;&#2366;&#2357;)</value>
+					</text>
+					<text id="delivery_type-cs-label">
+						<value>&#2321;&#2346;&#2352;&#2375;&#2358;&#2344;</value>
+					</text>
+					<text id="apgar-label">
+						<value>&#2320; &#2346; &#2327;&#2366; &#2352; &#2360;&#2381;&#2325;&#2379;&#2352;:
 </value>
 					</text>
-					<text id="flag-flag_yes-label">
-						<value>&#2311;&#2360; &#2350;&#2352;&#2368;&#2395; &#2325;&#2379; &#2325;&#2352;&#2368;&#2348; &#2344;&#2367;&#2327;&#2352;&#2366;&#2344;&#2368; &#2325;&#2368; &#2395;&#2352;&#2369;&#2352;&#2340; &#2361;&#2376;
+					<text id="cried-label">
+						<value>&#2325;&#2381;&#2351;&#2366; &#2348;&#2330;&#2381;&#2330;&#2366; &#2332;&#2344;&#2381;&#2350; &#2325;&#2375; &#2340;&#2369;&#2352;&#2306;&#2340; &#2348;&#2366;&#2342; &#2352;&#2379;&#2351;&#2366;</value>
+					</text>
+					<text id="baby_weight-label">
+						<value>&#2357;&#2395;&#2344; (&#2325;&#2332;&#2368;):</value>
+					</text>
+					<text id="baby_height-label">
+						<value>&#2313;&#2306;&#2330;&#2366;&#2312; (&#2360;&#2368;&#2350;&#2368;):</value>
+					</text>
+					<text id="birth-label">
+						<value>&#2332;&#2344;&#2381;&#2350; &#2325;&#2366; &#2360;&#2350;&#2351; &#2324;&#2352; &#2342;&#2367;&#2344;:</value>
+					</text>
+					<text id="synto-label">
+						<value>&#2346;&#2381;&#2352;&#2358;&#2366;&#2360;&#2344; 10 &#2351;&#2370;&#2344;&#2367;&#2335;&#2381;&#2360;  of &#2360;&#2381;&#2351;&#2381;&#2344;&#2381;&#2340;&#2379;/&#2342;&#2357;&#2366;&#2312;?
 </value>
 					</text>
-					<text id="patient_notes-label">
-						<value>&#2350;&#2352;&#2368;&#2395; &#2325;&#2375; &#2344;&#2379;&#2335;&#2381;&#2360;:
+					<text id="placenta-label">
+						<value>&#2327;&#2352;&#2381;&#2349;&#2344;&#2366;&#2354; &#2346;&#2370;&#2352;&#2368; &#2340;&#2352;&#2361; &#2344;&#2367;&#2325;&#2354;&#2366;
 </value>
+					</text>
+					<text id="bleeding-label">
+						<value>&#2360;&#2366;&#2350;&#2366;&#2344;&#2381;&#2351; &#2360;&#2368;&#2350;&#2366; &#2325;&#2375; &#2349;&#2368;&#2340;&#2352; &#2352;&#2325;&#2381;&#2340; &#2360;&#2381;&#2352;&#2366;&#2357; (&lt;500ml)?</value>
+					</text>
+					<text id="bleeding-bleeding_yes-label">
+						<value>&#2361;&#2366;&#2305;</value>
+					</text>
+					<text id="bleeding-bleeding_no-label">
+						<value>&#2344;&#2361;&#2368;&#2306;</value>
 					</text>
 				</translation>
 			</itext>
-		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><bind calculate="instance('commcaresession')/session/data/case_id" nodeset="/data/case/@case_id"/><bind calculate="/data/nurse_flag" nodeset="/data/case/update/nurse_flag" relevant="count(/data/nurse_flag) &gt; 0"/><bind calculate="/data/patient_notes" nodeset="/data/case/update/patient_notes" relevant="count(/data/patient_notes) &gt; 0"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
+		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><bind calculate="instance('commcaresession')/session/data/case_id" nodeset="/data/case/@case_id"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
 	</h:head>
 	<h:body>
-		<input ref="/data/nurse_name">
-			<label ref="jr:itext('nurse_name-label')"/>
-		</input>
-		<select ref="/data/flag">
-			<label ref="jr:itext('flag-label')"/>
+		<select1 ref="/data/delivery_type">
+			<label ref="jr:itext('delivery_type-label')"/>
 			<item>
-				<label ref="jr:itext('flag-flag_yes-label')"/>
-				<value>flag_yes</value>
+				<label ref="jr:itext('delivery_type-normal_vd-label')"/>
+				<value>normal_vd</value>
 			</item>
-		</select>
-		<input ref="/data/patient_notes">
-			<label ref="jr:itext('patient_notes-label')"/>
+			<item>
+				<label ref="jr:itext('delivery_type-vd_epi-label')"/>
+				<value>vd_epi</value>
+			</item>
+			<item>
+				<label ref="jr:itext('delivery_type-vd_malpresentation-label')"/>
+				<value>vd_malpresentation</value>
+			</item>
+			<item>
+				<label ref="jr:itext('delivery_type-assisted-label')"/>
+				<value>assisted</value>
+			</item>
+			<item>
+				<label ref="jr:itext('delivery_type-cs-label')"/>
+				<value>cs</value>
+			</item>
+		</select1>
+		<input ref="/data/apgar">
+			<label ref="jr:itext('apgar-label')"/>
 		</input>
+		<select1 ref="/data/cried">
+			<label ref="jr:itext('cried-label')"/>
+			<item>
+				<label ref="jr:itext('bleeding-bleeding_yes-label')"/>
+				<value>cried_yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('bleeding-bleeding_no-label')"/>
+				<value>cried_no</value>
+			</item>
+		</select1>
+		<input ref="/data/baby_weight">
+			<label ref="jr:itext('baby_weight-label')"/>
+		</input>
+		<input ref="/data/baby_height">
+			<label ref="jr:itext('baby_height-label')"/>
+		</input>
+		<input ref="/data/birth">
+			<label ref="jr:itext('birth-label')"/>
+		</input>
+		<select1 ref="/data/synto">
+			<label ref="jr:itext('synto-label')"/>
+			<item>
+				<label ref="jr:itext('bleeding-bleeding_yes-label')"/>
+				<value>synto_yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('bleeding-bleeding_no-label')"/>
+				<value>synto_no</value>
+			</item>
+		</select1>
+		<select1 ref="/data/placenta">
+			<label ref="jr:itext('placenta-label')"/>
+			<item>
+				<label ref="jr:itext('bleeding-bleeding_yes-label')"/>
+				<value>placenta_yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('bleeding-bleeding_no-label')"/>
+				<value>placenta_no</value>
+			</item>
+		</select1>
+		<select1 ref="/data/bleeding">
+			<label ref="jr:itext('bleeding-label')"/>
+			<item>
+				<label ref="jr:itext('bleeding-bleeding_yes-label')"/>
+				<value>bleeding_yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('bleeding-bleeding_no-label')"/>
+				<value>bleeding_no</value>
+			</item>
+		</select1>
 	</h:body>
 </h:html>
