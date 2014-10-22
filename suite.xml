@@ -497,7 +497,7 @@
       </template>
         <background>
           <text>
-              <xpath function ="if(hours &gt; cd_update - $first_dilation, if(hours &gt; cd_update, 'red-background','yellow-background'), 'none')" />
+              <xpath function ="if(hours &gt; cd_update - $first_dilation, if(hours + 4 &gt; cd_update - $first_dilation, 'red-background','yellow-background'), 'none')" />
           </text>
         </background>
     </field>
@@ -520,7 +520,7 @@
 	        <ge_frequency function="10"/>
 	        <ve_frequency function="25"/>
 	        <max_hours function="max(instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id][@status='open']/hours)"/>
-	        <x_max function="if($max_hours > 12, $max_hours, 12) * $testing_x_factor"/>
+	        <x_max function="if($max_hours > 12, $max_hours * $testing_x_factor, 12)"/>
 	        <contractions_max function="max(instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id][@status='open']/contraction_num_update)"/>
 	        <fhs_min function="min(instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id][@status='open']/fhs_update)"/>
 	        <fhs_max function="max(instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id][@status='open']/fhs_update)"/>
