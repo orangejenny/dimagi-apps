@@ -430,6 +430,8 @@
       <template>
         <text>
           <xpath function="concat('Admitted: ',format-date(admit_date,'%e/%n'),' ',substr(admit_time,0,8))"/>
+          <!--xpath function ="if(current_hour &gt; cd - $first_dilation, if(current_hour + 4 &gt; cd - $first_dilation, 'red-background','yellow-background'), 'none')" /-->
+	       <!--xpath function="concat('hours: ', hours, ', cd_update: ', cd_update, 'first_dilation: ', $first_dilation)" /-->
         </text>
       </template>
     </field>
