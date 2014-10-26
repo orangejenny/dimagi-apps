@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<suite version="207" descriptor="Media Suite File">
+  <media path="../../commcare/image/data/exam_indicators">
+    <resource id="media-25b656ffaaaf97b819250fd0aafe7b3b-indicator_list-station.png" version="141">
+      <location authority="local">./commcare/image/data/exam_indicators/indicator_list-station.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/8c67a7a87e8db547149a296795a2576a/indicator_list-station.png</location>
+    </resource>
+  </media>
+  <media path="../../commcare/image">
+    <resource id="media-7e83e0845cb8fd20fc1972af63e6f84f-educational_extras.png" version="176">
+      <location authority="local">./commcare/image/educational_extras.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/feb7c1559a56034f17958b49791788fb/educational_extras.png</location>
+    </resource>
+  </media>
+  <media path="../../commcare/image">
+    <resource id="media-1d2f89627d2b24f5866a819b51f129e5-update_registration.png" version="87">
+      <location authority="local">./commcare/image/update_registration.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/f480f30fec7c15b9b389fc98ec6df80a/update_registration.png</location>
+    </resource>
+  </media>
+  <media path="../../commcare/image">
+    <resource id="media-ca39c348129a659301b3d53a03a4114b-view_past_patients.png" version="119">
+      <location authority="local">./commcare/image/view_past_patients.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/bbea181b2326f6f3bd478190000df62d/view_past_patients.png</location>
+    </resource>
+  </media>
+  <media path="../../commcare/image">
+    <resource id="media-de4c701d7d808239e14b9c4d5bc460cd-transfer_patient.png" version="87">
+      <location authority="local">./commcare/image/transfer_patient.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/3bcd29006b53a437a893dda5932e892d/transfer_patient.png</location>
+    </resource>
+  </media>
+  <media path="../../commcare/image">
+    <resource id="media-2075ddf18009d595ef75b65922094266-record_delivery.png" version="87">
+      <location authority="local">./commcare/image/record_delivery.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/6e2846368c8b47c86b142a1397846cb0/record_delivery.png</location>
+    </resource>
+  </media>
+  <media path="../../commcare/image">
+    <resource id="media-91e5c38af650033d1992fe47efd372c7-deliveries.png" version="119">
+      <location authority="local">./commcare/image/deliveries.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/ab0e76115a4f3f9bd33092bd84976f4f/deliveries.png</location>
+    </resource>
+  </media>
+  <media path="../../commcare/image/data/grips">
+    <resource id="media-568f1165a994bce63a26e804741b00cb-fetal_presentation.png" version="141">
+      <location authority="local">./commcare/image/data/grips/fetal_presentation.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/73c920b8c58c126e585ad272665ecd45/fetal_presentation.png</location>
+    </resource>
+  </media>
+  <media path="../../commcare/image">
+    <resource id="media-80821f720fe456cf926af1fe7319627d-labour_videos.png" version="176">
+      <location authority="local">./commcare/image/labour_videos.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/e83d58938a7d7e1152af95c50c5d6cc8/labour_videos.png</location>
+    </resource>
+  </media>
+  <media path="../../commcare/image">
+    <resource id="media-0bbdd3971c8cbeb0e4e2a7ac69e38e56-notes_flags.png" version="87">
+      <location authority="local">./commcare/image/notes_flags.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/efd12369a3ddcf451af964855c79e6f1/notes_flags.png</location>
+    </resource>
+  </media>
+  <media path="../../commcare/image">
+    <resource id="media-47e961625d9acda1107b9217aea4161f-register_new_patient.png" version="87">
+      <location authority="local">./commcare/image/register_new_patient.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/b1c462603311401a28c0e3fd602c1104/register_new_patient.png</location>
+    </resource>
+  </media>
+  <media path="../../commcare/image">
+    <resource id="media-38d507278d2a0cf4bff7bc729c016fc2-exam.png" version="87">
+      <location authority="local">./commcare/image/exam.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/9181dba51bcb554d209bd4e86598cf82/exam.png</location>
+    </resource>
+  </media>
+  <media path="../../commcare/image">
+    <resource id="media-9a5442c689eff7cf8f1f84c0c8bc3a88-active_patients.png" version="87">
+      <location authority="local">./commcare/image/active_patients.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/8c2cc336275d8008e0a5be47bdf578af/active_patients.png</location>
+    </resource>
+  </media>
+  <media path="../../commcare/image/data/exam_indicators/moulding">
+    <resource id="media-40c7809231a85b4ae796f5fc8b321951-moulding.png" version="203">
+      <location authority="local">./commcare/image/data/exam_indicators/moulding/moulding.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/74dda1e466a604d5849c6f11a6cd0804/moulding.png</location>
+    </resource>
+  </media>
+  <media path="../../commcare/image">
+    <resource id="media-0ff26adc96b3ea469ba93f1b3d01bb05-registration.png" version="87">
+      <location authority="local">./commcare/image/registration.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/6b7ae6bd80f29d9268f8f85a0842be0f/registration.png</location>
+    </resource>
+  </media>
+</suite>

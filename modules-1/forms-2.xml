@@ -1,0 +1,162 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:vellum="http://commcarehq.org/xforms/vellum">
+	<h:head>
+		<h:title>Record Delivery</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/75514312-FF32-43BF-A863-F14ED4370546" uiVersion="1" version="176" name="Record Delivery">
+					<delivery_type/>
+					<synto/>
+					<placenta/>
+					<bleeding/>
+					<birth/>
+					<cried/>
+					<apgar_score/>
+					<weight/>
+					<height/>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""/><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance id="commcaresession" src="jr://instance/session"/>
+			<bind nodeset="/data/delivery_type"/>
+			<bind nodeset="/data/synto"/>
+			<bind nodeset="/data/placenta"/>
+			<bind nodeset="/data/bleeding"/>
+			<bind nodeset="/data/birth" type="xsd:dateTime"/>
+			<bind nodeset="/data/cried"/>
+			<bind nodeset="/data/apgar_score" type="xsd:int"/>
+			<bind nodeset="/data/weight" type="xsd:double"/>
+			<bind nodeset="/data/height" type="xsd:double"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="delivery_type-label">
+						<value>Delivery type:</value>
+					</text>
+					<text id="delivery_type-normal_vd-label">
+						<value>Full-term normal vaginal delivery</value>
+					</text>
+					<text id="delivery_type-vd_epi-label">
+						<value>Normal vaginal delivery with episiotomy</value>
+					</text>
+					<text id="delivery_type-vd_malpresentation-label">
+						<value>Vaginal delivery in malpresentation</value>
+					</text>
+					<text id="delivery_type-assisted-label">
+						<value>Assisted delivery (forceps or vent use)</value>
+					</text>
+					<text id="delivery_type-cesarean-label">
+						<value>cesarean</value>
+					</text>
+					<text id="synto-label">
+						<value>Administered 10 units of Synto?</value>
+					</text>
+					<text id="placenta-label">
+						<value>Was the placenta delivered completely?</value>
+					</text>
+					<text id="bleeding-label">
+						<value>Bleeding within normal limits (&lt;500ml)?</value>
+					</text>
+					<text id="bleeding-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="bleeding-no-label">
+						<value>No</value>
+					</text>
+					<text id="birth-label">
+						<value>Time and date of birth:</value>
+					</text>
+					<text id="cried-label">
+						<value>Baby cried immediately after birth?</value>
+					</text>
+					<text id="apgar_score-label">
+						<value>APGAR score:</value>
+					</text>
+					<text id="weight-label">
+						<value>Weight (kg):</value>
+					</text>
+					<text id="height-label">
+						<value>Height (cm):</value>
+					</text>
+				</translation>
+			</itext>
+		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><bind calculate="instance('commcaresession')/session/data/case_id" nodeset="/data/case/@case_id"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<select1 ref="/data/delivery_type">
+			<label ref="jr:itext('delivery_type-label')"/>
+			<item>
+				<label ref="jr:itext('delivery_type-normal_vd-label')"/>
+				<value>normal_vd</value>
+			</item>
+			<item>
+				<label ref="jr:itext('delivery_type-vd_epi-label')"/>
+				<value>vd_epi</value>
+			</item>
+			<item>
+				<label ref="jr:itext('delivery_type-vd_malpresentation-label')"/>
+				<value>vd_malpresentation</value>
+			</item>
+			<item>
+				<label ref="jr:itext('delivery_type-assisted-label')"/>
+				<value>assisted</value>
+			</item>
+			<item>
+				<label ref="jr:itext('delivery_type-cesarean-label')"/>
+				<value>cesarean</value>
+			</item>
+		</select1>
+		<select1 ref="/data/synto">
+			<label ref="jr:itext('synto-label')"/>
+			<item>
+				<label ref="jr:itext('bleeding-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('bleeding-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<select1 ref="/data/placenta">
+			<label ref="jr:itext('placenta-label')"/>
+			<item>
+				<label ref="jr:itext('bleeding-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('bleeding-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<select1 ref="/data/bleeding">
+			<label ref="jr:itext('bleeding-label')"/>
+			<item>
+				<label ref="jr:itext('bleeding-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('bleeding-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/birth">
+			<label ref="jr:itext('birth-label')"/>
+		</input>
+		<select1 ref="/data/cried">
+			<label ref="jr:itext('cried-label')"/>
+			<item>
+				<label ref="jr:itext('bleeding-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('bleeding-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/apgar_score">
+			<label ref="jr:itext('apgar_score-label')"/>
+		</input>
+		<input ref="/data/weight">
+			<label ref="jr:itext('weight-label')"/>
+		</input>
+		<input ref="/data/height">
+			<label ref="jr:itext('height-label')"/>
+		</input>
+	</h:body>
+</h:html>
