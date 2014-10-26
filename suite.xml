@@ -151,54 +151,21 @@
         <locale id="m1.case_long.title"/>
       </text>
     </title>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_name_1.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="case_name"/>
-        </text>
-      </template>
-    </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_minutes_until_next_exam_2.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="minutes_until_next_exam"/>
-        </text>
-      </template>
-    </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_high_risk_3.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="high_risk"/>
-        </text>
-      </template>
-    </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_age_4.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="age"/>
-        </text>
-      </template>
-    </field>
+<detail>
+    <title>
+      <text>
+        <!--locale id="m1.case_long.title"/-->
+        <value>Partograph</value>
+      </text>
+    </title>
+</detail>
+<detail>
+    <title>
+      <text>
+        <!--locale id="m1.case_long.title"/-->
+        <value>Measurements</value>
+      </text>
+    </title>
     <field>
       <header>
         <text>
@@ -391,18 +358,14 @@
         </text>
       </template>
     </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_patient_notes_21.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="patient_notes"/>
-        </text>
-      </template>
-    </field>
+</detail>
+<detail>
+    <title>
+      <text>
+        <!--locale id="m1.case_long.title"/-->
+        <value>Patient Information</value>
+      </text>
+    </title>
     <field>
       <header>
         <text>
@@ -595,6 +558,7 @@
         </text>
       </template>
     </field>
+</detail>
   </detail>
   <detail id="m2_case_short">
     <title>
