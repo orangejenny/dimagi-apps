@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<suite version="207" descriptor="Media Suite File">
+<suite version="210" descriptor="Media Suite File">
   <media path="../../commcare/image/data/exam_indicators">
     <resource id="media-25b656ffaaaf97b819250fd0aafe7b3b-indicator_list-station.png" version="141">
       <location authority="local">./commcare/image/data/exam_indicators/indicator_list-station.png</location>

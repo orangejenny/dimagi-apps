@@ -3,19 +3,21 @@
 		<h:title>Transfer Patient</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/7E74D2A2-3F9D-4CA3-89AA-AC48312D3C16" uiVersion="1" version="176" name="Transfer Patient">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/7E74D2A2-3F9D-4CA3-89AA-AC48312D3C16" uiVersion="1" version="210" name="Transfer Patient">
 					<transfer_patient/>
 					<transfer_reason_list/>
+					<if_other/>
 					<transfer_actions>
 						<time/>
 						<transfer_ipc/>
 						<transfer_provision/>
 						<partograph/>
 					</transfer_actions>
-				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""/><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><close/></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
 			</instance><instance id="commcaresession" src="jr://instance/session"/>
 			<bind nodeset="/data/transfer_patient"/>
 			<bind nodeset="/data/transfer_reason_list"/>
+			<bind nodeset="/data/if_other" type="xsd:string" relevant="selected(/data/transfer_reason_list, 'other')"/>
 			<bind nodeset="/data/transfer_actions"/>
 			<bind nodeset="/data/transfer_actions/time"/>
 			<bind nodeset="/data/transfer_actions/transfer_ipc"/>
@@ -50,8 +52,14 @@
 					<text id="transfer_reason_list-vitals_distress-label">
 						<value>Maternal vital signs cross normal limits (i.e. pulse &gt; 100, blood pressure &gt; 140/90, temperature &gt; 38C)</value>
 					</text>
+					<text id="transfer_reason_list-other-label">
+						<value>Other</value>
+					</text>
+					<text id="if_other-label">
+						<value>If listed "other" as an option, please explain here:</value>
+					</text>
 					<text id="transfer_actions-label">
-						<value>question3</value>
+						<value>Necessary transfer actions to do:</value>
 					</text>
 					<text id="transfer_actions/time-label">
 						<value>1. Note the time when cervical dilation plotting crosses the alert line</value>
@@ -103,7 +111,14 @@
 				<label ref="jr:itext('transfer_reason_list-vitals_distress-label')"/>
 				<value>vitals_distress</value>
 			</item>
+			<item>
+				<label ref="jr:itext('transfer_reason_list-other-label')"/>
+				<value>other</value>
+			</item>
 		</select>
+		<input ref="/data/if_other">
+			<label ref="jr:itext('if_other-label')"/>
+		</input>
 		<group ref="/data/transfer_actions" appearance="field-list">
 			<label ref="jr:itext('transfer_actions-label')"/>
 			<trigger ref="/data/transfer_actions/time" appearance="minimal">
