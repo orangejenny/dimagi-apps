@@ -487,7 +487,8 @@
       </template>
         <background>
           <text>
-              <xpath function ="if(hours &gt; cd_update - $first_dilation, if(hours + 4 &gt; cd_update - $first_dilation, 'red-background','yellow-background'), 'none')" />
+              <!--xpath function ="if(hours &gt; cd_update - $first_dilation, if(hours + 4 &gt; cd_update - $first_dilation, 'red-background','yellow-background'), 'none')" /-->
+              <xpath function ="yellow-background"/>
           </text>
         </background>
     </field>
@@ -721,7 +722,7 @@
 		                  <value>13</value>
 		              </text>
 		              <text id="y-labels">
-		                  <value>5</value>
+		                  <value>6</value>
 		              </text>
 		              <text id="x-title">
 		                  <locale id="m1.case_long.graph3.x_title"/>
