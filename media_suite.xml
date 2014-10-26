@@ -1,11 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<suite version="210" descriptor="Media Suite File">
-  <media path="../../commcare/image/data/exam_indicators">
-    <resource id="media-25b656ffaaaf97b819250fd0aafe7b3b-indicator_list-station.png" version="141">
-      <location authority="local">./commcare/image/data/exam_indicators/indicator_list-station.png</location>
-      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/8c67a7a87e8db547149a296795a2576a/indicator_list-station.png</location>
-    </resource>
-  </media>
+<suite version="240" descriptor="Media Suite File">
   <media path="../../commcare/image">
     <resource id="media-7e83e0845cb8fd20fc1972af63e6f84f-educational_extras.png" version="176">
       <location authority="local">./commcare/image/educational_extras.png</location>
@@ -22,6 +16,12 @@
     <resource id="media-ca39c348129a659301b3d53a03a4114b-view_past_patients.png" version="119">
       <location authority="local">./commcare/image/view_past_patients.png</location>
       <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/bbea181b2326f6f3bd478190000df62d/view_past_patients.png</location>
+    </resource>
+  </media>
+  <media path="../../commcare/image/data/high_risk_page">
+    <resource id="media-033eec36b6e31a5713f541502a23f185-high_risk_flag.png" version="228">
+      <location authority="local">./commcare/image/data/high_risk_page/high_risk_flag.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/681a19157389ada0d258f1c15511f97c/high_risk_flag.png</location>
     </resource>
   </media>
   <media path="../../commcare/image">
@@ -88,6 +88,12 @@
     <resource id="media-0ff26adc96b3ea469ba93f1b3d01bb05-registration.png" version="87">
       <location authority="local">./commcare/image/registration.png</location>
       <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/6b7ae6bd80f29d9268f8f85a0842be0f/registration.png</location>
+    </resource>
+  </media>
+  <media path="../../commcare/image/data/es_alert">
+    <resource id="media-e3a8f75a39952ae30e477ef8e27776b5-alert.png" version="219">
+      <location authority="local">./commcare/image/data/es_alert/alert.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/b48dd939cf79c1aac9ad7e3298a42086/alert.png</location>
     </resource>
   </media>
 </suite>

@@ -3,7 +3,7 @@
 		<h:title>Notes &amp; Flags</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/8B5058C9-30E9-4263-9647-63285682367B" uiVersion="1" version="203" name="Notes &amp; Flags">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/8B5058C9-30E9-4263-9647-63285682367B" uiVersion="1" version="226" name="Notes &amp; Flags">
 					<flag_notes>
 						<nurse_name/>
 						<flag/>
@@ -22,7 +22,7 @@
 			<bind nodeset="/data/flag_notes/prev_patient_notes"/>
 			<bind nodeset="/data/nurse_flag" calculate="if(selected(/data/flag_notes/flag, 'flag_yes'), 'yes', 'no')"/>
 			<bind nodeset="/data/patient_notes_in"/>
-			<bind nodeset="/data/patient_notes_out" calculate="concat(/data/flag_notes/patient_notes, '&amp;#10;', /data/patient_notes_in)"/>
+			<bind nodeset="/data/patient_notes_out" calculate="concat(/data/flag_notes/nurse_name, ': ', /data/flag_notes/patient_notes, '       ', /data/patient_notes_in)"/>
 			<itext>
 				<translation lang="en" default="">
 					<text id="flag_notes-label">
