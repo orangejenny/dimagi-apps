@@ -121,7 +121,18 @@
         <locale id="m1.case_short.title"/>
       </text>
     </title>
+    <variables>
+	   <first_dilation function="coalesce(first_dilation, 4)"/>
+      <next_exam function="minutes_until_next_exam - int((double(now()) - double(last_exam_time)) * 24 * 60)"/>
+	   <next_exam_abs function="if($next_exam &lt; 0, $next_exam * -1, $next_exam)"/>
+	   <next_exam_hours function="int($next_exam_abs div 60)"/>
+	   <next_exam_minutes function="$next_exam_abs mod 60"/>
+	   <next_exam_string function="concat($next_exam_hours, ':', if($next_exam_minutes &lt; 10, '0', ''), $next_exam_minutes)"/>
+	 </variables>
     <field>
+      <style horz-align="left" vert-align="center" font-size="large">
+      	<grid grid-height="2" grid-width="4" grid-x="0" grid-y="0" />
+       </style>
       <header>
         <text>
           <locale id="m1.case_short.case_name_1.header"/>
@@ -132,13 +143,16 @@
           <xpath function="case_name"/>
         </text>
       </template>
-      <sort type="string" order="1" direction="ascending">
+      <!--sort type="string" order="1" direction="ascending">
         <text>
-          <xpath function="case_name"/>
+          <xpath function="high_risk"/>
         </text>
-      </sort>
+      </sort-->
     </field>
     <field>
+      <style horz-align="left" font-size="medium">
+      	<grid grid-height="1" grid-width="7" grid-x="4" grid-y="4" />
+       </style>
       <header>
         <text>
           <locale id="m1.case_short.case_minutes_until_next_exam_2.header"/>
@@ -146,23 +160,34 @@
       </header>
       <template>
         <text>
-          <xpath function="minutes_until_next_exam"/>
+             <xpath function="if($next_exam &lt; 0, concat('&lt;b&gt;Next exam late by ', $next_exam_string, '&lt;/b&gt;'), concat('Time until next exam: ', $next_exam_string))"/>
         </text>
       </template>
+      <sort type="string" order="3" direction="descending">
+        <text>
+          <xpath function="minutes_until_next_exam"/>
+        </text>
+      </sort>
     </field>
-    <field>
+    <!--field>
+      <style horz-align="left" font-size="medium">
+      	<grid grid-height="1" grid-width="7" grid-x="4" grid-y="5" />
+       </style>
       <header>
         <text>
-          <locale id="m1.case_short.case_high_risk_3.header"/>
+          <locale id="m1.case_short.case_time_measured_VE_3"/>
         </text>
       </header>
       <template>
         <text>
-          <xpath function="high_risk"/>
+            <xpath function="concat('Time of first exam: ', last_exam_time)"/>
         </text>
       </template>
-    </field>
+    </field-->
     <field>
+      <style horz-align="left" font-size="small">
+      	<grid grid-height="1" grid-width="4" grid-x="0" grid-y="2" />
+       </style>
       <header>
         <text>
           <locale id="m1.case_short.case_age_4.header"/>
@@ -170,69 +195,177 @@
       </header>
       <template>
         <text>
-          <xpath function="age"/>
+          <xpath function="concat(age, ' years old')"/>
         </text>
       </template>
     </field>
     <field>
+       <style>
+      	<grid grid-height="2" grid-width="2" grid-x="6" grid-y="0" />
+       </style>
       <header>
         <text>
-          <locale id="m1.case_short.case_first_measured_dilation_time_5.header"/>
+          <locale id="m1.case_short.case_high_risk_3.header"/>
         </text>
       </header>
-      <template>
+      <template form="image">
         <text>
-          <xpath function="first_measured_dilation_time"/>
+          <xpath function="if(high_risk = 'yes', $ky, $kx)">
+            <variable name="ky">
+              <locale id="image.high.risk"/>
+            </variable>
+            <variable name="kx">
+              <locale id="image.shadow.path"/>
+            </variable>
+          </xpath>
         </text>
       </template>
     </field>
     <field>
+      <style>
+      	<grid grid-height="2" grid-width="2" grid-x="10" grid-y="0" />
+       </style>
       <header>
         <text>
-          <locale id="m1.case_short.case_mrd_6.header"/>
+          <locale id="nurse.flag.header"/>
         </text>
       </header>
-      <template>
+      <template form="image">
         <text>
-          <xpath function="mrd"/>
+          <xpath function="if(nurse_flag = 'yes', $ky, $kx)">
+            <variable name="ky">
+              <locale id="image.nurse.flag"/>
+            </variable>
+            <variable name="kx">
+              <locale id="image.shadow.path"/>
+            </variable>
+          </xpath>
         </text>
       </template>
     </field>
     <field>
+      <style>
+      	<grid grid-height="2" grid-width="2" grid-x="8" grid-y="0" />
+       </style>
       <header>
         <text>
-          <locale id="m1.case_short.case_bed_7.header"/>
+          <locale id="nurse.flag.header"/>
         </text>
       </header>
-      <template>
+      <template form="image">
         <text>
-          <xpath function="bed"/>
+          <xpath function="if($next_exam &lt; 0, $ky, $kx)">
+            <variable name="ky">
+              <locale id="image.reminder"/>
+            </variable>
+            <variable name="kx">
+              <locale id="image.shadow.path"/>
+            </variable>
+          </xpath>
         </text>
       </template>
     </field>
     <field>
-      <header>
-        <text>
-          <locale id="m1.case_short.case_nurse_flag_8.header"/>
-        </text>
+      <header width="0">
+        <text/>
       </header>
-      <template>
+      <template width="0">
         <text>
           <xpath function="nurse_flag"/>
         </text>
       </template>
+      <sort type="string" order="2" direction="descending">
+        <text>
+          <xpath function="nurse_flag"/>
+        </text>
+      </sort>
     </field>
     <field>
+       <style>
+      	<grid grid-height="2" grid-width="2" grid-x="4" grid-y="0" />
+       </style>
       <header>
         <text>
-          <locale id="m1.case_short.case_alert_flag_9.header"/>
+          <locale id="image.alert.header"/>
+        </text>
+      </header>
+      <template form="image">
+        <text>
+          <xpath function="if(alert_flag = 'yes', $ky, $kx)">
+            <variable name="ky">
+              <locale id="image.alert.triggered"/>
+            </variable>
+            <variable name="kx">
+              <locale id="image.shadow.path"/>
+            </variable>
+          </xpath>
+        </text>
+      </template>
+    </field>
+    <field>
+       <style horz-align="left" font-size="medium">
+      	<grid grid-height="1" grid-width="8" grid-x="4" grid-y="2" />
+       </style>
+      <header>
+        <text>
+          <locale id="admit.date.header"/>
         </text>
       </header>
       <template>
         <text>
-          <xpath function="alert_flag"/>
+          <xpath function="concat('Admitted: ',format-date(admission_date,'%e/%n'),' ',substr(admission_time,0,8))"/>
         </text>
       </template>
+    </field>
+    <field>
+      <style horz-align="left" font-size="small">
+      	<grid grid-height="1" grid-width="4" grid-x="0" grid-y="5" />
+       </style>
+      <header>
+        <text>
+          <locale id="parity.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="concat('Parity: ', parity)"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <style horz-align="left" font-size="small">
+      	<grid grid-height="1" grid-width="4" grid-x="0" grid-y="4" />
+       </style>
+      <header>
+        <text>
+          <locale id="reg.num.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="concat('MRD #', mrd)"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <style horz-align="left" font-size="small">
+      	<grid grid-height="1" grid-width="4" grid-x="0" grid-y="3" />
+       </style>
+      <header>
+        <text>
+          <locale id="room.num.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="concat('Bed #', bed)"/>
+        </text>
+      </template>
+        <background>
+          <text>
+              <xpath function ="if(hours &gt; dilation - $first_dilation, if(hours + 4 &gt; dilation - $first_dilation, 'red-background','yellow-background'), 'none')" />
+          </text>
+        </background>
     </field>
   </detail>
   <detail id="m1_case_long">
