@@ -3,7 +3,7 @@
 		<h:title>Exam</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/78143AF8-0E4D-4E91-A025-D23B215BD183" uiVersion="1" version="243" name="Exam">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/78143AF8-0E4D-4E91-A025-D23B215BD183" uiVersion="1" version="285" name="Exam">
 					<exam_indicators jr:template="">
 						<exam_measurement_indicator_list>
 							<choose/>
@@ -12,6 +12,7 @@
 						<cervical_dilation>
 							<last_dilation/>
 							<dilation/>
+							<latent_phase/>
 						</cervical_dilation>
 						<station_of_the_head>
 							<last_station/>
@@ -100,52 +101,104 @@
 					<reminders>
 						<choose_reminder/>
 					</reminders>
+					<chosen_minutes/>
+					<minutes_until_next_exam/>
+					<now_minutes/>
+					<future_minutes/>
 					<es_none/>
 					<es_others/>
-					<minutes_until_next_exam/>
-					<current_exam_done_at/>
-					<last_exam_time/>
-					<last_exam_hours/>
-					<last_exam_minutes/>
 					<dilation_in/>
 					<dilation_out/>
+					<dilation_time_in/>
+					<dilation_time_out/>
+					<dilation_hours/>
+					<dilation_minutes/>
 					<station_in/>
 					<station_out/>
+					<station_time_in/>
+					<station_time_out/>
+					<station_hours/>
+					<station_minutes/>
 					<fhs_in/>
 					<fhs_out/>
+					<fhs_time_in/>
+					<fhs_time_out/>
+					<fhs_hours/>
+					<fhs_minutes/>
 					<bp_concat/>
 					<systolic_in/>
 					<systolic_out/>
 					<diastolic_in/>
 					<diastolic_out/>
+					<bp_time_in/>
+					<bp_time_out/>
+					<bp_hours/>
+					<bp_minutes/>
 					<af_in/>
 					<af_out/>
+					<af_time_in/>
+					<af_time_out/>
+					<af_hours/>
+					<af_minutes/>
 					<moulding_in/>
 					<moulding_out/>
+					<moulding_time_in/>
+					<moulding_time_out/>
+					<moulding_hours/>
+					<moulding_minutes/>
 					<contractions_num_in/>
 					<contractions_num_out/>
 					<contractions_dur_in/>
 					<contractions_dur_out/>
+					<contractions_time_in/>
+					<contractions_time_out/>
+					<contractions_hours/>
+					<contractions_minutes/>
 					<pulse_in/>
 					<pulse_out/>
+					<pulse_time_in/>
+					<pulse_time_out/>
+					<pulse_hours/>
+					<pulse_minutes/>
 					<temp_in/>
 					<temp_out/>
+					<temp_time_in/>
+					<temp_time_out/>
+					<temp_hours/>
+					<temp_minutes/>
 					<resp_in/>
 					<resp_out/>
+					<resp_time_in/>
+					<resp_time_out/>
+					<resp_hours/>
+					<resp_minutes/>
 					<urine_vol_in/>
 					<urine_vol_out/>
+					<urine_time_in/>
+					<urine_time_out/>
+					<urine_hours/>
+					<urine_minutes/>
 					<oxytocin_in/>
 					<oxytocin_out/>
+					<oxytocin_time_in/>
+					<oxytocin_time_out/>
+					<oxytocin_hours/>
+					<oxytocin_minutes/>
 					<drugs_iv_in/>
 					<drugs_iv_out/>
+					<drugs_iv_time_in/>
+					<drugs_iv_time_out/>
+					<drugs_iv_hours/>
+					<drugs_iv_minutes/>
 					<hours/>
-					<first_measured_dilation_time/>
+					<first_measured_dilation_time_out/>
 					<first_measured_dilation_time_in/>
 					<nurse_flag/>
 					<alert_flag/>
 					<first_dilation_out/>
 					<first_dilation_in/>
-				<subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>Indicators</case_type></create><update><contractions_dur/><contractions_num/><dilation/><fhs/><hours/><station/></update><index><parent case_type="patient"/></index></case></subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><update><af/><alert_flag/><contractions_dur/><contractions_num/><diastolic/><dilation/><drugs_iv/><fhs/><first_dilation/><first_measured_dilation_time/><hours/><last_exam_time/><minutes_until_next_exam/><moulding/><nurse_flag/><oxytocin/><pulse/><resp/><station/><systolic/><temp/><urine_vol/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+					<last_exam_time/>
+				<subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>Indicators</case_type></create><update><contractions_dur/><contractions_num/><dilation/><fhs/><hours/><station/></update><index><parent case_type="patient"/></index></case></subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><update><af/><af_time/><alert_flag/><bp_time/><contractions_dur/><contractions_num/><contractions_time/><diastolic/><dilation/><dilation_time/><drugs_iv/><drugs_iv_time/><fhs/><fhs_time/><first_dilation/><first_measured_dilation_time/><hours/><last_exam_time/><minutes_until_next_exam/><moulding/><moulding_time/><nurse_flag/><oxytocin/><oxytocin_time/><pulse/><pulse_time/><resp/><resp_time/><station/><station_time/><systolic/><temp/><temp_time/><urine_time/><urine_vol/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
 			</instance><instance id="commcaresession" src="jr://instance/session"/><instance id="casedb" src="jr://instance/casedb"/>
 			<bind nodeset="/data/exam_indicators"/>
 			<bind nodeset="/data/exam_indicators/exam_measurement_indicator_list"/>
@@ -154,6 +207,7 @@
 			<bind nodeset="/data/exam_indicators/cervical_dilation" relevant="/data/exam_indicators/exam_measurement_indicator_list/indicator_list = 'dilation'"/>
 			<bind nodeset="/data/exam_indicators/cervical_dilation/last_dilation"/>
 			<bind nodeset="/data/exam_indicators/cervical_dilation/dilation" type="xsd:int" constraint=". &lt;= 10"/>
+			<bind nodeset="/data/exam_indicators/cervical_dilation/latent_phase" relevant="/data/exam_indicators/cervical_dilation/dilation &lt; 4"/>
 			<bind nodeset="/data/exam_indicators/station_of_the_head" relevant="/data/exam_indicators/exam_measurement_indicator_list/indicator_list = 'station'"/>
 			<bind nodeset="/data/exam_indicators/station_of_the_head/last_station"/>
 			<bind nodeset="/data/exam_indicators/station_of_the_head/station"/>
@@ -221,51 +275,103 @@
 			<bind nodeset="/data/emergency_signs/es_alert/actions" type="xsd:string" relevant="/data/emergency_signs/es_alert/choice = 'record_actions'"/>
 			<bind nodeset="/data/reminders"/>
 			<bind nodeset="/data/reminders/choose_reminder" required="true()"/>
+			<bind nodeset="/data/chosen_minutes" calculate="/data/reminders/choose_reminder"/>
+			<bind nodeset="/data/minutes_until_next_exam" calculate="/data/future_minutes - /data/now_minutes"/>
+			<bind nodeset="/data/now_minutes" calculate="double(now()) * 24 * 60"/>
+			<bind nodeset="/data/future_minutes" calculate="/data/now_minutes + double(/data/chosen_minutes)"/>
 			<bind nodeset="/data/es_none" calculate="if(/data/emergency_signs/emergency_signs/emergency_signs_list = &quot;none&quot;, 'yes', 'no')"/>
 			<bind nodeset="/data/es_others" calculate="if(/data/emergency_signs/emergency_signs/emergency_signs_list = &quot;difficulty_breathing&quot; or /data/emergency_signs/emergency_signs/emergency_signs_list = &quot;shock&quot; or /data/emergency_signs/emergency_signs/emergency_signs_list = &quot;vaginal_bleeding&quot; or /data/emergency_signs/emergency_signs/emergency_signs_list = &quot;convulsions_unconsciousness&quot; or /data/emergency_signs/emergency_signs/emergency_signs_list = &quot;prolapsed_cord&quot; or /data/emergency_signs/emergency_signs/emergency_signs_list = &quot;fetal_distress&quot;, 'yes', 'no')"/>
-			<bind nodeset="/data/minutes_until_next_exam" calculate="/data/reminders/choose_reminder"/>
-			<bind nodeset="/data/current_exam_done_at" calculate="/data/meta/timeEnd"/>
-			<bind nodeset="/data/last_exam_time" calculate="double(now())"/>
-			<bind nodeset="/data/last_exam_hours" calculate="int((/data/last_exam_time mod 1) * 24) + 1"/>
-			<bind nodeset="/data/last_exam_minutes" calculate="int(((/data/last_exam_time*24) - int(/data/last_exam_time * 24)) * 60)"/>
 			<bind nodeset="/data/dilation_in"/>
-			<bind nodeset="/data/dilation_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;dilation&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;dilation&quot;][1]/cervical_dilation/dilation,'')"/>
+			<bind nodeset="/data/dilation_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;dilation&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;dilation&quot;][1]/cervical_dilation/dilation, /data/dilation_in)"/>
+			<bind nodeset="/data/dilation_time_in"/>
+			<bind nodeset="/data/dilation_time_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;dilation&quot;]) &gt;= 1, double(now()), /data/dilation_time_in)"/>
+			<bind nodeset="/data/dilation_hours" calculate="int((/data/dilation_time_in mod 1) * 24) + 1"/>
+			<bind nodeset="/data/dilation_minutes" calculate="int(((/data/dilation_time_in * 24) - int(/data/dilation_time_in * 24)) * 60)"/>
 			<bind nodeset="/data/station_in"/>
-			<bind nodeset="/data/station_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;station&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;station&quot;][1]/station_of_the_head/station,'')"/>
+			<bind nodeset="/data/station_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;station&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;station&quot;][1]/station_of_the_head/station, /data/station_in)"/>
+			<bind nodeset="/data/station_time_in"/>
+			<bind nodeset="/data/station_time_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;station&quot;]) &gt;= 1, double(now()), /data/station_time_in)"/>
+			<bind nodeset="/data/station_hours" calculate="int((/data/station_time_in mod 1) * 24) + 1"/>
+			<bind nodeset="/data/station_minutes" calculate="int(((/data/station_time_in * 24) - int(/data/station_time_in * 24)) * 60)"/>
 			<bind nodeset="/data/fhs_in"/>
-			<bind nodeset="/data/fhs_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;fhs&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;fhs&quot;][1]/fhs/fhs,'')"/>
+			<bind nodeset="/data/fhs_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;fhs&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;fhs&quot;][1]/fhs/fhs, /data/fhs_in)"/>
+			<bind nodeset="/data/fhs_time_in"/>
+			<bind nodeset="/data/fhs_time_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;fhs&quot;]) &gt;= 1, double(now()), /data/fhs_time_in)"/>
+			<bind nodeset="/data/fhs_hours" calculate="int((/data/fhs_time_in mod 1) * 24) + 1"/>
+			<bind nodeset="/data/fhs_minutes" calculate="int(((/data/fhs_time_in * 24) - int(/data/fhs_time_in * 24)) * 60)"/>
 			<bind nodeset="/data/bp_concat" calculate="concat(/data/systolic_in, '/', /data/diastolic_in)" required="true()"/>
 			<bind nodeset="/data/systolic_in"/>
-			<bind nodeset="/data/systolic_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;bp&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;bp&quot;][1]/bp/systolic,'')"/>
+			<bind nodeset="/data/systolic_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;bp&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;bp&quot;][1]/bp/systolic, /data/systolic_in)"/>
 			<bind nodeset="/data/diastolic_in"/>
-			<bind nodeset="/data/diastolic_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;bp&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;bp&quot;][1]/bp/diastolic,'')"/>
+			<bind nodeset="/data/diastolic_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;bp&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;bp&quot;][1]/bp/diastolic, /data/diastolic_in)"/>
+			<bind nodeset="/data/bp_time_in"/>
+			<bind nodeset="/data/bp_time_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;bp&quot;]) &gt;= 1, double(now()), /data/bp_time_in)"/>
+			<bind nodeset="/data/bp_hours" calculate="int((/data/bp_time_in mod 1) * 24) + 1"/>
+			<bind nodeset="/data/bp_minutes" calculate="int(((/data/bp_time_in * 24) - int(/data/bp_time_in * 24)) * 60)"/>
 			<bind nodeset="/data/af_in"/>
-			<bind nodeset="/data/af_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;af&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;af&quot;][1]/af/af,'')"/>
+			<bind nodeset="/data/af_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;af&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;af&quot;][1]/af/af, /data/af_in)"/>
+			<bind nodeset="/data/af_time_in"/>
+			<bind nodeset="/data/af_time_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;af&quot;]) &gt;= 1, double(now()), /data/af_time_in)"/>
+			<bind nodeset="/data/af_hours" calculate="int((/data/af_time_in mod 1) * 24) + 1"/>
+			<bind nodeset="/data/af_minutes" calculate="int(((/data/af_time_in * 24) - int(/data/af_time_in * 24)) * 60)"/>
 			<bind nodeset="/data/moulding_in"/>
-			<bind nodeset="/data/moulding_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;moulding&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;moulding&quot;][1]/moulding/moulding,'')"/>
+			<bind nodeset="/data/moulding_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;moulding&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;moulding&quot;][1]/moulding/moulding, /data/moulding_in)"/>
+			<bind nodeset="/data/moulding_time_in"/>
+			<bind nodeset="/data/moulding_time_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;moulding&quot;]) &gt;= 1, double(now()), /data/moulding_time_in)"/>
+			<bind nodeset="/data/moulding_hours" calculate="int((/data/moulding_time_in mod 1) * 24) + 1"/>
+			<bind nodeset="/data/moulding_minutes" calculate="int(((/data/moulding_time_in * 24) - int(/data/moulding_time_in * 24)) * 60)"/>
 			<bind nodeset="/data/contractions_num_in"/>
-			<bind nodeset="/data/contractions_num_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;contractions&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;contractions&quot;][1]/contractions/contractions_num,'')"/>
+			<bind nodeset="/data/contractions_num_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;contractions&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;contractions&quot;][1]/contractions/contractions_num, /data/contractions_num_in)"/>
 			<bind nodeset="/data/contractions_dur_in"/>
-			<bind nodeset="/data/contractions_dur_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;contractions&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;contractions&quot;][1]/contractions/contractions_dur,'')"/>
+			<bind nodeset="/data/contractions_dur_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;contractions&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;contractions&quot;][1]/contractions/contractions_dur, /data/contractions_dur_in)"/>
+			<bind nodeset="/data/contractions_time_in"/>
+			<bind nodeset="/data/contractions_time_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;contractions&quot;]) &gt;= 1, double(now()), /data/contractions_time_in)"/>
+			<bind nodeset="/data/contractions_hours" calculate="int((/data/contractions_time_in mod 1) * 24) + 1"/>
+			<bind nodeset="/data/contractions_minutes" calculate="int(((/data/contractions_time_in * 24) - int(/data/contractions_time_in * 24)) * 60)"/>
 			<bind nodeset="/data/pulse_in"/>
-			<bind nodeset="/data/pulse_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;pulse&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;pulse&quot;][1]/pulse/pulse,'')"/>
+			<bind nodeset="/data/pulse_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;pulse&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;pulse&quot;][1]/pulse/pulse, /data/pulse_in)"/>
+			<bind nodeset="/data/pulse_time_in"/>
+			<bind nodeset="/data/pulse_time_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;pulse&quot;]) &gt;= 1, double(now()), /data/pulse_time_in)"/>
+			<bind nodeset="/data/pulse_hours" calculate="int((/data/pulse_time_in mod 1) * 24) + 1"/>
+			<bind nodeset="/data/pulse_minutes" calculate="int(((/data/pulse_time_in * 24) - int(/data/pulse_time_in * 24)) * 60)"/>
 			<bind nodeset="/data/temp_in"/>
-			<bind nodeset="/data/temp_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;temp&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;temp&quot;][1]/temp/temp,'')"/>
+			<bind nodeset="/data/temp_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;temp&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;temp&quot;][1]/temp/temp, /data/temp_in)"/>
+			<bind nodeset="/data/temp_time_in"/>
+			<bind nodeset="/data/temp_time_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;temp&quot;]) &gt;= 1, double(now()), /data/temp_time_in)"/>
+			<bind nodeset="/data/temp_hours" calculate="int((/data/temp_time_in mod 1) * 24) + 1"/>
+			<bind nodeset="/data/temp_minutes" calculate="int(((/data/temp_time_in * 24) - int(/data/temp_time_in * 24)) * 60)"/>
 			<bind nodeset="/data/resp_in"/>
-			<bind nodeset="/data/resp_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;resp&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;resp&quot;][1]/resp/resp,'')"/>
+			<bind nodeset="/data/resp_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;resp&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;resp&quot;][1]/resp/resp, /data/resp_in)"/>
+			<bind nodeset="/data/resp_time_in"/>
+			<bind nodeset="/data/resp_time_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;resp&quot;]) &gt;= 1, double(now()), /data/resp_time_in)"/>
+			<bind nodeset="/data/resp_hours" calculate="int((/data/resp_time_in mod 1) * 24) + 1"/>
+			<bind nodeset="/data/resp_minutes" calculate="int(((/data/resp_time_in * 24) - int(/data/resp_time_in * 24)) * 60)"/>
 			<bind nodeset="/data/urine_vol_in"/>
-			<bind nodeset="/data/urine_vol_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;urine&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;urine&quot;][1]/urine/urine_vol,'')"/>
+			<bind nodeset="/data/urine_vol_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;urine&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;urine&quot;][1]/urine/urine_vol, /data/urine_vol_in)"/>
+			<bind nodeset="/data/urine_time_in"/>
+			<bind nodeset="/data/urine_time_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;urine&quot;]) &gt;= 1, double(now()), /data/urine_time_in)"/>
+			<bind nodeset="/data/urine_hours" calculate="int((/data/urine_time_in mod 1) * 24) + 1"/>
+			<bind nodeset="/data/urine_minutes" calculate="int(((/data/urine_time_in * 24) - int(/data/urine_time_in * 24)) * 60)"/>
 			<bind nodeset="/data/oxytocin_in"/>
-			<bind nodeset="/data/oxytocin_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;oxytocin&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;oxytocin&quot;][1]/oxytocin/oxytocin,'')"/>
+			<bind nodeset="/data/oxytocin_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;oxytocin&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;oxytocin&quot;][1]/oxytocin/oxytocin, /data/oxytocin_in)"/>
+			<bind nodeset="/data/oxytocin_time_in"/>
+			<bind nodeset="/data/oxytocin_time_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;oxytocin&quot;]) &gt;= 1, double(now()), /data/oxytocin_time_in)"/>
+			<bind nodeset="/data/oxytocin_hours" calculate="int((/data/oxytocin_time_in mod 1) * 24) + 1"/>
+			<bind nodeset="/data/oxytocin_minutes" calculate="int(((/data/oxytocin_time_in * 24) - int(/data/oxytocin_time_in * 24)) * 60)"/>
 			<bind nodeset="/data/drugs_iv_in"/>
-			<bind nodeset="/data/drugs_iv_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;drugs_iv&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;drugs_iv&quot;][1]/drugs_iv/drugs_iv,'')"/>
-			<bind nodeset="/data/hours" calculate="/data/first_measured_dilation_time * 24"/>
-			<bind nodeset="/data/first_measured_dilation_time" calculate="if(/data/first_measured_dilation_time_in = '' and /data/dilation_out &gt;= 4, double(now()), '')"/>
+			<bind nodeset="/data/drugs_iv_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;drugs_iv&quot;]) &gt;= 1, /data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;drugs_iv&quot;][1]/drugs_iv/drugs_iv, /data/drugs_iv_in)"/>
+			<bind nodeset="/data/drugs_iv_time_in"/>
+			<bind nodeset="/data/drugs_iv_time_out" calculate="if(count(/data/exam_indicators[exam_measurement_indicator_list/indicator_list = &quot;drugs_iv&quot;]) &gt;= 1, double(now()), /data/drugs_iv_time_in)"/>
+			<bind nodeset="/data/drugs_iv_hours" calculate="int((/data/drugs_iv_time_in mod 1) * 24) + 1"/>
+			<bind nodeset="/data/drugs_iv_minutes" calculate="int(((/data/drugs_iv_time_in * 24) - int(/data/drugs_iv_time_in * 24)) * 60)"/>
+			<bind nodeset="/data/hours" calculate="(double(now()) - /data/first_measured_dilation_time_out) * 24"/>
+			<bind nodeset="/data/first_measured_dilation_time_out" calculate="if(/data/first_measured_dilation_time_in = '' and /data/dilation_out &gt;= 4, double(/data/meta/timeEnd), '')"/>
 			<bind nodeset="/data/first_measured_dilation_time_in"/>
 			<bind nodeset="/data/nurse_flag" calculate="if(/data/exam_indicators/fhs_alert/choice = 'flag' or /data/exam_indicators/af_alert/choice = 'flag' or /data/exam_indicators/bp_alert/choice = 'flag' or /data/emergency_signs/es_alert/choice = 'flag', 'yes', 'no')"/>
 			<bind nodeset="/data/alert_flag" calculate="if(selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'difficulty_breathing') or selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'shock') or selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'vaginal_bleeding') or selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'convulsions_unconsciousness') or selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'prolapsed_cord') or selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'fetal_distress') or (/data/exam_indicators/bp/systolic &gt;= 140 and /data/exam_indicators/bp/diastolic &gt;= 90) or /data/exam_indicators/fhs/fhs &lt; 110 or /data/exam_indicators/fhs/fhs &gt; 160 or /data/exam_indicators/af/af = &quot;Meconium&quot; or /data/exam_indicators/af/af = &quot;Blood&quot;, 'yes', 'no')"/>
 			<bind nodeset="/data/first_dilation_out" calculate="if(/data/first_dilation_in = '', /data/dilation_out, /data/first_dilation_in)"/>
 			<bind nodeset="/data/first_dilation_in"/>
+			<bind nodeset="/data/last_exam_time" calculate="/data/meta/timeEnd"/>
 			<itext>
 				<translation lang="en" default="">
 					<text id="exam_indicators-label">
@@ -309,16 +415,17 @@
 					</text>
 					<text id="cervical_dilation/last_dilation-label">
 						<value>Last measured cervical dilation: <output value="/data/dilation_in"/>
-Time recorded: <output value="/data/last_exam_hours"/>:<output value="/data/last_exam_hours"/>
-</value>
+Time recorded: <output value="/data/dilation_hours"/>:<output value="/data/dilation_minutes"/></value>
 					</text>
 					<text id="cervical_dilation/dilation-label">
 						<value>What is the current cervical dilation?</value>
 					</text>
+					<text id="exam_indicators/cervical_dilation/latent_phase-label">
+						<value>Dilation is less than 4cm. Patient is in LATENT labour.</value>
+					</text>
 					<text id="exam_indicators/station_of_the_head/last_station-label">
 						<value>Last measured station of the fetal head: <output value="/data/station_in"/>
-Time recorded: <output value="/data/last_exam_hours"/>:<output value="/data/last_exam_hours"/>
-</value>
+Time recorded: <output value="/data/station_hours"/>:<output value="/data/station_minutes"/></value>
 					</text>
 					<text id="exam_indicators/station_of_the_head/station-label">
 						<value>What is the station of the head?</value>
@@ -346,7 +453,7 @@ Time recorded: <output value="/data/last_exam_hours"/>:<output value="/data/last
 					</text>
 					<text id="exam_indicators/fhs/last_fhs-label">
 						<value>Last measured fetal heart rate: <output value="/data/fhs_in"/>
-Time recorded: <output value="/data/last_exam_hours"/>:<output value="/data/last_exam_hours"/></value>
+Time recorded: <output value="/data/fhs_hours"/>:<output value="/data/fhs_minutes"/></value>
 					</text>
 					<text id="exam_indicators/fhs/fhs-label">
 						<value>What is the current fetal heart rate?</value>
@@ -363,7 +470,7 @@ Time recorded: <output value="/data/last_exam_hours"/>:<output value="/data/last
 					</text>
 					<text id="exam_indicators/af/question8-label">
 						<value>Last recorded amniotic fluid color: <output value="/data/af_in"/>
-Time recorded: <output value="/data/last_exam_hours"/>:<output value="/data/last_exam_hours"/></value>
+Time recorded: <output value="/data/af_hours"/>:<output value="/data/af_minutes"/></value>
 					</text>
 					<text id="exam_indicators/af/af-label">
 						<value>What is the color of the amniotic fluid?</value>
@@ -389,7 +496,7 @@ Time recorded: <output value="/data/last_exam_hours"/>:<output value="/data/last
 					</text>
 					<text id="exam_indicators/moulding/last_moulding-label">
 						<value>Last recorded moulding: <output value="/data/moulding_in"/>
-Time recorded: <output value="/data/last_exam_hours"/>:<output value="/data/last_exam_hours"/></value>
+Time recorded: <output value="/data/moulding_hours"/>:<output value="/data/moulding_minutes"/></value>
 					</text>
 					<text id="exam_indicators/moulding/moulding-label">
 						<value>What is the current moulding of fetal skull bones?</value>
@@ -413,7 +520,7 @@ Time recorded: <output value="/data/last_exam_hours"/>:<output value="/data/last
 					<text id="exam_indicators/contractions/last_contractions-label">
 						<value>Last measured number of contractions: <output value="/data/contractions_num_in"/>
 Last measured duration of contractions: <output value="/data/contractions_dur_in"/>
-Time recorded: <output value="/data/last_exam_hours"/>:<output value="/data/last_exam_hours"/></value>
+Time recorded: <output value="/data/contractions_hours"/>:<output value="/data/contractions_minutes"/></value>
 					</text>
 					<text id="exam_indicators/contractions/contractions_num-label">
 						<value>What is the current number of contractions per 10 minutes?</value>
@@ -426,7 +533,7 @@ Time recorded: <output value="/data/last_exam_hours"/>:<output value="/data/last
 					</text>
 					<text id="exam_indicators/bp/last_bp-label">
 						<value>Last measured blood pressure: <output value="/data/bp_concat"/>
-Time recorded: <output value="/data/last_exam_hours"/>:<output value="/data/last_exam_hours"/></value>
+Time recorded: <output value="/data/bp_hours"/>:<output value="/data/bp_minutes"/></value>
 					</text>
 					<text id="exam_indicators/bp/systolic-label">
 						<value>Systolic: </value>
@@ -443,14 +550,14 @@ Time recorded: <output value="/data/last_exam_hours"/>:<output value="/data/last
 					</text>
 					<text id="exam_indicators/pulse/last_pulse-label">
 						<value>Last measured pulse: <output value="/data/pulse_in"/>
-Time recorded: <output value="/data/last_exam_hours"/>:<output value="/data/last_exam_hours"/></value>
+Time recorded: <output value="/data/pulse_hours"/>:<output value="/data/pulse_minutes"/></value>
 					</text>
 					<text id="exam_indicators/pulse/pulse-label">
 						<value>What is the current pulse?</value>
 					</text>
 					<text id="exam_indicators/temp/last_temp-label">
 						<value>Last measured temperature: <output value="/data/temp_in"/>
-Time recorded: <output value="/data/last_exam_hours"/>:<output value="/data/last_exam_hours"/></value>
+Time recorded: <output value="/data/temp_hours"/>:<output value="/data/temp_minutes"/></value>
 					</text>
 					<text id="exam_indicators/temp/temp-label">
 						<value>What is the current temperature?</value>
@@ -460,14 +567,14 @@ Time recorded: <output value="/data/last_exam_hours"/>:<output value="/data/last
 					</text>
 					<text id="exam_indicators/resp/last_resp-label">
 						<value>Last measured respiration count: <output value="/data/resp_in"/>
-Time recorded: <output value="/data/last_exam_hours"/>:<output value="/data/last_exam_hours"/></value>
+Time recorded: <output value="/data/resp_hours"/>:<output value="/data/resp_minutes"/></value>
 					</text>
 					<text id="exam_indicators/resp/resp-label">
 						<value>What is the current number of respirations per minute?</value>
 					</text>
 					<text id="exam_indicators/urine/last_urine_vol-label">
 						<value>Last measured urine output: <output value="/data/urine_vol_in"/>
-Time recorded: <output value="/data/last_exam_hours"/>:<output value="/data/last_exam_hours"/></value>
+Time recorded: <output value="/data/urine_hours"/>:<output value="/data/urine_minutes"/></value>
 					</text>
 					<text id="exam_indicators/urine/urine_passed-label">
 						<value>Has the woman passed urine since last measurement?</value>
@@ -492,7 +599,7 @@ Time recorded: <output value="/data/last_exam_hours"/>:<output value="/data/last
 					</text>
 					<text id="exam_indicators/oxytocin/last_oxytocin-label">
 						<value>Previous oxytocin given (drops/min): <output value="/data/oxytocin_in"/>
-Time recorded: <output value="/data/last_exam_hours"/>:<output value="/data/last_exam_hours"/></value>
+Time recorded: <output value="/data/oxytocin_hours"/>:<output value="/data/oxytocin_minutes"/></value>
 					</text>
 					<text id="exam_indicators/oxytocin/oxytocin_given-label">
 						<value>Has oxytocin been administered during the current exam?</value>
@@ -505,7 +612,334 @@ Time recorded: <output value="/data/last_exam_hours"/>:<output value="/data/last
 					</text>
 					<text id="exam_indicators/drugs_iv/last_drugs_iv-label">
 						<value>Previous drugs and IV fluids given: <output value="/data/drugs_iv_in"/>
-Time recorded: <output value="/data/last_exam_hours"/>:<output value="/data/last_exam_hours"/></value>
+Time recorded: <output value="/data/drugs_iv_hours"/>:<output value="/data/drugs_iv_minutes"/></value>
+					</text>
+					<text id="exam_indicators/drugs_iv/drugs_iv_given-label">
+						<value>Have other drugs or IV fluids been administered during the current exam?</value>
+					</text>
+					<text id="exam_indicators/drugs_iv/drugs_iv_given-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="exam_indicators/drugs_iv/drugs_iv_given-no-label">
+						<value>No</value>
+					</text>
+					<text id="exam_indicators/drugs_iv/drugs_iv-label">
+						<value>What are the drugs or IV fluids being administered (amount and frequency)?</value>
+					</text>
+					<text id="emergency_signs-label">
+						<value>Emergency Signs</value>
+					</text>
+					<text id="emergency_signs/emergency_signs/emergency_signs_list-label">
+						<value>Identify if the patient has any of the following emergency signs:</value>
+					</text>
+					<text id="emergency_signs/emergency_signs/emergency_signs_list-constraintMsg">
+						<value>Please unselect "None of the above" if recording emergency sign.</value>
+					</text>
+					<text id="emergency_signs/emergency_signs/emergency_signs_list-difficulty_breathing-label">
+						<value>1. Difficulty in breathing</value>
+					</text>
+					<text id="emergency_signs/emergency_signs/emergency_signs_list-shock-label">
+						<value>2. Shock</value>
+					</text>
+					<text id="emergency_signs/emergency_signs/emergency_signs_list-vaginal_bleeding-label">
+						<value>3. Vaginal bleeding</value>
+					</text>
+					<text id="emergency_signs/emergency_signs/emergency_signs_list-convulsions_unconsciousness-label">
+						<value>4. Convulsions or Unconsciousness</value>
+					</text>
+					<text id="emergency_signs/emergency_signs/emergency_signs_list-prolapsed_cord-label">
+						<value>5. Prolapsed cord</value>
+					</text>
+					<text id="emergency_signs/emergency_signs/emergency_signs_list-fetal_distress-label">
+						<value>6. Fetal distress</value>
+					</text>
+					<text id="emergency_signs/emergency_signs/emergency_signs_list-none-label">
+						<value>7. None of the above</value>
+					</text>
+					<text id="emergency_signs/es_alert/alert-label">
+						<value>WARNING! Emergency signs recorded.</value>
+						<value form="image">jr://file/commcare/image/data/es_alert/alert.png</value>
+					</text>
+					<text id="emergency_signs/es_alert/suggested_action-label">
+						<value>Suggested Action: Call an expert for help or refer patient.</value>
+					</text>
+					<text id="emergency_signs/es_alert/choice-label">
+						<value>What would you like to do?</value>
+					</text>
+					<text id="emergency_signs/es_alert/choice-flag-label">
+						<value>Flag this patient for increased monitoring. Continue exam.</value>
+					</text>
+					<text id="emergency_signs/es_alert/choice-record_actions-label">
+						<value>Record your actions. Continue exam.</value>
+					</text>
+					<text id="emergency_signs/es_alert/choice-dismiss-label">
+						<value>Dismiss warning. Continue exam.</value>
+					</text>
+					<text id="emergency_signs/es_alert/choice-stop-label">
+						<value>Stop exam.</value>
+					</text>
+					<text id="emergency_signs/es_alert/actions-label">
+						<value>Record your actions here:</value>
+					</text>
+					<text id="reminders-label">
+						<value>Set Reminder</value>
+					</text>
+					<text id="reminders/choose_reminder-label">
+						<value>When would you like to receive an exam reminder for this patient?</value>
+					</text>
+					<text id="reminders/choose_reminder-15-label">
+						<value>15 minutes</value>
+					</text>
+					<text id="reminders/choose_reminder-30-label">
+						<value>30 minutes</value>
+					</text>
+					<text id="reminders/choose_reminder-60-label">
+						<value>1 hour</value>
+					</text>
+					<text id="reminders/choose_reminder-240-label">
+						<value>4 hours</value>
+					</text>
+				</translation>
+				<translation lang="hin">
+					<text id="exam_indicators-label">
+						<value>Exam Measurements</value>
+					</text>
+					<text id="exam_indicators/choose-label">
+						<value>Choose the measurement you would like to record:</value>
+					</text>
+					<text id="exam_indicators/indicator_list-station-label">
+						<value>Station of the fetal head</value>
+					</text>
+					<text id="exam_indicators/fetal_state-fhs-label">
+						<value>Fetal heart sounds</value>
+					</text>
+					<text id="exam_indicators/fetal_state-moulding-label">
+						<value>Moulding</value>
+					</text>
+					<text id="exam_indicators/maternal_state-bp-label">
+						<value>Blood Pressure</value>
+					</text>
+					<text id="exam_indicators/maternal_state-pulse-label">
+						<value>Pulse</value>
+					</text>
+					<text id="exam_indicators/maternal_state-temp-label">
+						<value>Temperature (&#176;C)</value>
+					</text>
+					<text id="exam_indicators/maternal_state-resp-label">
+						<value>Respirations</value>
+					</text>
+					<text id="exam_indicators/maternal_state-urine-label">
+						<value>Urine</value>
+					</text>
+					<text id="exam_indicators/medications-oxytocin-label">
+						<value>Oxytocin</value>
+					</text>
+					<text id="exam_indicators/medications-drugs_iv-label">
+						<value>Drugs and other IV fluids</value>
+					</text>
+					<text id="cervical_dilation-label">
+						<value>Cervical dilation</value>
+					</text>
+					<text id="cervical_dilation/last_dilation-label">
+						<value>Last measured cervical dilation: <output value="/data/dilation_in"/>
+Time recorded: <output value="/data/dilation_hours"/>:<output value="/data/dilation_minutes"/></value>
+					</text>
+					<text id="cervical_dilation/dilation-label">
+						<value>What is the current cervical dilation?</value>
+					</text>
+					<text id="exam_indicators/cervical_dilation/latent_phase-label">
+						<value>Dilation is less than 4cm. Patient is in LATENT labour.</value>
+					</text>
+					<text id="exam_indicators/station_of_the_head/last_station-label">
+						<value>Last measured station of the fetal head: <output value="/data/station_in"/>
+Time recorded: <output value="/data/station_hours"/>:<output value="/data/station_minutes"/></value>
+					</text>
+					<text id="exam_indicators/station_of_the_head/station-label">
+						<value>What is the station of the head?</value>
+					</text>
+					<text id="exam_indicators/station_of_the_head/station--3-label">
+						<value>-3</value>
+					</text>
+					<text id="exam_indicators/station_of_the_head/station--2-label">
+						<value>-2</value>
+					</text>
+					<text id="exam_indicators/station_of_the_head/station--1-label">
+						<value>-1</value>
+					</text>
+					<text id="exam_indicators/station_of_the_head/station-0-label">
+						<value>0</value>
+					</text>
+					<text id="exam_indicators/station_of_the_head/station-1-label">
+						<value>+1</value>
+					</text>
+					<text id="exam_indicators/station_of_the_head/station-2-label">
+						<value>+2</value>
+					</text>
+					<text id="exam_indicators/station_of_the_head/station-3-label">
+						<value>+3</value>
+					</text>
+					<text id="exam_indicators/fhs/last_fhs-label">
+						<value>Last measured fetal heart rate: <output value="/data/fhs_in"/>
+Time recorded: <output value="/data/fhs_hours"/>:<output value="/data/fhs_minutes"/></value>
+					</text>
+					<text id="exam_indicators/fhs/fhs-label">
+						<value>What is the current fetal heart rate?</value>
+					</text>
+					<text id="exam_indicators/fhs/alert-label">
+						<value>Warning! A fetal heart rate of more than 160 or less than 110 indicates fetal distress.</value>
+						<value form="image">jr://file/commcare/image/data/es_alert/alert.png</value>
+					</text>
+					<text id="exam_indicators/fhs/suggested_action-label">
+						<value>Suggested Action: Increase monitoring frequency to every 15 minutes.</value>
+					</text>
+					<text id="exam_indicators/af-label">
+						<value>Amniotic fluid</value>
+					</text>
+					<text id="exam_indicators/af/question8-label">
+						<value>Last recorded amniotic fluid color: <output value="/data/af_in"/>
+Time recorded: <output value="/data/af_hours"/>:<output value="/data/af_minutes"/></value>
+					</text>
+					<text id="exam_indicators/af/af-label">
+						<value>What is the color of the amniotic fluid?</value>
+					</text>
+					<text id="exam_indicators/af/af-Clear-label">
+						<value>Clear</value>
+					</text>
+					<text id="exam_indicators/af/af-Absent-label">
+						<value>Absent</value>
+					</text>
+					<text id="exam_indicators/af/af-Meconium-label">
+						<value>Meconium stained</value>
+					</text>
+					<text id="exam_indicators/af/af-Blood-label">
+						<value>Blood stained</value>
+					</text>
+					<text id="exam_indicators/af/alert-label">
+						<value>Warning! Meconium or Blood Stained amniotic fluid indicates severe fetal distress.</value>
+						<value form="image">jr://file/commcare/image/data/es_alert/alert.png</value>
+					</text>
+					<text id="exam_indicators/af/suggested_action-label">
+						<value>Suggested Action: Call a doctor. Prepare for cesarean section.</value>
+					</text>
+					<text id="exam_indicators/moulding/last_moulding-label">
+						<value>Last recorded moulding: <output value="/data/moulding_in"/>
+Time recorded: <output value="/data/moulding_hours"/>:<output value="/data/moulding_minutes"/></value>
+					</text>
+					<text id="exam_indicators/moulding/moulding-label">
+						<value>What is the current moulding of fetal skull bones?</value>
+						<value form="image">jr://file/commcare/image/data/exam_indicators/moulding/moulding.png</value>
+					</text>
+					<text id="exam_indicators/moulding/mouldin-item1-label">
+						<value>0 - bones are separated</value>
+					</text>
+					<text id="exam_indicators/moulding/mouldin-item2-label">
+						<value>1 - bones just touching</value>
+					</text>
+					<text id="exam_indicators/moulding/moulding-2-label">
+						<value>2 - bones overlapping</value>
+					</text>
+					<text id="exam_indicators/moulding/moulding-3-label">
+						<value>3 - bones severely overlapping</value>
+					</text>
+					<text id="exam_indicators/contractions-label">
+						<value>Contractions</value>
+					</text>
+					<text id="exam_indicators/contractions/last_contractions-label">
+						<value>Last measured number of contractions: <output value="/data/contractions_num_in"/>
+Last measured duration of contractions: <output value="/data/contractions_dur_in"/>
+Time recorded: <output value="/data/contractions_hours"/>:<output value="/data/contractions_minutes"/></value>
+					</text>
+					<text id="exam_indicators/contractions/contractions_num-label">
+						<value>What is the current number of contractions per 10 minutes?</value>
+					</text>
+					<text id="exam_indicators/contractions/contractions_dur-label">
+						<value>What is the current duration of a contraction?</value>
+					</text>
+					<text id="exam_indicators/bp-label">
+						<value>Blood pressure</value>
+					</text>
+					<text id="exam_indicators/bp/last_bp-label">
+						<value>Last measured blood pressure: <output value="/data/bp_concat"/>
+Time recorded: <output value="/data/bp_hours"/>:<output value="/data/bp_minutes"/></value>
+					</text>
+					<text id="exam_indicators/bp/systolic-label">
+						<value>Systolic: </value>
+					</text>
+					<text id="exam_indicators/bp/diastolic-label">
+						<value>Diastolic: </value>
+					</text>
+					<text id="exam_indicators/bp/alert-label">
+						<value>Warning! A BP of 140/90 may indicate pre-eclampsia.</value>
+						<value form="image">jr://file/commcare/image/data/es_alert/alert.png</value>
+					</text>
+					<text id="exam_indicators/bp/suggested_action-label">
+						<value>Suggested Action: ????????</value>
+					</text>
+					<text id="exam_indicators/pulse/last_pulse-label">
+						<value>Last measured pulse: <output value="/data/pulse_in"/>
+Time recorded: <output value="/data/pulse_hours"/>:<output value="/data/pulse_minutes"/></value>
+					</text>
+					<text id="exam_indicators/pulse/pulse-label">
+						<value>What is the current pulse?</value>
+					</text>
+					<text id="exam_indicators/temp/last_temp-label">
+						<value>Last measured temperature: <output value="/data/temp_in"/>
+Time recorded: <output value="/data/temp_hours"/>:<output value="/data/temp_minutes"/></value>
+					</text>
+					<text id="exam_indicators/temp/temp-label">
+						<value>What is the current temperature?</value>
+					</text>
+					<text id="exam_indicators/temp/temp-hint">
+						<value>Temperature is recorded in degrees Celsius</value>
+					</text>
+					<text id="exam_indicators/resp/last_resp-label">
+						<value>Last measured respiration count: <output value="/data/resp_in"/>
+Time recorded: <output value="/data/resp_hours"/>:<output value="/data/resp_minutes"/></value>
+					</text>
+					<text id="exam_indicators/resp/resp-label">
+						<value>What is the current number of respirations per minute?</value>
+					</text>
+					<text id="exam_indicators/urine/last_urine_vol-label">
+						<value>Last measured urine output: <output value="/data/urine_vol_in"/>
+Time recorded: <output value="/data/urine_hours"/>:<output value="/data/urine_minutes"/></value>
+					</text>
+					<text id="exam_indicators/urine/urine_passed-label">
+						<value>Has the woman passed urine since last measurement?</value>
+					</text>
+					<text id="exam_indicators/urine/urine_vol-label">
+						<value>Volume of urine passed (ml)?</value>
+					</text>
+					<text id="exam_indicators/urine/urine_contains-label">
+						<value>Did the urine contain any of the following?</value>
+					</text>
+					<text id="exam_indicators/urine/urine_contains-protein-label">
+						<value>Protein</value>
+					</text>
+					<text id="exam_indicators/urine/urine_contains-albumin-label">
+						<value>Albumin</value>
+					</text>
+					<text id="exam_indicators/urine/urine_contains-sugar-label">
+						<value>Sugar</value>
+					</text>
+					<text id="exam_indicators/urine/urine_contains-none-label">
+						<value>None</value>
+					</text>
+					<text id="exam_indicators/oxytocin/last_oxytocin-label">
+						<value>Previous oxytocin given (drops/min): <output value="/data/oxytocin_in"/>
+Time recorded: <output value="/data/oxytocin_hours"/>:<output value="/data/oxytocin_minutes"/></value>
+					</text>
+					<text id="exam_indicators/oxytocin/oxytocin_given-label">
+						<value>Has oxytocin been administered during the current exam?</value>
+					</text>
+					<text id="exam_indicators/oxytocin/oxytocin-label">
+						<value>How many drops per minute were administered?</value>
+					</text>
+					<text id="exam_indicators/drugs_iv-label">
+						<value>Other drugs and IV fluids</value>
+					</text>
+					<text id="exam_indicators/drugs_iv/last_drugs_iv-label">
+						<value>Previous drugs and IV fluids given: <output value="/data/drugs_iv_in"/>
+Time recorded: <output value="/data/drugs_iv_hours"/>:<output value="/data/drugs_iv_minutes"/></value>
 					</text>
 					<text id="exam_indicators/drugs_iv/drugs_iv_given-label">
 						<value>Have other drugs or IV fluids been administered during the current exam?</value>
@@ -594,7 +1028,7 @@ Time recorded: <output value="/data/last_exam_hours"/>:<output value="/data/last
 					</text>
 				</translation>
 			</itext>
-		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><bind calculate="instance('commcaresession')/session/data/case_id" nodeset="/data/case/@case_id"/><bind calculate="/data/af_out" nodeset="/data/case/update/af" relevant="count(/data/af_out) &gt; 0"/><bind calculate="/data/alert_flag" nodeset="/data/case/update/alert_flag" relevant="count(/data/alert_flag) &gt; 0"/><bind calculate="/data/contractions_dur_out" nodeset="/data/case/update/contractions_dur" relevant="count(/data/contractions_dur_out) &gt; 0"/><bind calculate="/data/contractions_num_out" nodeset="/data/case/update/contractions_num" relevant="count(/data/contractions_num_out) &gt; 0"/><bind calculate="/data/diastolic_out" nodeset="/data/case/update/diastolic" relevant="count(/data/diastolic_out) &gt; 0"/><bind calculate="/data/dilation_out" nodeset="/data/case/update/dilation" relevant="count(/data/dilation_out) &gt; 0"/><bind calculate="/data/drugs_iv_out" nodeset="/data/case/update/drugs_iv" relevant="count(/data/drugs_iv_out) &gt; 0"/><bind calculate="/data/fhs_out" nodeset="/data/case/update/fhs" relevant="count(/data/fhs_out) &gt; 0"/><bind calculate="/data/first_dilation_out" nodeset="/data/case/update/first_dilation" relevant="count(/data/first_dilation_out) &gt; 0"/><bind calculate="/data/first_measured_dilation_time" nodeset="/data/case/update/first_measured_dilation_time" relevant="count(/data/first_measured_dilation_time) &gt; 0"/><bind calculate="/data/hours" nodeset="/data/case/update/hours" relevant="count(/data/hours) &gt; 0"/><bind calculate="/data/current_exam_done_at" nodeset="/data/case/update/last_exam_time" relevant="count(/data/current_exam_done_at) &gt; 0"/><bind calculate="/data/minutes_until_next_exam" nodeset="/data/case/update/minutes_until_next_exam" relevant="count(/data/minutes_until_next_exam) &gt; 0"/><bind calculate="/data/moulding_out" nodeset="/data/case/update/moulding" relevant="count(/data/moulding_out) &gt; 0"/><bind calculate="/data/nurse_flag" nodeset="/data/case/update/nurse_flag" relevant="count(/data/nurse_flag) &gt; 0"/><bind calculate="/data/oxytocin_out" nodeset="/data/case/update/oxytocin" relevant="count(/data/oxytocin_out) &gt; 0"/><bind calculate="/data/pulse_out" nodeset="/data/case/update/pulse" relevant="count(/data/pulse_out) &gt; 0"/><bind calculate="/data/resp_out" nodeset="/data/case/update/resp" relevant="count(/data/resp_out) &gt; 0"/><bind calculate="/data/station_out" nodeset="/data/case/update/station" relevant="count(/data/station_out) &gt; 0"/><bind calculate="/data/systolic_out" nodeset="/data/case/update/systolic" relevant="count(/data/systolic_out) &gt; 0"/><bind calculate="/data/temp_out" nodeset="/data/case/update/temp" relevant="count(/data/temp_out) &gt; 0"/><bind calculate="/data/urine_vol_out" nodeset="/data/case/update/urine_vol" relevant="count(/data/urine_vol_out) &gt; 0"/><setvalue event="xforms-ready" ref="/data/diastolic_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/diastolic"/><setvalue event="xforms-ready" ref="/data/moulding_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/moulding"/><setvalue event="xforms-ready" ref="/data/temp_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/temp"/><setvalue event="xforms-ready" ref="/data/oxytocin_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/oxytocin"/><setvalue event="xforms-ready" ref="/data/resp_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/resp"/><setvalue event="xforms-ready" ref="/data/dilation_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/dilation"/><setvalue event="xforms-ready" ref="/data/first_measured_dilation_time_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/first_measured_dilation_time"/><setvalue event="xforms-ready" ref="/data/station_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/station"/><setvalue event="xforms-ready" ref="/data/systolic_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/systolic"/><setvalue event="xforms-ready" ref="/data/drugs_iv_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/drugs_iv"/><setvalue event="xforms-ready" ref="/data/last_exam_time" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/last_exam_time"/><setvalue event="xforms-ready" ref="/data/urine_vol_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/urine_vol"/><setvalue event="xforms-ready" ref="/data/pulse_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/pulse"/><setvalue event="xforms-ready" ref="/data/first_dilation_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/first_dilation"/><setvalue event="xforms-ready" ref="/data/af_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/af"/><setvalue event="xforms-ready" ref="/data/contractions_dur_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/contractions_dur"/><setvalue event="xforms-ready" ref="/data/fhs_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/fhs"/><setvalue event="xforms-ready" ref="/data/contractions_num_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/contractions_num"/><bind calculate="/data/meta/timeEnd" nodeset="/data/subcase_0/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/subcase_0/case/@user_id"/><setvalue event="xforms-ready" ref="/data/subcase_0/case/@case_id" value="uuid()"/><bind calculate="/data/bp_concat" nodeset="/data/subcase_0/case/create/case_name"/><bind calculate="/data/meta/userID" nodeset="/data/subcase_0/case/create/owner_id"/><bind calculate="/data/contractions_dur_out" nodeset="/data/subcase_0/case/update/contractions_dur" relevant="count(/data/contractions_dur_out) &gt; 0"/><bind calculate="/data/contractions_num_out" nodeset="/data/subcase_0/case/update/contractions_num" relevant="count(/data/contractions_num_out) &gt; 0"/><bind calculate="/data/dilation_out" nodeset="/data/subcase_0/case/update/dilation" relevant="count(/data/dilation_out) &gt; 0"/><bind calculate="/data/fhs_out" nodeset="/data/subcase_0/case/update/fhs" relevant="count(/data/fhs_out) &gt; 0"/><bind calculate="/data/hours" nodeset="/data/subcase_0/case/update/hours" relevant="count(/data/hours) &gt; 0"/><bind calculate="/data/station_out" nodeset="/data/subcase_0/case/update/station" relevant="count(/data/station_out) &gt; 0"/><bind calculate="/data/case/@case_id" nodeset="/data/subcase_0/case/index/parent"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
+		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><bind calculate="instance('commcaresession')/session/data/case_id" nodeset="/data/case/@case_id"/><bind calculate="/data/af_out" nodeset="/data/case/update/af" relevant="count(/data/af_out) &gt; 0"/><bind calculate="/data/af_time_out" nodeset="/data/case/update/af_time" relevant="count(/data/af_time_out) &gt; 0"/><bind calculate="/data/alert_flag" nodeset="/data/case/update/alert_flag" relevant="count(/data/alert_flag) &gt; 0"/><bind calculate="/data/bp_time_out" nodeset="/data/case/update/bp_time" relevant="count(/data/bp_time_out) &gt; 0"/><bind calculate="/data/contractions_dur_out" nodeset="/data/case/update/contractions_dur" relevant="count(/data/contractions_dur_out) &gt; 0"/><bind calculate="/data/contractions_num_out" nodeset="/data/case/update/contractions_num" relevant="count(/data/contractions_num_out) &gt; 0"/><bind calculate="/data/contractions_time_out" nodeset="/data/case/update/contractions_time" relevant="count(/data/contractions_time_out) &gt; 0"/><bind calculate="/data/diastolic_out" nodeset="/data/case/update/diastolic" relevant="count(/data/diastolic_out) &gt; 0"/><bind calculate="/data/dilation_out" nodeset="/data/case/update/dilation" relevant="count(/data/dilation_out) &gt; 0"/><bind calculate="/data/dilation_time_out" nodeset="/data/case/update/dilation_time" relevant="count(/data/dilation_time_out) &gt; 0"/><bind calculate="/data/drugs_iv_out" nodeset="/data/case/update/drugs_iv" relevant="count(/data/drugs_iv_out) &gt; 0"/><bind calculate="/data/drugs_iv_time_out" nodeset="/data/case/update/drugs_iv_time" relevant="count(/data/drugs_iv_time_out) &gt; 0"/><bind calculate="/data/fhs_out" nodeset="/data/case/update/fhs" relevant="count(/data/fhs_out) &gt; 0"/><bind calculate="/data/fhs_time_out" nodeset="/data/case/update/fhs_time" relevant="count(/data/fhs_time_out) &gt; 0"/><bind calculate="/data/first_dilation_out" nodeset="/data/case/update/first_dilation" relevant="count(/data/first_dilation_out) &gt; 0"/><bind calculate="/data/first_measured_dilation_time_out" nodeset="/data/case/update/first_measured_dilation_time" relevant="count(/data/first_measured_dilation_time_out) &gt; 0"/><bind calculate="/data/hours" nodeset="/data/case/update/hours" relevant="count(/data/hours) &gt; 0"/><bind calculate="/data/last_exam_time" nodeset="/data/case/update/last_exam_time" relevant="count(/data/last_exam_time) &gt; 0"/><bind calculate="/data/minutes_until_next_exam" nodeset="/data/case/update/minutes_until_next_exam" relevant="count(/data/minutes_until_next_exam) &gt; 0"/><bind calculate="/data/moulding_out" nodeset="/data/case/update/moulding" relevant="count(/data/moulding_out) &gt; 0"/><bind calculate="/data/moulding_time_out" nodeset="/data/case/update/moulding_time" relevant="count(/data/moulding_time_out) &gt; 0"/><bind calculate="/data/nurse_flag" nodeset="/data/case/update/nurse_flag" relevant="count(/data/nurse_flag) &gt; 0"/><bind calculate="/data/oxytocin_out" nodeset="/data/case/update/oxytocin" relevant="count(/data/oxytocin_out) &gt; 0"/><bind calculate="/data/oxytocin_time_out" nodeset="/data/case/update/oxytocin_time" relevant="count(/data/oxytocin_time_out) &gt; 0"/><bind calculate="/data/pulse_out" nodeset="/data/case/update/pulse" relevant="count(/data/pulse_out) &gt; 0"/><bind calculate="/data/pulse_time_out" nodeset="/data/case/update/pulse_time" relevant="count(/data/pulse_time_out) &gt; 0"/><bind calculate="/data/resp_out" nodeset="/data/case/update/resp" relevant="count(/data/resp_out) &gt; 0"/><bind calculate="/data/resp_time_out" nodeset="/data/case/update/resp_time" relevant="count(/data/resp_time_out) &gt; 0"/><bind calculate="/data/station_out" nodeset="/data/case/update/station" relevant="count(/data/station_out) &gt; 0"/><bind calculate="/data/station_time_out" nodeset="/data/case/update/station_time" relevant="count(/data/station_time_out) &gt; 0"/><bind calculate="/data/systolic_out" nodeset="/data/case/update/systolic" relevant="count(/data/systolic_out) &gt; 0"/><bind calculate="/data/temp_out" nodeset="/data/case/update/temp" relevant="count(/data/temp_out) &gt; 0"/><bind calculate="/data/temp_time_out" nodeset="/data/case/update/temp_time" relevant="count(/data/temp_time_out) &gt; 0"/><bind calculate="/data/urine_time_out" nodeset="/data/case/update/urine_time" relevant="count(/data/urine_time_out) &gt; 0"/><bind calculate="/data/urine_vol_out" nodeset="/data/case/update/urine_vol" relevant="count(/data/urine_vol_out) &gt; 0"/><setvalue event="xforms-ready" ref="/data/contractions_time_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/contractions_time"/><setvalue event="xforms-ready" ref="/data/station_time_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/station_time"/><setvalue event="xforms-ready" ref="/data/station_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/station"/><setvalue event="xforms-ready" ref="/data/systolic_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/systolic"/><setvalue event="xforms-ready" ref="/data/pulse_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/pulse"/><setvalue event="xforms-ready" ref="/data/pulse_time_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/pulse_time"/><setvalue event="xforms-ready" ref="/data/contractions_num_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/contractions_num"/><setvalue event="xforms-ready" ref="/data/drugs_iv_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/drugs_iv"/><setvalue event="xforms-ready" ref="/data/dilation_time_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/dilation_time"/><setvalue event="xforms-ready" ref="/data/resp_time_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/resp_time"/><setvalue event="xforms-ready" ref="/data/temp_time_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/temp_time"/><setvalue event="xforms-ready" ref="/data/af_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/af"/><setvalue event="xforms-ready" ref="/data/moulding_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/moulding"/><setvalue event="xforms-ready" ref="/data/temp_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/temp"/><setvalue event="xforms-ready" ref="/data/resp_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/resp"/><setvalue event="xforms-ready" ref="/data/first_measured_dilation_time_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/first_measured_dilation_time"/><setvalue event="xforms-ready" ref="/data/urine_time_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/urine_time"/><setvalue event="xforms-ready" ref="/data/af_time_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/af_time"/><setvalue event="xforms-ready" ref="/data/dilation_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/dilation"/><setvalue event="xforms-ready" ref="/data/drugs_iv_time_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/drugs_iv_time"/><setvalue event="xforms-ready" ref="/data/diastolic_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/diastolic"/><setvalue event="xforms-ready" ref="/data/oxytocin_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/oxytocin"/><setvalue event="xforms-ready" ref="/data/bp_time_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/bp_time"/><setvalue event="xforms-ready" ref="/data/fhs_time_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/fhs_time"/><setvalue event="xforms-ready" ref="/data/urine_vol_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/urine_vol"/><setvalue event="xforms-ready" ref="/data/moulding_time_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/moulding_time"/><setvalue event="xforms-ready" ref="/data/first_dilation_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/first_dilation"/><setvalue event="xforms-ready" ref="/data/oxytocin_time_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/oxytocin_time"/><setvalue event="xforms-ready" ref="/data/contractions_dur_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/contractions_dur"/><setvalue event="xforms-ready" ref="/data/fhs_in" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/fhs"/><bind calculate="/data/meta/timeEnd" nodeset="/data/subcase_0/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/subcase_0/case/@user_id"/><setvalue event="xforms-ready" ref="/data/subcase_0/case/@case_id" value="uuid()"/><bind calculate="/data/bp_concat" nodeset="/data/subcase_0/case/create/case_name"/><bind calculate="/data/meta/userID" nodeset="/data/subcase_0/case/create/owner_id"/><bind calculate="/data/contractions_dur_out" nodeset="/data/subcase_0/case/update/contractions_dur" relevant="count(/data/contractions_dur_out) &gt; 0"/><bind calculate="/data/contractions_num_out" nodeset="/data/subcase_0/case/update/contractions_num" relevant="count(/data/contractions_num_out) &gt; 0"/><bind calculate="/data/dilation_out" nodeset="/data/subcase_0/case/update/dilation" relevant="count(/data/dilation_out) &gt; 0"/><bind calculate="/data/fhs_out" nodeset="/data/subcase_0/case/update/fhs" relevant="count(/data/fhs_out) &gt; 0"/><bind calculate="/data/hours" nodeset="/data/subcase_0/case/update/hours" relevant="count(/data/hours) &gt; 0"/><bind calculate="/data/station_out" nodeset="/data/subcase_0/case/update/station" relevant="count(/data/station_out) &gt; 0"/><bind calculate="/data/case/@case_id" nodeset="/data/subcase_0/case/index/parent"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
 	</h:head>
 	<h:body>
 		<group>
@@ -667,6 +1101,9 @@ Time recorded: <output value="/data/last_exam_hours"/>:<output value="/data/last
 					<input ref="/data/exam_indicators/cervical_dilation/dilation">
 						<label ref="jr:itext('cervical_dilation/dilation-label')"/>
 					</input>
+					<trigger ref="/data/exam_indicators/cervical_dilation/latent_phase" appearance="minimal">
+						<label ref="jr:itext('exam_indicators/cervical_dilation/latent_phase-label')"/>
+					</trigger>
 				</group>
 				<group ref="/data/exam_indicators/station_of_the_head" appearance="field-list">
 					<label ref="jr:itext('exam_indicators/indicator_list-station-label')"/>
