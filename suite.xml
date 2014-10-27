@@ -241,6 +241,30 @@
         <locale id="m1.case_long.title"/>
       </text>
     </title>
+<detail>
+    <title>
+      <text>
+        <locale id="m1.case_long.tab1"/>
+      </text>
+    </title>
+    <variables>
+      <testing_x_factor function="10"/>
+
+      <max_hours function="max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/hours)"/>
+      <x_max function="if($max_hours > 12, $max_hours * $testing_x_factor, 12)"/>
+      <contractions_max function="max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/contractions_num)"/>
+      <fhs_min function="min(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/fhs)"/>
+      <fhs_max function="max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/fhs)"/>
+      <first_dilation function="coalesce(first_dilation, 4)"/>
+      <first_dilation function="4"/>
+    </variables>
+</detail>
+<detail>
+    <title>
+      <text>
+        <locale id="m1.case_long.tab2"/>
+      </text>
+    </title>
     <field>
       <header>
         <text>
@@ -433,6 +457,13 @@
         </text>
       </template>
     </field>
+</detail>
+<detail>
+    <title>
+      <text>
+        <locale id="m1.case_long.tab3"/>
+      </text>
+    </title>
     <field>
       <header>
         <text>
@@ -637,6 +668,7 @@
         </text>
       </template>
     </field>
+</detail>
   </detail>
   <detail id="m2_case_short">
     <title>
