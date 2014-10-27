@@ -3,7 +3,7 @@
 		<h:title>Exam</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/78143AF8-0E4D-4E91-A025-D23B215BD183" uiVersion="1" version="285" name="Exam">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/78143AF8-0E4D-4E91-A025-D23B215BD183" uiVersion="1" version="299" name="Exam">
 					<exam_indicators jr:template="">
 						<exam_measurement_indicator_list>
 							<choose/>
@@ -86,6 +86,12 @@
 							<drugs_iv_given/>
 							<drugs_iv/>
 						</drugs_iv>
+						<icon_list>
+							<alert_icon/>
+							<flag_icon/>
+							<reminder_icon/>
+							<high_risk_history_icon/>
+						</icon_list>
 					</exam_indicators>
 					<emergency_signs>
 						<emergency_signs>
@@ -101,6 +107,9 @@
 					<reminders>
 						<choose_reminder/>
 					</reminders>
+					<debug>
+						<hours/>
+					</debug>
 					<chosen_minutes/>
 					<minutes_until_next_exam/>
 					<now_minutes/>
@@ -265,6 +274,11 @@
 			<bind nodeset="/data/exam_indicators/drugs_iv/last_drugs_iv"/>
 			<bind nodeset="/data/exam_indicators/drugs_iv/drugs_iv_given"/>
 			<bind nodeset="/data/exam_indicators/drugs_iv/drugs_iv" type="xsd:string" relevant="/data/exam_indicators/drugs_iv/drugs_iv_given = 'yes'"/>
+			<bind nodeset="/data/exam_indicators/icon_list" relevant="1=2"/>
+			<bind nodeset="/data/exam_indicators/icon_list/alert_icon" type="xsd:string"/>
+			<bind nodeset="/data/exam_indicators/icon_list/flag_icon" type="xsd:string"/>
+			<bind nodeset="/data/exam_indicators/icon_list/reminder_icon" type="xsd:string"/>
+			<bind nodeset="/data/exam_indicators/icon_list/high_risk_history_icon" type="xsd:string"/>
 			<bind nodeset="/data/emergency_signs"/>
 			<bind nodeset="/data/emergency_signs/emergency_signs"/>
 			<bind nodeset="/data/emergency_signs/emergency_signs/emergency_signs_list" constraint="(/data/es_none = 'yes' and /data/es_others = 'no') or (/data/es_none = 'no' and /data/es_others = 'yes') " jr:constraintMsg="jr:itext('emergency_signs/emergency_signs/emergency_signs_list-constraintMsg')" required="true()"/>
@@ -275,6 +289,8 @@
 			<bind nodeset="/data/emergency_signs/es_alert/actions" type="xsd:string" relevant="/data/emergency_signs/es_alert/choice = 'record_actions'"/>
 			<bind nodeset="/data/reminders"/>
 			<bind nodeset="/data/reminders/choose_reminder" required="true()"/>
+			<bind nodeset="/data/debug" relevant="1=2"/>
+			<bind nodeset="/data/debug/hours"/>
 			<bind nodeset="/data/chosen_minutes" calculate="/data/reminders/choose_reminder"/>
 			<bind nodeset="/data/minutes_until_next_exam" calculate="/data/future_minutes - /data/now_minutes"/>
 			<bind nodeset="/data/now_minutes" calculate="double(now()) * 24 * 60"/>
@@ -365,7 +381,7 @@
 			<bind nodeset="/data/drugs_iv_hours" calculate="int((/data/drugs_iv_time_in mod 1) * 24) + 1"/>
 			<bind nodeset="/data/drugs_iv_minutes" calculate="int(((/data/drugs_iv_time_in * 24) - int(/data/drugs_iv_time_in * 24)) * 60)"/>
 			<bind nodeset="/data/hours" calculate="(double(now()) - /data/first_measured_dilation_time_out) * 24"/>
-			<bind nodeset="/data/first_measured_dilation_time_out" calculate="if(/data/first_measured_dilation_time_in = '' and /data/dilation_out &gt;= 4, double(/data/meta/timeEnd), '')"/>
+			<bind nodeset="/data/first_measured_dilation_time_out" calculate="if((/data/first_measured_dilation_time_in = '') and (/data/dilation_out &gt;= 4), double(now()), /data/first_measured_dilation_time_in)"/>
 			<bind nodeset="/data/first_measured_dilation_time_in"/>
 			<bind nodeset="/data/nurse_flag" calculate="if(/data/exam_indicators/fhs_alert/choice = 'flag' or /data/exam_indicators/af_alert/choice = 'flag' or /data/exam_indicators/bp_alert/choice = 'flag' or /data/emergency_signs/es_alert/choice = 'flag', 'yes', 'no')"/>
 			<bind nodeset="/data/alert_flag" calculate="if(selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'difficulty_breathing') or selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'shock') or selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'vaginal_bleeding') or selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'convulsions_unconsciousness') or selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'prolapsed_cord') or selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'fetal_distress') or (/data/exam_indicators/bp/systolic &gt;= 140 and /data/exam_indicators/bp/diastolic &gt;= 90) or /data/exam_indicators/fhs/fhs &lt; 110 or /data/exam_indicators/fhs/fhs &gt; 160 or /data/exam_indicators/af/af = &quot;Meconium&quot; or /data/exam_indicators/af/af = &quot;Blood&quot;, 'yes', 'no')"/>
@@ -429,6 +445,7 @@ Time recorded: <output value="/data/station_hours"/>:<output value="/data/statio
 					</text>
 					<text id="exam_indicators/station_of_the_head/station-label">
 						<value>What is the station of the head?</value>
+						<value form="image">jr://file/commcare/image/data/exam_indicators/station_of_the_head/station.png</value>
 					</text>
 					<text id="exam_indicators/station_of_the_head/station--3-label">
 						<value>-3</value>
@@ -626,6 +643,22 @@ Time recorded: <output value="/data/drugs_iv_hours"/>:<output value="/data/drugs
 					<text id="exam_indicators/drugs_iv/drugs_iv-label">
 						<value>What are the drugs or IV fluids being administered (amount and frequency)?</value>
 					</text>
+					<text id="exam_indicators/icon_list/alert_icon-label">
+						<value>alert icon</value>
+						<value form="image">jr://file/commcare/image/data/es_alert/alert.png</value>
+					</text>
+					<text id="exam_indicators/icon_list/flag_icon-label">
+						<value>flag icon</value>
+						<value form="image">jr://file/commcare/image/data/exam_indicators/icon_list/flag_icon.png</value>
+					</text>
+					<text id="exam_indicators/icon_list/reminder_icon-label">
+						<value>reminder icon</value>
+						<value form="image">jr://file/commcare/image/data/exam_indicators/icon_list/reminder_icon.png</value>
+					</text>
+					<text id="exam_indicators/icon_list/high_risk_history_icon-label">
+						<value>high risk history icon</value>
+						<value form="image">jr://file/commcare/image/data/high_risk_page/high_risk_flag.png</value>
+					</text>
 					<text id="emergency_signs-label">
 						<value>Emergency Signs</value>
 					</text>
@@ -698,6 +731,13 @@ Time recorded: <output value="/data/drugs_iv_hours"/>:<output value="/data/drugs
 					</text>
 					<text id="reminders/choose_reminder-240-label">
 						<value>4 hours</value>
+					</text>
+					<text id="debug/hours-label">
+						<value>hours: <output value="/data/hours"/>
+dilation out: <output value="/data/dilation_out"/>
+first_measured_dilation_time_out: <output value="/data/first_measured_dilation_time_out"/>
+first_measured_dilation_time_in: <output value="/data/first_measured_dilation_time_in"/>
+dilation_out: <output value="/data/dilation_out"/></value>
 					</text>
 				</translation>
 				<translation lang="hin">
@@ -756,6 +796,7 @@ Time recorded: <output value="/data/station_hours"/>:<output value="/data/statio
 					</text>
 					<text id="exam_indicators/station_of_the_head/station-label">
 						<value>What is the station of the head?</value>
+						<value form="image">jr://file/commcare/image/data/exam_indicators/station_of_the_head/station.png</value>
 					</text>
 					<text id="exam_indicators/station_of_the_head/station--3-label">
 						<value>-3</value>
@@ -953,6 +994,22 @@ Time recorded: <output value="/data/drugs_iv_hours"/>:<output value="/data/drugs
 					<text id="exam_indicators/drugs_iv/drugs_iv-label">
 						<value>What are the drugs or IV fluids being administered (amount and frequency)?</value>
 					</text>
+					<text id="exam_indicators/icon_list/alert_icon-label">
+						<value>alert icon</value>
+						<value form="image">jr://file/commcare/image/data/es_alert/alert.png</value>
+					</text>
+					<text id="exam_indicators/icon_list/flag_icon-label">
+						<value>flag icon</value>
+						<value form="image">jr://file/commcare/image/data/exam_indicators/icon_list/flag_icon.png</value>
+					</text>
+					<text id="exam_indicators/icon_list/reminder_icon-label">
+						<value>reminder icon</value>
+						<value form="image">jr://file/commcare/image/data/exam_indicators/icon_list/reminder_icon.png</value>
+					</text>
+					<text id="exam_indicators/icon_list/high_risk_history_icon-label">
+						<value>high risk history icon</value>
+						<value form="image">jr://file/commcare/image/data/high_risk_page/high_risk_flag.png</value>
+					</text>
 					<text id="emergency_signs-label">
 						<value>Emergency Signs</value>
 					</text>
@@ -1025,6 +1082,13 @@ Time recorded: <output value="/data/drugs_iv_hours"/>:<output value="/data/drugs
 					</text>
 					<text id="reminders/choose_reminder-240-label">
 						<value>4 hours</value>
+					</text>
+					<text id="debug/hours-label">
+						<value>hours: <output value="/data/hours"/>
+now: <output value="now()"/>
+first_measured_dilation_time_out: <output value="/data/first_measured_dilation_time_out"/>
+first_measured_dilation_time_in: <output value="/data/first_measured_dilation_time_in"/>
+dilation_out: <output value="/data/dilation_out"/></value>
 					</text>
 				</translation>
 			</itext>
@@ -1422,6 +1486,20 @@ Time recorded: <output value="/data/drugs_iv_hours"/>:<output value="/data/drugs
 						<label ref="jr:itext('exam_indicators/drugs_iv/drugs_iv-label')"/>
 					</input>
 				</group>
+				<group ref="/data/exam_indicators/icon_list">
+					<input ref="/data/exam_indicators/icon_list/alert_icon">
+						<label ref="jr:itext('exam_indicators/icon_list/alert_icon-label')"/>
+					</input>
+					<input ref="/data/exam_indicators/icon_list/flag_icon">
+						<label ref="jr:itext('exam_indicators/icon_list/flag_icon-label')"/>
+					</input>
+					<input ref="/data/exam_indicators/icon_list/reminder_icon">
+						<label ref="jr:itext('exam_indicators/icon_list/reminder_icon-label')"/>
+					</input>
+					<input ref="/data/exam_indicators/icon_list/high_risk_history_icon">
+						<label ref="jr:itext('exam_indicators/icon_list/high_risk_history_icon-label')"/>
+					</input>
+				</group>
 			</repeat>
 		</group>
 		<group ref="/data/emergency_signs">
@@ -1512,6 +1590,11 @@ Time recorded: <output value="/data/drugs_iv_hours"/>:<output value="/data/drugs
 					<value>240</value>
 				</item>
 			</select1>
+		</group>
+		<group ref="/data/debug" appearance="field-list">
+			<trigger ref="/data/debug/hours" appearance="minimal">
+				<label ref="jr:itext('debug/hours-label')"/>
+			</trigger>
 		</group>
 	</h:body>
 </h:html>

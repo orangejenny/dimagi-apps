@@ -1,11 +1,11 @@
-<profile version="285" update="https://www.commcarehq.org/a/mlabour/apps/download/30c31e3ec846c717f8ac0d3db77e0d42/media_profile.ccpr?latest=true" requiredMajor="2" requiredMinor="15" descriptor="Profile File">
+<profile version="299" update="https://www.commcarehq.org/a/mlabour/apps/download/3e0e4933235759910ddbc237b1a9c807/media_profile.ccpr?latest=true" requiredMajor="2" requiredMinor="15" descriptor="Profile File">
     <property key="BackupMode" value="file_mode"/>
     <property key="backup-url" value="file:///E:/CommCare.Backup"/>
     <property key="restore-url" value="file:///E:/CommCare.Backup"/>
     <property key="ota-restore-url" value="https://www.commcarehq.org/a/mlabour/phone/restore/"/>
     <property key="ota-restore-url-testing" value="https://www.commcarehq.org/a/mlabour/phone/restore/"/>
-    <property key="PostURL" value="https://www.commcarehq.org/a/mlabour/receiver/30c31e3ec846c717f8ac0d3db77e0d42/" force="true"/>
-    <property key="PostTestURL" value="https://www.commcarehq.org/a/mlabour/receiver/30c31e3ec846c717f8ac0d3db77e0d42/" force="true"/>
+    <property key="PostURL" value="https://www.commcarehq.org/a/mlabour/receiver/3e0e4933235759910ddbc237b1a9c807/" force="true"/>
+    <property key="PostTestURL" value="https://www.commcarehq.org/a/mlabour/receiver/3e0e4933235759910ddbc237b1a9c807/" force="true"/>
     <property key="key_server" value="https://www.commcarehq.org/a/mlabour/phone/keys/"/>
     <property key="cur_locale" value="en"/>
     <property key="cc_user_domain" value="mlabour.commcarehq.org"/>
@@ -78,18 +78,18 @@
         </users>
     </features>
 
-    <suite><resource id="suite" version="285">
+    <suite><resource id="suite" version="299">
         
             <location authority="local">./suite.xml</location>
         
-        <location authority="remote">https://www.commcarehq.org/a/mlabour/apps/download/30c31e3ec846c717f8ac0d3db77e0d42/suite.xml</location>
+        <location authority="remote">https://www.commcarehq.org/a/mlabour/apps/download/3e0e4933235759910ddbc237b1a9c807/suite.xml</location>
     </resource></suite>
     
-    <suite><resource id="media-suite" version="285">
+    <suite><resource id="media-suite" version="299">
         
             <location authority="local">./media_suite.xml</location>
         
-        <location authority="remote">https://www.commcarehq.org/a/mlabour/apps/download/30c31e3ec846c717f8ac0d3db77e0d42/media_suite.xml</location>
+        <location authority="remote">https://www.commcarehq.org/a/mlabour/apps/download/3e0e4933235759910ddbc237b1a9c807/media_suite.xml</location>
     </resource></suite>
     
 </profile>

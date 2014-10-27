@@ -1,5 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<suite version="285" descriptor="Media Suite File">
+<suite version="299" descriptor="Media Suite File">
+  <media path="../../commcare/image">
+    <resource id="media-47e961625d9acda1107b9217aea4161f-register_new_patient.png" version="87">
+      <location authority="local">./commcare/image/register_new_patient.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/b1c462603311401a28c0e3fd602c1104/register_new_patient.png</location>
+    </resource>
+  </media>
   <media path="../../commcare/image">
     <resource id="media-7e83e0845cb8fd20fc1972af63e6f84f-educational_extras.png" version="176">
       <location authority="local">./commcare/image/educational_extras.png</location>
@@ -28,6 +34,12 @@
     <resource id="media-de4c701d7d808239e14b9c4d5bc460cd-transfer_patient.png" version="87">
       <location authority="local">./commcare/image/transfer_patient.png</location>
       <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/3bcd29006b53a437a893dda5932e892d/transfer_patient.png</location>
+    </resource>
+  </media>
+  <media path="../../commcare/image/data/exam_indicators/station_of_the_head">
+    <resource id="media-51dfdb6153338fdb8a9dadad70f1d72a-station.png" version="292">
+      <location authority="local">./commcare/image/data/exam_indicators/station_of_the_head/station.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/8c67a7a87e8db547149a296795a2576a/station.png</location>
     </resource>
   </media>
   <media path="../../commcare/image">
@@ -60,10 +72,10 @@
       <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/efd12369a3ddcf451af964855c79e6f1/notes_flags.png</location>
     </resource>
   </media>
-  <media path="../../commcare/image">
-    <resource id="media-47e961625d9acda1107b9217aea4161f-register_new_patient.png" version="87">
-      <location authority="local">./commcare/image/register_new_patient.png</location>
-      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/b1c462603311401a28c0e3fd602c1104/register_new_patient.png</location>
+  <media path="../../commcare/image/data/exam_indicators/icon_list">
+    <resource id="media-b746384a4b7c9107f60ce2122a6b3bbb-reminder_icon.png" version="298">
+      <location authority="local">./commcare/image/data/exam_indicators/icon_list/reminder_icon.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/3e813a7441587a37b735dbd62402739e/reminder_icon.png</location>
     </resource>
   </media>
   <media path="../../commcare/image">
@@ -76,6 +88,12 @@
     <resource id="media-9a5442c689eff7cf8f1f84c0c8bc3a88-active_patients.png" version="87">
       <location authority="local">./commcare/image/active_patients.png</location>
       <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/8c2cc336275d8008e0a5be47bdf578af/active_patients.png</location>
+    </resource>
+  </media>
+  <media path="../../commcare/image/data/exam_indicators/icon_list">
+    <resource id="media-e9c8ba9482b850e97d7a36779226eab2-flag_icon.png" version="298">
+      <location authority="local">./commcare/image/data/exam_indicators/icon_list/flag_icon.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/b48dd939cf79c1aac9ad7e3298a41c04/flag_icon.png</location>
     </resource>
   </media>
   <media path="../../commcare/image/data/exam_indicators/moulding">

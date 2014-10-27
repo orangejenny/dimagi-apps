@@ -160,7 +160,8 @@
       </header>
       <template>
         <text>
-             <xpath function="if($next_exam &lt; 0, concat('&lt;b&gt;Next exam late by ', $next_exam_string, '&lt;/b&gt;'), concat('Time until next exam: ', $next_exam_string))"/>
+             <!--xpath function="if($next_exam &lt; 0, concat('&lt;b&gt;Next exam late by ', $next_exam_string, '&lt;/b&gt;'), concat('Time until next exam: ', $next_exam_string))"/-->
+             <value>Time until next exam: </value>
         </text>
       </template>
       <sort type="string" order="3" direction="descending">
@@ -169,21 +170,22 @@
         </text>
       </sort>
     </field>
-    <!--field>
+    <field>
       <style horz-align="left" font-size="medium">
-      	<grid grid-height="1" grid-width="7" grid-x="4" grid-y="5" />
+      	<grid grid-height="1" grid-width="7" grid-x="4" grid-y="3" />
        </style>
       <header>
         <text>
-          <locale id="m1.case_short.case_time_measured_VE_3"/>
+          <value/>
         </text>
       </header>
       <template>
         <text>
-            <xpath function="concat('Time of first exam: ', last_exam_time)"/>
+            <!--xpath function="concat('First exam: ', first_measured_dilation_time)"/-->
+            <value>First exam:</value>
         </text>
       </template>
-    </field-->
+    </field>
     <field>
       <style horz-align="left" font-size="small">
       	<grid grid-height="1" grid-width="4" grid-x="0" grid-y="2" />
@@ -210,7 +212,7 @@
       </header>
       <template form="image">
         <text>
-          <xpath function="if(high_risk = 'yes', $ky, $kx)">
+          <xpath function="if(high_risk_flag = 'yes', $ky, $kx)">
             <variable name="ky">
               <locale id="image.high.risk"/>
             </variable>
@@ -363,7 +365,7 @@
       </template>
         <background>
           <text>
-              <xpath function ="if(hours &gt; dilation - $first_dilation, if(hours + 4 &gt; dilation - $first_dilation, 'red-background','yellow-background'), 'none')" />
+              <xpath function="if(dilation &lt; hours + $first_dilation - 4, 'red-background', if(dilation &lt; hours + $first_dilation, 'yellow-background', 'none'))"/>
           </text>
         </background>
     </field>
@@ -381,15 +383,12 @@
       </text>
     </title>
     <variables>
-      <testing_x_factor function="10"/>
-
       <max_hours function="max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/hours)"/>
-      <x_max function="if($max_hours > 12, $max_hours * $testing_x_factor, 12)"/>
+      <x_max function="if($max_hours > 12, $max_hours, 12)"/>
       <contractions_max function="max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/contractions_num)"/>
       <fhs_min function="min(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/fhs)"/>
       <fhs_max function="max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/fhs)"/>
       <first_dilation function="coalesce(first_dilation, 4)"/>
-      <first_dilation function="4"/>
     </variables>
     <field>
       <header>
@@ -423,7 +422,7 @@
               </text>
           </configuration>
           <series nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']">
-               <x function="hours * $testing_x_factor"/>
+               <x function="hours"/>
                <y function="fhs"/>
            </series>
            <series nodeset="instance('sequence')/sequence/index[.&lt;2]">
@@ -546,7 +545,7 @@
 			              <value>x</value>
 			          </text>
 			      </configuration>
-			      <x function="hours * $testing_x_factor"/>
+			      <x function="hours"/>
 			      <y function="dilation"/>
 			  </series>
 			  <series nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']">
@@ -555,7 +554,7 @@
 			              <xpath function="true()"/>
 			          </text>
 			      </configuration>
-			      <x function="hours * $testing_x_factor"/>
+			      <x function="hours"/>
 			      <y function="station * -1 + 3"/>
 			  </series>
 			  <annotation>
@@ -605,7 +604,7 @@
 		                  <xpath function="max(6, $contractions_max)"/>
 		              </text>
 		          </configuration>
-				  <series nodeset="instance('casedb')/casedb/case[@case_type='indicators'][index/parent=current()/@case_id][@status='open']">
+				  <series nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']">
 				      <configuration>
 		        	      <text id="radius-max">
 		            	      <value>3</value>
@@ -614,7 +613,7 @@
 		            	      <value>#99000000</value>
 						   </text>
 				      </configuration>
-				      <x function="hours * $testing_x_factor"/>
+				      <x function="hours"/>
 				      <y function="contractions_num" />
 				      <radius function="if(contractions_dur&lt; 20, 1, if(contractions_dur &lt; 40, 2, 3))" />
 				  </series>
