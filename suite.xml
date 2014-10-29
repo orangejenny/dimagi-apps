@@ -1,25 +1,25 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<suite version="285" descriptor="Suite File">
+<suite version="332" descriptor="Suite File">
   <xform>
-    <resource id="cbe775c6aa81e7f82b48fc4405cc971b02d93287" version="282" descriptor="Form: (Module Registration) - Register New Patient">
+    <resource id="cbe775c6aa81e7f82b48fc4405cc971b02d93287" version="330" descriptor="Form: (Module Registration) - Register New Patient">
       <location authority="local">./modules-0/forms-0.xml</location>
       <location authority="remote">./modules-0/forms-0.xml</location>
     </resource>
   </xform>
   <xform>
-    <resource id="89dfc3483af5f64501e53495a094d760b3f40a49" version="285" descriptor="Form: (Module Active Patients) - Exam">
+    <resource id="89dfc3483af5f64501e53495a094d760b3f40a49" version="332" descriptor="Form: (Module Active Patients) - Record Measurements">
       <location authority="local">./modules-1/forms-0.xml</location>
       <location authority="remote">./modules-1/forms-0.xml</location>
     </resource>
   </xform>
   <xform>
-    <resource id="946e401fd2add250c59cb7f9d2449619cfaf8aaf" version="226" descriptor="Form: (Module Active Patients) - Notes &amp; Flags">
+    <resource id="946e401fd2add250c59cb7f9d2449619cfaf8aaf" version="319" descriptor="Form: (Module Active Patients) - Record Notes &amp; Flags">
       <location authority="local">./modules-1/forms-1.xml</location>
       <location authority="remote">./modules-1/forms-1.xml</location>
     </resource>
   </xform>
   <xform>
-    <resource id="74629bb42adfc0151b306bc9d4d12dd3d4cc8a5a" version="176" descriptor="Form: (Module Active Patients) - Record Delivery">
+    <resource id="74629bb42adfc0151b306bc9d4d12dd3d4cc8a5a" version="319" descriptor="Form: (Module Active Patients) - Record Delivery">
       <location authority="local">./modules-1/forms-2.xml</location>
       <location authority="remote">./modules-1/forms-2.xml</location>
     </resource>
@@ -55,19 +55,19 @@
     </resource>
   </xform>
   <locale language="default">
-    <resource id="app_default_strings" version="285" descriptor="Translations: Default Language">
+    <resource id="app_default_strings" version="332" descriptor="Translations: Default Language">
       <location authority="local">./default/app_strings.txt</location>
       <location authority="remote">./default/app_strings.txt</location>
     </resource>
   </locale>
   <locale language="en">
-    <resource id="app_en_strings" version="285" descriptor="Translations: English">
+    <resource id="app_en_strings" version="332" descriptor="Translations: English">
       <location authority="local">./en/app_strings.txt</location>
       <location authority="remote">./en/app_strings.txt</location>
     </resource>
   </locale>
   <locale language="hin">
-    <resource id="app_hin_strings" version="285" descriptor="Translations: Unknown Language (hin)">
+    <resource id="app_hin_strings" version="332" descriptor="Translations: Unknown Language (hin)">
       <location authority="local">./hin/app_strings.txt</location>
       <location authority="remote">./hin/app_strings.txt</location>
     </resource>
@@ -160,8 +160,8 @@
       </header>
       <template>
         <text>
-             <!--xpath function="if($next_exam &lt; 0, concat('&lt;b&gt;Next exam late by ', $next_exam_string, '&lt;/b&gt;'), concat('Time until next exam: ', $next_exam_string))"/-->
-             <value>Time until next exam: </value>
+             <xpath function="if($next_exam &lt; 0, concat('&lt;b&gt;Next exam late by ', $next_exam_string, '&lt;/b&gt;'), concat('Time until next exam: ', $next_exam_string))"/>
+             <!--value>Time until next exam: </value-->
         </text>
       </template>
       <sort type="string" order="3" direction="descending">
@@ -181,8 +181,8 @@
       </header>
       <template>
         <text>
-            <!--xpath function="concat('First exam: ', first_measured_dilation_time)"/-->
-            <value>First exam:</value>
+            <xpath function="concat(': ', last_exam_time, ', ', minutes_until_next_exam)"/>
+            <!--value>First vaginal exam:</value-->
         </text>
       </template>
     </field>
@@ -542,7 +542,7 @@
 			  <series nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']">
 			      <configuration>
 			          <text id="point-style">
-			              <value>x</value>
+			              <value>square</value>
 			          </text>
 			      </configuration>
 			      <x function="hours"/>
@@ -829,19 +829,7 @@
     <field>
       <header>
         <text>
-          <locale id="m1.case_long.case_high_risk_flag_17.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="high_risk_flag"/>
-        </text>
-      </template>
-    </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_mrd_18.header"/>
+          <locale id="m1.case_long.case_mrd_17.header"/>
         </text>
       </header>
       <template>
@@ -853,7 +841,7 @@
     <field>
       <header>
         <text>
-          <locale id="m1.case_long.case_bed_19.header"/>
+          <locale id="m1.case_long.case_bed_18.header"/>
         </text>
       </header>
       <template>
@@ -865,7 +853,7 @@
     <field>
       <header>
         <text>
-          <locale id="m1.case_long.case_wife_of_20.header"/>
+          <locale id="m1.case_long.case_wife_of_19.header"/>
         </text>
       </header>
       <template>
@@ -877,7 +865,7 @@
     <field>
       <header>
         <text>
-          <locale id="m1.case_long.case_edd_21.header"/>
+          <locale id="m1.case_long.case_edd_20.header"/>
         </text>
       </header>
       <template>
@@ -889,7 +877,7 @@
     <field>
       <header>
         <text>
-          <locale id="m1.case_long.case_admission_date_22.header"/>
+          <locale id="m1.case_long.case_admission_date_21.header"/>
         </text>
       </header>
       <template>
@@ -901,7 +889,7 @@
     <field>
       <header>
         <text>
-          <locale id="m1.case_long.case_admission_time_23.header"/>
+          <locale id="m1.case_long.case_admission_time_22.header"/>
         </text>
       </header>
       <template>
@@ -913,7 +901,7 @@
     <field>
       <header>
         <text>
-          <locale id="m1.case_long.case_gravida_24.header"/>
+          <locale id="m1.case_long.case_gravida_23.header"/>
         </text>
       </header>
       <template>
@@ -925,7 +913,7 @@
     <field>
       <header>
         <text>
-          <locale id="m1.case_long.case_parity_25.header"/>
+          <locale id="m1.case_long.case_parity_24.header"/>
         </text>
       </header>
       <template>
@@ -937,31 +925,19 @@
     <field>
       <header>
         <text>
-          <locale id="m1.case_long.case_membrane_date_26.header"/>
+          <locale id="m1.case_long.case_membrane_date_25.header"/>
         </text>
       </header>
       <template>
         <text>
-          <xpath function="membrane_date"/>
+          <xpath function="concat(substr(membrane_date,0,10),&quot; &quot;, substr(membrane_date,0, 8))"/>
         </text>
       </template>
     </field>
     <field>
       <header>
         <text>
-          <locale id="m1.case_long.case_membrane_time_27.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="membrane_time"/>
-        </text>
-      </template>
-    </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_pelvic_grip_1_28.header"/>
+          <locale id="m1.case_long.case_pelvic_grip_1_26.header"/>
         </text>
       </header>
       <template>
@@ -973,7 +949,7 @@
     <field>
       <header>
         <text>
-          <locale id="m1.case_long.case_pelvic_grip_2_29.header"/>
+          <locale id="m1.case_long.case_pelvic_grip_2_27.header"/>
         </text>
       </header>
       <template>
@@ -985,7 +961,7 @@
     <field>
       <header>
         <text>
-          <locale id="m1.case_long.case_fundal_grip_30.header"/>
+          <locale id="m1.case_long.case_fundal_grip_28.header"/>
         </text>
       </header>
       <template>
@@ -997,7 +973,7 @@
     <field>
       <header>
         <text>
-          <locale id="m1.case_long.case_fetal_lie_31.header"/>
+          <locale id="m1.case_long.case_fetal_lie_29.header"/>
         </text>
       </header>
       <template>
@@ -1009,7 +985,7 @@
     <field>
       <header>
         <text>
-          <locale id="m1.case_long.case_fetal_presentation_32.header"/>
+          <locale id="m1.case_long.case_fetal_presentation_30.header"/>
         </text>
       </header>
       <template>
@@ -1021,12 +997,24 @@
     <field>
       <header>
         <text>
-          <locale id="m1.case_long.case_last_exam_time_33.header"/>
+          <locale id="m1.case_long.case_last_exam_time_31.header"/>
         </text>
       </header>
       <template>
         <text>
-          <xpath function="last_exam_time"/>
+          <xpath function="concat(substr(last_exam_time,0,10),&quot; &quot;, substr(last_exam_time,11, 19))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_high_risk_score_32.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="high_risk_score"/>
         </text>
       </template>
     </field>
