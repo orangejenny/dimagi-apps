@@ -3,7 +3,7 @@
 		<h:title>Register New Patient</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/CD27A16C-D3FC-4DBA-A151-608D1D10A62B" uiVersion="1" version="334" name="Register New Patient">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/CD27A16C-D3FC-4DBA-A151-608D1D10A62B" uiVersion="1" version="360" name="Register New Patient">
 					<patient_info_list>
 						<name/>
 						<mrd/>
@@ -16,6 +16,10 @@
 						<gravida/>
 						<lmp/>
 					</patient_info_list>
+					<icons>
+						<clock/>
+						<flag/>
+					</icons>
 					<patient_info_cont>
 						<edd/>
 						<membrane_rupture/>
@@ -67,8 +71,8 @@
 						<suggested_actions/>
 						<choice/>
 						<actions/>
-						<contine_label/>
 					</es_alert>
+					<contine_label/>
 					<age/>
 					<parity/>
 					<age_risk_1/>
@@ -115,6 +119,9 @@
 			<bind nodeset="/data/patient_info_list/parity" required="true()"/>
 			<bind nodeset="/data/patient_info_list/gravida" required="true()"/>
 			<bind nodeset="/data/patient_info_list/lmp" type="xsd:date"/>
+			<bind nodeset="/data/icons" relevant="1=2"/>
+			<bind nodeset="/data/icons/clock" type="xsd:string"/>
+			<bind nodeset="/data/icons/flag" type="xsd:string"/>
 			<bind nodeset="/data/patient_info_cont"/>
 			<bind nodeset="/data/patient_info_cont/edd" relevant="/data/patient_info_list/lmp != ''"/>
 			<bind nodeset="/data/patient_info_cont/membrane_rupture"/>
@@ -160,7 +167,7 @@
 			<bind nodeset="/data/es_alert/suggested_actions"/>
 			<bind nodeset="/data/es_alert/choice" required="true()"/>
 			<bind nodeset="/data/es_alert/actions" type="xsd:string" relevant="/data/es_alert/choice = 'record_actions'"/>
-			<bind nodeset="/data/es_alert/contine_label"/>
+			<bind nodeset="/data/contine_label"/>
 			<bind nodeset="/data/age" calculate="/data/patient_info_list/age"/>
 			<bind nodeset="/data/parity" calculate="/data/patient_info_list/parity"/>
 			<bind nodeset="/data/age_risk_1" calculate="if((/data/age &lt; 18) or (/data/age &gt; 35), 1, 0)"/>
@@ -255,6 +262,14 @@
 					</text>
 					<text id="patient_info_list/lmp-label">
 						<value>LMP</value>
+					</text>
+					<text id="icons/clock-label">
+						<value/>
+						<value form="image">jr://file/commcare/image/data/icons/clock.png</value>
+					</text>
+					<text id="icons/flag-label">
+						<value/>
+						<value form="image">jr://file/commcare/image/data/icons/flag.png</value>
 					</text>
 					<text id="patient_info_list/edd-label">
 						<value>EDD: <output value="/data/edd_calc"/></value>
@@ -618,6 +633,14 @@ Does not achieve cervical effacement and cervical dilation.</value>
 					</text>
 					<text id="patient_info_list/lmp-label">
 						<value>&#2310;&#2326;&#2367;&#2352;&#2368; &#2350;&#2366;&#2361;&#2357;&#2366;&#2352;&#2368; &#2325;&#2368; &#2340;&#2366;&#2352;&#2368;&#2326;</value>
+					</text>
+					<text id="icons/clock-label">
+						<value/>
+						<value form="image">jr://file/commcare/image/data/icons/clock.png</value>
+					</text>
+					<text id="icons/flag-label">
+						<value/>
+						<value form="image">jr://file/commcare/image/data/icons/flag.png</value>
 					</text>
 					<text id="patient_info_list/edd-label">
 						<value>&#2346;&#2381;&#2352;&#2360;&#2357; &#2325;&#2368; &#2309;&#2344;&#2369;&#2350;&#2366;&#2344;&#2367;&#2340; &#2340;&#2366;&#2352;&#2368;&#2326;: <output value="/data/edd_calc"/></value>
@@ -995,6 +1018,14 @@ Does not achieve cervical effacement and cervical dilation.</value>
 				<label ref="jr:itext('patient_info_list/lmp-label')"/>
 			</input>
 		</group>
+		<group ref="/data/icons" appearance="field-list">
+			<input ref="/data/icons/clock">
+				<label ref="jr:itext('icons/clock-label')"/>
+			</input>
+			<input ref="/data/icons/flag">
+				<label ref="jr:itext('icons/flag-label')"/>
+			</input>
+		</group>
 		<group ref="/data/patient_info_cont" appearance="field-list">
 			<trigger ref="/data/patient_info_cont/edd" appearance="minimal">
 				<label ref="jr:itext('patient_info_list/edd-label')"/>
@@ -1341,9 +1372,9 @@ Does not achieve cervical effacement and cervical dilation.</value>
 			<input ref="/data/es_alert/actions">
 				<label ref="jr:itext('es_alert/actions-label')"/>
 			</input>
-			<trigger ref="/data/es_alert/contine_label" appearance="minimal">
-				<label ref="jr:itext('es_alert/contine_label-label')"/>
-			</trigger>
 		</group>
+		<trigger ref="/data/contine_label" appearance="minimal">
+			<label ref="jr:itext('es_alert/contine_label-label')"/>
+		</trigger>
 	</h:body>
 </h:html>

@@ -123,11 +123,11 @@
     </title>
     <variables>
 	   <first_dilation function="coalesce(first_dilation, 4)"/>
-      <next_exam function="minutes_until_next_exam - int((double(now()) - double(last_exam_time)) * 24 * 60)"/>
-	   <next_exam_abs function="if($next_exam &lt; 0, $next_exam * -1, $next_exam)"/>
-	   <next_exam_hours function="int($next_exam_abs div 60)"/>
-	   <next_exam_minutes function="$next_exam_abs mod 60"/>
-	   <next_exam_string function="concat($next_exam_hours, ':', if($next_exam_minutes &lt; 10, '0', ''), $next_exam_minutes)"/>
+      <next_exam function="if(last_exam_time = '', '', minutes_until_next_exam - int((double(now()) - double(last_exam_time)) * 24 * 60))"/>
+	   <next_exam_abs function="if(last_exam_time = '', '', if($next_exam &lt; 0, $next_exam * -1, $next_exam))"/>
+	   <next_exam_hours function="if(last_exam_time='', '', int($next_exam_abs div 60))"/>
+	   <next_exam_minutes function="if(last_exam_time = '', '', $next_exam_abs mod 60)"/>
+	   <next_exam_string function="if(last_exam_time = '', '', concat($next_exam_hours, ':', if($next_exam_minutes &lt; 10, '0', ''), $next_exam_minutes))"/>
 	 </variables>
     <field>
       <style horz-align="left" vert-align="center" font-size="large">
@@ -161,7 +161,6 @@
       <template>
         <text>
              <xpath function="if($next_exam &lt; 0, concat('&lt;b&gt;Next exam late by ', $next_exam_string, '&lt;/b&gt;'), concat('Time until next exam: ', $next_exam_string))"/>
-             <!--value>Time until next exam: </value-->
         </text>
       </template>
       <sort type="string" order="3" direction="descending">
@@ -181,8 +180,7 @@
       </header>
       <template>
         <text>
-            <xpath function="concat(': ', last_exam_time, ', ', minutes_until_next_exam)"/>
-            <!--value>First vaginal exam:</value-->
+            <xpath function="concat('First vaginal exam: ', first_measured_dilation_time_display)"/>
         </text>
       </template>
     </field>
@@ -214,7 +212,7 @@
         <text>
           <xpath function="if(high_risk_flag = 'yes', $ky, $kx)">
             <variable name="ky">
-              <locale id="image.high.risk"/>
+              <value>jr://file/commcare/image/data/high_risk_page/high_risk_flag.png</value>
             </variable>
             <variable name="kx">
               <locale id="image.shadow.path"/>
@@ -229,14 +227,14 @@
        </style>
       <header>
         <text>
-          <locale id="nurse.flag.header"/>
+          <value/>
         </text>
       </header>
       <template form="image">
         <text>
           <xpath function="if(nurse_flag = 'yes', $ky, $kx)">
             <variable name="ky">
-              <locale id="image.nurse.flag"/>
+              <value>jr://file/commcare/image/data/icons/flag.png</value>
             </variable>
             <variable name="kx">
               <locale id="image.shadow.path"/>
@@ -251,14 +249,14 @@
        </style>
       <header>
         <text>
-          <locale id="nurse.flag.header"/>
+          <value/>
         </text>
       </header>
       <template form="image">
         <text>
           <xpath function="if($next_exam &lt; 0, $ky, $kx)">
             <variable name="ky">
-              <locale id="image.reminder"/>
+              <value>jr://file/commcare/image/data/icons/clock.png</value>
             </variable>
             <variable name="kx">
               <locale id="image.shadow.path"/>
@@ -288,14 +286,14 @@
        </style>
       <header>
         <text>
-          <locale id="image.alert.header"/>
+          <value/>
         </text>
       </header>
       <template form="image">
         <text>
           <xpath function="if(alert_flag = 'yes', $ky, $kx)">
             <variable name="ky">
-              <locale id="image.alert.triggered"/>
+              <value>jr://file/commcare/image/data/es_alert/alert.png</value>
             </variable>
             <variable name="kx">
               <locale id="image.shadow.path"/>
@@ -310,7 +308,7 @@
        </style>
       <header>
         <text>
-          <locale id="admit.date.header"/>
+          <value/>
         </text>
       </header>
       <template>
@@ -325,7 +323,7 @@
        </style>
       <header>
         <text>
-          <locale id="parity.header"/>
+          <value/>
         </text>
       </header>
       <template>
@@ -340,7 +338,7 @@
        </style>
       <header>
         <text>
-          <locale id="reg.num.header"/>
+          <value/>
         </text>
       </header>
       <template>
@@ -355,7 +353,7 @@
        </style>
       <header>
         <text>
-          <locale id="room.num.header"/>
+          <value/>
         </text>
       </header>
       <template>
