@@ -128,6 +128,7 @@
 	   <next_exam_hours function="if(last_exam_time='', '', int($next_exam_abs div 60))"/>
 	   <next_exam_minutes function="if(last_exam_time = '', '', $next_exam_abs mod 60)"/>
 	   <next_exam_string function="if(last_exam_time = '', '', concat($next_exam_hours, ':', if($next_exam_minutes &lt; 10, '0', ''), $next_exam_minutes))"/>
+	   <background function="if(dilation &lt; hours + $first_dilation - 4, 'red-background', if(dilation &lt; hours + $first_dilation, 'yellow-background', 'none'))"/>
 	 </variables>
     <field>
       <style horz-align="left" vert-align="center" font-size="large">
@@ -143,11 +144,6 @@
           <xpath function="case_name"/>
         </text>
       </template>
-      <!--sort type="string" order="1" direction="ascending">
-        <text>
-          <xpath function="high_risk"/>
-        </text>
-      </sort-->
     </field>
     <field>
       <style horz-align="left" font-size="medium">
@@ -163,9 +159,9 @@
              <xpath function="if($next_exam &lt; 0, concat('&lt;b&gt;Next exam late by ', $next_exam_string, '&lt;/b&gt;'), concat('Time until next exam: ', $next_exam_string))"/>
         </text>
       </template>
-      <sort type="string" order="3" direction="descending">
+      <sort type="string" order="2" direction="ascending">
         <text>
-          <xpath function="minutes_until_next_exam"/>
+          <xpath function="$next_exam"/>
         </text>
       </sort>
     </field>
@@ -220,6 +216,26 @@
           </xpath>
         </text>
       </template>
+      <sort type="string" order="3" direction="descending">
+        <text>
+          <xpath function="high_risk_flag"/>
+        </text>
+      </sort>
+    </field>
+    <field>
+      <header width="0">
+        <text/>
+      </header>
+      <template width="0">
+        <text>
+          <value/>
+        </text>
+      </template>
+      <sort type="string" order="1" direction="descending">
+        <text>
+          <xpath function="if($background = 'red-background', 3, if($background = 'yellow-background', 2, 1))"/>
+        </text>
+      </sort>
     </field>
     <field>
       <style>
@@ -242,6 +258,11 @@
           </xpath>
         </text>
       </template>
+      <sort type="string" order="4" direction="descending">
+        <text>
+          <xpath function="nurse_flag"/>
+        </text>
+      </sort>
     </field>
     <field>
       <style>
@@ -264,21 +285,6 @@
           </xpath>
         </text>
       </template>
-    </field>
-    <field>
-      <header width="0">
-        <text/>
-      </header>
-      <template width="0">
-        <text>
-          <xpath function="nurse_flag"/>
-        </text>
-      </template>
-      <sort type="string" order="2" direction="descending">
-        <text>
-          <xpath function="nurse_flag"/>
-        </text>
-      </sort>
     </field>
     <field>
        <style>
@@ -363,7 +369,7 @@
       </template>
         <background>
           <text>
-              <xpath function="if(dilation &lt; hours + $first_dilation - 4, 'red-background', if(dilation &lt; hours + $first_dilation, 'yellow-background', 'none'))"/>
+              <xpath function="$background"/>
           </text>
         </background>
     </field>
@@ -805,18 +811,6 @@
         </text>
       </template>
     </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_patient_notes_16.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="patient_notes"/>
-        </text>
-      </template>
-    </field>
 </detail>
 <detail>
     <title>
@@ -1013,6 +1007,18 @@
       <template>
         <text>
           <xpath function="high_risk_score"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_patient_notes_16.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="patient_notes"/>
         </text>
       </template>
     </field>
