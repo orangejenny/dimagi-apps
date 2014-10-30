@@ -147,6 +147,21 @@
     </field>
     <field>
       <style horz-align="left" font-size="medium">
+      	<grid grid-height="1" grid-width="7" grid-x="4" grid-y="3" />
+       </style>
+      <header>
+        <text>
+          <value/>
+        </text>
+      </header>
+      <template>
+        <text>
+            <xpath function="concat('First vaginal exam: ', first_measured_dilation_time_display)"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <style horz-align="left" font-size="medium">
       	<grid grid-height="1" grid-width="7" grid-x="4" grid-y="4" />
        </style>
       <header>
@@ -167,7 +182,7 @@
     </field>
     <field>
       <style horz-align="left" font-size="medium">
-      	<grid grid-height="1" grid-width="7" grid-x="4" grid-y="3" />
+      	<grid grid-height="1" grid-width="7" grid-x="4" grid-y="5" />
        </style>
       <header>
         <text>
@@ -176,9 +191,14 @@
       </header>
       <template>
         <text>
-            <xpath function="concat('First vaginal exam: ', first_measured_dilation_time_display)"/>
+	       <xpath function="if(dilation = '', '', concat('Dilation: ', dilation, ' cm'))"/>
         </text>
       </template>
+      <sort type="string" order="2" direction="ascending">
+        <text>
+          <xpath function="$next_exam"/>
+        </text>
+      </sort>
     </field>
     <field>
       <style horz-align="left" font-size="small">

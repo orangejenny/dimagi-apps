@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<suite version="360" descriptor="Media Suite File">
+<suite version="386" descriptor="Media Suite File">
   <media path="../../commcare/image">
     <resource id="media-7e83e0845cb8fd20fc1972af63e6f84f-educational_extras.png" version="176">
       <location authority="local">./commcare/image/educational_extras.png</location>
@@ -19,9 +19,9 @@
     </resource>
   </media>
   <media path="../../commcare/image/data/high_risk_page">
-    <resource id="media-171ede987976f6dd551eb272d4aca51c-high_risk_flag.png" version="330">
+    <resource id="media-7b8374f815decfcbe041f681b67f10b1-high_risk_flag.png" version="368">
       <location authority="local">./commcare/image/data/high_risk_page/high_risk_flag.png</location>
-      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/3e5b3c1fee03f2eb6db47fb9526b9ff8/high_risk_flag.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/192588687ac51ab07a3c82fb7d226ed6/high_risk_flag.png</location>
     </resource>
   </media>
   <media path="../../commcare/image">
@@ -48,22 +48,22 @@
       <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/ab0e76115a4f3f9bd33092bd84976f4f/deliveries.png</location>
     </resource>
   </media>
+  <media path="../../commcare/image">
+    <resource id="media-0bbdd3971c8cbeb0e4e2a7ac69e38e56-notes_flags.png" version="87">
+      <location authority="local">./commcare/image/notes_flags.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/efd12369a3ddcf451af964855c79e6f1/notes_flags.png</location>
+    </resource>
+  </media>
   <media path="../../commcare/image/data/es_alert">
     <resource id="media-815d0e6840d480ded813f249c5f1bf89-contine_label.png" version="319">
       <location authority="local">./commcare/image/data/es_alert/contine_label.png</location>
       <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/8c2cc336275d8008e0a5be47bdf578af/contine_label.png</location>
     </resource>
   </media>
-  <media path="../../commcare/image/data/icons">
-    <resource id="media-222ac15329fec08725641b76fbd192b6-clock.png" version="356">
-      <location authority="local">./commcare/image/data/icons/clock.png</location>
-      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/3e813a7441587a37b735dbd62402739e/clock.png</location>
-    </resource>
-  </media>
-  <media path="../../commcare/image/data/grips">
-    <resource id="media-26994f4e0706b7c1d387c79e06d3658d-fetal_presentation.png" version="330">
-      <location authority="local">./commcare/image/data/grips/fetal_presentation.png</location>
-      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/0f72a2b4d8ff758a5c4877499c054fa9/fetal_presentation.png</location>
+  <media path="../../commcare/image/data/exam_indicators/moulding">
+    <resource id="media-40c7809231a85b4ae796f5fc8b321951-moulding.png" version="203">
+      <location authority="local">./commcare/image/data/exam_indicators/moulding/moulding.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/74dda1e466a604d5849c6f11a6cd0804/moulding.png</location>
     </resource>
   </media>
   <media path="../../commcare/image">
@@ -79,9 +79,9 @@
     </resource>
   </media>
   <media path="../../commcare/image/data/es_alert">
-    <resource id="media-22f66fae9704b9d66745d0a6a414ef8c-alert.png" version="347">
+    <resource id="media-4d0a4c5a18fc362d2658e06316d30f3e-alert.png" version="368">
       <location authority="local">./commcare/image/data/es_alert/alert.png</location>
-      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/369fc9fdacc95f218f5518541199f93d/alert.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/192588687ac51ab07a3c82fb7d227cea/alert.png</location>
     </resource>
   </media>
   <media path="../../commcare/image">
@@ -90,10 +90,10 @@
       <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/6b7ae6bd80f29d9268f8f85a0842be0f/register_new_patient.png</location>
     </resource>
   </media>
-  <media path="../../commcare/image">
-    <resource id="media-38d507278d2a0cf4bff7bc729c016fc2-exam.png" version="87">
-      <location authority="local">./commcare/image/exam.png</location>
-      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/9181dba51bcb554d209bd4e86598cf82/exam.png</location>
+  <media path="../../commcare/image/data/grips">
+    <resource id="media-26994f4e0706b7c1d387c79e06d3658d-fetal_presentation.png" version="330">
+      <location authority="local">./commcare/image/data/grips/fetal_presentation.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/0f72a2b4d8ff758a5c4877499c054fa9/fetal_presentation.png</location>
     </resource>
   </media>
   <media path="../../commcare/image">
@@ -102,22 +102,22 @@
       <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/8c2cc336275d8008e0a5be47bdf578af/active_patients.png</location>
     </resource>
   </media>
-  <media path="../../commcare/image/data/exam_indicators/moulding">
-    <resource id="media-40c7809231a85b4ae796f5fc8b321951-moulding.png" version="203">
-      <location authority="local">./commcare/image/data/exam_indicators/moulding/moulding.png</location>
-      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/74dda1e466a604d5849c6f11a6cd0804/moulding.png</location>
+  <media path="../../commcare/image/data/icons">
+    <resource id="media-222ac15329fec08725641b76fbd192b6-clock.png" version="356">
+      <location authority="local">./commcare/image/data/icons/clock.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/3e813a7441587a37b735dbd62402739e/clock.png</location>
     </resource>
   </media>
   <media path="../../commcare/image/data/icons">
-    <resource id="media-b0344147587998299cf5389942eb0a68-flag.png" version="360">
+    <resource id="media-20df363dad1d721bcff37d3a8fa569fc-flag.png" version="368">
       <location authority="local">./commcare/image/data/icons/flag.png</location>
-      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/b48dd939cf79c1aac9ad7e3298a41c04/flag.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/192588687ac51ab07a3c82fb7daa1c49/flag.png</location>
     </resource>
   </media>
   <media path="../../commcare/image">
-    <resource id="media-0bbdd3971c8cbeb0e4e2a7ac69e38e56-notes_flags.png" version="87">
-      <location authority="local">./commcare/image/notes_flags.png</location>
-      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/efd12369a3ddcf451af964855c79e6f1/notes_flags.png</location>
+    <resource id="media-38d507278d2a0cf4bff7bc729c016fc2-exam.png" version="87">
+      <location authority="local">./commcare/image/exam.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/9181dba51bcb554d209bd4e86598cf82/exam.png</location>
     </resource>
   </media>
 </suite>
