@@ -369,7 +369,7 @@
       </header>
       <template>
         <text>
-          <xpath function="concat('MRD #', mrd)"/>
+          <xpath function="concat('W/O ', wife_of)"/>
         </text>
       </template>
     </field>
@@ -609,9 +609,6 @@
 		              <text id="y-labels">
 		                  <value>6</value>
 		              </text>
-		              <text id="x-title">
-		                  <locale id="m1.case_long.graph3.x_title"/>
-		              </text>
 		              <text id="y-title">
 		                  <locale id="m1.case_long.graph3.y_title"/>
 		              </text>
@@ -644,6 +641,107 @@
 			  </graph>
 		  </template>
 	    </field>
+    <field>
+      <header>
+        <text>
+            <value></value>
+        </text>
+      </header>
+      <template form="graph">
+          <graph type="xy">
+          <configuration>
+              <text id="x-labels">
+                  <value>13</value>
+              </text>
+              <text id="y-labels">
+                  <value>6</value>
+              </text>
+              <text id="y-title">
+                  <locale id="m1.case_long.graph4.y_title"/>
+              </text>
+              <text id="x-min">
+                  <value>0</value>
+              </text>
+              <text id="x-max">
+                  <xpath function="$x_max"/>
+              </text>
+              <text id="y-min">
+                  <value>0</value>
+              </text>
+              <text id="y-max">
+                  <value>250</value>
+              </text>
+          </configuration>
+          <series nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']">
+               <x function="hours"/>
+               <y function="systolic"/>
+           </series>
+          <series nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']">
+               <x function="hours"/>
+               <y function="diastolic"/>
+           </series>
+        </graph>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+            <value></value>
+        </text>
+      </header>
+      <template form="graph">
+          <graph type="xy">
+          <configuration>
+              <text id="x-labels">
+                  <value>13</value>
+              </text>
+              <text id="y-labels">
+                  <value>8</value>
+              </text>
+              <text id="secondary-y-labels">
+                  <value>8</value>
+              </text>
+              <text id="x-title">
+                  <locale id="m1.case_long.graph.x_title"/>
+              </text>
+              <text id="y-title">
+                  <locale id="m1.case_long.graph5.y_title"/>
+              </text>
+              <text id="x-min">
+                  <value>0</value>
+              </text>
+              <text id="x-max">
+                  <xpath function="$x_max"/>
+              </text>
+              <text id="secondary-y-min">
+                  <value>0</value>
+              </text>
+              <text id="secondary-y-max">
+                  <value>35</value>
+              </text>
+              <text id="y-min">
+                  <value>0</value>
+              </text>
+              <text id="y-max">
+                  <value>140</value>
+              </text>
+          </configuration>
+          <series nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']">
+               <x function="hours"/>
+               <y function="pulse"/>
+           </series>
+          <series nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']">
+			      <configuration>
+			          <text id="secondary-y">
+			              <xpath function="true()"/>
+			          </text>
+			      </configuration>
+               <x function="hours"/>
+               <y function="resp"/>
+           </series>
+        </graph>
+      </template>
+    </field>
 </detail>
 <detail>
     <title>
@@ -1028,6 +1126,18 @@
         <text>
           <xpath function="high_risk_score"/>
         </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_high_risk_flag_reason_33.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="high_risk_flag_reason"/>
+       </text>
       </template>
     </field>
     <field>
