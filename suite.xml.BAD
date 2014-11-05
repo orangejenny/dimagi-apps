@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<suite version="332" descriptor="Suite File">
+<suite version="405" descriptor="Suite File">
   <xform>
-    <resource id="cbe775c6aa81e7f82b48fc4405cc971b02d93287" version="330" descriptor="Form: (Module Registration) - Register New Patient">
+    <resource id="cbe775c6aa81e7f82b48fc4405cc971b02d93287" version="405" descriptor="Form: (Module Registration) - Register New Patient">
       <location authority="local">./modules-0/forms-0.xml</location>
       <location authority="remote">./modules-0/forms-0.xml</location>
     </resource>
   </xform>
   <xform>
-    <resource id="89dfc3483af5f64501e53495a094d760b3f40a49" version="332" descriptor="Form: (Module Active Patients) - Record Measurements">
+    <resource id="89dfc3483af5f64501e53495a094d760b3f40a49" version="405" descriptor="Form: (Module Active Patients) - Record Measurements">
       <location authority="local">./modules-1/forms-0.xml</location>
       <location authority="remote">./modules-1/forms-0.xml</location>
     </resource>
@@ -19,13 +19,13 @@
     </resource>
   </xform>
   <xform>
-    <resource id="74629bb42adfc0151b306bc9d4d12dd3d4cc8a5a" version="319" descriptor="Form: (Module Active Patients) - Record Delivery">
+    <resource id="74629bb42adfc0151b306bc9d4d12dd3d4cc8a5a" version="405" descriptor="Form: (Module Active Patients) - Record Delivery">
       <location authority="local">./modules-1/forms-2.xml</location>
       <location authority="remote">./modules-1/forms-2.xml</location>
     </resource>
   </xform>
   <xform>
-    <resource id="c542b6449aaf7b6c6bee40f336cd5e6f3ccde9e5" version="210" descriptor="Form: (Module Active Patients) - Transfer Patient">
+    <resource id="c542b6449aaf7b6c6bee40f336cd5e6f3ccde9e5" version="405" descriptor="Form: (Module Active Patients) - Transfer Patient">
       <location authority="local">./modules-1/forms-3.xml</location>
       <location authority="remote">./modules-1/forms-3.xml</location>
     </resource>
@@ -55,19 +55,19 @@
     </resource>
   </xform>
   <locale language="default">
-    <resource id="app_default_strings" version="332" descriptor="Translations: Default Language">
+    <resource id="app_default_strings" version="405" descriptor="Translations: Default Language">
       <location authority="local">./default/app_strings.txt</location>
       <location authority="remote">./default/app_strings.txt</location>
     </resource>
   </locale>
   <locale language="en">
-    <resource id="app_en_strings" version="332" descriptor="Translations: English">
+    <resource id="app_en_strings" version="405" descriptor="Translations: English">
       <location authority="local">./en/app_strings.txt</location>
       <location authority="remote">./en/app_strings.txt</location>
     </resource>
   </locale>
   <locale language="hin">
-    <resource id="app_hin_strings" version="332" descriptor="Translations: Unknown Language (hin)">
+    <resource id="app_hin_strings" version="405" descriptor="Translations: Unknown Language (hin)">
       <location authority="local">./hin/app_strings.txt</location>
       <location authority="remote">./hin/app_strings.txt</location>
     </resource>
@@ -121,19 +121,7 @@
         <locale id="m1.case_short.title"/>
       </text>
     </title>
-    <variables>
-	   <first_dilation function="coalesce(first_dilation, 4)"/>
-      <next_exam function="if(last_exam_time = '', '', minutes_until_next_exam - int((double(now()) - double(last_exam_time)) * 24 * 60))"/>
-	   <next_exam_abs function="if(last_exam_time = '', '', if($next_exam &lt; 0, $next_exam * -1, $next_exam))"/>
-	   <next_exam_hours function="if(last_exam_time='', '', int($next_exam_abs div 60))"/>
-	   <next_exam_minutes function="if(last_exam_time = '', '', $next_exam_abs mod 60)"/>
-	   <next_exam_string function="if(last_exam_time = '', '', concat($next_exam_hours, ':', if($next_exam_minutes &lt; 10, '0', ''), $next_exam_minutes))"/>
-	   <background function="if(dilation &lt; hours + $first_dilation - 4, 'red-background', if(dilation &lt; hours + $first_dilation, 'yellow-background', 'none'))"/>
-	 </variables>
     <field>
-      <style horz-align="left" vert-align="center" font-size="large">
-      	<grid grid-height="2" grid-width="4" grid-x="0" grid-y="0" />
-       </style>
       <header>
         <text>
           <locale id="m1.case_short.case_name_1.header"/>
@@ -144,26 +132,13 @@
           <xpath function="case_name"/>
         </text>
       </template>
+      <sort type="string" order="1" direction="ascending">
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </sort>
     </field>
     <field>
-      <style horz-align="left" font-size="medium">
-      	<grid grid-height="1" grid-width="7" grid-x="4" grid-y="3" />
-       </style>
-      <header>
-        <text>
-          <value/>
-        </text>
-      </header>
-      <template>
-        <text>
-            <xpath function="concat('First vaginal exam: ', first_measured_dilation_time_display)"/>
-        </text>
-      </template>
-    </field>
-    <field>
-      <style horz-align="left" font-size="medium">
-      	<grid grid-height="1" grid-width="7" grid-x="4" grid-y="4" />
-       </style>
       <header>
         <text>
           <locale id="m1.case_short.case_minutes_until_next_exam_2.header"/>
@@ -171,39 +146,23 @@
       </header>
       <template>
         <text>
-             <xpath function="if($next_exam &lt; 0, concat('&lt;b&gt;Next exam late by ', $next_exam_string, '&lt;/b&gt;'), concat('Time until next exam: ', $next_exam_string))"/>
+          <xpath function="minutes_until_next_exam"/>
         </text>
       </template>
-      <sort type="string" order="2" direction="ascending">
-        <text>
-          <xpath function="$next_exam"/>
-        </text>
-      </sort>
     </field>
     <field>
-      <style horz-align="left" font-size="medium">
-      	<grid grid-height="1" grid-width="7" grid-x="4" grid-y="5" />
-       </style>
       <header>
         <text>
-          <value/>
+          <locale id="m1.case_short.case_high_risk_3.header"/>
         </text>
       </header>
       <template>
         <text>
-	       <xpath function="if(dilation = '', '', concat('Dilation: ', dilation, ' cm'))"/>
+          <xpath function="high_risk"/>
         </text>
       </template>
-      <sort type="string" order="2" direction="ascending">
-        <text>
-          <xpath function="$next_exam"/>
-        </text>
-      </sort>
     </field>
     <field>
-      <style horz-align="left" font-size="small">
-      	<grid grid-height="1" grid-width="4" grid-x="0" grid-y="2" />
-       </style>
       <header>
         <text>
           <locale id="m1.case_short.case_age_4.header"/>
@@ -211,542 +170,75 @@
       </header>
       <template>
         <text>
-          <xpath function="concat(age, ' years old')"/>
+          <xpath function="age"/>
         </text>
       </template>
     </field>
     <field>
-       <style>
-      	<grid grid-height="2" grid-width="2" grid-x="6" grid-y="0" />
-       </style>
       <header>
         <text>
-          <locale id="m1.case_short.case_high_risk_3.header"/>
+          <locale id="m1.case_short.case_first_measured_dilation_time_5.header"/>
         </text>
       </header>
-      <template form="image">
+      <template>
         <text>
-          <xpath function="if(high_risk_flag = 'yes', $ky, $kx)">
-            <variable name="ky">
-              <value>jr://file/commcare/image/data/high_risk_page/high_risk_flag.png</value>
-            </variable>
-            <variable name="kx">
-              <locale id="image.shadow.path"/>
-            </variable>
-          </xpath>
+          <xpath function="first_measured_dilation_time"/>
         </text>
       </template>
-      <sort type="string" order="3" direction="descending">
-        <text>
-          <xpath function="high_risk_flag"/>
-        </text>
-      </sort>
     </field>
     <field>
-      <header width="0">
-        <text/>
-      </header>
-      <template width="0">
-        <text>
-          <value/>
-        </text>
-      </template>
-      <sort type="string" order="1" direction="descending">
-        <text>
-          <xpath function="if($background = 'red-background', 3, if($background = 'yellow-background', 2, 1))"/>
-        </text>
-      </sort>
-    </field>
-    <field>
-      <style>
-      	<grid grid-height="2" grid-width="2" grid-x="10" grid-y="0" />
-       </style>
       <header>
         <text>
-          <value/>
+          <locale id="m1.case_short.case_mrd_6.header"/>
         </text>
       </header>
-      <template form="image">
+      <template>
         <text>
-          <xpath function="if(nurse_flag = 'yes', $ky, $kx)">
-            <variable name="ky">
-              <value>jr://file/commcare/image/data/icons/flag.png</value>
-            </variable>
-            <variable name="kx">
-              <locale id="image.shadow.path"/>
-            </variable>
-          </xpath>
+          <xpath function="mrd"/>
         </text>
       </template>
-      <sort type="string" order="4" direction="descending">
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_short.case_bed_7.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="bed"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_short.case_nurse_flag_8.header"/>
+        </text>
+      </header>
+      <template>
         <text>
           <xpath function="nurse_flag"/>
         </text>
-      </sort>
-    </field>
-    <field>
-      <style>
-      	<grid grid-height="2" grid-width="2" grid-x="8" grid-y="0" />
-       </style>
-      <header>
-        <text>
-          <value/>
-        </text>
-      </header>
-      <template form="image">
-        <text>
-          <xpath function="if($next_exam &lt; 0, $ky, $kx)">
-            <variable name="ky">
-              <value>jr://file/commcare/image/data/icons/clock.png</value>
-            </variable>
-            <variable name="kx">
-              <locale id="image.shadow.path"/>
-            </variable>
-          </xpath>
-        </text>
       </template>
     </field>
     <field>
-       <style>
-      	<grid grid-height="2" grid-width="2" grid-x="4" grid-y="0" />
-       </style>
       <header>
         <text>
-          <value/>
-        </text>
-      </header>
-      <template form="image">
-        <text>
-          <xpath function="if(alert_flag = 'yes', $ky, $kx)">
-            <variable name="ky">
-              <value>jr://file/commcare/image/data/es_alert/alert.png</value>
-            </variable>
-            <variable name="kx">
-              <locale id="image.shadow.path"/>
-            </variable>
-          </xpath>
-        </text>
-      </template>
-    </field>
-    <field>
-       <style horz-align="left" font-size="medium">
-      	<grid grid-height="1" grid-width="8" grid-x="4" grid-y="2" />
-       </style>
-      <header>
-        <text>
-          <value/>
+          <locale id="m1.case_short.case_alert_flag_9.header"/>
         </text>
       </header>
       <template>
         <text>
-          <xpath function="concat('Admitted: ',format-date(admission_date,'%e/%n'),' ',substr(admission_time,0,8))"/>
+          <xpath function="alert_flag"/>
         </text>
       </template>
-    </field>
-    <field>
-      <style horz-align="left" font-size="small">
-      	<grid grid-height="1" grid-width="4" grid-x="0" grid-y="5" />
-       </style>
-      <header>
-        <text>
-          <value/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="concat('Parity: ', parity)"/>
-        </text>
-      </template>
-    </field>
-    <field>
-      <style horz-align="left" font-size="small">
-      	<grid grid-height="1" grid-width="4" grid-x="0" grid-y="4" />
-       </style>
-      <header>
-        <text>
-          <value/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="concat('W/O ', wife_of)"/>
-        </text>
-      </template>
-    </field>
-    <field>
-      <style horz-align="left" font-size="small">
-      	<grid grid-height="1" grid-width="4" grid-x="0" grid-y="3" />
-       </style>
-      <header>
-        <text>
-          <value/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="concat('Bed #', bed)"/>
-        </text>
-      </template>
-        <background>
-          <text>
-              <xpath function="$background"/>
-          </text>
-        </background>
     </field>
   </detail>
   <detail id="m1_case_long">
     <title>
       <text>
         <locale id="m1.case_long.title"/>
-      </text>
-    </title>
-<detail>
-    <title>
-      <text>
-        <locale id="m1.case_long.tab1"/>
-      </text>
-    </title>
-    <variables>
-      <max_hours function="max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/hours)"/>
-      <x_max function="if($max_hours > 12, $max_hours, 12)"/>
-      <contractions_max function="max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/contractions_num)"/>
-      <fhs_min function="min(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/fhs)"/>
-      <fhs_max function="max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/fhs)"/>
-      <first_dilation function="coalesce(first_dilation, 4)"/>
-    </variables>
-    <field>
-      <header>
-        <text>
-            <value></value>
-        </text>
-      </header>
-      <template form="graph">
-          <graph type="xy">
-          <configuration>
-              <text id="x-labels">
-                  <value>13</value>
-              </text>
-              <text id="y-labels">
-                  <value>13</value>
-              </text>
-              <text id="y-title">
-                  <locale id="m1.case_long.graph1.y_title"/>
-              </text>
-              <text id="x-min">
-                  <value>0</value>
-              </text>
-              <text id="x-max">
-                  <xpath function="$x_max"/>
-              </text>
-              <text id="y-min">
-                  <xpath function="min(80, $fhs_min)"/>
-              </text>
-              <text id="y-max">
-                  <xpath function="max(200, $fhs_max)"/>
-              </text>
-          </configuration>
-          <series nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']">
-               <x function="hours"/>
-               <y function="fhs"/>
-           </series>
-           <series nodeset="instance('sequence')/sequence/index[.&lt;2]">
-               <configuration>
-                   <text id="point-style">
-                       <value>none</value>
-                   </text>
-               </configuration>
-               <x function="if(. = 0, 0, $x_max)"/>
-               <y function="100"/>
-           </series>
-           <series nodeset="instance('sequence')/sequence/index[.&lt;2]">
-               <configuration>
-                   <text id="point-style">
-                       <value>none</value>
-                   </text>
-               </configuration>
-               <x function="if(. = 0, 0, $x_max)"/>
-               <y function="180"/>
-           </series>
-        </graph>
-      </template>
-    </field>
-    <field>
-      <header>
-        <text>
-          <value></value>
-        </text>
-      </header>
-      <template form="graph">
-          <graph type="xy">
-              <configuration>
-                 <text id="x-labels">
-	                  <value>13</value>
-	              </text>
-	              <text id="y-labels">
-	                  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-	              </text>
-	              <text id="secondary-y-labels">
-	                  {
-	                     "0": "3",
-	                  	"1": "2",
-	                  	"2": "1",
-	                  	"3": "0",
-	                  	"4": "-1",
-	                  	"5": "-2",
-	                  	"6": "-3"
-	                  }
-	              </text>
-	              <text id="y-title">
-	                  <locale id="m1.case_long.graph2.y_title"/>
-	              </text>
-                  <text id="x-min">
-                      <value>0</value>
-                  </text>
-                  <text id="x-max">
-                      <xpath function="$x_max"/>
-                  </text>
-                  <text id="y-min">
-                      <value>0</value>
-                  </text>
-                  <text id="y-max">
-                      <value>10</value>
-                  </text>
-                  <text id="secondary-y-min">
-                      <value>0</value>
-                  </text>
-                  <text id="secondary-y-max">
-                      <value>10</value>
-                  </text>
-              </configuration>
-              <series nodeset="instance('sequence')/sequence/index[.&lt;3]">
-			      <configuration>
-			          <text id="fill-below">
-			              <value>#ffffff99</value>
-			          </text>
-			          <text id="line-color">
-			              <value>#00000000</value>
-			          </text>
-			          <text id="point-style">
-			              <value>none</value>
-			          </text>
-			      </configuration>
-			      <x function="if(. = 0, 0, if(. = 1, 10 - $first_dilation, $x_max))"/>
-			      <y function="if(. = 0, $first_dilation, 10)"/>
-			  </series>
-			  <series nodeset="instance('sequence')/sequence/index[.&lt;3]">
-			      <configuration>
-			          <text id="fill-below">
-			              <value>#ffee5555</value>
-			          </text>
-			          <text id="line-color">
-			              <value>#00000000</value>
-			          </text>
-			          <text id="point-style">
-			              <value>none</value>
-			          </text>
-			      </configuration>
-			      <x function="if(. = 0, 8 - $first_dilation, if(. = 1, 14 - $first_dilation, $x_max))"/>
-			      <y function="if(. = 0, 4, 10)"/>
-			  </series>
-			  <series nodeset="instance('sequence')/sequence/index[.&lt;2]">
-			      <configuration>
-			          <text id="fill-below">
-			              <value>#ffffffff</value>
-			          </text>
-			          <text id="line-color">
-			              <value>#00000000</value>
-			          </text>
-			          <text id="point-style">
-			              <value>none</value>
-			          </text>
-			      </configuration>
-			      <x function="if(. = 0, 0, $x_max)"/>
-			      <y function="4"/>
-			  </series>
-			  <series nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']">
-			      <configuration>
-			          <text id="point-style">
-			              <value>square</value>
-			          </text>
-			      </configuration>
-			      <x function="hours"/>
-			      <y function="dilation"/>
-			  </series>
-			  <series nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']">
-			      <configuration>
-			          <text id="secondary-y">
-			              <xpath function="true()"/>
-			          </text>
-			      </configuration>
-			      <x function="hours"/>
-			      <y function="station * -1 + 3"/>
-			  </series>
-			  <annotation>
-			      <x><text><xpath function="9 - $first_dilation"/></text></x>
-			      <y><text><value>7</value></text></y>
-			      <text><locale id="m1.case_long.graph2.annotation1"/></text>
-			  </annotation>
-			  <annotation>
-			      <x><text><xpath function="14 - $first_dilation"/></text></x>
-			      <y><text><value>7</value></text></y>
-			      <text><locale id="m1.case_long.graph2.annotation2"/></text>
-			  </annotation>
-		  </graph>
-	  </template>
-    </field>
-	    <field>
-	      <header>
-	        <text>
-	            <value/>
-	        </text>
-	      </header>
-	      <template form="graph">
-	          <graph type="bubble">
-		          <configuration>
-		              <text id="x-labels">
-		                  <value>13</value>
-		              </text>
-		              <text id="y-labels">
-		                  <value>6</value>
-		              </text>
-		              <text id="y-title">
-		                  <locale id="m1.case_long.graph3.y_title"/>
-		              </text>
-		              <text id="x-min">
-		                  <value>0</value>
-		              </text>
-		              <text id="x-max">
-		                  <xpath function="$x_max"/>
-		              </text>
-		              <text id="y-min">
-		                  <value>0</value>
-		              </text>
-		              <text id="y-max">
-		                  <xpath function="max(6, $contractions_max)"/>
-		              </text>
-		          </configuration>
-				  <series nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']">
-				      <configuration>
-		        	      <text id="radius-max">
-		            	      <value>3</value>
-						   </text>
-		        	      <text id="line-color">
-		            	      <value>#99000000</value>
-						   </text>
-				      </configuration>
-				      <x function="hours"/>
-				      <y function="contractions_num" />
-				      <radius function="if(contractions_dur&lt; 20, 1, if(contractions_dur &lt; 40, 2, 3))" />
-				  </series>
-			  </graph>
-		  </template>
-	    </field>
-    <field>
-      <header>
-        <text>
-            <value></value>
-        </text>
-      </header>
-      <template form="graph">
-          <graph type="xy">
-          <configuration>
-              <text id="x-labels">
-                  <value>13</value>
-              </text>
-              <text id="y-labels">
-                  <value>6</value>
-              </text>
-              <text id="y-title">
-                  <locale id="m1.case_long.graph4.y_title"/>
-              </text>
-              <text id="x-min">
-                  <value>0</value>
-              </text>
-              <text id="x-max">
-                  <xpath function="$x_max"/>
-              </text>
-              <text id="y-min">
-                  <value>0</value>
-              </text>
-              <text id="y-max">
-                  <value>250</value>
-              </text>
-          </configuration>
-          <series nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']">
-               <x function="hours"/>
-               <y function="systolic"/>
-           </series>
-          <series nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']">
-               <x function="hours"/>
-               <y function="diastolic"/>
-           </series>
-        </graph>
-      </template>
-    </field>
-    <field>
-      <header>
-        <text>
-            <value></value>
-        </text>
-      </header>
-      <template form="graph">
-          <graph type="xy">
-          <configuration>
-              <text id="x-labels">
-                  <value>13</value>
-              </text>
-              <text id="y-labels">
-                  <value>8</value>
-              </text>
-              <text id="secondary-y-labels">
-                  <value>8</value>
-              </text>
-              <text id="x-title">
-                  <locale id="m1.case_long.graph.x_title"/>
-              </text>
-              <text id="y-title">
-                  <locale id="m1.case_long.graph5.y_title"/>
-              </text>
-              <text id="x-min">
-                  <value>0</value>
-              </text>
-              <text id="x-max">
-                  <xpath function="$x_max"/>
-              </text>
-              <text id="secondary-y-min">
-                  <value>0</value>
-              </text>
-              <text id="secondary-y-max">
-                  <value>35</value>
-              </text>
-              <text id="y-min">
-                  <value>0</value>
-              </text>
-              <text id="y-max">
-                  <value>140</value>
-              </text>
-          </configuration>
-          <series nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']">
-               <x function="hours"/>
-               <y function="pulse"/>
-           </series>
-          <series nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']">
-			      <configuration>
-			          <text id="secondary-y">
-			              <xpath function="true()"/>
-			          </text>
-			      </configuration>
-               <x function="hours"/>
-               <y function="resp"/>
-           </series>
-        </graph>
-      </template>
-    </field>
-</detail>
-<detail>
-    <title>
-      <text>
-        <locale id="m1.case_long.tab2"/>
       </text>
     </title>
     <field>
@@ -929,13 +421,18 @@
         </text>
       </template>
     </field>
-</detail>
-<detail>
-    <title>
-      <text>
-        <locale id="m1.case_long.tab3"/>
-      </text>
-    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_patient_notes_16.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="patient_notes"/>
+        </text>
+      </template>
+    </field>
     <field>
       <header>
         <text>
@@ -1137,22 +634,9 @@
       <template>
         <text>
           <xpath function="high_risk_flag_reason"/>
-       </text>
-      </template>
-    </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_patient_notes_16.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="patient_notes"/>
         </text>
       </template>
     </field>
-</detail>
   </detail>
   <detail id="m2_case_short">
     <title>
@@ -1389,7 +873,6 @@
       </display>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-    <instance id="sequence" src="jr://instance/fixture/sequence" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
     </session>
@@ -1410,7 +893,6 @@
       </display>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-    <instance id="sequence" src="jr://instance/fixture/sequence" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
     </session>
@@ -1431,7 +913,6 @@
       </display>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-    <instance id="sequence" src="jr://instance/fixture/sequence" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
     </session>
@@ -1452,7 +933,6 @@
       </display>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-    <instance id="sequence" src="jr://instance/fixture/sequence" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
     </session>
@@ -1473,7 +953,6 @@
       </display>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-    <instance id="sequence" src="jr://instance/fixture/sequence" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
     </session>
@@ -1518,7 +997,6 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-    <instance id="sequence" src="jr://instance/fixture/sequence" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][@status='open']" value="./@case_id" detail-select="m4_case_short" detail-confirm="m4_case_long"/>
     </session>
@@ -1569,11 +1047,4 @@
     </text>
     <command id="m4-f0"/>
   </menu>
-  <fixture id="sequence">
-      <sequence>
-          <index>0</index>
-          <index>1</index>
-          <index>2</index>
-      </sequence>
-  </fixture>
 </suite>
