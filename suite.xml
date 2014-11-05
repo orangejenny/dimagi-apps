@@ -1004,7 +1004,7 @@
       </header>
       <template>
         <text>
-          <xpath function="substr(admission_time,0,10)"/>
+          <xpath function="substr(admission_time,0,8)"/>
         </text>
       </template>
     </field>
@@ -1040,7 +1040,7 @@
       </header>
       <template>
         <text>
-          <xpath function="concat(substr(membrane_date,0,10),&quot; &quot;, substr(membrane_date,0, 8))"/>
+          <xpath function="concat(/data/patient_info_cont/membrane_date,&quot; &quot;,/data/patient_info_cont/membrane_time)"/>
         </text>
       </template>
     </field>

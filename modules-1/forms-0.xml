@@ -3,7 +3,7 @@
 		<h:title>Record Measurements</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/78143AF8-0E4D-4E91-A025-D23B215BD183" uiVersion="1" version="392" name="Record Measurements">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/78143AF8-0E4D-4E91-A025-D23B215BD183" uiVersion="1" version="408" name="Record Measurements">
 					<exam_indicators jr:template="">
 						<exam_measurement_indicator_list>
 							<choose/>

@@ -3,7 +3,7 @@
 		<h:title>Transfer Patient</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/7E74D2A2-3F9D-4CA3-89AA-AC48312D3C16" uiVersion="1" version="210" name="Transfer Patient">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/7E74D2A2-3F9D-4CA3-89AA-AC48312D3C16" uiVersion="1" version="405" name="Transfer Patient">
 					<transfer_patient/>
 					<transfer_reason_list/>
 					<if_other/>
@@ -28,8 +28,59 @@
 					<text id="transfer_patient-label">
 						<value>Are you transfering the patient to:</value>
 					</text>
-					<text id="transfer_patient-clinician-label">
-						<value>Another clinician</value>
+					<text id="transfer_patient-doctor-label">
+						<value>Another doctor</value>
+					</text>
+					<text id="transfer_patient-facilty-label">
+						<value>Another facility </value>
+					</text>
+					<text id="transfer_reason_list-label">
+						<value>Select the reason(s) for transferring this patient:</value>
+					</text>
+					<text id="transfer_reason_list-crossed_alert-label">
+						<value>Cervical dilation has crossed the alert line. Indication of abnormal labour (prolonged/obstructed)</value>
+					</text>
+					<text id="transfer_reason_list-fhr_distress-label">
+						<value>Fetal heart rate is less than 110 beats/min or above 160 beats/min.</value>
+					</text>
+					<text id="transfer_reason_list-af_distress-label">
+						<value>Meconium and/or blood stained amniotic fluid</value>
+					</text>
+					<text id="transfer_reason_list-contraction_distress-label">
+						<value>Contractions not increasing in duration, intensity and frequency (e.g., &lt; 2 contractions lasting for &gt; 20 seconds in 10 minutes)</value>
+					</text>
+					<text id="transfer_reason_list-vitals_distress-label">
+						<value>Maternal vital signs cross normal limits (i.e. pulse &gt; 100, blood pressure &gt; 140/90, temperature &gt; 38C)</value>
+					</text>
+					<text id="transfer_reason_list-other-label">
+						<value>Other</value>
+					</text>
+					<text id="if_other-label">
+						<value>If listed "other" as an option, please explain here:</value>
+					</text>
+					<text id="transfer_actions-label">
+						<value>Necessary transfer actions to do:</value>
+					</text>
+					<text id="transfer_actions/time-label">
+						<value>1. Note the time when cervical dilation plotting crosses the alert line</value>
+					</text>
+					<text id="transfer_actions/transfer_ipc-label">
+						<value>2. Transfer to IPC</value>
+					</text>
+					<text id="transfer_actions/transfer_provision-label">
+						<value>3. Ensure provision for transfer</value>
+					</text>
+					<text id="transfer_actions/partograph-label">
+						<value>4. Second partograph with patient</value>
+					</text>
+				</translation>
+				<translation lang="hin">
+					<text id="transfer_patient-label">
+						<value>Are you transfering the patient to:</value>
+					</text>
+					<text id="transfer_patient-doctor-label">
+						<value>&#2342;&#2370;&#2360;&#2352;&#2366; &#2337;&#2377;&#2325;&#2381;&#2335;&#2352;
+</value>
 					</text>
 					<text id="transfer_patient-facilty-label">
 						<value>Another facility </value>
@@ -81,8 +132,8 @@
 		<select1 ref="/data/transfer_patient">
 			<label ref="jr:itext('transfer_patient-label')"/>
 			<item>
-				<label ref="jr:itext('transfer_patient-clinician-label')"/>
-				<value>clinician</value>
+				<label ref="jr:itext('transfer_patient-doctor-label')"/>
+				<value>doctor</value>
 			</item>
 			<item>
 				<label ref="jr:itext('transfer_patient-facilty-label')"/>
