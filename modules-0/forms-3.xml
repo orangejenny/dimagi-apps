@@ -1,0 +1,59 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:vellum="http://commcarehq.org/xforms/vellum">
+	<h:head>
+		<h:title>Add mood</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/BF874B99-9049-4B1B-BF5D-EDCF0E0240F6" uiVersion="1" version="24" name="Add mood">
+					<mood>
+						<date/>
+						<mood/>
+					</mood>
+				<subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>mood</case_type></create><update><mood/><mood_date/></update><index><parent case_type="person"/></index></case></subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""/><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance id="commcaresession" src="jr://instance/session"/>
+			<bind nodeset="/data/mood"/>
+			<bind nodeset="/data/mood/date" type="xsd:date" required="true()"/>
+			<bind nodeset="/data/mood/mood"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="age-label">
+						<value>Date?</value>
+					</text>
+					<text id="weight-label">
+						<value>How is person feeling?</value>
+					</text>
+					<text id="mood/mood-3-label">
+						<value>happy</value>
+					</text>
+					<text id="mood/mood-2-label">
+						<value>blase</value>
+					</text>
+					<text id="mood/mood-1-label">
+						<value>sad</value>
+					</text>
+				</translation>
+			</itext>
+		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><bind calculate="instance('commcaresession')/session/data/case_id" nodeset="/data/case/@case_id"/><bind calculate="/data/meta/timeEnd" nodeset="/data/subcase_0/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/subcase_0/case/@user_id"/><setvalue event="xforms-ready" ref="/data/subcase_0/case/@case_id" value="uuid()"/><bind calculate="/data/mood/date" nodeset="/data/subcase_0/case/create/case_name"/><bind calculate="/data/meta/userID" nodeset="/data/subcase_0/case/create/owner_id"/><bind calculate="/data/mood/mood" nodeset="/data/subcase_0/case/update/mood" relevant="count(/data/mood/mood) &gt; 0"/><bind calculate="/data/mood/date" nodeset="/data/subcase_0/case/update/mood_date" relevant="count(/data/mood/date) &gt; 0"/><bind calculate="/data/case/@case_id" nodeset="/data/subcase_0/case/index/parent"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<group ref="/data/mood" appearance="field-list">
+			<input ref="/data/mood/date">
+				<label ref="jr:itext('age-label')"/>
+			</input>
+			<select1 ref="/data/mood/mood">
+				<label ref="jr:itext('weight-label')"/>
+				<item>
+					<label ref="jr:itext('mood/mood-3-label')"/>
+					<value>3</value>
+				</item>
+				<item>
+					<label ref="jr:itext('mood/mood-2-label')"/>
+					<value>2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('mood/mood-1-label')"/>
+					<value>1</value>
+				</item>
+			</select1>
+		</group>
+	</h:body>
+</h:html>
