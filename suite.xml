@@ -1035,19 +1035,7 @@
     <field>
       <header>
         <text>
-          <locale id="m1.case_long.case_membrane_date_25.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="concat(/data/patient_info_cont/membrane_date,&quot; &quot;,/data/patient_info_cont/membrane_time)"/>
-        </text>
-      </template>
-    </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m1.case_long.case_pelvic_grip_1_26.header"/>
+          <locale id="m1.case_long.case_pelvic_grip_1_25.header"/>
         </text>
       </header>
       <template>
@@ -1059,7 +1047,7 @@
     <field>
       <header>
         <text>
-          <locale id="m1.case_long.case_pelvic_grip_2_27.header"/>
+          <locale id="m1.case_long.case_pelvic_grip_2_26.header"/>
         </text>
       </header>
       <template>
@@ -1071,7 +1059,7 @@
     <field>
       <header>
         <text>
-          <locale id="m1.case_long.case_fundal_grip_28.header"/>
+          <locale id="m1.case_long.case_fundal_grip_27.header"/>
         </text>
       </header>
       <template>
@@ -1083,7 +1071,7 @@
     <field>
       <header>
         <text>
-          <locale id="m1.case_long.case_fetal_lie_29.header"/>
+          <locale id="m1.case_long.case_fetal_lie_28.header"/>
         </text>
       </header>
       <template>
@@ -1095,7 +1083,7 @@
     <field>
       <header>
         <text>
-          <locale id="m1.case_long.case_fetal_presentation_30.header"/>
+          <locale id="m1.case_long.case_fetal_presentation_29.header"/>
         </text>
       </header>
       <template>
@@ -1107,7 +1095,7 @@
     <field>
       <header>
         <text>
-          <locale id="m1.case_long.case_last_exam_time_31.header"/>
+          <locale id="m1.case_long.case_last_exam_time_30.header"/>
         </text>
       </header>
       <template>
@@ -1119,7 +1107,7 @@
     <field>
       <header>
         <text>
-          <locale id="m1.case_long.case_high_risk_score_32.header"/>
+          <locale id="m1.case_long.case_high_risk_score_31.header"/>
         </text>
       </header>
       <template>
@@ -1131,7 +1119,7 @@
     <field>
       <header>
         <text>
-          <locale id="m1.case_long.case_high_risk_flag_reason_33.header"/>
+          <locale id="m1.case_long.case_high_risk_flag_reason_32.header"/>
         </text>
       </header>
       <template>
