@@ -96,6 +96,41 @@
         </text>
       </template>
     </field>
+    <field>
+        <header>
+            <text>
+                <value/>
+            </text>
+        </header>
+        <template form="graph">
+            <graph type="time">
+                <configuration>
+                    <text id="x-labels">
+                        <value>5</value>
+                    </text>
+                    <text id="y-labels">
+                        <value>5</value>
+                    </text>
+                    <text id="x-title">
+                        <value>Date</value>
+                    </text>
+                    <text id="y-title">
+                        <value>Mood</value>
+                    </text>
+                    <text id="y-min">
+                        <value>0</value>
+                    </text>
+                    <text id="y-max">
+                        <value>4</value>
+                    </text>
+                </configuration>
+                <series nodeset="instance('casedb')/casedb/case[index/parent=current()/@case_id]">
+                    <x function="mood_date"/>
+                    <y function="mood"/>
+                </series>
+            </graph>
+        </template>
+    </field>
   </detail>
   <detail id="m1_case_short">
     <title>
