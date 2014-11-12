@@ -3,7 +3,7 @@
 		<h:title>Register New Patient</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/CD27A16C-D3FC-4DBA-A151-608D1D10A62B" uiVersion="1" version="423" name="Register New Patient">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/CD27A16C-D3FC-4DBA-A151-608D1D10A62B" uiVersion="1" version="447" name="Register New Patient">
 					<patient_info_list>
 						<name/>
 						<mrd/>
@@ -181,23 +181,23 @@
 			<bind nodeset="/data/weight_risk_3" calculate="if((/data/high_risk_list/weight_risk &lt; 45) or (/data/high_risk_list/weight_risk &gt; 90), 3, 0)"/>
 			<bind nodeset="/data/risk_history_2" calculate="if((/data/high_risk_list/prev_outcome = &quot;still_birth&quot;) or (/data/high_risk_list/prev_outcome = &quot;miscarriage&quot;) or (/data/high_risk_list/prev_outcome = &quot;spont_abortion&quot;), 2, 0)"/>
 			<bind nodeset="/data/lbw_risk_1" calculate="if(/data/high_risk_list/risk_lbw = &quot;yes&quot;, 1, 0)"/>
-			<bind nodeset="/data/risk_uterine_surgery_2" calculate="if(selected(/data/high_risk_list/prev_conditions = &quot;uterine_surgery&quot;), 2, 0)"/>
-			<bind nodeset="/data/risk_aph_pph_2" calculate="if(selected(/data/high_risk_list/prev_conditions = &quot;aph_pph&quot;), 2, 0)"/>
-			<bind nodeset="/data/risk_manual_placenta_2" calculate="if(selected(/data/high_risk_list/prev_conditions = &quot;manual_placenta&quot;), 2, 0)"/>
-			<bind nodeset="/data/risk_anaemia_3" calculate="if(selected(/data/high_risk_list/prev_conditions = &quot;anaemia&quot;), 3, 0)"/>
-			<bind nodeset="/data/risk_febrile_ailment_1" calculate="if(selected(/data/high_risk_list/prev_conditions = &quot;febrile_ailment&quot;), 1, 0)"/>
-			<bind nodeset="/data/risk_hyptertension_2" calculate="if(selected(/data/high_risk_list/prev_conditions = &quot;hypertension&quot;), 2, 0)"/>
-			<bind nodeset="/data/risk_medical_condition_2" calculate="if(selected(/data/high_risk_list/prev_conditions = &quot;medical_condition&quot;), 2, 0)"/>
-			<bind nodeset="/data/risk_bleeding_2" calculate="if(selected(/data/high_risk_list/prev_conditions = &quot;bleeding&quot;), 2, 0)"/>
-			<bind nodeset="/data/risk_presentation_2" calculate="if(selected(/data/high_risk_list/prev_conditions = &quot;presentation&quot;), 2, 0)"/>
-			<bind nodeset="/data/risk_maturity_2" calculate="if(selected(/data/high_risk_list/prev_conditions = &quot;maturity&quot;), 2, 0)"/>
-			<bind nodeset="/data/risk_prom_2" calculate="if(selected(/data/high_risk_list/prev_conditions = &quot;prom&quot;), 2, 0)"/>
-			<bind nodeset="/data/risk_fetal_distress_2" calculate="if(selected(/data/high_risk_list/prev_conditions = &quot;fetal_distress&quot;), 2, 0)"/>
-			<bind nodeset="/data/risk_prolonged_labour_2" calculate="if(selected(/data/high_risk_list/prev_conditions = &quot;prolonged_labour&quot;), 2, 0)"/>
-			<bind nodeset="/data/risk_uterine_size_2" calculate="if(selected(/data/high_risk_list/prev_conditions = &quot;uterine_size&quot;), 2, 0)"/>
-			<bind nodeset="/data/risk_dai_2" calculate="if(selected(/data/high_risk_list/prev_conditions = &quot;dai&quot;), 2, 0)"/>
-			<bind nodeset="/data/risk_pre_eclampsia_2" calculate="if(selected(/data/high_risk_list/prev_conditions = &quot;pre_eclampsia&quot;), 2, 0)"/>
-			<bind nodeset="/data/risk_eclampsia_2" calculate="if(selected(/data/high_risk_list/prev_conditions = &quot;eclampsia&quot;), 2, 0)"/>
+			<bind nodeset="/data/risk_uterine_surgery_2" calculate="if(selected(/data/high_risk_list/prev_conditions, &quot;uterine_surgery&quot;), 2, 0)"/>
+			<bind nodeset="/data/risk_aph_pph_2" calculate="if(selected(/data/high_risk_list/prev_conditions, &quot;aph_pph&quot;), 2, 0)"/>
+			<bind nodeset="/data/risk_manual_placenta_2" calculate="if(selected(/data/high_risk_list/prev_conditions, &quot;manual_placenta&quot;), 2, 0)"/>
+			<bind nodeset="/data/risk_anaemia_3" calculate="if(selected(/data/high_risk_list/prev_conditions, &quot;anaemia&quot;), 3, 0)"/>
+			<bind nodeset="/data/risk_febrile_ailment_1" calculate="if(selected(/data/high_risk_list/prev_conditions, &quot;febrile_ailment&quot;), 1, 0)"/>
+			<bind nodeset="/data/risk_hyptertension_2" calculate="if(selected(/data/high_risk_list/prev_conditions, &quot;hypertension&quot;), 2, 0)"/>
+			<bind nodeset="/data/risk_medical_condition_2" calculate="if(selected(/data/high_risk_list/prev_conditions, &quot;medical_condition&quot;), 2, 0)"/>
+			<bind nodeset="/data/risk_bleeding_2" calculate="if(selected(/data/high_risk_list/prev_conditions, &quot;bleeding&quot;), 2, 0)"/>
+			<bind nodeset="/data/risk_presentation_2" calculate="if(selected(/data/high_risk_list/prev_conditions, &quot;presentation&quot;), 2, 0)"/>
+			<bind nodeset="/data/risk_maturity_2" calculate="if(selected(/data/high_risk_list/prev_conditions, &quot;maturity&quot;), 2, 0)"/>
+			<bind nodeset="/data/risk_prom_2" calculate="if(selected(/data/high_risk_list/prev_conditions, &quot;prom&quot;), 2, 0)"/>
+			<bind nodeset="/data/risk_fetal_distress_2" calculate="if(selected(/data/high_risk_list/prev_conditions, &quot;fetal_distress&quot;), 2, 0)"/>
+			<bind nodeset="/data/risk_prolonged_labour_2" calculate="if(selected(/data/high_risk_list/prev_conditions, &quot;prolonged_labour&quot;), 2, 0)"/>
+			<bind nodeset="/data/risk_uterine_size_2" calculate="if(selected(/data/high_risk_list/prev_conditions, &quot;uterine_size&quot;), 2, 0)"/>
+			<bind nodeset="/data/risk_dai_2" calculate="if(selected(/data/high_risk_list/prev_conditions, &quot;dai&quot;), 2, 0)"/>
+			<bind nodeset="/data/risk_pre_eclampsia_2" calculate="if(selected(/data/high_risk_list/prev_conditions, &quot;pre_eclampsia&quot;), 2, 0)"/>
+			<bind nodeset="/data/risk_eclampsia_2" calculate="if(selected(/data/high_risk_list/prev_conditions, &quot;eclampsia&quot;), 2, 0)"/>
 			<bind nodeset="/data/high_risk_score" calculate="/data/age_risk_1+/data/para_risk_1+/data/height_risk_1+/data/weight_risk_3+/data/risk_history_2+/data/lbw_risk_1+/data/risk_uterine_surgery_2+/data/risk_aph_pph_2+/data/risk_manual_placenta_2+/data/risk_anaemia_3+/data/risk_febrile_ailment_1+/data/risk_hyptertension_2+/data/risk_medical_condition_2+/data/risk_bleeding_2+/data/risk_presentation_2+/data/risk_maturity_2+/data/risk_prom_2+/data/risk_fetal_distress_2+/data/risk_prolonged_labour_2+/data/risk_uterine_size_2+/data/risk_dai_2+/data/risk_pre_eclampsia_2+/data/risk_eclampsia_2"/>
 			<bind nodeset="/data/es_none" calculate="if(/data/emergency_signs/emergency_signs_list = &quot;none&quot;, 'yes', 'no')"/>
 			<bind nodeset="/data/es_others" calculate="if(/data/emergency_signs/emergency_signs_list = &quot;difficulty_breathing&quot; or /data/emergency_signs/emergency_signs_list = &quot;shock&quot; or /data/emergency_signs/emergency_signs_list = &quot;vaginal_bleeding&quot; or /data/emergency_signs/emergency_signs_list = &quot;convulsions_unconsciousness&quot; or /data/emergency_signs/emergency_signs_list = &quot;prolapsed_cord&quot; or /data/emergency_signs/emergency_signs_list = &quot;fetal_distress&quot;, 'yes', 'no')"/>
@@ -210,7 +210,7 @@
 			<itext>
 				<translation lang="en" default="">
 					<text id="patient_info_list/name-label">
-						<value>Na:</value>
+						<value>Name:</value>
 					</text>
 					<text id="patient_info_list/mrd-label">
 						<value>MRD:</value>
