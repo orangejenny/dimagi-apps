@@ -97,16 +97,24 @@
       </template>
     </field>
     <field>
-        <header>
-            <text>
-                <value/>
-            </text>
-        </header>
+        <header><text><value/></text></header>
         <template form="graph">
             <graph type="time">
                 <configuration>
+                    <text id="x-labels-time-format">
+                        <value>MM-dd-yyyy</value>
+                    </text>
                     <text id="x-labels">
-                        <value>5</value>
+                        <value>
+                            {
+                            	"2014-01-01": "Jan",
+                            	"2014-03-01": "Mar",
+                            	"2014-05-01": "May",
+                            	"2014-07-01": "Jul",
+                            	"2014-09-01": "Sep",
+                            	"2014-11-01": "Nov"
+                            }
+                        </value>
                     </text>
                     <text id="y-labels">
                         <value>5</value>
@@ -116,6 +124,12 @@
                     </text>
                     <text id="y-title">
                         <value>Mood</value>
+                    </text>
+                    <text id="x-min">
+                        <value>2014-01-01</value>
+                    </text>
+                    <text id="x-max">
+                        <value>2014-12-31</value>
                     </text>
                     <text id="y-min">
                         <value>0</value>
@@ -128,6 +142,11 @@
                     <x function="mood_date"/>
                     <y function="mood"/>
                 </series>
+                <annotation>
+                    <x><text><value>2014-05-19</value></text></x>
+                    <y><text><value>2</value></text></y>
+                    <text><value>birthday!</value></text>
+                </annotation>
             </graph>
         </template>
     </field>
