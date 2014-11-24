@@ -102,12 +102,15 @@
 						<value>no help</value>
 					</text>
 					<text id="audio-only">
+					   <value/>
 						<value form="audio">jr://file/commcare/audio/data/something.mp3</value>
 					</text>
 					<text id="image-only">
+					   <value/>
 						<value form="image">jr://file/commcare/image/data/something.png</value>
 					</text>
 					<text id="video-only">
+					   <value/>
 						<value form="video">jr://file/commcare/video/data/something.3gp</value>
 					</text>
 					<text id="all-four">
