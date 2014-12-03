@@ -3,12 +3,11 @@
 		<h:title>Record Measurements</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/78143AF8-0E4D-4E91-A025-D23B215BD183" uiVersion="1" version="523" name="Record Measurements">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/78143AF8-0E4D-4E91-A025-D23B215BD183" uiVersion="1" version="527" name="Record Measurements">
 					<exam_indicators jr:template="">
 						<exam_measurement_indicator_list>
 							<choose/>
 							<indicator_list/>
-							<another_indicator/>
 						</exam_measurement_indicator_list>
 						<cervical_dilation>
 							<last_dilation/>
@@ -220,13 +219,12 @@
 			</instance><instance id="commcaresession" src="jr://instance/session"/><instance id="casedb" src="jr://instance/casedb"/>
 			<bind nodeset="/data/exam_indicators"/>
 			<bind nodeset="/data/exam_indicators/exam_measurement_indicator_list"/>
-			<bind nodeset="/data/exam_indicators/exam_measurement_indicator_list/choose" relevant="/data/exam_indicators/exam_measurement_indicator_list/another_indicator = 'yes'"/>
-			<bind nodeset="/data/exam_indicators/exam_measurement_indicator_list/indicator_list" relevant="/data/exam_indicators/exam_measurement_indicator_list/another_indicator = 'yes'"/>
-			<bind nodeset="/data/exam_indicators/exam_measurement_indicator_list/another_indicator"/>
+			<bind nodeset="/data/exam_indicators/exam_measurement_indicator_list/choose"/>
+			<bind nodeset="/data/exam_indicators/exam_measurement_indicator_list/indicator_list"/>
 			<bind nodeset="/data/exam_indicators/cervical_dilation" relevant="selected(/data/exam_indicators/exam_measurement_indicator_list/indicator_list, 'dilation')"/>
 			<bind nodeset="/data/exam_indicators/cervical_dilation/last_dilation" relevant="/data/dilation_in != ''"/>
 			<bind nodeset="/data/exam_indicators/cervical_dilation/dilation" type="xsd:int" constraint=". &lt;= 10" required="true()"/>
-			<bind nodeset="/data/exam_indicators/cervical_dilation/latent_phase" relevant="/data/exam_indicators/cervical_dilation/dilation &lt; 4"/>
+			<bind nodeset="/data/exam_indicators/cervical_dilation/latent_phase" relevant="/data/exam_indicators/cervical_dilation &lt; 4"/>
 			<bind nodeset="/data/exam_indicators/station_of_the_head" relevant="selected(/data/exam_indicators/exam_measurement_indicator_list/indicator_list, 'station')"/>
 			<bind nodeset="/data/exam_indicators/station_of_the_head/last_station" relevant="/data/station_in != ''"/>
 			<bind nodeset="/data/exam_indicators/station_of_the_head/station" required="true()"/>
@@ -446,9 +444,6 @@
 					</text>
 					<text id="exam_indicators/medications-drugs_iv-label">
 						<value>Drugs and other IV fluids</value>
-					</text>
-					<text id="exam_indicators/exam_measurement_indicator_list/another_indicator-label">
-						<value>Would you like to record another measurement?</value>
 					</text>
 					<text id="cervical_dilation-label">
 						<value>Cervical dilation</value>
@@ -821,9 +816,6 @@ repeat group count:<output value="/data/dilation_count_test"/></value>
 					</text>
 					<text id="exam_indicators/medications-drugs_iv-label">
 						<value>&#2342;&#2357;&#2366;&#2312;&#2351;&#2366;&#2305; &#2351;&#2366; &#2310;&#2311;&#2319;&#2357;&#2368; &#2347;&#2381;&#2354;&#2370;&#2311;&#2337;</value>
-					</text>
-					<text id="exam_indicators/exam_measurement_indicator_list/another_indicator-label">
-						<value>Would you like to record another measurement?</value>
 					</text>
 					<text id="cervical_dilation-label">
 						<value>&#2327;&#2381;&#2352;&#2368;&#2357;&#2366; &#2347;&#2376;&#2354;&#2366;&#2357;</value>
@@ -1230,17 +1222,6 @@ repeat group count:<output value="/data/dilation_count_test"/></value>
 							<value>drugs_iv</value>
 						</item>
 					</select>
-					<select1 ref="/data/exam_indicators/exam_measurement_indicator_list/another_indicator">
-						<label ref="jr:itext('exam_indicators/exam_measurement_indicator_list/another_indicator-label')"/>
-						<item>
-							<label ref="jr:itext('exam_indicators/drugs_iv/drugs_iv_given-yes-label')"/>
-							<value>yes</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/drugs_iv/drugs_iv_given-no-label')"/>
-							<value>no</value>
-						</item>
-					</select1>
 				</group>
 				<group ref="/data/exam_indicators/cervical_dilation" appearance="field-list">
 					<label ref="jr:itext('cervical_dilation-label')"/>
