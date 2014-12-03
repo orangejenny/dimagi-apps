@@ -3,7 +3,7 @@
 		<h:title>Record Delivery</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/75514312-FF32-43BF-A863-F14ED4370546" uiVersion="1" version="493" name="Record Delivery">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/75514312-FF32-43BF-A863-F14ED4370546" uiVersion="1" version="520" name="Record Delivery">
 					<delivery_questions>
 						<delivery_type/>
 						<maternal_outcome/>
@@ -12,6 +12,7 @@
 						<placenta/>
 						<bleeding/>
 					</delivery_questions>
+					<patient_status/>
 					<baby_questions>
 						<birth/>
 						<cried/>
@@ -19,7 +20,6 @@
 						<apgar_score/>
 						<weight/>
 						<paediatrician_name/>
-						<patient_status/>
 					</baby_questions>
 				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><update><patient_status/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
 			</instance><instance id="commcaresession" src="jr://instance/session"/>
@@ -30,6 +30,7 @@
 			<bind nodeset="/data/delivery_questions/synto" required="true()"/>
 			<bind nodeset="/data/delivery_questions/placenta" required="true()"/>
 			<bind nodeset="/data/delivery_questions/bleeding" required="true()"/>
+			<bind nodeset="/data/patient_status" calculate="'delivered'"/>
 			<bind nodeset="/data/baby_questions"/>
 			<bind nodeset="/data/baby_questions/birth" type="xsd:dateTime"/>
 			<bind nodeset="/data/baby_questions/cried" required="true()"/>
@@ -37,7 +38,6 @@
 			<bind nodeset="/data/baby_questions/apgar_score" type="xsd:int"/>
 			<bind nodeset="/data/baby_questions/weight" type="xsd:double"/>
 			<bind nodeset="/data/baby_questions/paediatrician_name"/>
-			<bind nodeset="/data/baby_questions/patient_status" calculate="if(selected(/data/delivery_questions/delivery_type, &quot;normal_vd&quot;) or selected(/data/delivery_questions/delivery_type, &quot;vd_epi&quot;) or selected(/data/delivery_questions/delivery_type,&quot;vd_malpresentation&quot;) or selected(/data/delivery_questions/delivery_type, &quot;assisted&quot;) or selected(/data/delivery_questions/delivery_type, &quot;cesarean&quot;), delivered, '')"/>
 			<itext>
 				<translation lang="en" default="">
 					<text id="delivery_type-label">
@@ -193,7 +193,7 @@
 					</text>
 				</translation>
 			</itext>
-		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><bind calculate="instance('commcaresession')/session/data/case_id" nodeset="/data/case/@case_id"/><bind calculate="/data/baby_questions/patient_status" nodeset="/data/case/update/patient_status" relevant="count(/data/baby_questions/patient_status) &gt; 0"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
+		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><bind calculate="instance('commcaresession')/session/data/case_id" nodeset="/data/case/@case_id"/><bind calculate="/data/patient_status" nodeset="/data/case/update/patient_status" relevant="count(/data/patient_status) &gt; 0"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
 	</h:head>
 	<h:body>
 		<group ref="/data/delivery_questions" appearance="field-list">
