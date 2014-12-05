@@ -1145,7 +1145,7 @@
   <detail id="m2_case_short">
     <title>
       <text>
-        <locale id="m2.case_short.title"/>
+        <locale id="m1.case_short.title"/>
       </text>
     </title>
     <variables>
@@ -1163,7 +1163,7 @@
        </style>
       <header>
         <text>
-          <locale id="m2.case_short.case_name_1.header"/>
+          <locale id="m1.case_short.case_name_1.header"/>
         </text>
       </header>
       <template>
@@ -1193,7 +1193,7 @@
        </style>
       <header>
         <text>
-          <locale id="m2.case_short.case_minutes_until_next_exam_2.header"/>
+          <locale id="m1.case_short.case_minutes_until_next_exam_2.header"/>
         </text>
       </header>
       <template>
@@ -1233,7 +1233,7 @@
        </style>
       <header>
         <text>
-          <locale id="m2.case_short.case_age_4.header"/>
+          <locale id="m1.case_short.case_age_4.header"/>
         </text>
       </header>
       <template>
@@ -1248,7 +1248,7 @@
        </style>
       <header>
         <text>
-          <locale id="m2.case_short.case_high_risk_3.header"/>
+          <locale id="m1.case_short.case_high_risk_3.header"/>
         </text>
       </header>
       <template form="image">
