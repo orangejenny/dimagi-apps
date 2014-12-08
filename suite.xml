@@ -393,6 +393,18 @@
           </text>
         </background>
     </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_short.case_minutes_until_next_pv_10.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="minutes_until_next_pv"/>
+        </text>
+      </template>
+    </field>
   </detail>
   <detail id="m1_case_long">
     <title>
@@ -1165,6 +1177,30 @@
         </text>
       </sort>
     </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_short.case_patient_status_2.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="patient_status"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_short.case_date-opened_3.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="date_opened"/>
+        </text>
+      </template>
+    </field>
   </detail>
   <detail id="m2_case_long">
     <title>
@@ -1181,6 +1217,54 @@
       <template>
         <text>
           <xpath function="case_name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_long.case_age_2.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="age"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_long.case_admission_date_3.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(admission_date = '', '', format_date(date(if(admission_date = '', 0, admission_date)),'short'))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_long.case_admission_time_4.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="admission_time"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_long.case_patient_status_5.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="patient_status"/>
         </text>
       </template>
     </field>
@@ -1379,7 +1463,7 @@
     <instance id="casedb" src="jr://instance/casedb"/>
     <instance id="sequence" src="jr://instance/fixture/sequence" />
     <session>
-      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open'][patient_status='active']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
     </session>
     <stack>
       <create>
@@ -1400,7 +1484,7 @@
     <instance id="casedb" src="jr://instance/casedb"/>
     <instance id="sequence" src="jr://instance/fixture/sequence" />
     <session>
-      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open'][patient_status='active']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
     </session>
     <stack>
       <create>
@@ -1421,7 +1505,7 @@
     <instance id="casedb" src="jr://instance/casedb"/>
     <instance id="sequence" src="jr://instance/fixture/sequence" />
     <session>
-      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open'][patient_status='active']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
     </session>
     <stack>
       <create>
@@ -1442,7 +1526,7 @@
     <instance id="casedb" src="jr://instance/casedb"/>
     <instance id="sequence" src="jr://instance/fixture/sequence" />
     <session>
-      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open'][patient_status='active']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
     </session>
     <stack>
       <create>
@@ -1463,7 +1547,7 @@
     <instance id="casedb" src="jr://instance/casedb"/>
     <instance id="sequence" src="jr://instance/fixture/sequence" />
     <session>
-      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open'][patient_status='active']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
     </session>
     <stack>
       <create>
@@ -1481,6 +1565,10 @@
         <media image="jr://file/commcare/image/deliveries.png"/>
       </display>
     </command>
+     <instance id="casedb" src="jr://instance/casedb"/>
+     <session>
+       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='Repository'][@status='open'][patient_status='delivered' or patient_status='transfered']" value="./@case_id" detail-select="m2_case_short" detail-confirm="m2_case_long"/>
+     </session>
     <stack>
       <create>
         <command>m2</command>
