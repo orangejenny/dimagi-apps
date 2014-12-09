@@ -1,13 +1,25 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<suite version="332" descriptor="Suite File">
+<suite version="558" descriptor="Suite File">
   <xform>
-    <resource id="cbe775c6aa81e7f82b48fc4405cc971b02d93287" version="330" descriptor="Form: (Module Registration) - Register New Patient">
+    <resource id="cbe775c6aa81e7f82b48fc4405cc971b02d93287" version="558" descriptor="Form: (Module Registration) - Register New Patient">
       <location authority="local">./modules-0/forms-0.xml</location>
       <location authority="remote">./modules-0/forms-0.xml</location>
     </resource>
   </xform>
   <xform>
-    <resource id="89dfc3483af5f64501e53495a094d760b3f40a49" version="332" descriptor="Form: (Module Active Patients) - Record Measurements">
+    <resource id="3440d06d7d022f5c3ea3058f4a93be7d6f89e867" version="558" descriptor="Form: (Module Registration) - Hospital Registration">
+      <location authority="local">./modules-0/forms-1.xml</location>
+      <location authority="remote">./modules-0/forms-1.xml</location>
+    </resource>
+  </xform>
+  <xform>
+    <resource id="fac31d88db4ec481c982dbbdcd367d1f26b48d98" version="558" descriptor="Form: (Module Registration) - Labour Registration">
+      <location authority="local">./modules-0/forms-2.xml</location>
+      <location authority="remote">./modules-0/forms-2.xml</location>
+    </resource>
+  </xform>
+  <xform>
+    <resource id="89dfc3483af5f64501e53495a094d760b3f40a49" version="558" descriptor="Form: (Module Active Patients) - Record Measurements">
       <location authority="local">./modules-1/forms-0.xml</location>
       <location authority="remote">./modules-1/forms-0.xml</location>
     </resource>
@@ -40,6 +52,12 @@
     <resource id="9e368c2d88c21cb5e45dec3049df7e6e730cd022" version="141" descriptor="Form: (Module View Past Patients) - Deliveries">
       <location authority="local">./modules-2/forms-0.xml</location>
       <location authority="remote">./modules-2/forms-0.xml</location>
+    </resource>
+  </xform>
+  <xform>
+    <resource id="b4b4892b066f22b3a66989da64d975256198a9e7" version="558" descriptor="Form: (Module View Past Patients) - Transfers">
+      <location authority="local">./modules-2/forms-1.xml</location>
+      <location authority="remote">./modules-2/forms-1.xml</location>
     </resource>
   </xform>
   <xform>
@@ -415,7 +433,7 @@
 <detail>
     <title>
       <text>
-        <locale id="m1.case_long.tab1"/>
+        <locale id="m1.case_long.tab.1.title"/>
       </text>
     </title>
     <variables>
@@ -758,7 +776,7 @@
 <detail>
     <title>
       <text>
-        <locale id="m1.case_long.tab2"/>
+          <locale id="m1.case_long.tab.2.title"/>
       </text>
     </title>
     <field>
@@ -945,7 +963,7 @@
 <detail>
     <title>
       <text>
-        <locale id="m1.case_long.tab3"/>
+          <locale id="m1.case_long.tab.3.title"/>
       </text>
     </title>
     <field>
@@ -1451,6 +1469,26 @@
     </command>
   </entry>
   <entry>
+    <form>http://openrosa.org/formdesigner/3440d06d7d022f5c3ea3058f4a93be7d6f89e867</form>
+    <command id="m0-f1">
+      <text>
+        <locale id="forms.m0f1"/>
+      </text>
+    </command>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/fac31d88db4ec481c982dbbdcd367d1f26b48d98</form>
+    <command id="m0-f2">
+      <text>
+        <locale id="forms.m0f2"/>
+      </text>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m0_case_short" detail-confirm="m0_case_long"/>
+    </session>
+  </entry>
+  <entry>
     <form>http://openrosa.org/formdesigner/78143AF8-0E4D-4E91-A025-D23B215BD183</form>
     <command id="m1-f0">
       <display>
@@ -1576,6 +1614,14 @@
     </stack>
   </entry>
   <entry>
+    <form>http://openrosa.org/formdesigner/4A0375E8-6156-4F4C-A7BD-522231C71317</form>
+    <command id="m2-f1">
+      <text>
+        <locale id="forms.m2f1"/>
+      </text>
+    </command>
+  </entry>
+  <entry>
     <form>http://openrosa.org/formdesigner/29942017-0B43-4EF2-95E4-6BC37654BA83</form>
     <command id="m3-f0">
       <display>
@@ -1607,6 +1653,8 @@
       <media image="jr://file/commcare/image/registration.png"/>
     </display>
     <command id="m0-f0"/>
+    <command id="m0-f1"/>
+    <command id="m0-f2"/>
   </menu>
   <menu id="m1">
     <display>
@@ -1629,6 +1677,7 @@
       <media image="jr://file/commcare/image/view_past_patients.png"/>
     </display>
     <command id="m2-f0"/>
+    <command id="m2-f1"/>
   </menu>
   <menu id="m3">
     <display>

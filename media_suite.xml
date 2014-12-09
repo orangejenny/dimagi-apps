@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<suite version="527" descriptor="Media Suite File">
+<suite version="558" descriptor="Media Suite File">
   <media path="../../commcare/image">
     <resource descriptor="Image File: educational_extras.png" id="media-7e83e0845cb8fd20fc1972af63e6f84f-educational_extras.png" version="176">
       <location authority="local">./commcare/image/educational_extras.png</location>
@@ -48,16 +48,16 @@
       <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/ab0e76115a4f3f9bd33092bd84976f4f/deliveries.png</location>
     </resource>
   </media>
-  <media path="../../commcare/image/data/exam_indicators/moulding">
-    <resource descriptor="Image File: moulding.png" id="media-40c7809231a85b4ae796f5fc8b321951-moulding.png" version="203">
-      <location authority="local">./commcare/image/data/exam_indicators/moulding/moulding.png</location>
-      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/74dda1e466a604d5849c6f11a6cd0804/moulding.png</location>
-    </resource>
-  </media>
   <media path="../../commcare/image/data/es_alert">
     <resource descriptor="Image File: contine_label.png" id="media-815d0e6840d480ded813f249c5f1bf89-contine_label.png" version="319">
       <location authority="local">./commcare/image/data/es_alert/contine_label.png</location>
       <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/8c2cc336275d8008e0a5be47bdf578af/contine_label.png</location>
+    </resource>
+  </media>
+  <media path="../../commcare/image/data/icons">
+    <resource descriptor="Image File: clock.png" id="media-187c0869b3dff2a9f481856b0db4a7ec-clock.png" version="405">
+      <location authority="local">./commcare/image/data/icons/clock.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/552589842ff58822ea1bea8791142bbf/clock.png</location>
     </resource>
   </media>
   <media path="../../commcare/image/data/grips">
@@ -78,10 +78,10 @@
       <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/e83d58938a7d7e1152af95c50c5d6cc8/labour_videos.png</location>
     </resource>
   </media>
-  <media path="../../commcare/image">
-    <resource descriptor="Image File: notes_flags.png" id="media-0bbdd3971c8cbeb0e4e2a7ac69e38e56-notes_flags.png" version="87">
-      <location authority="local">./commcare/image/notes_flags.png</location>
-      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/efd12369a3ddcf451af964855c79e6f1/notes_flags.png</location>
+  <media path="../../commcare/image/data/es_alert">
+    <resource descriptor="Image File: alert.png" id="media-5354fc94ae744a26d24d90c4d4fda203-alert.png" version="405">
+      <location authority="local">./commcare/image/data/es_alert/alert.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/613c29cbd31987fd3030c381a7b5e03c/alert.png</location>
     </resource>
   </media>
   <media path="../../commcare/image">
@@ -102,10 +102,10 @@
       <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/8c2cc336275d8008e0a5be47bdf578af/active_patients.png</location>
     </resource>
   </media>
-  <media path="../../commcare/image/data/icons">
-    <resource descriptor="Image File: clock.png" id="media-187c0869b3dff2a9f481856b0db4a7ec-clock.png" version="405">
-      <location authority="local">./commcare/image/data/icons/clock.png</location>
-      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/552589842ff58822ea1bea8791142bbf/clock.png</location>
+  <media path="../../commcare/image/data/exam_indicators/moulding">
+    <resource descriptor="Image File: moulding.png" id="media-40c7809231a85b4ae796f5fc8b321951-moulding.png" version="203">
+      <location authority="local">./commcare/image/data/exam_indicators/moulding/moulding.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/74dda1e466a604d5849c6f11a6cd0804/moulding.png</location>
     </resource>
   </media>
   <media path="../../commcare/image/data/icons">
@@ -114,10 +114,10 @@
       <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/192588687ac51ab07a3c82fb7daa1c49/flag.png</location>
     </resource>
   </media>
-  <media path="../../commcare/image/data/es_alert">
-    <resource descriptor="Image File: alert.png" id="media-5354fc94ae744a26d24d90c4d4fda203-alert.png" version="405">
-      <location authority="local">./commcare/image/data/es_alert/alert.png</location>
-      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/613c29cbd31987fd3030c381a7b5e03c/alert.png</location>
+  <media path="../../commcare/image">
+    <resource descriptor="Image File: notes_flags.png" id="media-0bbdd3971c8cbeb0e4e2a7ac69e38e56-notes_flags.png" version="87">
+      <location authority="local">./commcare/image/notes_flags.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/efd12369a3ddcf451af964855c79e6f1/notes_flags.png</location>
     </resource>
   </media>
 </suite>
