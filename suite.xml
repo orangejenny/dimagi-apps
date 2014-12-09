@@ -437,11 +437,7 @@
       </text>
     </title>
     <variables>
-      <max_hours function="max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/hours)"/>
-      <x_max function="if($max_hours > 12, $max_hours, 12)"/>
-      <contractions_max function="max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/contractions_num)"/>
-      <fhs_min function="min(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/fhs)"/>
-      <fhs_max function="max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/fhs)"/>
+      <x_max function="if(max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/hours) > 12, max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/hours), 12)"/>
       <first_dilation function="coalesce(first_dilation, 4)"/>
     </variables>
     <field>
@@ -469,10 +465,10 @@
                   <xpath function="$x_max"/>
               </text>
               <text id="y-min">
-                  <xpath function="min(80, $fhs_min)"/>
+                  <xpath function="min(80, min(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/fhs))"/>
               </text>
               <text id="y-max">
-                  <xpath function="max(200, $fhs_max)"/>
+                  <xpath function="max(200, max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/fhs))"/>
               </text>
           </configuration>
           <series nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']">
@@ -652,7 +648,7 @@
 		                  <value>0</value>
 		              </text>
 		              <text id="y-max">
-		                  <xpath function="max(6, $contractions_max)"/>
+		                  <xpath function="max(6, max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/contractions_num))"/>
 		              </text>
 		          </configuration>
 				  <series nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']">
