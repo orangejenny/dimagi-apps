@@ -3,7 +3,7 @@
 		<h:title>Transfer Patient</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/7E74D2A2-3F9D-4CA3-89AA-AC48312D3C16" uiVersion="1" version="493" name="Transfer Patient">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/7E74D2A2-3F9D-4CA3-89AA-AC48312D3C16" uiVersion="1" version="626" name="Transfer Patient">
 					<transfer_patient/>
 					<transfer_reason_list/>
 					<if_other/>
