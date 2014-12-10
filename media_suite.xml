@@ -1,5 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<suite version="631" descriptor="Media Suite File">
+<suite version="633" descriptor="Media Suite File">
+  <media path="../../commcare/image">
+    <resource descriptor="Image File: exam.png" id="media-38d507278d2a0cf4bff7bc729c016fc2-exam.png" version="87">
+      <location authority="local">./commcare/image/exam.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/9181dba51bcb554d209bd4e86598cf82/exam.png</location>
+    </resource>
+  </media>
   <media path="../../commcare/image">
     <resource descriptor="Image File: educational_extras.png" id="media-7e83e0845cb8fd20fc1972af63e6f84f-educational_extras.png" version="176">
       <location authority="local">./commcare/image/educational_extras.png</location>
@@ -48,16 +54,16 @@
       <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/ab0e76115a4f3f9bd33092bd84976f4f/deliveries.png</location>
     </resource>
   </media>
-  <media path="../../commcare/image/data/grips">
-    <resource descriptor="Image File: fetal_presentation.png" id="media-26994f4e0706b7c1d387c79e06d3658d-fetal_presentation.png" version="631">
-      <location authority="local">./commcare/image/data/grips/fetal_presentation.png</location>
-      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/0f72a2b4d8ff758a5c4877499c054fa9/fetal_presentation.png</location>
-    </resource>
-  </media>
   <media path="../../commcare/image/data/es_alert">
     <resource descriptor="Image File: contine_label.png" id="media-815d0e6840d480ded813f249c5f1bf89-contine_label.png" version="319">
       <location authority="local">./commcare/image/data/es_alert/contine_label.png</location>
       <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/8c2cc336275d8008e0a5be47bdf578af/contine_label.png</location>
+    </resource>
+  </media>
+  <media path="../../commcare/image/data/icons">
+    <resource descriptor="Image File: clock.png" id="media-187c0869b3dff2a9f481856b0db4a7ec-clock.png" version="405">
+      <location authority="local">./commcare/image/data/icons/clock.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/552589842ff58822ea1bea8791142bbf/clock.png</location>
     </resource>
   </media>
   <media path="../../commcare/image/data/exam_indicators/moulding">
@@ -85,21 +91,15 @@
     </resource>
   </media>
   <media path="../../commcare/image">
-    <resource descriptor="Image File: active_patients.png" id="media-9a5442c689eff7cf8f1f84c0c8bc3a88-active_patients.png" version="87">
-      <location authority="local">./commcare/image/active_patients.png</location>
-      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/8c2cc336275d8008e0a5be47bdf578af/active_patients.png</location>
-    </resource>
-  </media>
-  <media path="../../commcare/image">
     <resource descriptor="Image File: register_new_patient.png" id="media-2d93c2be55669de6e30952febb14e801-register_new_patient.png" version="319">
       <location authority="local">./commcare/image/register_new_patient.png</location>
       <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/6b7ae6bd80f29d9268f8f85a0842be0f/register_new_patient.png</location>
     </resource>
   </media>
-  <media path="../../commcare/image">
-    <resource descriptor="Image File: exam.png" id="media-38d507278d2a0cf4bff7bc729c016fc2-exam.png" version="87">
-      <location authority="local">./commcare/image/exam.png</location>
-      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/9181dba51bcb554d209bd4e86598cf82/exam.png</location>
+  <media path="../../commcare/image/data/grips">
+    <resource descriptor="Image File: fetal_presentation.png" id="media-26994f4e0706b7c1d387c79e06d3658d-fetal_presentation.png" version="631">
+      <location authority="local">./commcare/image/data/grips/fetal_presentation.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/0f72a2b4d8ff758a5c4877499c054fa9/fetal_presentation.png</location>
     </resource>
   </media>
   <media path="../../commcare/image">
@@ -108,10 +108,10 @@
       <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/e83d58938a7d7e1152af95c50c5d6cc8/labour_videos.png</location>
     </resource>
   </media>
-  <media path="../../commcare/image/data/icons">
-    <resource descriptor="Image File: clock.png" id="media-187c0869b3dff2a9f481856b0db4a7ec-clock.png" version="405">
-      <location authority="local">./commcare/image/data/icons/clock.png</location>
-      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/552589842ff58822ea1bea8791142bbf/clock.png</location>
+  <media path="../../commcare/image">
+    <resource descriptor="Image File: active_patients.png" id="media-9a5442c689eff7cf8f1f84c0c8bc3a88-active_patients.png" version="87">
+      <location authority="local">./commcare/image/active_patients.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/8c2cc336275d8008e0a5be47bdf578af/active_patients.png</location>
     </resource>
   </media>
   <media path="../../commcare/image/data/icons">

@@ -3,7 +3,7 @@
 		<h:title>Record Delivery</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/75514312-FF32-43BF-A863-F14ED4370546" uiVersion="1" version="626" name="Record Delivery">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/75514312-FF32-43BF-A863-F14ED4370546" uiVersion="1" version="633" name="Record Delivery">
 					<delivery_questions>
 						<delivery_type/>
 						<maternal_outcome/>
@@ -220,7 +220,7 @@
 					<value>cesarean</value>
 				</item>
 			</select1>
-			<select ref="/data/delivery_questions/maternal_outcome">
+			<select1 ref="/data/delivery_questions/maternal_outcome">
 				<label ref="jr:itext('delivery_questions/maternal_outcome-label')"/>
 				<item>
 					<label ref="jr:itext('delivery_questions/fetal_outcome-yes-label')"/>
@@ -230,7 +230,7 @@
 					<label ref="jr:itext('delivery_questions/fetal_outcome-no-label')"/>
 					<value>no</value>
 				</item>
-			</select>
+			</select1>
 			<select1 ref="/data/delivery_questions/fetal_outcome">
 				<label ref="jr:itext('delivery_questions/fetal_outcome-label')"/>
 				<item>
