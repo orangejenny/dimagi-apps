@@ -237,7 +237,7 @@
 					<graph_colour/>
 				<subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>Indicators</case_type></create><update><contractions_dur/><contractions_num/><diastolic/><dilation/><fhs/><hours/><pulse/><resp/><station/><systolic/></update><index><parent case_type="patient"/></index></case></subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><update><af/><af_time/><alert_flag/><bp_time/><contractions_dur/><contractions_num/><contractions_time/><diastolic/><dilation/><dilation_time/><drugs_iv/><drugs_iv_time/><fetal_lie/><fetal_presentation/><fhs/><fhs_time/><first_dilation/><first_measured_dilation_time/><first_measured_dilation_time_display/><fundal_grip/><graph_colour/><hours/><last_exam_time/><membrane_rupture/><minutes_until_next_exam/><minutes_until_next_pv/><moulding/><moulding_time/><nurse_flag/><oxytocin/><oxytocin_time/><pelvic_grip_1/><pelvic_grip_2/><pulse/><pulse_time/><pv_in/><resp/><resp_time/><station/><station_time/><systolic/><temp/><temp_time/><urine_time/><urine_vol/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
 			</instance><instance id="commcaresession" src="jr://instance/session"/><instance id="casedb" src="jr://instance/casedb"/>
-			<bind nodeset="/data/membrane_rupture" relevant="/data/membrane_rupture_in = no"/>
+			<bind nodeset="/data/membrane_rupture" relevant="/data/membrane_rupture_in != 'yes'"/>
 			<bind nodeset="/data/membrane_date" type="xsd:date" relevant="/data/membrane_rupture = 'yes'"/>
 			<bind nodeset="/data/membrane_time" type="xsd:time" relevant="/data/membrane_rupture = 'yes'"/>
 			<bind nodeset="/data/memebrane_ruptured_date_time" calculate="concat(&quot;format-date(/data/membrane_date, '%e/%n/%y')&quot;, ' ', /data/membrane_time)"/>
@@ -435,7 +435,7 @@
 			<bind nodeset="/data/first_dilation_out" calculate="if(/data/first_dilation_in = '', /data/dilation_out, /data/first_dilation_in)"/>
 			<bind nodeset="/data/first_dilation_in"/>
 			<bind nodeset="/data/last_exam_time" calculate="double(now())"/>
-			<bind nodeset="/data/last_exam_pv_out" calculate="if(/data/reminders/reminder_4_hour=&quot;yes&quot;,double(now()), '')"/>
+			<bind nodeset="/data/last_exam_pv_out" calculate="if(/data/reminders/reminder_4_hour=&quot;yes&quot;,double(now()), /data/last_exam_pv_in)"/>
 			<bind nodeset="/data/last_exam_pv_in"/>
 			<bind nodeset="/data/minutes_until_next_pv" calculate="if(/data/reminders/reminder_4_hour=&quot;240&quot;,/data/future_minutes_pv - /data/now_minutes, 'NA')"/>
 			<bind nodeset="/data/now_minutes" calculate="double(now()) * 24 * 60"/>
