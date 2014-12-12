@@ -96,29 +96,198 @@
         </text>
       </template>
     </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m0.case_long.case_gender_3.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="gender"/>
-        </text>
-      </template>
+    <field relevant="current()/gender = 'female'">
+        <header>
+            <text>
+                <value>Weight for Height, Girls</value>
+            </text>
+        </header>
+        <template form="graph">
+            <graph type="xy">
+                <configuration>
+	                  <!--text id="zoom">
+	                      <xpath function="true()" />
+   	              </text-->
+                    <text id="x-labels">
+                        <value>13</value>
+                    </text>
+                    <text id="y-labels">
+                        <value>13</value>
+                    </text>
+                    <text id="x-min">
+                        <value>0</value>
+                    </text>
+                    <text id="x-max">
+                        <value>60</value>
+                    </text>
+                    <text id="y-min">
+                        <value>0</value>
+                    </text>
+                    <text id="y-max">
+                        <value>25</value>
+                    </text>
+                </configuration>
+                <series nodeset="instance('casedb')/casedb/case[index/parent=current()/@case_id]">
+                    <x function="age"/>
+                    <y function="weight"/>
+                </series>
+                <series nodeset="instance('weight-for-age-girls')/thresholds/series[@id='97th']/point">
+                    <configuration>
+                        <text id="line-color">
+                            <value>#dd0000</value>
+                        </text>
+                        <text id="point-style">
+                            <value>none</value>
+                        </text>
+                    </configuration>
+                    <x function="x"/>
+                    <y function="y"/>
+                </series>
+                <series nodeset="instance('weight-for-age-girls')/thresholds/series[@id='85th']/point">
+                    <configuration>
+                        <text id="line-color">
+                            <value>#dddd00</value>
+                        </text>
+                        <text id="point-style">
+                            <value>none</value>
+                        </text>
+                    </configuration>
+                    <x function="x"/>
+                    <y function="y"/>
+                </series>
+                <series nodeset="instance('weight-for-age-girls')/thresholds/series[@id='50th']/point">
+                    <configuration>
+                        <text id="line-color">
+                            <value>#009900</value>
+                        </text>
+                        <text id="point-style">
+                            <value>none</value>
+                        </text>
+                    </configuration>
+                    <x function="x"/>
+                    <y function="y"/>
+                </series>
+                <series nodeset="instance('weight-for-age-girls')/thresholds/series[@id='15th']/point">
+                    <configuration>
+                        <text id="line-color">
+                            <value>#dddd00</value>
+                        </text>
+                        <text id="point-style">
+                            <value>none</value>
+                        </text>
+                    </configuration>
+                    <x function="x"/>
+                    <y function="y"/>
+                </series>
+                <series nodeset="instance('weight-for-age-girls')/thresholds/series[@id='3rd']/point">
+                    <configuration>
+                        <text id="line-color">
+                            <value>#dd0000</value>
+                        </text>
+                        <text id="point-style">
+                            <value>none</value>
+                        </text>
+                    </configuration>
+                    <x function="x"/>
+                    <y function="y"/>
+                </series>
+            </graph>
+        </template>
     </field>
-    <field>
-      <header>
-        <text>
-          <locale id="m0.case_long.case_status_4.header"/>
-        </text>
-      </header>
-      <template>
-        <text>
-          <xpath function="@status"/>
-        </text>
-      </template>
+    <field relevant="current()/gender = 'male'">
+        <header>
+            <text>
+                <value>Weight for Height, Boys</value>
+            </text>
+        </header>
+        <template form="graph">
+            <graph type="xy">
+                <configuration>
+                    <text id="x-labels">
+                        <value>13</value>
+                    </text>
+                    <text id="y-labels">
+                        <value>13</value>
+                    </text>
+                    <text id="x-min">
+                        <value>0</value>
+                    </text>
+                    <text id="x-max">
+                        <value>60</value>
+                    </text>
+                    <text id="y-min">
+                        <value>0</value>
+                    </text>
+                    <text id="y-max">
+                        <value>25</value>
+                    </text>
+                </configuration>
+                <series nodeset="instance('weight-for-age-boys')/thresholds/series[@id='97th']/point">
+                    <configuration>
+                        <text id="line-color">
+                            <value>#dd0000</value>
+                        </text>
+                        <text id="point-style">
+                            <value>none</value>
+                        </text>
+                    </configuration>
+                    <x function="x"/>
+                    <y function="y"/>
+                </series>
+                <series nodeset="instance('weight-for-age-boys')/thresholds/series[@id='85th']/point">
+                    <configuration>
+                        <text id="line-color">
+                            <value>#dddd00</value>
+                        </text>
+                        <text id="point-style">
+                            <value>none</value>
+                        </text>
+                    </configuration>
+                    <x function="x"/>
+                    <y function="y"/>
+                </series>
+                <series nodeset="instance('weight-for-age-boys')/thresholds/series[@id='50th']/point">
+                    <configuration>
+                        <text id="line-color">
+                            <value>#009900</value>
+                        </text>
+                        <text id="point-style">
+                            <value>none</value>
+                        </text>
+                    </configuration>
+                    <x function="x"/>
+                    <y function="y"/>
+                </series>
+                <series nodeset="instance('weight-for-age-boys')/thresholds/series[@id='15th']/point">
+                    <configuration>
+                        <text id="line-color">
+                            <value>#dddd00</value>
+                        </text>
+                        <text id="point-style">
+                            <value>none</value>
+                        </text>
+                    </configuration>
+                    <x function="x"/>
+                    <y function="y"/>
+                </series>
+                <series nodeset="instance('weight-for-age-boys')/thresholds/series[@id='3rd']/point">
+                    <configuration>
+                        <text id="line-color">
+                            <value>#dd0000</value>
+                        </text>
+                        <text id="point-style">
+                            <value>none</value>
+                        </text>
+                    </configuration>
+                    <x function="x"/>
+                    <y function="y"/>
+                </series>
+                <series nodeset="instance('casedb')/casedb/case[index/parent=current()/@case_id]">
+                    <x function="age"/>
+                    <y function="weight"/>
+                </series>
+            </graph>
+        </template>
     </field>
   </detail>
   <detail id="m1_case_short">
@@ -216,6 +385,8 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
+    <instance id="weight-for-age-girls" src="jr://instance/fixture/weight-for-age-girls" />
+    <instance id="weight-for-age-boys" src="jr://instance/fixture/weight-for-age-boys" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m0_case_short" detail-confirm="m0_case_long"/>
     </session>
@@ -228,6 +399,8 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
+    <instance id="weight-for-age-girls" src="jr://instance/fixture/weight-for-age-girls" />
+    <instance id="weight-for-age-boys" src="jr://instance/fixture/weight-for-age-boys" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m0_case_short" detail-confirm="m0_case_long"/>
     </session>
@@ -240,6 +413,8 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
+    <instance id="weight-for-age-girls" src="jr://instance/fixture/weight-for-age-girls" />
+    <instance id="weight-for-age-boys" src="jr://instance/fixture/weight-for-age-boys" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open']" value="./@case_id" detail-select="m0_case_short" detail-confirm="m0_case_long"/>
     </session>
@@ -252,6 +427,8 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
+    <instance id="weight-for-age-girls" src="jr://instance/fixture/weight-for-age-girls" />
+    <instance id="weight-for-age-boys" src="jr://instance/fixture/weight-for-age-boys" />
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='measurement'][@status='open']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
     </session>
@@ -271,4 +448,650 @@
     </text>
     <command id="m1-f0"/>
   </menu>
+  <fixture id="weight-for-age-boys">
+     <thresholds>
+		<series id="3rd">
+			<point><x>0</x><y>2.5</y></point>
+			<point><x>1</x><y>3.4</y></point>
+			<point><x>2</x><y>4.4</y></point>
+			<point><x>3</x><y>5.1</y></point>
+			<point><x>4</x><y>5.6</y></point>
+			<point><x>5</x><y>6.1</y></point>
+			<point><x>6</x><y>6.4</y></point>
+			<point><x>7</x><y>6.7</y></point>
+			<point><x>8</x><y>7</y></point>
+			<point><x>9</x><y>7.2</y></point>
+			<point><x>10</x><y>7.5</y></point>
+			<point><x>11</x><y>7.7</y></point>
+			<point><x>12</x><y>7.8</y></point>
+			<point><x>13</x><y>8</y></point>
+			<point><x>14</x><y>8.2</y></point>
+			<point><x>15</x><y>8.4</y></point>
+			<point><x>16</x><y>8.5</y></point>
+			<point><x>17</x><y>8.7</y></point>
+			<point><x>18</x><y>8.9</y></point>
+			<point><x>19</x><y>9</y></point>
+			<point><x>20</x><y>9.2</y></point>
+			<point><x>21</x><y>9.3</y></point>
+			<point><x>22</x><y>9.5</y></point>
+			<point><x>23</x><y>9.7</y></point>
+			<point><x>24</x><y>9.8</y></point>
+			<point><x>25</x><y>10</y></point>
+			<point><x>26</x><y>10.1</y></point>
+			<point><x>27</x><y>10.2</y></point>
+			<point><x>28</x><y>10.4</y></point>
+			<point><x>29</x><y>10.5</y></point>
+			<point><x>30</x><y>10.7</y></point>
+			<point><x>31</x><y>10.8</y></point>
+			<point><x>32</x><y>10.9</y></point>
+			<point><x>33</x><y>11.1</y></point>
+			<point><x>34</x><y>11.2</y></point>
+			<point><x>35</x><y>11.3</y></point>
+			<point><x>36</x><y>11.4</y></point>
+			<point><x>37</x><y>11.6</y></point>
+			<point><x>38</x><y>11.7</y></point>
+			<point><x>39</x><y>11.8</y></point>
+			<point><x>40</x><y>11.9</y></point>
+			<point><x>41</x><y>12.1</y></point>
+			<point><x>42</x><y>12.2</y></point>
+			<point><x>43</x><y>12.3</y></point>
+			<point><x>44</x><y>12.4</y></point>
+			<point><x>45</x><y>12.5</y></point>
+			<point><x>46</x><y>12.7</y></point>
+			<point><x>47</x><y>12.8</y></point>
+			<point><x>48</x><y>12.9</y></point>
+			<point><x>49</x><y>13</y></point>
+			<point><x>50</x><y>13.1</y></point>
+			<point><x>51</x><y>13.3</y></point>
+			<point><x>52</x><y>13.4</y></point>
+			<point><x>53</x><y>13.5</y></point>
+			<point><x>54</x><y>13.6</y></point>
+			<point><x>55</x><y>13.7</y></point>
+			<point><x>56</x><y>13.8</y></point>
+			<point><x>57</x><y>13.9</y></point>
+			<point><x>58</x><y>14.1</y></point>
+			<point><x>59</x><y>14.2</y></point>
+			<point><x>60</x><y>14.3</y></point>
+		</series>
+		<series id="15th">
+			<point><x>0</x><y>2.9</y></point>
+			<point><x>1</x><y>3.9</y></point>
+			<point><x>2</x><y>4.9</y></point>
+			<point><x>3</x><y>5.6</y></point>
+			<point><x>4</x><y>6.2</y></point>
+			<point><x>5</x><y>6.7</y></point>
+			<point><x>6</x><y>7.1</y></point>
+			<point><x>7</x><y>7.4</y></point>
+			<point><x>8</x><y>7.7</y></point>
+			<point><x>9</x><y>7.9</y></point>
+			<point><x>10</x><y>8.2</y></point>
+			<point><x>11</x><y>8.4</y></point>
+			<point><x>12</x><y>8.6</y></point>
+			<point><x>13</x><y>8.8</y></point>
+			<point><x>14</x><y>9</y></point>
+			<point><x>15</x><y>9.2</y></point>
+			<point><x>16</x><y>9.4</y></point>
+			<point><x>17</x><y>9.6</y></point>
+			<point><x>18</x><y>9.7</y></point>
+			<point><x>19</x><y>9.9</y></point>
+			<point><x>20</x><y>10.1</y></point>
+			<point><x>21</x><y>10.3</y></point>
+			<point><x>22</x><y>10.5</y></point>
+			<point><x>23</x><y>10.6</y></point>
+			<point><x>24</x><y>10.8</y></point>
+			<point><x>25</x><y>11</y></point>
+			<point><x>26</x><y>11.1</y></point>
+			<point><x>27</x><y>11.3</y></point>
+			<point><x>28</x><y>11.5</y></point>
+			<point><x>29</x><y>11.6</y></point>
+			<point><x>30</x><y>11.8</y></point>
+			<point><x>31</x><y>11.9</y></point>
+			<point><x>32</x><y>12.1</y></point>
+			<point><x>33</x><y>12.2</y></point>
+			<point><x>34</x><y>12.4</y></point>
+			<point><x>35</x><y>12.5</y></point>
+			<point><x>36</x><y>12.7</y></point>
+			<point><x>37</x><y>12.8</y></point>
+			<point><x>38</x><y>12.9</y></point>
+			<point><x>39</x><y>13.1</y></point>
+			<point><x>40</x><y>13.2</y></point>
+			<point><x>41</x><y>13.4</y></point>
+			<point><x>42</x><y>13.5</y></point>
+			<point><x>43</x><y>13.6</y></point>
+			<point><x>44</x><y>13.8</y></point>
+			<point><x>45</x><y>13.9</y></point>
+			<point><x>46</x><y>14.1</y></point>
+			<point><x>47</x><y>14.2</y></point>
+			<point><x>48</x><y>14.3</y></point>
+			<point><x>49</x><y>14.5</y></point>
+			<point><x>50</x><y>14.6</y></point>
+			<point><x>51</x><y>14.7</y></point>
+			<point><x>52</x><y>14.9</y></point>
+			<point><x>53</x><y>15</y></point>
+			<point><x>54</x><y>15.2</y></point>
+			<point><x>55</x><y>15.3</y></point>
+			<point><x>56</x><y>15.4</y></point>
+			<point><x>57</x><y>15.6</y></point>
+			<point><x>58</x><y>15.7</y></point>
+			<point><x>59</x><y>15.8</y></point>
+			<point><x>60</x><y>16</y></point>
+		</series>
+		<series id="50th">
+			<point><x>0</x><y>3.3</y></point>
+			<point><x>1</x><y>4.5</y></point>
+			<point><x>2</x><y>5.6</y></point>
+			<point><x>3</x><y>6.4</y></point>
+			<point><x>4</x><y>7</y></point>
+			<point><x>5</x><y>7.5</y></point>
+			<point><x>6</x><y>7.9</y></point>
+			<point><x>7</x><y>8.3</y></point>
+			<point><x>8</x><y>8.6</y></point>
+			<point><x>9</x><y>8.9</y></point>
+			<point><x>10</x><y>9.2</y></point>
+			<point><x>11</x><y>9.4</y></point>
+			<point><x>12</x><y>9.6</y></point>
+			<point><x>13</x><y>9.9</y></point>
+			<point><x>14</x><y>10.1</y></point>
+			<point><x>15</x><y>10.3</y></point>
+			<point><x>16</x><y>10.5</y></point>
+			<point><x>17</x><y>10.7</y></point>
+			<point><x>18</x><y>10.9</y></point>
+			<point><x>19</x><y>11.1</y></point>
+			<point><x>20</x><y>11.3</y></point>
+			<point><x>21</x><y>11.5</y></point>
+			<point><x>22</x><y>11.8</y></point>
+			<point><x>23</x><y>12</y></point>
+			<point><x>24</x><y>12.2</y></point>
+			<point><x>25</x><y>12.4</y></point>
+			<point><x>26</x><y>12.5</y></point>
+			<point><x>27</x><y>12.7</y></point>
+			<point><x>28</x><y>12.9</y></point>
+			<point><x>29</x><y>13.1</y></point>
+			<point><x>30</x><y>13.3</y></point>
+			<point><x>31</x><y>13.5</y></point>
+			<point><x>32</x><y>13.7</y></point>
+			<point><x>33</x><y>13.8</y></point>
+			<point><x>34</x><y>14</y></point>
+			<point><x>35</x><y>14.2</y></point>
+			<point><x>36</x><y>14.3</y></point>
+			<point><x>37</x><y>14.5</y></point>
+			<point><x>38</x><y>14.7</y></point>
+			<point><x>39</x><y>14.8</y></point>
+			<point><x>40</x><y>15</y></point>
+			<point><x>41</x><y>15.2</y></point>
+			<point><x>42</x><y>15.3</y></point>
+			<point><x>43</x><y>15.5</y></point>
+			<point><x>44</x><y>15.7</y></point>
+			<point><x>45</x><y>15.8</y></point>
+			<point><x>46</x><y>16</y></point>
+			<point><x>47</x><y>16.2</y></point>
+			<point><x>48</x><y>16.3</y></point>
+			<point><x>49</x><y>16.5</y></point>
+			<point><x>50</x><y>16.7</y></point>
+			<point><x>51</x><y>16.8</y></point>
+			<point><x>52</x><y>17</y></point>
+			<point><x>53</x><y>17.2</y></point>
+			<point><x>54</x><y>17.3</y></point>
+			<point><x>55</x><y>17.5</y></point>
+			<point><x>56</x><y>17.7</y></point>
+			<point><x>57</x><y>17.8</y></point>
+			<point><x>58</x><y>18</y></point>
+			<point><x>59</x><y>18.2</y></point>
+			<point><x>60</x><y>18.3</y></point>
+		</series>
+		<series id="85th">
+			<point><x>0</x><y>3.9</y></point>
+			<point><x>1</x><y>5.1</y></point>
+			<point><x>2</x><y>6.3</y></point>
+			<point><x>3</x><y>7.2</y></point>
+			<point><x>4</x><y>7.9</y></point>
+			<point><x>5</x><y>8.4</y></point>
+			<point><x>6</x><y>8.9</y></point>
+			<point><x>7</x><y>9.3</y></point>
+			<point><x>8</x><y>9.6</y></point>
+			<point><x>9</x><y>10</y></point>
+			<point><x>10</x><y>10.3</y></point>
+			<point><x>11</x><y>10.5</y></point>
+			<point><x>12</x><y>10.8</y></point>
+			<point><x>13</x><y>11.1</y></point>
+			<point><x>14</x><y>11.3</y></point>
+			<point><x>15</x><y>11.6</y></point>
+			<point><x>16</x><y>11.8</y></point>
+			<point><x>17</x><y>12</y></point>
+			<point><x>18</x><y>12.3</y></point>
+			<point><x>19</x><y>12.5</y></point>
+			<point><x>20</x><y>12.7</y></point>
+			<point><x>21</x><y>13</y></point>
+			<point><x>22</x><y>13.2</y></point>
+			<point><x>23</x><y>13.4</y></point>
+			<point><x>24</x><y>13.7</y></point>
+			<point><x>25</x><y>13.9</y></point>
+			<point><x>26</x><y>14.1</y></point>
+			<point><x>27</x><y>14.4</y></point>
+			<point><x>28</x><y>14.6</y></point>
+			<point><x>29</x><y>14.8</y></point>
+			<point><x>30</x><y>15</y></point>
+			<point><x>31</x><y>15.2</y></point>
+			<point><x>32</x><y>15.5</y></point>
+			<point><x>33</x><y>15.7</y></point>
+			<point><x>34</x><y>15.9</y></point>
+			<point><x>35</x><y>16.1</y></point>
+			<point><x>36</x><y>16.3</y></point>
+			<point><x>37</x><y>16.5</y></point>
+			<point><x>38</x><y>16.7</y></point>
+			<point><x>39</x><y>16.9</y></point>
+			<point><x>40</x><y>17.1</y></point>
+			<point><x>41</x><y>17.3</y></point>
+			<point><x>42</x><y>17.5</y></point>
+			<point><x>43</x><y>17.7</y></point>
+			<point><x>44</x><y>17.9</y></point>
+			<point><x>45</x><y>18.1</y></point>
+			<point><x>46</x><y>18.3</y></point>
+			<point><x>47</x><y>18.5</y></point>
+			<point><x>48</x><y>18.7</y></point>
+			<point><x>49</x><y>18.9</y></point>
+			<point><x>50</x><y>19.1</y></point>
+			<point><x>51</x><y>19.3</y></point>
+			<point><x>52</x><y>19.5</y></point>
+			<point><x>53</x><y>19.7</y></point>
+			<point><x>54</x><y>19.9</y></point>
+			<point><x>55</x><y>20.1</y></point>
+			<point><x>56</x><y>20.3</y></point>
+			<point><x>57</x><y>20.5</y></point>
+			<point><x>58</x><y>20.7</y></point>
+			<point><x>59</x><y>20.9</y></point>
+			<point><x>60</x><y>21.1</y></point>
+		</series>
+		<series id="97th">
+			<point><x>0</x><y>4.3</y></point>
+			<point><x>1</x><y>5.7</y></point>
+			<point><x>2</x><y>7</y></point>
+			<point><x>3</x><y>7.9</y></point>
+			<point><x>4</x><y>8.6</y></point>
+			<point><x>5</x><y>9.2</y></point>
+			<point><x>6</x><y>9.7</y></point>
+			<point><x>7</x><y>10.2</y></point>
+			<point><x>8</x><y>10.5</y></point>
+			<point><x>9</x><y>10.9</y></point>
+			<point><x>10</x><y>11.2</y></point>
+			<point><x>11</x><y>11.5</y></point>
+			<point><x>12</x><y>11.8</y></point>
+			<point><x>13</x><y>12.1</y></point>
+			<point><x>14</x><y>12.4</y></point>
+			<point><x>15</x><y>12.7</y></point>
+			<point><x>16</x><y>12.9</y></point>
+			<point><x>17</x><y>13.2</y></point>
+			<point><x>18</x><y>13.5</y></point>
+			<point><x>19</x><y>13.7</y></point>
+			<point><x>20</x><y>14</y></point>
+			<point><x>21</x><y>14.3</y></point>
+			<point><x>22</x><y>14.5</y></point>
+			<point><x>23</x><y>14.8</y></point>
+			<point><x>24</x><y>15.1</y></point>
+			<point><x>25</x><y>15.3</y></point>
+			<point><x>26</x><y>15.6</y></point>
+			<point><x>27</x><y>15.9</y></point>
+			<point><x>28</x><y>16.1</y></point>
+			<point><x>29</x><y>16.4</y></point>
+			<point><x>30</x><y>16.6</y></point>
+			<point><x>31</x><y>16.9</y></point>
+			<point><x>32</x><y>17.1</y></point>
+			<point><x>33</x><y>17.3</y></point>
+			<point><x>34</x><y>17.6</y></point>
+			<point><x>35</x><y>17.8</y></point>
+			<point><x>36</x><y>18</y></point>
+			<point><x>37</x><y>18.3</y></point>
+			<point><x>38</x><y>18.5</y></point>
+			<point><x>39</x><y>18.7</y></point>
+			<point><x>40</x><y>19</y></point>
+			<point><x>41</x><y>19.2</y></point>
+			<point><x>42</x><y>19.4</y></point>
+			<point><x>43</x><y>19.7</y></point>
+			<point><x>44</x><y>19.9</y></point>
+			<point><x>45</x><y>20.1</y></point>
+			<point><x>46</x><y>20.4</y></point>
+			<point><x>47</x><y>20.6</y></point>
+			<point><x>48</x><y>20.9</y></point>
+			<point><x>49</x><y>21.1</y></point>
+			<point><x>50</x><y>21.3</y></point>
+			<point><x>51</x><y>21.6</y></point>
+			<point><x>52</x><y>21.8</y></point>
+			<point><x>53</x><y>22.1</y></point>
+			<point><x>54</x><y>22.3</y></point>
+			<point><x>55</x><y>22.5</y></point>
+			<point><x>56</x><y>22.8</y></point>
+			<point><x>57</x><y>23</y></point>
+			<point><x>58</x><y>23.3</y></point>
+			<point><x>59</x><y>23.5</y></point>
+			<point><x>60</x><y>23.8</y></point>
+		</series>
+		<series id="top">
+			<point><x>0</x><y>25</y></point>
+			<point><x>60</x><y>25</y></point>
+		</series>
+     </thresholds>
+  </fixture>
+  <fixture id="weight-for-age-girls">
+     <thresholds>
+		<series id="3rd">
+			<point><x>0</x><y>2.4</y></point>
+			<point><x>1</x><y>3.2</y></point>
+			<point><x>2</x><y>4</y></point>
+			<point><x>3</x><y>4.6</y></point>
+			<point><x>4</x><y>5.1</y></point>
+			<point><x>5</x><y>5.5</y></point>
+			<point><x>6</x><y>5.8</y></point>
+			<point><x>7</x><y>6.1</y></point>
+			<point><x>8</x><y>6.3</y></point>
+			<point><x>9</x><y>6.6</y></point>
+			<point><x>10</x><y>6.8</y></point>
+			<point><x>11</x><y>7</y></point>
+			<point><x>12</x><y>7.1</y></point>
+			<point><x>13</x><y>7.3</y></point>
+			<point><x>14</x><y>7.5</y></point>
+			<point><x>15</x><y>7.7</y></point>
+			<point><x>16</x><y>7.8</y></point>
+			<point><x>17</x><y>8</y></point>
+			<point><x>18</x><y>8.2</y></point>
+			<point><x>19</x><y>8.3</y></point>
+			<point><x>20</x><y>8.5</y></point>
+			<point><x>21</x><y>8.7</y></point>
+			<point><x>22</x><y>8.8</y></point>
+			<point><x>23</x><y>9</y></point>
+			<point><x>24</x><y>9.2</y></point>
+			<point><x>25</x><y>9.3</y></point>
+			<point><x>26</x><y>9.5</y></point>
+			<point><x>27</x><y>9.6</y></point>
+			<point><x>28</x><y>9.8</y></point>
+			<point><x>29</x><y>10</y></point>
+			<point><x>30</x><y>10.1</y></point>
+			<point><x>31</x><y>10.3</y></point>
+			<point><x>32</x><y>10.4</y></point>
+			<point><x>33</x><y>10.5</y></point>
+			<point><x>34</x><y>10.7</y></point>
+			<point><x>35</x><y>10.8</y></point>
+			<point><x>36</x><y>11</y></point>
+			<point><x>37</x><y>11.1</y></point>
+			<point><x>38</x><y>11.2</y></point>
+			<point><x>39</x><y>11.4</y></point>
+			<point><x>40</x><y>11.5</y></point>
+			<point><x>41</x><y>11.6</y></point>
+			<point><x>42</x><y>11.8</y></point>
+			<point><x>43</x><y>11.9</y></point>
+			<point><x>44</x><y>12</y></point>
+			<point><x>45</x><y>12.1</y></point>
+			<point><x>46</x><y>12.3</y></point>
+			<point><x>47</x><y>12.4</y></point>
+			<point><x>48</x><y>12.5</y></point>
+			<point><x>49</x><y>12.6</y></point>
+			<point><x>50</x><y>12.8</y></point>
+			<point><x>51</x><y>12.9</y></point>
+			<point><x>52</x><y>13</y></point>
+			<point><x>53</x><y>13.1</y></point>
+			<point><x>54</x><y>13.2</y></point>
+			<point><x>55</x><y>13.4</y></point>
+			<point><x>56</x><y>13.5</y></point>
+			<point><x>57</x><y>13.6</y></point>
+			<point><x>58</x><y>13.7</y></point>
+			<point><x>59</x><y>13.8</y></point>
+			<point><x>60</x><y>14</y></point>
+		</series>
+		<series id="15th">
+			<point><x>0</x><y>2.8</y></point>
+			<point><x>1</x><y>3.6</y></point>
+			<point><x>2</x><y>4.5</y></point>
+			<point><x>3</x><y>5.1</y></point>
+			<point><x>4</x><y>5.6</y></point>
+			<point><x>5</x><y>6.1</y></point>
+			<point><x>6</x><y>6.4</y></point>
+			<point><x>7</x><y>6.7</y></point>
+			<point><x>8</x><y>7</y></point>
+			<point><x>9</x><y>7.3</y></point>
+			<point><x>10</x><y>7.5</y></point>
+			<point><x>11</x><y>7.7</y></point>
+			<point><x>12</x><y>7.9</y></point>
+			<point><x>13</x><y>8.1</y></point>
+			<point><x>14</x><y>8.3</y></point>
+			<point><x>15</x><y>8.5</y></point>
+			<point><x>16</x><y>8.7</y></point>
+			<point><x>17</x><y>8.8</y></point>
+			<point><x>18</x><y>9</y></point>
+			<point><x>19</x><y>9.2</y></point>
+			<point><x>20</x><y>9.4</y></point>
+			<point><x>21</x><y>9.6</y></point>
+			<point><x>22</x><y>9.8</y></point>
+			<point><x>23</x><y>9.9</y></point>
+			<point><x>24</x><y>10.1</y></point>
+			<point><x>25</x><y>10.3</y></point>
+			<point><x>26</x><y>10.5</y></point>
+			<point><x>27</x><y>10.7</y></point>
+			<point><x>28</x><y>10.8</y></point>
+			<point><x>29</x><y>11</y></point>
+			<point><x>30</x><y>11.2</y></point>
+			<point><x>31</x><y>11.3</y></point>
+			<point><x>32</x><y>11.5</y></point>
+			<point><x>33</x><y>11.7</y></point>
+			<point><x>34</x><y>11.8</y></point>
+			<point><x>35</x><y>12</y></point>
+			<point><x>36</x><y>12.1</y></point>
+			<point><x>37</x><y>12.3</y></point>
+			<point><x>38</x><y>12.5</y></point>
+			<point><x>39</x><y>12.6</y></point>
+			<point><x>40</x><y>12.8</y></point>
+			<point><x>41</x><y>12.9</y></point>
+			<point><x>42</x><y>13.1</y></point>
+			<point><x>43</x><y>13.2</y></point>
+			<point><x>44</x><y>13.4</y></point>
+			<point><x>45</x><y>13.5</y></point>
+			<point><x>46</x><y>13.7</y></point>
+			<point><x>47</x><y>13.8</y></point>
+			<point><x>48</x><y>14</y></point>
+			<point><x>49</x><y>14.1</y></point>
+			<point><x>50</x><y>14.3</y></point>
+			<point><x>51</x><y>14.4</y></point>
+			<point><x>52</x><y>14.5</y></point>
+			<point><x>53</x><y>14.7</y></point>
+			<point><x>54</x><y>14.8</y></point>
+			<point><x>55</x><y>15</y></point>
+			<point><x>56</x><y>15.1</y></point>
+			<point><x>57</x><y>15.3</y></point>
+			<point><x>58</x><y>15.4</y></point>
+			<point><x>59</x><y>15.5</y></point>
+			<point><x>60</x><y>15.7</y></point>
+		</series>
+		<series id="50th">
+			<point><x>0</x><y>3.2</y></point>
+			<point><x>1</x><y>4.2</y></point>
+			<point><x>2</x><y>5.1</y></point>
+			<point><x>3</x><y>5.8</y></point>
+			<point><x>4</x><y>6.4</y></point>
+			<point><x>5</x><y>6.9</y></point>
+			<point><x>6</x><y>7.3</y></point>
+			<point><x>7</x><y>7.6</y></point>
+			<point><x>8</x><y>7.9</y></point>
+			<point><x>9</x><y>8.2</y></point>
+			<point><x>10</x><y>8.5</y></point>
+			<point><x>11</x><y>8.7</y></point>
+			<point><x>12</x><y>8.9</y></point>
+			<point><x>13</x><y>9.2</y></point>
+			<point><x>14</x><y>9.4</y></point>
+			<point><x>15</x><y>9.6</y></point>
+			<point><x>16</x><y>9.8</y></point>
+			<point><x>17</x><y>10</y></point>
+			<point><x>18</x><y>10.2</y></point>
+			<point><x>19</x><y>10.4</y></point>
+			<point><x>20</x><y>10.6</y></point>
+			<point><x>21</x><y>10.9</y></point>
+			<point><x>22</x><y>11.1</y></point>
+			<point><x>23</x><y>11.3</y></point>
+			<point><x>24</x><y>11.5</y></point>
+			<point><x>25</x><y>11.7</y></point>
+			<point><x>26</x><y>11.9</y></point>
+			<point><x>27</x><y>12.1</y></point>
+			<point><x>28</x><y>12.3</y></point>
+			<point><x>29</x><y>12.5</y></point>
+			<point><x>30</x><y>12.7</y></point>
+			<point><x>31</x><y>12.9</y></point>
+			<point><x>32</x><y>13.1</y></point>
+			<point><x>33</x><y>13.3</y></point>
+			<point><x>34</x><y>13.5</y></point>
+			<point><x>35</x><y>13.7</y></point>
+			<point><x>36</x><y>13.9</y></point>
+			<point><x>37</x><y>14</y></point>
+			<point><x>38</x><y>14.2</y></point>
+			<point><x>39</x><y>14.4</y></point>
+			<point><x>40</x><y>14.6</y></point>
+			<point><x>41</x><y>14.8</y></point>
+			<point><x>42</x><y>15</y></point>
+			<point><x>43</x><y>15.2</y></point>
+			<point><x>44</x><y>15.3</y></point>
+			<point><x>45</x><y>15.5</y></point>
+			<point><x>46</x><y>15.7</y></point>
+			<point><x>47</x><y>15.9</y></point>
+			<point><x>48</x><y>16.1</y></point>
+			<point><x>49</x><y>16.3</y></point>
+			<point><x>50</x><y>16.4</y></point>
+			<point><x>51</x><y>16.6</y></point>
+			<point><x>52</x><y>16.8</y></point>
+			<point><x>53</x><y>17</y></point>
+			<point><x>54</x><y>17.2</y></point>
+			<point><x>55</x><y>17.3</y></point>
+			<point><x>56</x><y>17.5</y></point>
+			<point><x>57</x><y>17.7</y></point>
+			<point><x>58</x><y>17.9</y></point>
+			<point><x>59</x><y>18</y></point>
+			<point><x>60</x><y>18.2</y></point>
+		</series>
+		<series id="85th">
+			<point><x>0</x><y>3.7</y></point>
+			<point><x>1</x><y>4.8</y></point>
+			<point><x>2</x><y>5.9</y></point>
+			<point><x>3</x><y>6.7</y></point>
+			<point><x>4</x><y>7.3</y></point>
+			<point><x>5</x><y>7.8</y></point>
+			<point><x>6</x><y>8.3</y></point>
+			<point><x>7</x><y>8.7</y></point>
+			<point><x>8</x><y>9</y></point>
+			<point><x>9</x><y>9.3</y></point>
+			<point><x>10</x><y>9.6</y></point>
+			<point><x>11</x><y>9.9</y></point>
+			<point><x>12</x><y>10.2</y></point>
+			<point><x>13</x><y>10.4</y></point>
+			<point><x>14</x><y>10.7</y></point>
+			<point><x>15</x><y>10.9</y></point>
+			<point><x>16</x><y>11.2</y></point>
+			<point><x>17</x><y>11.4</y></point>
+			<point><x>18</x><y>11.6</y></point>
+			<point><x>19</x><y>11.9</y></point>
+			<point><x>20</x><y>12.1</y></point>
+			<point><x>21</x><y>12.4</y></point>
+			<point><x>22</x><y>12.6</y></point>
+			<point><x>23</x><y>12.8</y></point>
+			<point><x>24</x><y>13.1</y></point>
+			<point><x>25</x><y>13.3</y></point>
+			<point><x>26</x><y>13.6</y></point>
+			<point><x>27</x><y>13.8</y></point>
+			<point><x>28</x><y>14</y></point>
+			<point><x>29</x><y>14.3</y></point>
+			<point><x>30</x><y>14.5</y></point>
+			<point><x>31</x><y>14.7</y></point>
+			<point><x>32</x><y>15</y></point>
+			<point><x>33</x><y>15.2</y></point>
+			<point><x>34</x><y>15.4</y></point>
+			<point><x>35</x><y>15.7</y></point>
+			<point><x>36</x><y>15.9</y></point>
+			<point><x>37</x><y>16.1</y></point>
+			<point><x>38</x><y>16.3</y></point>
+			<point><x>39</x><y>16.6</y></point>
+			<point><x>40</x><y>16.8</y></point>
+			<point><x>41</x><y>17</y></point>
+			<point><x>42</x><y>17.3</y></point>
+			<point><x>43</x><y>17.5</y></point>
+			<point><x>44</x><y>17.7</y></point>
+			<point><x>45</x><y>17.9</y></point>
+			<point><x>46</x><y>18.2</y></point>
+			<point><x>47</x><y>18.4</y></point>
+			<point><x>48</x><y>18.6</y></point>
+			<point><x>49</x><y>18.9</y></point>
+			<point><x>50</x><y>19.1</y></point>
+			<point><x>51</x><y>19.3</y></point>
+			<point><x>52</x><y>19.5</y></point>
+			<point><x>53</x><y>19.8</y></point>
+			<point><x>54</x><y>20</y></point>
+			<point><x>55</x><y>20.2</y></point>
+			<point><x>56</x><y>20.4</y></point>
+			<point><x>57</x><y>20.7</y></point>
+			<point><x>58</x><y>20.9</y></point>
+			<point><x>59</x><y>21.1</y></point>
+			<point><x>60</x><y>21.3</y></point>
+		</series>
+		<series id="97th">
+			<point><x>0</x><y>4.2</y></point>
+			<point><x>1</x><y>5.4</y></point>
+			<point><x>2</x><y>6.5</y></point>
+			<point><x>3</x><y>7.4</y></point>
+			<point><x>4</x><y>8.1</y></point>
+			<point><x>5</x><y>8.7</y></point>
+			<point><x>6</x><y>9.2</y></point>
+			<point><x>7</x><y>9.6</y></point>
+			<point><x>8</x><y>10</y></point>
+			<point><x>9</x><y>10.4</y></point>
+			<point><x>10</x><y>10.7</y></point>
+			<point><x>11</x><y>11</y></point>
+			<point><x>12</x><y>11.3</y></point>
+			<point><x>13</x><y>11.6</y></point>
+			<point><x>14</x><y>11.9</y></point>
+			<point><x>15</x><y>12.2</y></point>
+			<point><x>16</x><y>12.5</y></point>
+			<point><x>17</x><y>12.7</y></point>
+			<point><x>18</x><y>13</y></point>
+			<point><x>19</x><y>13.3</y></point>
+			<point><x>20</x><y>13.5</y></point>
+			<point><x>21</x><y>13.8</y></point>
+			<point><x>22</x><y>14.1</y></point>
+			<point><x>23</x><y>14.3</y></point>
+			<point><x>24</x><y>14.6</y></point>
+			<point><x>25</x><y>14.9</y></point>
+			<point><x>26</x><y>15.2</y></point>
+			<point><x>27</x><y>15.4</y></point>
+			<point><x>28</x><y>15.7</y></point>
+			<point><x>29</x><y>16</y></point>
+			<point><x>30</x><y>16.2</y></point>
+			<point><x>31</x><y>16.5</y></point>
+			<point><x>32</x><y>16.8</y></point>
+			<point><x>33</x><y>17</y></point>
+			<point><x>34</x><y>17.3</y></point>
+			<point><x>35</x><y>17.6</y></point>
+			<point><x>36</x><y>17.8</y></point>
+			<point><x>37</x><y>18.1</y></point>
+			<point><x>38</x><y>18.4</y></point>
+			<point><x>39</x><y>18.6</y></point>
+			<point><x>40</x><y>18.9</y></point>
+			<point><x>41</x><y>19.2</y></point>
+			<point><x>42</x><y>19.5</y></point>
+			<point><x>43</x><y>19.7</y></point>
+			<point><x>44</x><y>20</y></point>
+			<point><x>45</x><y>20.3</y></point>
+			<point><x>46</x><y>20.6</y></point>
+			<point><x>47</x><y>20.8</y></point>
+			<point><x>48</x><y>21.1</y></point>
+			<point><x>49</x><y>21.4</y></point>
+			<point><x>50</x><y>21.7</y></point>
+			<point><x>51</x><y>22</y></point>
+			<point><x>52</x><y>22.2</y></point>
+			<point><x>53</x><y>22.5</y></point>
+			<point><x>54</x><y>22.8</y></point>
+			<point><x>55</x><y>23.1</y></point>
+			<point><x>56</x><y>23.3</y></point>
+			<point><x>57</x><y>23.6</y></point>
+			<point><x>58</x><y>23.9</y></point>
+			<point><x>59</x><y>24.2</y></point>
+			<point><x>60</x><y>24.4</y></point>
+		</series>
+		<series id="top">
+			<point><x>0</x><y>25</y></point>
+			<point><x>60</x><y>25</y></point>
+		</series>
+     </thresholds> 
+  </fixture>
 </suite>
