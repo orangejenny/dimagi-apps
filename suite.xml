@@ -475,7 +475,6 @@
       </title>
       <variables>
       <x_max function="if(max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/hours) > 12, max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/hours), 12)"/>
-      <first_dilation function="coalesce(first_dilation, 4)"/>
     </variables>
     <field>
       <header>
@@ -542,6 +541,9 @@
       <template form="graph">
           <graph type="xy">
               <configuration>
+                 <text id="var-fd">
+                     <xpath function="coalesce(first_dilation, 4)" />
+                 </text>
                  <text id="x-labels">
 	                  <value>13</value>
 	              </text>
@@ -593,8 +595,8 @@
 			              <value>none</value>
 			          </text>
 			      </configuration>
-			      <x function="if(. = 0, 0, if(. = 1, 10 - $first_dilation, $x_max))"/>
-			      <y function="if(. = 0, $first_dilation, 10)"/>
+			      <x function="if(. = 0, 0, if(. = 1, 10 - $fd, $x_max))"/>
+			      <y function="if(. = 0, $fd, 10)"/>
 			  </series>
 			  <series nodeset="instance('sequence')/sequence/index[.&lt;3]">
 			      <configuration>
@@ -608,7 +610,7 @@
 			              <value>none</value>
 			          </text>
 			      </configuration>
-			      <x function="if(. = 0, 8 - $first_dilation, if(. = 1, 14 - $first_dilation, $x_max))"/>
+			      <x function="if(. = 0, 8 - $fd, if(. = 1, 14 - $fd, $x_max))"/>
 			      <y function="if(. = 0, 4, 10)"/>
 			  </series>
 			  <series nodeset="instance('sequence')/sequence/index[.&lt;2]">
@@ -645,12 +647,12 @@
 			      <y function="station * -1 + 3"/>
 			  </series>
 			  <annotation>
-			      <x><text><xpath function="9 - $first_dilation"/></text></x>
+			      <x><text><xpath function="9 - $fd"/></text></x>
 			      <y><text><value>7</value></text></y>
 			      <text><locale id="m1.case_long.graph2.annotation1"/></text>
 			  </annotation>
 			  <annotation>
-			      <x><text><xpath function="14 - $first_dilation"/></text></x>
+			      <x><text><xpath function="14 - $fd"/></text></x>
 			      <y><text><value>7</value></text></y>
 			      <text><locale id="m1.case_long.graph2.annotation2"/></text>
 			  </annotation>
