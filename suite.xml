@@ -473,9 +473,6 @@
           <locale id="m2.case_long.tab.1.title"/>
         </text>
       </title>
-      <variables>
-      <x_max function="if(max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/hours) > 12, max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/hours), 12)"/>
-    </variables>
     <field>
       <header>
         <text>
@@ -485,6 +482,9 @@
       <template form="graph">
           <graph type="xy">
           <configuration>
+              <text id="var-xmax">
+                  <xpath function="if(max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/hours) > 12, max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/hours), 12)" />
+              </text>
               <text id="x-labels">
                   <value>13</value>
               </text>
@@ -498,7 +498,7 @@
                   <value>0</value>
               </text>
               <text id="x-max">
-                  <xpath function="$x_max"/>
+                  <xpath function="$xmax"/>
               </text>
               <text id="y-min">
                   <xpath function="min(80, min(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/fhs))"/>
@@ -517,7 +517,7 @@
                        <value>none</value>
                    </text>
                </configuration>
-               <x function="if(. = 0, 0, $x_max)"/>
+               <x function="if(. = 0, 0, $xmax)"/>
                <y function="100"/>
            </series>
            <series nodeset="instance('sequence')/sequence/index[.&lt;2]">
@@ -526,7 +526,7 @@
                        <value>none</value>
                    </text>
                </configuration>
-               <x function="if(. = 0, 0, $x_max)"/>
+               <x function="if(. = 0, 0, $xmax)"/>
                <y function="180"/>
            </series>
         </graph>
@@ -543,6 +543,9 @@
               <configuration>
                  <text id="var-fd">
                      <xpath function="coalesce(first_dilation, 4)" />
+                 </text>
+                 <text id="var-xmax">
+                     <xpath function="if(max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/hours) > 12, max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/hours), 12)" />
                  </text>
                  <text id="x-labels">
 	                  <value>13</value>
@@ -568,7 +571,7 @@
                       <value>0</value>
                   </text>
                   <text id="x-max">
-                      <xpath function="$x_max"/>
+                      <xpath function="$xmax"/>
                   </text>
                   <text id="y-min">
                       <value>0</value>
@@ -595,7 +598,7 @@
 			              <value>none</value>
 			          </text>
 			      </configuration>
-			      <x function="if(. = 0, 0, if(. = 1, 10 - $fd, $x_max))"/>
+			      <x function="if(. = 0, 0, if(. = 1, 10 - $fd, $xmax))"/>
 			      <y function="if(. = 0, $fd, 10)"/>
 			  </series>
 			  <series nodeset="instance('sequence')/sequence/index[.&lt;3]">
@@ -610,7 +613,7 @@
 			              <value>none</value>
 			          </text>
 			      </configuration>
-			      <x function="if(. = 0, 8 - $fd, if(. = 1, 14 - $fd, $x_max))"/>
+			      <x function="if(. = 0, 8 - $fd, if(. = 1, 14 - $fd, $xmax))"/>
 			      <y function="if(. = 0, 4, 10)"/>
 			  </series>
 			  <series nodeset="instance('sequence')/sequence/index[.&lt;2]">
@@ -625,7 +628,7 @@
 			              <value>none</value>
 			          </text>
 			      </configuration>
-			      <x function="if(. = 0, 0, $x_max)"/>
+			      <x function="if(. = 0, 0, $xmax)"/>
 			      <y function="4"/>
 			  </series>
 			  <series nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']">
@@ -668,6 +671,9 @@
 	      <template form="graph">
 	          <graph type="bubble">
 		          <configuration>
+		              <text id="var-xmax">
+        		          <xpath function="if(max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/hours) > 12, max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/hours), 12)" />
+              		  </text>
 		              <text id="x-labels">
 		                  <value>13</value>
 		              </text>
@@ -681,7 +687,7 @@
 		                  <value>0</value>
 		              </text>
 		              <text id="x-max">
-		                  <xpath function="$x_max"/>
+		                  <xpath function="$xmax"/>
 		              </text>
 		              <text id="y-min">
 		                  <value>0</value>
@@ -715,6 +721,9 @@
       <template form="graph">
           <graph type="xy">
           <configuration>
+              <text id="var-xmax">
+                  <xpath function="if(max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/hours) > 12, max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/hours), 12)" />
+              </text>
               <text id="x-labels">
                   <value>13</value>
               </text>
@@ -728,7 +737,7 @@
                   <value>0</value>
               </text>
               <text id="x-max">
-                  <xpath function="$x_max"/>
+                  <xpath function="$xmax"/>
               </text>
               <text id="y-min">
                   <value>0</value>
@@ -757,6 +766,9 @@
       <template form="graph">
           <graph type="xy">
           <configuration>
+              <text id="var-xmax">
+                  <xpath function="if(max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/hours) > 12, max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/hours), 12)" />
+              </text>
               <text id="x-labels">
                   <value>13</value>
               </text>
@@ -776,7 +788,7 @@
                   <value>0</value>
               </text>
               <text id="x-max">
-                  <xpath function="$x_max"/>
+                  <xpath function="$xmax"/>
               </text>
               <text id="secondary-y-min">
                   <value>0</value>
