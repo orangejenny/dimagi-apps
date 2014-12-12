@@ -99,15 +99,15 @@
     <field relevant="current()/gender = 'female'">
         <header>
             <text>
-                <value>Weight-for-height Girls</value>
+                <value>Weight for Height, Girls</value>
             </text>
         </header>
         <template form="graph">
             <graph type="xy">
                 <configuration>
-	                  <text id="zoom">
+	                  <!--text id="zoom">
 	                      <xpath function="true()" />
-   	              </text>
+   	              </text-->
                     <text id="x-labels">
                         <value>13</value>
                     </text>
@@ -131,28 +131,10 @@
                     <x function="age"/>
                     <y function="weight"/>
                 </series>
-                <series nodeset="instance('weight-for-age-girls')/thresholds/series[@id='top']/point">
-                    <configuration>
-                        <text id="line-color">
-                            <value>#00000000</value>
-                        </text>
-                        <text id="fill-below">
-                            <value>#dd0000</value>
-                        </text>
-                        <text id="point-style">
-                            <value>none</value>
-                        </text>
-                    </configuration>
-                    <x function="x"/>
-                    <y function="y"/>
-                </series>
                 <series nodeset="instance('weight-for-age-girls')/thresholds/series[@id='97th']/point">
                     <configuration>
                         <text id="line-color">
-                            <value>#00000000</value>
-                        </text>
-                        <text id="fill-below">
-                            <value>#dddd00</value>
+                            <value>#dd0000</value>
                         </text>
                         <text id="point-style">
                             <value>none</value>
@@ -164,10 +146,7 @@
                 <series nodeset="instance('weight-for-age-girls')/thresholds/series[@id='85th']/point">
                     <configuration>
                         <text id="line-color">
-                            <value>#00000000</value>
-                        </text>
-                        <text id="fill-below">
-                            <value>#009900</value>
+                            <value>#dddd00</value>
                         </text>
                         <text id="point-style">
                             <value>none</value>
@@ -179,9 +158,6 @@
                 <series nodeset="instance('weight-for-age-girls')/thresholds/series[@id='50th']/point">
                     <configuration>
                         <text id="line-color">
-                            <value>#00000000</value>
-                        </text>
-                        <text id="fill-below">
                             <value>#009900</value>
                         </text>
                         <text id="point-style">
@@ -194,9 +170,6 @@
                 <series nodeset="instance('weight-for-age-girls')/thresholds/series[@id='15th']/point">
                     <configuration>
                         <text id="line-color">
-                            <value>#00000000</value>
-                        </text>
-                        <text id="fill-below">
                             <value>#dddd00</value>
                         </text>
                         <text id="point-style">
@@ -209,9 +182,6 @@
                 <series nodeset="instance('weight-for-age-girls')/thresholds/series[@id='3rd']/point">
                     <configuration>
                         <text id="line-color">
-                            <value>#00000000</value>
-                        </text>
-                        <text id="fill-below">
                             <value>#dd0000</value>
                         </text>
                         <text id="point-style">
@@ -227,7 +197,7 @@
     <field relevant="current()/gender = 'male'">
         <header>
             <text>
-                <value>Weight-for-height Boys</value>
+                <value>Weight for Height, Boys</value>
             </text>
         </header>
         <template form="graph">
@@ -252,11 +222,7 @@
                         <value>25</value>
                     </text>
                 </configuration>
-                <series nodeset="instance('casedb')/casedb/case[index/parent=current()/@case_id]">
-                    <x function="age"/>
-                    <y function="weight"/>
-                </series>
-                <series nodeset="instance('weight-for-age-boys')/thresholds/series[@id='3rd']/point">
+                <series nodeset="instance('weight-for-age-boys')/thresholds/series[@id='97th']/point">
                     <configuration>
                         <text id="line-color">
                             <value>#dd0000</value>
@@ -268,7 +234,7 @@
                     <x function="x"/>
                     <y function="y"/>
                 </series>
-                <series nodeset="instance('weight-for-age-boys')/thresholds/series[@id='15th']/point">
+                <series nodeset="instance('weight-for-age-boys')/thresholds/series[@id='85th']/point">
                     <configuration>
                         <text id="line-color">
                             <value>#dddd00</value>
@@ -292,7 +258,7 @@
                     <x function="x"/>
                     <y function="y"/>
                 </series>
-                <series nodeset="instance('weight-for-age-boys')/thresholds/series[@id='85th']/point">
+                <series nodeset="instance('weight-for-age-boys')/thresholds/series[@id='15th']/point">
                     <configuration>
                         <text id="line-color">
                             <value>#dddd00</value>
@@ -304,7 +270,7 @@
                     <x function="x"/>
                     <y function="y"/>
                 </series>
-                <series nodeset="instance('weight-for-age-boys')/thresholds/series[@id='97th']/point">
+                <series nodeset="instance('weight-for-age-boys')/thresholds/series[@id='3rd']/point">
                     <configuration>
                         <text id="line-color">
                             <value>#dd0000</value>
@@ -315,6 +281,10 @@
                     </configuration>
                     <x function="x"/>
                     <y function="y"/>
+                </series>
+                <series nodeset="instance('casedb')/casedb/case[index/parent=current()/@case_id]">
+                    <x function="age"/>
+                    <y function="weight"/>
                 </series>
             </graph>
         </template>
@@ -794,6 +764,10 @@
 			<point><x>58</x><y>23.3</y></point>
 			<point><x>59</x><y>23.5</y></point>
 			<point><x>60</x><y>23.8</y></point>
+		</series>
+		<series id="top">
+			<point><x>0</x><y>25</y></point>
+			<point><x>60</x><y>25</y></point>
 		</series>
      </thresholds>
   </fixture>
