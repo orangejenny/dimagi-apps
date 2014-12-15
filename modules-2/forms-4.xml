@@ -3,7 +3,7 @@
 		<h:title>Update Registration</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/1a503d291461f4d7ee820fcc3a80719b00b94f04" uiVersion="1" version="629" name="Update Registration">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/1a503d291461f4d7ee820fcc3a80719b00b94f04" uiVersion="1" version="647" name="Update Registration">
 					<update_info_select>
 						<update_info_list/>
 					</update_info_select>

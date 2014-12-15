@@ -3,7 +3,7 @@
 		<h:title>Nurse &amp; Doctor Duty</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/2FC99CAF-355B-4709-A363-67B2AF485509" uiVersion="1" version="626" name="Nurse &amp; Doctor Duty">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/2FC99CAF-355B-4709-A363-67B2AF485509" uiVersion="1" version="641" name="Nurse &amp; Doctor Duty">
 					<nurse_on_call/>
 					<shift/>
 					<on_call_doctor/>
@@ -135,7 +135,7 @@
 		<setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
 	</h:head>
 	<h:body>
-		<select1 ref="/data/nurse_on_call">
+		<select ref="/data/nurse_on_call">
 			<label ref="jr:itext('nurse_on_call-label')"/>
 			<item>
 				<label ref="jr:itext('nurse_on_call-nurse_1-label')"/>
@@ -177,7 +177,7 @@
 				<label ref="jr:itext('nurse_on_call-nurse_10-label')"/>
 				<value>nurse_10</value>
 			</item>
-		</select1>
+		</select>
 		<select1 ref="/data/shift">
 			<label ref="jr:itext('shift-label')"/>
 			<item>
@@ -193,7 +193,7 @@
 				<value>night</value>
 			</item>
 		</select1>
-		<select1 ref="/data/on_call_doctor">
+		<select ref="/data/on_call_doctor">
 			<label ref="jr:itext('on_call_doctor-label')"/>
 			<item>
 				<label ref="jr:itext('on_call_doctor-doctor_1-label')"/>
@@ -207,6 +207,6 @@
 				<label ref="jr:itext('on_call_doctor-doctor_3-label')"/>
 				<value>doctor_3</value>
 			</item>
-		</select1>
+		</select>
 	</h:body>
 </h:html>

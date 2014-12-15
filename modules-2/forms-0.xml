@@ -3,7 +3,7 @@
 		<h:title>Record Measurements</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/78143AF8-0E4D-4E91-A025-D23B215BD183" uiVersion="1" version="631" name="Record Measurements">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/78143AF8-0E4D-4E91-A025-D23B215BD183" uiVersion="1" version="665" name="Record Measurements">
 					<membrane_rupture/>
 					<membrane_date/>
 					<membrane_time/>
@@ -13,12 +13,14 @@
 					<grips>
 						<fundal_grip/>
 						<fundal_grip_other/>
+						<grips_in/>
+						<grips_out/>
 						<fetal_lie/>
 						<fetal_presentation/>
 						<pelvic_grip_1/>
 						<pelvic_grip_2/>
 					</grips>
-					<exam_indicators jr:template="">
+					<exam_indicators>
 						<exam_measurement_indicator_list>
 							<choose/>
 							<indicator_list/>
@@ -104,13 +106,13 @@
 					<emergency_signs>
 						<emergency_signs>
 							<emergency_signs_list/>
+						</emergency_signs>
+						<es_alert>
 							<difficulty_in_breathing_ds/>
 							<shock_ds/>
 							<convulsions_ds/>
 							<prolapsed_cord_ds/>
 							<fetal_distress_ds/>
-						</emergency_signs>
-						<es_alert>
 							<alert/>
 							<suggested_action/>
 							<choice/>
@@ -237,15 +239,17 @@
 					<graph_colour/>
 				<subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>Indicators</case_type></create><update><contractions_dur/><contractions_num/><diastolic/><dilation/><fhs/><hours/><pulse/><resp/><station/><systolic/></update><index><parent case_type="patient"/></index></case></subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><update><af/><af_time/><alert_flag/><bp_time/><contractions_dur/><contractions_num/><contractions_time/><diastolic/><dilation/><dilation_time/><drugs_iv/><drugs_iv_time/><fetal_lie/><fetal_presentation/><fhs/><fhs_time/><first_dilation/><first_measured_dilation_time/><first_measured_dilation_time_display/><fundal_grip/><graph_colour/><hours/><last_exam_time/><membrane_rupture/><minutes_until_next_exam/><minutes_until_next_pv/><moulding/><moulding_time/><nurse_flag/><oxytocin/><oxytocin_time/><pelvic_grip_1/><pelvic_grip_2/><pulse/><pulse_time/><pv_in/><resp/><resp_time/><station/><station_time/><systolic/><temp/><temp_time/><urine_time/><urine_vol/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
 			</instance><instance id="commcaresession" src="jr://instance/session"/><instance id="casedb" src="jr://instance/casedb"/>
-			<bind nodeset="/data/membrane_rupture" relevant="/data/membrane_rupture_in != 'yes'"/>
+			<bind nodeset="/data/membrane_rupture" relevant="/data/membrane_rupture_in != &quot;yes&quot;"/>
 			<bind nodeset="/data/membrane_date" type="xsd:date" relevant="/data/membrane_rupture = 'yes'"/>
 			<bind nodeset="/data/membrane_time" type="xsd:time" relevant="/data/membrane_rupture = 'yes'"/>
 			<bind nodeset="/data/memebrane_ruptured_date_time" calculate="concat(&quot;format-date(/data/membrane_date, '%e/%n/%y')&quot;, ' ', /data/membrane_time)"/>
 			<bind nodeset="/data/membrane_rupture_in"/>
 			<bind nodeset="/data/membrane_rupture_out" calculate="if(/data/membrane_rupture = &quot;yes&quot;, &quot;yes&quot;, /data/membrane_rupture_in)"/>
 			<bind nodeset="/data/grips"/>
-			<bind nodeset="/data/grips/fundal_grip"/>
-			<bind nodeset="/data/grips/fundal_grip_other" type="xsd:string"/>
+			<bind nodeset="/data/grips/fundal_grip" required="true()"/>
+			<bind nodeset="/data/grips/fundal_grip_other" type="xsd:string" relevant="/data/grips/fundal_grip = 'other'"/>
+			<bind nodeset="/data/grips/grips_in"/>
+			<bind nodeset="/data/grips/grips_out" calculate="if(/data/grips/fundal_grip=&quot;cephalic&quot; or /data/grips/fundal_grip=&quot;breech&quot; or /data/grips/fundal_grip=&quot;other&quot;, 'yes', /data/grips/grips_in) "/>
 			<bind nodeset="/data/grips/fetal_lie"/>
 			<bind nodeset="/data/grips/fetal_presentation"/>
 			<bind nodeset="/data/grips/pelvic_grip_1"/>
@@ -306,7 +310,7 @@
 			<bind nodeset="/data/exam_indicators/urine/last_urine_vol" relevant="/data/urine_vol_in != ''"/>
 			<bind nodeset="/data/exam_indicators/urine/urine_passed" required="true()"/>
 			<bind nodeset="/data/exam_indicators/urine/urine_vol" type="xsd:int" relevant="/data/exam_indicators/urine/urine_passed = 'yes'"/>
-			<bind nodeset="/data/exam_indicators/urine/urine_contains" relevant="/data/exam_indicators/urine/urine_passed = 'yes'"/>
+			<bind nodeset="/data/exam_indicators/urine/urine_contains" relevant="/data/exam_indicators/urine/urine_passed = 'yes'" required="true()"/>
 			<bind nodeset="/data/exam_indicators/oxytocin" relevant="selected(/data/exam_indicators/exam_measurement_indicator_list/indicator_list, 'oxytocin')"/>
 			<bind nodeset="/data/exam_indicators/oxytocin/last_oxytocin" relevant="/data/oxytocin_in != ''"/>
 			<bind nodeset="/data/exam_indicators/oxytocin/oxytocin_given" required="true()"/>
@@ -318,12 +322,12 @@
 			<bind nodeset="/data/emergency_signs"/>
 			<bind nodeset="/data/emergency_signs/emergency_signs"/>
 			<bind nodeset="/data/emergency_signs/emergency_signs/emergency_signs_list" constraint="(/data/es_none = 'yes' and /data/es_others = 'no') or (/data/es_none = 'no' and /data/es_others = 'yes') " jr:constraintMsg="jr:itext('emergency_signs/emergency_signs/emergency_signs_list-constraintMsg')" required="true()"/>
-			<bind nodeset="/data/emergency_signs/emergency_signs/difficulty_in_breathing_ds" relevant="selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'difficulty_breathing')"/>
-			<bind nodeset="/data/emergency_signs/emergency_signs/shock_ds" relevant="selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'shock')"/>
-			<bind nodeset="/data/emergency_signs/emergency_signs/convulsions_ds" relevant="selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'convulsions_unconsciousness')"/>
-			<bind nodeset="/data/emergency_signs/emergency_signs/prolapsed_cord_ds" relevant="selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'prolapsed_cord')"/>
-			<bind nodeset="/data/emergency_signs/emergency_signs/fetal_distress_ds" relevant="selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'fetal_distress')"/>
 			<bind nodeset="/data/emergency_signs/es_alert" relevant="selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'difficulty_breathing') or selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'shock') or selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'vaginal_bleeding') or selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'convulsions_unconsciousness') or selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'prolapsed_cord') or selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'fetal_distress')"/>
+			<bind nodeset="/data/emergency_signs/es_alert/difficulty_in_breathing_ds" relevant="selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'difficulty_breathing')"/>
+			<bind nodeset="/data/emergency_signs/es_alert/shock_ds" relevant="selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'shock')"/>
+			<bind nodeset="/data/emergency_signs/es_alert/convulsions_ds" relevant="selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'convulsions_unconsciousness')"/>
+			<bind nodeset="/data/emergency_signs/es_alert/prolapsed_cord_ds" relevant="selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'prolapsed_cord')"/>
+			<bind nodeset="/data/emergency_signs/es_alert/fetal_distress_ds" relevant="selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'fetal_distress')"/>
 			<bind nodeset="/data/emergency_signs/es_alert/alert"/>
 			<bind nodeset="/data/emergency_signs/es_alert/suggested_action"/>
 			<bind nodeset="/data/emergency_signs/es_alert/choice" required="true()"/>
@@ -428,9 +432,9 @@
 			<bind nodeset="/data/first_measured_dilation_time_out" calculate="if((/data/first_measured_dilation_time_in = '') and (/data/dilation_out &gt;= 4), double(now()), /data/first_measured_dilation_time_in)"/>
 			<bind nodeset="/data/first_measured_dilation_time_display" calculate="if(/data/first_measured_dilation_time_out = '', '', format-date(now(),'%e/%n %H:%M:%S'))"/>
 			<bind nodeset="/data/first_measured_dilation_time_in"/>
-			<bind nodeset="/data/nurse_flag" calculate="if(/data/prev_nurse_flag ='yes' or /data/exam_indicators/fhs_alert/choice = 'flag' or /data/exam_indicators/af_alert/choice = 'flag' or /data/exam_indicators/bp_alert/choice = 'flag' or /data/emergency_signs/es_alert/choice = 'flag', 'yes', 'no')"/>
+			<bind nodeset="/data/nurse_flag" calculate="if(/data/prev_nurse_flag = 'yes' or /data/exam_indicators/fhs_alert/choice = 'flag' or /data/exam_indicators/af_alert/choice = 'flag' or /data/exam_indicators/bp_alert/choice = 'flag' or /data/emergency_signs/es_alert/choice = 'flag', 'yes', 'no')"/>
 			<bind nodeset="/data/prev_nurse_flag"/>
-			<bind nodeset="/data/alert_flag" calculate="if(/data/prev_alert_flag = 'yes' or selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'difficulty_breathing') or selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'shock') or selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'vaginal_bleeding') or selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'convulsions_unconsciousness') or selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'prolapsed_cord') or selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'fetal_distress') or (/data/exam_indicators/bp/systolic &gt;= 140 and /data/exam_indicators/bp/diastolic &gt;= 90) or /data/exam_indicators/fhs/fhs &lt; 110 or /data/exam_indicators/fhs/fhs &gt; 160 or /data/exam_indicators/af/af = &quot;Meconium&quot; or /data/exam_indicators/af/af = &quot;Blood&quot;, 'yes', 'no')"/>
+			<bind nodeset="/data/alert_flag" calculate="if(/data/prev_alert_flag = 'yes' or selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'difficulty_breathing') or selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'shock') or selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'vaginal_bleeding') or selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'convulsions_unconsciousness') or selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'prolapsed_cord') or selected(/data/emergency_signs/emergency_signs/emergency_signs_list, 'fetal_distress') or /data/exam_indicators/bp/systolic &gt;= 140 and /data/exam_indicators/bp/diastolic &gt;= 90 or /data/exam_indicators/fhs/fhs &lt; 110 or /data/exam_indicators/fhs/fhs &gt; 160 or /data/exam_indicators/af/af = 'Meconium' or /data/exam_indicators/af/af = 'Blood', 'yes', 'no')"/>
 			<bind nodeset="/data/prev_alert_flag"/>
 			<bind nodeset="/data/first_dilation_out" calculate="if(/data/first_dilation_in = '', /data/dilation_out, /data/first_dilation_in)"/>
 			<bind nodeset="/data/first_dilation_in"/>
@@ -518,7 +522,7 @@
 						<value>Non-ballotable</value>
 					</text>
 					<text id="exam_indicators-label">
-						<value>Exam Measurements</value>
+						<value>exam_indicators</value>
 					</text>
 					<text id="exam_indicators/choose-label">
 						<value>Choose the measurements you would like to record:</value>
@@ -980,7 +984,7 @@ repeat group count:<output value="/data/dilation_count_test"/></value>
 						<value>Non-ballotable</value>
 					</text>
 					<text id="exam_indicators-label">
-						<value>&#2350;&#2366;&#2346; &#2325;&#2366; &#2346;&#2381;&#2352;&#2358;&#2367;&#2325;&#2381;&#2359;&#2339;</value>
+						<value>exam_indicators</value>
 					</text>
 					<text id="exam_indicators/choose-label">
 						<value>&#2332;&#2379; &#2350;&#2366;&#2346; &#2310;&#2346; &#2342;&#2352;&#2381;&#2395; &#2325;&#2352;&#2344;&#2366; &#2330;&#2366;&#2361;&#2375;&#2306;&#2327;&#2375; &#2313;&#2360;&#2325;&#2366; &#2330;&#2369;&#2344;&#2366;&#2357; &#2325;&#2352;&#2375;&#2306;</value>
@@ -1475,398 +1479,396 @@ repeat group count:<output value="/data/dilation_count_test"/></value>
 				</item>
 			</select1>
 		</group>
-		<group>
+		<group ref="/data/exam_indicators">
 			<label ref="jr:itext('exam_indicators-label')"/>
-			<repeat nodeset="/data/exam_indicators">
-				<group ref="/data/exam_indicators/exam_measurement_indicator_list" appearance="field-list">
-					<trigger ref="/data/exam_indicators/exam_measurement_indicator_list/choose" appearance="minimal">
-						<label ref="jr:itext('exam_indicators/choose-label')"/>
-					</trigger>
-					<select ref="/data/exam_indicators/exam_measurement_indicator_list/indicator_list">
-						<item>
-							<label ref="jr:itext('cervical_dilation-label')"/>
-							<value>dilation</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/indicator_list-station-label')"/>
-							<value>station</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/fetal_state-fhs-label')"/>
-							<value>fhs</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/fetal_state-af-label')"/>
-							<value>af</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/fetal_state-moulding-label')"/>
-							<value>moulding</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/contractions-label')"/>
-							<value>contractions</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/maternal_state-bp-label')"/>
-							<value>bp</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/maternal_state-pulse-label')"/>
-							<value>pulse</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/maternal_state-temp-label')"/>
-							<value>temp</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/maternal_state-resp-label')"/>
-							<value>resp</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/maternal_state-urine-label')"/>
-							<value>urine</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/medications-oxytocin-label')"/>
-							<value>oxytocin</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/medications-drugs_iv-label')"/>
-							<value>drugs_iv</value>
-						</item>
-					</select>
-				</group>
-				<group ref="/data/exam_indicators/cervical_dilation" appearance="field-list">
-					<label ref="jr:itext('cervical_dilation-label')"/>
-					<trigger ref="/data/exam_indicators/cervical_dilation/last_dilation" appearance="minimal">
-						<label ref="jr:itext('cervical_dilation/last_dilation-label')"/>
-					</trigger>
-					<input ref="/data/exam_indicators/cervical_dilation/dilation">
-						<label ref="jr:itext('cervical_dilation/dilation-label')"/>
-					</input>
-					<trigger ref="/data/exam_indicators/cervical_dilation/latent_phase" appearance="minimal">
-						<label ref="jr:itext('exam_indicators/cervical_dilation/latent_phase-label')"/>
-					</trigger>
-				</group>
-				<group ref="/data/exam_indicators/station_of_the_head" appearance="field-list">
-					<label ref="jr:itext('exam_indicators/indicator_list-station-label')"/>
-					<trigger ref="/data/exam_indicators/station_of_the_head/last_station" appearance="minimal">
-						<label ref="jr:itext('exam_indicators/station_of_the_head/last_station-label')"/>
-					</trigger>
-					<select1 ref="/data/exam_indicators/station_of_the_head/station">
-						<label ref="jr:itext('exam_indicators/station_of_the_head/station-label')"/>
-						<item>
-							<label ref="jr:itext('exam_indicators/station_of_the_head/station--3-label')"/>
-							<value>-3</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/station_of_the_head/station--2-label')"/>
-							<value>-2</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/station_of_the_head/station--1-label')"/>
-							<value>-1</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/station_of_the_head/station-0-label')"/>
-							<value>0</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/station_of_the_head/station-1-label')"/>
-							<value>1</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/station_of_the_head/station-2-label')"/>
-							<value>2</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/station_of_the_head/station-3-label')"/>
-							<value>3</value>
-						</item>
-					</select1>
-				</group>
-				<group ref="/data/exam_indicators/fhs" appearance="field-list">
-					<label ref="jr:itext('exam_indicators/fetal_state-fhs-label')"/>
-					<trigger ref="/data/exam_indicators/fhs/last_fhs" appearance="minimal">
-						<label ref="jr:itext('exam_indicators/fhs/last_fhs-label')"/>
-					</trigger>
-					<input ref="/data/exam_indicators/fhs/fhs">
-						<label ref="jr:itext('exam_indicators/fhs/fhs-label')"/>
-					</input>
-				</group>
-				<group ref="/data/exam_indicators/fhs_alert" appearance="field-list">
-					<trigger ref="/data/exam_indicators/fhs_alert/alert" appearance="minimal">
-						<label ref="jr:itext('exam_indicators/fhs/alert-label')"/>
-					</trigger>
-					<trigger ref="/data/exam_indicators/fhs_alert/suggested_action" appearance="minimal">
-						<label ref="jr:itext('exam_indicators/fhs/suggested_action-label')"/>
-					</trigger>
-					<select1 ref="/data/exam_indicators/fhs_alert/choice">
-						<label ref="jr:itext('emergency_signs/es_alert/choice-label')"/>
-						<item>
-							<label ref="jr:itext('emergency_signs/es_alert/choice-flag-label')"/>
-							<value>flag</value>
-						</item>
-						<item>
-							<label ref="jr:itext('emergency_signs/es_alert/choice-record_actions-label')"/>
-							<value>record_actions</value>
-						</item>
-						<item>
-							<label ref="jr:itext('emergency_signs/es_alert/choice-dismiss-label')"/>
-							<value>dismiss</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/fhs/choice-stop-label')"/>
-							<value>stop</value>
-						</item>
-					</select1>
-					<input ref="/data/exam_indicators/fhs_alert/actions">
-						<label ref="jr:itext('emergency_signs/es_alert/actions-label')"/>
-					</input>
-				</group>
-				<group ref="/data/exam_indicators/af" appearance="field-list">
-					<label ref="jr:itext('exam_indicators/af-label')"/>
-					<trigger ref="/data/exam_indicators/af/question8" appearance="minimal">
-						<label ref="jr:itext('exam_indicators/af/question8-label')"/>
-					</trigger>
-					<select1 ref="/data/exam_indicators/af/af">
-						<label ref="jr:itext('exam_indicators/af/af-label')"/>
-						<item>
-							<label ref="jr:itext('exam_indicators/af/af-Clear-label')"/>
-							<value>Clear</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/af/af-Absent-label')"/>
-							<value>Absent</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/af/af-Meconium-label')"/>
-							<value>Meconium</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/af/af-Blood-label')"/>
-							<value>Blood</value>
-						</item>
-					</select1>
-				</group>
-				<group ref="/data/exam_indicators/af_alert" appearance="field-list">
-					<trigger ref="/data/exam_indicators/af_alert/alert" appearance="minimal">
-						<label ref="jr:itext('exam_indicators/af/alert-label')"/>
-					</trigger>
-					<trigger ref="/data/exam_indicators/af_alert/suggested_action" appearance="minimal">
-						<label ref="jr:itext('exam_indicators/af/suggested_action-label')"/>
-					</trigger>
-					<select1 ref="/data/exam_indicators/af_alert/choice">
-						<label ref="jr:itext('emergency_signs/es_alert/choice-label')"/>
-						<item>
-							<label ref="jr:itext('emergency_signs/es_alert/choice-flag-label')"/>
-							<value>flag</value>
-						</item>
-						<item>
-							<label ref="jr:itext('emergency_signs/es_alert/choice-record_actions-label')"/>
-							<value>record_actions</value>
-						</item>
-						<item>
-							<label ref="jr:itext('emergency_signs/es_alert/choice-dismiss-label')"/>
-							<value>dismiss</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/af/choice-stop-label')"/>
-							<value>stop</value>
-						</item>
-					</select1>
-					<input ref="/data/exam_indicators/af_alert/actions">
-						<label ref="jr:itext('exam_indicators/af/actions-label')"/>
-					</input>
-				</group>
-				<group ref="/data/exam_indicators/moulding" appearance="field-list">
-					<label ref="jr:itext('exam_indicators/fetal_state-moulding-label')"/>
-					<trigger ref="/data/exam_indicators/moulding/last_moulding" appearance="minimal">
-						<label ref="jr:itext('exam_indicators/moulding/last_moulding-label')"/>
-					</trigger>
-					<select1 ref="/data/exam_indicators/moulding/moulding">
-						<label ref="jr:itext('exam_indicators/moulding/moulding-label')"/>
-						<item>
-							<label ref="jr:itext('exam_indicators/moulding/mouldin-item1-label')"/>
-							<value>0</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/moulding/mouldin-item2-label')"/>
-							<value>1</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/moulding/moulding-2-label')"/>
-							<value>2</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/moulding/moulding-3-label')"/>
-							<value>3</value>
-						</item>
-					</select1>
-				</group>
-				<group ref="/data/exam_indicators/contractions" appearance="field-list">
-					<label ref="jr:itext('exam_indicators/contractions-label')"/>
-					<trigger ref="/data/exam_indicators/contractions/last_contractions" appearance="minimal">
-						<label ref="jr:itext('exam_indicators/contractions/last_contractions-label')"/>
-					</trigger>
-					<input ref="/data/exam_indicators/contractions/contractions_num">
-						<label ref="jr:itext('exam_indicators/contractions/contractions_num-label')"/>
-					</input>
-					<input ref="/data/exam_indicators/contractions/contractions_dur">
-						<label ref="jr:itext('exam_indicators/contractions/contractions_dur-label')"/>
-					</input>
-				</group>
-				<group ref="/data/exam_indicators/bp" appearance="field-list">
-					<label ref="jr:itext('exam_indicators/bp-label')"/>
-					<trigger ref="/data/exam_indicators/bp/last_bp" appearance="minimal">
-						<label ref="jr:itext('exam_indicators/bp/last_bp-label')"/>
-					</trigger>
-					<input ref="/data/exam_indicators/bp/systolic">
-						<label ref="jr:itext('exam_indicators/bp/systolic-label')"/>
-					</input>
-					<input ref="/data/exam_indicators/bp/diastolic">
-						<label ref="jr:itext('exam_indicators/bp/diastolic-label')"/>
-					</input>
-				</group>
-				<group ref="/data/exam_indicators/bp_alert" appearance="field-list">
-					<trigger ref="/data/exam_indicators/bp_alert/alert" appearance="minimal">
-						<label ref="jr:itext('exam_indicators/bp/alert-label')"/>
-					</trigger>
-					<trigger ref="/data/exam_indicators/bp_alert/suggested_action" appearance="minimal">
-						<label ref="jr:itext('exam_indicators/bp/suggested_action-label')"/>
-					</trigger>
-					<select1 ref="/data/exam_indicators/bp_alert/choice">
-						<label ref="jr:itext('emergency_signs/es_alert/choice-label')"/>
-						<item>
-							<label ref="jr:itext('emergency_signs/es_alert/choice-flag-label')"/>
-							<value>flag</value>
-						</item>
-						<item>
-							<label ref="jr:itext('emergency_signs/es_alert/choice-record_actions-label')"/>
-							<value>record_actions</value>
-						</item>
-						<item>
-							<label ref="jr:itext('emergency_signs/es_alert/choice-dismiss-label')"/>
-							<value>dismiss</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/af/choice-stop-label')"/>
-							<value>stop</value>
-						</item>
-					</select1>
-					<input ref="/data/exam_indicators/bp_alert/actions">
-						<label ref="jr:itext('exam_indicators/bp/actions-label')"/>
-					</input>
-				</group>
-				<group ref="/data/exam_indicators/pulse" appearance="field-list">
-					<label ref="jr:itext('exam_indicators/maternal_state-pulse-label')"/>
-					<trigger ref="/data/exam_indicators/pulse/last_pulse" appearance="minimal">
-						<label ref="jr:itext('exam_indicators/pulse/last_pulse-label')"/>
-					</trigger>
-					<input ref="/data/exam_indicators/pulse/pulse">
-						<label ref="jr:itext('exam_indicators/pulse/pulse-label')"/>
-					</input>
-				</group>
-				<group ref="/data/exam_indicators/temp" appearance="field-list">
-					<label ref="jr:itext('exam_indicators/temp-label')"/>
-					<trigger ref="/data/exam_indicators/temp/last_temp" appearance="minimal">
-						<label ref="jr:itext('exam_indicators/temp/last_temp-label')"/>
-					</trigger>
-					<input ref="/data/exam_indicators/temp/temp">
-						<label ref="jr:itext('exam_indicators/temp/temp-label')"/>
-						<hint ref="jr:itext('exam_indicators/temp/temp-hint')"/>
-					</input>
-				</group>
-				<group ref="/data/exam_indicators/resp" appearance="field-list">
-					<label ref="jr:itext('exam_indicators/maternal_state-resp-label')"/>
-					<trigger ref="/data/exam_indicators/resp/last_resp" appearance="minimal">
-						<label ref="jr:itext('exam_indicators/resp/last_resp-label')"/>
-					</trigger>
-					<input ref="/data/exam_indicators/resp/resp">
-						<label ref="jr:itext('exam_indicators/resp/resp-label')"/>
-					</input>
-				</group>
-				<group ref="/data/exam_indicators/urine" appearance="field-list">
-					<label ref="jr:itext('exam_indicators/maternal_state-urine-label')"/>
-					<trigger ref="/data/exam_indicators/urine/last_urine_vol" appearance="minimal">
-						<label ref="jr:itext('exam_indicators/urine/last_urine_vol-label')"/>
-					</trigger>
-					<select1 ref="/data/exam_indicators/urine/urine_passed">
-						<label ref="jr:itext('exam_indicators/urine/urine_passed-label')"/>
-						<item>
-							<label ref="jr:itext('exam_indicators/drugs_iv/drugs_iv_given-yes-label')"/>
-							<value>yes</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/drugs_iv/drugs_iv_given-no-label')"/>
-							<value>no</value>
-						</item>
-					</select1>
-					<input ref="/data/exam_indicators/urine/urine_vol">
-						<label ref="jr:itext('exam_indicators/urine/urine_vol-label')"/>
-					</input>
-					<select ref="/data/exam_indicators/urine/urine_contains">
-						<label ref="jr:itext('exam_indicators/urine/urine_contains-label')"/>
-						<item>
-							<label ref="jr:itext('exam_indicators/urine/urine_contains-protein-label')"/>
-							<value>protein</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/urine/urine_contains-albumin-label')"/>
-							<value>albumin</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/urine/urine_contains-sugar-label')"/>
-							<value>sugar</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/urine/urine_contains-none-label')"/>
-							<value>none</value>
-						</item>
-					</select>
-				</group>
-				<group ref="/data/exam_indicators/oxytocin" appearance="field-list">
-					<label ref="jr:itext('exam_indicators/oxytocin-label')"/>
-					<trigger ref="/data/exam_indicators/oxytocin/last_oxytocin" appearance="minimal">
-						<label ref="jr:itext('exam_indicators/oxytocin/last_oxytocin-label')"/>
-					</trigger>
-					<select1 ref="/data/exam_indicators/oxytocin/oxytocin_given">
-						<label ref="jr:itext('exam_indicators/oxytocin/oxytocin_given-label')"/>
-						<item>
-							<label ref="jr:itext('exam_indicators/drugs_iv/drugs_iv_given-yes-label')"/>
-							<value>yes</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/drugs_iv/drugs_iv_given-no-label')"/>
-							<value>no</value>
-						</item>
-					</select1>
-					<input ref="/data/exam_indicators/oxytocin/oxytocin">
-						<label ref="jr:itext('exam_indicators/oxytocin/oxytocin-label')"/>
-					</input>
-				</group>
-				<group ref="/data/exam_indicators/drugs_iv" appearance="field-list">
-					<label ref="jr:itext('exam_indicators/drugs_iv-label')"/>
-					<trigger ref="/data/exam_indicators/drugs_iv/last_drugs_iv" appearance="minimal">
-						<label ref="jr:itext('exam_indicators/drugs_iv/last_drugs_iv-label')"/>
-					</trigger>
-					<select1 ref="/data/exam_indicators/drugs_iv/drugs_iv_given">
-						<label ref="jr:itext('exam_indicators/drugs_iv/drugs_iv_given-label')"/>
-						<item>
-							<label ref="jr:itext('exam_indicators/drugs_iv/drugs_iv_given-yes-label')"/>
-							<value>yes</value>
-						</item>
-						<item>
-							<label ref="jr:itext('exam_indicators/drugs_iv/drugs_iv_given-no-label')"/>
-							<value>no</value>
-						</item>
-					</select1>
-					<input ref="/data/exam_indicators/drugs_iv/drugs_iv">
-						<label ref="jr:itext('exam_indicators/drugs_iv/drugs_iv-label')"/>
-					</input>
-				</group>
-			</repeat>
+			<group ref="/data/exam_indicators/exam_measurement_indicator_list" appearance="field-list">
+				<trigger ref="/data/exam_indicators/exam_measurement_indicator_list/choose" appearance="minimal">
+					<label ref="jr:itext('exam_indicators/choose-label')"/>
+				</trigger>
+				<select ref="/data/exam_indicators/exam_measurement_indicator_list/indicator_list">
+					<item>
+						<label ref="jr:itext('cervical_dilation-label')"/>
+						<value>dilation</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/indicator_list-station-label')"/>
+						<value>station</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/fetal_state-fhs-label')"/>
+						<value>fhs</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/fetal_state-af-label')"/>
+						<value>af</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/fetal_state-moulding-label')"/>
+						<value>moulding</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/contractions-label')"/>
+						<value>contractions</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/maternal_state-bp-label')"/>
+						<value>bp</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/maternal_state-pulse-label')"/>
+						<value>pulse</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/maternal_state-temp-label')"/>
+						<value>temp</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/maternal_state-resp-label')"/>
+						<value>resp</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/maternal_state-urine-label')"/>
+						<value>urine</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/medications-oxytocin-label')"/>
+						<value>oxytocin</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/medications-drugs_iv-label')"/>
+						<value>drugs_iv</value>
+					</item>
+				</select>
+			</group>
+			<group ref="/data/exam_indicators/cervical_dilation" appearance="field-list">
+				<label ref="jr:itext('cervical_dilation-label')"/>
+				<trigger ref="/data/exam_indicators/cervical_dilation/last_dilation" appearance="minimal">
+					<label ref="jr:itext('cervical_dilation/last_dilation-label')"/>
+				</trigger>
+				<input ref="/data/exam_indicators/cervical_dilation/dilation">
+					<label ref="jr:itext('cervical_dilation/dilation-label')"/>
+				</input>
+				<trigger ref="/data/exam_indicators/cervical_dilation/latent_phase" appearance="minimal">
+					<label ref="jr:itext('exam_indicators/cervical_dilation/latent_phase-label')"/>
+				</trigger>
+			</group>
+			<group ref="/data/exam_indicators/station_of_the_head" appearance="field-list">
+				<label ref="jr:itext('exam_indicators/indicator_list-station-label')"/>
+				<trigger ref="/data/exam_indicators/station_of_the_head/last_station" appearance="minimal">
+					<label ref="jr:itext('exam_indicators/station_of_the_head/last_station-label')"/>
+				</trigger>
+				<select1 ref="/data/exam_indicators/station_of_the_head/station">
+					<label ref="jr:itext('exam_indicators/station_of_the_head/station-label')"/>
+					<item>
+						<label ref="jr:itext('exam_indicators/station_of_the_head/station--3-label')"/>
+						<value>-3</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/station_of_the_head/station--2-label')"/>
+						<value>-2</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/station_of_the_head/station--1-label')"/>
+						<value>-1</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/station_of_the_head/station-0-label')"/>
+						<value>0</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/station_of_the_head/station-1-label')"/>
+						<value>1</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/station_of_the_head/station-2-label')"/>
+						<value>2</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/station_of_the_head/station-3-label')"/>
+						<value>3</value>
+					</item>
+				</select1>
+			</group>
+			<group ref="/data/exam_indicators/fhs" appearance="field-list">
+				<label ref="jr:itext('exam_indicators/fetal_state-fhs-label')"/>
+				<trigger ref="/data/exam_indicators/fhs/last_fhs" appearance="minimal">
+					<label ref="jr:itext('exam_indicators/fhs/last_fhs-label')"/>
+				</trigger>
+				<input ref="/data/exam_indicators/fhs/fhs">
+					<label ref="jr:itext('exam_indicators/fhs/fhs-label')"/>
+				</input>
+			</group>
+			<group ref="/data/exam_indicators/fhs_alert" appearance="field-list">
+				<trigger ref="/data/exam_indicators/fhs_alert/alert" appearance="minimal">
+					<label ref="jr:itext('exam_indicators/fhs/alert-label')"/>
+				</trigger>
+				<trigger ref="/data/exam_indicators/fhs_alert/suggested_action" appearance="minimal">
+					<label ref="jr:itext('exam_indicators/fhs/suggested_action-label')"/>
+				</trigger>
+				<select1 ref="/data/exam_indicators/fhs_alert/choice">
+					<label ref="jr:itext('emergency_signs/es_alert/choice-label')"/>
+					<item>
+						<label ref="jr:itext('emergency_signs/es_alert/choice-flag-label')"/>
+						<value>flag</value>
+					</item>
+					<item>
+						<label ref="jr:itext('emergency_signs/es_alert/choice-record_actions-label')"/>
+						<value>record_actions</value>
+					</item>
+					<item>
+						<label ref="jr:itext('emergency_signs/es_alert/choice-dismiss-label')"/>
+						<value>dismiss</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/fhs/choice-stop-label')"/>
+						<value>stop</value>
+					</item>
+				</select1>
+				<input ref="/data/exam_indicators/fhs_alert/actions">
+					<label ref="jr:itext('emergency_signs/es_alert/actions-label')"/>
+				</input>
+			</group>
+			<group ref="/data/exam_indicators/af" appearance="field-list">
+				<label ref="jr:itext('exam_indicators/af-label')"/>
+				<trigger ref="/data/exam_indicators/af/question8" appearance="minimal">
+					<label ref="jr:itext('exam_indicators/af/question8-label')"/>
+				</trigger>
+				<select1 ref="/data/exam_indicators/af/af">
+					<label ref="jr:itext('exam_indicators/af/af-label')"/>
+					<item>
+						<label ref="jr:itext('exam_indicators/af/af-Clear-label')"/>
+						<value>Clear</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/af/af-Absent-label')"/>
+						<value>Absent</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/af/af-Meconium-label')"/>
+						<value>Meconium</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/af/af-Blood-label')"/>
+						<value>Blood</value>
+					</item>
+				</select1>
+			</group>
+			<group ref="/data/exam_indicators/af_alert" appearance="field-list">
+				<trigger ref="/data/exam_indicators/af_alert/alert" appearance="minimal">
+					<label ref="jr:itext('exam_indicators/af/alert-label')"/>
+				</trigger>
+				<trigger ref="/data/exam_indicators/af_alert/suggested_action" appearance="minimal">
+					<label ref="jr:itext('exam_indicators/af/suggested_action-label')"/>
+				</trigger>
+				<select1 ref="/data/exam_indicators/af_alert/choice">
+					<label ref="jr:itext('emergency_signs/es_alert/choice-label')"/>
+					<item>
+						<label ref="jr:itext('emergency_signs/es_alert/choice-flag-label')"/>
+						<value>flag</value>
+					</item>
+					<item>
+						<label ref="jr:itext('emergency_signs/es_alert/choice-record_actions-label')"/>
+						<value>record_actions</value>
+					</item>
+					<item>
+						<label ref="jr:itext('emergency_signs/es_alert/choice-dismiss-label')"/>
+						<value>dismiss</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/af/choice-stop-label')"/>
+						<value>stop</value>
+					</item>
+				</select1>
+				<input ref="/data/exam_indicators/af_alert/actions">
+					<label ref="jr:itext('exam_indicators/af/actions-label')"/>
+				</input>
+			</group>
+			<group ref="/data/exam_indicators/moulding" appearance="field-list">
+				<label ref="jr:itext('exam_indicators/fetal_state-moulding-label')"/>
+				<trigger ref="/data/exam_indicators/moulding/last_moulding" appearance="minimal">
+					<label ref="jr:itext('exam_indicators/moulding/last_moulding-label')"/>
+				</trigger>
+				<select1 ref="/data/exam_indicators/moulding/moulding">
+					<label ref="jr:itext('exam_indicators/moulding/moulding-label')"/>
+					<item>
+						<label ref="jr:itext('exam_indicators/moulding/mouldin-item1-label')"/>
+						<value>0</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/moulding/mouldin-item2-label')"/>
+						<value>1</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/moulding/moulding-2-label')"/>
+						<value>2</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/moulding/moulding-3-label')"/>
+						<value>3</value>
+					</item>
+				</select1>
+			</group>
+			<group ref="/data/exam_indicators/contractions" appearance="field-list">
+				<label ref="jr:itext('exam_indicators/contractions-label')"/>
+				<trigger ref="/data/exam_indicators/contractions/last_contractions" appearance="minimal">
+					<label ref="jr:itext('exam_indicators/contractions/last_contractions-label')"/>
+				</trigger>
+				<input ref="/data/exam_indicators/contractions/contractions_num">
+					<label ref="jr:itext('exam_indicators/contractions/contractions_num-label')"/>
+				</input>
+				<input ref="/data/exam_indicators/contractions/contractions_dur">
+					<label ref="jr:itext('exam_indicators/contractions/contractions_dur-label')"/>
+				</input>
+			</group>
+			<group ref="/data/exam_indicators/bp" appearance="field-list">
+				<label ref="jr:itext('exam_indicators/bp-label')"/>
+				<trigger ref="/data/exam_indicators/bp/last_bp" appearance="minimal">
+					<label ref="jr:itext('exam_indicators/bp/last_bp-label')"/>
+				</trigger>
+				<input ref="/data/exam_indicators/bp/systolic">
+					<label ref="jr:itext('exam_indicators/bp/systolic-label')"/>
+				</input>
+				<input ref="/data/exam_indicators/bp/diastolic">
+					<label ref="jr:itext('exam_indicators/bp/diastolic-label')"/>
+				</input>
+			</group>
+			<group ref="/data/exam_indicators/bp_alert" appearance="field-list">
+				<trigger ref="/data/exam_indicators/bp_alert/alert" appearance="minimal">
+					<label ref="jr:itext('exam_indicators/bp/alert-label')"/>
+				</trigger>
+				<trigger ref="/data/exam_indicators/bp_alert/suggested_action" appearance="minimal">
+					<label ref="jr:itext('exam_indicators/bp/suggested_action-label')"/>
+				</trigger>
+				<select1 ref="/data/exam_indicators/bp_alert/choice">
+					<label ref="jr:itext('emergency_signs/es_alert/choice-label')"/>
+					<item>
+						<label ref="jr:itext('emergency_signs/es_alert/choice-flag-label')"/>
+						<value>flag</value>
+					</item>
+					<item>
+						<label ref="jr:itext('emergency_signs/es_alert/choice-record_actions-label')"/>
+						<value>record_actions</value>
+					</item>
+					<item>
+						<label ref="jr:itext('emergency_signs/es_alert/choice-dismiss-label')"/>
+						<value>dismiss</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/af/choice-stop-label')"/>
+						<value>stop</value>
+					</item>
+				</select1>
+				<input ref="/data/exam_indicators/bp_alert/actions">
+					<label ref="jr:itext('exam_indicators/bp/actions-label')"/>
+				</input>
+			</group>
+			<group ref="/data/exam_indicators/pulse" appearance="field-list">
+				<label ref="jr:itext('exam_indicators/maternal_state-pulse-label')"/>
+				<trigger ref="/data/exam_indicators/pulse/last_pulse" appearance="minimal">
+					<label ref="jr:itext('exam_indicators/pulse/last_pulse-label')"/>
+				</trigger>
+				<input ref="/data/exam_indicators/pulse/pulse">
+					<label ref="jr:itext('exam_indicators/pulse/pulse-label')"/>
+				</input>
+			</group>
+			<group ref="/data/exam_indicators/temp" appearance="field-list">
+				<label ref="jr:itext('exam_indicators/temp-label')"/>
+				<trigger ref="/data/exam_indicators/temp/last_temp" appearance="minimal">
+					<label ref="jr:itext('exam_indicators/temp/last_temp-label')"/>
+				</trigger>
+				<input ref="/data/exam_indicators/temp/temp">
+					<label ref="jr:itext('exam_indicators/temp/temp-label')"/>
+					<hint ref="jr:itext('exam_indicators/temp/temp-hint')"/>
+				</input>
+			</group>
+			<group ref="/data/exam_indicators/resp" appearance="field-list">
+				<label ref="jr:itext('exam_indicators/maternal_state-resp-label')"/>
+				<trigger ref="/data/exam_indicators/resp/last_resp" appearance="minimal">
+					<label ref="jr:itext('exam_indicators/resp/last_resp-label')"/>
+				</trigger>
+				<input ref="/data/exam_indicators/resp/resp">
+					<label ref="jr:itext('exam_indicators/resp/resp-label')"/>
+				</input>
+			</group>
+			<group ref="/data/exam_indicators/urine" appearance="field-list">
+				<label ref="jr:itext('exam_indicators/maternal_state-urine-label')"/>
+				<trigger ref="/data/exam_indicators/urine/last_urine_vol" appearance="minimal">
+					<label ref="jr:itext('exam_indicators/urine/last_urine_vol-label')"/>
+				</trigger>
+				<select1 ref="/data/exam_indicators/urine/urine_passed">
+					<label ref="jr:itext('exam_indicators/urine/urine_passed-label')"/>
+					<item>
+						<label ref="jr:itext('exam_indicators/drugs_iv/drugs_iv_given-yes-label')"/>
+						<value>yes</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/drugs_iv/drugs_iv_given-no-label')"/>
+						<value>no</value>
+					</item>
+				</select1>
+				<input ref="/data/exam_indicators/urine/urine_vol">
+					<label ref="jr:itext('exam_indicators/urine/urine_vol-label')"/>
+				</input>
+				<select ref="/data/exam_indicators/urine/urine_contains">
+					<label ref="jr:itext('exam_indicators/urine/urine_contains-label')"/>
+					<item>
+						<label ref="jr:itext('exam_indicators/urine/urine_contains-protein-label')"/>
+						<value>protein</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/urine/urine_contains-albumin-label')"/>
+						<value>albumin</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/urine/urine_contains-sugar-label')"/>
+						<value>sugar</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/urine/urine_contains-none-label')"/>
+						<value>none</value>
+					</item>
+				</select>
+			</group>
+			<group ref="/data/exam_indicators/oxytocin" appearance="field-list">
+				<label ref="jr:itext('exam_indicators/oxytocin-label')"/>
+				<trigger ref="/data/exam_indicators/oxytocin/last_oxytocin" appearance="minimal">
+					<label ref="jr:itext('exam_indicators/oxytocin/last_oxytocin-label')"/>
+				</trigger>
+				<select1 ref="/data/exam_indicators/oxytocin/oxytocin_given">
+					<label ref="jr:itext('exam_indicators/oxytocin/oxytocin_given-label')"/>
+					<item>
+						<label ref="jr:itext('exam_indicators/drugs_iv/drugs_iv_given-yes-label')"/>
+						<value>yes</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/drugs_iv/drugs_iv_given-no-label')"/>
+						<value>no</value>
+					</item>
+				</select1>
+				<input ref="/data/exam_indicators/oxytocin/oxytocin">
+					<label ref="jr:itext('exam_indicators/oxytocin/oxytocin-label')"/>
+				</input>
+			</group>
+			<group ref="/data/exam_indicators/drugs_iv" appearance="field-list">
+				<label ref="jr:itext('exam_indicators/drugs_iv-label')"/>
+				<trigger ref="/data/exam_indicators/drugs_iv/last_drugs_iv" appearance="minimal">
+					<label ref="jr:itext('exam_indicators/drugs_iv/last_drugs_iv-label')"/>
+				</trigger>
+				<select1 ref="/data/exam_indicators/drugs_iv/drugs_iv_given">
+					<label ref="jr:itext('exam_indicators/drugs_iv/drugs_iv_given-label')"/>
+					<item>
+						<label ref="jr:itext('exam_indicators/drugs_iv/drugs_iv_given-yes-label')"/>
+						<value>yes</value>
+					</item>
+					<item>
+						<label ref="jr:itext('exam_indicators/drugs_iv/drugs_iv_given-no-label')"/>
+						<value>no</value>
+					</item>
+				</select1>
+				<input ref="/data/exam_indicators/drugs_iv/drugs_iv">
+					<label ref="jr:itext('exam_indicators/drugs_iv/drugs_iv-label')"/>
+				</input>
+			</group>
 		</group>
 		<group ref="/data/emergency_signs">
 			<label ref="jr:itext('emergency_signs-label')"/>
@@ -1903,23 +1905,23 @@ repeat group count:<output value="/data/dilation_count_test"/></value>
 						<value>none</value>
 					</item>
 				</select>
-				<trigger ref="/data/emergency_signs/emergency_signs/difficulty_in_breathing_ds" appearance="minimal">
-					<label ref="jr:itext('emergency_signs/emergency_signs/difficulty_in_breathing_ds-label')"/>
-				</trigger>
-				<trigger ref="/data/emergency_signs/emergency_signs/shock_ds" appearance="minimal">
-					<label ref="jr:itext('emergency_signs/emergency_signs/shock_ds-label')"/>
-				</trigger>
-				<trigger ref="/data/emergency_signs/emergency_signs/convulsions_ds" appearance="minimal">
-					<label ref="jr:itext('emergency_signs/emergency_signs/convulsions_ds-label')"/>
-				</trigger>
-				<trigger ref="/data/emergency_signs/emergency_signs/prolapsed_cord_ds" appearance="minimal">
-					<label ref="jr:itext('emergency_signs/emergency_signs/prolapsed_cord_ds-label')"/>
-				</trigger>
-				<trigger ref="/data/emergency_signs/emergency_signs/fetal_distress_ds" appearance="minimal">
-					<label ref="jr:itext('emergency_signs/emergency_signs/fetal_distress_ds-label')"/>
-				</trigger>
 			</group>
 			<group ref="/data/emergency_signs/es_alert" appearance="field-list">
+				<trigger ref="/data/emergency_signs/es_alert/difficulty_in_breathing_ds" appearance="minimal">
+					<label ref="jr:itext('emergency_signs/emergency_signs/difficulty_in_breathing_ds-label')"/>
+				</trigger>
+				<trigger ref="/data/emergency_signs/es_alert/shock_ds" appearance="minimal">
+					<label ref="jr:itext('emergency_signs/emergency_signs/shock_ds-label')"/>
+				</trigger>
+				<trigger ref="/data/emergency_signs/es_alert/convulsions_ds" appearance="minimal">
+					<label ref="jr:itext('emergency_signs/emergency_signs/convulsions_ds-label')"/>
+				</trigger>
+				<trigger ref="/data/emergency_signs/es_alert/prolapsed_cord_ds" appearance="minimal">
+					<label ref="jr:itext('emergency_signs/emergency_signs/prolapsed_cord_ds-label')"/>
+				</trigger>
+				<trigger ref="/data/emergency_signs/es_alert/fetal_distress_ds" appearance="minimal">
+					<label ref="jr:itext('emergency_signs/emergency_signs/fetal_distress_ds-label')"/>
+				</trigger>
 				<trigger ref="/data/emergency_signs/es_alert/alert" appearance="minimal">
 					<label ref="jr:itext('emergency_signs/es_alert/alert-label')"/>
 				</trigger>
