@@ -744,7 +744,7 @@
                 <xpath function="$xmax"/>
               </text>
               <text id="y-max">
-                <xpath function="250"/>
+                <xpath function="max(250, max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/systolic))"/>
               </text>
               <text id="y-labels">
                 <xpath function="6"/>
@@ -795,7 +795,7 @@
             </series>
             <configuration>
               <text id="secondary-y-max">
-                <xpath function="35"/>
+                <xpath function="max(35, max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/resp))"/>
               </text>
               <text id="x-min">
                 <xpath function="0"/>
@@ -804,7 +804,7 @@
                 <xpath function="$xmax"/>
               </text>
               <text id="y-max">
-                <xpath function="140"/>
+                <xpath function="max(140, max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/pulse))"/>
               </text>
               <text id="secondary-y-labels">
                 <xpath function="8"/>
@@ -1734,7 +1734,7 @@
                 <xpath function="$xmax"/>
               </text>
               <text id="y-max">
-                <xpath function="250"/>
+                <xpath function="max(250, max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/systolic))"/>
               </text>
               <text id="y-labels">
                 <xpath function="6"/>
@@ -1788,13 +1788,13 @@
                 <xpath function="0"/>
               </text>
               <text id="secondary-y-max">
-                <xpath function="35"/>
+                <xpath function="max(35, max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/resp))"/>
               </text>
               <text id="x-max">
                 <xpath function="$xmax"/>
               </text>
               <text id="y-max">
-                <xpath function="140"/>
+                <xpath function="max(140, max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/pulse))"/>
               </text>
               <text id="secondary-y-labels">
                 <xpath function="8"/>
@@ -2393,7 +2393,7 @@
                 <xpath function="$xmax"/>
               </text>
               <text id="y-max">
-                <xpath function="250"/>
+                <xpath function="max(250, max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/systolic))"/>
               </text>
               <text id="y-labels">
                 <xpath function="6"/>
@@ -2447,13 +2447,13 @@
                 <xpath function="0"/>
               </text>
               <text id="secondary-y-max">
-                <xpath function="35"/>
+                <xpath function="max(35, max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/resp))"/>
               </text>
               <text id="x-max">
                 <xpath function="$xmax"/>
               </text>
               <text id="y-max">
-                <xpath function="140"/>
+                <xpath function="max(140, max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/pulse))"/>
               </text>
               <text id="secondary-y-labels">
                 <xpath function="8"/>
@@ -2967,7 +2967,7 @@
     </display>
     <command id="m5-f0"/>
   </menu>
-  <menu id="m6">
+  <menu id="root">
     <text>
       <locale id="modules.m6"/>
     </text>
