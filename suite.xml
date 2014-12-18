@@ -511,22 +511,22 @@
                <x function="hours"/>
                <y function="fhs"/>
            </series>
-           <series nodeset="instance('sequence')/sequence/index[.&lt;2]">
+           <series nodeset="instance('sequence')/sequence_list/sequence">
                <configuration>
                    <text id="point-style">
                        <value>none</value>
                    </text>
                </configuration>
-               <x function="if(. = 0, 0, $xmax)"/>
+               <x function="if(index = 0, 0, $xmax)"/>
                <y function="100"/>
            </series>
-           <series nodeset="instance('sequence')/sequence/index[.&lt;2]">
+           <series nodeset="instance('sequence')/sequence_list/sequence">
                <configuration>
                    <text id="point-style">
                        <value>none</value>
                    </text>
                </configuration>
-               <x function="if(. = 0, 0, $xmax)"/>
+               <x function="if(index = 0, 0, $xmax)"/>
                <y function="180"/>
            </series>
         </graph>
@@ -586,7 +586,7 @@
                       <value>10</value>
                   </text>
               </configuration>
-              <series nodeset="instance('sequence')/sequence/index[.&lt;3]">
+           <series nodeset="instance('sequence')/sequence_list/sequence">
 			      <configuration>
 			          <text id="fill-below">
 			              <value>#ffffff99</value>
@@ -598,10 +598,10 @@
 			              <value>none</value>
 			          </text>
 			      </configuration>
-			      <x function="if(. = 0, 0, if(. = 1, 10 - $fd, $xmax))"/>
-			      <y function="if(. = 0, $fd, 10)"/>
+			      <x function="if(index = 0, 0, if(index = 1, 10 - $fd, $xmax))"/>
+			      <y function="if(index = 0, $fd, 10)"/>
 			  </series>
-			  <series nodeset="instance('sequence')/sequence/index[.&lt;3]">
+           <series nodeset="instance('sequence')/sequence_list/sequence">
 			      <configuration>
 			          <text id="fill-below">
 			              <value>#ffee5555</value>
@@ -610,13 +610,13 @@
 			              <value>#00000000</value>
 			          </text>
 			          <text id="point-style">
-			              <value>none</value>
+			              <value>x</value>
 			          </text>
 			      </configuration>
-			      <x function="if(. = 0, 8 - $fd, if(. = 1, 14 - $fd, $xmax))"/>
-			      <y function="if(. = 0, 4, 10)"/>
+			      <x function="if(index = 0, 8 - $fd, if(index = 1, 14 - $fd, $xmax))"/>
+			      <y function="if(index = 0, 4, 10)"/>
 			  </series>
-			  <series nodeset="instance('sequence')/sequence/index[.&lt;2]">
+           <series nodeset="instance('sequence')/sequence_list/sequence">
 			      <configuration>
 			          <text id="fill-below">
 			              <value>#ffffffff</value>
@@ -628,7 +628,7 @@
 			              <value>none</value>
 			          </text>
 			      </configuration>
-			      <x function="if(. = 0, 0, $xmax)"/>
+			      <x function="if(index = 0, 0, $xmax)"/>
 			      <y function="4"/>
 			  </series>
 			  <series nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']">
@@ -1501,22 +1501,22 @@
                <x function="hours"/>
                <y function="fhs"/>
            </series>
-           <series nodeset="instance('sequence')/sequence/index[.&lt;2]">
+           <series nodeset="instance('sequence')/sequence_list/sequence">
                <configuration>
                    <text id="point-style">
                        <value>none</value>
                    </text>
                </configuration>
-               <x function="if(. = 0, 0, $xmax)"/>
+               <x function="if(index = 0, 0, $xmax)"/>
                <y function="100"/>
            </series>
-           <series nodeset="instance('sequence')/sequence/index[.&lt;2]">
+           <series nodeset="instance('sequence')/sequence_list/sequence">
                <configuration>
                    <text id="point-style">
                        <value>none</value>
                    </text>
                </configuration>
-               <x function="if(. = 0, 0, $xmax)"/>
+               <x function="if(index = 0, 0, $xmax)"/>
                <y function="180"/>
            </series>
         </graph>
@@ -1576,7 +1576,7 @@
                       <value>10</value>
                   </text>
               </configuration>
-              <series nodeset="instance('sequence')/sequence/index[.&lt;3]">
+           <series nodeset="instance('sequence')/sequence_list/sequence">
 			      <configuration>
 			          <text id="fill-below">
 			              <value>#ffffff99</value>
@@ -1588,10 +1588,10 @@
 			              <value>none</value>
 			          </text>
 			      </configuration>
-			      <x function="if(. = 0, 0, if(. = 1, 10 - $fd, $xmax))"/>
-			      <y function="if(. = 0, $fd, 10)"/>
+			      <x function="if(index = 0, 0, if(index = 1, 10 - $fd, $xmax))"/>
+			      <y function="if(index = 0, $fd, 10)"/>
 			  </series>
-			  <series nodeset="instance('sequence')/sequence/index[.&lt;3]">
+           <series nodeset="instance('sequence')/sequence_list/sequence">
 			      <configuration>
 			          <text id="fill-below">
 			              <value>#ffee5555</value>
@@ -1603,10 +1603,10 @@
 			              <value>none</value>
 			          </text>
 			      </configuration>
-			      <x function="if(. = 0, 8 - $fd, if(. = 1, 14 - $fd, $xmax))"/>
-			      <y function="if(. = 0, 4, 10)"/>
+			      <x function="if(index = 0, 8 - $fd, if(index = 1, 14 - $fd, $xmax))"/>
+			      <y function="if(index = 0, 4, 10)"/>
 			  </series>
-			  <series nodeset="instance('sequence')/sequence/index[.&lt;2]">
+           <series nodeset="instance('sequence')/sequence_list/sequence">
 			      <configuration>
 			          <text id="fill-below">
 			              <value>#ffffffff</value>
@@ -1618,7 +1618,7 @@
 			              <value>none</value>
 			          </text>
 			      </configuration>
-			      <x function="if(. = 0, 0, $xmax)"/>
+			      <x function="if(index = 0, 0, $xmax)"/>
 			      <y function="4"/>
 			  </series>
 			  <series nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']">
@@ -2160,22 +2160,22 @@
                <x function="hours"/>
                <y function="fhs"/>
            </series>
-           <series nodeset="instance('sequence')/sequence/index[.&lt;2]">
+           <series nodeset="instance('sequence')/sequence_list/sequence">
                <configuration>
                    <text id="point-style">
                        <value>none</value>
                    </text>
                </configuration>
-               <x function="if(. = 0, 0, $xmax)"/>
+               <x function="if(index = 0, 0, $xmax)"/>
                <y function="100"/>
            </series>
-           <series nodeset="instance('sequence')/sequence/index[.&lt;2]">
+           <series nodeset="instance('sequence')/sequence_list/sequence">
                <configuration>
                    <text id="point-style">
                        <value>none</value>
                    </text>
                </configuration>
-               <x function="if(. = 0, 0, $xmax)"/>
+               <x function="if(index = 0, 0, $xmax)"/>
                <y function="180"/>
            </series>
         </graph>
@@ -2235,7 +2235,7 @@
                       <value>10</value>
                   </text>
               </configuration>
-              <series nodeset="instance('sequence')/sequence/index[.&lt;3]">
+           <series nodeset="instance('sequence')/sequence_list/sequence">
 			      <configuration>
 			          <text id="fill-below">
 			              <value>#ffffff99</value>
@@ -2247,10 +2247,10 @@
 			              <value>none</value>
 			          </text>
 			      </configuration>
-			      <x function="if(. = 0, 0, if(. = 1, 10 - $fd, $xmax))"/>
-			      <y function="if(. = 0, $fd, 10)"/>
+			      <x function="if(index = 0, 0, if(index = 1, 10 - $fd, $xmax))"/>
+			      <y function="if(index = 0, $fd, 10)"/>
 			  </series>
-			  <series nodeset="instance('sequence')/sequence/index[.&lt;3]">
+           <series nodeset="instance('sequence')/sequence_list/sequence">
 			      <configuration>
 			          <text id="fill-below">
 			              <value>#ffee5555</value>
@@ -2262,10 +2262,10 @@
 			              <value>none</value>
 			          </text>
 			      </configuration>
-			      <x function="if(. = 0, 8 - $fd, if(. = 1, 14 - $fd, $xmax))"/>
-			      <y function="if(. = 0, 4, 10)"/>
+			      <x function="if(index = 0, 8 - $fd, if(index = 1, 14 - $fd, $xmax))"/>
+			      <y function="if(index = 0, 4, 10)"/>
 			  </series>
-			  <series nodeset="instance('sequence')/sequence/index[.&lt;2]">
+           <series nodeset="instance('sequence')/sequence_list/sequence">
 			      <configuration>
 			          <text id="fill-below">
 			              <value>#ffffffff</value>
@@ -2277,7 +2277,7 @@
 			              <value>none</value>
 			          </text>
 			      </configuration>
-			      <x function="if(. = 0, 0, $xmax)"/>
+			      <x function="if(index = 0, 0, $xmax)"/>
 			      <y function="4"/>
 			  </series>
 			  <series nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']">
@@ -2758,7 +2758,7 @@
       </display>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-<instance id="sequence" src="jr://instance/fixture/sequence" />
+<instance id="sequence" src="jr://fixture/item-list:sequence"></instance>
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open'][patient_status='active']" value="./@case_id" detail-select="m2_case_short" detail-confirm="m2_case_long"/>
     </session>
@@ -2779,7 +2779,7 @@
       </display>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-<instance id="sequence" src="jr://instance/fixture/sequence" />
+<instance id="sequence" src="jr://fixture/item-list:sequence"></instance>
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open'][patient_status='active']" value="./@case_id" detail-select="m2_case_short" detail-confirm="m2_case_long"/>
     </session>
@@ -2800,7 +2800,7 @@
       </display>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-<instance id="sequence" src="jr://instance/fixture/sequence" />
+<instance id="sequence" src="jr://fixture/item-list:sequence"></instance>
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open'][patient_status='active']" value="./@case_id" detail-select="m2_case_short" detail-confirm="m2_case_long"/>
     </session>
@@ -2821,7 +2821,7 @@
       </display>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-<instance id="sequence" src="jr://instance/fixture/sequence" />
+<instance id="sequence" src="jr://fixture/item-list:sequence"></instance>
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open'][patient_status='active']" value="./@case_id" detail-select="m2_case_short" detail-confirm="m2_case_long"/>
     </session>
@@ -2842,7 +2842,7 @@
       </display>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-<instance id="sequence" src="jr://instance/fixture/sequence" />
+<instance id="sequence" src="jr://fixture/item-list:sequence"></instance>
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open'][patient_status='active']" value="./@case_id" detail-select="m2_case_short" detail-confirm="m2_case_long"/>
     </session>
@@ -2863,7 +2863,7 @@
       </display>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-<instance id="sequence" src="jr://instance/fixture/sequence" />
+<instance id="sequence" src="jr://fixture/item-list:sequence"></instance>
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open'][patient_status='delivered']" value="./@case_id" detail-select="m3_case_short" detail-confirm="m3_case_long"/>
     </session>
@@ -2881,7 +2881,7 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-<instance id="sequence" src="jr://instance/fixture/sequence" />
+<instance id="sequence" src="jr://fixture/item-list:sequence"></instance>
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open'][patient_status='transfered']" value="./@case_id" detail-select="m4_case_short" detail-confirm="m4_case_long"/>
     </session>
@@ -2910,7 +2910,7 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-<instance id="sequence" src="jr://instance/fixture/sequence" />
+<instance id="sequence" src="jr://fixture/item-list:sequence"></instance>
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][@status='open']" value="./@case_id" detail-select="m6_case_short" detail-confirm="m6_case_long"/>
     </session>
@@ -2973,11 +2973,4 @@
     </text>
     <command id="m6-f0"/>
   </menu>
-  <fixture id="sequence">
-      <sequence>
-          <index>0</index>
-          <index>1</index>
-          <index>2</index>
-      </sequence>
-  </fixture>
 </suite>
