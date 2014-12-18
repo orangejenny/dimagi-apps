@@ -2758,7 +2758,7 @@
       </display>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-<instance id="sequence" src="jr://fixture/item-list:sequence"></instance>
+<instance id="sequence" src="jr://fixture/item-list:sequence"/>
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open'][patient_status='active']" value="./@case_id" detail-select="m2_case_short" detail-confirm="m2_case_long"/>
     </session>
@@ -2779,7 +2779,7 @@
       </display>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-<instance id="sequence" src="jr://fixture/item-list:sequence"></instance>
+<instance id="sequence" src="jr://fixture/item-list:sequence"/>
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open'][patient_status='active']" value="./@case_id" detail-select="m2_case_short" detail-confirm="m2_case_long"/>
     </session>
@@ -2800,7 +2800,7 @@
       </display>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-<instance id="sequence" src="jr://fixture/item-list:sequence"></instance>
+<instance id="sequence" src="jr://fixture/item-list:sequence"/>
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open'][patient_status='active']" value="./@case_id" detail-select="m2_case_short" detail-confirm="m2_case_long"/>
     </session>
@@ -2821,7 +2821,7 @@
       </display>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-<instance id="sequence" src="jr://fixture/item-list:sequence"></instance>
+<instance id="sequence" src="jr://fixture/item-list:sequence"/>
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open'][patient_status='active']" value="./@case_id" detail-select="m2_case_short" detail-confirm="m2_case_long"/>
     </session>
@@ -2842,7 +2842,7 @@
       </display>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-<instance id="sequence" src="jr://fixture/item-list:sequence"></instance>
+<instance id="sequence" src="jr://fixture/item-list:sequence"/>
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open'][patient_status='active']" value="./@case_id" detail-select="m2_case_short" detail-confirm="m2_case_long"/>
     </session>
@@ -2863,7 +2863,7 @@
       </display>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-<instance id="sequence" src="jr://fixture/item-list:sequence"></instance>
+<instance id="sequence" src="jr://fixture/item-list:sequence"/>
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open'][patient_status='delivered']" value="./@case_id" detail-select="m3_case_short" detail-confirm="m3_case_long"/>
     </session>
@@ -2881,7 +2881,7 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-<instance id="sequence" src="jr://fixture/item-list:sequence"></instance>
+<instance id="sequence" src="jr://fixture/item-list:sequence"/>
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='patient'][@status='open'][patient_status='transfered']" value="./@case_id" detail-select="m4_case_short" detail-confirm="m4_case_long"/>
     </session>
@@ -2910,7 +2910,7 @@
       </text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
-<instance id="sequence" src="jr://fixture/item-list:sequence"></instance>
+<instance id="sequence" src="jr://fixture/item-list:sequence"/>
     <session>
       <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][@status='open']" value="./@case_id" detail-select="m6_case_short" detail-confirm="m6_case_long"/>
     </session>
