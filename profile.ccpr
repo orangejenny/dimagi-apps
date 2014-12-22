@@ -1,11 +1,11 @@
-<profile version="3" update="https://www.commcarehq.org/a/jennytraining/apps/download/2622d77aa475507fea6229423c78ed44/media_profile.ccpr?latest=true" requiredMajor="2" requiredMinor="18" descriptor="Profile File">
+<profile version="8" update="https://www.commcarehq.org/a/jennytraining/apps/download/dfb1ed567dff48923a21d04785f8f33a/media_profile.ccpr?latest=true" requiredMajor="2" requiredMinor="18" descriptor="Profile File">
     <property key="BackupMode" value="file_mode"/>
     <property key="backup-url" value="file:///E:/CommCare.Backup"/>
     <property key="restore-url" value="file:///E:/CommCare.Backup"/>
     <property key="ota-restore-url" value="https://www.commcarehq.org/a/jennytraining/phone/restore/"/>
     <property key="ota-restore-url-testing" value="https://www.commcarehq.org/a/jennytraining/phone/restore/"/>
-    <property key="PostURL" value="https://www.commcarehq.org/a/jennytraining/receiver/2622d77aa475507fea6229423c78ed44/" force="true"/>
-    <property key="PostTestURL" value="https://www.commcarehq.org/a/jennytraining/receiver/2622d77aa475507fea6229423c78ed44/" force="true"/>
+    <property key="PostURL" value="https://www.commcarehq.org/a/jennytraining/receiver/dfb1ed567dff48923a21d04785f8f33a/" force="true"/>
+    <property key="PostTestURL" value="https://www.commcarehq.org/a/jennytraining/receiver/dfb1ed567dff48923a21d04785f8f33a/" force="true"/>
     <property key="key_server" value="https://www.commcarehq.org/a/jennytraining/phone/keys/"/>
     <property key="cur_locale" value="en"/>
     <property key="cc_user_domain" value="jennytraining.commcarehq.org"/>
@@ -61,7 +61,8 @@
     
         <property key="logenabled" value="Enabled"/>
 
-        <property key="brand-banner" value="jr://file/commcare/image/data/brand.png"/>
+        <property key="brand-banner-login" value="jr://file/commcare/image/data/brand-stretched.png"/>
+        <property key="brand-banner-home" value="jr://file/commcare/image/data/brand.png"/>
     
 
     <!-- end -->
@@ -80,18 +81,18 @@
         </users>
     </features>
 
-    <suite><resource id="suite" version="3">
+    <suite><resource id="suite" version="8">
         
             <location authority="local">./suite.xml</location>
         
-        <location authority="remote">https://www.commcarehq.org/a/jennytraining/apps/download/2622d77aa475507fea6229423c78ed44/suite.xml</location>
+        <location authority="remote">https://www.commcarehq.org/a/jennytraining/apps/download/dfb1ed567dff48923a21d04785f8f33a/suite.xml</location>
     </resource></suite>
     
-    <suite><resource id="media-suite" version="3">
+    <suite><resource id="media-suite" version="8">
         
             <location authority="local">./media_suite.xml</location>
         
-        <location authority="remote">https://www.commcarehq.org/a/jennytraining/apps/download/2622d77aa475507fea6229423c78ed44/media_suite.xml</location>
+        <location authority="remote">https://www.commcarehq.org/a/jennytraining/apps/download/dfb1ed567dff48923a21d04785f8f33a/media_suite.xml</location>
     </resource></suite>
     
 </profile>
