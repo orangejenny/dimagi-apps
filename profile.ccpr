@@ -60,6 +60,8 @@
         <property key="cc-content-valid" value="no"/>
     
         <property key="logenabled" value="Enabled"/>
+
+        <property key="brand-banner" value="jr://file/commcare/image/data/brand.png"/>
     
 
     <!-- end -->
