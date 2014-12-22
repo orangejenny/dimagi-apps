@@ -1,9 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<suite version="3" descriptor="Media Suite File">
+<suite version="8" descriptor="Media Suite File">
   <media path="../../commcare/image/data">
-    <resource descriptor="Image File: brand.png" id="media-14f4bbc5eb0a7c52d46f091cce387d58-brand.png" version="3">
+    <resource descriptor="Image File: brand.png" id="media-14f4bbc5eb0a7c52d46f091cce387d58-brand.png" version="8">
       <location authority="local">./commcare/image/data/brand.png</location>
       <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/f3946e75c3451a31dbd8bc8606bdaee6/brand.png</location>
+    </resource>
+  </media>
+  <media path="../../commcare/image/data">
+    <resource descriptor="Image File: brand-stretched.png" id="media-cf6330196bf6b398e78dd8f2f54b32ef-brand-stretched.png" version="8">
+      <location authority="local">./commcare/image/data/brand-stretched.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/dfb1ed567dff48923a21d04785b531f9/brand-stretched.png</location>
     </resource>
   </media>
 </suite>
