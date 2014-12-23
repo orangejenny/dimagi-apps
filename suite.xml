@@ -128,7 +128,7 @@
         <locale id="m0.case_long.title"/>
       </text>
     </title>
-    <detail>
+    <!--detail>
 	    <title>
 	        <text>
 	            <value>Demographics</value>
@@ -170,7 +170,7 @@
 	        </text>
 	      </template>
 	    </field>
-	</detail>
+	</detail-->
 	<detail>
 	    <title>
 	        <text>
