@@ -20,7 +20,7 @@
 			<bind nodeset="/data/measurements/dilation" type="xsd:double"/>
 			<bind nodeset="/data/measurements/descent" type="xsd:double"/>
 			<bind nodeset="/data/measurements/contraction_frequency" type="xsd:int"/>
-			<bind nodeset="/data/measurements/contraction_length"/>
+			<bind nodeset="/data/measurements/contraction_length" required="true()" relevant="/data/measurements/contraction_frequency &gt; 0"/>
 			<itext>
 				<translation lang="en" default="">
 					<text id="hours-label">
