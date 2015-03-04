@@ -1,0 +1,38 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:vellum="http://commcarehq.org/xforms/vellum">
+	<h:head>
+		<h:title>Time</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/77E220AB-631F-44EA-B022-DAD09F12E604" uiVersion="1" version="258" name="Time">
+					<time/>
+					<now/>
+					<double_now/>
+					<double_timeStart/>
+					<double_timeEnd/>
+				<orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/><cc:location/></orx:meta></data>
+			</instance><instance id="commcaresession" src="jr://instance/session"/>
+			<bind nodeset="/data/time"/>
+			<bind nodeset="/data/now" calculate="now()"/>
+			<bind nodeset="/data/double_now" calculate="double(now())"/>
+			<bind nodeset="/data/double_timeStart" calculate="double(/data/meta/timeStart)"/>
+			<bind nodeset="/data/double_timeEnd" calculate="double(/data/meta/timeEnd)"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="time-label">
+						<value>now: <output value="/data/now"/>
+timeStart: <output value="/data/meta/timeStart"/>
+timeEnd: <output value="/data/meta/timeEnd"/>
+double now: <output value="/data/double_now"/>
+double timeStart: <output value="/data/double_timeStart"/>
+double timeEnd: <output value="/data/double_timeEnd"/></value>
+					</text>
+				</translation>
+			</itext>
+		<setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/><orx:pollsensor event="xforms-ready" ref="/data/meta/location"/><bind nodeset="/data/meta/location" type="geopoint"/></model>
+	</h:head>
+	<h:body>
+		<trigger ref="/data/time" appearance="minimal">
+			<label ref="jr:itext('time-label')"/>
+		</trigger>
+	</h:body>
+</h:html>

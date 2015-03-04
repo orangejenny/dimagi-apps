@@ -1,0 +1,114 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:vellum="http://commcarehq.org/xforms/vellum">
+	<h:head>
+		<h:title>Math &amp; Strings</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/9BC4872B-A49B-4859-89C0-23828677E78D" uiVersion="1" version="228" name="Math &amp; Strings">
+					<question2>
+						<log-tests/>
+						<log10_100/>
+						<log_1/>
+						<log_e/>
+						<case-tests/>
+						<lower/>
+						<upper/>
+					</question2>
+					<string-functions>
+						<contains/>
+						<starts-with/>
+						<ends-with/>
+						<translate/>
+						<replace/>
+						<tests/>
+					</string-functions>
+					<math-functions>
+						<abs/>
+						<floor/>
+						<ceiling/>
+						<round/>
+						<tests/>
+					</math-functions>
+				<orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/><cc:location/></orx:meta></data>
+			</instance><instance id="commcaresession" src="jr://instance/session"/>
+			<bind nodeset="/data/question2"/>
+			<bind nodeset="/data/question2/log-tests"/>
+			<bind nodeset="/data/question2/log10_100" calculate="log10(100)"/>
+			<bind nodeset="/data/question2/log_1" calculate="log(1)"/>
+			<bind nodeset="/data/question2/log_e" calculate="log(2.718281828)"/>
+			<bind nodeset="/data/question2/case-tests"/>
+			<bind nodeset="/data/question2/lower" calculate="lower-case(&quot;miLLion&quot;)"/>
+			<bind nodeset="/data/question2/upper" calculate="upper-case(&quot;PIEces&quot;)"/>
+			<bind nodeset="/data/string-functions"/>
+			<bind nodeset="/data/string-functions/contains" calculate="contains(&quot;bosco&quot;, &quot;bos&quot;)"/>
+			<bind nodeset="/data/string-functions/starts-with" calculate="starts-with('smoke', 'e')"/>
+			<bind nodeset="/data/string-functions/ends-with" calculate="ends-with('smoke', 'e')"/>
+			<bind nodeset="/data/string-functions/translate" calculate="translate('bosco', 'bos', 'sfo')"/>
+			<bind nodeset="/data/string-functions/replace" calculate="replace('aabbcc', '[ab]', 'c')"/>
+			<bind nodeset="/data/string-functions/tests"/>
+			<bind nodeset="/data/math-functions"/>
+			<bind nodeset="/data/math-functions/abs" calculate="abs(-3)"/>
+			<bind nodeset="/data/math-functions/floor" calculate="floor(-4.5)"/>
+			<bind nodeset="/data/math-functions/ceiling" calculate="ceiling(1.2)"/>
+			<bind nodeset="/data/math-functions/round" calculate="round(4.5)"/>
+			<bind nodeset="/data/math-functions/tests"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="question2-label">
+						<value>question2</value>
+					</text>
+					<text id="question2/log-tests-label">
+						<value><output value="/data/question2/log10_100"/> should be 2
+<output value="/data/question2/log_1"/> should be 0
+<output value="/data/question2/log_e"/> should be 1</value>
+					</text>
+					<text id="question2/case-tests-label">
+						<value><output value="/data/question2/lower"/> should be "million"
+<output value="/data/question2/upper"/> should be "PIECES"</value>
+					</text>
+					<text id="string-functions-label">
+						<value>string-functions</value>
+					</text>
+					<text id="string-functions/tests-label">
+						<value><output value="/data/string-functions/contains"/> should be true
+<output value="/data/string-functions/starts-with"/> should be false
+<output value="/data/string-functions/ends-with"/> should be true
+<output value="/data/string-functions/translate"/> should be sfocf
+<output value="/data/string-functions/replace"/> should be cccccc</value>
+					</text>
+					<text id="math-functions-label">
+						<value>math-functions</value>
+					</text>
+					<text id="math-functions/tests-label">
+						<value><output value="/data/math-functions/abs"/> should be 3
+<output value="/data/math-functions/floor"/> should be -5
+<output value="/data/math-functions/ceiling"/> should be 2 
+<output value="/data/math-functions/round"/> should be 5</value>
+					</text>
+				</translation>
+			</itext>
+		<setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/><orx:pollsensor event="xforms-ready" ref="/data/meta/location"/><bind nodeset="/data/meta/location" type="geopoint"/></model>
+	</h:head>
+	<h:body>
+		<group ref="/data/question2" appearance="field-list">
+			<label ref="jr:itext('question2-label')"/>
+			<trigger ref="/data/question2/log-tests" appearance="minimal">
+				<label ref="jr:itext('question2/log-tests-label')"/>
+			</trigger>
+			<trigger ref="/data/question2/case-tests" appearance="minimal">
+				<label ref="jr:itext('question2/case-tests-label')"/>
+			</trigger>
+		</group>
+		<group ref="/data/string-functions" appearance="field-list">
+			<label ref="jr:itext('string-functions-label')"/>
+			<trigger ref="/data/string-functions/tests" appearance="minimal">
+				<label ref="jr:itext('string-functions/tests-label')"/>
+			</trigger>
+		</group>
+		<group ref="/data/math-functions" appearance="field-list">
+			<label ref="jr:itext('math-functions-label')"/>
+			<trigger ref="/data/math-functions/tests" appearance="minimal">
+				<label ref="jr:itext('math-functions/tests-label')"/>
+			</trigger>
+		</group>
+	</h:body>
+</h:html>
