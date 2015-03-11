@@ -3,132 +3,327 @@
 		<h:title>Nurse &amp; Doctor Duty</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/2FC99CAF-355B-4709-A363-67B2AF485509" uiVersion="1" version="641" name="Nurse &amp; Doctor Duty">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/2FC99CAF-355B-4709-A363-67B2AF485509" uiVersion="1" version="1331" name="Nurse &amp; Doctor Duty">
 					<nurse_on_call/>
+					<nurse_on_duty_in/>
+					<nurse_on_duty_out/>
+					<nurse_on_duty_time/>
+					<nurse_on_duty_display/>
 					<shift/>
 					<on_call_doctor/>
+					<doctor_phone_number_1/>
+					<doctor_phone_number_2/>
+					<doctor_phone_number_3/>
+					<doctor_phone_number_4/>
+					<doctor_phone_number_1_case_ids/>
+					<doctor_phone_number_2_case_ids/>
+					<doctor_phone_number_3_case_ids/>
+					<doctor_phone_number_4_case_ids/>
+					<num_doctor_phone_number_1_cases/>
+					<num_doctor_phone_number_2_cases/>
+					<num_doctor_phone_number_3_cases/>
+					<num_doctor_phone_number_4_cases/>
+					<user_case>
+						<create_user_case/>
+						<case_id/>
+						<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id="">
+							<create>
+								<case_type>commcare_user</case_type>
+								<owner_id/>
+								<case_name/>
+							</create>
+							<update>
+								<doctor_phone_number_1/>
+								<doctor_phone_number_2/>
+								<doctor_phone_number_3/>
+								<doctor_phone_number_4/>
+							</update>
+						</case>
+					</user_case>
+					<doctor_phone_1_case jr:template="">
+						<case_id/>
+						<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id="">
+							<update>
+								<contact_phone_number/>
+							</update>
+						</case>
+					</doctor_phone_1_case>
+					<doctor_phone_2_case jr:template="">
+						<case_id/>
+						<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id="">
+							<update>
+								<contact_phone_number/>
+							</update>
+						</case>
+					</doctor_phone_2_case>
+					<doctor_phone_3_case jr:template="">
+						<case_id/>
+						<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id="">
+							<update>
+								<contact_phone_number/>
+							</update>
+						</case>
+					</doctor_phone_3_case>
+					<doctor_phone_4_case jr:template="">
+						<case_id/>
+						<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id="">
+							<update>
+								<contact_phone_number/>
+							</update>
+						</case>
+					</doctor_phone_4_case>
 				<orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
 			</instance><instance id="commcaresession" src="jr://instance/session"/>
+			<instance id="casedb" src="jr://instance/casedb"/>
 			<bind nodeset="/data/nurse_on_call" required="true()"/>
+			<bind nodeset="/data/nurse_on_duty_in"/>
+			<bind nodeset="/data/nurse_on_duty_out"/>
+			<bind nodeset="/data/nurse_on_duty_time" calculate="double(now())"/>
+			<bind nodeset="/data/nurse_on_duty_display" calculate="concat(/data/nurse_on_duty_in, ': ', /data/nurse_on_duty_time,'         ')"/>
 			<bind nodeset="/data/shift"/>
-			<bind nodeset="/data/on_call_doctor"/>
+			<bind nodeset="/data/on_call_doctor" constraint="count-selected(.) &lt;= 4" jr:constraintMsg="jr:itext('on_call_doctor-constraintMsg')"/>
+			<bind nodeset="/data/doctor_phone_number_1" relevant="count-selected(/data/on_call_doctor) &gt;= 1" calculate="if(count-selected(/data/on_call_doctor) &gt;= 1, concat('91', selected-at(/data/on_call_doctor, 0)), '')"/>
+			<bind nodeset="/data/doctor_phone_number_2" relevant="count-selected(/data/on_call_doctor) &gt;= 2" calculate="if(count-selected(/data/on_call_doctor) &gt;= 2, concat('91', selected-at(/data/on_call_doctor, 1)), '')"/>
+			<bind nodeset="/data/doctor_phone_number_3" relevant="count-selected(/data/on_call_doctor) &gt;= 3" calculate="if(count-selected(/data/on_call_doctor) &gt;= 3, concat('91', selected-at(/data/on_call_doctor, 2)), '')"/>
+			<bind nodeset="/data/doctor_phone_number_4" relevant="count-selected(/data/on_call_doctor) &gt;= 4" calculate="if(count-selected(/data/on_call_doctor) &gt;= 4, concat('91', selected-at(/data/on_call_doctor, 3)), '')"/>
+			<bind nodeset="/data/doctor_phone_number_1_case_ids" calculate="join(' ', instance('casedb')/casedb/case[@case_type='patient_phone_number'][@status='open'][phone_number_type='doctor_1']/@case_id)"/>
+			<bind nodeset="/data/doctor_phone_number_2_case_ids" calculate="join(' ', instance('casedb')/casedb/case[@case_type='patient_phone_number'][@status='open'][phone_number_type='doctor_2']/@case_id)"/>
+			<bind nodeset="/data/doctor_phone_number_3_case_ids" calculate="join(' ', instance('casedb')/casedb/case[@case_type='patient_phone_number'][@status='open'][phone_number_type='doctor_3']/@case_id)"/>
+			<bind nodeset="/data/doctor_phone_number_4_case_ids" calculate="join(' ', instance('casedb')/casedb/case[@case_type='patient_phone_number'][@status='open'][phone_number_type='doctor_4']/@case_id)"/>
+			<bind nodeset="/data/num_doctor_phone_number_1_cases" calculate="count-selected(/data/doctor_phone_number_1_case_ids)"/>
+			<bind nodeset="/data/num_doctor_phone_number_2_cases" calculate="count-selected(/data/doctor_phone_number_2_case_ids)"/>
+			<bind nodeset="/data/num_doctor_phone_number_3_cases" calculate="count-selected(/data/doctor_phone_number_3_case_ids)"/>
+			<bind nodeset="/data/num_doctor_phone_number_4_cases" calculate="count-selected(/data/doctor_phone_number_4_case_ids)"/>
+			
+			<bind nodeset="/data/user_case"/>
+			<bind nodeset="/data/user_case/create_user_case" calculate="count(instance('casedb')/casedb/case[@case_type = 'commcare_user'][@status='open']) = 0"/>
+			<bind xmlns="http://commcarehq.org/case/transaction/v2" nodeset="/data/user_case/case" case_id="" date_modified="" user_id=""/>
+			<bind nodeset="/data/user_case/case/create" relevant="/data/user_case/create_user_case"/>
+			<bind nodeset="/data/user_case/case/create/case_type"/>
+			<bind nodeset="/data/user_case/case/create/owner_id" calculate="/data/meta/userID"/>
+			<bind nodeset="/data/user_case/case/create/case_name" calculate="/data/meta/username"/>
+			<bind nodeset="/data/user_case/case/update"/>
+			<bind nodeset="/data/user_case/case/update/doctor_phone_number_1" calculate="/data/doctor_phone_number_1"/>
+			<bind nodeset="/data/user_case/case/update/doctor_phone_number_2" calculate="/data/doctor_phone_number_2"/>
+			<bind nodeset="/data/user_case/case/update/doctor_phone_number_3" calculate="/data/doctor_phone_number_3"/>
+			<bind nodeset="/data/user_case/case/update/doctor_phone_number_4" calculate="/data/doctor_phone_number_4"/>
+			<bind nodeset="/data/user_case/case/@case_id" calculate="if(/data/user_case/create_user_case, uuid(), instance('casedb')/casedb/case[@case_type = 'commcare_user'][@status='open'][1]/@case_id)"/>
+			<bind nodeset="/data/user_case/case/@date_modified" type="xsd:dateTime" calculate="/data/meta/timeEnd"/>
+			<bind nodeset="/data/user_case/case/@user_id" calculate="/data/meta/userID"/>
+			
+			<bind nodeset="/data/doctor_phone_1_case"/>
+			<bind nodeset="/data/doctor_phone_1_case/case_id" calculate="selected-at(/data/doctor_phone_number_1_case_ids, position(..))"/>
+			<bind xmlns="http://commcarehq.org/case/transaction/v2" nodeset="/data/doctor_phone_1_case/case" case_id="" date_modified="" user_id=""/>
+			<bind nodeset="/data/doctor_phone_1_case/case/update"/>
+			<bind nodeset="/data/doctor_phone_1_case/case/update/contact_phone_number" calculate="/data/doctor_phone_number_1"/>
+			<bind nodeset="/data/doctor_phone_1_case/case/@case_id" calculate="../../case_id"/>
+			<bind nodeset="/data/doctor_phone_1_case/case/@date_modified" type="xsd:dateTime" calculate="/data/meta/timeEnd"/>
+			<bind nodeset="/data/doctor_phone_1_case/case/@user_id" calculate="/data/meta/userID"/>
+			
+			<bind nodeset="/data/doctor_phone_2_case"/>
+			<bind nodeset="/data/doctor_phone_2_case/case_id" calculate="selected-at(/data/doctor_phone_number_2_case_ids, position(..))"/>
+			<bind xmlns="http://commcarehq.org/case/transaction/v2" nodeset="/data/doctor_phone_2_case/case" case_id="" date_modified="" user_id=""/>
+			<bind nodeset="/data/doctor_phone_2_case/case/update"/>
+			<bind nodeset="/data/doctor_phone_2_case/case/update/contact_phone_number" calculate="/data/doctor_phone_number_2"/>
+			<bind nodeset="/data/doctor_phone_2_case/case/@case_id" calculate="../../case_id"/>
+			<bind nodeset="/data/doctor_phone_2_case/case/@date_modified" type="xsd:dateTime" calculate="/data/meta/timeEnd"/>
+			<bind nodeset="/data/doctor_phone_2_case/case/@user_id" calculate="/data/meta/userID"/>
+			
+			<bind nodeset="/data/doctor_phone_3_case"/>
+			<bind nodeset="/data/doctor_phone_3_case/case_id" calculate="selected-at(/data/doctor_phone_number_3_case_ids, position(..))"/>
+			<bind xmlns="http://commcarehq.org/case/transaction/v3" nodeset="/data/doctor_phone_3_case/case" case_id="" date_modified="" user_id=""/>
+			<bind nodeset="/data/doctor_phone_3_case/case/update"/>
+			<bind nodeset="/data/doctor_phone_3_case/case/update/contact_phone_number" calculate="/data/doctor_phone_number_3"/>
+			<bind nodeset="/data/doctor_phone_3_case/case/@case_id" calculate="../../case_id"/>
+			<bind nodeset="/data/doctor_phone_3_case/case/@date_modified" type="xsd:dateTime" calculate="/data/meta/timeEnd"/>
+			<bind nodeset="/data/doctor_phone_3_case/case/@user_id" calculate="/data/meta/userID"/>
+
+			<bind nodeset="/data/doctor_phone_4_case"/>
+			<bind nodeset="/data/doctor_phone_4_case/case_id" calculate="selected-at(/data/doctor_phone_number_4_case_ids, position(..))"/>
+			<bind xmlns="http://commcarehq.org/case/transaction/v4" nodeset="/data/doctor_phone_4_case/case" case_id="" date_modified="" user_id=""/>
+			<bind nodeset="/data/doctor_phone_4_case/case/update"/>
+			<bind nodeset="/data/doctor_phone_4_case/case/update/contact_phone_number" calculate="/data/doctor_phone_number_4"/>
+			<bind nodeset="/data/doctor_phone_4_case/case/@case_id" calculate="../../case_id"/>
+			<bind nodeset="/data/doctor_phone_4_case/case/@date_modified" type="xsd:dateTime" calculate="/data/meta/timeEnd"/>
+			<bind nodeset="/data/doctor_phone_4_case/case/@user_id" calculate="/data/meta/userID"/>
+			
 			<itext>
 				<translation lang="en" default="">
+					<text id="doctor_phone_case-label">
+						<value>doctor_phone_case</value>
+					</text>
 					<text id="nurse_on_call-label">
 						<value>Nurse on Duty:</value>
 					</text>
 					<text id="nurse_on_call-nurse_1-label">
-						<value>nurse 1</value>
+						<value>Soumya V</value>
 					</text>
 					<text id="nurse_on_call-nurse_2-label">
-						<value>nurse 2</value>
+						<value>Shabana Tabassum</value>
 					</text>
 					<text id="nurse_on_call-nurse_3-label">
-						<value>nurse 3</value>
+						<value>Renu</value>
 					</text>
 					<text id="nurse_on_call-nurse_4-label">
-						<value>nurse 4</value>
+						<value>Noorafsha</value>
 					</text>
 					<text id="nurse_on_call-nurse_5-label">
-						<value>nurse 5</value>
+						<value>Dona</value>
 					</text>
 					<text id="nurse_on_call-nurse_6-label">
-						<value>nurse 6</value>
+						<value>Soumya L</value>
 					</text>
 					<text id="nurse_on_call-nurse_7-label">
-						<value>nurse 7</value>
+						<value>Lini</value>
 					</text>
 					<text id="nurse_on_call-nurse_8-label">
-						<value>nurse 8</value>
+						<value>Shaziya</value>
 					</text>
 					<text id="nurse_on_call-nurse_9-label">
-						<value>nurse 9</value>
+						<value>Giji</value>
 					</text>
 					<text id="nurse_on_call-nurse_10-label">
-						<value>nurse 10</value>
+						<value>Sumbul</value>
+					</text>
+					<text id="nurse_on_call-nurse_11-label">
+						<value>Mamta</value>
+					</text>
+					<text id="nurse_on_call-nurse_12-label">
+						<value>Manisha</value>
 					</text>
 					<text id="shift-label">
 						<value>Shift</value>
 					</text>
 					<text id="shift-morning-label">
-						<value>Morning (8am - 4pm)</value>
+						<value>Morning (8am - 2pm)</value>
 					</text>
 					<text id="shift-afternoon-label">
-						<value>Afternoon (4pm - 12am)</value>
+						<value>Afternoon (2pm - 8am)</value>
 					</text>
 					<text id="shift-night-label">
-						<value>Night (12am - 8am)</value>
+						<value>Night (8pm - 8am)</value>
 					</text>
 					<text id="on_call_doctor-label">
 						<value>On-call Doctor:</value>
 					</text>
-					<text id="on_call_doctor-doctor_1-label">
-						<value>Dr. ____ ____ (PG) (phone number)</value>
+					<text id="on_call_doctor-constraintMsg">
+						<value>Maximum of 4 doctors can be on call for a given patient.</value>
 					</text>
-					<text id="on_call_doctor-doctor_2-label">
-						<value>Dr. ____ ____ (SR) (phone number)</value>
+					<text id="on_call_doctor-9312420791-label">
+						<value>Dr. Juveriya &#8211; 9312420791</value>
 					</text>
-					<text id="on_call_doctor-doctor_3-label">
-						<value>Dr. ____ ____ (Attending) (phone number)</value>
+					<text id="on_call_doctor-9810622212-label">
+						<value>Dr. Priya &#8211; 9810622212</value>
+					</text>
+					<text id="on_call_doctor-8527299087-label">
+						<value>Dr. Nidhi &#8211; 8527299087</value>
+					</text>
+					<text id="on_call_doctor-8447328095-label">
+						<value>Dr. Fareha &#8211; 8447328095</value>
+					</text>
+					<text id="on_call_doctor-7838108142-label">
+						<value>Dr. Chavi &#8211; 7838108142</value>
+					</text>
+					<text id="on_call_doctor-9560372193-label">
+						<value>Dr. Nisha &#8211; 9560372193</value>
+					</text>
+					<text id="on_call_doctor-9718688632-label">
+						<value>Dr. Usva &#8211; 9718688632</value>
+					</text>
+					<text id="on_call_doctor-9958692196-label">
+						<value>Dr. Nilofer &#8211; 9958692196</value>
+					</text>
+					<text id="on_call_doctor-8826322389-label">
+						<value>Dr. Shazia &#8211; 8826322389</value>
 					</text>
 				</translation>
 				<translation lang="hin">
+					<text id="doctor_phone_case-label">
+						<value>doctor_phone_case</value>
+					</text>
 					<text id="nurse_on_call-label">
-						<value>Nurse on Duty:</value>
+						<value>&#2344;&#2352;&#2381;&#2360; &#2337;&#2381;&#2351;&#2370;&#2335;&#2368; &#2346;&#2375;:</value>
 					</text>
 					<text id="nurse_on_call-nurse_1-label">
-						<value>nurse 1</value>
+						<value>&#2360;&#2380;&#2350;&#2381;&#2351;&#2366;</value>
 					</text>
 					<text id="nurse_on_call-nurse_2-label">
-						<value>nurse 2</value>
+						<value>&#2358;&#2348;&#2366;&#2344;&#2366; &#2340;&#2348;&#2360;&#2381;&#2360;&#2369;&#2350;</value>
 					</text>
 					<text id="nurse_on_call-nurse_3-label">
-						<value>nurse 3</value>
+						<value>&#2352;&#2375;&#2344;&#2369;</value>
 					</text>
 					<text id="nurse_on_call-nurse_4-label">
-						<value>nurse 4</value>
+						<value>&#2344;&#2370;&#2352;&#2366;&#2347;&#2381;&#2359;&#2366;</value>
 					</text>
 					<text id="nurse_on_call-nurse_5-label">
-						<value>nurse 5</value>
+						<value>&#2337;&#2379;&#2344;&#2366;</value>
 					</text>
 					<text id="nurse_on_call-nurse_6-label">
-						<value>nurse 6</value>
+						<value>&#2360;&#2380;&#2350;&#2381;&#2351;&#2366; &#2354;</value>
 					</text>
 					<text id="nurse_on_call-nurse_7-label">
-						<value>nurse 7</value>
+						<value>&#2354;&#2368;&#2344;&#2368;</value>
 					</text>
 					<text id="nurse_on_call-nurse_8-label">
-						<value>nurse 8</value>
+						<value>&#2358;&#2366;&#2395;&#2367;&#2351;&#2366;</value>
 					</text>
 					<text id="nurse_on_call-nurse_9-label">
-						<value>nurse 9</value>
+						<value>&#2332;&#2368;&#2332;&#2368;</value>
 					</text>
 					<text id="nurse_on_call-nurse_10-label">
-						<value>nurse 10</value>
+						<value>&#2360;&#2369;&#2350;&#2381;&#2348;&#2369;&#2354;</value>
+					</text>
+					<text id="nurse_on_call-nurse_11-label">
+						<value>&#2350;&#2350;&#2340;&#2366;</value>
+					</text>
+					<text id="nurse_on_call-nurse_12-label">
+						<value>&#2350;&#2344;&#2368;&#2359;&#2366;</value>
 					</text>
 					<text id="shift-label">
-						<value>Shift</value>
+						<value>&#2358;&#2367;&#2347;&#2381;&#2335;</value>
 					</text>
 					<text id="shift-morning-label">
-						<value>Morning (8am - 4pm)</value>
+						<value>&#2360;&#2369;&#2348;&#2361; (8am - 4pm)</value>
 					</text>
 					<text id="shift-afternoon-label">
-						<value>Afternoon (4pm - 12am)</value>
+						<value>&#2342;&#2379;&#2346;&#2361;&#2352; (4pm - 12am)</value>
 					</text>
 					<text id="shift-night-label">
-						<value>Night (12am - 8am)</value>
+						<value>&#2352;&#2366;&#2340; (12am - 8am)</value>
 					</text>
 					<text id="on_call_doctor-label">
-						<value>On-call Doctor:</value>
+						<value>&#2337;&#2377;&#2325;&#2381;&#2335;&#2352; :</value>
 					</text>
-					<text id="on_call_doctor-doctor_1-label">
-						<value>Dr. ____ ____ (PG) (phone number)</value>
+					<text id="on_call_doctor-constraintMsg">
+						<value>Maximum of 4 doctors can be on call for a given patient.</value>
 					</text>
-					<text id="on_call_doctor-doctor_2-label">
-						<value>Dr. ____ ____ (SR) (phone number)</value>
+					<text id="on_call_doctor-9312420791-label">
+						<value>Dr. Juveriya &#8211; 9312420791</value>
 					</text>
-					<text id="on_call_doctor-doctor_3-label">
-						<value>Dr. ____ ____ (Attending) (phone number)</value>
+					<text id="on_call_doctor-9810622212-label">
+						<value>Dr. Priya &#8211; 9810622212</value>
+					</text>
+					<text id="on_call_doctor-8527299087-label">
+						<value>Dr. Nidhi &#8211; 8527299087</value>
+					</text>
+					<text id="on_call_doctor-8447328095-label">
+						<value>Dr. Fareha &#8211; 8447328095</value>
+					</text>
+					<text id="on_call_doctor-7838108142-label">
+						<value>Dr. Chavi &#8211; 7838108142</value>
+					</text>
+					<text id="on_call_doctor-9560372193-label">
+						<value>Dr. Nisha &#8211; 9560372193</value>
+					</text>
+					<text id="on_call_doctor-9718688632-label">
+						<value>Dr. Usva &#8211; 9718688632</value>
+					</text>
+					<text id="on_call_doctor-9958692196-label">
+						<value>Dr. Nilofer &#8211; 9958692196</value>
+					</text>
+					<text id="on_call_doctor-8826322389-label">
+						<value>Dr. Shazia &#8211; 8826322389</value>
 					</text>
 				</translation>
 			</itext>
@@ -177,6 +372,14 @@
 				<label ref="jr:itext('nurse_on_call-nurse_10-label')"/>
 				<value>nurse_10</value>
 			</item>
+			<item>
+				<label ref="jr:itext('nurse_on_call-nurse_11-label')"/>
+				<value>nurse_11</value>
+			</item>
+			<item>
+				<label ref="jr:itext('nurse_on_call-nurse_12-label')"/>
+				<value>nurse_12</value>
+			</item>
 		</select>
 		<select1 ref="/data/shift">
 			<label ref="jr:itext('shift-label')"/>
@@ -196,17 +399,66 @@
 		<select ref="/data/on_call_doctor">
 			<label ref="jr:itext('on_call_doctor-label')"/>
 			<item>
-				<label ref="jr:itext('on_call_doctor-doctor_1-label')"/>
-				<value>doctor_1</value>
+				<label ref="jr:itext('on_call_doctor-9312420791-label')"/>
+				<value>9312420791</value>
 			</item>
 			<item>
-				<label ref="jr:itext('on_call_doctor-doctor_2-label')"/>
-				<value>doctor_2</value>
+				<label ref="jr:itext('on_call_doctor-9810622212-label')"/>
+				<value>9810622212</value>
 			</item>
 			<item>
-				<label ref="jr:itext('on_call_doctor-doctor_3-label')"/>
-				<value>doctor_3</value>
+				<label ref="jr:itext('on_call_doctor-8527299087-label')"/>
+				<value>8527299087</value>
+			</item>
+			<item>
+				<label ref="jr:itext('on_call_doctor-8447328095-label')"/>
+				<value>8447328095</value>
+			</item>
+			<item>
+				<label ref="jr:itext('on_call_doctor-7838108142-label')"/>
+				<value>7838108142</value>
+			</item>
+			<item>
+				<label ref="jr:itext('on_call_doctor-9560372193-label')"/>
+				<value>9560372193</value>
+			</item>
+			<item>
+				<label ref="jr:itext('on_call_doctor-9718688632-label')"/>
+				<value>9718688632</value>
+			</item>
+			<item>
+				<label ref="jr:itext('on_call_doctor-9958692196-label')"/>
+				<value>9958692196</value>
+			</item>
+			<item>
+				<label ref="jr:itext('on_call_doctor-8826322389-label')"/>
+				<value>8826322389</value>
 			</item>
 		</select>
+		
+		<group>
+			<label ref="jr:itext('doctor_phone_case-label')"/>
+			<repeat jr:count="/data/num_doctor_phone_number_1_cases" jr:noAddRemove="true()" nodeset="/data/doctor_phone_1_case">
+			</repeat>
+		</group>
+		
+		<group>
+			<label ref="jr:itext('doctor_phone_case-label')"/>
+			<repeat jr:count="/data/num_doctor_phone_number_2_cases" jr:noAddRemove="true()" nodeset="/data/doctor_phone_2_case">
+			</repeat>
+		</group>
+		
+		<group>
+			<label ref="jr:itext('doctor_phone_case-label')"/>
+			<repeat jr:count="/data/num_doctor_phone_number_3_cases" jr:noAddRemove="true()" nodeset="/data/doctor_phone_3_case">
+			</repeat>
+		</group>
+		
+		<group>
+			<label ref="jr:itext('doctor_phone_case-label')"/>
+			<repeat jr:count="/data/num_doctor_phone_number_4_cases" jr:noAddRemove="true()" nodeset="/data/doctor_phone_4_case">
+			</repeat>
+		</group>
+		
 	</h:body>
 </h:html>

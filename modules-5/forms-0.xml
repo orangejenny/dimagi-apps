@@ -1,9 +1,9 @@
 <h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:vellum="http://commcarehq.org/xforms/vellum">
 	<h:head>
-		<h:title>Labour Videos</h:title>
+		<h:title>Education Extras: Labour Videos</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/29942017-0B43-4EF2-95E4-6BC37654BA83" uiVersion="1" version="711" name="Labour Videos">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/29942017-0B43-4EF2-95E4-6BC37654BA83" uiVersion="1" version="1278" name="Education Extras: Labour Videos">
 					<videos/>
 				<orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
 			</instance><instance id="commcaresession" src="jr://instance/session"/>
@@ -14,17 +14,40 @@
 						<value>Select which video you would like to watch:</value>
 					</text>
 					<text id="videos-nrhm_1-label">
-						<value>NRHM: </value>
-					</text>
+						<value>NRHM: Normal Delivery</value>
+					<value form="video">jr://file/commcare/video/data/videos-nrhm_1.3gp</value></text>
 					<text id="videos-nrhm2-label">
-						<value>NRHM:</value>
-					</text>
+						<value>NRHM: Shock</value>
+					<value form="video">jr://file/commcare/video/data/videos-nrhm2.3gp</value></text>
 					<text id="videos-global_media_lab-label">
-						<value>Global Media Lab: </value>
-					</text>
+						<value>Global Health Media Project: Initial Assessment in Labour</value>
+					<value form="video">jr://file/commcare/video/data/videos-global_media_lab.3gp</value></text>
 					<text id="videos-global_media_lab_2-label">
-						<value>Global Media Lab:</value>
+						<value>Global Health Media Project: Immediate Care after Birth</value>
+					<value form="video">jr://file/commcare/video/data/videos-global_media_lab_2.3gp</value></text>
+					<text id="videos-global_media_lab_3-label">
+						<value>Global Health Media Project: Position of the Child</value>
+					<value form="video">jr://file/commcare/video/data/videos-global_media_lab_3.3gp</value></text>
+				</translation>
+				<translation lang="hin">
+					<text id="videos-label">
+						<value>&#2332;&#2379; &#2357;&#2367;&#2337;&#2367;&#2351;&#2379; &#2342;&#2375;&#2326;&#2344;&#2366; &#2330;&#2366;&#2361;&#2375;&#2306;&#2327;&#2375; &#2313;&#2360;&#2325;&#2366; &#2330;&#2369;&#2344;&#2366;&#2357; &#2325;&#2352;&#2375;&#2306;</value>
 					</text>
+					<text id="videos-nrhm_1-label">
+						<value>&#2319;&#2344;.&#2310;&#2352;.&#2319;&#2330;.&#2319;&#2350; : &#2360;&#2352;&#2354; &#2346;&#2381;&#2352;&#2360;&#2357;</value>
+					<value form="video">jr://file/commcare/video/data/videos-nrhm_1.3gp</value></text>
+					<text id="videos-nrhm2-label">
+						<value>&#2319;&#2344;.&#2310;&#2352;.&#2319;&#2330;.&#2319;&#2350; : &#2360;&#2342;&#2350;&#2366;</value>
+					<value form="video">jr://file/commcare/video/data/videos-nrhm2.3gp</value></text>
+					<text id="videos-global_media_lab-label">
+						<value>&#2327;&#2381;&#2354;&#2379;&#2348;&#2366; &#2350;&#2368;&#2337;&#2367;&#2351;&#2366; &#2354;&#2376;&#2348; : &#2346;&#2381;&#2352;&#2360;&#2357; &#2325;&#2368; &#2358;&#2369;&#2352;&#2369;&#2357;&#2366;&#2340;&#2368;  &#2332;&#2366;&#2306;&#2330;</value>
+					<value form="video">jr://file/commcare/video/data/videos-global_media_lab.3gp</value></text>
+					<text id="videos-global_media_lab_2-label">
+						<value>&#2327;&#2381;&#2354;&#2379;&#2348;&#2366; &#2350;&#2368;&#2337;&#2367;&#2351;&#2366; &#2354;&#2376;&#2348; : &#2346;&#2381;&#2352;&#2360;&#2357;&#2381;&#2346;&#2352;&#2366;&#2306;&#2340; &#2342;&#2375;&#2326;&#2349;&#2366;&#2354;</value>
+					<value form="video">jr://file/commcare/video/data/videos-global_media_lab_2.3gp</value></text>
+					<text id="videos-global_media_lab_3-label">
+						<value>&#2327;&#2381;&#2354;&#2379;&#2348;&#2366; &#2361;&#2375;&#2354;&#2381;&#2341; &#2350;&#2368;&#2337;&#2367;&#2351;&#2366; : &#2325;&#2379;&#2325; &#2350;&#2375;&#2306; &#2348;&#2330;&#2381;&#2330;&#2375; &#2325;&#2366; &#2360;&#2381;&#2341;&#2366;&#2344;</value>
+					<value form="video">jr://file/commcare/video/data/videos-global_media_lab_3.3gp</value></text>
 				</translation>
 			</itext>
 		<setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
@@ -47,6 +70,10 @@
 			<item>
 				<label ref="jr:itext('videos-global_media_lab_2-label')"/>
 				<value>global_media_lab_2</value>
+			</item>
+			<item>
+				<label ref="jr:itext('videos-global_media_lab_3-label')"/>
+				<value>global_media_lab_3</value>
 			</item>
 		</select1>
 	</h:body>

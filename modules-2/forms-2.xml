@@ -3,41 +3,50 @@
 		<h:title>Record Delivery</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/75514312-FF32-43BF-A863-F14ED4370546" uiVersion="1" version="633" name="Record Delivery">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/75514312-FF32-43BF-A863-F14ED4370546" uiVersion="1" version="1368" name="Record Delivery">
 					<delivery_questions>
 						<delivery_type/>
 						<maternal_outcome/>
-						<fetal_outcome/>
-						<synto/>
-						<placenta/>
-						<bleeding/>
+						<no_of_babies jr:template="">
+							<fetal_outcome/>
+							<synto/>
+							<placenta/>
+							<bleeding/>
+							<baby_questions>
+								<birth/>
+								<cried/>
+								<baby_sex/>
+								<apgar_score/>
+								<weight/>
+							</baby_questions>
+						</no_of_babies>
 					</delivery_questions>
+					<paediatrician_name/>
+					<number_of_babies/>
 					<patient_status/>
-					<baby_questions>
-						<birth/>
-						<cried/>
-						<baby_sex/>
-						<apgar_score/>
-						<weight/>
-						<paediatrician_name/>
-					</baby_questions>
-				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><update><patient_status/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
-			</instance><instance id="commcaresession" src="jr://instance/session"/>
+					<blank/>
+					<screenshots/>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><update><delivery_type/><last_exam_time/><last_pv_time/><maternal_outcome/><number_of_babies/><patient_status/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance id="commcaresession" src="jr://instance/session"/><instance id="casedb" src="jr://instance/casedb"/>
 			<bind nodeset="/data/delivery_questions"/>
 			<bind nodeset="/data/delivery_questions/delivery_type" required="true()"/>
 			<bind nodeset="/data/delivery_questions/maternal_outcome"/>
-			<bind nodeset="/data/delivery_questions/fetal_outcome"/>
-			<bind nodeset="/data/delivery_questions/synto" required="true()"/>
-			<bind nodeset="/data/delivery_questions/placenta" required="true()"/>
-			<bind nodeset="/data/delivery_questions/bleeding" required="true()"/>
+			<bind nodeset="/data/delivery_questions/no_of_babies"/>
+			<bind nodeset="/data/delivery_questions/no_of_babies/fetal_outcome"/>
+			<bind nodeset="/data/delivery_questions/no_of_babies/synto" required="true()"/>
+			<bind nodeset="/data/delivery_questions/no_of_babies/placenta" required="true()"/>
+			<bind nodeset="/data/delivery_questions/no_of_babies/bleeding" required="true()"/>
+			<bind nodeset="/data/delivery_questions/no_of_babies/baby_questions"/>
+			<bind nodeset="/data/delivery_questions/no_of_babies/baby_questions/birth" type="xsd:dateTime"/>
+			<bind nodeset="/data/delivery_questions/no_of_babies/baby_questions/cried" required="true()"/>
+			<bind nodeset="/data/delivery_questions/no_of_babies/baby_questions/baby_sex" required="false()"/>
+			<bind nodeset="/data/delivery_questions/no_of_babies/baby_questions/apgar_score" type="xsd:int"/>
+			<bind nodeset="/data/delivery_questions/no_of_babies/baby_questions/weight" type="xsd:double"/>
+			<bind nodeset="/data/paediatrician_name" type="xsd:string"/>
+			<bind nodeset="/data/number_of_babies"/>
 			<bind nodeset="/data/patient_status" calculate="'delivered'"/>
-			<bind nodeset="/data/baby_questions"/>
-			<bind nodeset="/data/baby_questions/birth" type="xsd:dateTime"/>
-			<bind nodeset="/data/baby_questions/cried" required="true()"/>
-			<bind nodeset="/data/baby_questions/baby_sex" required="false()"/>
-			<bind nodeset="/data/baby_questions/apgar_score" type="xsd:int"/>
-			<bind nodeset="/data/baby_questions/weight" type="xsd:double"/>
-			<bind nodeset="/data/baby_questions/paediatrician_name"/>
+			<bind nodeset="/data/blank" calculate="''"/>
+			<bind nodeset="/data/screenshots"/>
 			<itext>
 				<translation lang="en" default="">
 					<text id="delivery_type-label">
@@ -61,14 +70,11 @@
 					<text id="delivery_questions/maternal_outcome-label">
 						<value>Is the mother alive?</value>
 					</text>
+					<text id="delivery_questions/no_of_babies-label">
+						<value>Number of babies</value>
+					</text>
 					<text id="delivery_questions/fetal_outcome-label">
 						<value>Is the baby alive?</value>
-					</text>
-					<text id="delivery_questions/fetal_outcome-yes-label">
-						<value>Yes</value>
-					</text>
-					<text id="delivery_questions/fetal_outcome-no-label">
-						<value>No</value>
 					</text>
 					<text id="synto-label">
 						<value>Administered 10 units of Synto?</value>
@@ -110,7 +116,12 @@
 						<value>Weight (kg):</value>
 					</text>
 					<text id="baby_questions/paediatrician_name-label">
-						<value>Paediatrician's name:</value>
+						<value>Pediatrician's name:</value>
+					</text>
+					<text id="screenshots-label">
+						<value>Mother has now delivered. Please go to Deliveries and take a screenshot of the completed Partograph. 
+
+Additionally, Please don't forget to take a photo of the paper partograph.</value>
 					</text>
 				</translation>
 				<translation lang="hin">
@@ -133,21 +144,13 @@
 						<value>&#2321;&#2346;&#2352;&#2375;&#2358;&#2344;</value>
 					</text>
 					<text id="delivery_questions/maternal_outcome-label">
-						<value>&#2325;&#2381;&#2351;&#2366; &#2350;&#2366;&#2305; &#2332;&#2368;&#2357;&#2367;&#2340; &#2361;&#2376;&#2306;?
-
-</value>
+						<value>&#2325;&#2381;&#2351;&#2366; &#2350;&#2366;&#2305; &#2332;&#2368;&#2357;&#2367;&#2340; &#2361;&#2376;&#2306;?</value>
+					</text>
+					<text id="delivery_questions/no_of_babies-label">
+						<value>Number of babies</value>
 					</text>
 					<text id="delivery_questions/fetal_outcome-label">
-						<value>&#2325;&#2381;&#2351;&#2366; &#2348;&#2330;&#2381;&#2330;&#2366; &#2332;&#2368;&#2357;&#2367;&#2340; &#2361;&#2376;?
-</value>
-					</text>
-					<text id="delivery_questions/fetal_outcome-yes-label">
-						<value>&#2361;&#2366;&#2305;
-</value>
-					</text>
-					<text id="delivery_questions/fetal_outcome-no-label">
-						<value>&#2344;&#2361;&#2368;&#2306;
-</value>
+						<value>&#2325;&#2381;&#2351;&#2366; &#2348;&#2330;&#2381;&#2330;&#2366; &#2332;&#2368;&#2357;&#2367;&#2340; &#2361;&#2376;?</value>
 					</text>
 					<text id="synto-label">
 						<value>&#2346;&#2381;&#2352;&#2358;&#2366;&#2360;&#2344; 10 &#2351;&#2370;&#2344;&#2367;&#2335;&#2381;&#2360;  of &#2360;&#2381;&#2351;&#2381;&#2344;&#2381;&#2340;&#2379;/&#2342;&#2357;&#2366;&#2312;?</value>
@@ -171,16 +174,16 @@
 						<value>&#2325;&#2381;&#2351;&#2366; &#2348;&#2330;&#2381;&#2330;&#2366; &#2332;&#2344;&#2381;&#2350; &#2325;&#2375; &#2340;&#2369;&#2352;&#2306;&#2340; &#2348;&#2366;&#2342; &#2352;&#2379;&#2351;&#2366;</value>
 					</text>
 					<text id="baby_questions/baby_sex-label">
-						<value>Sex of the baby:</value>
+						<value>&#2348;&#2330;&#2381;&#2330;&#2375; &#2325;&#2366; &#2354;&#2367;&#2306;&#2327;:</value>
 					</text>
 					<text id="baby_questions/baby_sex-female-label">
-						<value>Female</value>
+						<value>&#2354;&#2396;&#2325;&#2368;</value>
 					</text>
 					<text id="baby_questions/baby_sex-male-label">
-						<value>Male</value>
+						<value>&#2354;&#2396;&#2325;&#2366;</value>
 					</text>
 					<text id="baby_questions/baby_sex-other-label">
-						<value>Other</value>
+						<value>&#2309;&#2344;&#2381;&#2351;</value>
 					</text>
 					<text id="apgar_score-label">
 						<value>&#2320; &#2346; &#2327;&#2366; &#2352; &#2360;&#2381;&#2325;&#2379;&#2352;:</value>
@@ -189,11 +192,15 @@
 						<value>&#2357;&#2395;&#2344; (&#2325;&#2332;&#2368;):</value>
 					</text>
 					<text id="baby_questions/paediatrician_name-label">
-						<value>Paediatrician's name:</value>
+						<value>&#2348;&#2366;&#2354; &#2352;&#2379;&#2327; &#2357;&#2367;&#2358;&#2375;&#2359;&#2332;&#2381;&#2334; &#2325;&#2366; &#2344;&#2366;&#2350;:</value>
+					</text>
+					<text id="screenshots-label">
+						<value>&#2350;&#2366;&#2305; &#2344;&#2375; &#2332;&#2344;&#2381;&#2350; &#2342;&#2368; &#2342;&#2367;&#2351;&#2366; &#2361;&#2376;&#2306;| &#2309;&#2348; &#2337;&#2367;&#2354;&#2368;&#2357;&#2352;&#2368; &#2350;&#2379;&#2337;&#2351;&#2370;&#2354; &#2350;&#2375;&#2306; &#2332;&#2366;&#2325;&#2375; &#2346;&#2352;&#2335;&#2379;&#2327;&#2381;&#2352;&#2347; &#2325;&#2366; &#2360;&#2381;&#2325;&#2381;&#2352;&#2368;&#2344;&#2358;&#2377;&#2335; &#2354;&#2375;&#2306;| 
+&#2313;&#2360; &#2325;&#2375; &#2360;&#2366;&#2341;, &#2346;&#2375;&#2346;&#2352; &#2346;&#2352;&#2335;&#2379;&#2327;&#2381;&#2352;&#2347; &#2325;&#2368; &#2349;&#2368; &#2347;&#2379;&#2335;&#2379; &#2354;&#2375;&#2306;|</value>
 					</text>
 				</translation>
 			</itext>
-		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><bind calculate="instance('commcaresession')/session/data/case_id" nodeset="/data/case/@case_id"/><bind calculate="/data/patient_status" nodeset="/data/case/update/patient_status" relevant="count(/data/patient_status) &gt; 0"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
+		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><bind calculate="instance('commcaresession')/session/data/case_id" nodeset="/data/case/@case_id"/><bind calculate="/data/delivery_questions/delivery_type" nodeset="/data/case/update/delivery_type" relevant="count(/data/delivery_questions/delivery_type) &gt; 0"/><bind calculate="/data/blank" nodeset="/data/case/update/last_exam_time" relevant="count(/data/blank) &gt; 0"/><bind calculate="/data/blank" nodeset="/data/case/update/last_pv_time" relevant="count(/data/blank) &gt; 0"/><bind calculate="/data/delivery_questions/maternal_outcome" nodeset="/data/case/update/maternal_outcome" relevant="count(/data/delivery_questions/maternal_outcome) &gt; 0"/><bind calculate="/data/number_of_babies" nodeset="/data/case/update/number_of_babies" relevant="count(/data/number_of_babies) &gt; 0"/><bind calculate="/data/patient_status" nodeset="/data/case/update/patient_status" relevant="count(/data/patient_status) &gt; 0"/><setvalue event="xforms-ready" ref="/data/number_of_babies" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/number_of_babies"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
 	</h:head>
 	<h:body>
 		<group ref="/data/delivery_questions" appearance="field-list">
@@ -223,28 +230,6 @@
 			<select1 ref="/data/delivery_questions/maternal_outcome">
 				<label ref="jr:itext('delivery_questions/maternal_outcome-label')"/>
 				<item>
-					<label ref="jr:itext('delivery_questions/fetal_outcome-yes-label')"/>
-					<value>yes</value>
-				</item>
-				<item>
-					<label ref="jr:itext('delivery_questions/fetal_outcome-no-label')"/>
-					<value>no</value>
-				</item>
-			</select1>
-			<select1 ref="/data/delivery_questions/fetal_outcome">
-				<label ref="jr:itext('delivery_questions/fetal_outcome-label')"/>
-				<item>
-					<label ref="jr:itext('delivery_questions/fetal_outcome-yes-label')"/>
-					<value>yes</value>
-				</item>
-				<item>
-					<label ref="jr:itext('delivery_questions/fetal_outcome-no-label')"/>
-					<value>no</value>
-				</item>
-			</select1>
-			<select1 ref="/data/delivery_questions/synto">
-				<label ref="jr:itext('synto-label')"/>
-				<item>
 					<label ref="jr:itext('bleeding-yes-label')"/>
 					<value>yes</value>
 				</item>
@@ -253,68 +238,98 @@
 					<value>no</value>
 				</item>
 			</select1>
-			<select1 ref="/data/delivery_questions/placenta">
-				<label ref="jr:itext('placenta-label')"/>
-				<item>
-					<label ref="jr:itext('bleeding-yes-label')"/>
-					<value>yes</value>
-				</item>
-				<item>
-					<label ref="jr:itext('bleeding-no-label')"/>
-					<value>no</value>
-				</item>
-			</select1>
-			<select1 ref="/data/delivery_questions/bleeding">
-				<label ref="jr:itext('bleeding-label')"/>
-				<item>
-					<label ref="jr:itext('bleeding-yes-label')"/>
-					<value>yes</value>
-				</item>
-				<item>
-					<label ref="jr:itext('bleeding-no-label')"/>
-					<value>no</value>
-				</item>
-			</select1>
+			<group>
+				<label ref="jr:itext('delivery_questions/no_of_babies-label')"/>
+				<repeat jr:count="/data/number_of_babies" jr:noAddRemove="true()" nodeset="/data/delivery_questions/no_of_babies">
+					<select1 ref="/data/delivery_questions/no_of_babies/fetal_outcome">
+						<label ref="jr:itext('delivery_questions/fetal_outcome-label')"/>
+						<item>
+							<label ref="jr:itext('bleeding-yes-label')"/>
+							<value>yes</value>
+						</item>
+						<item>
+							<label ref="jr:itext('bleeding-no-label')"/>
+							<value>no</value>
+						</item>
+					</select1>
+					<select1 ref="/data/delivery_questions/no_of_babies/synto">
+						<label ref="jr:itext('synto-label')"/>
+						<item>
+							<label ref="jr:itext('bleeding-yes-label')"/>
+							<value>yes</value>
+						</item>
+						<item>
+							<label ref="jr:itext('bleeding-no-label')"/>
+							<value>no</value>
+						</item>
+					</select1>
+					<select1 ref="/data/delivery_questions/no_of_babies/placenta">
+						<label ref="jr:itext('placenta-label')"/>
+						<item>
+							<label ref="jr:itext('bleeding-yes-label')"/>
+							<value>yes</value>
+						</item>
+						<item>
+							<label ref="jr:itext('bleeding-no-label')"/>
+							<value>no</value>
+						</item>
+					</select1>
+					<select1 ref="/data/delivery_questions/no_of_babies/bleeding">
+						<label ref="jr:itext('bleeding-label')"/>
+						<item>
+							<label ref="jr:itext('bleeding-yes-label')"/>
+							<value>yes</value>
+						</item>
+						<item>
+							<label ref="jr:itext('bleeding-no-label')"/>
+							<value>no</value>
+						</item>
+					</select1>
+					<group ref="/data/delivery_questions/no_of_babies/baby_questions" appearance="field-list">
+						<input ref="/data/delivery_questions/no_of_babies/baby_questions/birth">
+							<label ref="jr:itext('birth-label')"/>
+						</input>
+						<select1 ref="/data/delivery_questions/no_of_babies/baby_questions/cried">
+							<label ref="jr:itext('cried-label')"/>
+							<item>
+								<label ref="jr:itext('bleeding-yes-label')"/>
+								<value>yes</value>
+							</item>
+							<item>
+								<label ref="jr:itext('bleeding-no-label')"/>
+								<value>no</value>
+							</item>
+						</select1>
+						<select1 ref="/data/delivery_questions/no_of_babies/baby_questions/baby_sex">
+							<label ref="jr:itext('baby_questions/baby_sex-label')"/>
+							<item>
+								<label ref="jr:itext('baby_questions/baby_sex-female-label')"/>
+								<value>female</value>
+							</item>
+							<item>
+								<label ref="jr:itext('baby_questions/baby_sex-male-label')"/>
+								<value>male</value>
+							</item>
+							<item>
+								<label ref="jr:itext('baby_questions/baby_sex-other-label')"/>
+								<value>other</value>
+							</item>
+						</select1>
+						<input ref="/data/delivery_questions/no_of_babies/baby_questions/apgar_score">
+							<label ref="jr:itext('apgar_score-label')"/>
+						</input>
+						<input ref="/data/delivery_questions/no_of_babies/baby_questions/weight">
+							<label ref="jr:itext('weight-label')"/>
+						</input>
+					</group>
+				</repeat>
+			</group>
 		</group>
-		<group ref="/data/baby_questions" appearance="field-list">
-			<input ref="/data/baby_questions/birth">
-				<label ref="jr:itext('birth-label')"/>
-			</input>
-			<select1 ref="/data/baby_questions/cried">
-				<label ref="jr:itext('cried-label')"/>
-				<item>
-					<label ref="jr:itext('bleeding-yes-label')"/>
-					<value>yes</value>
-				</item>
-				<item>
-					<label ref="jr:itext('bleeding-no-label')"/>
-					<value>no</value>
-				</item>
-			</select1>
-			<select1 ref="/data/baby_questions/baby_sex">
-				<label ref="jr:itext('baby_questions/baby_sex-label')"/>
-				<item>
-					<label ref="jr:itext('baby_questions/baby_sex-female-label')"/>
-					<value>female</value>
-				</item>
-				<item>
-					<label ref="jr:itext('baby_questions/baby_sex-male-label')"/>
-					<value>male</value>
-				</item>
-				<item>
-					<label ref="jr:itext('baby_questions/baby_sex-other-label')"/>
-					<value>other</value>
-				</item>
-			</select1>
-			<input ref="/data/baby_questions/apgar_score">
-				<label ref="jr:itext('apgar_score-label')"/>
-			</input>
-			<input ref="/data/baby_questions/weight">
-				<label ref="jr:itext('weight-label')"/>
-			</input>
-			<trigger ref="/data/baby_questions/paediatrician_name" appearance="minimal">
-				<label ref="jr:itext('baby_questions/paediatrician_name-label')"/>
-			</trigger>
-		</group>
+		<input ref="/data/paediatrician_name">
+			<label ref="jr:itext('baby_questions/paediatrician_name-label')"/>
+		</input>
+		<trigger ref="/data/screenshots" appearance="minimal">
+			<label ref="jr:itext('screenshots-label')"/>
+		</trigger>
 	</h:body>
 </h:html>
