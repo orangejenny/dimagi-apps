@@ -3,7 +3,7 @@
 		<h:title>Register New Patient</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/CD27A16C-D3FC-4DBA-A151-608D1D10A62B" uiVersion="1" version="1388" name="Register New Patient">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/CD27A16C-D3FC-4DBA-A151-608D1D10A62B" uiVersion="1" version="1406" name="Register New Patient">
 					<patient_info_list>
 						<name/>
 						<mrd/>
@@ -31,13 +31,7 @@
 					<patient_info_cont>
 						<edd/>
 					</patient_info_cont>
-					<t_f_labour_question_list>
-						<true_label/>
-						<false_label/>
-					</t_f_labour_question_list>
-					<t_f_labour/>
 					<question1/>
-					<question2/>
 					<high_risk_list>
 						<age_risk_label/>
 						<age_risk/>
@@ -60,6 +54,12 @@
 						<high_risk_flag/>
 						<not_high_risk_label/>
 					</high_risk_page>
+					<t_f_labour_question_list>
+						<true_label/>
+						<false_label/>
+					</t_f_labour_question_list>
+					<t_f_labour/>
+					<question2/>
 					<emergency_signs>
 						<emergency_signs_list/>
 					</emergency_signs>
@@ -162,13 +162,8 @@
 			<bind nodeset="/data/icons/flag" type="xsd:string"/>
 			<bind nodeset="/data/patient_info_cont"/>
 			<bind nodeset="/data/patient_info_cont/edd" relevant="/data/patient_info_list/lmp != ''"/>
-			<bind nodeset="/data/t_f_labour_question_list"/>
-			<bind nodeset="/data/t_f_labour_question_list/true_label"/>
-			<bind nodeset="/data/t_f_labour_question_list/false_label"/>
-			<bind nodeset="/data/t_f_labour" required="true()"/>
-			<bind nodeset="/data/question1" relevant="/data/t_f_labour = 'true_labour'" required="true()"/>
-			<bind nodeset="/data/question2" relevant="/data/t_f_labour = 'false_labour'" required="true()"/>
-			<bind nodeset="/data/high_risk_list" relevant="/data/t_f_labour = 'true_labour'"/>
+			<bind nodeset="/data/question1" required="true()"/>
+			<bind nodeset="/data/high_risk_list"/>
 			<bind nodeset="/data/high_risk_list/age_risk_label" relevant="/data/age != &quot;&quot;"/>
 			<bind nodeset="/data/high_risk_list/age_risk" relevant="/data/age_risk_1 = 1"/>
 			<bind nodeset="/data/high_risk_list/age_no_risk" relevant="/data/age_no_risk_0 = 1"/>
@@ -179,16 +174,21 @@
 			<bind nodeset="/data/high_risk_list/height_risk_label" relevant="/data/height_risk_1 = 1"/>
 			<bind nodeset="/data/high_risk_list/weight_risk" type="xsd:int"/>
 			<bind nodeset="/data/high_risk_list/weight_risk_label" relevant="/data/weight_risk_3 = 3"/>
-			<bind nodeset="/data/high_risk_list/prev_outcome" relevant="/data/patient_info_list/gravida != 'primi' and /data/t_f_labour = 'true_labour'" required="true()"/>
+			<bind nodeset="/data/high_risk_list/prev_outcome" relevant="/data/patient_info_list/gravida != 'primi' " required="true()"/>
 			<bind nodeset="/data/high_risk_list/risk_history_label" relevant="/data/risk_history_2 = 2"/>
-			<bind nodeset="/data/high_risk_list/risk_lbw" relevant="/data/patient_info_list/parity != 'primi' and /data/t_f_labour = 'true_labour'"/>
+			<bind nodeset="/data/high_risk_list/risk_lbw" relevant="/data/patient_info_list/parity != 'primi' "/>
 			<bind nodeset="/data/high_risk_list/lbw_risk_label" relevant="/data/lbw_risk_1 = 1"/>
-			<bind nodeset="/data/high_risk_list/prev_conditions" relevant="/data/patient_info_list/gravida != 'primi' and /data/t_f_labour = 'true_labour'"/>
-			<bind nodeset="/data/high_risk_page" relevant="/data/t_f_labour = 'true_labour'"/>
+			<bind nodeset="/data/high_risk_list/prev_conditions" relevant="/data/patient_info_list/gravida != 'primi' "/>
+			<bind nodeset="/data/high_risk_page"/>
 			<bind nodeset="/data/high_risk_page/high_risk_score_label"/>
 			<bind nodeset="/data/high_risk_page/high_risk_flag" relevant="/data/high_risk_flag = 'yes'"/>
 			<bind nodeset="/data/high_risk_page/not_high_risk_label" relevant="/data/high_risk_flag = 'no'"/>
-			<bind nodeset="/data/emergency_signs" relevant="/data/t_f_labour = 'true_labour'"/>
+			<bind nodeset="/data/t_f_labour_question_list"/>
+			<bind nodeset="/data/t_f_labour_question_list/true_label"/>
+			<bind nodeset="/data/t_f_labour_question_list/false_label"/>
+			<bind nodeset="/data/t_f_labour" required="true()"/>
+			<bind nodeset="/data/question2" relevant="/data/t_f_labour = 'false_labour'" required="true()"/>
+			<bind nodeset="/data/emergency_signs"/>
 			<bind nodeset="/data/emergency_signs/emergency_signs_list" constraint=" not(selected(., &quot;none&quot;) and count-selected(.) &gt; 1)" jr:constraintMsg="jr:itext('emergency_signs/emergency_signs_list-constraintMsg')" required="true()"/>
 			<bind nodeset="/data/es_alert" relevant="selected(/data/emergency_signs/emergency_signs_list, 'difficulty_breathing') or selected(/data/emergency_signs/emergency_signs_list, 'shock') or selected(/data/emergency_signs/emergency_signs_list, 'vaginal_bleeding') or selected(/data/emergency_signs/emergency_signs_list, 'convulsions_unconsciousness') or selected(/data/emergency_signs/emergency_signs_list, 'prolapsed_cord') or selected(/data/emergency_signs/emergency_signs_list, 'fetal_distress')"/>
 			<bind nodeset="/data/es_alert/difficulty_in_breathing_ds" relevant="selected(/data/emergency_signs/emergency_signs_list, 'difficulty_breathing')"/>
@@ -241,7 +241,7 @@
 			<bind nodeset="/data/emergency_sign_reason" calculate="concat(if(/data/emergency_signs/emergency_signs_list = &quot;difficulty_breathing&quot;, 'Difficulty in Breathing; ', ''), if(/data/emergency_signs/emergency_signs_list = &quot;shock&quot;, 'Shock; ', ''), if(/data/emergency_signs/emergency_signs_list = &quot;vaginal_bleeding&quot;, 'Vaginal Bleeding; ', ''), if(/data/emergency_signs/emergency_signs_list = &quot;convulsions_unconsciousness&quot;, 'Convulsions or Unconsiousness; ', ''),if(/data/emergency_signs/emergency_signs_list = &quot;prolapsed_cord_ds&quot;, 'Prolapsed Cord; ', ''),if(/data/emergency_signs/emergency_signs_list = &quot;fetal_distress&quot;, 'Fetal Distress; ', ''))"/>
 			<bind nodeset="/data/alert_flag" calculate="if(selected(/data/emergency_signs/emergency_signs_list, 'difficulty_breathing') or selected(/data/emergency_signs/emergency_signs_list, 'shock') or selected(/data/emergency_signs/emergency_signs_list, 'vaginal_bleeding') or selected(/data/emergency_signs/emergency_signs_list, 'convulsions_unconsciousness') or selected(/data/emergency_signs/emergency_signs_list, 'prolapsed_cord') or selected(/data/emergency_signs/emergency_signs_list, 'fetal_distress'), 'yes', 'no')"/>
 			<bind nodeset="/data/nurse_flag" calculate="if(/data/es_alert/choice=&quot;flag&quot;, 'yes', 'no')"/>
-			<bind nodeset="/data/patient_status" calculate="if(selected(/data/t_f_labour, &quot;true_labour&quot;), 'active', '')"/>
+			<bind nodeset="/data/patient_status" calculate="if(selected(/data/t_f_labour, 'true_labour'), 'active', '')"/>
 			<bind nodeset="/data/contact_phone_number_is_verified" calculate="1"/>
 			<bind nodeset="/data/time_zone" calculate="&quot;Asia/Kolkata&quot;"/>
 			<bind nodeset="/data/patient_phone_number_case_name" calculate="concat(/data/patient_info_list/name, ' - doctor phone')" required="true()"/>
@@ -396,39 +396,9 @@
 					<text id="patient_info_list/edd-label">
 						<value>EDD:<output value="/data/edd_calc"/></value>
 					</text>
-					<text id="patient_info_cont/true_label-label">
-						<value>True Labour Signs:
-Begins irregularly but becomes regular and predictable.
-Felt first in the lower back and sweeps around to the abdomen in a wave pattern.
-Continues no matter what the woman's level of activity.
-Increases in duration, frequency and intensity with the passage of time.
-Accompanied by 'show' (blood stained mucus discharge).
-Achieves cervical effacement and cervical dilation.</value>
-					</text>
-					<text id="patient_info_cont/false_label-label">
-						<value>False Labour Signs:
-Begins irregularly and remains irregular.
-Often disappears with ambulation or sleep.
-Felt first abdominally and remains confined to the abdomen and groin.
-Does not increase in duration, frequency or intensity with the passage of time.
-Show Absent.
-Does not achieve cervical effacement and cervical dilation.</value>
-					</text>
-					<text id="patient_info_cont/t_f_labour-label">
-						<value>Select if the patient is in TRUE or FALSE labour:</value>
-					</text>
-					<text id="patient_info_cont/t_f_labour-true_labour-label">
-						<value>True Labour</value>
-					</text>
-					<text id="patient_info_cont/t_f_labour-false_labour-label">
-						<value>False Labour</value>
-					</text>
 					<text id="patient_info_cont/question1-label">
-						<value>This patient is in labour. Continue to high-risk screening.</value>
+						<value>Continue to high-risk screening.</value>
 						<value form="image">jr://file/commcare/image/data/question1.png</value>
-					</text>
-					<text id="patient_info_cont/question2-label">
-						<value>This patient is NOT in labour. This case will not be saved.</value>
 					</text>
 					<text id="high_risk_list-label">
 						<value>High Risk Screening:</value>
@@ -562,6 +532,36 @@ Does not achieve cervical effacement and cervical dilation.</value>
 					</text>
 					<text id="high_risk_page/not_high_risk_label-label">
 						<value>The patient had a risk score &lt; 4; and is NOT considered high risk.</value>
+					</text>
+					<text id="patient_info_cont/true_label-label">
+						<value>True Labour Signs:
+Begins irregularly but becomes regular and predictable.
+Felt first in the lower back and sweeps around to the abdomen in a wave pattern.
+Continues no matter what the woman's level of activity.
+Increases in duration, frequency and intensity with the passage of time.
+Accompanied by 'show' (blood stained mucus discharge).
+Achieves cervical effacement and cervical dilation.</value>
+					</text>
+					<text id="patient_info_cont/false_label-label">
+						<value>False Labour Signs:
+Begins irregularly and remains irregular.
+Often disappears with ambulation or sleep.
+Felt first abdominally and remains confined to the abdomen and groin.
+Does not increase in duration, frequency or intensity with the passage of time.
+Show Absent.
+Does not achieve cervical effacement and cervical dilation.</value>
+					</text>
+					<text id="patient_info_cont/t_f_labour-label">
+						<value>Select if the patient is in TRUE or FALSE labour:</value>
+					</text>
+					<text id="patient_info_cont/t_f_labour-true_labour-label">
+						<value>True Labour</value>
+					</text>
+					<text id="patient_info_cont/t_f_labour-false_labour-label">
+						<value>False Labour</value>
+					</text>
+					<text id="patient_info_cont/question2-label">
+						<value>This patient is NOT in labour. </value>
 					</text>
 					<text id="emergency_signs-label">
 						<value>Emergency Signs</value>
@@ -856,37 +856,9 @@ Observe breathing. If the woman is not breathing:
 					<text id="patient_info_list/edd-label">
 						<value>&#2346;&#2381;&#2352;&#2360;&#2357; &#2325;&#2368; &#2309;&#2344;&#2369;&#2350;&#2366;&#2344;&#2367;&#2340; &#2340;&#2366;&#2352;&#2368;&#2326;:<output value="/data/edd_calc"/></value>
 					</text>
-					<text id="patient_info_cont/true_label-label">
-						<value>&#2309;&#2344;&#2367;&#2351;&#2350;&#2367;&#2340; &#2352;&#2370;&#2346; &#2360;&#2375; &#2358;&#2369;&#2352;&#2370; &#2361;&#2379;&#2325;&#2352; &#2344;&#2367;&#2351;&#2366;&#2350;&#2340; &#2324;&#2352; &#2313;&#2350;&#2381;&#2350;&#2368;&#2342; &#2325;&#2375; &#2350;&#2369;&#2340;&#2366;&#2348;&#2367;&#2325; &#2361;&#2379; &#2327;&#2351;&#2366;.
-&#2346;&#2361;&#2354;&#2375; &#2346;&#2368;&#2336; &#2325;&#2375; &#2344;&#2367;&#2330;&#2354;&#2375; &#2361;&#2367;&#2360;&#2381;&#2360;&#2375; &#2350;&#2375;&#2306; &#2350;&#2361;&#2360;&#2370;&#2360; &#2325;&#2367;&#2351;&#2366; &#2324;&#2352; &#2347;&#2367;&#2352; &#2319;&#2325; &#2354;&#2361;&#2352; &#2346;&#2376;&#2335;&#2352;&#2381;&#2344; &#2350;&#2375;&#2306; &#2346;&#2375;&#2335; &#2325;&#2375; &#2330;&#2366;&#2352;&#2379;&#2306; &#2323;&#2352;.
-&#2332;&#2366;&#2352;&#2368; &#2352;&#2361;&#2366; &#2350;&#2361;&#2367;&#2354;&#2366; &#2325;&#2375; &#2325;&#2367;&#2360;&#2368; &#2349;&#2368; &#2360;&#2381;&#2340;&#2352; &#2325;&#2368; &#2327;&#2340;&#2367;&#2357;&#2367;&#2343;&#2367; &#2325;&#2352;&#2344;&#2375; &#2325;&#2375; &#2348;&#2366;&#2357;&#2332;&#2370;&#2342;.
-&#2360;&#2350;&#2351; &#2348;&#2368;&#2340;&#2344;&#2375; &#2325;&#2375; &#2360;&#2366;&#2341; &#2309;&#2357;&#2343;&#2367; , &#2310;&#2357;&#2371;&#2340;&#2381;&#2340;&#2367; &#2324;&#2352; &#2340;&#2368;&#2357;&#2381;&#2352;&#2340;&#2366; &#2350;&#2375;&#2306; &#2357;&#2371;&#2342;&#2381;&#2343;&#2367;.
-&#2348;&#2354;&#2327;&#2350; &#2325;&#2375; &#2360;&#2366;&#2341; &#2326;&#2370;&#2344; &#2310;&#2344;&#2366;.
-&#2327;&#2381;&#2352;&#2368;&#2357;&#2366; (&#2360;&#2352;&#2381;&#2357;&#2367;&#2325;&#2381;&#2360;) &#2325;&#2366; &#2346;&#2340;&#2354;&#2366; &#2361;&#2379;&#2344;&#2366; &#2324;&#2352; &#2347;&#2375;&#2354;&#2344;&#2366;.</value>
-					</text>
-					<text id="patient_info_cont/false_label-label">
-						<value>&#2309;&#2344;&#2367;&#2351;&#2350;&#2367;&#2340; &#2352;&#2370;&#2346; &#2360;&#2375; &#2358;&#2369;&#2352;&#2370; &#2361;&#2379;&#2344;&#2366; &#2324;&#2352; &#2309;&#2344;&#2367;&#2351;&#2350;&#2367;&#2340; &#2352;&#2361;&#2344;&#2366;.
-&#2346;&#2361;&#2354;&#2375; &#2346;&#2375;&#2335; &#2360;&#2375; &#2354;&#2375;&#2325;&#2352; &#2325;&#2350;&#2352; &#2325;&#2375; &#2346;&#2367;&#2331;&#2354;&#2375; &#2361;&#2367;&#2360;&#2381;&#2360;&#2375; &#2340;&#2325; &#2350;&#2361;&#2360;&#2370;&#2360; &#2361;&#2379;&#2344;&#2366;.
-&#2309;&#2325;&#2381;&#2360;&#2352; &#2361;&#2367;&#2354;&#2344;&#2375; &#2337;&#2369;&#2354;&#2344;&#2375; &#2360;&#2375; &#2351;&#2366; &#2360;&#2379;&#2344;&#2375; &#2325;&#2375; &#2360;&#2366;&#2341; &#2327;&#2366;&#2351;&#2348; &#2361;&#2379; &#2332;&#2366;&#2340;&#2366; &#2361;&#2376;.
-&#2360;&#2350;&#2351; &#2348;&#2368;&#2340;&#2344;&#2375; &#2325;&#2375; &#2360;&#2366;&#2341; &#2309;&#2357;&#2343;&#2367; , &#2310;&#2357;&#2371;&#2340;&#2381;&#2340;&#2367; &#2324;&#2352; &#2340;&#2368;&#2357;&#2381;&#2352;&#2340;&#2366; &#2350;&#2375;&#2306; &#2357;&#2371;&#2342;&#2381;&#2343;&#2367; &#2344;&#2361;&#2368;&#2306; &#2361;&#2379;&#2340;&#2368;.
-&#2309;&#2344;&#2369;&#2346;&#2360;&#2381;&#2341;&#2367;&#2340;&#2367; &#2342;&#2352;&#2381;&#2358;&#2366;&#2351;&#2375;&#2306;.
-&#2327;&#2381;&#2352;&#2368;&#2357;&#2366; (&#2360;&#2352;&#2381;&#2357;&#2367;&#2325;&#2381;&#2360;) &#2325;&#2366; &#2346;&#2340;&#2354;&#2366; &#2325;&#2350;/ &#2344;&#2361;&#2368;&#2306; &#2361;&#2379;&#2344;&#2366; &#2324;&#2352; &#2325;&#2350;/ &#2344;&#2361;&#2368;&#2306; &#2347;&#2375;&#2354;&#2344;&#2366;.</value>
-					</text>
-					<text id="patient_info_cont/t_f_labour-label">
-						<value>&#2325;&#2381;&#2351;&#2366; &#2350;&#2352;&#2368;&#2395; &#2354;&#2375;&#2348;&#2352; &#2350;&#2375;&#2306; &#2361;&#2376;&#2306;?</value>
-					</text>
-					<text id="patient_info_cont/t_f_labour-true_labour-label">
-						<value>&#2361;&#2366;&#2305;</value>
-					</text>
-					<text id="patient_info_cont/t_f_labour-false_labour-label">
-						<value>&#2344;&#2361;&#2368;&#2306;</value>
-					</text>
 					<text id="patient_info_cont/question1-label">
-						<value>&#2351;&#2361; &#2350;&#2352;&#2368;&#2395; &#2354;&#2375;&#2348;&#2352; &#2350;&#2376;&#2306; &#2361;&#2376;&#2306; | &#2313;&#2330;&#2381;&#2330; &#2332;&#2379;&#2326;&#2367;&#2350; &#2360;&#2381;&#2325;&#2381;&#2352;&#2368;&#2344;&#2367;&#2306;&#2327; &#2325;&#2352;&#2344;&#2375; &#2325;&#2375; &#2354;&#2367;&#2319; &#2310;&#2327;&#2375; &#2348;&#2338;&#2364;&#2375;&#2306; |</value>
+						<value>&#2313;&#2330;&#2381;&#2330; &#2332;&#2379;&#2326;&#2367;&#2350; &#2360;&#2381;&#2325;&#2381;&#2352;&#2368;&#2344;&#2367;&#2306;&#2327; &#2325;&#2352;&#2344;&#2375; &#2325;&#2375; &#2354;&#2367;&#2319; &#2310;&#2327;&#2375; &#2348;&#2338;&#2364;&#2375;&#2306; |</value>
 						<value form="image">jr://file/commcare/image/data/question1.png</value>
-					</text>
-					<text id="patient_info_cont/question2-label">
-						<value>&#2351;&#2361; &#2350;&#2352;&#2368;&#2395; &#2354;&#2375;&#2348;&#2352; &#2350;&#2375; &#2344;&#2361;&#2368;&#2306; &#2361;&#2376;&#2306;. &#2351;&#2361; &#2325;&#2375;&#2360; &#2332;&#2350;&#2366; &#2344;&#2361;&#2368;&#2306; &#2325;&#2352;&#2366; &#2332;&#2366;&#2351;&#2375;&#2327;&#2366;.</value>
 					</text>
 					<text id="high_risk_list-label">
 						<value>&#2313;&#2330;&#2381;&#2330; &#2332;&#2379;&#2326;&#2367;&#2350; &#2360;&#2381;&#2325;&#2381;&#2352;&#2368;&#2344;&#2367;&#2306;&#2327;</value>
@@ -1020,6 +992,34 @@ Observe breathing. If the woman is not breathing:
 					</text>
 					<text id="high_risk_page/not_high_risk_label-label">
 						<value>&#2311;&#2360; &#2350;&#2352;&#2368;&#2395; &#2325;&#2366; &#2313;&#2330;&#2381;&#2330; &#2332;&#2379;&#2326;&#2367;&#2350; &#2360;&#2381;&#2325;&#2379;&#2352; &lt; 4 &#2324;&#2352; &#2351;&#2361; &#2313;&#2330;&#2381;&#2330; &#2332;&#2379;&#2326;&#2367;&#2350; &#2344;&#2361;&#2368;&#2306; &#2350;&#2366;&#2344;&#2366; &#2332;&#2366;&#2340;&#2366;</value>
+					</text>
+					<text id="patient_info_cont/true_label-label">
+						<value>&#2309;&#2344;&#2367;&#2351;&#2350;&#2367;&#2340; &#2352;&#2370;&#2346; &#2360;&#2375; &#2358;&#2369;&#2352;&#2370; &#2361;&#2379;&#2325;&#2352; &#2344;&#2367;&#2351;&#2366;&#2350;&#2340; &#2324;&#2352; &#2313;&#2350;&#2381;&#2350;&#2368;&#2342; &#2325;&#2375; &#2350;&#2369;&#2340;&#2366;&#2348;&#2367;&#2325; &#2361;&#2379; &#2327;&#2351;&#2366;.
+&#2346;&#2361;&#2354;&#2375; &#2346;&#2368;&#2336; &#2325;&#2375; &#2344;&#2367;&#2330;&#2354;&#2375; &#2361;&#2367;&#2360;&#2381;&#2360;&#2375; &#2350;&#2375;&#2306; &#2350;&#2361;&#2360;&#2370;&#2360; &#2325;&#2367;&#2351;&#2366; &#2324;&#2352; &#2347;&#2367;&#2352; &#2319;&#2325; &#2354;&#2361;&#2352; &#2346;&#2376;&#2335;&#2352;&#2381;&#2344; &#2350;&#2375;&#2306; &#2346;&#2375;&#2335; &#2325;&#2375; &#2330;&#2366;&#2352;&#2379;&#2306; &#2323;&#2352;.
+&#2332;&#2366;&#2352;&#2368; &#2352;&#2361;&#2366; &#2350;&#2361;&#2367;&#2354;&#2366; &#2325;&#2375; &#2325;&#2367;&#2360;&#2368; &#2349;&#2368; &#2360;&#2381;&#2340;&#2352; &#2325;&#2368; &#2327;&#2340;&#2367;&#2357;&#2367;&#2343;&#2367; &#2325;&#2352;&#2344;&#2375; &#2325;&#2375; &#2348;&#2366;&#2357;&#2332;&#2370;&#2342;.
+&#2360;&#2350;&#2351; &#2348;&#2368;&#2340;&#2344;&#2375; &#2325;&#2375; &#2360;&#2366;&#2341; &#2309;&#2357;&#2343;&#2367; , &#2310;&#2357;&#2371;&#2340;&#2381;&#2340;&#2367; &#2324;&#2352; &#2340;&#2368;&#2357;&#2381;&#2352;&#2340;&#2366; &#2350;&#2375;&#2306; &#2357;&#2371;&#2342;&#2381;&#2343;&#2367;.
+&#2348;&#2354;&#2327;&#2350; &#2325;&#2375; &#2360;&#2366;&#2341; &#2326;&#2370;&#2344; &#2310;&#2344;&#2366;.
+&#2327;&#2381;&#2352;&#2368;&#2357;&#2366; (&#2360;&#2352;&#2381;&#2357;&#2367;&#2325;&#2381;&#2360;) &#2325;&#2366; &#2346;&#2340;&#2354;&#2366; &#2361;&#2379;&#2344;&#2366; &#2324;&#2352; &#2347;&#2375;&#2354;&#2344;&#2366;.</value>
+					</text>
+					<text id="patient_info_cont/false_label-label">
+						<value>&#2309;&#2344;&#2367;&#2351;&#2350;&#2367;&#2340; &#2352;&#2370;&#2346; &#2360;&#2375; &#2358;&#2369;&#2352;&#2370; &#2361;&#2379;&#2344;&#2366; &#2324;&#2352; &#2309;&#2344;&#2367;&#2351;&#2350;&#2367;&#2340; &#2352;&#2361;&#2344;&#2366;.
+&#2346;&#2361;&#2354;&#2375; &#2346;&#2375;&#2335; &#2360;&#2375; &#2354;&#2375;&#2325;&#2352; &#2325;&#2350;&#2352; &#2325;&#2375; &#2346;&#2367;&#2331;&#2354;&#2375; &#2361;&#2367;&#2360;&#2381;&#2360;&#2375; &#2340;&#2325; &#2350;&#2361;&#2360;&#2370;&#2360; &#2361;&#2379;&#2344;&#2366;.
+&#2309;&#2325;&#2381;&#2360;&#2352; &#2361;&#2367;&#2354;&#2344;&#2375; &#2337;&#2369;&#2354;&#2344;&#2375; &#2360;&#2375; &#2351;&#2366; &#2360;&#2379;&#2344;&#2375; &#2325;&#2375; &#2360;&#2366;&#2341; &#2327;&#2366;&#2351;&#2348; &#2361;&#2379; &#2332;&#2366;&#2340;&#2366; &#2361;&#2376;.
+&#2360;&#2350;&#2351; &#2348;&#2368;&#2340;&#2344;&#2375; &#2325;&#2375; &#2360;&#2366;&#2341; &#2309;&#2357;&#2343;&#2367; , &#2310;&#2357;&#2371;&#2340;&#2381;&#2340;&#2367; &#2324;&#2352; &#2340;&#2368;&#2357;&#2381;&#2352;&#2340;&#2366; &#2350;&#2375;&#2306; &#2357;&#2371;&#2342;&#2381;&#2343;&#2367; &#2344;&#2361;&#2368;&#2306; &#2361;&#2379;&#2340;&#2368;.
+&#2309;&#2344;&#2369;&#2346;&#2360;&#2381;&#2341;&#2367;&#2340;&#2367; &#2342;&#2352;&#2381;&#2358;&#2366;&#2351;&#2375;&#2306;.
+&#2327;&#2381;&#2352;&#2368;&#2357;&#2366; (&#2360;&#2352;&#2381;&#2357;&#2367;&#2325;&#2381;&#2360;) &#2325;&#2366; &#2346;&#2340;&#2354;&#2366; &#2325;&#2350;/ &#2344;&#2361;&#2368;&#2306; &#2361;&#2379;&#2344;&#2366; &#2324;&#2352; &#2325;&#2350;/ &#2344;&#2361;&#2368;&#2306; &#2347;&#2375;&#2354;&#2344;&#2366;.</value>
+					</text>
+					<text id="patient_info_cont/t_f_labour-label">
+						<value>&#2325;&#2381;&#2351;&#2366; &#2350;&#2352;&#2368;&#2395; &#2354;&#2375;&#2348;&#2352; &#2350;&#2375;&#2306; &#2361;&#2376;&#2306;?</value>
+					</text>
+					<text id="patient_info_cont/t_f_labour-true_labour-label">
+						<value>&#2361;&#2366;&#2305;</value>
+					</text>
+					<text id="patient_info_cont/t_f_labour-false_labour-label">
+						<value>&#2344;&#2361;&#2368;&#2306;</value>
+					</text>
+					<text id="patient_info_cont/question2-label">
+						<value>&#2351;&#2361; &#2350;&#2352;&#2368;&#2395; &#2354;&#2375;&#2348;&#2352; &#2350;&#2375; &#2344;&#2361;&#2368;&#2306; &#2361;&#2376;&#2306;. </value>
 					</text>
 					<text id="emergency_signs-label">
 						<value>&#2310;&#2346;&#2366;&#2340; &#2360;&#2306;&#2325;&#2375;&#2340;</value>
@@ -1342,30 +1342,8 @@ Observe breathing. If the woman is not breathing:
 				<label ref="jr:itext('patient_info_list/edd-label')"/>
 			</trigger>
 		</group>
-		<group ref="/data/t_f_labour_question_list" appearance="field-list">
-			<trigger ref="/data/t_f_labour_question_list/true_label" appearance="minimal">
-				<label ref="jr:itext('patient_info_cont/true_label-label')"/>
-			</trigger>
-			<trigger ref="/data/t_f_labour_question_list/false_label" appearance="minimal">
-				<label ref="jr:itext('patient_info_cont/false_label-label')"/>
-			</trigger>
-		</group>
-		<select1 ref="/data/t_f_labour">
-			<label ref="jr:itext('patient_info_cont/t_f_labour-label')"/>
-			<item>
-				<label ref="jr:itext('patient_info_cont/t_f_labour-true_labour-label')"/>
-				<value>true_labour</value>
-			</item>
-			<item>
-				<label ref="jr:itext('patient_info_cont/t_f_labour-false_labour-label')"/>
-				<value>false_labour</value>
-			</item>
-		</select1>
 		<trigger ref="/data/question1" appearance="minimal">
 			<label ref="jr:itext('patient_info_cont/question1-label')"/>
-		</trigger>
-		<trigger ref="/data/question2" appearance="minimal">
-			<label ref="jr:itext('patient_info_cont/question2-label')"/>
 		</trigger>
 		<group ref="/data/high_risk_list" appearance="field-list">
 			<label ref="jr:itext('high_risk_list-label')"/>
@@ -1526,6 +1504,28 @@ Observe breathing. If the woman is not breathing:
 				<label ref="jr:itext('high_risk_page/not_high_risk_label-label')"/>
 			</trigger>
 		</group>
+		<group ref="/data/t_f_labour_question_list" appearance="field-list">
+			<trigger ref="/data/t_f_labour_question_list/true_label" appearance="minimal">
+				<label ref="jr:itext('patient_info_cont/true_label-label')"/>
+			</trigger>
+			<trigger ref="/data/t_f_labour_question_list/false_label" appearance="minimal">
+				<label ref="jr:itext('patient_info_cont/false_label-label')"/>
+			</trigger>
+		</group>
+		<select1 ref="/data/t_f_labour">
+			<label ref="jr:itext('patient_info_cont/t_f_labour-label')"/>
+			<item>
+				<label ref="jr:itext('patient_info_cont/t_f_labour-true_labour-label')"/>
+				<value>true_labour</value>
+			</item>
+			<item>
+				<label ref="jr:itext('patient_info_cont/t_f_labour-false_labour-label')"/>
+				<value>false_labour</value>
+			</item>
+		</select1>
+		<trigger ref="/data/question2" appearance="minimal">
+			<label ref="jr:itext('patient_info_cont/question2-label')"/>
+		</trigger>
 		<group ref="/data/emergency_signs" appearance="field-list">
 			<label ref="jr:itext('emergency_signs-label')"/>
 			<select ref="/data/emergency_signs/emergency_signs_list">

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<suite version="1389" descriptor="Media Suite File">
+<suite version="1418" descriptor="Media Suite File">
   <media path="../../commcare/image">
     <resource descriptor="Image File: module5_form0.png" id="media-eb700e0d7ce85d44888d7097fcba5d74-module5_form0.png" version="995">
       <location authority="local">./commcare/image/module5_form0.png</location>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<suite version="1389" descriptor="Suite File">
+<suite version="1418" descriptor="Suite File">
   <xform>
     <resource id="c4de2d1c2d67bed86f69734a41ab4ada11f340c9" version="1331" descriptor="Form: (Module Nurse &amp; Doctor Duty) - Nurse &amp; Doctor Duty">
       <location authority="local">./modules-0/forms-0.xml</location>
@@ -7,13 +7,13 @@
     </resource>
   </xform>
   <xform>
-    <resource id="cbe775c6aa81e7f82b48fc4405cc971b02d93287" version="1388" descriptor="Form: (Module Registration) - Register New Patient">
+    <resource id="cbe775c6aa81e7f82b48fc4405cc971b02d93287" version="1406" descriptor="Form: (Module Registration) - Register New Patient">
       <location authority="local">./modules-1/forms-0.xml</location>
       <location authority="remote">./modules-1/forms-0.xml</location>
     </resource>
   </xform>
   <xform>
-    <resource id="89dfc3483af5f64501e53495a094d760b3f40a49" version="1389" descriptor="Form: (Module Active Patients) - Record Measurements">
+    <resource id="89dfc3483af5f64501e53495a094d760b3f40a49" version="1418" descriptor="Form: (Module Active Patients) - Record Measurements">
       <location authority="local">./modules-2/forms-0.xml</location>
       <location authority="remote">./modules-2/forms-0.xml</location>
     </resource>
@@ -37,7 +37,7 @@
     </resource>
   </xform>
   <xform>
-    <resource id="1a503d291461f4d7ee820fcc3a80719b00b94f04" version="1388" descriptor="Form: (Module Active Patients) - Update Registration">
+    <resource id="1a503d291461f4d7ee820fcc3a80719b00b94f04" version="1417" descriptor="Form: (Module Active Patients) - Update Registration">
       <location authority="local">./modules-2/forms-4.xml</location>
       <location authority="remote">./modules-2/forms-4.xml</location>
     </resource>
@@ -73,19 +73,19 @@
     </resource>
   </xform>
   <locale language="default">
-    <resource id="app_default_strings" version="1389" descriptor="Translations: Default Language">
+    <resource id="app_default_strings" version="1418" descriptor="Translations: Default Language">
       <location authority="local">./default/app_strings.txt</location>
       <location authority="remote">./default/app_strings.txt</location>
     </resource>
   </locale>
   <locale language="en">
-    <resource id="app_en_strings" version="1389" descriptor="Translations: English">
+    <resource id="app_en_strings" version="1418" descriptor="Translations: English">
       <location authority="local">./en/app_strings.txt</location>
       <location authority="remote">./en/app_strings.txt</location>
     </resource>
   </locale>
   <locale language="hin">
-    <resource id="app_hin_strings" version="1389" descriptor="Translations: Unknown Language (hin)">
+    <resource id="app_hin_strings" version="1418" descriptor="Translations: Unknown Language (hin)">
       <location authority="local">./hin/app_strings.txt</location>
       <location authority="remote">./hin/app_strings.txt</location>
     </resource>
@@ -198,7 +198,7 @@
 	   <next_pv_minutes function="if(last_pv_time = '', '', $next_pv_abs mod 60)"/>
 	   <next_pv_string function="if(last_pv_time = '', '', concat($next_pv_hours, ':', if($next_pv_minutes &lt; 10, '0', ''), $next_pv_minutes))"/>
 
-	   <background function="if(dilation &lt; 4, 'none', if(dilation &lt; hours, 'red-background', if(dilation &lt; hours + 4, 'yellow-background', 'none')))"/>
+	   <background function="if(dilation &lt; hours + $first_dilation - $first_dilation_hours - 4, 'red-background', if(dilation &lt; hours + $first_dilation - $first_dilation_hours, 'yellow-background', 'none'))"/>
 	 </variables>
     <field>
       <style horz-align="left" vert-align="center" font-size="large">
@@ -562,7 +562,7 @@
                   <xpath function="'none'"/>
                 </text>
               </configuration>
-              <x function="if(index = 0, 0, if(index = 1, 6, $xmax))"/>
+              <x function="if(index = 0, 4 - $fd + $fdhours, if(index = 1, 10 - $fd + $fdhours, $xmax))"/>
               <y function="if(index = 0, 4, 10)"/>
             </series>
             <series nodeset="instance('item-list:sequence')/sequence_list/sequence">
@@ -577,7 +577,7 @@
                   <xpath function="'none'"/>
                 </text>
               </configuration>
-              <x function="if(index = 0, 4, if(index = 1, 10, $xmax))"/>
+              <x function="if(index = 0, 8 - $fd + $fdhours, if(index = 1, 14 - $fd + $fdhours, $xmax))"/>
               <y function="if(index = 0, 4, 10)"/>
             </series>
             <series nodeset="instance('item-list:sequence')/sequence_list/sequence">
@@ -602,6 +602,9 @@
             </series>
             <series nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']">
               <configuration>
+                <text id="point-style">
+                  <xpath function="'diamond'"/>
+                </text>
                 <text id="secondary-y">
                   <xpath function="true()"/>
                 </text>
@@ -610,6 +613,9 @@
               <y function="station * -1 + 3"/>
             </series>
             <configuration>
+              <text id="x-labels">
+                <xpath function="13"/>
+              </text>
               <text id="secondary-y-max">
                 <xpath function="10"/>
               </text>
@@ -628,14 +634,17 @@
               <text id="y-labels">
                 <xpath function="'[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]'"/>
               </text>
+              <text id="var-fd">
+                <xpath function="coalesce(first_dilation, 4)"/>
+              </text>
               <text id="y-min">
                 <xpath function="0"/>
               </text>
               <text id="secondary-y-min">
                 <xpath function="0"/>
               </text>
-              <text id="x-labels">
-                <xpath function="13"/>
+              <text id="var-fdhours">
+                <xpath function="if(first_measured_dilation_time, (first_measured_dilation_time - first_exam_time) * 24, 0)"/>
               </text>
               <text id="var-xmax">
                 <xpath function="if(max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/hours) &gt; 12, max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/hours), 12)"/>
@@ -653,7 +662,7 @@
             <annotation>
               <x>
                 <text>
-                  <xpath function="5"/>
+                  <xpath function="9 - $fd + $fdhours"/>
                 </text>
               </x>
               <y>
@@ -668,7 +677,7 @@
             <annotation>
               <x>
                 <text>
-                  <xpath function="10"/>
+                  <xpath function="14 - $fd + $fdhours"/>
                 </text>
               </x>
               <y>
@@ -1362,7 +1371,7 @@
 	   <next_exam_hours function="if(last_exam_time='', '', int($next_exam_abs div 60))"/>
 	   <next_exam_minutes function="if(last_exam_time = '', '', $next_exam_abs mod 60)"/>
 	   <next_exam_string function="if(last_exam_time = '', '', concat($next_exam_hours, ':', if($next_exam_minutes &lt; 10, '0', ''), $next_exam_minutes))"/>
-	   <background function="if(dilation &lt; 4, 'none', if(dilation &lt; hours, 'red-background', if(dilation &lt; hours + 4, 'yellow-background', 'none')))"/>
+	   <background function="if(dilation &lt; hours + $first_dilation - $first_dilation_hours - 4, 'red-background', if(dilation &lt; hours + $first_dilation - $first_dilation_hours, 'yellow-background', 'none'))"/>
 	 </variables>
     <field>
       <style horz-align="left" vert-align="center" font-size="large">
@@ -1634,7 +1643,7 @@
                   <xpath function="'none'"/>
                 </text>
               </configuration>
-              <x function="if(index = 0, 0, if(index = 1, 6, $xmax))"/>
+              <x function="if(index = 0, 4 - $fd + $fdhours, if(index = 1, 10 - $fd + $fdhours, $xmax))"/>
               <y function="if(index = 0, 4, 10)"/>
             </series>
             <series nodeset="instance('item-list:sequence')/sequence_list/sequence">
@@ -1649,7 +1658,7 @@
                   <xpath function="'none'"/>
                 </text>
               </configuration>
-              <x function="if(index = 0, 4, if(index = 1, 10, $xmax))"/>
+              <x function="if(index = 0, 8 - $fd + $fdhours, if(index = 1, 14 - $fd + $fdhours, $xmax))"/>
               <y function="if(index = 0, 4, 10)"/>
             </series>
             <series nodeset="instance('item-list:sequence')/sequence_list/sequence">
@@ -1674,6 +1683,9 @@
             </series>
             <series nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']">
               <configuration>
+                <text id="point-style">
+                  <xpath function="'diamond'"/>
+                </text>
                 <text id="secondary-y">
                   <xpath function="true()"/>
                 </text>
@@ -1731,7 +1743,7 @@
             <annotation>
               <x>
                 <text>
-                  <xpath function="5"/>
+                  <xpath function="9 - $fd + $fdhours"/>
                 </text>
               </x>
               <y>
@@ -1746,7 +1758,7 @@
             <annotation>
               <x>
                 <text>
-                  <xpath function="10"/>
+                  <xpath function="14 - $fd + $fdhours"/>
                 </text>
               </x>
               <y>
@@ -2284,7 +2296,7 @@
 	   <next_exam_hours function="if(last_exam_time='', '', int($next_exam_abs div 60))"/>
 	   <next_exam_minutes function="if(last_exam_time = '', '', $next_exam_abs mod 60)"/>
 	   <next_exam_string function="if(last_exam_time = '', '', concat($next_exam_hours, ':', if($next_exam_minutes &lt; 10, '0', ''), $next_exam_minutes))"/>
-	   <background function="if(dilation &lt; 4, 'none', if(dilation &lt; hours, 'red-background', if(dilation &lt; hours + 4, 'yellow-background', 'none')))"/>
+	   <background function="if(dilation &lt; hours + $first_dilation - $first_dilation_hours - 4, 'red-background', if(dilation &lt; hours + $first_dilation - $first_dilation_hours, 'yellow-background', 'none'))"/>
 	 </variables>
     <field>
       <style horz-align="left" vert-align="center" font-size="large">
@@ -2556,7 +2568,7 @@
                   <xpath function="'none'"/>
                 </text>
               </configuration>
-              <x function="if(index = 0, 0, if(index = 1, 6, $xmax))"/>
+              <x function="if(index = 0, 4 - $fd + $fdhours, if(index = 1, 10 - $fd + $fdhours, $xmax))"/>
               <y function="if(index = 0, 4, 10)"/>
             </series>
             <series nodeset="instance('item-list:sequence')/sequence_list/sequence">
@@ -2571,7 +2583,7 @@
                   <xpath function="'none'"/>
                 </text>
               </configuration>
-              <x function="if(index = 0, 4, if(index = 1, 10, $xmax))"/>
+              <x function="if(index = 0, 8 - $fd + $fdhours, if(index = 1, 14 - $fd + $fdhours, $xmax))"/>
               <y function="if(index = 0, 4, 10)"/>
             </series>
             <series nodeset="instance('item-list:sequence')/sequence_list/sequence">
@@ -2596,6 +2608,9 @@
             </series>
             <series nodeset="instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']">
               <configuration>
+                <text id="point-style">
+                  <xpath function="'diamond'"/>
+                </text>
                 <text id="secondary-y">
                   <xpath function="true()"/>
                 </text>
@@ -2604,6 +2619,9 @@
               <y function="station * -1 + 3"/>
             </series>
             <configuration>
+              <text id="x-labels">
+                <xpath function="13"/>
+              </text>
               <text id="secondary-y-max">
                 <xpath function="10"/>
               </text>
@@ -2622,14 +2640,17 @@
               <text id="y-labels">
                 <xpath function="'[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]'"/>
               </text>
+              <text id="var-fd">
+                <xpath function="coalesce(first_dilation, 4)"/>
+              </text>
               <text id="y-min">
                 <xpath function="0"/>
               </text>
               <text id="secondary-y-min">
                 <xpath function="0"/>
               </text>
-              <text id="x-labels">
-                <xpath function="13"/>
+              <text id="var-fdhours">
+                <xpath function="if(first_measured_dilation_time, (first_measured_dilation_time - first_exam_time) * 24, 0)"/>
               </text>
               <text id="var-xmax">
                 <xpath function="if(max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/hours) &gt; 12, max(instance('casedb')/casedb/case[@case_type='Indicators'][index/parent=current()/@case_id][@status='open']/hours), 12)"/>
@@ -2647,7 +2668,7 @@
             <annotation>
               <x>
                 <text>
-                  <xpath function="5"/>
+                  <xpath function="9 - $fd + $fdhours"/>
                 </text>
               </x>
               <y>
@@ -2662,7 +2683,7 @@
             <annotation>
               <x>
                 <text>
-                  <xpath function="10"/>
+                  <xpath function="14 - $fd + $fdhours"/>
                 </text>
               </x>
               <y>

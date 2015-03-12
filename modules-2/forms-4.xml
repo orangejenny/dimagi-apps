@@ -3,7 +3,7 @@
 		<h:title>Update Registration</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/1a503d291461f4d7ee820fcc3a80719b00b94f04" uiVersion="1" version="1388" name="Update Registration">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/1a503d291461f4d7ee820fcc3a80719b00b94f04" uiVersion="1" version="1417" name="Update Registration">
 					<update_info_select>
 						<update_info_list/>
 					</update_info_select>
@@ -88,7 +88,7 @@
 			<bind nodeset="/data/patient_info_cont" relevant="selected(/data/update_info_select/update_info_list, 'patient_info_update')"/>
 			<bind nodeset="/data/patient_info_cont/edd" relevant="/data/patient_info_list/lmp != ''"/>
 			<bind nodeset="/data/high_risk_list" relevant="selected(/data/update_info_select/update_info_list, 'high_risk_update')"/>
-			<bind nodeset="/data/high_risk_list/age_risk_label" relevant="/data/age != ''"/>
+			<bind nodeset="/data/high_risk_list/age_risk_label" relevant="/data/age_input != ''"/>
 			<bind nodeset="/data/high_risk_list/age_risk" relevant="/data/age_risk_1 = 1"/>
 			<bind nodeset="/data/high_risk_list/para_risk_label" relevant="/data/para_risk_1 = 1"/>
 			<bind nodeset="/data/high_risk_list/para_risk"/>
@@ -224,7 +224,7 @@
 						<value>High Risk Screening:</value>
 					</text>
 					<text id="high_risk_list/age_risk_label-label">
-						<value>Age<output value="/data/age"/></value>
+						<value>Age<output value="/data/age_input"/></value>
 					</text>
 					<text id="high_risk_list/age_risk-label">
 						<value>Age is less than 18 or greater than 35, +1</value>
@@ -437,7 +437,7 @@
 						<value>&#2313;&#2330;&#2381;&#2330; &#2332;&#2379;&#2326;&#2367;&#2350; &#2360;&#2381;&#2325;&#2381;&#2352;&#2368;&#2344;&#2367;&#2306;&#2327;</value>
 					</text>
 					<text id="high_risk_list/age_risk_label-label">
-						<value>1. &#2313;&#2350;&#2381;&#2352;<output value="/data/age"/></value>
+						<value>1. &#2313;&#2350;&#2381;&#2352;<output value="/data/age_input"/></value>
 					</text>
 					<text id="high_risk_list/age_risk-label">
 						<value>(&#2313;&#2350;&#2381;&#2352; 18 &#2360;&#2366;&#2354; &#2360;&#2375; &#2325;&#2350; &#2351;&#2366; 35  &#2360;&#2366;&#2354; &#2360;&#2375; &#2332;&#2381;&#2351;&#2366;&#2342;&#2366; &#2361;&#2376;, +1)</value>
