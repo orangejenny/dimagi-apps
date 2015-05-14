@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<suite version="18" descriptor="Suite File">
+  <xform>
+    <resource id="2d10631ac43dfc50ba6a44307d029525159107" version="14" descriptor="Form: (Module Bars) - Add Bar">
+      <location authority="local">./modules-0/forms-0.xml</location>
+      <location authority="remote">./modules-0/forms-0.xml</location>
+    </resource>
+  </xform>
+  <locale language="default">
+    <resource id="app_default_strings" version="18" descriptor="Translations: Default Language">
+      <location authority="local">./default/app_strings.txt</location>
+      <location authority="remote">./default/app_strings.txt</location>
+    </resource>
+  </locale>
+  <locale language="en">
+    <resource id="app_en_strings" version="18" descriptor="Translations: English">
+      <location authority="local">./en/app_strings.txt</location>
+      <location authority="remote">./en/app_strings.txt</location>
+    </resource>
+  </locale>
+  <detail id="m0_case_short">
+    <title>
+      <text>
+        <locale id="m0.case_short.title"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_short.case_name_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </template>
+      <sort type="string" order="1" direction="ascending">
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </sort>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_short.case_value_2.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="value"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="m0_case_long">
+    <title>
+      <text>
+        <locale id="m0.case_long.title"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_long.case_name_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_long.case_value_2.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="value"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_long.case_graph_3.header"/>
+        </text>
+      </header>
+      <template form="graph">
+        <graph type="xy">
+          <series nodeset="instance('casedb')/casedb/case[@case_type='bar'][@status='open']">
+            <configuration/>
+            <x function="value"/>
+            <y function="value"/>
+          </series>
+          <configuration>
+            <text id="secondary-y-title">
+              <locale id="m0.case_long.case_graph_3.graph.key.secondary-y-title"/>
+            </text>
+            <text id="x-title">
+              <locale id="m0.case_long.case_graph_3.graph.key.x-title"/>
+            </text>
+            <text id="y-title">
+              <locale id="m0.case_long.case_graph_3.graph.key.y-title"/>
+            </text>
+          </configuration>
+        </graph>
+      </template>
+    </field>
+  </detail>
+  <entry>
+    <form>http://openrosa.org/formdesigner/90EE80BA-9B80-4739-A8B3-03DCB128085F</form>
+    <command id="m0-f0">
+      <text>
+        <locale id="forms.m0f0"/>
+      </text>
+    </command>
+    <session>
+      <datum id="case_id_new_bar_0" function="uuid()"/>
+    </session>
+  </entry>
+  <entry>
+    <command id="m0-case-list">
+      <text>
+        <locale id="case_lists.m0"/>
+      </text>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='bar'][@status='open']" value="./@case_id" detail-select="m0_case_short" detail-confirm="m0_case_long"/>
+    </session>
+  </entry>
+  <menu id="root">
+    <text>
+      <locale id="modules.m0"/>
+    </text>
+    <command id="m0-f0"/>
+    <command id="m0-case-list"/>
+  </menu>
+</suite>

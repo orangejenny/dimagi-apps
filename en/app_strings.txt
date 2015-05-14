@@ -1,0 +1,15 @@
+app.display.name=Bar Graphs
+case_lists.m0=Bars
+cchq.case=Case
+cchq.referral=Referral
+en=English
+forms.m0f0=Add Bar
+homescreen.title=Bar Graphs
+m0.case_long.case_graph_3.header=Graph
+m0.case_long.case_name_1.header=Name
+m0.case_long.case_value_2.header=Value
+m0.case_long.title=Bars
+m0.case_short.case_name_1.header=Name
+m0.case_short.case_value_2.header=Value
+m0.case_short.title=Bars
+modules.m0=Bars
