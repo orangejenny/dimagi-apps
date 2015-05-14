@@ -3,12 +3,12 @@
 		<h:title>Add Bar</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/90EE80BA-9B80-4739-A8B3-03DCB128085F" uiVersion="1" version="14" name="Add Bar">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/90EE80BA-9B80-4739-A8B3-03DCB128085F" uiVersion="1" version="20" name="Add Bar">
 					<list>
 						<name/>
 						<value/>
 					</list>
-				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>bar</case_type></create><update><value/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>bar</case_type></create><update><label/><value/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
 			</instance><instance id="commcaresession" src="jr://instance/session"/>
 			<bind nodeset="/data/list"/>
 			<bind nodeset="/data/list/name" type="xsd:string" required="true()"/>
@@ -26,7 +26,7 @@
 					</text>
 				</translation>
 			</itext>
-		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><setvalue event="xforms-ready" ref="/data/case/@case_id" value="instance('commcaresession')/session/data/case_id_new_bar_0"/><bind calculate="/data/list/name" nodeset="/data/case/create/case_name"/><bind calculate="/data/meta/userID" nodeset="/data/case/create/owner_id"/><bind calculate="/data/list/value" nodeset="/data/case/update/value" relevant="count(/data/list/value) &gt; 0"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
+		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><setvalue event="xforms-ready" ref="/data/case/@case_id" value="instance('commcaresession')/session/data/case_id_new_bar_0"/><bind calculate="/data/list/name" nodeset="/data/case/create/case_name"/><bind calculate="/data/meta/userID" nodeset="/data/case/create/owner_id"/><bind calculate="/data/list/name" nodeset="/data/case/update/label" relevant="count(/data/list/name) &gt; 0"/><bind calculate="/data/list/value" nodeset="/data/case/update/value" relevant="count(/data/list/value) &gt; 0"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
 	</h:head>
 	<h:body>
 		<group ref="/data/list" appearance="field-list">
