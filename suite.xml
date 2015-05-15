@@ -91,6 +91,42 @@
         </text>
       </header>
       <template form="graph">
+        <graph type="bar">
+          <series nodeset="instance('casedb')/casedb/case[@case_type='bar'][@status='open']">
+            <configuration>
+	            <text id="bar-sort">
+	                <value>descending</value>
+	            </text>
+            </configuration>
+            <x function="label"/>
+            <y function="value"/>
+          </series>
+          <!--series nodeset="instance('casedb')/casedb/case[@case_type='bar'][@status='open']">
+            <configuration/>
+            <x function="label"/>
+            <y function="value * 2"/>
+          </series-->
+          <configuration>
+            <text id="y-min">
+                <value>0</value>
+            </text>
+            <text id="y-max">
+                <value>20</value>
+            </text>
+            <text id="show-grid">
+                <xpath function="false()"/>
+            </text>
+          </configuration>
+        </graph>
+      </template>
+    </field>
+    <!--field>
+      <header>
+        <text>
+          <value/>
+        </text>
+      </header>
+      <template form="graph">
         <graph type="xy">
           <series nodeset="instance('casedb')/casedb/case[@case_type='bar'][@status='open']">
             <configuration/>
@@ -98,19 +134,16 @@
             <y function="value"/>
           </series>
           <configuration>
-            <text id="secondary-y-title">
-              <locale id="m0.case_long.case_graph_3.graph.key.secondary-y-title"/>
+            <text id="y-min">
+                <value>0</value>
             </text>
-            <text id="x-title">
-              <locale id="m0.case_long.case_graph_3.graph.key.x-title"/>
-            </text>
-            <text id="y-title">
-              <locale id="m0.case_long.case_graph_3.graph.key.y-title"/>
+            <text id="y-max">
+                <value>10</value>
             </text>
           </configuration>
         </graph>
       </template>
-    </field>
+    </field-->
   </detail>
   <entry>
     <form>http://openrosa.org/formdesigner/90EE80BA-9B80-4739-A8B3-03DCB128085F</form>
