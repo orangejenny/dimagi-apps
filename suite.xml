@@ -171,27 +171,34 @@
         <text/>
       </header>
       <template form="graph">
-        <graph type="xy">
+        <graph type="bar">
           <series nodeset="instance('reports')/reports/report[@id='3b221c171e91fdfd85c2b55228f644cc']/rows/row">
-            <x function="@index"/>
+            <configuration>
+                <text id="line-color">
+                    <value>#FF1F77B4</value>
+                </text>
+            </configuration>
+            <x function="column[@id='applicant_type']"/>
             <y function="column[@id='remote_choices_no']"/>
-            <radius function="5"/>
           </series>
           <series nodeset="instance('reports')/reports/report[@id='3b221c171e91fdfd85c2b55228f644cc']/rows/row">
-            <x function="@index"/>
+            <configuration>
+                <text id="line-color">
+                    <value>#FFAEC7E8</value>
+                </text>
+            </configuration>
+            <x function="column[@id='applicant_type']"/>
             <y function="column[@id='remote_choices_yes']"/>
-            <radius function="5"/>
           </series>
           <series nodeset="instance('reports')/reports/report[@id='3b221c171e91fdfd85c2b55228f644cc']/rows/row">
-            <x function="@index"/>
+            <configuration>
+                <text id="line-color">
+                    <value>#FFFF7F0E</value>
+                </text>
+            </configuration>
+            <x function="column[@id='applicant_type']"/>
             <y function="column[@id='remote_choices_unknown']"/>
-            <radius function="5"/>
           </series>
-          <configuration>
-            <text id="x-labels">
-              <xpath function="instance('reports')/reports/report[@id='3b221c171e91fdfd85c2b55228f644cc']/xlabels[@column='applicant_type']"/>
-            </text>
-          </configuration>
         </graph>
       </template>
     </field>
@@ -305,27 +312,34 @@
         <text/>
       </header>
       <template form="graph">
-        <graph type="xy">
+        <graph type="bar">
           <series nodeset="instance('reports')/reports/report[@id='ecf62de6907121edaf3448d1af1e2597']/rows/row">
-            <x function="@index"/>
+            <configuration>
+                <text id="line-color">
+                    <value>#FF1F77B4</value>
+                </text>
+            </configuration>
+            <x function="column[@id='date']"/>
             <y function="column[@id='resume_screen']"/>
-            <radius function="5"/>
           </series>
           <series nodeset="instance('reports')/reports/report[@id='ecf62de6907121edaf3448d1af1e2597']/rows/row">
-            <x function="@index"/>
+            <configuration>
+                <text id="line-color">
+                    <value>#FFAEC7E8</value>
+                </text>
+            </configuration>
+            <x function="column[@id='date']"/>
             <y function="column[@id='phone_screen']"/>
-            <radius function="5"/>
           </series>
           <series nodeset="instance('reports')/reports/report[@id='ecf62de6907121edaf3448d1af1e2597']/rows/row">
-            <x function="@index"/>
+            <configuration>
+                <text id="line-color">
+                    <value>#FFFF7F0E</value>
+                </text>
+            </configuration>
+            <x function="column[@id='date']"/>
             <y function="column[@id='second_round']"/>
-            <radius function="5"/>
           </series>
-          <configuration>
-            <text id="x-labels">
-              <xpath function="instance('reports')/reports/report[@id='ecf62de6907121edaf3448d1af1e2597']/xlabels[@column='date']"/>
-            </text>
-          </configuration>
         </graph>
       </template>
     </field>
@@ -451,22 +465,25 @@
         <text/>
       </header>
       <template form="graph">
-        <graph type="xy">
+        <graph type="bar">
           <series nodeset="instance('reports')/reports/report[@id='6e89d42b071fe56b6b09fa177984271c']/rows/row">
-            <x function="@index"/>
+            <configuration>
+                <text id="line-color">
+                    <value>#FF1F77B4</value>
+                </text>
+            </configuration>
+            <x function="column[@id='username']"/>
             <y function="column[@id='phone_screen']"/>
-            <radius function="5"/>
           </series>
           <series nodeset="instance('reports')/reports/report[@id='6e89d42b071fe56b6b09fa177984271c']/rows/row">
-            <x function="@index"/>
+            <configuration>
+                <text id="line-color">
+                    <value>#FFAEC7E8</value>
+                </text>
+            </configuration>
+            <x function="column[@id='username']"/>
             <y function="column[@id='second_round']"/>
-            <radius function="5"/>
           </series>
-          <configuration>
-            <text id="x-labels">
-              <xpath function="instance('reports')/reports/report[@id='6e89d42b071fe56b6b09fa177984271c']/xlabels[@column='username']"/>
-            </text>
-          </configuration>
         </graph>
       </template>
     </field>
