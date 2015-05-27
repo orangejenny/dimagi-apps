@@ -177,6 +177,9 @@
                 <text id="line-color">
                     <value>#FF1F77B4</value>
                 </text>
+                <text id="name">
+                    <value>local</value>
+                </text>
             </configuration>
             <x function="column[@id='applicant_type']"/>
             <y function="column[@id='remote_choices_no']"/>
@@ -185,6 +188,9 @@
             <configuration>
                 <text id="line-color">
                     <value>#FFAEC7E8</value>
+                </text>
+                <text id="name">
+                    <value>remote</value>
                 </text>
             </configuration>
             <x function="column[@id='applicant_type']"/>
@@ -199,6 +205,11 @@
             <x function="column[@id='applicant_type']"/>
             <y function="column[@id='remote_choices_unknown']"/>
           </series>
+          <configuration>
+            <text id="show-legend">
+                <xpath function="true()"/>
+            </text>
+          </configuration>
         </graph>
       </template>
     </field>
