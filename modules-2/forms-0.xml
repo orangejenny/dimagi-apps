@@ -1,0 +1,1310 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:vellum="http://commcarehq.org/xforms/vellum">
+	<h:head>
+		<h:title>Enregistrement</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/3bb05e1d38c60fda76f795f9296d1c1fd351803" uiVersion="1" version="1985" name="Enregistrement">
+					<TODAY/>
+					<date_registration/>
+					<household_name/>
+					<explain_survey_label/>
+					<caregiver_name/>
+					<caregiver_gender/>
+					<caregiver_tel/>
+					<has_children_under_5/>
+					<pregnancy_status/>
+					<is_eligible/>
+					<not_eligible_label/>
+					<prev_household_code/>
+					<has_individual_code_asotry/>
+					<caregiver_asotry_code/>
+					<is_woman>
+						<identity_card/>
+						<woman_actual_dob/>
+						<dob_estimation_data/>
+						<woman_known_age/>
+						<woman_known_yob/>
+						<age_from_dob/>
+						<age_from_yob/>
+						<woman_age/>
+						<woman_estimated_dob/>
+						<woman_dob/>
+						<dob_label/>
+					</is_woman>
+					<is_pregnant>
+						<lmp/>
+						<pregnancy_month/>
+						<edd/>
+						<age_edd>
+							<pregnancy_month_label/>
+							<edd_label/>
+						</age_edd>
+						<first_pregnancy/>
+						<total_pregnancies/>
+						<living_children/>
+						<previous_complications/>
+						<risk_factors/>
+						<fkt_caregroup_status/>
+						<caregroup_membership/>
+						<caregroup_name/>
+						<godmother_name/>
+						<godmother_tel/>
+					</is_pregnant>
+					<is_caregiver>
+						<create_label/>
+						<total_children_under_5/>
+						<clarify_number_children/>
+						<number_children/>
+						<open_child_case jr:template="">
+							<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>child</case_type></create><update><child_dob/><child_gender/></update><index><parent case_type="mother_caregiver"/></index></case><child_name/>
+							<relation_to_child/>
+							<child_gender/>
+							<know_child_dob/>
+							<child_known_dob/>
+							<child_dob_estimation_data/>
+							<child_known_age_months/>
+							<child_known_age_years/>
+							<child_known_yob/>
+							<age_months_from_dob/>
+							<age_months_from_yob/>
+							<age_months_from_years/>
+							<child_age_months/>
+							<child_eligibility_status/>
+							<child_dob/>
+							<recap/>
+							<eligibility_recap/>
+						</open_child_case>
+					</is_caregiver>
+					<recap>
+						<verify_responses_label/>
+						<womans_name_label/>
+						<no_children_label/>
+						<dob_label/>
+						<womans_age_label/>
+						<lmp_label/>
+						<womans_telephone_number/>
+						<godmother_label/>
+						<godmother_telephone_number_label/>
+						<how_to_modify_label/>
+					</recap>
+					<thank_pregnant_woman_label/>
+					<thank_pregnant_caregiver_label/>
+					<thank_caregiver_label/>
+				<case_mother_caregiver><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>mother_caregiver</case_type></create><update><caregiver_asotry_code/><caregiver_gender/><caregroup_membership/><caregroup_name/><edd/><fkt_caregroup_status/><godmother_name/><godmother_tel/><living_children/><lmp/><pregnancy_status/><previous_complications/><risk_factors/><total_pregnancies/><woman_dob/></update><index><parent case_type="household"/></index></case></case_mother_caregiver><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance id="commcaresession" src="jr://instance/session"/><instance id="casedb" src="jr://instance/casedb"/>
+			<bind nodeset="/data/TODAY" calculate="today()"/>
+			<bind nodeset="/data/date_registration" calculate="/data/TODAY"/>
+			<bind nodeset="/data/household_name"/>
+			<bind nodeset="/data/explain_survey_label"/>
+			<bind nodeset="/data/caregiver_name" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/caregiver_gender" required="true()"/>
+			<bind nodeset="/data/caregiver_tel" type="xsd:string" constraint="string-length(.) = 9" jr:constraintMsg="jr:itext('caregiver_tel-constraintMsg')" required="false()"/>
+			<bind nodeset="/data/has_children_under_5" required="true()"/>
+			<bind nodeset="/data/pregnancy_status" relevant="/data/caregiver_gender = 'female'" required="true()"/>
+			<bind nodeset="/data/is_eligible" calculate="if(/data/has_children_under_5=&quot;yes&quot; or /data/pregnancy_status=&quot;yes&quot;, 'yes', 'no')"/>
+			<bind nodeset="/data/not_eligible_label" relevant="/data/is_eligible = 'no'"/>
+			<bind nodeset="/data/prev_household_code"/>
+			<bind nodeset="/data/has_individual_code_asotry" relevant="/data/is_eligible = 'yes' and /data/prev_household_code != ''" required="true()"/>
+			<bind nodeset="/data/caregiver_asotry_code" type="xsd:string" relevant="/data/has_individual_code_asotry = 'yes'" required="true()"/>
+			<bind nodeset="/data/is_woman" relevant="/data/is_eligible = 'yes' and /data/caregiver_gender = 'female'"/>
+			<bind nodeset="/data/is_woman/identity_card" required="true()"/>
+			<bind nodeset="/data/is_woman/woman_actual_dob" type="xsd:date" constraint=". &lt;= today() - 365.25 * 11" jr:constraintMsg="jr:itext('is_woman/woman_actual_dob-constraintMsg')" relevant="/data/is_woman/identity_card = 'yes'" required="true()"/>
+			<bind nodeset="/data/is_woman/dob_estimation_data" relevant="/data/is_woman/identity_card = 'no'" required="true()"/>
+			<bind nodeset="/data/is_woman/woman_known_age" type="xsd:int" constraint=". &gt;= 11 and string-length(.) = 2" jr:constraintMsg="jr:itext('is_woman/woman_actual_dob-constraintMsg')" relevant="/data/is_woman/identity_card = 'no' and /data/is_woman/dob_estimation_data = 'age'" required="true()"/>
+			<bind nodeset="/data/is_woman/woman_known_yob" type="xsd:int" constraint="string-length(.) = 4 and int(format-date(date(/data/TODAY), '%Y')) &lt; today()" jr:constraintMsg="jr:itext('is_woman/woman_known_yob-constraintMsg')" relevant="/data/is_woman/identity_card = 'no' and /data/is_woman/dob_estimation_data = 'year_of_birth'" required="true()"/>
+			<bind nodeset="/data/is_woman/age_from_dob" relevant="/data/is_woman/woman_actual_dob != ''" calculate="int((today() - date(/data/is_woman/woman_actual_dob)) div 365.25)"/>
+			<bind nodeset="/data/is_woman/age_from_yob" relevant="/data/is_woman/woman_known_yob != ''" calculate="(int(format-date(date(/data/TODAY), &quot;%Y&quot;)) - int(/data/is_woman/woman_known_yob))"/>
+			<bind nodeset="/data/is_woman/woman_age" calculate="if(/data/is_woman/woman_known_age !='', /data/is_woman/woman_known_age, coalesce(/data/is_woman/age_from_dob, /data/is_woman/age_from_yob))"/>
+			<bind nodeset="/data/is_woman/woman_estimated_dob" calculate="date(today() - /data/is_woman/woman_age * 365)"/>
+			<bind nodeset="/data/is_woman/woman_dob" calculate="if(/data/is_woman/woman_actual_dob != '', /data/is_woman/woman_actual_dob, /data/is_woman/woman_estimated_dob)"/>
+			<bind nodeset="/data/is_woman/dob_label"/>
+			<bind nodeset="/data/is_pregnant" relevant="/data/pregnancy_status = 'yes'"/>
+			<bind nodeset="/data/is_pregnant/lmp" type="xsd:date" constraint=". &lt;= today() - 14 and . &gt;= today() - 300" jr:constraintMsg="jr:itext('is_pregnant/lmp-constraintMsg')" required="true()"/>
+			<bind nodeset="/data/is_pregnant/pregnancy_month" calculate="int((today() - date(/data/is_pregnant/lmp)) div 30.4)"/>
+			<bind nodeset="/data/is_pregnant/edd" calculate="date(date(/data/is_pregnant/lmp) + 280)"/>
+			<bind nodeset="/data/is_pregnant/age_edd"/>
+			<bind nodeset="/data/is_pregnant/age_edd/pregnancy_month_label"/>
+			<bind nodeset="/data/is_pregnant/age_edd/edd_label"/>
+			<bind nodeset="/data/is_pregnant/first_pregnancy" relevant="1=2" required="true()"/>
+			<bind nodeset="/data/is_pregnant/total_pregnancies" type="xsd:int" required="true()"/>
+			<bind nodeset="/data/is_pregnant/living_children" type="xsd:int" relevant="/data/is_pregnant/total_pregnancies &gt; 0" required="true()"/>
+			<bind nodeset="/data/is_pregnant/previous_complications" relevant="/data/is_pregnant/total_pregnancies &gt; 0" required="true()"/>
+			<bind nodeset="/data/is_pregnant/risk_factors" constraint="not(selected(., &quot;none&quot;) and count-selected(.) &gt; 1)&#10;" jr:constraintMsg="jr:itext('is_pregnant/risk_factors-constraintMsg')" required="true()"/>
+			<bind nodeset="/data/is_pregnant/fkt_caregroup_status" required="true()"/>
+			<bind nodeset="/data/is_pregnant/caregroup_membership" relevant="/data/is_pregnant/fkt_caregroup_status = 'yes'" required="true()"/>
+			<bind nodeset="/data/is_pregnant/caregroup_name" type="xsd:string" relevant="/data/is_pregnant/caregroup_membership = 'yes'" required="true()"/>
+			<bind nodeset="/data/is_pregnant/godmother_name" type="xsd:string" relevant="/data/is_pregnant/caregroup_membership = 'yes'" required="false()"/>
+			<bind nodeset="/data/is_pregnant/godmother_tel" type="xsd:string" constraint="string-length(.) = 9" jr:constraintMsg="jr:itext('is_pregnant/godmother_tel-constraintMsg')" relevant="/data/is_pregnant/godmother_name != ''"/>
+			<bind nodeset="/data/is_caregiver" relevant="/data/has_children_under_5 = 'yes'"/>
+			<bind nodeset="/data/is_caregiver/create_label"/>
+			<bind nodeset="/data/is_caregiver/total_children_under_5" relevant="/data/has_children_under_5 = 'yes'" required="true()"/>
+			<bind nodeset="/data/is_caregiver/clarify_number_children" type="xsd:int" relevant="/data/is_caregiver/total_children_under_5 = '6+'" required="true()"/>
+			<bind nodeset="/data/is_caregiver/number_children" calculate="if(/data/is_caregiver/total_children_under_5=&quot;6+&quot;,/data/is_caregiver/clarify_number_children,/data/is_caregiver/total_children_under_5)"/>
+			<bind nodeset="/data/is_caregiver/open_child_case" relevant="/data/has_children_under_5 = 'yes'"/>
+			<bind nodeset="/data/is_caregiver/open_child_case/child_name" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/is_caregiver/open_child_case/relation_to_child" required="true()"/>
+			<bind nodeset="/data/is_caregiver/open_child_case/child_gender" required="true()"/>
+			<bind nodeset="/data/is_caregiver/open_child_case/know_child_dob" required="true()"/>
+			<bind nodeset="/data/is_caregiver/open_child_case/child_known_dob" type="xsd:date" constraint=". &lt;= today()" jr:constraintMsg="jr:itext('is_caregiver/open_child_case/child_known_dob-constraintMsg')" relevant="/data/is_caregiver/open_child_case/know_child_dob = 'yes'" required="true()"/>
+			<bind nodeset="/data/is_caregiver/open_child_case/child_dob_estimation_data" relevant="/data/is_caregiver/open_child_case/know_child_dob = 'no'" required="true()"/>
+			<bind nodeset="/data/is_caregiver/open_child_case/child_known_age_months" type="xsd:int" constraint="string-length(.) = 2" jr:constraintMsg="jr:itext('is_caregiver/open_child_case/child_known_age_months-constraintMsg')" relevant="/data/is_caregiver/open_child_case/child_dob_estimation_data = 'age_in_months'" required="true()"/>
+			<bind nodeset="/data/is_caregiver/open_child_case/child_known_age_years" type="xsd:double" constraint=". &lt;= 5.0" jr:constraintMsg="jr:itext('is_caregiver/open_child_case/child_known_age_years-constraintMsg')" relevant="/data/is_caregiver/open_child_case/child_dob_estimation_data = 'age_in_years'" required="true()"/>
+			<bind nodeset="/data/is_caregiver/open_child_case/child_known_yob" type="xsd:int" constraint="string-length(.) = 4 and today() &gt;= int(format-date(date(/data/TODAY), '%Y'))" jr:constraintMsg="jr:itext('is_caregiver/open_child_case/child_known_yob-constraintMsg')" relevant="/data/is_caregiver/open_child_case/child_dob_estimation_data = 'year_of_birth'" required="true()"/>
+			<bind nodeset="/data/is_caregiver/open_child_case/age_months_from_dob" relevant="/data/is_caregiver/open_child_case/child_known_dob != ''" calculate="int((today() - /data/is_caregiver/open_child_case/child_known_dob) div 30.4)"/>
+			<bind nodeset="/data/is_caregiver/open_child_case/age_months_from_yob" relevant="/data/is_caregiver/open_child_case/child_dob_estimation_data = 'year_of_birth'" calculate="(int(format-date(date(/data/TODAY), &quot;%Y&quot;)) - int(/data/is_caregiver/open_child_case/child_known_yob)) * 12"/>
+			<bind nodeset="/data/is_caregiver/open_child_case/age_months_from_years" calculate="/data/is_caregiver/open_child_case/child_known_age_years * 12"/>
+			<bind nodeset="/data/is_caregiver/open_child_case/child_age_months" calculate="if(/data/is_caregiver/open_child_case/child_known_age_months!='', /data/is_caregiver/open_child_case/child_known_age_months, if(/data/is_caregiver/open_child_case/child_known_age_years !='', /data/is_caregiver/open_child_case/age_months_from_years, coalesce(/data/is_caregiver/open_child_case/age_months_from_dob, /data/is_caregiver/open_child_case/age_months_from_yob)))&#10;"/>
+			<bind nodeset="/data/is_caregiver/open_child_case/child_eligibility_status" calculate="if(/data/is_caregiver/open_child_case/child_age_months &lt; 61, 'yes', 'no')"/>
+			<bind nodeset="/data/is_caregiver/open_child_case/child_dob" calculate="if(/data/is_caregiver/open_child_case/child_known_dob != '', /data/is_caregiver/open_child_case/child_known_dob, date(today() - /data/is_caregiver/open_child_case/child_age_months * 30.4))"/>
+			<bind nodeset="/data/is_caregiver/open_child_case/recap"/>
+			<bind nodeset="/data/is_caregiver/open_child_case/eligibility_recap" relevant="/data/is_caregiver/open_child_case/child_eligibility_status = 'no'"/>
+			<bind nodeset="/data/recap"/>
+			<bind nodeset="/data/recap/verify_responses_label" relevant="/data/is_eligible = 'yes'"/>
+			<bind nodeset="/data/recap/womans_name_label" relevant="/data/is_eligible = 'yes'"/>
+			<bind nodeset="/data/recap/no_children_label" relevant="/data/is_caregiver/number_children != ''"/>
+			<bind nodeset="/data/recap/dob_label" relevant="/data/is_eligible = 'yes'"/>
+			<bind nodeset="/data/recap/womans_age_label" relevant="/data/is_eligible = 'yes'"/>
+			<bind nodeset="/data/recap/lmp_label" relevant="/data/pregnancy_status = 'yes'"/>
+			<bind nodeset="/data/recap/womans_telephone_number" relevant="/data/is_eligible = 'yes'"/>
+			<bind nodeset="/data/recap/godmother_label" relevant="/data/pregnancy_status = 'yes' and /data/is_pregnant/caregroup_membership = 'yes'"/>
+			<bind nodeset="/data/recap/godmother_telephone_number_label" relevant="/data/is_pregnant/caregroup_membership = 'yes'"/>
+			<bind nodeset="/data/recap/how_to_modify_label" relevant="/data/is_eligible = 'yes'"/>
+			<bind nodeset="/data/thank_pregnant_woman_label" relevant="/data/pregnancy_status = 'yes' and /data/has_children_under_5 = 'no'"/>
+			<bind nodeset="/data/thank_pregnant_caregiver_label" relevant="/data/pregnancy_status = 'yes' and /data/has_children_under_5 = 'yes'"/>
+			<bind nodeset="/data/thank_caregiver_label" relevant="(/data/has_children_under_5 = 'yes') and ((/data/caregiver_gender = 'male') or (/data/pregnancy_status = 'no'))"/>
+			<itext>
+				<translation lang="fra" default="">
+					<text id="explain_survey_label-label">
+						<value>Vous enregistrez un b&#233;n&#233;ficiaire au sein d'un m&#233;nage &#242;u le chef de m&#233;nage est : <output value="/data/household_name"/>
+
+Expliquer que vous allez r&#233;aliser un sondage sur le responsable des enfants, sur la femme enceinte, et sur chaque enfant avec moins de 5 ans dans le m&#233;nage.  
+
+M&#234;me pour le Growth Monitoring, il faut enregister d'abord un adulte.
+
+Ce formulaire permet d'enregister et adulte et enfant.</value>
+					</text>
+					<text id="caregiver_name-label">
+						<value>Pr&#233;nom et nom de l'adulte</value>
+						<value form="image">jr://file/commcare/image/data/caregiver_name.jpg</value>
+					</text>
+					<text id="caregiver_gender-label">
+						<value>Notez le sexe de l'adulte</value>
+						<value form="image">jr://file/commcare/image/data/caregiver_gender.jpg</value>
+					</text>
+					<text id="caregiver_gender-female-label">
+						<value>Femme</value>
+					</text>
+					<text id="caregiver_gender-male-label">
+						<value>Homme</value>
+					</text>
+					<text id="caregiver_tel-label">
+						<value>Num&#233;ro de t&#233;l&#233;phone</value>
+						<value form="image">jr://file/commcare/image/data/caregiver_tel.png</value>
+					</text>
+					<text id="caregiver_tel-constraintMsg">
+						<value>Doit avoir excatement 9 chiffres.</value>
+					</text>
+					<text id="has_children_under_5-label">
+						<value>Est-ce que vous &#234;tes responsable d'un ou plusieurs enfants de moins de 5 ans ?</value>
+						<value form="image">jr://file/commcare/image/data/has_children_under_5.png</value>
+					</text>
+					<text id="has_children_under_5-hint">
+						<value>Ceci inclut aussi les enfants n&#233;s de l'adulte.</value>
+					</text>
+					<text id="has_children_under_5-yes-label">
+						<value>Oui</value>
+					</text>
+					<text id="has_children_under_5-no-label">
+						<value>Non</value>
+					</text>
+					<text id="pregnancy_status-label">
+						<value>Est-ce que vous &#234;tes enceinte ? Nous enregistrons toutes les femmes enceintes pour faire le suivi de leurs grossesses.</value>
+						<value form="image">jr://file/commcare/image/data/pregnancy_status.jpg</value>
+					</text>
+					<text id="not_eligible_label-label">
+						<value>Cette personne n'est pas eligible pour ce programme. Uniquement enregistrer, soit :
+
+-responsable d'un enfant de moins de 5 ans, ou
+-femme enceinte.
+
+Merci.</value>
+					</text>
+					<text id="has_individual_code_asotry-label">
+						<value>Est-ce que vous avez &#233;t&#233; donn&#233; un code ASOTRY ?</value>
+					</text>
+					<text id="has_individual_code_asotry-yes-label">
+						<value>Oui</value>
+					</text>
+					<text id="has_individual_code_asotry-no-label">
+						<value>Non</value>
+					</text>
+					<text id="caregiver_asotry_code-label">
+						<value>Inscrire code individuel ASOTRY :</value>
+					</text>
+					<text id="is_woman-label">
+						<value>Enregistrer femme</value>
+					</text>
+					<text id="is_woman/identity_card-label">
+						<value>Est-ce que vous connaissez votre date de naissance ou est-ce que vous avez votre carte d'identit&#233; ?</value>
+						<value form="image">jr://file/commcare/image/data/is_woman/identity_card.png</value>
+					</text>
+					<text id="is_woman/woman_actual_dob-label">
+						<value>Enregistrez votre date de naissance exacte (jour, mois, ann&#233;e)</value>
+						<value form="image">jr://file/commcare/image/data/is_woman/woman_actual_dob.png</value>
+					</text>
+					<text id="is_woman/woman_actual_dob-constraintMsg">
+						<value>Impossible d'enregistrer une personne de moins de 11 ans. Veuillez corriger</value>
+					</text>
+					<text id="is_woman/dob_estimation_data-label">
+						<value>Est-ce que vous connaissez plut&#244;t :</value>
+						<value form="image">jr://file/commcare/image/data/is_woman/dob_estimation_data.png</value>
+					</text>
+					<text id="is_woman/dob_estimation_data-age-label">
+						<value>Votre &#226;ge</value>
+					</text>
+					<text id="is_woman/dob_estimation_data-year_of_birth-label">
+						<value>Votre &#226;nn&#233;e de naissance</value>
+					</text>
+					<text id="is_woman/woman_known_age-label">
+						<value>Enregistrer l'&#226;ge de la femme (estimer si n&#233;cessaire)</value>
+						<value form="image">jr://file/commcare/image/data/is_woman/woman_known_age.png</value>
+					</text>
+					<text id="is_woman/woman_known_yob-label">
+						<value>Enregistrer l'ann&#233;e de naissance de la femme</value>
+						<value form="image">jr://file/commcare/image/data/is_woman/woman_known_yob.png</value>
+					</text>
+					<text id="is_woman/woman_known_yob-constraintMsg">
+						<value>Notez l'ann&#233;e de naissance en format XXXX. Exemple: 1987</value>
+					</text>
+					<text id="is_woman/dob_label-label">
+						<value>R&#233;capitulatif
+
+Date de naissance : <output value="/data/is_woman/woman_dob"/>
+
+Age : <output value="/data/is_woman/woman_age"/>
+
+</value>
+					</text>
+					<text id="is_pregnant-label">
+						<value>Enregistrer grossesse</value>
+					</text>
+					<text id="is_pregnant/lmp-label">
+						<value>Quelle est la date de vos derni&#232;res r&#232;gles ? 
+Estimez si n&#233;cessaire. Ex : si la femme dit uniquement en juin, notez 15 juin. </value>
+						<value form="image">jr://file/commcare/image/data/is_pregnant/lmp.png</value>
+					</text>
+					<text id="is_pregnant/lmp-constraintMsg">
+						<value>La date devrait &#234;tre entre 2 semaines et 10 mois avant la date d'aujourd'hui. </value>
+					</text>
+					<text id="is_pregnant/age_edd-label">
+						<value>P&#233;riode Gestation et DPA</value>
+					</text>
+					<text id="is_pregnant/age_edd/pregnancy_month_label-label">
+						<value>&#194;ge de la grossesse est <output value="/data/is_pregnant/pregnancy_month"/> mois</value>
+					</text>
+					<text id="is_pregnant/age_edd/edd_label-label">
+						<value>Date pr&#233;vue de l'accouchement est <output value="/data/is_pregnant/edd"/></value>
+						<value form="image">jr://file/commcare/image/data/is_pregnant/age_edd/edd_label.png</value>
+					</text>
+					<text id="is_pregnant/first_pregnancy-label">
+						<value>Est-ce que c'est la premi&#232;re grossesse de la femme ?</value>
+						<value form="image">jr://file/commcare/image/data/is_pregnant/first_pregnancy.jpg</value>
+					</text>
+					<text id="is_pregnant/total_pregnancies-label">
+						<value>Avant cette grossesse, combien de grossesses avez-vous eu ?</value>
+						<value form="image">jr://file/commcare/image/data/is_pregnant/total_pregnancies.jpg</value>
+					</text>
+					<text id="is_pregnant/living_children-label">
+						<value>Vous avez combien d'enfants vivants ? </value>
+						<value form="image">jr://file/commcare/image/data/is_pregnant/living_children.png</value>
+					</text>
+					<text id="is_pregnant/living_children-hint">
+						<value>Enfant n&#233;s par la femme elle-m&#234;me</value>
+					</text>
+					<text id="is_pregnant/previous_complications-label">
+						<value>Est-ce que vous avez eu des complications pendant vos autres grossesses ?</value>
+						<value form="image">jr://file/commcare/image/data/is_pregnant/previous_complications.jpg</value>
+					</text>
+					<text id="is_pregnant/risk_factors-label">
+						<value>Lesquels de ces facteurs pr&#233;sentez-vous ?</value>
+					</text>
+					<text id="is_pregnant/risk_factors-constraintMsg">
+						<value>Impossible de choisir "Aucun" plus des autres facteurs morbides.</value>
+					</text>
+					<text id="is_pregnant/risk_factors-petite_woman-label">
+						<value>Vous &#234;tes de petite taille [moins de 1,5m]</value>
+					</text>
+					<text id="is_pregnant/risk_factors-consumes_alcohol-label">
+						<value>Vous bo&#238;tez</value>
+					</text>
+					<text id="is_pregnant/risk_factors-over_6_children-label">
+						<value>Vous avez plus que 6 enfants</value>
+					</text>
+					<text id="is_pregnant/risk_factors-previous_abortion-label">
+						<value>Vous avez eu des ant&#233;c&#233;dents d'avortement</value>
+					</text>
+					<text id="is_pregnant/risk_factors-previous_cesarean-label">
+						<value>Vous avez eu des c&#233;sariennes</value>
+					</text>
+					<text id="is_pregnant/risk_factors-none-label">
+						<value>Aucun</value>
+					</text>
+					<text id="is_pregnant/fkt_caregroup_status-label">
+						<value>Y-a-t'il un care group dans votre FKT ?</value>
+						<value form="image">jr://file/commcare/image/data/pregnancy_questions/village_caregroup_status.png</value>
+					</text>
+					<text id="is_pregnant/fkt_caregroup_status-do_not_know-label">
+						<value>Je ne sais pas</value>
+					</text>
+					<text id="is_pregnant/caregroup_membership-label">
+						<value>Est-ce que vous &#234;tes faites partie du care group ?</value>
+						<value form="image">jr://file/commcare/image/data/is_pregnant/caregroup_membership.png</value>
+					</text>
+					<text id="is_pregnant/caregroup_name-label">
+						<value>Nom de votre care group</value>
+						<value form="image">jr://file/commcare/image/data/is_pregnant/caregroup_name.png</value>
+					</text>
+					<text id="is_pregnant/godmother_name-label">
+						<value>Nom de votre marraine</value>
+						<value form="image">jr://file/commcare/image/data/is_pregnant/godmother_name.png</value>
+					</text>
+					<text id="is_pregnant/godmother_tel-label">
+						<value>Num&#233;ro de t&#233;l&#233;phone de la marraine</value>
+						<value form="image">jr://file/commcare/image/data/is_pregnant/godmother_tel.png</value>
+					</text>
+					<text id="is_pregnant/godmother_tel-constraintMsg">
+						<value>Doit avoir exactement 9 chiffres.</value>
+					</text>
+					<text id="is_caregiver-label">
+						<value>Enregistrer enfants</value>
+					</text>
+					<text id="is_caregiver/create_label-label">
+						<value>Nous allons enregistrer chaque enfant de moins de 5 ans pour qui vous &#234;tes responsable.</value>
+						<value form="image">jr://file/commcare/image/data/is_caregiver/create_label.png</value>
+					</text>
+					<text id="is_caregiver/total_children_under_5-label">
+						<value>Vous &#234;tes responsable de combien d'enfants de moins de 5 ans ?</value>
+						<value form="image">jr://file/commcare/image/data/is_caregiver/total_children_under_5.png</value>
+					</text>
+					<text id="is_caregiver/total_children_under_5-1-label">
+						<value>1</value>
+					</text>
+					<text id="is_caregiver/total_children_under_5-2-label">
+						<value>2</value>
+					</text>
+					<text id="is_caregiver/total_children_under_5-3-label">
+						<value>3</value>
+					</text>
+					<text id="is_caregiver/total_children_under_5-4-label">
+						<value>4</value>
+					</text>
+					<text id="is_caregiver/total_children_under_5-5-label">
+						<value>5</value>
+					</text>
+					<text id="is_caregiver/total_children_under_5-6+-label">
+						<value>6+</value>
+					</text>
+					<text id="is_caregiver/clarify_number_children-label">
+						<value>Pr&#233;ciser nombre d'enfants :</value>
+					</text>
+					<text id="is_caregiver/open_child_case-label">
+						<value>Enregistrer enfant</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_name-label">
+						<value>Pr&#233;nom et nom de l'enfant</value>
+						<value form="image">jr://file/commcare/image/data/is_caregiver/open_child_case/child_name.jpg</value>
+					</text>
+					<text id="is_caregiver/open_child_case/relation_to_child-label">
+						<value>Notez votre relation &#224; cette enfant :</value>
+					</text>
+					<text id="is_caregiver/open_child_case/relation_to_child-parent-label">
+						<value>Parent (m&#232;re ou p&#232;re)</value>
+					</text>
+					<text id="is_caregiver/open_child_case/relation_to_child-sibling-label">
+						<value>Soeur ou fr&#232;re</value>
+					</text>
+					<text id="is_caregiver/open_child_case/relation_to_child-aunt_uncle-label">
+						<value>Tante ou oncle</value>
+					</text>
+					<text id="is_caregiver/open_child_case/relation_to_child-cousin-label">
+						<value>Cousin/e</value>
+					</text>
+					<text id="is_caregiver/open_child_case/relation_to_child-grandparent-label">
+						<value>Grand-parent</value>
+					</text>
+					<text id="is_caregiver/open_child_case/relation_to_child-other_relationship-label">
+						<value>Autre relation</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_gender-label">
+						<value>Sexe de l'enfant</value>
+						<value form="image">jr://file/commcare/image/data/is_caregiver/open_child_case/child_gender.png</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_gender-female-label">
+						<value>Fille</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_gender-male-label">
+						<value>Gar&#231;on</value>
+					</text>
+					<text id="is_caregiver/open_child_case/know_child_dob-label">
+						<value>Connaissez-vous la date de naissance exacte de cet enfant ?</value>
+						<value form="image">jr://file/commcare/image/data/is_caregiver/open_child_case/know_child_dob.png</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_known_dob-label">
+						<value>Enregistrer la date de naissance exacte de cet enfant (jour, mois, ann&#233;e) :</value>
+						<value form="image">jr://file/commcare/image/data/is_caregiver/open_child_case/child_known_dob.png</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_known_dob-constraintMsg">
+						<value>La date de naissance de l'enfant doit &#234;tre avant aujourd'hui.</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_dob_estimation_data-label">
+						<value>Est-ce que vous connaissez plut&#244;t :</value>
+						<value form="image">jr://file/commcare/image/data/is_caregiver/open_child_case/child_dob_estimation_data.png</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_dob_estimation_data-age_in_months-label">
+						<value>L'&#226;ge de l'enfant en mois</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_dob_estimation_data-age_in_years-label">
+						<value>L'&#226;ge de l'enfant en ann&#233;es</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_dob_estimation_data-year_of_birth-label">
+						<value>L'&#226;nn&#233;e exacte de la naissance de l'enfant</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_known_age_months-label">
+						<value>Notez l'&#226;ge de l'enfant en mois</value>
+						<value form="image">jr://file/commcare/image/data/is_caregiver/open_child_case/child_known_age_months.png</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_known_age_months-hint">
+						<value>L'application estimera la date de naissance.</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_known_age_months-constraintMsg">
+						<value>Ne pas d&#233;passer 2 chiffres.</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_known_age_years-label">
+						<value>Notez l'&#226;ge de l'enfant en ann&#233;e (ex: 3 pour 3 ans)</value>
+						<value form="image">jr://file/commcare/image/data/is_caregiver/open_child_case/child_known_age_years.png</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_known_age_years-constraintMsg">
+						<value>Nous enregistrons uniquement les enfants de moins de 5 ans.</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_known_yob-label">
+						<value>Notez l'ann&#233;e de naissaince de l'enfant</value>
+						<value form="image">jr://file/commcare/image/data/is_caregiver/open_child_case/child_known_yob.png</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_known_yob-constraintMsg">
+						<value>Enregistrer en format XXXX (ex: 2007)</value>
+					</text>
+					<text id="is_caregiver/open_child_case/recap-label">
+						<value>Nom : <output value="/data/is_caregiver/open_child_case/child_name"/>
+
+Sexe : <output value="/data/is_caregiver/open_child_case/child_gender"/>
+
+Date de naissance : <output value="/data/is_caregiver/open_child_case/child_dob"/>
+
+Age : <output value="/data/is_caregiver/open_child_case/child_age_months"/> mois</value>
+						<value form="image">jr://file/commcare/image/data/is_caregiver/open_child_case/recap.jpg</value>
+					</text>
+					<text id="is_caregiver/open_child_case/eligibility_recap-label">
+						<value>Cet enfant n'est pas &#233;ligible pour le programme parce qu'il est &#226;g&#233; de plus que 5 ans. Il ne sera pas enregistr&#233;.</value>
+					</text>
+					<text id="recap/verify_responses_label-label">
+						<value>V&#233;rifier vos r&#233;ponses avant de valider.</value>
+					</text>
+					<text id="recap/womans_name_label-label">
+						<value>Nom : <output value="/data/caregiver_name"/></value>
+					</text>
+					<text id="recap/no_children_label-label">
+						<value>Responsable de : <output value="/data/is_caregiver/number_children"/> enfant(s) de moins de 5 ans</value>
+					</text>
+					<text id="recap/dob_label-label">
+						<value>Date naissance : <output value="/data/is_woman/woman_dob"/> </value>
+					</text>
+					<text id="recap/womans_age_label-label">
+						<value>&#194;ge : <output value="/data/is_woman/woman_age"/></value>
+					</text>
+					<text id="recap/lmp_label-label">
+						<value>Derni&#232;res r&#232;gles : <output value="/data/is_pregnant/lmp"/>
+</value>
+					</text>
+					<text id="recap/womans_telephone_number-label">
+						<value>Num&#233;ro t&#233;l&#233;phone : <output value="/data/caregiver_tel"/></value>
+					</text>
+					<text id="recap/godmother_label-label">
+						<value>Marraine : <output value="/data/is_pregnant/godmother_name"/>
+</value>
+					</text>
+					<text id="recap/godmother_telephone_number_label-label">
+						<value>T&#233;l&#233;phone marraine : <output value="/data/is_pregnant/godmother_tel"/>
+</value>
+					</text>
+					<text id="recap/how_to_modify_label-label">
+						<value>Pour modifer ces r&#233;sponses, glisser le doigt de gauche &#224; droite sur l'&#233;cran pour retourner et ensuite changez la r&#233;ponse. </value>
+					</text>
+					<text id="thank_pregnant_woman_label-label">
+						<value>Remercier la femme et passer imm&#233;diatement au module "Suivi des femmes"</value>
+						<value form="image">jr://file/commcare/image/data/thank_pregnant_woman_label.png</value>
+					</text>
+					<text id="thank_pregnant_caregiver_label-label">
+						<value>Remercier la femme et passer imm&#233;diatement aux modules "Suivi des femmes" pour la femme et "Suivi enfants" pour les enfants. </value>
+						<value form="image">jr://file/commcare/image/data/thank_pregnant_caregiver_label.png</value>
+					</text>
+					<text id="thank_caregiver_label-label">
+						<value>Remercier la personne et passer imm&#233;diatement au module "Suivi enfant" pour chaque enfant</value>
+						<value form="image">jr://file/commcare/image/data/thank_caregiver_label.png</value>
+					</text>
+				</translation>
+				<translation lang="mlg">
+					<text id="explain_survey_label-label">
+						<value>Vous enregistrez un b&#233;n&#233;ficiaire au sein d'un m&#233;nage &#242;u le chef de m&#233;nage est : <output value="/data/household_name"/>
+
+Expliquer que vous allez r&#233;aliser un sondage sur le responsable des enfants, sur la femme enceinte, et sur chaque enfant avec moins de 5 ans dans le m&#233;nage.  
+
+M&#234;me pour le Growth Monitoring, il faut enregister d'abord un adulte.
+
+Ce formulaire permet d'enregister et adulte et enfant.</value>
+					</text>
+					<text id="caregiver_name-label">
+						<value>Anarana feno</value>
+						<value form="image">jr://file/commcare/image/data/caregiver_name.jpg</value>
+					</text>
+					<text id="caregiver_gender-label">
+						<value>Notez le sexe de l'adulte</value>
+						<value form="image">jr://file/commcare/image/data/caregiver_gender.jpg</value>
+					</text>
+					<text id="caregiver_gender-female-label">
+						<value>Femme</value>
+					</text>
+					<text id="caregiver_gender-male-label">
+						<value>Homme</value>
+					</text>
+					<text id="caregiver_tel-label">
+						<value>Num&#233;ro de t&#233;l&#233;phone</value>
+						<value form="image">jr://file/commcare/image/data/caregiver_tel.png</value>
+					</text>
+					<text id="caregiver_tel-constraintMsg">
+						<value>Doit avoir excatement 9 chiffres.</value>
+					</text>
+					<text id="has_children_under_5-label">
+						<value>Manana zanaka latsaka ny dimy taona ve ny ianao?</value>
+						<value form="image">jr://file/commcare/image/data/has_children_under_5.png</value>
+					</text>
+					<text id="has_children_under_5-hint">
+						<value>Ceci inclut aussi les enfants n&#233;s de l'adulte.</value>
+					</text>
+					<text id="has_children_under_5-yes-label">
+						<value>Eny</value>
+					</text>
+					<text id="has_children_under_5-no-label">
+						<value>Tsia</value>
+					</text>
+					<text id="pregnancy_status-label">
+						<value>Est-ce que vous &#234;tes enceinte ? Nous enregistrons toutes les femmes enceintes pour faire le suivi de leurs grossesses.</value>
+						<value form="image">jr://file/commcare/image/data/pregnancy_status.jpg</value>
+					</text>
+					<text id="not_eligible_label-label">
+						<value>Cette personne n'est pas eligible pour ce programme. Uniquement enregistrer, soit :
+
+-responsable d'un enfant de moins de 5 ans, ou
+-femme enceinte.
+
+Merci.</value>
+					</text>
+					<text id="has_individual_code_asotry-label">
+						<value>Est-ce que vous avez &#233;t&#233; donn&#233; un code ASOTRY ?</value>
+					</text>
+					<text id="has_individual_code_asotry-yes-label">
+						<value>Oui</value>
+					</text>
+					<text id="has_individual_code_asotry-no-label">
+						<value>Non</value>
+					</text>
+					<text id="caregiver_asotry_code-label">
+						<value>Inscrire code individuel ASOTRY :</value>
+					</text>
+					<text id="is_woman-label">
+						<value>Enregistrer femme</value>
+					</text>
+					<text id="is_woman/identity_card-label">
+						<value>Nitondra kara-panondro ve ianao?</value>
+						<value form="image">jr://file/commcare/image/data/is_woman/identity_card.png</value>
+					</text>
+					<text id="is_woman/woman_actual_dob-label">
+						<value>Soratana ny daty nahaterahany</value>
+						<value form="image">jr://file/commcare/image/data/is_woman/woman_actual_dob.png</value>
+					</text>
+					<text id="is_woman/woman_actual_dob-constraintMsg">
+						<value>Impossible d'enregistrer une personne de moins de 11 ans. Veuillez corriger</value>
+					</text>
+					<text id="is_woman/dob_estimation_data-label">
+						<value>Est-ce que vous connaissez plut&#244;t :</value>
+						<value form="image">jr://file/commcare/image/data/is_woman/dob_estimation_data.png</value>
+					</text>
+					<text id="is_woman/dob_estimation_data-age-label">
+						<value>Votre &#226;ge</value>
+					</text>
+					<text id="is_woman/dob_estimation_data-year_of_birth-label">
+						<value>Votre &#226;nn&#233;e de naissance</value>
+					</text>
+					<text id="is_woman/woman_known_age-label">
+						<value>Taonan'ny vehivavy (eo ho eo raha ilaina)</value>
+						<value form="image">jr://file/commcare/image/data/is_woman/woman_known_age.png</value>
+					</text>
+					<text id="is_woman/woman_known_yob-label">
+						<value>Enregistrer l'ann&#233;e de naissance de la femme</value>
+						<value form="image">jr://file/commcare/image/data/is_woman/woman_known_yob.png</value>
+					</text>
+					<text id="is_woman/woman_known_yob-constraintMsg">
+						<value>Notez l'ann&#233;e de naissance en format XXXX. Exemple: 1987</value>
+					</text>
+					<text id="is_woman/dob_label-label">
+						<value>R&#233;capitulatif
+
+Date de naissance : <output value="/data/is_woman/woman_dob"/>
+
+Age : <output value="/data/is_woman/woman_age"/>
+
+</value>
+					</text>
+					<text id="is_pregnant-label">
+						<value>Enregistrer grossesse</value>
+					</text>
+					<text id="is_pregnant/lmp-label">
+						<value>Oviana Ianao no tonga fotoana farany? Vinavinao raha azo atao . Ohatra raha miteny volana fotsiny  izy dia mariho: 15 </value>
+						<value form="image">jr://file/commcare/image/data/is_pregnant/lmp.png</value>
+					</text>
+					<text id="is_pregnant/lmp-constraintMsg">
+						<value>La date devrait &#234;tre entre 2 semaines et 10 mois avant la date d'aujourd'hui. </value>
+					</text>
+					<text id="is_pregnant/age_edd-label">
+						<value>P&#233;riode Gestation et DPA</value>
+					</text>
+					<text id="is_pregnant/age_edd/pregnancy_month_label-label">
+						<value>Volan'ny vohoka <output value="/data/is_pregnant/pregnancy_month"/> volana</value>
+					</text>
+					<text id="is_pregnant/age_edd/edd_label-label">
+						<value>Vinavinan'ny daty hiterahana : <output value="/data/is_pregnant/edd"/></value>
+						<value form="image">jr://file/commcare/image/data/is_pregnant/age_edd/edd_label.png</value>
+					</text>
+					<text id="is_pregnant/first_pregnancy-label">
+						<value>Sambany vao bevohoka ve ianao ?</value>
+						<value form="image">jr://file/commcare/image/data/is_pregnant/first_pregnancy.jpg</value>
+					</text>
+					<text id="is_pregnant/total_pregnancies-label">
+						<value>Impiry ianao no bevohoka?</value>
+						<value form="image">jr://file/commcare/image/data/is_pregnant/total_pregnancies.jpg</value>
+					</text>
+					<text id="is_pregnant/living_children-label">
+						<value>Firy ny zanakao  velona ?</value>
+						<value form="image">jr://file/commcare/image/data/is_pregnant/living_children.png</value>
+					</text>
+					<text id="is_pregnant/living_children-hint">
+						<value>Enfant n&#233;s par la femme elle-m&#234;me</value>
+					</text>
+					<text id="is_pregnant/previous_complications-label">
+						<value>Efa nanana fahasarotana ve ianao nandritra ny fitondranao vohoka teo aloha</value>
+						<value form="image">jr://file/commcare/image/data/is_pregnant/previous_complications.jpg</value>
+					</text>
+					<text id="is_pregnant/risk_factors-label">
+						<value>Lesquels de ces facteurs pr&#233;sentez-vous ?</value>
+					</text>
+					<text id="is_pregnant/risk_factors-constraintMsg">
+						<value>Impossible de choisir "Aucun" plus des autres facteurs morbides.</value>
+					</text>
+					<text id="is_pregnant/risk_factors-petite_woman-label">
+						<value>Fohy izy : latsaky ny 1,5m</value>
+					</text>
+					<text id="is_pregnant/risk_factors-consumes_alcohol-label">
+						<value>Mandringa (tsy mitovy ny halavan'ny tongotra)</value>
+					</text>
+					<text id="is_pregnant/risk_factors-over_6_children-label">
+						<value>Miteraka mihoatra ny 6</value>
+					</text>
+					<text id="is_pregnant/risk_factors-previous_abortion-label">
+						<value>Efa afa-jaza</value>
+					</text>
+					<text id="is_pregnant/risk_factors-previous_cesarean-label">
+						<value>Efa nodididiana niteraka</value>
+					</text>
+					<text id="is_pregnant/risk_factors-none-label">
+						<value>Tsy misy</value>
+					</text>
+					<text id="is_pregnant/fkt_caregroup_status-label">
+						<value>Misy care group ve eto aminareo?</value>
+						<value form="image">jr://file/commcare/image/data/pregnancy_questions/village_caregroup_status.png</value>
+					</text>
+					<text id="is_pregnant/fkt_caregroup_status-do_not_know-label">
+						<value>Je ne sais pas</value>
+					</text>
+					<text id="is_pregnant/caregroup_membership-label">
+						<value>Mpikambana ao amin'ny care group ve ianao ?</value>
+						<value form="image">jr://file/commcare/image/data/is_pregnant/caregroup_membership.png</value>
+					</text>
+					<text id="is_pregnant/caregroup_name-label">
+						<value>Anaran'ny Vondrona mpiahy ny Reny izay misy an'ilay vehivavy</value>
+						<value form="image">jr://file/commcare/image/data/is_pregnant/caregroup_name.png</value>
+					</text>
+					<text id="is_pregnant/godmother_name-label">
+						<value>Anaran'ny Reny mpiantoka</value>
+						<value form="image">jr://file/commcare/image/data/is_pregnant/godmother_name.png</value>
+					</text>
+					<text id="is_pregnant/godmother_tel-label">
+						<value>Num&#233;ro de t&#233;l&#233;phone de la marraine</value>
+						<value form="image">jr://file/commcare/image/data/is_pregnant/godmother_tel.png</value>
+					</text>
+					<text id="is_pregnant/godmother_tel-constraintMsg">
+						<value>Doit avoir exactement 9 chiffres.</value>
+					</text>
+					<text id="is_caregiver-label">
+						<value>Enregistrer enfants</value>
+					</text>
+					<text id="is_caregiver/create_label-label">
+						<value>Nous allons enregistrer chaque enfant de moins de 5 ans pour qui vous &#234;tes responsable.</value>
+						<value form="image">jr://file/commcare/image/data/is_caregiver/create_label.png</value>
+					</text>
+					<text id="is_caregiver/total_children_under_5-label">
+						<value>Firy ny zaza latsaka ny 5 taona velominao?</value>
+						<value form="image">jr://file/commcare/image/data/is_caregiver/total_children_under_5.png</value>
+					</text>
+					<text id="is_caregiver/total_children_under_5-1-label">
+						<value>1</value>
+					</text>
+					<text id="is_caregiver/total_children_under_5-2-label">
+						<value>2</value>
+					</text>
+					<text id="is_caregiver/total_children_under_5-3-label">
+						<value>3</value>
+					</text>
+					<text id="is_caregiver/total_children_under_5-4-label">
+						<value>4</value>
+					</text>
+					<text id="is_caregiver/total_children_under_5-5-label">
+						<value>5</value>
+					</text>
+					<text id="is_caregiver/total_children_under_5-6+-label">
+						<value>6+</value>
+					</text>
+					<text id="is_caregiver/clarify_number_children-label">
+						<value>Pr&#233;ciser nombre d'enfants :</value>
+					</text>
+					<text id="is_caregiver/open_child_case-label">
+						<value>Enregistrer enfant</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_name-label">
+						<value>Anarana feno ny zaza</value>
+						<value form="image">jr://file/commcare/image/data/is_caregiver/open_child_case/child_name.jpg</value>
+					</text>
+					<text id="is_caregiver/open_child_case/relation_to_child-label">
+						<value>Notez votre relation &#224; cette enfant :</value>
+					</text>
+					<text id="is_caregiver/open_child_case/relation_to_child-parent-label">
+						<value>Parent (m&#232;re ou p&#232;re)</value>
+					</text>
+					<text id="is_caregiver/open_child_case/relation_to_child-sibling-label">
+						<value>Soeur ou fr&#232;re</value>
+					</text>
+					<text id="is_caregiver/open_child_case/relation_to_child-aunt_uncle-label">
+						<value>Tante ou oncle</value>
+					</text>
+					<text id="is_caregiver/open_child_case/relation_to_child-cousin-label">
+						<value>Cousin/e</value>
+					</text>
+					<text id="is_caregiver/open_child_case/relation_to_child-grandparent-label">
+						<value>Grand-parent</value>
+					</text>
+					<text id="is_caregiver/open_child_case/relation_to_child-other_relationship-label">
+						<value>Autre relation</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_gender-label">
+						<value>Sexe de l'enfant</value>
+						<value form="image">jr://file/commcare/image/data/is_caregiver/open_child_case/child_gender.png</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_gender-female-label">
+						<value>Fille</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_gender-male-label">
+						<value>Gar&#231;on</value>
+					</text>
+					<text id="is_caregiver/open_child_case/know_child_dob-label">
+						<value>Connaissez-vous la date de naissance exacte de cet enfant ?</value>
+						<value form="image">jr://file/commcare/image/data/is_caregiver/open_child_case/know_child_dob.png</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_known_dob-label">
+						<value>Enregistrer la date de naissance exacte de cet enfant (jour, mois, ann&#233;e) :</value>
+						<value form="image">jr://file/commcare/image/data/is_caregiver/open_child_case/child_known_dob.png</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_known_dob-constraintMsg">
+						<value>La date de naissance de l'enfant doit &#234;tre avant aujourd'hui.</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_dob_estimation_data-label">
+						<value>Est-ce que vous connaissez plut&#244;t :</value>
+						<value form="image">jr://file/commcare/image/data/is_caregiver/open_child_case/child_dob_estimation_data.png</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_dob_estimation_data-age_in_months-label">
+						<value>L'&#226;ge de l'enfant en mois</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_dob_estimation_data-age_in_years-label">
+						<value>L'&#226;ge de l'enfant en ann&#233;es</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_dob_estimation_data-year_of_birth-label">
+						<value>L'&#226;nn&#233;e exacte de la naissance de l'enfant</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_known_age_months-label">
+						<value>Notez l'&#226;ge de l'enfant en mois</value>
+						<value form="image">jr://file/commcare/image/data/is_caregiver/open_child_case/child_known_age_months.png</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_known_age_months-hint">
+						<value>L'application estimera la date de naissance.</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_known_age_months-constraintMsg">
+						<value>Ne pas d&#233;passer 2 chiffres.</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_known_age_years-label">
+						<value>Notez l'&#226;ge de l'enfant en ann&#233;e (ex: 3 pour 3 ans)</value>
+						<value form="image">jr://file/commcare/image/data/is_caregiver/open_child_case/child_known_age_years.png</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_known_age_years-constraintMsg">
+						<value>Nous enregistrons uniquement les enfants de moins de 5 ans.</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_known_yob-label">
+						<value>Notez l'ann&#233;e de naissaince de l'enfant</value>
+						<value form="image">jr://file/commcare/image/data/is_caregiver/open_child_case/child_known_yob.png</value>
+					</text>
+					<text id="is_caregiver/open_child_case/child_known_yob-constraintMsg">
+						<value>Enregistrer en format XXXX (ex: 2007)</value>
+					</text>
+					<text id="is_caregiver/open_child_case/recap-label">
+						<value>Nom : <output value="/data/is_caregiver/open_child_case/child_name"/>
+
+Sexe : <output value="/data/is_caregiver/open_child_case/child_gender"/>
+
+Date de naissance : <output value="/data/is_caregiver/open_child_case/child_dob"/>
+
+Age : <output value="/data/is_caregiver/open_child_case/child_age_months"/> mois</value>
+						<value form="image">jr://file/commcare/image/data/is_caregiver/open_child_case/recap.jpg</value>
+					</text>
+					<text id="is_caregiver/open_child_case/eligibility_recap-label">
+						<value>Cet enfant n'est pas &#233;ligible pour le programme parce qu'il est &#226;g&#233; de plus que 5 ans. Il ne sera pas enregistr&#233;.</value>
+					</text>
+					<text id="recap/verify_responses_label-label">
+						<value>Hamarinina tsara ireo valinteny </value>
+					</text>
+					<text id="recap/womans_name_label-label">
+						<value>Nom : <output value="/data/caregiver_name"/></value>
+					</text>
+					<text id="recap/no_children_label-label">
+						<value>Responsable de : <output value="/data/is_caregiver/number_children"/> enfant(s) de moins de 5 ans</value>
+					</text>
+					<text id="recap/dob_label-label">
+						<value>Daty nahaterahana: <output value="/data/is_woman/woman_dob"/></value>
+					</text>
+					<text id="recap/womans_age_label-label">
+						<value>Taona: <output value="/data/is_woman/woman_age"/></value>
+					</text>
+					<text id="recap/lmp_label-label">
+						<value>Daty nahatongavan'ny fotoana farany: <output value="format-date(date(/data/is_pregnant/lmp), '%a, %b %e, %Y')"/></value>
+					</text>
+					<text id="recap/womans_telephone_number-label">
+						<value>Num&#233;ro t&#233;l&#233;phone : <output value="/data/caregiver_tel"/></value>
+					</text>
+					<text id="recap/godmother_label-label">
+						<value>Marraine : <output value="/data/is_pregnant/godmother_name"/>
+</value>
+					</text>
+					<text id="recap/godmother_telephone_number_label-label">
+						<value>T&#233;l&#233;phone marraine : <output value="/data/is_pregnant/godmother_tel"/>
+</value>
+					</text>
+					<text id="recap/how_to_modify_label-label">
+						<value>Mba hanovana ny valin-teny , akorisao eo amin'ny ecran ny tanana ankavia hiverenana ary ovay avy eo ny valinteny.</value>
+					</text>
+					<text id="thank_pregnant_woman_label-label">
+						<value>omeo fisaorana ilay vehivavy dia mifindra amin'ny lohahehitra fanaraha-maso ny fitondrana vohoka</value>
+						<value form="image">jr://file/commcare/image/data/thank_pregnant_woman_label.png</value>
+					</text>
+					<text id="thank_pregnant_caregiver_label-label">
+						<value>Remercier la femme et passer imm&#233;diatement aux modules "Suivi des femmes" pour la femme et "Suivi enfants" pour les enfants. </value>
+						<value form="image">jr://file/commcare/image/data/thank_pregnant_caregiver_label.png</value>
+					</text>
+					<text id="thank_caregiver_label-label">
+						<value>Remercier la personne et passer imm&#233;diatement au module "Suivi enfant" pour chaque enfant</value>
+						<value form="image">jr://file/commcare/image/data/thank_caregiver_label.png</value>
+					</text>
+				</translation>
+			</itext>
+		<setvalue event="xforms-ready" ref="/data/prev_household_code" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id_household]/household_code_asotry"/><bind calculate="/data/meta/timeEnd" nodeset="/data/case_mother_caregiver/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case_mother_caregiver/case/@user_id"/><bind nodeset="/data/case_mother_caregiver/case" relevant="/data/is_eligible = 'yes'"/><setvalue event="xforms-ready" ref="/data/case_mother_caregiver/case/@case_id" value="instance('commcaresession')/session/data/case_id_new_mother_caregiver_0"/><bind calculate="/data/caregiver_name" nodeset="/data/case_mother_caregiver/case/create/case_name"/><bind calculate="/data/meta/userID" nodeset="/data/case_mother_caregiver/case/create/owner_id"/><bind calculate="/data/caregiver_asotry_code" nodeset="/data/case_mother_caregiver/case/update/caregiver_asotry_code" relevant="count(/data/caregiver_asotry_code) &gt; 0"/><bind calculate="/data/caregiver_gender" nodeset="/data/case_mother_caregiver/case/update/caregiver_gender" relevant="count(/data/caregiver_gender) &gt; 0"/><bind calculate="/data/is_pregnant/caregroup_membership" nodeset="/data/case_mother_caregiver/case/update/caregroup_membership" relevant="count(/data/is_pregnant/caregroup_membership) &gt; 0"/><bind calculate="/data/is_pregnant/caregroup_name" nodeset="/data/case_mother_caregiver/case/update/caregroup_name" relevant="count(/data/is_pregnant/caregroup_name) &gt; 0"/><bind calculate="/data/is_pregnant/edd" nodeset="/data/case_mother_caregiver/case/update/edd" relevant="count(/data/is_pregnant/edd) &gt; 0"/><bind calculate="/data/is_pregnant/fkt_caregroup_status" nodeset="/data/case_mother_caregiver/case/update/fkt_caregroup_status" relevant="count(/data/is_pregnant/fkt_caregroup_status) &gt; 0"/><bind calculate="/data/is_pregnant/godmother_name" nodeset="/data/case_mother_caregiver/case/update/godmother_name" relevant="count(/data/is_pregnant/godmother_name) &gt; 0"/><bind calculate="/data/is_pregnant/godmother_tel" nodeset="/data/case_mother_caregiver/case/update/godmother_tel" relevant="count(/data/is_pregnant/godmother_tel) &gt; 0"/><bind calculate="/data/is_pregnant/living_children" nodeset="/data/case_mother_caregiver/case/update/living_children" relevant="count(/data/is_pregnant/living_children) &gt; 0"/><bind calculate="/data/is_pregnant/lmp" nodeset="/data/case_mother_caregiver/case/update/lmp" relevant="count(/data/is_pregnant/lmp) &gt; 0"/><bind calculate="/data/pregnancy_status" nodeset="/data/case_mother_caregiver/case/update/pregnancy_status" relevant="count(/data/pregnancy_status) &gt; 0"/><bind calculate="/data/is_pregnant/previous_complications" nodeset="/data/case_mother_caregiver/case/update/previous_complications" relevant="count(/data/is_pregnant/previous_complications) &gt; 0"/><bind calculate="/data/is_pregnant/risk_factors" nodeset="/data/case_mother_caregiver/case/update/risk_factors" relevant="count(/data/is_pregnant/risk_factors) &gt; 0"/><bind calculate="/data/is_pregnant/total_pregnancies" nodeset="/data/case_mother_caregiver/case/update/total_pregnancies" relevant="count(/data/is_pregnant/total_pregnancies) &gt; 0"/><bind calculate="/data/is_woman/woman_dob" nodeset="/data/case_mother_caregiver/case/update/woman_dob" relevant="count(/data/is_woman/woman_dob) &gt; 0"/><bind calculate="instance('commcaresession')/session/data/case_id_household" nodeset="/data/case_mother_caregiver/case/index/parent"/><bind calculate="/data/meta/timeEnd" nodeset="/data/is_caregiver/open_child_case/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/is_caregiver/open_child_case/case/@user_id"/><bind nodeset="/data/is_caregiver/open_child_case/case" relevant="/data/is_caregiver/open_child_case/child_eligibility_status = 'yes'"/><bind calculate="uuid()" nodeset="/data/is_caregiver/open_child_case/case/@case_id"/><bind calculate="/data/is_caregiver/open_child_case/child_name" nodeset="/data/is_caregiver/open_child_case/case/create/case_name"/><bind calculate="/data/meta/userID" nodeset="/data/is_caregiver/open_child_case/case/create/owner_id"/><bind calculate="/data/is_caregiver/open_child_case/child_dob" nodeset="/data/is_caregiver/open_child_case/case/update/child_dob" relevant="count(/data/is_caregiver/open_child_case/child_dob) &gt; 0"/><bind calculate="/data/is_caregiver/open_child_case/child_gender" nodeset="/data/is_caregiver/open_child_case/case/update/child_gender" relevant="count(/data/is_caregiver/open_child_case/child_gender) &gt; 0"/><bind calculate="/data/case_mother_caregiver/case/@case_id" nodeset="/data/is_caregiver/open_child_case/case/index/parent"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<trigger ref="/data/explain_survey_label" appearance="minimal">
+			<label ref="jr:itext('explain_survey_label-label')"/>
+		</trigger>
+		<input ref="/data/caregiver_name">
+			<label ref="jr:itext('caregiver_name-label')"/>
+		</input>
+		<select1 ref="/data/caregiver_gender">
+			<label ref="jr:itext('caregiver_gender-label')"/>
+			<item>
+				<label ref="jr:itext('caregiver_gender-female-label')"/>
+				<value>female</value>
+			</item>
+			<item>
+				<label ref="jr:itext('caregiver_gender-male-label')"/>
+				<value>male</value>
+			</item>
+		</select1>
+		<input ref="/data/caregiver_tel" appearance="numeric">
+			<label ref="jr:itext('caregiver_tel-label')"/>
+		</input>
+		<select1 ref="/data/has_children_under_5">
+			<label ref="jr:itext('has_children_under_5-label')"/>
+			<hint ref="jr:itext('has_children_under_5-hint')"/>
+			<item>
+				<label ref="jr:itext('has_children_under_5-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('has_children_under_5-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<select1 ref="/data/pregnancy_status">
+			<label ref="jr:itext('pregnancy_status-label')"/>
+			<item>
+				<label ref="jr:itext('has_children_under_5-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('has_children_under_5-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<trigger ref="/data/not_eligible_label" appearance="minimal">
+			<label ref="jr:itext('not_eligible_label-label')"/>
+		</trigger>
+		<select1 ref="/data/has_individual_code_asotry">
+			<label ref="jr:itext('has_individual_code_asotry-label')"/>
+			<item>
+				<label ref="jr:itext('has_individual_code_asotry-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('has_individual_code_asotry-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/caregiver_asotry_code" appearance="numeric">
+			<label ref="jr:itext('caregiver_asotry_code-label')"/>
+		</input>
+		<group ref="/data/is_woman">
+			<label ref="jr:itext('is_woman-label')"/>
+			<select1 ref="/data/is_woman/identity_card">
+				<label ref="jr:itext('is_woman/identity_card-label')"/>
+				<item>
+					<label ref="jr:itext('has_children_under_5-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('has_children_under_5-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<input ref="/data/is_woman/woman_actual_dob">
+				<label ref="jr:itext('is_woman/woman_actual_dob-label')"/>
+			</input>
+			<select1 ref="/data/is_woman/dob_estimation_data">
+				<label ref="jr:itext('is_woman/dob_estimation_data-label')"/>
+				<item>
+					<label ref="jr:itext('is_woman/dob_estimation_data-age-label')"/>
+					<value>age</value>
+				</item>
+				<item>
+					<label ref="jr:itext('is_woman/dob_estimation_data-year_of_birth-label')"/>
+					<value>year_of_birth</value>
+				</item>
+			</select1>
+			<input ref="/data/is_woman/woman_known_age">
+				<label ref="jr:itext('is_woman/woman_known_age-label')"/>
+			</input>
+			<input ref="/data/is_woman/woman_known_yob">
+				<label ref="jr:itext('is_woman/woman_known_yob-label')"/>
+			</input>
+			<trigger ref="/data/is_woman/dob_label" appearance="minimal">
+				<label ref="jr:itext('is_woman/dob_label-label')"/>
+			</trigger>
+		</group>
+		<group ref="/data/is_pregnant">
+			<label ref="jr:itext('is_pregnant-label')"/>
+			<input ref="/data/is_pregnant/lmp">
+				<label ref="jr:itext('is_pregnant/lmp-label')"/>
+			</input>
+			<group ref="/data/is_pregnant/age_edd" appearance="field-list">
+				<label ref="jr:itext('is_pregnant/age_edd-label')"/>
+				<trigger ref="/data/is_pregnant/age_edd/pregnancy_month_label" appearance="minimal">
+					<label ref="jr:itext('is_pregnant/age_edd/pregnancy_month_label-label')"/>
+				</trigger>
+				<trigger ref="/data/is_pregnant/age_edd/edd_label" appearance="minimal">
+					<label ref="jr:itext('is_pregnant/age_edd/edd_label-label')"/>
+				</trigger>
+			</group>
+			<select1 ref="/data/is_pregnant/first_pregnancy">
+				<label ref="jr:itext('is_pregnant/first_pregnancy-label')"/>
+				<item>
+					<label ref="jr:itext('has_children_under_5-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('has_children_under_5-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<input ref="/data/is_pregnant/total_pregnancies">
+				<label ref="jr:itext('is_pregnant/total_pregnancies-label')"/>
+			</input>
+			<input ref="/data/is_pregnant/living_children">
+				<label ref="jr:itext('is_pregnant/living_children-label')"/>
+				<hint ref="jr:itext('is_pregnant/living_children-hint')"/>
+			</input>
+			<select1 ref="/data/is_pregnant/previous_complications">
+				<label ref="jr:itext('is_pregnant/previous_complications-label')"/>
+				<item>
+					<label ref="jr:itext('has_children_under_5-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('has_children_under_5-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select ref="/data/is_pregnant/risk_factors">
+				<label ref="jr:itext('is_pregnant/risk_factors-label')"/>
+				<item>
+					<label ref="jr:itext('is_pregnant/risk_factors-petite_woman-label')"/>
+					<value>petite_woman</value>
+				</item>
+				<item>
+					<label ref="jr:itext('is_pregnant/risk_factors-consumes_alcohol-label')"/>
+					<value>consumes_alcohol</value>
+				</item>
+				<item>
+					<label ref="jr:itext('is_pregnant/risk_factors-over_6_children-label')"/>
+					<value>over_6_children</value>
+				</item>
+				<item>
+					<label ref="jr:itext('is_pregnant/risk_factors-previous_abortion-label')"/>
+					<value>previous_abortion</value>
+				</item>
+				<item>
+					<label ref="jr:itext('is_pregnant/risk_factors-previous_cesarean-label')"/>
+					<value>previous_cesarean</value>
+				</item>
+				<item>
+					<label ref="jr:itext('is_pregnant/risk_factors-none-label')"/>
+					<value>none</value>
+				</item>
+			</select>
+			<select1 ref="/data/is_pregnant/fkt_caregroup_status">
+				<label ref="jr:itext('is_pregnant/fkt_caregroup_status-label')"/>
+				<item>
+					<label ref="jr:itext('has_children_under_5-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('has_children_under_5-no-label')"/>
+					<value>non</value>
+				</item>
+				<item>
+					<label ref="jr:itext('is_pregnant/fkt_caregroup_status-do_not_know-label')"/>
+					<value>do_not_know</value>
+				</item>
+			</select1>
+			<select1 ref="/data/is_pregnant/caregroup_membership">
+				<label ref="jr:itext('is_pregnant/caregroup_membership-label')"/>
+				<item>
+					<label ref="jr:itext('has_children_under_5-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('has_children_under_5-no-label')"/>
+					<value>non</value>
+				</item>
+			</select1>
+			<input ref="/data/is_pregnant/caregroup_name">
+				<label ref="jr:itext('is_pregnant/caregroup_name-label')"/>
+			</input>
+			<input ref="/data/is_pregnant/godmother_name">
+				<label ref="jr:itext('is_pregnant/godmother_name-label')"/>
+			</input>
+			<input ref="/data/is_pregnant/godmother_tel" appearance="numeric">
+				<label ref="jr:itext('is_pregnant/godmother_tel-label')"/>
+			</input>
+		</group>
+		<group ref="/data/is_caregiver">
+			<label ref="jr:itext('is_caregiver-label')"/>
+			<trigger ref="/data/is_caregiver/create_label" appearance="minimal">
+				<label ref="jr:itext('is_caregiver/create_label-label')"/>
+			</trigger>
+			<select1 ref="/data/is_caregiver/total_children_under_5">
+				<label ref="jr:itext('is_caregiver/total_children_under_5-label')"/>
+				<item>
+					<label ref="jr:itext('is_caregiver/total_children_under_5-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('is_caregiver/total_children_under_5-2-label')"/>
+					<value>2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('is_caregiver/total_children_under_5-3-label')"/>
+					<value>3</value>
+				</item>
+				<item>
+					<label ref="jr:itext('is_caregiver/total_children_under_5-4-label')"/>
+					<value>4</value>
+				</item>
+				<item>
+					<label ref="jr:itext('is_caregiver/total_children_under_5-5-label')"/>
+					<value>5</value>
+				</item>
+				<item>
+					<label ref="jr:itext('is_caregiver/total_children_under_5-6+-label')"/>
+					<value>6+</value>
+				</item>
+			</select1>
+			<input ref="/data/is_caregiver/clarify_number_children">
+				<label ref="jr:itext('is_caregiver/clarify_number_children-label')"/>
+			</input>
+			<group>
+				<label ref="jr:itext('is_caregiver/open_child_case-label')"/>
+				<repeat jr:count="/data/is_caregiver/number_children" jr:noAddRemove="true()" nodeset="/data/is_caregiver/open_child_case">
+					<input ref="/data/is_caregiver/open_child_case/child_name">
+						<label ref="jr:itext('is_caregiver/open_child_case/child_name-label')"/>
+					</input>
+					<select1 ref="/data/is_caregiver/open_child_case/relation_to_child">
+						<label ref="jr:itext('is_caregiver/open_child_case/relation_to_child-label')"/>
+						<item>
+							<label ref="jr:itext('is_caregiver/open_child_case/relation_to_child-parent-label')"/>
+							<value>parent</value>
+						</item>
+						<item>
+							<label ref="jr:itext('is_caregiver/open_child_case/relation_to_child-sibling-label')"/>
+							<value>sibling</value>
+						</item>
+						<item>
+							<label ref="jr:itext('is_caregiver/open_child_case/relation_to_child-aunt_uncle-label')"/>
+							<value>aunt_uncle</value>
+						</item>
+						<item>
+							<label ref="jr:itext('is_caregiver/open_child_case/relation_to_child-cousin-label')"/>
+							<value>cousin</value>
+						</item>
+						<item>
+							<label ref="jr:itext('is_caregiver/open_child_case/relation_to_child-grandparent-label')"/>
+							<value>grandparent</value>
+						</item>
+						<item>
+							<label ref="jr:itext('is_caregiver/open_child_case/relation_to_child-other_relationship-label')"/>
+							<value>other_relationship</value>
+						</item>
+					</select1>
+					<select1 ref="/data/is_caregiver/open_child_case/child_gender">
+						<label ref="jr:itext('is_caregiver/open_child_case/child_gender-label')"/>
+						<item>
+							<label ref="jr:itext('is_caregiver/open_child_case/child_gender-female-label')"/>
+							<value>female</value>
+						</item>
+						<item>
+							<label ref="jr:itext('is_caregiver/open_child_case/child_gender-male-label')"/>
+							<value>male</value>
+						</item>
+					</select1>
+					<select1 ref="/data/is_caregiver/open_child_case/know_child_dob">
+						<label ref="jr:itext('is_caregiver/open_child_case/know_child_dob-label')"/>
+						<item>
+							<label ref="jr:itext('has_individual_code_asotry-yes-label')"/>
+							<value>yes</value>
+						</item>
+						<item>
+							<label ref="jr:itext('has_individual_code_asotry-no-label')"/>
+							<value>no</value>
+						</item>
+					</select1>
+					<input ref="/data/is_caregiver/open_child_case/child_known_dob">
+						<label ref="jr:itext('is_caregiver/open_child_case/child_known_dob-label')"/>
+					</input>
+					<select1 ref="/data/is_caregiver/open_child_case/child_dob_estimation_data">
+						<label ref="jr:itext('is_caregiver/open_child_case/child_dob_estimation_data-label')"/>
+						<item>
+							<label ref="jr:itext('is_caregiver/open_child_case/child_dob_estimation_data-age_in_months-label')"/>
+							<value>age_in_months</value>
+						</item>
+						<item>
+							<label ref="jr:itext('is_caregiver/open_child_case/child_dob_estimation_data-age_in_years-label')"/>
+							<value>age_in_years</value>
+						</item>
+						<item>
+							<label ref="jr:itext('is_caregiver/open_child_case/child_dob_estimation_data-year_of_birth-label')"/>
+							<value>year_of_birth</value>
+						</item>
+					</select1>
+					<input ref="/data/is_caregiver/open_child_case/child_known_age_months">
+						<label ref="jr:itext('is_caregiver/open_child_case/child_known_age_months-label')"/>
+						<hint ref="jr:itext('is_caregiver/open_child_case/child_known_age_months-hint')"/>
+					</input>
+					<input ref="/data/is_caregiver/open_child_case/child_known_age_years">
+						<label ref="jr:itext('is_caregiver/open_child_case/child_known_age_years-label')"/>
+						<hint ref="jr:itext('is_caregiver/open_child_case/child_known_age_months-hint')"/>
+					</input>
+					<input ref="/data/is_caregiver/open_child_case/child_known_yob">
+						<label ref="jr:itext('is_caregiver/open_child_case/child_known_yob-label')"/>
+						<hint ref="jr:itext('is_caregiver/open_child_case/child_known_age_months-hint')"/>
+					</input>
+					<trigger ref="/data/is_caregiver/open_child_case/recap" appearance="minimal">
+						<label ref="jr:itext('is_caregiver/open_child_case/recap-label')"/>
+					</trigger>
+					<trigger ref="/data/is_caregiver/open_child_case/eligibility_recap" appearance="minimal">
+						<label ref="jr:itext('is_caregiver/open_child_case/eligibility_recap-label')"/>
+					</trigger>
+				</repeat>
+			</group>
+		</group>
+		<group ref="/data/recap" appearance="field-list">
+			<trigger ref="/data/recap/verify_responses_label" appearance="minimal">
+				<label ref="jr:itext('recap/verify_responses_label-label')"/>
+			</trigger>
+			<trigger ref="/data/recap/womans_name_label" appearance="minimal">
+				<label ref="jr:itext('recap/womans_name_label-label')"/>
+			</trigger>
+			<trigger ref="/data/recap/no_children_label" appearance="minimal">
+				<label ref="jr:itext('recap/no_children_label-label')"/>
+			</trigger>
+			<trigger ref="/data/recap/dob_label" appearance="minimal">
+				<label ref="jr:itext('recap/dob_label-label')"/>
+			</trigger>
+			<trigger ref="/data/recap/womans_age_label" appearance="minimal">
+				<label ref="jr:itext('recap/womans_age_label-label')"/>
+			</trigger>
+			<trigger ref="/data/recap/lmp_label" appearance="minimal">
+				<label ref="jr:itext('recap/lmp_label-label')"/>
+			</trigger>
+			<trigger ref="/data/recap/womans_telephone_number" appearance="minimal">
+				<label ref="jr:itext('recap/womans_telephone_number-label')"/>
+			</trigger>
+			<trigger ref="/data/recap/godmother_label" appearance="minimal">
+				<label ref="jr:itext('recap/godmother_label-label')"/>
+			</trigger>
+			<trigger ref="/data/recap/godmother_telephone_number_label" appearance="minimal">
+				<label ref="jr:itext('recap/godmother_telephone_number_label-label')"/>
+			</trigger>
+			<trigger ref="/data/recap/how_to_modify_label" appearance="minimal">
+				<label ref="jr:itext('recap/how_to_modify_label-label')"/>
+			</trigger>
+		</group>
+		<trigger ref="/data/thank_pregnant_woman_label" appearance="minimal">
+			<label ref="jr:itext('thank_pregnant_woman_label-label')"/>
+		</trigger>
+		<trigger ref="/data/thank_pregnant_caregiver_label" appearance="minimal">
+			<label ref="jr:itext('thank_pregnant_caregiver_label-label')"/>
+		</trigger>
+		<trigger ref="/data/thank_caregiver_label" appearance="minimal">
+			<label ref="jr:itext('thank_caregiver_label-label')"/>
+		</trigger>
+	</h:body>
+</h:html>

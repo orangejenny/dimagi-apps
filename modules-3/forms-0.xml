@@ -1,0 +1,2257 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:vellum="http://commcarehq.org/xforms/vellum">
+	<h:head>
+		<h:title>Suivi de la grossesse</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/b41463366e78ccf5b6cb0c45ff36059dca96fbd0" uiVersion="1" version="1990" name="Suivi de la grossesse">
+					<intro_label/>
+					<date_follow_up/>
+					<prev_date_referral/>
+					<prev_send_for_referral/>
+					<prev_verify_referral/>
+					<verify_referral/>
+					<advice_adherence_referral/>
+					<prev_had_next_appt/>
+					<prev_date_next_appt/>
+					<respected_pnc_appt/>
+					<reason_missed_pnc/>
+					<prev_lmp/>
+					<edd/>
+					<current_gestational_period/>
+					<pnc_1>
+						<had_pnc1/>
+						<date_pnc1/>
+					</pnc_1>
+					<prev_had_pnc1/>
+					<status_pnc1/>
+					<pnc_2>
+						<had_pnc2/>
+						<date_pnc2/>
+					</pnc_2>
+					<prev_had_pnc2/>
+					<status_pnc2/>
+					<pnc_3>
+						<had_pnc3/>
+						<date_pnc3/>
+						<breastfeeding_advice/>
+					</pnc_3>
+					<prev_had_pnc3/>
+					<status_pnc3/>
+					<pnc_4>
+						<had_pnc4/>
+						<date_pnc4/>
+						<breastfeeding_advice/>
+					</pnc_4>
+					<prev_had_pnc4/>
+					<status_pnc4/>
+					<prev_cpns_completed/>
+					<number_cpns_completed/>
+					<had_4_pncs/>
+					<show_next_appt/>
+					<prev_show_next_appt/>
+					<have_next_appointment/>
+					<date_next_appointment/>
+					<missed_pnc_advice/>
+					<general_pnc_advice/>
+					<congratulate_adherence_label/>
+					<danger_signs>
+						<knows_danger_signs/>
+						<danger_signs_overview/>
+						<assessment_intro/>
+						<intractable_vomitting/>
+						<fever/>
+						<piercing_headache/>
+						<hands_palor/>
+						<unusual_vaginal_discharge/>
+						<vaginal_bleeding/>
+						<swollen_extremities/>
+						<lumbar_pelvic_pain/>
+						<intense_abdominal_pain/>
+						<suffered_aggression/>
+						<wound_at_genitals/>
+						<immobile_fetus/>
+						<convulsions/>
+						<no_weight_gain/>
+					</danger_signs>
+					<has_danger_sign/>
+					<trigger_referral/>
+					<date_referral/>
+					<send_for_referral/>
+					<referral_details>
+						<accompanying_support/>
+						<instructions_label/>
+					</referral_details>
+					<vaccines>
+						<intro_label/>
+						<taken_tetanus/>
+						<tetanus_advice_label/>
+						<vat_1/>
+						<vat_2/>
+						<vat_3/>
+						<vat_4/>
+						<vat_5/>
+						<taken_1_vat/>
+						<taken_all_vat/>
+						<closing_label/>
+					</vaccines>
+					<prev_has_bednet/>
+					<prev_screened_hiv/>
+					<behavior>
+						<intro_label/>
+						<has_bednet/>
+						<prev_sleeps_under_bednet/>
+						<sleeps_under_bednet/>
+						<bednet_advice>
+							<bednet_label/>
+							<bednet_label_2/>
+						</bednet_advice>
+						<taken_malaria_meds/>
+						<dosage_malaria_meds/>
+						<advice_taken_malaria_meds/>
+						<advice_not_taken_malaria_meds/>
+						<screened_for_hiv/>
+						<advice_hiv/>
+						<prev_visit_date/>
+						<prev_anemia_meds/>
+						<taken_anemia_meds/>
+						<advice_not_taken_anemia_meds/>
+						<quantity_anemia_pills/>
+						<prompt_for_other_amount/>
+						<prev_deworming_meds/>
+						<taken_deworming_meds/>
+					</behavior>
+					<preparation>
+						<intro/>
+						<has_delivery_kit/>
+						<identified_delivery_location/>
+						<reason_not_csb/>
+						<advice_advantage_csb_delivery/>
+						<delivery_accompaniment/>
+						<transport_type/>
+						<encouragement_label/>
+					</preparation>
+					<closing_label/>
+					<prev_delivery_kit/>
+					<prev_accompagnant/>
+					<prev_transport/>
+					<YES/>
+					<NO/>
+					<prev_referred/>
+					<referred/>
+					<prev_visit/>
+					<visit_1/>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><update><date_follow_up/><date_next_appointment/><date_pnc1/><date_pnc2/><date_pnc3/><date_pnc4/><date_referral/><delivery_accompaniment/><had_4_pncs/><had_pnc1/><had_pnc2/><had_pnc3/><had_pnc4/><has_bednet/><has_danger_sign/><has_delivery_kit/><have_next_appointment/><identified_delivery_location/><number_cpns_completed/><prev_cpns_completed/><prev_date_next_appt/><prev_had_next_appt/><referred/><screened_for_hiv/><send_for_referral/><show_next_appt/><sleeps_under_bednet/><status_pnc1/><status_pnc2/><status_pnc3/><status_pnc4/><taken_1_vat/><taken_all_vat/><taken_anemia_meds/><taken_deworming_meds/><transport_type/><verify_referral/><visit_1/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance id="commcaresession" src="jr://instance/session"/><instance id="casedb" src="jr://instance/casedb"/>
+			<bind nodeset="/data/intro_label"/>
+			<bind nodeset="/data/date_follow_up" calculate="today()"/>
+			<bind nodeset="/data/prev_date_referral"/>
+			<bind nodeset="/data/prev_send_for_referral"/>
+			<bind nodeset="/data/prev_verify_referral"/>
+			<bind nodeset="/data/verify_referral" relevant="/data/prev_send_for_referral = /data/YES and (/data/prev_verify_referral = '' or /data/prev_verify_referral = /data/NO)" required="true()"/>
+			<bind nodeset="/data/advice_adherence_referral" relevant="/data/verify_referral = /data/NO"/>
+			<bind nodeset="/data/prev_had_next_appt"/>
+			<bind nodeset="/data/prev_date_next_appt"/>
+			<bind nodeset="/data/respected_pnc_appt" relevant="/data/prev_had_next_appt = 'yes' and date(/data/prev_date_next_appt) &lt;= today() and /data/prev_send_for_referral != 'yes'" required="true()"/>
+			<bind nodeset="/data/reason_missed_pnc" type="xsd:string" relevant="/data/respected_pnc_appt = /data/NO" required="false()"/>
+			<bind nodeset="/data/prev_lmp"/>
+			<bind nodeset="/data/edd"/>
+			<bind nodeset="/data/current_gestational_period" calculate="int((today() - date(/data/prev_lmp)) div 30.4)"/>
+			<bind nodeset="/data/pnc_1" relevant="/data/prev_had_pnc1 = ''"/>
+			<bind nodeset="/data/pnc_1/had_pnc1" required="true()"/>
+			<bind nodeset="/data/pnc_1/date_pnc1" type="xsd:date" constraint=". &lt;= today() and . &gt; date(/data/prev_lmp)" jr:constraintMsg="jr:itext('pnc_1/date_pnc1-constraintMsg')" relevant="/data/pnc_1/had_pnc1 = /data/YES" required="true()"/>
+			<bind nodeset="/data/prev_had_pnc1"/>
+			<bind nodeset="/data/status_pnc1" calculate="if(/data/prev_had_pnc1 =/data/YES or /data/pnc_1/had_pnc1 = /data/YES, 1, 0)"/>
+			<bind nodeset="/data/pnc_2" relevant="/data/current_gestational_period &gt; 4 and (/data/prev_had_pnc2 = '' or /data/prev_had_pnc2 = /data/NO and /data/prev_had_pnc3 = '' and /data/prev_had_pnc4 = '' and date(/data/prev_date_next_appt) &lt;= today()) and /data/respected_pnc_appt !=&quot;no&quot;"/>
+			<bind nodeset="/data/pnc_2/had_pnc2" required="true()"/>
+			<bind nodeset="/data/pnc_2/date_pnc2" type="xsd:date" constraint=". &lt;= today() and . &gt; date(/data/prev_lmp)" jr:constraintMsg="jr:itext('pnc_1/date_pnc1-constraintMsg')" relevant="/data/pnc_2/had_pnc2 = /data/YES" required="true()"/>
+			<bind nodeset="/data/prev_had_pnc2"/>
+			<bind nodeset="/data/status_pnc2" calculate="if(/data/prev_had_pnc2 =/data/YES or /data/pnc_2/had_pnc2 =/data/YES, 1, 0)"/>
+			<bind nodeset="/data/pnc_3" relevant="/data/current_gestational_period &gt; 6 and (/data/prev_had_pnc3 = '' or /data/prev_had_pnc3 = /data/NO and /data/prev_had_pnc4 = '' and date(/data/prev_date_next_appt) &lt;= today()) and /data/respected_pnc_appt !=&quot;no&quot;"/>
+			<bind nodeset="/data/pnc_3/had_pnc3" required="true()"/>
+			<bind nodeset="/data/pnc_3/date_pnc3" type="xsd:date" constraint=". &lt;= today() and . &gt;= date(/data/prev_lmp)" jr:constraintMsg="jr:itext('pnc_3/date_pnc3-constraintMsg')" relevant="/data/pnc_3/had_pnc3 = /data/YES" required="true()"/>
+			<bind nodeset="/data/pnc_3/breastfeeding_advice"/>
+			<bind nodeset="/data/prev_had_pnc3"/>
+			<bind nodeset="/data/status_pnc3" calculate="if(/data/prev_had_pnc3 = /data/YES or /data/pnc_3/had_pnc3 = /data/YES, 1, 0)"/>
+			<bind nodeset="/data/pnc_4" relevant="/data/current_gestational_period &gt; 8 and (/data/prev_had_pnc4 = '' or /data/prev_had_pnc4 = /data/NO and date(/data/prev_date_next_appt) &lt;= today()) and /data/respected_pnc_appt !=&quot;no&quot;"/>
+			<bind nodeset="/data/pnc_4/had_pnc4" required="true()"/>
+			<bind nodeset="/data/pnc_4/date_pnc4" type="xsd:date" constraint=". &lt;= today() and . &gt;= date(/data/prev_lmp)" jr:constraintMsg="jr:itext('pnc_4/date_pnc4-constraintMsg')" relevant="/data/pnc_4/had_pnc4 = /data/YES" required="true()"/>
+			<bind nodeset="/data/pnc_4/breastfeeding_advice"/>
+			<bind nodeset="/data/prev_had_pnc4"/>
+			<bind nodeset="/data/status_pnc4" calculate="if(/data/prev_had_pnc4 = /data/YES or /data/pnc_4/had_pnc4 = /data/YES, 1, 0)"/>
+			<bind nodeset="/data/prev_cpns_completed"/>
+			<bind nodeset="/data/number_cpns_completed" calculate="/data/status_pnc1 + /data/status_pnc2 + /data/status_pnc3 + /data/status_pnc4"/>
+			<bind nodeset="/data/had_4_pncs" calculate="if(/data/number_cpns_completed = '4', /data/YES, /data/NO)"/>
+			<bind nodeset="/data/show_next_appt" relevant="(/data/pnc_3/date_pnc3 != '' or /data/pnc_2/date_pnc2 != '' or /data/pnc_1/date_pnc1 != '') and (/data/pnc_4/had_pnc4 = /data/NO or /data/pnc_4/had_pnc4 = '')" calculate="/data/YES"/>
+			<bind nodeset="/data/prev_show_next_appt"/>
+			<bind nodeset="/data/have_next_appointment" relevant="/data/show_next_appt = /data/YES" required="true()"/>
+			<bind nodeset="/data/date_next_appointment" type="xsd:date" constraint=". &gt;= today() and . &lt;= date(today() + 155)" jr:constraintMsg="jr:itext('date_next_appointment-constraintMsg')" relevant="/data/have_next_appointment = /data/YES " required="true()"/>
+			<bind nodeset="/data/missed_pnc_advice" relevant="/data/respected_pnc_appt = /data/NO or /data/have_next_appointment = /data/NO"/>
+			<bind nodeset="/data/general_pnc_advice" relevant="/data/respected_pnc_appt = /data/NO or /data/have_next_appointment = /data/NO"/>
+			<bind nodeset="/data/congratulate_adherence_label" relevant="/data/show_next_appt = /data/YES and /data/have_next_appointment = /data/YES"/>
+			<bind nodeset="/data/danger_signs"/>
+			<bind nodeset="/data/danger_signs/knows_danger_signs" relevant="/data/visit_1 = /data/YES" required="true()"/>
+			<bind nodeset="/data/danger_signs/danger_signs_overview" relevant="/data/danger_signs/knows_danger_signs = 'no'"/>
+			<bind nodeset="/data/danger_signs/assessment_intro"/>
+			<bind nodeset="/data/danger_signs/intractable_vomitting" required="true()"/>
+			<bind nodeset="/data/danger_signs/fever" required="true()"/>
+			<bind nodeset="/data/danger_signs/piercing_headache" required="true()"/>
+			<bind nodeset="/data/danger_signs/hands_palor" required="true()"/>
+			<bind nodeset="/data/danger_signs/unusual_vaginal_discharge" required="true()"/>
+			<bind nodeset="/data/danger_signs/vaginal_bleeding" required="true()"/>
+			<bind nodeset="/data/danger_signs/swollen_extremities" required="true()"/>
+			<bind nodeset="/data/danger_signs/lumbar_pelvic_pain" required="true()"/>
+			<bind nodeset="/data/danger_signs/intense_abdominal_pain" required="true()"/>
+			<bind nodeset="/data/danger_signs/suffered_aggression" required="true()"/>
+			<bind nodeset="/data/danger_signs/wound_at_genitals" required="true()"/>
+			<bind nodeset="/data/danger_signs/immobile_fetus" required="true()"/>
+			<bind nodeset="/data/danger_signs/convulsions" required="true()"/>
+			<bind nodeset="/data/danger_signs/no_weight_gain" required="true()"/>
+			<bind nodeset="/data/has_danger_sign" relevant="/data/danger_signs/no_weight_gain = /data/YES or /data/danger_signs/intractable_vomitting = /data/YES or /data/danger_signs/fever = /data/YES or /data/danger_signs/piercing_headache = /data/YES or /data/danger_signs/hands_palor = /data/YES or /data/danger_signs/unusual_vaginal_discharge = /data/YES or /data/danger_signs/vaginal_bleeding = /data/YES or /data/danger_signs/swollen_extremities = /data/YES or /data/danger_signs/lumbar_pelvic_pain = /data/YES or /data/danger_signs/suffered_aggression = /data/YES or /data/danger_signs/wound_at_genitals = /data/YES or /data/danger_signs/immobile_fetus = /data/YES or /data/danger_signs/convulsions = /data/YES or /data/danger_signs/intense_abdominal_pain = /data/YES" calculate="/data/YES"/>
+			<bind nodeset="/data/trigger_referral" relevant="/data/has_danger_sign = /data/YES" calculate="/data/YES"/>
+			<bind nodeset="/data/date_referral" relevant="/data/trigger_referral = /data/YES" calculate="today()"/>
+			<bind nodeset="/data/send_for_referral" relevant="/data/trigger_referral = /data/YES" required="true()"/>
+			<bind nodeset="/data/referral_details" relevant="/data/send_for_referral = /data/YES"/>
+			<bind nodeset="/data/referral_details/accompanying_support" constraint="not(selected(.,&quot;noone&quot;) and count-selected(.) &gt; 1)" required="true()"/>
+			<bind nodeset="/data/referral_details/instructions_label"/>
+			<bind nodeset="/data/vaccines" relevant="/data/trigger_referral != /data/YES "/>
+			<bind nodeset="/data/vaccines/intro_label"/>
+			<bind nodeset="/data/vaccines/taken_tetanus" required="true()"/>
+			<bind nodeset="/data/vaccines/tetanus_advice_label" relevant="/data/vaccines/taken_tetanus = /data/NO"/>
+			<bind nodeset="/data/vaccines/vat_1" relevant="/data/vaccines/taken_tetanus = /data/YES" required="true()"/>
+			<bind nodeset="/data/vaccines/vat_2" relevant="/data/vaccines/vat_1 = /data/YES" required="true()"/>
+			<bind nodeset="/data/vaccines/vat_3" relevant="/data/vaccines/vat_2 = /data/YES" required="true()"/>
+			<bind nodeset="/data/vaccines/vat_4" relevant="/data/vaccines/vat_3 = /data/YES" required="true()"/>
+			<bind nodeset="/data/vaccines/vat_5" relevant="/data/vaccines/vat_4 = /data/YES" required="true()"/>
+			<bind nodeset="/data/vaccines/taken_1_vat" calculate="if(/data/vaccines/vat_1 = /data/YES, /data/YES, /data/NO)"/>
+			<bind nodeset="/data/vaccines/taken_all_vat" calculate="if(/data/vaccines/vat_4 = /data/YES and /data/vaccines/vat_3 = /data/YES and /data/vaccines/vat_2 = /data/YES and /data/vaccines/vat_1 = /data/YES and /data/vaccines/vat_5 = /data/YES, /data/YES, /data/NO)"/>
+			<bind nodeset="/data/vaccines/closing_label"/>
+			<bind nodeset="/data/prev_has_bednet"/>
+			<bind nodeset="/data/prev_screened_hiv"/>
+			<bind nodeset="/data/behavior" relevant="/data/trigger_referral != /data/YES"/>
+			<bind nodeset="/data/behavior/intro_label"/>
+			<bind nodeset="/data/behavior/has_bednet" relevant="/data/prev_has_bednet != /data/YES" required="true()"/>
+			<bind nodeset="/data/behavior/prev_sleeps_under_bednet"/>
+			<bind nodeset="/data/behavior/sleeps_under_bednet" relevant="/data/behavior/has_bednet = /data/YES or /data/behavior/prev_sleeps_under_bednet = /data/NO" required="true()"/>
+			<bind nodeset="/data/behavior/bednet_advice"/>
+			<bind nodeset="/data/behavior/bednet_advice/bednet_label" relevant="/data/behavior/has_bednet = /data/NO or /data/behavior/sleeps_under_bednet = /data/NO"/>
+			<bind nodeset="/data/behavior/bednet_advice/bednet_label_2" relevant="/data/behavior/has_bednet = /data/NO"/>
+			<bind nodeset="/data/behavior/taken_malaria_meds" required="true()"/>
+			<bind nodeset="/data/behavior/dosage_malaria_meds" relevant="/data/behavior/taken_malaria_meds = /data/YES" required="true()"/>
+			<bind nodeset="/data/behavior/advice_taken_malaria_meds" relevant="/data/behavior/taken_malaria_meds = /data/YES"/>
+			<bind nodeset="/data/behavior/advice_not_taken_malaria_meds" relevant="/data/behavior/taken_malaria_meds = /data/NO"/>
+			<bind nodeset="/data/behavior/screened_for_hiv" relevant="/data/prev_screened_hiv != /data/YES" required="true()"/>
+			<bind nodeset="/data/behavior/advice_hiv" relevant="/data/behavior/screened_for_hiv = /data/NO"/>
+			<bind nodeset="/data/behavior/prev_visit_date"/>
+			<bind nodeset="/data/behavior/prev_anemia_meds"/>
+			<bind nodeset="/data/behavior/taken_anemia_meds" relevant="today() &gt;= date(/data/behavior/prev_visit_date + 30) or /data/behavior/prev_anemia_meds = ''" required="true()"/>
+			<bind nodeset="/data/behavior/advice_not_taken_anemia_meds" relevant="/data/behavior/taken_anemia_meds = /data/NO"/>
+			<bind nodeset="/data/behavior/quantity_anemia_pills" relevant="/data/behavior/taken_anemia_meds = /data/YES" required="true()"/>
+			<bind nodeset="/data/behavior/prompt_for_other_amount" relevant="/data/behavior/quantity_anemia_pills = 'other_amount'"/>
+			<bind nodeset="/data/behavior/prev_deworming_meds"/>
+			<bind nodeset="/data/behavior/taken_deworming_meds" relevant="/data/current_gestational_period &gt; 4 and (/data/behavior/prev_deworming_meds !=/data/YES)" required="true()"/>
+			<bind nodeset="/data/preparation" relevant="/data/trigger_referral != /data/YES and /data/current_gestational_period &gt;= 7"/>
+			<bind nodeset="/data/preparation/intro"/>
+			<bind nodeset="/data/preparation/has_delivery_kit" relevant="/data/prev_delivery_kit != /data/YES" required="true()"/>
+			<bind nodeset="/data/preparation/identified_delivery_location" required="true()"/>
+			<bind nodeset="/data/preparation/reason_not_csb" relevant="/data/preparation/identified_delivery_location = 'with_matrones' or /data/preparation/identified_delivery_location = 'domicile'" required="true()"/>
+			<bind nodeset="/data/preparation/advice_advantage_csb_delivery" relevant="/data/preparation/identified_delivery_location = 'with_matrones' or /data/preparation/identified_delivery_location = 'domicile' or /data/preparation/identified_delivery_location = 'no'"/>
+			<bind nodeset="/data/preparation/delivery_accompaniment" constraint="not(selected(., 'sait_pas') and count-selected(.) &gt; 1)" jr:constraintMsg="jr:itext('preparation/delivery_accompaniment-constraintMsg')" relevant="/data/prev_accompagnant = 'do_not_know' or /data/preparation/identified_delivery_location = 'case_sante' or /data/preparation/identified_delivery_location = 'poste_sante'" required="true()"/>
+			<bind nodeset="/data/preparation/transport_type" relevant="/data/preparation/identified_delivery_location = 'case_sante' or /data/preparation/identified_delivery_location = 'poste_sante' or /data/prev_transport = 'undecided'" required="true()"/>
+			<bind nodeset="/data/preparation/encouragement_label"/>
+			<bind nodeset="/data/closing_label"/>
+			<bind nodeset="/data/prev_delivery_kit"/>
+			<bind nodeset="/data/prev_accompagnant"/>
+			<bind nodeset="/data/prev_transport"/>
+			<bind nodeset="/data/YES" calculate="'yes'"/>
+			<bind nodeset="/data/NO" calculate="'no'"/>
+			<bind nodeset="/data/prev_referred"/>
+			<bind nodeset="/data/referred" relevant="/data/trigger_referral = 'oui'" calculate="/data/YES"/>
+			<bind nodeset="/data/prev_visit"/>
+			<bind nodeset="/data/visit_1" calculate="if(/data/prev_visit='',/data/YES,/data/NO)"/>
+			<itext>
+				<translation lang="fra" default="">
+					<text id="intro_label-label">
+						<value>Date : <output value="/data/date_follow_up"/>
+
+Mois enceinte : <output value="/data/current_gestational_period"/> mois
+
+Date derni&#232;res r&#232;gles : <output value="/data/prev_lmp"/>
+
+Date pr&#233;vue accouchement : <output value="/data/edd"/>
+</value>
+					</text>
+					<text id="verify_referral-label">
+						<value>Vous avez &#233;t&#233; r&#233;f&#233;r&#233;e au CSB le <output value="format-date(date(/data/prev_date_referral), '%e/%n/%Y')"/>. Etes vous all&#233;e ?</value>
+						<value form="image">jr://file/commcare/image/data/orienter_cpn.jpg</value>
+						<value form="audio">jr://file/commcare/audio/data/check_orientation_cpn.mp3</value>
+					</text>
+					<text id="verify_referral-yes-label">
+						<value>Oui</value>
+						<value form="audio">jr://file/commcare/audio/data/check_orientation_cpn-oui.mp3</value>
+					</text>
+					<text id="verify_referral-no-label">
+						<value>Non</value>
+						<value form="audio">jr://file/commcare/audio/data/check_orientation_cpn-non.mp3</value>
+					</text>
+					<text id="advice_adherence_referral-label">
+						<value>advice_adherence_referral</value>
+						<value form="image">jr://file/commcare/image/data/advice_adherence_referral.jpg</value>
+					</text>
+					<text id="respected_pnc_appt-label">
+						<value>Vous aviez une CPN pr&#233;vue pour le <output value="format-date(date(/data/prev_date_next_appt), '%e/%n/%Y')"/>. Est ce que vous avez &#233;t&#233; ?</value>
+						<value form="image">jr://file/commcare/image/data/respecte_CPN_rv.jpg</value>
+						<value form="audio">jr://file/commcare/audio/data/respecte_CPN_rv.mp3</value>
+					</text>
+					<text id="respected_pnc_appt-yes-label">
+						<value>Oui</value>
+						<value form="audio">jr://file/commcare/audio/data/respecte_CPN_rv-oui.mp3</value>
+					</text>
+					<text id="respected_pnc_appt-no-label">
+						<value>Non</value>
+						<value form="audio">jr://file/commcare/audio/data/respecte_CPN_rv-non.mp3</value>
+					</text>
+					<text id="reason_missed_pnc-label">
+						<value>Pourquoi avez-vous rat&#233; la consultation?</value>
+						<value form="image">jr://file/commcare/image/data/reason_missed_pnc.png</value>
+					</text>
+					<text id="pnc_1-label">
+						<value>CPN 1</value>
+					</text>
+					<text id="date_cpn1-label">
+						<value>Avez-vous eu votre CPN 1? 
+[D&#233;finition : une consultation pendant les 3 premiers mois de la grossesse.]</value>
+						<value form="image">jr://file/commcare/image/data/date_cpn1.png</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_1/eu_cpn1.mp3</value>
+					</text>
+					<text id="pnc_1/had_pnc1-yes-label">
+						<value>Oui</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_1/eu_cpn1-oui.mp3</value>
+					</text>
+					<text id="pnc_1/had_pnc1-no-label">
+						<value>Non</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_1/eu_cpn1-non.mp3</value>
+					</text>
+					<text id="pnc_1/date_pnc1-label">
+						<value>Date de la CPN 1 : </value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_1/date_cpn1.mp3</value>
+						<value form="image">jr://file/commcare/image/data/pnc_1/date_pnc1.png</value>
+					</text>
+					<text id="pnc_1/date_pnc1-constraintMsg">
+						<value>Cette date d&#233;passe la p&#233;riode de la grossesse de la femme. </value>
+					</text>
+					<text id="pnc_2-label">
+						<value>CPN 2</value>
+					</text>
+					<text id="pnc_2/had_pnc2-label">
+						<value>Avez-vous eu votre CPN 2 ?  [D&#233;finition: une consultation entre le 4&#232;me et 6&#232;me mois de la grossesse.]</value>
+						<value form="image">jr://file/commcare/image/data/cpn_2/eu_cpn2.png</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_2/eu_cpn2.mp3</value>
+					</text>
+					<text id="pnc_2/had_pnc2-yes-label">
+						<value>Oui</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_2/eu_cpn2-oui.mp3</value>
+					</text>
+					<text id="pnc_2/had_pnc2-no-label">
+						<value>Non</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_2/eu_cpn2-non.mp3</value>
+					</text>
+					<text id="date_CPN2-label">
+						<value>Date de la CPN 2 :</value>
+						<value form="audio">jr://file/commcare/audio/data/date_CPN2.mp3</value>
+						<value form="image">jr://file/commcare/image/data/pnc_2/date_pnc2.png</value>
+					</text>
+					<text id="pnc_3-label">
+						<value>CPN 3</value>
+					</text>
+					<text id="pnc_3/had_pnc3-label">
+						<value>Avez-vous eu votre CPN 3 ? [D&#233;finition : une consultation pendant le 7&#232;me ou 8&#232;me mois de la grossesse.]</value>
+						<value form="image">jr://file/commcare/image/data/cpn_3/eu_cpn3.png</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_3/eu_cpn3.mp3</value>
+					</text>
+					<text id="pnc_3/had_pnc3-yes-label">
+						<value>Oui</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_3/eu_cpn3-oui.mp3</value>
+					</text>
+					<text id="pnc_3/had_pnc3-no-label">
+						<value>Non</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_3/eu_cpn3-non.mp3</value>
+					</text>
+					<text id="date_CPN3-label">
+						<value>Date de la CPN 3 :</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_3/date_CPN3.mp3</value>
+					</text>
+					<text id="pnc_3/date_pnc3-constraintMsg">
+						<value>Cette date d&#233;passe la p&#233;riode de la grossesse de la femme. </value>
+						<value form="image">jr://file/commcare/image/constraintMsg/data/pnc_3/date_pnc3.png</value>
+					</text>
+					<text id="pnc_3/breastfeeding_advice-label">
+						<value>AC: Conseiller la m&#232;re sur l'allaitement pr&#233;coce pour que son  enfant puisse b&#233;n&#233;ficier du colostrum. 
+
+Ce premier lait jaun&#226;tre est un vaccin naturel qui prot&#232;ge le nouveau n&#233; contre les maladies. Conseiller &#224; la m&#232;re de ne pas jeter ce colostrum.  </value>
+						<value form="image">jr://file/commcare/image/data/pnc_3/breastfeeding_advice.jpg</value>
+					</text>
+					<text id="pnc_4-label">
+						<value>CPN 4</value>
+					</text>
+					<text id="pnc_4/had_pnc4-label">
+						<value>Avez-vous eu votre CPN 4 ? [D&#233;finition : une consultation pendant le 9&#232;me mois de la grossesse.]</value>
+						<value form="image">jr://file/commcare/image/data/cpn_4/eu_cpn4.png</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_4/eu_cpn4.mp3</value>
+					</text>
+					<text id="pnc_4/had_pnc4-yes-label">
+						<value>Oui</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_4/eu_cpn4-oui.mp3</value>
+					</text>
+					<text id="pnc_4/had_pnc4-no-label">
+						<value>Non</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_4/eu_cpn4-non.mp3</value>
+					</text>
+					<text id="date_CPN4-label">
+						<value>Date de la CPN 4 :</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_4/date_CPN4.mp3</value>
+					</text>
+					<text id="pnc_4/date_pnc4-constraintMsg">
+						<value>Cette date d&#233;passe la p&#233;riode de la grossesse de la femme. </value>
+						<value form="image">jr://file/commcare/image/constraintMsg/data/pnc_4/date_pnc4.png</value>
+					</text>
+					<text id="pnc_4/breastfeeding_advice-label">
+						<value>AC: Conseiller la m&#232;re sur l'allaitement pr&#233;coce pour que son  enfant puisse b&#233;n&#233;ficier du colostrum. 
+
+Ce premier lait jaun&#226;tre est un vaccin naturel qui prot&#232;ge le nouveau n&#233; contre les maladies. Conseiller &#224; la m&#232;re de ne pas jeter ce colostrum.  </value>
+						<value form="image">jr://file/commcare/image/data/pnc_4/breastfeeding_advice.jpg</value>
+					</text>
+					<text id="have_next_appointment-label">
+						<value>Avez-vous un prochain rendez-vous de CPN ?</value>
+						<value form="audio">jr://file/commcare/audio/data/prochain_RV_statut.mp3</value>
+						<value form="image">jr://file/commcare/image/data/prochain_RV_statut.jpg</value>
+					</text>
+					<text id="have_next_appointment-yes-label">
+						<value>Oui</value>
+						<value form="audio">jr://file/commcare/audio/data/prochain_RV_statut-oui.mp3</value>
+					</text>
+					<text id="have_next_appointment-no-label">
+						<value>Non</value>
+						<value form="audio">jr://file/commcare/audio/data/prochain_RV_statut-non.mp3</value>
+					</text>
+					<text id="date_next_appointment-label">
+						<value>Date du prochain RV :</value>
+					</text>
+					<text id="date_next_appointment-constraintMsg">
+						<value>La date doit &#234;tre apr&#232;s aujourd'hui mais avant la date estim&#233;e de l'accouchment</value>
+						<value form="image">jr://file/commcare/image/constraintMsg/data/date_next_appointment.png</value>
+					</text>
+					<text id="missed_pnc_advice-label">
+						<value>AC, expliquez &#224; la femme l'importance de faire les CPNs au centre de sant&#233;
+
+- Suivre les mouvements et  la croissance du foetus 
+-D&#233;tecter et prendre en charge les &#233;ventuelles complications associ&#233;es &#224; la grossesse  
+- Effectuer les vaccins pour prot&#233;ger la m&#232;re et l'enfant contre le tetanos (si ce n'est pas encore fait)
+- Chercher des m&#233;dicaments pour la pr&#233;vention du paludisme, de l'an&#233;mie et le d&#233;parasitage.
+- Suivre le gain de poids de la m&#232;re
+- Pour lui donner des conseils sur l'alimentation et la sant&#233; ainsi qu'&#224; l'&#233;ducation &#224; l'allaitement.
+- Pour avoir des id&#233;es sur  l'accouchement afin de le planifier : modalit&#233;, lieu...
+- D&#233;pister le VIH, les IST
+- Chercher des m&#233;dicaments pour pr&#233;venir la transmission du VIH et des IST aux foetus</value>
+					</text>
+					<text id="general_pnc_advice-label">
+						<value>AC: Conseiller la femme d'accomplir les 4 CPN durant sa grossesse.</value>
+						<value form="image">jr://file/commcare/image/data/general_pnc_advice.jpg</value>
+					</text>
+					<text id="congratulate_adherence_label-label">
+						<value>AC, dit &#224; la femme qu'elle fait bien et de continuer d'aller faire ses CPNs pour le bien-&#234;tre de son b&#233;b&#233;. </value>
+						<value form="audio">jr://file/commcare/audio/data/question1.mp3</value>
+						<value form="image">jr://file/commcare/image/data/congratulate_adherence_label.png</value>
+					</text>
+					<text id="danger_signs-label">
+						<value>Signes de danger</value>
+					</text>
+					<text id="danger_signs/knows_danger_signs-label">
+						<value>Est-ce que la femme connait les signes de danger de la grossesse ?</value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/knows_danger_signs.png</value>
+					</text>
+					<text id="danger_signs/danger_signs_overview-label">
+						<value>AC : Veuillez informer la femme sur les signes de danger ci-apr&#232;s et que si jamais elle pr&#233;sente un de ces signes de danger, elle devra aller rapidement au centre de sant&#233; le plus proche :
+
+&gt;Vomit sans arr&#234;t
+&gt;Fi&#232;vre (corps chaud)
+&gt;Maux de t&#234;te s&#233;v&#232;res
+&gt;Paume des mains p&#226;le ou de couleur jaune 
+&gt;Perte liquide ou malodorante vaginale
+&gt;Saignement vaginal
+&gt;Doigts, visage ou jambes enfl&#233;s
+&gt;Douleur lombaire ou pelvienne intense
+&gt;Convulsions
+&gt;L'enfant ne bouge dans son ventre
+&gt;Lesion ou plaie  au niveau de l'organe genital 
+&gt;La femme a &#233;t&#233; agress&#233;e ou bless&#233;e
+&gt;La femme n'a  gagn&#233; pas de poids</value>
+					</text>
+					<text id="danger_signs/assessment_intro-label">
+						<value>Evaluer si la femme pr&#233;sente un de ces signes de danger. </value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/assessment_intro.jpg</value>
+					</text>
+					<text id="danger_signs/intractable_vomitting-label">
+						<value>Vomit sans arr&#234;t</value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/intractable_vomitting.jpg</value>
+					</text>
+					<text id="danger_signs/fever-label">
+						<value>Fi&#232;vre (corps chaud)</value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/fever.jpg</value>
+					</text>
+					<text id="danger_signs/piercing_headache-label">
+						<value>Maux de t&#234;te s&#233;v&#232;res</value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/piercing_headache.jpg</value>
+					</text>
+					<text id="danger_signs/hands_palor-label">
+						<value>Paume des mains p&#226;le ou de couleur jaune </value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/hands_palor.jpg</value>
+					</text>
+					<text id="danger_signs/unusual_vaginal_discharge-label">
+						<value>Perte liquide ou malodorante vaginale</value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/unusual_vaginal_discharge.jpg</value>
+					</text>
+					<text id="danger_signs/vaginal_bleeding-label">
+						<value>Saignement vaginal</value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/vaginal_bleeding.jpg</value>
+					</text>
+					<text id="danger_signs/swollen_extremities-label">
+						<value>Doigts, visage ou jambes enfl&#233;s</value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/swollen_extremities.jpg</value>
+					</text>
+					<text id="danger_signs/lumbar_pelvic_pain-label">
+						<value>Douleur lombaire ou pelvienne intense</value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/lumbar_pelvic_pain.png</value>
+					</text>
+					<text id="danger_signs/intense_abdominal_pain-label">
+						<value>Douleur abdominale intense</value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/intense_abdominal_pain.png</value>
+					</text>
+					<text id="danger_signs/suffered_aggression-label">
+						<value>La femme a &#233;t&#233; agress&#233;e ou bless&#233;e</value>
+					</text>
+					<text id="danger_signs/wound_at_genitals-label">
+						<value>L&#233;sion ou plaie au niveau de l'organe g&#233;nital</value>
+					</text>
+					<text id="danger_signs/immobile_fetus-label">
+						<value>L'enfant ne bouge dans son ventre</value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/immobile_fetus.png</value>
+					</text>
+					<text id="danger_signs/convulsions-label">
+						<value>Convulsions</value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/convulsions.png</value>
+					</text>
+					<text id="danger_signs/no_weight_gain-label">
+						<value>La femme n'a pas gagn&#233; de poids</value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/no_weight_gain.png</value>
+					</text>
+					<text id="send_for_referral-label">
+						<value>Cette femme pr&#233;sente des signes de danger et doit &#234;tre r&#233;f&#233;r&#233;e au CSB imm&#233;diatement. Est-ce que la femme consente d'aller ?</value>
+						<value form="image">jr://file/commcare/image/data/orienter_cpn.jpg</value>
+						<value form="audio">jr://file/commcare/audio/data/orienter_cpn.mp3</value>
+					</text>
+					<text id="send_for_referral-yes-label">
+						<value>Oui</value>
+						<value form="audio">jr://file/commcare/audio/data/orienter_cpn-oui.mp3</value>
+					</text>
+					<text id="referral_details-label">
+						<value>R&#233;f&#233;rence</value>
+					</text>
+					<text id="referral_details/accompanying_support-label">
+						<value>Qui vous accompagne ?</value>
+						<value form="image">jr://file/commcare/image/data/reference_details/accompagnement.jpg</value>
+						<value form="audio">jr://file/commcare/audio/data/reference_details/accompagnement.mp3</value>
+					</text>
+					<text id="referral_details/accompanying_support-husband-label">
+						<value>Mari</value>
+						<value form="audio">jr://file/commcare/audio/data/reference_details/accompagnement-mari.mp3</value>
+					</text>
+					<text id="referral_details/accompanying_support-godmother-label">
+						<value>Marraine</value>
+						<value form="audio">jr://file/commcare/audio/data/reference_details/accompagnement-marraine.mp3</value>
+					</text>
+					<text id="referral_details/accompanying_support-family-label">
+						<value>Famille</value>
+						<value form="audio">jr://file/commcare/audio/data/reference_details/accompagnement-famille.mp3</value>
+					</text>
+					<text id="referral_details/accompanying_support-matrone-label">
+						<value>Matrone</value>
+						<value form="audio">jr://file/commcare/audio/data/reference_details/accompagnement-matrone.mp3</value>
+					</text>
+					<text id="referral_details/accompanying_support-other-label">
+						<value>Autre</value>
+						<value form="audio">jr://file/commcare/audio/data/reference_details/accompagnement-autre.mp3</value>
+					</text>
+					<text id="referral_details/accompanying_support-noone-label">
+						<value>Aucune personne</value>
+					</text>
+					<text id="referral_details/instructions_label-label">
+						<value>NEED SOMETHING HERE TO CLOSE OUT REFERRALS.</value>
+					</text>
+					<text id="vaccines-label">
+						<value>Vaccins</value>
+					</text>
+					<text id="vaccines/intro_label-label">
+						<value>Maintenant je vais &#233;valuer o&#249; vous &#234;tes avec les vaccins recommand&#233;s.
+
+AC: veuillez v&#233;rifier le carnet de sant&#233; pour savoir si elle a effectu&#233; les vaccins correctement</value>
+						<value form="image">jr://file/commcare/image/data/vaccines/intro_label.png</value>
+					</text>
+					<text id="vaccines/taken_tetanus-label">
+						<value>Est-ce que vous avez effectu&#233; vos vaccins antitetanique ?</value>
+						<value form="image">jr://file/commcare/image/data/vaccines/taken_tetanus.png</value>
+					</text>
+					<text id="vaccines/tetanus_advice_label-label">
+						<value>AC: Conseiller la femme d'effectuer et de finir ses vaccinations antitetanique pour proteger contre la tetanos.</value>
+						<value form="image">jr://file/commcare/image/data/vaccines/tetanus_advice_label.png</value>
+					</text>
+					<text id="vaccines/vat_1-label">
+						<value>VAT1</value>
+						<value form="image">jr://file/commcare/image/data/vaccines/vat_1.png</value>
+					</text>
+					<text id="vaccines/vat_2-label">
+						<value>VAT2 (1 mois apr&#232;s VAT1)</value>
+						<value form="image">jr://file/commcare/image/data/vaccines/vat_2.png</value>
+					</text>
+					<text id="vaccines/vat_3-label">
+						<value>VAT3 (6 mois apr&#232;s VAT2)</value>
+						<value form="image">jr://file/commcare/image/data/vaccines/vat_3.png</value>
+					</text>
+					<text id="vaccines/vat_4-label">
+						<value>VAT4 (1 an apr&#232;s VAT3)</value>
+						<value form="image">jr://file/commcare/image/data/vaccines/vat_4.png</value>
+					</text>
+					<text id="vaccines/vat_5-label">
+						<value>VAT5 (1 an apr&#232;s VAT4)</value>
+						<value form="image">jr://file/commcare/image/data/vaccines/vat_5.png</value>
+					</text>
+					<text id="vaccines/closing_label-label">
+						<value>GENERAL ADVICE ABOUT VACCINES?</value>
+					</text>
+					<text id="behavior-label">
+						<value>Comportement</value>
+					</text>
+					<text id="behavior/intro_label-label">
+						<value>INTRO HERE</value>
+					</text>
+					<text id="a_moustiquaire-label">
+						<value>Est-ce que vous avez une moustiquaire impregn&#233;e?</value>
+						<value form="image">jr://file/commcare/image/data/no_referral/a_moustiquaire.jpg</value>
+						<value form="audio">jr://file/commcare/audio/data/comportement/a_moustiquaire.mp3</value>
+					</text>
+					<text id="a_moustiquaire-oui-label">
+						<value>Oui</value>
+						<value form="audio">jr://file/commcare/audio/data/comportement/a_moustiquaire-oui.mp3</value>
+					</text>
+					<text id="a_moustiquaire-non-label">
+						<value>Non</value>
+						<value form="audio">jr://file/commcare/audio/data/comportement/a_moustiquaire-non.mp3</value>
+					</text>
+					<text id="moustiquaire-label">
+						<value>Est-ce que vous dormez en dessous de votre moustiquaire ?</value>
+						<value form="image">jr://file/commcare/image/data/no_referral/dort_sous_moustiquaire.jpg</value>
+						<value form="audio">jr://file/commcare/audio/data/comportement/dort_sous_moustiquaire.mp3</value>
+					</text>
+					<text id="moustiquaire-oui-label">
+						<value>Oui</value>
+						<value form="audio">jr://file/commcare/audio/data/comportement/dort_sous_moustiquaire-oui.mp3</value>
+					</text>
+					<text id="moustiquaire-non-label">
+						<value>Non</value>
+						<value form="audio">jr://file/commcare/audio/data/comportement/dort_sous_moustiquaire-non.mp3</value>
+					</text>
+					<text id="conseils_moustiquaire-label">
+						<value>bednet_advice</value>
+					</text>
+					<text id="moustiquaire_label-label">
+						<value>AC, expliquez &#224; la femme l'importance de dormir en dessous d'une moustiquaire :
+
+La femme enceinte doit dormir en dessous d'une moustiquaire toutes les nuits, toute l'ann&#233;e avec toute sa famille afin d'&#233;viter le palu. </value>
+						<value form="audio">jr://file/commcare/audio/data/comportement/conseils_moustiquaire/moustiquaire_label.mp3</value>
+					</text>
+					<text id="conseils_moustiquaire/moustiquaire_label_2-label">
+						<value>AC, dites &#224; la femme d'aller en chercher un &#224; la case ou au poste de sant&#233; pendant la prochaine visite. </value>
+						<value form="audio">jr://file/commcare/audio/data/comportement/conseils_moustiquaire/moustiquaire_label_2.mp3</value>
+						<value form="image">jr://file/commcare/image/data/behavior/bednet_advice/bednet_label_2.png</value>
+					</text>
+					<text id="behavior/taken_malaria_meds-label">
+						<value>Avez-vous pris votre comprim&#233; contre le paludisme?</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_2/anti_palu.mp3</value>
+						<value form="image">jr://file/commcare/image/data/behavior/taken_malaria_meds.png</value>
+					</text>
+					<text id="behavior/dosage_malaria_meds-label">
+						<value>Avez-vous pris la dose suivante contre le paludisme?</value>
+						<value form="image">jr://file/commcare/image/data/behavior/dosage_malaria_meds.png</value>
+					</text>
+					<text id="behavior/dosage_malaria_meds-tpi_1-label">
+						<value>TPI1</value>
+					</text>
+					<text id="behavior/dosage_malaria_meds-tpi_2-label">
+						<value>TPI2</value>
+					</text>
+					<text id="behavior/dosage_malaria_meds-tpi_3-label">
+						<value>TPI3</value>
+					</text>
+					<text id="behavior/advice_taken_malaria_meds-label">
+						<value>AC, encouragez la femme de continuer de prendre ses comprim&#233;s de SP que le prestataire lui donnera pour la prot&#233;ger contre le paludisme</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_2/conseil_anti_palu_oui.mp3</value>
+						<value form="image">jr://file/commcare/image/data/behavior/advice_taken_malaria_meds.png</value>
+					</text>
+					<text id="behavior/advice_not_taken_malaria_meds-label">
+						<value>AC, encouragez la femme &#224; chercher  ses comprim&#233;s anti-palud&#233;en  pour la prot&#233;ger contre le paludisme</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_2/copy-1-of-conseil_anti_palu_non.mp3</value>
+						<value form="image">jr://file/commcare/image/data/behavior/advice_not_taken_malaria_meds.png</value>
+					</text>
+					<text id="conseils_ptme/depistee_vih-label">
+						<value>Est-ce que vous avez &#233;t&#233; d&#233;pist&#233;e pour le VIH ?</value>
+						<value form="image">jr://file/commcare/image/data/no_referral/conseils_ptme/depistee_vih.png</value>
+						<value form="audio">jr://file/commcare/audio/data/comportement/depistee_vih.mp3</value>
+					</text>
+					<text id="conseils_ptme/depistee_vih-non-label">
+						<value>Non</value>
+						<value form="audio">jr://file/commcare/audio/data/comportement/depistee_vih-non.mp3</value>
+					</text>
+					<text id="conseils_ptme/message_1-label">
+						<value>AC: Conseiller la femme d'effectuer le depistage pour le VIH  pour connaitre son statut et commencer le plus rapidement possible le traitement pour proteger le b&#233;b&#233;</value>
+						<value form="audio">jr://file/commcare/audio/data/comportement/message_1.mp3</value>
+						<value form="image">jr://file/commcare/image/data/behavior/advice_hiv.png</value>
+					</text>
+					<text id="behavior/taken_anemia_meds-label">
+						<value>Avez-vous pris de m&#233;dicament pour lutter contre l'an&#233;mie ?</value>
+						<value form="image">jr://file/commcare/image/data/behavior/taken_anemia_meds.png</value>
+					</text>
+					<text id="behavior/taken_anemia_meds-yes-label">
+						<value>Oui</value>
+					</text>
+					<text id="behavior/taken_anemia_meds-no-label">
+						<value>Non</value>
+					</text>
+					<text id="behavior/advice_not_taken_anemia_meds-label">
+						<value>AC, encouragez la femme de continuer de prendre ses comprim&#233;s que le prestataire lui donnera pour la prot&#233;ger contre l'an&#233;mie</value>
+						<value form="image">jr://file/commcare/image/data/behavior/advice_not_taken_anemia_meds.png</value>
+					</text>
+					<text id="behavior/quantity_anemia_pills-label">
+						<value>Combien de comprim&#233;s vous avez pris ?</value>
+						<value form="image">jr://file/commcare/image/data/behavior/quantity_anemia_pills.png</value>
+					</text>
+					<text id="behavior/quantity_anemia_pills-30_pills-label">
+						<value>30 comprim&#233;s (1 mois)</value>
+					</text>
+					<text id="behavior/quantity_anemia_pills-other_amount-label">
+						<value>Autre chiffre</value>
+					</text>
+					<text id="behavior/prompt_for_other_amount-label">
+						<value>AC: demander &#224; la femme d'expliquer si autre chiffre</value>
+						<value form="image">jr://file/commcare/image/data/behavior/prompt_for_other_amount.png</value>
+					</text>
+					<text id="behavior/taken_deworming_meds-label">
+						<value>Avez-vous pris de m&#233;dicament pour le d&#233;parasitage ?</value>
+						<value form="image">jr://file/commcare/image/data/behavior/taken_deworming_meds.png</value>
+					</text>
+					<text id="preparation-label">
+						<value>Pr&#233;parations</value>
+					</text>
+					<text id="preparation/intro-label">
+						<value>AC veuillez conseiller &#224; la femme de preparer son plan d'accouchement en lui demandant les questions suivantes:
+&gt;O&#249; est ce que vous allez accoucher ?
+&gt;Qui va assurer l'accouchement?
+&gt;A-t- elle eu suffisamment d'&#233;pargne pour le transport vers le CSB?
+&gt;A qui elle va confier ses enfants quand elle accouchera?
+&gt;Y-a-t il suffisamment de nourriture pendant cette p&#233;riode?
+&gt;Quel est le moyen de transport &#224; utiliser pour rejoindre le centre de sant&#233;?
+&gt;Est ce que la femme a pr&#233;vu des plans si jamais il y a complications:
+         -pour rejoindre les centres de sant&#233; de reference
+         -les arrangements divers 
+         -le group sanguin/le donneur de sang
+</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/intro.mp3</value>
+					</text>
+					<text id="statut_kit_accouchement-label">
+						<value>Avez-vous votre kit d'accouchement en place ?</value>
+						<value form="image">jr://file/commcare/image/data/statut_kit_accouchement.png</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/statut_kit_accouchement.mp3</value>
+					</text>
+					<text id="statut_kit_accouchement-Oui-label">
+						<value>Oui</value>
+						<value form="audio">jr://file/commcare/audio/data/statut_kit_accouchement-Oui.mp3</value>
+					</text>
+					<text id="statut_kit_accouchement-Non-label">
+						<value>Non</value>
+						<value form="audio">jr://file/commcare/audio/data/statut_kit_accouchement-Non.mp3</value>
+					</text>
+					<text id="preparation/identified_delivery_location-label">
+						<value>Avez-vous identifi&#233; un lieu d'accouchement ? Lequel ?</value>
+						<value form="image">jr://file/commcare/image/data/preparation/identified_delivery_location.png</value>
+					</text>
+					<text id="preparation/identified_delivery_location-with_matrones-label">
+						<value>Chez les matrones</value>
+					</text>
+					<text id="preparation/identified_delivery_location-health_center-label">
+						<value>Centre de sant&#233;</value>
+					</text>
+					<text id="preparation/identified_delivery_location-referral_hospital-label">
+						<value>H&#244;pital de r&#233;f&#233;rence</value>
+					</text>
+					<text id="preparation/identified_delivery_location-domicile-label">
+						<value>Domicile</value>
+					</text>
+					<text id="preparation/identified_delivery_location-no-label">
+						<value>Non / Ne sait pas encore</value>
+					</text>
+					<text id="preparation/reason_not_csb-label">
+						<value>Pourquoi avez-vous choisi d'accoucher au niveau de la case?</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/pourquoi_case.mp3</value>
+						<value form="image">jr://file/commcare/image/data/preparation/reason_not_csb.png</value>
+					</text>
+					<text id="preparation/reason_not_csb-lack_transport-label">
+						<value>Manque de transport</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/pourquoi_case-manque_transport.mp3</value>
+					</text>
+					<text id="preparation/reason_not_csb-family_influence-label">
+						<value>Influenc&#233;e par la famille</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/pourquoi_case-influence_famille.mp3</value>
+					</text>
+					<text id="preparation/reason_not_csb-proximity_home-label">
+						<value>Proximit&#233; de la maison</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/pourquoi_case-proximite_maison.mp3</value>
+					</text>
+					<text id="preparation/reason_not_csb-lack_funds-label">
+						<value>Manque de fonds</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/pourquoi_case-manque_fonds.mp3</value>
+					</text>
+					<text id="preparation/reason_not_csb-trust_matrone-label">
+						<value>Confiance &#224; la matrone</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/pourquoi_case-confiance_matrone.mp3</value>
+					</text>
+					<text id="preparation/reason_not_csb-historical_preference-label">
+						<value>Elle a toujours accouch&#233; &#224; la case avant</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/pourquoi_case-toujours_accouche_case.mp3</value>
+					</text>
+					<text id="preparation/reason_not_csb-other-label">
+						<value>Autre</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/pourquoi_case-autre.mp3</value>
+					</text>
+					<text id="preparation/advice_advantage_csb_delivery-label">
+						<value>AC: Donner des conseils sur les avantages de l'accouchement au centre de sant&#233;
+
+-L'accouchement sera assist&#233; par une personne form&#233;e /qualifi&#233;
+-Le personnel de sant&#233;   reconnait  les signes de danger lors de l'accouchement  et les eventuels complications apr&#232;s l'accouchement
+- Le personnel de sant&#233; peut conseiller la m&#232;re 
+- Le centre de sant&#233; dispose des medicaments et des materiels  essetiels pour effectuer l'accouchement
+- Prise ne charge imm&#233;diate et vaccination du nouveau n&#233;
+- La d&#233;claration de naissance est effectu&#233;( l'enfant aura sa copie d'acte de naissance)
+</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/dangers_accoucher_maison.mp3</value>
+						<value form="image">jr://file/commcare/image/data/preparation/advice_advantage_csb_delivery.png</value>
+					</text>
+					<text id="accompagnement-label">
+						<value>Qui va vous accompagner ?</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/accompagnement.mp3</value>
+						<value form="image">jr://file/commcare/image/data/preparation/accompagnement.jpg</value>
+					</text>
+					<text id="preparation/delivery_accompaniment-constraintMsg">
+						<value>Ne peux pas choisir "ne sait pas" + un autre choix. </value>
+					</text>
+					<text id="preparation/delivery_accompaniment-husband-label">
+						<value>Mari</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/accompagnement-mari.mp3</value>
+					</text>
+					<text id="accompagnement-Famille-label">
+						<value>Famille</value>
+						<value form="audio">jr://file/commcare/audio/data/accompagnement-Famille.mp3</value>
+					</text>
+					<text id="accompagnement-Matrone-label">
+						<value>Agent communautaire</value>
+						<value form="audio">jr://file/commcare/audio/data/accompagnement-Matrone.mp3</value>
+					</text>
+					<text id="preparation/delivery_accompaniment-matrone-label">
+						<value>Matrone</value>
+					</text>
+					<text id="accompagnement-Autre-label">
+						<value>Other</value>
+						<value form="audio">jr://file/commcare/audio/data/accompagnement-Autre.mp3</value>
+					</text>
+					<text id="preparation/delivery_accompaniment-do_not_know-label">
+						<value>Ne sait pas</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/accompagnement-sait_pas.mp3</value>
+					</text>
+					<text id="moyen_transport-label">
+						<value>Quel moyen de transport vous allez prendre pour l'accouchement ?</value>
+						<value form="image">jr://file/commcare/image/data/moyen_transport.jpg</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/moyen_transport.mp3</value>
+					</text>
+					<text id="moyen_transport-ambulance-label">
+						<value>Ambulance</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/moyen_transport-ambulance.mp3</value>
+					</text>
+					<text id="preparation/transport_type-horsecart-label">
+						<value>Charette</value>
+					</text>
+					<text id="preparation/transport_type-car-label">
+						<value>Voiture</value>
+					</text>
+					<text id="preparation/transport_type-boat-label">
+						<value>Pirogue</value>
+					</text>
+					<text id="preparation/transport_type-bike-label">
+						<value>Bicyclette</value>
+					</text>
+					<text id="preparation/transport_type-moto-label">
+						<value>Motocyclette</value>
+					</text>
+					<text id="preparation/transport_type-brancard-label">
+						<value>Brancard (de fortune)</value>
+					</text>
+					<text id="preparation/transport_type-other-label">
+						<value>Autre</value>
+					</text>
+					<text id="preparation/encouragement_label-label">
+						<value>Pour l'AC: 
+
+Feliciter la femme pour avoir fait ses CPNs et encouragez-la &#224; continuer ses pr&#233;parations pour avoir un bon accouchement.
+
+</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/continue_label.mp3</value>
+						<value form="image">jr://file/commcare/image/data/preparation/encouragement_label.jpg</value>
+					</text>
+					<text id="closing_label-label">
+						<value>ADD SOMETHING HERE</value>
+					</text>
+				</translation>
+				<translation lang="mlg">
+					<text id="intro_label-label">
+						<value>Daty : <output value="/data/date_follow_up"/>
+
+Vehivavy bevohoka : <output value="/data/current_gestational_period"/> mois
+
+Daty nahatongavan'ny fotoana farany : <output value="/data/prev_lmp"/>
+
+Vinavinan'ny daty hahaterahana : <output value="/data/edd"/></value>
+					</text>
+					<text id="verify_referral-label">
+						<value>Nalefa hanao fizaham-pahasalamana ianao ny <output value="format-date(date(/data/prev_date_referral), '%e/%n/%Y')"/>.Nandeha tany ve ianao?
+</value>
+						<value form="image">jr://file/commcare/image/data/orienter_cpn.jpg</value>
+						<value form="audio">jr://file/commcare/audio/data/check_orientation_cpn.mp3</value>
+					</text>
+					<text id="verify_referral-yes-label">
+						<value>Eny</value>
+						<value form="audio">jr://file/commcare/audio/data/check_orientation_cpn-oui.mp3</value>
+					</text>
+					<text id="verify_referral-no-label">
+						<value>Tsia</value>
+						<value form="audio">jr://file/commcare/audio/data/check_orientation_cpn-non.mp3</value>
+					</text>
+					<text id="advice_adherence_referral-label">
+						<value>advice_adherence_referral</value>
+						<value form="image">jr://file/commcare/image/data/advice_adherence_referral.jpg</value>
+					</text>
+					<text id="respected_pnc_appt-label">
+						<value>Tokony nisafo  ianao taminn'ny  <output value="format-date(date(/data/prev_date_next_appt), '%e/%n/%Y')"/>. tonga tany ve ianao ?</value>
+						<value form="image">jr://file/commcare/image/data/respecte_CPN_rv.jpg</value>
+						<value form="audio">jr://file/commcare/audio/data/respecte_CPN_rv.mp3</value>
+					</text>
+					<text id="respected_pnc_appt-yes-label">
+						<value>Eny</value>
+						<value form="audio">jr://file/commcare/audio/data/respecte_CPN_rv-oui.mp3</value>
+					</text>
+					<text id="respected_pnc_appt-no-label">
+						<value>Tsia</value>
+						<value form="audio">jr://file/commcare/audio/data/respecte_CPN_rv-non.mp3</value>
+					</text>
+					<text id="reason_missed_pnc-label">
+						<value>Nahoana ianao no tsy tonga tamin'io fotoana io ?</value>
+						<value form="image">jr://file/commcare/image/data/reason_missed_pnc.png</value>
+					</text>
+					<text id="pnc_1-label">
+						<value>FISAFOANA 1</value>
+					</text>
+					<text id="date_cpn1-label">
+						<value>Nanao ny fisafoana voalohany ve ianao ? ( Famaritana : fisafoana natao tamin'ny 3 volana voalohany)</value>
+						<value form="image">jr://file/commcare/image/data/date_cpn1.png</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_1/eu_cpn1.mp3</value>
+					</text>
+					<text id="pnc_1/had_pnc1-yes-label">
+						<value>Eny</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_1/eu_cpn1-oui.mp3</value>
+					</text>
+					<text id="pnc_1/had_pnc1-no-label">
+						<value>Tsia</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_1/eu_cpn1-non.mp3</value>
+					</text>
+					<text id="pnc_1/date_pnc1-label">
+						<value>Datin'ny fisafoana voalohany :</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_1/date_cpn1.mp3</value>
+						<value form="image">jr://file/commcare/image/data/pnc_1/date_pnc1.png</value>
+					</text>
+					<text id="pnc_1/date_pnc1-constraintMsg">
+						<value>Cette date d&#233;passe la p&#233;riode de la grossesse de la femme. </value>
+					</text>
+					<text id="pnc_2-label">
+						<value>FISAFOANA faha 2</value>
+					</text>
+					<text id="pnc_2/had_pnc2-label">
+						<value>Efa nanao ny fisafoana faha 2 ve ianao? ( teo anelanelan'ny faha 5 sy 6 volan'ny fitondrana vohoka )</value>
+						<value form="image">jr://file/commcare/image/data/cpn_2/eu_cpn2.png</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_2/eu_cpn2.mp3</value>
+					</text>
+					<text id="pnc_2/had_pnc2-yes-label">
+						<value>Eny</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_2/eu_cpn2-oui.mp3</value>
+					</text>
+					<text id="pnc_2/had_pnc2-no-label">
+						<value>Tsia</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_2/eu_cpn2-non.mp3</value>
+					</text>
+					<text id="date_CPN2-label">
+						<value>Daty ny fisafoana faha 2 :</value>
+						<value form="audio">jr://file/commcare/audio/data/date_CPN2.mp3</value>
+						<value form="image">jr://file/commcare/image/data/pnc_2/date_pnc2.png</value>
+					</text>
+					<text id="pnc_3-label">
+						<value>FISAFOANA faha 3</value>
+					</text>
+					<text id="pnc_3/had_pnc3-label">
+						<value>Efa nanao ny fisafoana faha3ve ianao?( fisafoana atao eo anelanelan'ny faha 7 sy faha 8 volana ny vohoka)</value>
+						<value form="image">jr://file/commcare/image/data/cpn_3/eu_cpn3.png</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_3/eu_cpn3.mp3</value>
+					</text>
+					<text id="pnc_3/had_pnc3-yes-label">
+						<value>Eny</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_3/eu_cpn3-oui.mp3</value>
+					</text>
+					<text id="pnc_3/had_pnc3-no-label">
+						<value>Tsia</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_3/eu_cpn3-non.mp3</value>
+					</text>
+					<text id="date_CPN3-label">
+						<value>Daty ny fisafoana faha 3 :</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_3/date_CPN3.mp3</value>
+					</text>
+					<text id="pnc_3/date_pnc3-constraintMsg">
+						<value>Cette date d&#233;passe la p&#233;riode de la grossesse de la femme. </value>
+						<value form="image">jr://file/commcare/image/constraintMsg/data/pnc_3/date_pnc3.png</value>
+					</text>
+					<text id="pnc_3/breastfeeding_advice-label">
+						<value>AC: Omeo torohevitra momba ny fampinonoana avy hatrany raha vao teraka ny reny hahazoan'ny zanany tombotsoa amin'ny ranombatsy. Hazavao fa tsy tokony ariana ny ranombatsy fa omena ny zaza vao teraka.
+</value>
+						<value form="image">jr://file/commcare/image/data/pnc_3/breastfeeding_advice.jpg</value>
+					</text>
+					<text id="pnc_4-label">
+						<value>FISAFOANA faha 4</value>
+					</text>
+					<text id="pnc_4/had_pnc4-label">
+						<value>Efa nanao ny fisafoana faha telo ve ianao ? ( Famaritana : fisafoana mandritra ny faha 9 volan'ny fitondrana vohoka )</value>
+						<value form="image">jr://file/commcare/image/data/cpn_4/eu_cpn4.png</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_4/eu_cpn4.mp3</value>
+					</text>
+					<text id="pnc_4/had_pnc4-yes-label">
+						<value>Eny</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_4/eu_cpn4-oui.mp3</value>
+					</text>
+					<text id="pnc_4/had_pnc4-no-label">
+						<value>Tsia</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_4/eu_cpn4-non.mp3</value>
+					</text>
+					<text id="date_CPN4-label">
+						<value>Datin'ny fisafoana faha efatra</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_4/date_CPN4.mp3</value>
+					</text>
+					<text id="pnc_4/date_pnc4-constraintMsg">
+						<value>Cette date d&#233;passe la p&#233;riode de la grossesse de la femme. </value>
+						<value form="image">jr://file/commcare/image/constraintMsg/data/pnc_4/date_pnc4.png</value>
+					</text>
+					<text id="pnc_4/breastfeeding_advice-label">
+						<value>AC: Omeo torohevitra momba ny fampinonoana avy hatrany raha vao teraka ny reny hahazoan'ny zanany tombotsoa amin'ny ranombatsy. Hazavao fa tsy tokony ariana ny ranombatsy fa omena ny zaza vao teraka.
+</value>
+						<value form="image">jr://file/commcare/image/data/pnc_4/breastfeeding_advice.jpg</value>
+					</text>
+					<text id="have_next_appointment-label">
+						<value>Mbola manana fotoana fisafoana amin'ny manaraka ve ianao ?</value>
+						<value form="audio">jr://file/commcare/audio/data/prochain_RV_statut.mp3</value>
+						<value form="image">jr://file/commcare/image/data/prochain_RV_statut.jpg</value>
+					</text>
+					<text id="have_next_appointment-yes-label">
+						<value>Eny</value>
+						<value form="audio">jr://file/commcare/audio/data/prochain_RV_statut-oui.mp3</value>
+					</text>
+					<text id="have_next_appointment-no-label">
+						<value>Tsia</value>
+						<value form="audio">jr://file/commcare/audio/data/prochain_RV_statut-non.mp3</value>
+					</text>
+					<text id="date_next_appointment-label">
+						<value>Datin'ny fotoana manaraka :</value>
+					</text>
+					<text id="date_next_appointment-constraintMsg">
+						<value>La date doit &#234;tre apr&#232;s aujourd'hui mais avant la date estim&#233;e de l'accouchment</value>
+						<value form="image">jr://file/commcare/image/constraintMsg/data/date_next_appointment.png</value>
+					</text>
+					<text id="missed_pnc_advice-label">
+						<value>AC, hazavao amin'ilay vehivavy ny maha zava-dehibe ny fisafoana eny amin'ny tobimpahasalamana.
+
+- Fizah&#224;na ny fihetsika sy ny fitombon&#8217;ny zaza ao an-kibo.
+- Fitiliana sy fitsaboana ny fahasarotana mety hitranga;
+- Fanaovana vaksiny ho fiarovana ny reny sy ny zaza amin&#8217;ny tetanosy raha mbola tsy vita izany;
+- Fanomezana fanafody fiarovana amin&#8217;ny tazomoka sy fisorohana ny tsy fahampian-dr&#224; ary fanal&#224;na kankana;
+- Fanarahamaso ny fitomboany;
+- Toro-hevitra ara-pahasalamana sy ara-tsakafo, torohevitra momba ny fampinonoana;
+- Faminavinana izay mety ho fizotra ny fiterahana ka ahazoana mamariparitra ny toerana hiterahana sy ny fanomanana ny enti-manana amin&#8217;izany;
+- Fitiliana ny otrik&#8217;aretina VIH, ny farasisa &#8230;.
+- Fanomezana fanafody sahaza misoroka ny fifindran&#8217;ny farasisa na ny VIH amin&#8217;ny zaza ao am-bohoka</value>
+					</text>
+					<text id="general_pnc_advice-label">
+						<value>AC: Tontosao ny fisafoana in-4 farafahakeliny mandritra ny fitondrana vohoka.</value>
+						<value form="image">jr://file/commcare/image/data/general_pnc_advice.jpg</value>
+					</text>
+					<text id="congratulate_adherence_label-label">
+						<value>AC, Ilazao ilay vehivavy fa tsara ny hanohizany manao fisafoana hanaraha-maso ny fahasalamany sy ny zaza ao am-bohoka. </value>
+						<value form="audio">jr://file/commcare/audio/data/question1.mp3</value>
+						<value form="image">jr://file/commcare/image/data/congratulate_adherence_label.png</value>
+					</text>
+					<text id="danger_signs-label">
+						<value>Fambara loza mandritra ny fitondrana vohoka</value>
+					</text>
+					<text id="danger_signs/knows_danger_signs-label">
+						<value>Mahafantatra  fambara loza amin'ny vehivavy bevohoka ve izy?</value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/knows_danger_signs.png</value>
+					</text>
+					<text id="danger_signs/danger_signs_overview-label">
+						<value>AC ampahafantaro ireto fambara loza amin'nyfitondrana vohoka ireto ary ilazao ilay vehivavy fa raha vao misy fambara loza na dia iray monja aza, dia tokony handeha any amin' ny tobimpahasalamana akaiky azy farany izay haingana izy.
+- Mandoa tsy mijanona;
+- Mafana hoditra na mahatsiaro mangatsiaka be;
+- Marary an-doha na marary ambavafo;
+- Hatsatra na vony ny tanana;
+- Misy r&#224; na rano na tsiranoka mamofona maimbo mivoaka ny fivaviana;
+- Mandeha r&#224; be mivoaka ny fivaviana;
+- Mivonto ny tongotra na ny tarehy na ny tanana;
+- Marary lamosina na ny andohavania;
+- Mifanintona;
+- Tsy mihetsika ny zaza ao am-bohoka;
+- Misy ratra na bay eo amin&#8217;ny fivaviana;
+- Nisy namono na nandratra;
+- Tsy mitombo ny lanja.</value>
+					</text>
+					<text id="danger_signs/assessment_intro-label">
+						<value>Misy fambara loza amin'ny vehivavy bevohoka ve izy?</value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/assessment_intro.jpg</value>
+					</text>
+					<text id="danger_signs/intractable_vomitting-label">
+						<value>Mandoa tsy mijanona</value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/intractable_vomitting.jpg</value>
+					</text>
+					<text id="danger_signs/fever-label">
+						<value>Mafana hoditra na mahatsiaro mangatsiaka be;</value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/fever.jpg</value>
+					</text>
+					<text id="danger_signs/piercing_headache-label">
+						<value>Marary an-doha na marary ambavafo
+</value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/piercing_headache.jpg</value>
+					</text>
+					<text id="danger_signs/hands_palor-label">
+						<value>Hatsatra na vony ny tanana</value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/hands_palor.jpg</value>
+					</text>
+					<text id="danger_signs/unusual_vaginal_discharge-label">
+						<value>Misy r&#224; na rano na tsiranoka mamofona maimbo mivoaka ny fivaviana</value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/unusual_vaginal_discharge.jpg</value>
+					</text>
+					<text id="danger_signs/vaginal_bleeding-label">
+						<value>Mandeha r&#224; be mivoaka ny fivaviana</value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/vaginal_bleeding.jpg</value>
+					</text>
+					<text id="danger_signs/swollen_extremities-label">
+						<value>Mivonto ny tongotra na ny tarehy na ny tanana;
+</value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/swollen_extremities.jpg</value>
+					</text>
+					<text id="danger_signs/lumbar_pelvic_pain-label">
+						<value>Marary lamosina na ny andohavania</value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/lumbar_pelvic_pain.png</value>
+					</text>
+					<text id="danger_signs/intense_abdominal_pain-label">
+						<value>Marary be ny ambavafo</value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/intense_abdominal_pain.png</value>
+					</text>
+					<text id="danger_signs/suffered_aggression-label">
+						<value>Nisy namono na nandratra</value>
+					</text>
+					<text id="danger_signs/wound_at_genitals-label">
+						<value>Misy ratra na bay eo amin&#8217;ny fivaviana</value>
+					</text>
+					<text id="danger_signs/immobile_fetus-label">
+						<value>Tsy mihetsika ny zaza ao am-bohoka</value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/immobile_fetus.png</value>
+					</text>
+					<text id="danger_signs/convulsions-label">
+						<value>Mifanintona</value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/convulsions.png</value>
+					</text>
+					<text id="danger_signs/no_weight_gain-label">
+						<value>Tsy mitombo ny lanja</value>
+						<value form="image">jr://file/commcare/image/data/danger_signs/no_weight_gain.png</value>
+					</text>
+					<text id="send_for_referral-label">
+						<value>Misy fambara loza amin'ny fitondrana vohoka ity vehivavy ity ary tokony halefa avy hatrany eny amin'ny tobimpahasalamana . Manaiky ny handeha ho any ve izy?</value>
+						<value form="image">jr://file/commcare/image/data/orienter_cpn.jpg</value>
+						<value form="audio">jr://file/commcare/audio/data/orienter_cpn.mp3</value>
+					</text>
+					<text id="send_for_referral-yes-label">
+						<value>Eny</value>
+						<value form="audio">jr://file/commcare/audio/data/orienter_cpn-oui.mp3</value>
+					</text>
+					<text id="referral_details-label">
+						<value>Fandefasana</value>
+					</text>
+					<text id="referral_details/accompanying_support-label">
+						<value>Iza no manaraka ano any?</value>
+						<value form="image">jr://file/commcare/image/data/reference_details/accompagnement.jpg</value>
+						<value form="audio">jr://file/commcare/audio/data/reference_details/accompagnement.mp3</value>
+					</text>
+					<text id="referral_details/accompanying_support-husband-label">
+						<value>Vady</value>
+						<value form="audio">jr://file/commcare/audio/data/reference_details/accompagnement-mari.mp3</value>
+					</text>
+					<text id="referral_details/accompanying_support-godmother-label">
+						<value>Mpiantoka</value>
+						<value form="audio">jr://file/commcare/audio/data/reference_details/accompagnement-marraine.mp3</value>
+					</text>
+					<text id="referral_details/accompanying_support-family-label">
+						<value>Fianakaviana</value>
+						<value form="audio">jr://file/commcare/audio/data/reference_details/accompagnement-famille.mp3</value>
+					</text>
+					<text id="referral_details/accompanying_support-matrone-label">
+						<value>Reninjaza</value>
+						<value form="audio">jr://file/commcare/audio/data/reference_details/accompagnement-matrone.mp3</value>
+					</text>
+					<text id="referral_details/accompanying_support-other-label">
+						<value>Hafa</value>
+						<value form="audio">jr://file/commcare/audio/data/reference_details/accompagnement-autre.mp3</value>
+					</text>
+					<text id="referral_details/accompanying_support-noone-label">
+						<value>Tsy misy</value>
+					</text>
+					<text id="referral_details/instructions_label-label">
+						<value>NEED SOMETHING HERE TO CLOSE OUT REFERRALS.</value>
+					</text>
+					<text id="vaccines-label">
+						<value>Vaksiny</value>
+					</text>
+					<text id="vaccines/intro_label-label">
+						<value>Andeha ary hamarinina ny fahavitanao vaksiny raha oharina amin'ny vaksiny tokony atao
+
+AC: Jereo ny karinempahasalamana ary hamarino raha vita VAT ara-dal&#224;na izy</value>
+						<value form="image">jr://file/commcare/image/data/vaccines/intro_label.png</value>
+					</text>
+					<text id="vaccines/taken_tetanus-label">
+						<value>Efa nanao VAT ve ianao?</value>
+						<value form="image">jr://file/commcare/image/data/vaccines/taken_tetanus.png</value>
+					</text>
+					<text id="vaccines/tetanus_advice_label-label">
+						<value>AC: torohy hevitra ny reny hanao vaksiny VAT sy hamita izany hatramin'ny farany hiaro azy sy ny zanany amin'ny tetanosy</value>
+						<value form="image">jr://file/commcare/image/data/vaccines/tetanus_advice_label.png</value>
+					</text>
+					<text id="vaccines/vat_1-label">
+						<value>VAT1</value>
+						<value form="image">jr://file/commcare/image/data/vaccines/vat_1.png</value>
+					</text>
+					<text id="vaccines/vat_2-label">
+						<value>VAT2 (1 volana ao aorian'ny  VAT1)</value>
+						<value form="image">jr://file/commcare/image/data/vaccines/vat_2.png</value>
+					</text>
+					<text id="vaccines/vat_3-label">
+						<value>VAT3 (6 volana ao aorian'ny VAT2)</value>
+						<value form="image">jr://file/commcare/image/data/vaccines/vat_3.png</value>
+					</text>
+					<text id="vaccines/vat_4-label">
+						<value>VAT4 (1 taona ao aorian'ny   VAT3)</value>
+						<value form="image">jr://file/commcare/image/data/vaccines/vat_4.png</value>
+					</text>
+					<text id="vaccines/vat_5-label">
+						<value>VAT5 (1 taona ao aorian'ny VAT4)</value>
+						<value form="image">jr://file/commcare/image/data/vaccines/vat_5.png</value>
+					</text>
+					<text id="vaccines/closing_label-label">
+						<value>GENERAL ADVICE ABOUT VACCINES?</value>
+					</text>
+					<text id="behavior-label">
+						<value>TOETRA</value>
+					</text>
+					<text id="behavior/intro_label-label">
+						<value>INTRO HERE</value>
+					</text>
+					<text id="a_moustiquaire-label">
+						<value>Manana lay misy odimoka  ve ianao ?</value>
+						<value form="image">jr://file/commcare/image/data/no_referral/a_moustiquaire.jpg</value>
+						<value form="audio">jr://file/commcare/audio/data/comportement/a_moustiquaire.mp3</value>
+					</text>
+					<text id="a_moustiquaire-oui-label">
+						<value>Eny</value>
+						<value form="audio">jr://file/commcare/audio/data/comportement/a_moustiquaire-oui.mp3</value>
+					</text>
+					<text id="a_moustiquaire-non-label">
+						<value>Tsia</value>
+						<value form="audio">jr://file/commcare/audio/data/comportement/a_moustiquaire-non.mp3</value>
+					</text>
+					<text id="moustiquaire-label">
+						<value>Matory anaty lay ve ianao ?</value>
+						<value form="image">jr://file/commcare/image/data/no_referral/dort_sous_moustiquaire.jpg</value>
+						<value form="audio">jr://file/commcare/audio/data/comportement/dort_sous_moustiquaire.mp3</value>
+					</text>
+					<text id="moustiquaire-oui-label">
+						<value>Eny</value>
+						<value form="audio">jr://file/commcare/audio/data/comportement/dort_sous_moustiquaire-oui.mp3</value>
+					</text>
+					<text id="moustiquaire-non-label">
+						<value>Tsia</value>
+						<value form="audio">jr://file/commcare/audio/data/comportement/dort_sous_moustiquaire-non.mp3</value>
+					</text>
+					<text id="conseils_moustiquaire-label">
+						<value>bednet_advice</value>
+					</text>
+					<text id="moustiquaire_label-label">
+						<value>AC, hazavao amin'ilay vehivavy fa ny  vehivavy bevohoka dia tokony matory anaty lay isan'alina, mandritra ny taona  ho fiarovana amin'ny  tazomoka</value>
+						<value form="audio">jr://file/commcare/audio/data/comportement/conseils_moustiquaire/moustiquaire_label.mp3</value>
+					</text>
+					<text id="conseils_moustiquaire/moustiquaire_label_2-label">
+						<value>AC, Asaivo mitady MID farany izay haingana ilay vehivavy bevohoka</value>
+						<value form="audio">jr://file/commcare/audio/data/comportement/conseils_moustiquaire/moustiquaire_label_2.mp3</value>
+						<value form="image">jr://file/commcare/image/data/behavior/bednet_advice/bednet_label_2.png</value>
+					</text>
+					<text id="behavior/taken_malaria_meds-label">
+						<value>Nihinana fanafody miaro amin'ny tazomoka  ve ianao ?</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_2/anti_palu.mp3</value>
+						<value form="image">jr://file/commcare/image/data/behavior/taken_malaria_meds.png</value>
+					</text>
+					<text id="behavior/dosage_malaria_meds-label">
+						<value>Aefa nahazo ny fatra sahaza amin'ny fanafody miaro amin'ny tazomoka ve ianao?</value>
+						<value form="image">jr://file/commcare/image/data/behavior/dosage_malaria_meds.png</value>
+					</text>
+					<text id="behavior/dosage_malaria_meds-tpi_1-label">
+						<value>TPI1</value>
+					</text>
+					<text id="behavior/dosage_malaria_meds-tpi_2-label">
+						<value>TPI2</value>
+					</text>
+					<text id="behavior/dosage_malaria_meds-tpi_3-label">
+						<value>TPI3</value>
+					</text>
+					<text id="behavior/advice_taken_malaria_meds-label">
+						<value>AC, amporisiho ilay vehivavy mba hanohy hihinana ireo fanafody tazo avy any amin'ny tobimpahasalamana  hiaro azy amin'ny tazomoka</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_2/conseil_anti_palu_oui.mp3</value>
+						<value form="image">jr://file/commcare/image/data/behavior/advice_taken_malaria_meds.png</value>
+					</text>
+					<text id="behavior/advice_not_taken_malaria_meds-label">
+						<value>AC, amporisiho ilay vehivavy haka fanafody tazo avy any amin'ny tobimpahasalamana  hiaro azy amin'ny tazomoka
+</value>
+						<value form="audio">jr://file/commcare/audio/data/cpn_2/copy-1-of-conseil_anti_palu_non.mp3</value>
+						<value form="image">jr://file/commcare/image/data/behavior/advice_not_taken_malaria_meds.png</value>
+					</text>
+					<text id="conseils_ptme/depistee_vih-label">
+						<value>Efa nanao fitiliana VIH ve ianao?</value>
+						<value form="image">jr://file/commcare/image/data/no_referral/conseils_ptme/depistee_vih.png</value>
+						<value form="audio">jr://file/commcare/audio/data/comportement/depistee_vih.mp3</value>
+					</text>
+					<text id="conseils_ptme/depistee_vih-non-label">
+						<value>Tsia</value>
+						<value form="audio">jr://file/commcare/audio/data/comportement/depistee_vih-non.mp3</value>
+					</text>
+					<text id="conseils_ptme/message_1-label">
+						<value>AC: torohy hevitra ny reny hanao fitiliana VIH , hahafahana mahafantatra ny toe-batany sy hiarovana ny zaza,</value>
+						<value form="audio">jr://file/commcare/audio/data/comportement/message_1.mp3</value>
+						<value form="image">jr://file/commcare/image/data/behavior/advice_hiv.png</value>
+					</text>
+					<text id="behavior/taken_anemia_meds-label">
+						<value>Efa nihinana FAF ve ianao?</value>
+						<value form="image">jr://file/commcare/image/data/behavior/taken_anemia_meds.png</value>
+					</text>
+					<text id="behavior/taken_anemia_meds-yes-label">
+						<value>Eny</value>
+					</text>
+					<text id="behavior/taken_anemia_meds-no-label">
+						<value>Tsia</value>
+					</text>
+					<text id="behavior/advice_not_taken_anemia_meds-label">
+						<value>AC, amporisiho ilay vehivavy mba hanohy hihinanaFAF avy any amin'ny tobimpahasalamana  hiaro azy amin'ny tsy fahampian-dr&#224;</value>
+						<value form="image">jr://file/commcare/image/data/behavior/advice_not_taken_anemia_meds.png</value>
+					</text>
+					<text id="behavior/quantity_anemia_pills-label">
+						<value>Nihinana katrana / pilina firy ianao?</value>
+						<value form="image">jr://file/commcare/image/data/behavior/quantity_anemia_pills.png</value>
+					</text>
+					<text id="behavior/quantity_anemia_pills-30_pills-label">
+						<value>pilina / katrana 30 (ao anatin'ny iray volana)</value>
+					</text>
+					<text id="behavior/quantity_anemia_pills-other_amount-label">
+						<value>Isa hafa</value>
+					</text>
+					<text id="behavior/prompt_for_other_amount-label">
+						<value>AC : Asaivo manazava ilay vehivavy raha milaza isa hafa</value>
+						<value form="image">jr://file/commcare/image/data/behavior/prompt_for_other_amount.png</value>
+					</text>
+					<text id="behavior/taken_deworming_meds-label">
+						<value>Efa nihinana fanafody kankana ve ianao ?</value>
+						<value form="image">jr://file/commcare/image/data/behavior/taken_deworming_meds.png</value>
+					</text>
+					<text id="preparation-label">
+						<value>Fiomanana amin'ny fiterahana</value>
+					</text>
+					<text id="preparation/intro-label">
+						<value>AC: torohy hevitra hanao drafitra momba ny fiterahana ilay vehivavy ka apetraho aminy ireto fanontaniana ireto:
+
+-Aiza no toerana hiterahana?
+-Iza no olona hampiteraka?
+-Efa nanomana fitaovana ilaina ho an&#8216; ny reny sy ny zaza ve?
+-Efa mametraka tahiry sahaza ho an&#8216; ny fiterahana sy  ny fitaterana andehanana eny  amin&#8216; ny CSB ve? 
+-Iza ireo olona vonona hikarakara ny ankizy sy ho mpiandry trano rehefa mandeha eny amin&#8216; ny CSB hiteraka ny ray aman-dreny? 
+-Ny sakafo ilaina entina  hiteraka ve efa vonona? 
+-Inona ny fitaovam-pitaterana hiton-dra eny amin&#8216; ny tobi-pahasalamana? 
+-Efa miomana amin&#8216; ny hiatrehana fahahiranana ve raha misy ny hame-hana:
+ Fiomanana ho any amin&#8216; ny fanantonana hopitaly lehibe
+ Fandaminana amin&#8216; ny mpiara-monina sy ny manam-pahefana eo an-toerana (Lehiben&#8216; ny Fokontany; ect&#8230;)
+Fanomanana mpanome r&#224; raha sendra ilaina </value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/intro.mp3</value>
+					</text>
+					<text id="statut_kit_accouchement-label">
+						<value>Efa manana fitaovam-piterahana ve ianao ?</value>
+						<value form="image">jr://file/commcare/image/data/statut_kit_accouchement.png</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/statut_kit_accouchement.mp3</value>
+					</text>
+					<text id="statut_kit_accouchement-Oui-label">
+						<value>Eny</value>
+						<value form="audio">jr://file/commcare/audio/data/statut_kit_accouchement-Oui.mp3</value>
+					</text>
+					<text id="statut_kit_accouchement-Non-label">
+						<value>Tsia</value>
+						<value form="audio">jr://file/commcare/audio/data/statut_kit_accouchement-Non.mp3</value>
+					</text>
+					<text id="preparation/identified_delivery_location-label">
+						<value>Efa fantatrao ve ny toerana hiterahanao ? Aiza ?</value>
+						<value form="image">jr://file/commcare/image/data/preparation/identified_delivery_location.png</value>
+					</text>
+					<text id="preparation/identified_delivery_location-with_matrones-label">
+						<value>Any amin'ny reninjaza</value>
+					</text>
+					<text id="preparation/identified_delivery_location-health_center-label">
+						<value>Tobimpahasalamana
+</value>
+					</text>
+					<text id="preparation/identified_delivery_location-referral_hospital-label">
+						<value>Hopitaly lehibe</value>
+					</text>
+					<text id="preparation/identified_delivery_location-domicile-label">
+						<value>Ao an-trano</value>
+					</text>
+					<text id="preparation/identified_delivery_location-no-label">
+						<value>Tsy mbola fantatro</value>
+					</text>
+					<text id="preparation/reason_not_csb-label">
+						<value>Pourquoi avez-vous choisi d'accoucher au niveau de la case?</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/pourquoi_case.mp3</value>
+						<value form="image">jr://file/commcare/image/data/preparation/reason_not_csb.png</value>
+					</text>
+					<text id="preparation/reason_not_csb-lack_transport-label">
+						<value>Tsiy misy fitaterana</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/pourquoi_case-manque_transport.mp3</value>
+					</text>
+					<text id="preparation/reason_not_csb-family_influence-label">
+						<value>Hevitry ny ankohonana</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/pourquoi_case-influence_famille.mp3</value>
+					</text>
+					<text id="preparation/reason_not_csb-proximity_home-label">
+						<value>Akaiky ny fonenana</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/pourquoi_case-proximite_maison.mp3</value>
+					</text>
+					<text id="preparation/reason_not_csb-lack_funds-label">
+						<value>Tsy ampy ny vola</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/pourquoi_case-manque_fonds.mp3</value>
+					</text>
+					<text id="preparation/reason_not_csb-trust_matrone-label">
+						<value>Matoky ny reninjaza</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/pourquoi_case-confiance_matrone.mp3</value>
+					</text>
+					<text id="preparation/reason_not_csb-historical_preference-label">
+						<value>Efa niteraka tany ivelany teo aloha</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/pourquoi_case-toujours_accouche_case.mp3</value>
+					</text>
+					<text id="preparation/reason_not_csb-other-label">
+						<value>Hafa</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/pourquoi_case-autre.mp3</value>
+					</text>
+					<text id="preparation/advice_advantage_csb_delivery-label">
+						<value>AC: Omeo torohevitra momba ny tombotsoa azo amin'ny fiterahana eny amin'ny tobim-pahasalamana ilay vehivavy:
+
+ -Voaofana manokana ny tompon&#8217;andraikitra ary afaka manara-maso sy mandray an-tanana;
+- Mahafantatra ny fambara loza mahakasika ny fiterahana sy ny mety ho olana aorian&#8217;ny fiterahana;
+- Afaka manoro hevitra momba ny vehivavy sy ny zaza vao teraka;
+- Misy ny fitaovana sy ny fanafody  natokana hiatrehana ny fiterahana sy manaraka ny fepetra ilaina ho amin&#8217;izany;
+- Mahazo ny fandraisana an-tanana sy vaksiny avy hatrany ny zaza vao teraka;
+- Vita avy hatrany ny fanambaram-piterahana (kopia).</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/dangers_accoucher_maison.mp3</value>
+						<value form="image">jr://file/commcare/image/data/preparation/advice_advantage_csb_delivery.png</value>
+					</text>
+					<text id="accompagnement-label">
+						<value>Iza no hanaraka ano ?</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/accompagnement.mp3</value>
+						<value form="image">jr://file/commcare/image/data/preparation/accompagnement.jpg</value>
+					</text>
+					<text id="preparation/delivery_accompaniment-constraintMsg">
+						<value>Ne peux pas choisir "ne sait pas" + un autre choix. </value>
+					</text>
+					<text id="preparation/delivery_accompaniment-husband-label">
+						<value>Vady</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/accompagnement-mari.mp3</value>
+					</text>
+					<text id="accompagnement-Famille-label">
+						<value>Fianakaviana</value>
+						<value form="audio">jr://file/commcare/audio/data/accompagnement-Famille.mp3</value>
+					</text>
+					<text id="accompagnement-Matrone-label">
+						<value>Mpanentana ara-pahasalamana</value>
+						<value form="audio">jr://file/commcare/audio/data/accompagnement-Matrone.mp3</value>
+					</text>
+					<text id="preparation/delivery_accompaniment-matrone-label">
+						<value>Renin-jaza
+</value>
+					</text>
+					<text id="accompagnement-Autre-label">
+						<value>Olona hafa</value>
+						<value form="audio">jr://file/commcare/audio/data/accompagnement-Autre.mp3</value>
+					</text>
+					<text id="preparation/delivery_accompaniment-do_not_know-label">
+						<value>Tsy misy</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/accompagnement-sait_pas.mp3</value>
+					</text>
+					<text id="moyen_transport-label">
+						<value>Handeha inona ianao raha handeha hiteraka?</value>
+						<value form="image">jr://file/commcare/image/data/moyen_transport.jpg</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/moyen_transport.mp3</value>
+					</text>
+					<text id="moyen_transport-ambulance-label">
+						<value>Fitaterana vonjy taitra</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/moyen_transport-ambulance.mp3</value>
+					</text>
+					<text id="preparation/transport_type-horsecart-label">
+						<value>Sarety</value>
+					</text>
+					<text id="preparation/transport_type-car-label">
+						<value>Fiara</value>
+					</text>
+					<text id="preparation/transport_type-boat-label">
+						<value>Lakana</value>
+					</text>
+					<text id="preparation/transport_type-bike-label">
+						<value>Bisikileta</value>
+					</text>
+					<text id="preparation/transport_type-moto-label">
+						<value>Moto</value>
+					</text>
+					<text id="preparation/transport_type-brancard-label">
+						<value>Lanjaina</value>
+					</text>
+					<text id="preparation/transport_type-other-label">
+						<value>Hafa</value>
+					</text>
+					<text id="preparation/encouragement_label-label">
+						<value>Ho an'ny AC  : 
+omeo fankasitrahana ilay vehivavy efa nanao ireo fisafoana ary amporisiho izy hanohy ny fiomanany mba ho tsara ny fiterahana</value>
+						<value form="audio">jr://file/commcare/audio/data/preparation/continue_label.mp3</value>
+						<value form="image">jr://file/commcare/image/data/preparation/encouragement_label.jpg</value>
+					</text>
+					<text id="closing_label-label">
+						<value>ADD SOMETHING HERE</value>
+					</text>
+				</translation>
+			</itext>
+		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><bind calculate="instance('commcaresession')/session/data/case_id" nodeset="/data/case/@case_id"/><bind calculate="/data/date_follow_up" nodeset="/data/case/update/date_follow_up" relevant="count(/data/date_follow_up) &gt; 0"/><bind calculate="/data/date_next_appointment" nodeset="/data/case/update/date_next_appointment" relevant="count(/data/date_next_appointment) &gt; 0"/><bind calculate="/data/pnc_1/date_pnc1" nodeset="/data/case/update/date_pnc1" relevant="count(/data/pnc_1/date_pnc1) &gt; 0"/><bind calculate="/data/pnc_2/date_pnc2" nodeset="/data/case/update/date_pnc2" relevant="count(/data/pnc_2/date_pnc2) &gt; 0"/><bind calculate="/data/pnc_3/date_pnc3" nodeset="/data/case/update/date_pnc3" relevant="count(/data/pnc_3/date_pnc3) &gt; 0"/><bind calculate="/data/pnc_4/date_pnc4" nodeset="/data/case/update/date_pnc4" relevant="count(/data/pnc_4/date_pnc4) &gt; 0"/><bind calculate="/data/date_referral" nodeset="/data/case/update/date_referral" relevant="count(/data/date_referral) &gt; 0"/><bind calculate="/data/preparation/delivery_accompaniment" nodeset="/data/case/update/delivery_accompaniment" relevant="count(/data/preparation/delivery_accompaniment) &gt; 0"/><bind calculate="/data/had_4_pncs" nodeset="/data/case/update/had_4_pncs" relevant="count(/data/had_4_pncs) &gt; 0"/><bind calculate="/data/pnc_1/had_pnc1" nodeset="/data/case/update/had_pnc1" relevant="count(/data/pnc_1/had_pnc1) &gt; 0"/><bind calculate="/data/pnc_2/had_pnc2" nodeset="/data/case/update/had_pnc2" relevant="count(/data/pnc_2/had_pnc2) &gt; 0"/><bind calculate="/data/pnc_3/had_pnc3" nodeset="/data/case/update/had_pnc3" relevant="count(/data/pnc_3/had_pnc3) &gt; 0"/><bind calculate="/data/pnc_4/had_pnc4" nodeset="/data/case/update/had_pnc4" relevant="count(/data/pnc_4/had_pnc4) &gt; 0"/><bind calculate="/data/behavior/has_bednet" nodeset="/data/case/update/has_bednet" relevant="count(/data/behavior/has_bednet) &gt; 0"/><bind calculate="/data/has_danger_sign" nodeset="/data/case/update/has_danger_sign" relevant="count(/data/has_danger_sign) &gt; 0"/><bind calculate="/data/preparation/has_delivery_kit" nodeset="/data/case/update/has_delivery_kit" relevant="count(/data/preparation/has_delivery_kit) &gt; 0"/><bind calculate="/data/have_next_appointment" nodeset="/data/case/update/have_next_appointment" relevant="count(/data/have_next_appointment) &gt; 0"/><bind calculate="/data/preparation/identified_delivery_location" nodeset="/data/case/update/identified_delivery_location" relevant="count(/data/preparation/identified_delivery_location) &gt; 0"/><bind calculate="/data/number_cpns_completed" nodeset="/data/case/update/number_cpns_completed" relevant="count(/data/number_cpns_completed) &gt; 0"/><bind calculate="/data/prev_cpns_completed" nodeset="/data/case/update/prev_cpns_completed" relevant="count(/data/prev_cpns_completed) &gt; 0"/><bind calculate="/data/prev_date_next_appt" nodeset="/data/case/update/prev_date_next_appt" relevant="count(/data/prev_date_next_appt) &gt; 0"/><bind calculate="/data/prev_had_next_appt" nodeset="/data/case/update/prev_had_next_appt" relevant="count(/data/prev_had_next_appt) &gt; 0"/><bind calculate="/data/referred" nodeset="/data/case/update/referred" relevant="count(/data/referred) &gt; 0"/><bind calculate="/data/behavior/screened_for_hiv" nodeset="/data/case/update/screened_for_hiv" relevant="count(/data/behavior/screened_for_hiv) &gt; 0"/><bind calculate="/data/send_for_referral" nodeset="/data/case/update/send_for_referral" relevant="count(/data/send_for_referral) &gt; 0"/><bind calculate="/data/show_next_appt" nodeset="/data/case/update/show_next_appt" relevant="count(/data/show_next_appt) &gt; 0"/><bind calculate="/data/behavior/sleeps_under_bednet" nodeset="/data/case/update/sleeps_under_bednet" relevant="count(/data/behavior/sleeps_under_bednet) &gt; 0"/><bind calculate="/data/status_pnc1" nodeset="/data/case/update/status_pnc1" relevant="count(/data/status_pnc1) &gt; 0"/><bind calculate="/data/status_pnc2" nodeset="/data/case/update/status_pnc2" relevant="count(/data/status_pnc2) &gt; 0"/><bind calculate="/data/status_pnc3" nodeset="/data/case/update/status_pnc3" relevant="count(/data/status_pnc3) &gt; 0"/><bind calculate="/data/status_pnc4" nodeset="/data/case/update/status_pnc4" relevant="count(/data/status_pnc4) &gt; 0"/><bind calculate="/data/vaccines/taken_1_vat" nodeset="/data/case/update/taken_1_vat" relevant="count(/data/vaccines/taken_1_vat) &gt; 0"/><bind calculate="/data/vaccines/taken_all_vat" nodeset="/data/case/update/taken_all_vat" relevant="count(/data/vaccines/taken_all_vat) &gt; 0"/><bind calculate="/data/behavior/taken_anemia_meds" nodeset="/data/case/update/taken_anemia_meds" relevant="count(/data/behavior/taken_anemia_meds) &gt; 0"/><bind calculate="/data/behavior/taken_deworming_meds" nodeset="/data/case/update/taken_deworming_meds" relevant="count(/data/behavior/taken_deworming_meds) &gt; 0"/><bind calculate="/data/preparation/transport_type" nodeset="/data/case/update/transport_type" relevant="count(/data/preparation/transport_type) &gt; 0"/><bind calculate="/data/verify_referral" nodeset="/data/case/update/verify_referral" relevant="count(/data/verify_referral) &gt; 0"/><bind calculate="/data/visit_1" nodeset="/data/case/update/visit_1" relevant="count(/data/visit_1) &gt; 0"/><setvalue event="xforms-ready" ref="/data/prev_had_pnc2" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/had_pnc2"/><setvalue event="xforms-ready" ref="/data/prev_had_pnc3" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/had_pnc3"/><setvalue event="xforms-ready" ref="/data/prev_had_pnc1" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/had_pnc1"/><setvalue event="xforms-ready" ref="/data/prev_had_pnc4" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/had_pnc4"/><setvalue event="xforms-ready" ref="/data/prev_transport" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/transport_type"/><setvalue event="xforms-ready" ref="/data/prev_cpns_completed" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/number_cpns_completed"/><setvalue event="xforms-ready" ref="/data/prev_send_for_referral" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/send_for_referral"/><setvalue event="xforms-ready" ref="/data/prev_date_referral" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/date_referral"/><setvalue event="xforms-ready" ref="/data/prev_accompagnant" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/delivery_accompaniment"/><setvalue event="xforms-ready" ref="/data/behavior/prev_visit_date" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/date_follow_up"/><setvalue event="xforms-ready" ref="/data/prev_date_next_appt" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/date_next_appointment"/><setvalue event="xforms-ready" ref="/data/edd" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/edd"/><setvalue event="xforms-ready" ref="/data/prev_has_bednet" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/has_bednet"/><setvalue event="xforms-ready" ref="/data/prev_lmp" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/lmp"/><setvalue event="xforms-ready" ref="/data/prev_show_next_appt" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/show_next_appt"/><setvalue event="xforms-ready" ref="/data/behavior/prev_anemia_meds" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/taken_anemia_meds"/><setvalue event="xforms-ready" ref="/data/prev_screened_hiv" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/screened_for_hiv"/><setvalue event="xforms-ready" ref="/data/behavior/prev_sleeps_under_bednet" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/sleeps_under_bednet"/><setvalue event="xforms-ready" ref="/data/prev_had_next_appt" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/have_next_appointment"/><setvalue event="xforms-ready" ref="/data/prev_referred" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/referred"/><setvalue event="xforms-ready" ref="/data/prev_visit" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/visit_1"/><setvalue event="xforms-ready" ref="/data/behavior/prev_deworming_meds" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/taken_deworming_meds"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<trigger ref="/data/intro_label" appearance="minimal">
+			<label ref="jr:itext('intro_label-label')"/>
+		</trigger>
+		<select1 ref="/data/verify_referral">
+			<label ref="jr:itext('verify_referral-label')"/>
+			<item>
+				<label ref="jr:itext('verify_referral-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('verify_referral-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<trigger ref="/data/advice_adherence_referral" appearance="minimal">
+			<label ref="jr:itext('advice_adherence_referral-label')"/>
+		</trigger>
+		<select1 ref="/data/respected_pnc_appt">
+			<label ref="jr:itext('respected_pnc_appt-label')"/>
+			<item>
+				<label ref="jr:itext('respected_pnc_appt-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('respected_pnc_appt-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/reason_missed_pnc">
+			<label ref="jr:itext('reason_missed_pnc-label')"/>
+		</input>
+		<group ref="/data/pnc_1">
+			<label ref="jr:itext('pnc_1-label')"/>
+			<select1 ref="/data/pnc_1/had_pnc1">
+				<label ref="jr:itext('date_cpn1-label')"/>
+				<item>
+					<label ref="jr:itext('pnc_1/had_pnc1-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('pnc_1/had_pnc1-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<input ref="/data/pnc_1/date_pnc1">
+				<label ref="jr:itext('pnc_1/date_pnc1-label')"/>
+			</input>
+		</group>
+		<group ref="/data/pnc_2">
+			<label ref="jr:itext('pnc_2-label')"/>
+			<select1 ref="/data/pnc_2/had_pnc2">
+				<label ref="jr:itext('pnc_2/had_pnc2-label')"/>
+				<item>
+					<label ref="jr:itext('pnc_2/had_pnc2-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('pnc_2/had_pnc2-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<input ref="/data/pnc_2/date_pnc2">
+				<label ref="jr:itext('date_CPN2-label')"/>
+			</input>
+		</group>
+		<group ref="/data/pnc_3">
+			<label ref="jr:itext('pnc_3-label')"/>
+			<select1 ref="/data/pnc_3/had_pnc3">
+				<label ref="jr:itext('pnc_3/had_pnc3-label')"/>
+				<item>
+					<label ref="jr:itext('pnc_3/had_pnc3-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('pnc_3/had_pnc3-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<input ref="/data/pnc_3/date_pnc3">
+				<label ref="jr:itext('date_CPN3-label')"/>
+			</input>
+			<trigger ref="/data/pnc_3/breastfeeding_advice" appearance="minimal">
+				<label ref="jr:itext('pnc_3/breastfeeding_advice-label')"/>
+			</trigger>
+		</group>
+		<group ref="/data/pnc_4">
+			<label ref="jr:itext('pnc_4-label')"/>
+			<select1 ref="/data/pnc_4/had_pnc4">
+				<label ref="jr:itext('pnc_4/had_pnc4-label')"/>
+				<item>
+					<label ref="jr:itext('pnc_4/had_pnc4-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('pnc_4/had_pnc4-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<input ref="/data/pnc_4/date_pnc4">
+				<label ref="jr:itext('date_CPN4-label')"/>
+			</input>
+			<trigger ref="/data/pnc_4/breastfeeding_advice" appearance="minimal">
+				<label ref="jr:itext('pnc_4/breastfeeding_advice-label')"/>
+			</trigger>
+		</group>
+		<select1 ref="/data/have_next_appointment">
+			<label ref="jr:itext('have_next_appointment-label')"/>
+			<item>
+				<label ref="jr:itext('have_next_appointment-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('have_next_appointment-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/date_next_appointment">
+			<label ref="jr:itext('date_next_appointment-label')"/>
+		</input>
+		<trigger ref="/data/missed_pnc_advice" appearance="minimal">
+			<label ref="jr:itext('missed_pnc_advice-label')"/>
+		</trigger>
+		<trigger ref="/data/general_pnc_advice" appearance="minimal">
+			<label ref="jr:itext('general_pnc_advice-label')"/>
+		</trigger>
+		<trigger ref="/data/congratulate_adherence_label" appearance="minimal">
+			<label ref="jr:itext('congratulate_adherence_label-label')"/>
+		</trigger>
+		<group ref="/data/danger_signs">
+			<label ref="jr:itext('danger_signs-label')"/>
+			<select1 ref="/data/danger_signs/knows_danger_signs">
+				<label ref="jr:itext('danger_signs/knows_danger_signs-label')"/>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<trigger ref="/data/danger_signs/danger_signs_overview" appearance="minimal">
+				<label ref="jr:itext('danger_signs/danger_signs_overview-label')"/>
+			</trigger>
+			<trigger ref="/data/danger_signs/assessment_intro" appearance="minimal">
+				<label ref="jr:itext('danger_signs/assessment_intro-label')"/>
+			</trigger>
+			<select1 ref="/data/danger_signs/intractable_vomitting">
+				<label ref="jr:itext('danger_signs/intractable_vomitting-label')"/>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/danger_signs/fever">
+				<label ref="jr:itext('danger_signs/fever-label')"/>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/danger_signs/piercing_headache">
+				<label ref="jr:itext('danger_signs/piercing_headache-label')"/>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/danger_signs/hands_palor">
+				<label ref="jr:itext('danger_signs/hands_palor-label')"/>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/danger_signs/unusual_vaginal_discharge">
+				<label ref="jr:itext('danger_signs/unusual_vaginal_discharge-label')"/>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/danger_signs/vaginal_bleeding">
+				<label ref="jr:itext('danger_signs/vaginal_bleeding-label')"/>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/danger_signs/swollen_extremities">
+				<label ref="jr:itext('danger_signs/swollen_extremities-label')"/>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/danger_signs/lumbar_pelvic_pain">
+				<label ref="jr:itext('danger_signs/lumbar_pelvic_pain-label')"/>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/danger_signs/intense_abdominal_pain">
+				<label ref="jr:itext('danger_signs/intense_abdominal_pain-label')"/>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/danger_signs/suffered_aggression">
+				<label ref="jr:itext('danger_signs/suffered_aggression-label')"/>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/danger_signs/wound_at_genitals">
+				<label ref="jr:itext('danger_signs/wound_at_genitals-label')"/>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/danger_signs/immobile_fetus">
+				<label ref="jr:itext('danger_signs/immobile_fetus-label')"/>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/danger_signs/convulsions">
+				<label ref="jr:itext('danger_signs/convulsions-label')"/>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/danger_signs/no_weight_gain">
+				<label ref="jr:itext('danger_signs/no_weight_gain-label')"/>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+		</group>
+		<select1 ref="/data/send_for_referral">
+			<label ref="jr:itext('send_for_referral-label')"/>
+			<item>
+				<label ref="jr:itext('send_for_referral-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('behavior/taken_anemia_meds-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<group ref="/data/referral_details">
+			<label ref="jr:itext('referral_details-label')"/>
+			<select ref="/data/referral_details/accompanying_support">
+				<label ref="jr:itext('referral_details/accompanying_support-label')"/>
+				<item>
+					<label ref="jr:itext('referral_details/accompanying_support-husband-label')"/>
+					<value>husband</value>
+				</item>
+				<item>
+					<label ref="jr:itext('referral_details/accompanying_support-godmother-label')"/>
+					<value>godmother</value>
+				</item>
+				<item>
+					<label ref="jr:itext('referral_details/accompanying_support-family-label')"/>
+					<value>family</value>
+				</item>
+				<item>
+					<label ref="jr:itext('referral_details/accompanying_support-matrone-label')"/>
+					<value>matrone</value>
+				</item>
+				<item>
+					<label ref="jr:itext('referral_details/accompanying_support-other-label')"/>
+					<value>other</value>
+				</item>
+				<item>
+					<label ref="jr:itext('referral_details/accompanying_support-noone-label')"/>
+					<value>noone</value>
+				</item>
+			</select>
+			<trigger ref="/data/referral_details/instructions_label" appearance="minimal">
+				<label ref="jr:itext('referral_details/instructions_label-label')"/>
+			</trigger>
+		</group>
+		<group ref="/data/vaccines">
+			<label ref="jr:itext('vaccines-label')"/>
+			<trigger ref="/data/vaccines/intro_label" appearance="minimal">
+				<label ref="jr:itext('vaccines/intro_label-label')"/>
+			</trigger>
+			<select1 ref="/data/vaccines/taken_tetanus">
+				<label ref="jr:itext('vaccines/taken_tetanus-label')"/>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<trigger ref="/data/vaccines/tetanus_advice_label" appearance="minimal">
+				<label ref="jr:itext('vaccines/tetanus_advice_label-label')"/>
+			</trigger>
+			<select1 ref="/data/vaccines/vat_1">
+				<label ref="jr:itext('vaccines/vat_1-label')"/>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/vaccines/vat_2">
+				<label ref="jr:itext('vaccines/vat_2-label')"/>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/vaccines/vat_3">
+				<label ref="jr:itext('vaccines/vat_3-label')"/>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/vaccines/vat_4">
+				<label ref="jr:itext('vaccines/vat_4-label')"/>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/vaccines/vat_5">
+				<label ref="jr:itext('vaccines/vat_5-label')"/>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<trigger ref="/data/vaccines/closing_label" appearance="minimal">
+				<label ref="jr:itext('vaccines/closing_label-label')"/>
+			</trigger>
+		</group>
+		<group ref="/data/behavior">
+			<label ref="jr:itext('behavior-label')"/>
+			<trigger ref="/data/behavior/intro_label" appearance="minimal">
+				<label ref="jr:itext('behavior/intro_label-label')"/>
+			</trigger>
+			<select1 ref="/data/behavior/has_bednet">
+				<label ref="jr:itext('a_moustiquaire-label')"/>
+				<item>
+					<label ref="jr:itext('a_moustiquaire-oui-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('a_moustiquaire-non-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/behavior/sleeps_under_bednet">
+				<label ref="jr:itext('moustiquaire-label')"/>
+				<item>
+					<label ref="jr:itext('moustiquaire-oui-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('moustiquaire-non-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<group ref="/data/behavior/bednet_advice" appearance="field-list">
+				<label ref="jr:itext('conseils_moustiquaire-label')"/>
+				<trigger ref="/data/behavior/bednet_advice/bednet_label" appearance="minimal">
+					<label ref="jr:itext('moustiquaire_label-label')"/>
+				</trigger>
+				<trigger ref="/data/behavior/bednet_advice/bednet_label_2" appearance="minimal">
+					<label ref="jr:itext('conseils_moustiquaire/moustiquaire_label_2-label')"/>
+				</trigger>
+			</group>
+			<select1 ref="/data/behavior/taken_malaria_meds">
+				<label ref="jr:itext('behavior/taken_malaria_meds-label')"/>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select ref="/data/behavior/dosage_malaria_meds">
+				<label ref="jr:itext('behavior/dosage_malaria_meds-label')"/>
+				<item>
+					<label ref="jr:itext('behavior/dosage_malaria_meds-tpi_1-label')"/>
+					<value>tpi_1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('behavior/dosage_malaria_meds-tpi_2-label')"/>
+					<value>tpi_2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('behavior/dosage_malaria_meds-tpi_3-label')"/>
+					<value>tpi_3</value>
+				</item>
+			</select>
+			<trigger ref="/data/behavior/advice_taken_malaria_meds" appearance="minimal">
+				<label ref="jr:itext('behavior/advice_taken_malaria_meds-label')"/>
+			</trigger>
+			<trigger ref="/data/behavior/advice_not_taken_malaria_meds" appearance="minimal">
+				<label ref="jr:itext('behavior/advice_not_taken_malaria_meds-label')"/>
+			</trigger>
+			<select1 ref="/data/behavior/screened_for_hiv">
+				<label ref="jr:itext('conseils_ptme/depistee_vih-label')"/>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('conseils_ptme/depistee_vih-non-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<trigger ref="/data/behavior/advice_hiv" appearance="minimal">
+				<label ref="jr:itext('conseils_ptme/message_1-label')"/>
+			</trigger>
+			<select1 ref="/data/behavior/taken_anemia_meds">
+				<label ref="jr:itext('behavior/taken_anemia_meds-label')"/>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<trigger ref="/data/behavior/advice_not_taken_anemia_meds" appearance="minimal">
+				<label ref="jr:itext('behavior/advice_not_taken_anemia_meds-label')"/>
+			</trigger>
+			<select1 ref="/data/behavior/quantity_anemia_pills">
+				<label ref="jr:itext('behavior/quantity_anemia_pills-label')"/>
+				<item>
+					<label ref="jr:itext('behavior/quantity_anemia_pills-30_pills-label')"/>
+					<value>30_pills</value>
+				</item>
+				<item>
+					<label ref="jr:itext('behavior/quantity_anemia_pills-other_amount-label')"/>
+					<value>other_amount</value>
+				</item>
+			</select1>
+			<trigger ref="/data/behavior/prompt_for_other_amount" appearance="minimal">
+				<label ref="jr:itext('behavior/prompt_for_other_amount-label')"/>
+			</trigger>
+			<select1 ref="/data/behavior/taken_deworming_meds">
+				<label ref="jr:itext('behavior/taken_deworming_meds-label')"/>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('behavior/taken_anemia_meds-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+		</group>
+		<group ref="/data/preparation">
+			<label ref="jr:itext('preparation-label')"/>
+			<trigger ref="/data/preparation/intro" appearance="minimal">
+				<label ref="jr:itext('preparation/intro-label')"/>
+			</trigger>
+			<select1 ref="/data/preparation/has_delivery_kit">
+				<label ref="jr:itext('statut_kit_accouchement-label')"/>
+				<item>
+					<label ref="jr:itext('statut_kit_accouchement-Oui-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('statut_kit_accouchement-Non-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/preparation/identified_delivery_location">
+				<label ref="jr:itext('preparation/identified_delivery_location-label')"/>
+				<item>
+					<label ref="jr:itext('preparation/identified_delivery_location-with_matrones-label')"/>
+					<value>with_matrones</value>
+				</item>
+				<item>
+					<label ref="jr:itext('preparation/identified_delivery_location-health_center-label')"/>
+					<value>health_center</value>
+				</item>
+				<item>
+					<label ref="jr:itext('preparation/identified_delivery_location-referral_hospital-label')"/>
+					<value>referral_hospital</value>
+				</item>
+				<item>
+					<label ref="jr:itext('preparation/identified_delivery_location-domicile-label')"/>
+					<value>domicile</value>
+				</item>
+				<item>
+					<label ref="jr:itext('preparation/identified_delivery_location-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select ref="/data/preparation/reason_not_csb">
+				<label ref="jr:itext('preparation/reason_not_csb-label')"/>
+				<item>
+					<label ref="jr:itext('preparation/reason_not_csb-lack_transport-label')"/>
+					<value>lack_transport</value>
+				</item>
+				<item>
+					<label ref="jr:itext('preparation/reason_not_csb-family_influence-label')"/>
+					<value>family_influence</value>
+				</item>
+				<item>
+					<label ref="jr:itext('preparation/reason_not_csb-proximity_home-label')"/>
+					<value>proximity_home</value>
+				</item>
+				<item>
+					<label ref="jr:itext('preparation/reason_not_csb-lack_funds-label')"/>
+					<value>lack_funds</value>
+				</item>
+				<item>
+					<label ref="jr:itext('preparation/reason_not_csb-trust_matrone-label')"/>
+					<value>trust_matrone</value>
+				</item>
+				<item>
+					<label ref="jr:itext('preparation/reason_not_csb-historical_preference-label')"/>
+					<value>historical_preference</value>
+				</item>
+				<item>
+					<label ref="jr:itext('preparation/reason_not_csb-other-label')"/>
+					<value>other</value>
+				</item>
+			</select>
+			<trigger ref="/data/preparation/advice_advantage_csb_delivery" appearance="minimal">
+				<label ref="jr:itext('preparation/advice_advantage_csb_delivery-label')"/>
+			</trigger>
+			<select ref="/data/preparation/delivery_accompaniment">
+				<label ref="jr:itext('accompagnement-label')"/>
+				<item>
+					<label ref="jr:itext('preparation/delivery_accompaniment-husband-label')"/>
+					<value>husband</value>
+				</item>
+				<item>
+					<label ref="jr:itext('accompagnement-Famille-label')"/>
+					<value>family</value>
+				</item>
+				<item>
+					<label ref="jr:itext('accompagnement-Matrone-label')"/>
+					<value>chv</value>
+				</item>
+				<item>
+					<label ref="jr:itext('preparation/delivery_accompaniment-matrone-label')"/>
+					<value>matrone</value>
+				</item>
+				<item>
+					<label ref="jr:itext('accompagnement-Autre-label')"/>
+					<value>other</value>
+				</item>
+				<item>
+					<label ref="jr:itext('preparation/delivery_accompaniment-do_not_know-label')"/>
+					<value>do_not_know</value>
+				</item>
+			</select>
+			<select1 ref="/data/preparation/transport_type">
+				<label ref="jr:itext('moyen_transport-label')"/>
+				<item>
+					<label ref="jr:itext('moyen_transport-ambulance-label')"/>
+					<value>ambulance</value>
+				</item>
+				<item>
+					<label ref="jr:itext('preparation/transport_type-horsecart-label')"/>
+					<value>horsecart</value>
+				</item>
+				<item>
+					<label ref="jr:itext('preparation/transport_type-car-label')"/>
+					<value>car</value>
+				</item>
+				<item>
+					<label ref="jr:itext('preparation/transport_type-boat-label')"/>
+					<value>boat</value>
+				</item>
+				<item>
+					<label ref="jr:itext('preparation/transport_type-bike-label')"/>
+					<value>bike</value>
+				</item>
+				<item>
+					<label ref="jr:itext('preparation/transport_type-moto-label')"/>
+					<value>moto</value>
+				</item>
+				<item>
+					<label ref="jr:itext('preparation/transport_type-brancard-label')"/>
+					<value>brancard</value>
+				</item>
+				<item>
+					<label ref="jr:itext('preparation/transport_type-other-label')"/>
+					<value>other</value>
+				</item>
+			</select1>
+			<trigger ref="/data/preparation/encouragement_label" appearance="minimal">
+				<label ref="jr:itext('preparation/encouragement_label-label')"/>
+			</trigger>
+		</group>
+		<trigger ref="/data/closing_label" appearance="minimal">
+			<label ref="jr:itext('closing_label-label')"/>
+		</trigger>
+	</h:body>
+</h:html>

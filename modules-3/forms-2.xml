@@ -1,0 +1,564 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:vellum="http://commcarehq.org/xforms/vellum">
+	<h:head>
+		<h:title>Signes Danger Post-Natal</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/3DEB390A-AF60-4F12-B9DA-4E66B576611A" uiVersion="1" version="1936" name="Signes Danger Post-Natal">
+					<evaluate_symptoms_label/>
+					<danger_signs>
+						<blood_loss/>
+						<high_temperature/>
+						<convulsions/>
+					</danger_signs>
+					<has_danger_signs_label/>
+					<symptoms>
+						<labored_breathing/>
+						<abdo_pelvic_pain/>
+						<painful_swelling_of_breasts/>
+						<pain_urinating/>
+						<deficulty_retaining_urine/>
+						<vaginal_pus/>
+						<vaginal_pain/>
+						<vaginal_leak/>
+						<symptoms_if_other/>
+					</symptoms>
+					<woman_has_symptoms_label/>
+					<trigger_referral_postnatal/>
+					<referral_date_postnatal/>
+					<if_danger_signs_or_other_symptoms>
+						<transportation/>
+						<accompanying/>
+						<sending_info_to_health_center/>
+						<reminder_send_information/>
+					</if_danger_signs_or_other_symptoms>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><update><referral_date/><trigger_referral/></update></case><commcare_usercase><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><update><referral_date_postnatal/><trigger_referral_postnatal/></update></case></commcare_usercase><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance id="commcaresession" src="jr://instance/session"/>
+			<bind nodeset="/data/evaluate_symptoms_label"/>
+			<bind nodeset="/data/danger_signs"/>
+			<bind nodeset="/data/danger_signs/blood_loss" required="true()"/>
+			<bind nodeset="/data/danger_signs/high_temperature" required="true()"/>
+			<bind nodeset="/data/danger_signs/convulsions" required="true()"/>
+			<bind nodeset="/data/has_danger_signs_label" relevant="/data/danger_signs/blood_loss = 'yes' or /data/danger_signs/high_temperature = 'yes' or /data/danger_signs/convulsions = 'yes'"/>
+			<bind nodeset="/data/symptoms"/>
+			<bind nodeset="/data/symptoms/labored_breathing" required="true()"/>
+			<bind nodeset="/data/symptoms/abdo_pelvic_pain" required="true()"/>
+			<bind nodeset="/data/symptoms/painful_swelling_of_breasts" required="true()"/>
+			<bind nodeset="/data/symptoms/pain_urinating" required="true()"/>
+			<bind nodeset="/data/symptoms/deficulty_retaining_urine" required="true()"/>
+			<bind nodeset="/data/symptoms/vaginal_pus" required="true()"/>
+			<bind nodeset="/data/symptoms/vaginal_pain" required="true()"/>
+			<bind nodeset="/data/symptoms/vaginal_leak" required="true()"/>
+			<bind nodeset="/data/symptoms/symptoms_if_other" type="xsd:string"/>
+			<bind nodeset="/data/woman_has_symptoms_label" relevant="/data/symptoms/vaginal_pain = 'yes' or /data/symptoms/vaginal_pus = 'yes' or /data/symptoms/deficulty_retaining_urine = 'yes' or /data/symptoms/pain_urinating = 'yes' or /data/symptoms/pain_urinating = 'yes' or /data/symptoms/painful_swelling_of_breasts = 'yes' or /data/symptoms/abdo_pelvic_pain = 'yes' or /data/symptoms/labored_breathing = 'yes' or /data/symptoms/vaginal_leak = 'yes'"/>
+			<bind nodeset="/data/trigger_referral_postnatal" calculate="if(/data/danger_signs/high_temperature = 'yes' or /data/danger_signs/blood_loss = 'yes' or /data/symptoms/vaginal_leak = 'yes' or /data/symptoms/vaginal_pain = 'yes' or /data/symptoms/vaginal_pus = 'yes' or /data/symptoms/deficulty_retaining_urine = 'yes' or /data/symptoms/pain_urinating = 'yes' or /data/symptoms/painful_swelling_of_breasts = 'yes' or /data/danger_signs/blood_loss = 'yes' or /data/danger_signs/high_temperature = 'yes' or /data/danger_signs/convulsions = 'yes' or /data/symptoms/labored_breathing = 'yes' or /data/symptoms/abdo_pelvic_pain = 'yes' or /data/danger_signs/convulsions = 'yes', 'yes' , 'no')"/>
+			<bind nodeset="/data/referral_date_postnatal" relevant="/data/trigger_referral_postnatal = 'yes'" calculate="today()"/>
+			<bind nodeset="/data/if_danger_signs_or_other_symptoms" relevant="/data/trigger_referral_postnatal = 'yes'"/>
+			<bind nodeset="/data/if_danger_signs_or_other_symptoms/transportation" required="true()"/>
+			<bind nodeset="/data/if_danger_signs_or_other_symptoms/accompanying" required="true()"/>
+			<bind nodeset="/data/if_danger_signs_or_other_symptoms/sending_info_to_health_center"/>
+			<bind nodeset="/data/if_danger_signs_or_other_symptoms/reminder_send_information"/>
+			<itext>
+				<translation lang="fra" default="">
+					<text id="evaluate_symptoms_label-label">
+						<value>Evaluer si la femme pr&#233;sente un des sympt&#244;mes suivant. </value>
+					</text>
+					<text id="danger_signs-label">
+						<value>danger_signs</value>
+					</text>
+					<text id="danger_signs/blood_loss-label">
+						<value>Saigne beaucoup</value>
+						<value form="image">jr://file/commcare/image/data/blood_loss.png</value>
+					</text>
+					<text id="danger_signs/blood_loss-yes-label">
+						<value>Oui</value>
+					</text>
+					<text id="danger_signs/blood_loss-no-label">
+						<value>Non</value>
+					</text>
+					<text id="danger_signs/high_temperature-label">
+						<value>Temp&#233;rature &#233;lev&#233;e</value>
+						<value form="image">jr://file/commcare/image/data/high_temperature.jpg</value>
+					</text>
+					<text id="danger_signs/convulsions-label">
+						<value>Convulsions</value>
+						<value form="image">jr://file/commcare/image/data/convulsions.png</value>
+					</text>
+					<text id="has_danger_signs_label-label">
+						<value>AC, la femme pr&#233;sente des signes de danger. Il faut la r&#233;f&#233;rer imm&#233;diatement.</value>
+						<value form="image">jr://file/commcare/image/data/has_danger_signs_label.png</value>
+					</text>
+					<text id="symptoms-label">
+						<value>symptoms</value>
+					</text>
+					<text id="symptoms/labored_breathing-label">
+						<value>Respiration difficile</value>
+						<value form="image">jr://file/commcare/image/data/other_postnatal_symptoms/labored_breathing.png</value>
+					</text>
+					<text id="symptoms/abdo_pelvic_pain-label">
+						<value>Douleur abdomino-pelvienne</value>
+						<value form="image">jr://file/commcare/image/data/other_postnatal_symptoms/abdo_pelvic_pain.png</value>
+					</text>
+					<text id="symptoms/painful_swelling_of_breasts-label">
+						<value>Les seins ou mamelons enfl&#233;s ou sensibles genant l'allaitement</value>
+						<value form="image">jr://file/commcare/image/data/other_postnatal_symptoms/painful_swelling_of_breasts.png</value>
+					</text>
+					<text id="symptoms/pain_urinating-label">
+						<value>Mal &#224; uriner</value>
+						<value form="image">jr://file/commcare/image/data/other_postnatal_symptoms/pain_urinating.png</value>
+					</text>
+					<text id="symptoms/deficulty_retaining_urine-label">
+						<value>Mal &#224; retenir l'urine</value>
+						<value form="image">jr://file/commcare/image/data/other_postnatal_symptoms/deficulty_retaining_urine.png</value>
+					</text>
+					<text id="symptoms/vaginal_pus-label">
+						<value>Perte purulante vaginale</value>
+						<value form="image">jr://file/commcare/image/data/other_postnatal_symptoms/vaginal_pus.png</value>
+					</text>
+					<text id="symptoms/vaginal_pain-label">
+						<value>Douleur vaginale </value>
+						<value form="image">jr://file/commcare/image/data/other_postnatal_symptoms/vaginal_pain.png</value>
+					</text>
+					<text id="symptoms/vaginal_leak-label">
+						<value>Pertes vaginales qui sentent mauvais</value>
+						<value form="image">jr://file/commcare/image/data/other_postnatal_symptoms/vaginal_leak.jpg</value>
+					</text>
+					<text id="symptoms/symptoms_if_other-label">
+						<value>Si la femme a d'autres sympt&#244;mes, s'il vous pla&#238;t expliquer</value>
+					</text>
+					<text id="woman_has_symptoms_label-label">
+						<value>AC, la femme pr&#233;sente des symptomes post natales. Il faut la r&#233;f&#233;rer .</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms-label">
+						<value>if_danger_signs_or_other_symptoms</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/transportation-label">
+						<value>Moyen de transport ?</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/transportation-ambulance-label">
+						<value>Ambulance</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/transportation-chariot-label">
+						<value>Charrette</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/transportation-car-label">
+						<value>Voiture</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/transportation-canoe-label">
+						<value>Pirogue</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/transportation-bicycle-label">
+						<value>Bicyclette</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/transportation-motorcycle-label">
+						<value>Motocyclette</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/transportation-stretcher-label">
+						<value>Brancard( de fortune)</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/transportation-other-label">
+						<value>Autre</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/accompanying-label">
+						<value>Qui vous accompagne ?</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/accompanying-husband-label">
+						<value>Mari</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/accompanying-ac-label">
+						<value>Agent communautaire</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/accompanying-family-label">
+						<value>Famille</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/accompanying-matrone-label">
+						<value>Matrone</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/accompanying-other-label">
+						<value>Autre</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/accompanying-noone-label">
+						<value>Aucune personne</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/sending_info_to_health_center-label">
+						<value>AC, expliquer &#224; la femme que vous envoyer ses informations imm&#233;diatement au centre de sant&#233; et que le reponsable sera inform&#233; de ses sympt&#244;mes.
+
+
+
+Dites &#224; la femme de partir le plus t&#244;t possible au centre  de sant&#233;. 
+
+
+
+Rappeller &#224; la femme de vous voir d&#232;s qu'elle revient au niveau du village</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/reminder_send_information-label">
+						<value>Instructions pour l'AC : 
+
+
+
+1. Apr&#232;s avoir valid&#233;, retourner sur l'&#233;cran d'accueil et appuyer sur "Envoi et r&#233;ception des donn&#233;es" (en bas de "Commencer") pour envoyer les donn&#233;es au centre de sant&#233;.
+
+
+
+2. Apr&#232;s quelques jours, v&#233;rifier si la contre-r&#233;f&#233;rence a &#233;t&#233; faite sur le registre "Voir les r&#233;f&#233;rences" </value>
+						<value form="markdown">Instructions pour l'AC : 
+
+
+
+1. Apr&#232;s avoir valid&#233;, retourner sur l'&#233;cran d'accueil et appuyer sur "Envoi et r&#233;ception des donn&#233;es" (en bas de "Commencer") pour envoyer les donn&#233;es au centre de sant&#233;.
+
+
+
+2. Apr&#232;s quelques jours, v&#233;rifier si la contre-r&#233;f&#233;rence a &#233;t&#233; faite sur le registre "Voir les r&#233;f&#233;rences" </value>
+					</text>
+				</translation>
+				<translation lang="mlg">
+					<text id="evaluate_symptoms_label-label">
+						<value>Tombano/Hamarino raha misy fambara loza ilay vehivavy</value>
+					</text>
+					<text id="danger_signs-label">
+						<value>danger_signs</value>
+					</text>
+					<text id="danger_signs/blood_loss-label">
+						<value>Mandeha r&#224; be mivoaka avy any amin'ny fivaviana</value>
+						<value form="image">jr://file/commcare/image/data/blood_loss.png</value>
+					</text>
+					<text id="danger_signs/blood_loss-yes-label">
+						<value>Eny</value>
+					</text>
+					<text id="danger_signs/blood_loss-no-label">
+						<value>Tsia</value>
+					</text>
+					<text id="danger_signs/high_temperature-label">
+						<value>Mafana hoditra be</value>
+						<value form="image">jr://file/commcare/image/data/high_temperature.jpg</value>
+					</text>
+					<text id="danger_signs/convulsions-label">
+						<value>Mifanintona</value>
+						<value form="image">jr://file/commcare/image/data/convulsions.png</value>
+					</text>
+					<text id="has_danger_signs_label-label">
+						<value>Misy fambara loza ilay reny ry AC ka alefaso haingana eny amin'ny tobimpahasalamana</value>
+						<value form="image">jr://file/commcare/image/data/has_danger_signs_label.png</value>
+					</text>
+					<text id="symptoms-label">
+						<value>symptoms</value>
+					</text>
+					<text id="symptoms/labored_breathing-label">
+						<value>Misefosefo tsy avy miaina</value>
+						<value form="image">jr://file/commcare/image/data/other_postnatal_symptoms/labored_breathing.png</value>
+					</text>
+					<text id="symptoms/abdo_pelvic_pain-label">
+						<value>Marary kibo na adohavania</value>
+						<value form="image">jr://file/commcare/image/data/other_postnatal_symptoms/abdo_pelvic_pain.png</value>
+					</text>
+					<text id="symptoms/painful_swelling_of_breasts-label">
+						<value>Mivonto ny nono, mena na manaintaina na manorisory, manelingelina ny fampinonoana </value>
+						<value form="image">jr://file/commcare/image/data/other_postnatal_symptoms/painful_swelling_of_breasts.png</value>
+					</text>
+					<text id="symptoms/pain_urinating-label">
+						<value>Marary rehefa mamany </value>
+						<value form="image">jr://file/commcare/image/data/other_postnatal_symptoms/pain_urinating.png</value>
+					</text>
+					<text id="symptoms/deficulty_retaining_urine-label">
+						<value>Tsy mahatana amany </value>
+						<value form="image">jr://file/commcare/image/data/other_postnatal_symptoms/deficulty_retaining_urine.png</value>
+					</text>
+					<text id="symptoms/vaginal_pus-label">
+						<value>Misy nana mivoaka  eo amin&#8217;ny fivaviana </value>
+						<value form="image">jr://file/commcare/image/data/other_postnatal_symptoms/vaginal_pus.png</value>
+					</text>
+					<text id="symptoms/vaginal_pain-label">
+						<value>Fanaintanana eo amin&#8217;ny fivaviana </value>
+						<value form="image">jr://file/commcare/image/data/other_postnatal_symptoms/vaginal_pain.png</value>
+					</text>
+					<text id="symptoms/vaginal_leak-label">
+						<value>Tsiranoka na maimbo avy any amin&#8217;ny fivaviana. </value>
+						<value form="image">jr://file/commcare/image/data/other_postnatal_symptoms/vaginal_leak.jpg</value>
+					</text>
+					<text id="symptoms/symptoms_if_other-label">
+						<value>Si la femme a d'autres sympt&#244;mes, s'il vous pla&#238;t expliquer</value>
+					</text>
+					<text id="woman_has_symptoms_label-label">
+						<value>Misy fambaran'aretina tao aorian'ny fiterahana  ilay reny  ry AC ka alefaso eny amin'ny tobimpahasalamana</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms-label">
+						<value>if_danger_signs_or_other_symptoms</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/transportation-label">
+						<value>Handeha inona?</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/transportation-ambulance-label">
+						<value>Fitaterana vonjy taitra</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/transportation-chariot-label">
+						<value>Sarety</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/transportation-car-label">
+						<value>Fiara</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/transportation-canoe-label">
+						<value>Lakana</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/transportation-bicycle-label">
+						<value>Bisikileta</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/transportation-motorcycle-label">
+						<value>Moto</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/transportation-stretcher-label">
+						<value>Lanjaina</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/transportation-other-label">
+						<value>Hafa</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/accompanying-label">
+						<value>Iza no hiaraka aminao?</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/accompanying-husband-label">
+						<value>Vadi</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/accompanying-ac-label">
+						<value>Mpanentana ara-pahasalamana</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/accompanying-family-label">
+						<value>Fianakaviana</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/accompanying-matrone-label">
+						<value>Renin-jaza</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/accompanying-other-label">
+						<value>Olona hafa</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/accompanying-noone-label">
+						<value>Tsy misy</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/sending_info_to_health_center-label">
+						<value>AC, azavao amin'ilay reny fa alefanao avy hatrany any amin'ny CSB ny momba azy ary ho fantany ny manjo azy
+Teneno ilay reny mba handeha farany izay haingana any amin'ny tobimpahasalamana
+Ilazao izy mba hiverina any aminao rehefa tafaverina avy any amin'ny tobimpahasalamana</value>
+					</text>
+					<text id="if_danger_signs_or_other_symptoms/reminder_send_information-label">
+						<value>Fanazavana hoan'ny AC:
+1.  Rehefa valid&#233;-nao , miverena any amin'ny &#233;cran fandraisana ka tsindrio eo amin'ilay hoe "Fandefasana sy fandraisana antontan-kevitra"( eo ambany " Atomboy" ) mba handefasana ireo antontankevitra any amin'ny tobimpahasalamana,
+2. Afaka andro vitsivitsy hamarino raha efa voarakitra ao anaty rejistra "jereo ny fendefasana " ny famerenana</value>
+						<value form="markdown">Fanazavana hoan'ny AC:
+1.  Rehefa valid&#233;-nao , miverena any amin'ny &#233;cran fandraisana ka tsindrio eo amin'ilay hoe "Fandefasana sy fandraisana antontan-kevitra"( eo ambany " Atomboy" ) mba handefasana ireo antontankevitra any amin'ny tobimpahasalamana,
+2. Afaka andro vitsivitsy hamarino raha efa voarakitra ao anaty rejistra "jereo ny fendefasana " ny famerenana</value>
+					</text>
+				</translation>
+			</itext>
+		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><bind calculate="instance('commcaresession')/session/data/case_id" nodeset="/data/case/@case_id"/><bind calculate="/data/referral_date_postnatal" nodeset="/data/case/update/referral_date" relevant="count(/data/referral_date_postnatal) &gt; 0"/><bind calculate="/data/trigger_referral_postnatal" nodeset="/data/case/update/trigger_referral" relevant="count(/data/trigger_referral_postnatal) &gt; 0"/><bind calculate="instance('commcaresession')/session/data/usercase_id" nodeset="/data/commcare_usercase/case/@case_id"/><bind calculate="/data/meta/timeEnd" nodeset="/data/commcare_usercase/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/commcare_usercase/case/@user_id"/><bind calculate="/data/referral_date_postnatal" nodeset="/data/commcare_usercase/case/update/referral_date_postnatal" relevant="count(/data/referral_date_postnatal) &gt; 0"/><bind calculate="/data/trigger_referral_postnatal" nodeset="/data/commcare_usercase/case/update/trigger_referral_postnatal" relevant="count(/data/trigger_referral_postnatal) &gt; 0"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<trigger ref="/data/evaluate_symptoms_label" appearance="minimal">
+			<label ref="jr:itext('evaluate_symptoms_label-label')"/>
+		</trigger>
+		<group ref="/data/danger_signs">
+			<label ref="jr:itext('danger_signs-label')"/>
+			<select1 ref="/data/danger_signs/blood_loss">
+				<label ref="jr:itext('danger_signs/blood_loss-label')"/>
+				<item>
+					<label ref="jr:itext('danger_signs/blood_loss-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('danger_signs/blood_loss-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/danger_signs/high_temperature">
+				<label ref="jr:itext('danger_signs/high_temperature-label')"/>
+				<item>
+					<label ref="jr:itext('danger_signs/blood_loss-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('danger_signs/blood_loss-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/danger_signs/convulsions">
+				<label ref="jr:itext('danger_signs/convulsions-label')"/>
+				<item>
+					<label ref="jr:itext('danger_signs/blood_loss-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('danger_signs/blood_loss-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+		</group>
+		<trigger ref="/data/has_danger_signs_label" appearance="minimal">
+			<label ref="jr:itext('has_danger_signs_label-label')"/>
+		</trigger>
+		<group ref="/data/symptoms">
+			<label ref="jr:itext('symptoms-label')"/>
+			<select1 ref="/data/symptoms/labored_breathing">
+				<label ref="jr:itext('symptoms/labored_breathing-label')"/>
+				<item>
+					<label ref="jr:itext('danger_signs/blood_loss-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('danger_signs/blood_loss-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/symptoms/abdo_pelvic_pain">
+				<label ref="jr:itext('symptoms/abdo_pelvic_pain-label')"/>
+				<item>
+					<label ref="jr:itext('danger_signs/blood_loss-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('danger_signs/blood_loss-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/symptoms/painful_swelling_of_breasts">
+				<label ref="jr:itext('symptoms/painful_swelling_of_breasts-label')"/>
+				<item>
+					<label ref="jr:itext('danger_signs/blood_loss-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('danger_signs/blood_loss-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/symptoms/pain_urinating">
+				<label ref="jr:itext('symptoms/pain_urinating-label')"/>
+				<item>
+					<label ref="jr:itext('danger_signs/blood_loss-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('danger_signs/blood_loss-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/symptoms/deficulty_retaining_urine">
+				<label ref="jr:itext('symptoms/deficulty_retaining_urine-label')"/>
+				<item>
+					<label ref="jr:itext('danger_signs/blood_loss-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('danger_signs/blood_loss-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/symptoms/vaginal_pus">
+				<label ref="jr:itext('symptoms/vaginal_pus-label')"/>
+				<item>
+					<label ref="jr:itext('danger_signs/blood_loss-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('danger_signs/blood_loss-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/symptoms/vaginal_pain">
+				<label ref="jr:itext('symptoms/vaginal_pain-label')"/>
+				<item>
+					<label ref="jr:itext('danger_signs/blood_loss-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('danger_signs/blood_loss-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/symptoms/vaginal_leak">
+				<label ref="jr:itext('symptoms/vaginal_leak-label')"/>
+				<item>
+					<label ref="jr:itext('danger_signs/blood_loss-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('danger_signs/blood_loss-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<input ref="/data/symptoms/symptoms_if_other">
+				<label ref="jr:itext('symptoms/symptoms_if_other-label')"/>
+			</input>
+		</group>
+		<trigger ref="/data/woman_has_symptoms_label" appearance="minimal">
+			<label ref="jr:itext('woman_has_symptoms_label-label')"/>
+		</trigger>
+		<group ref="/data/if_danger_signs_or_other_symptoms">
+			<label ref="jr:itext('if_danger_signs_or_other_symptoms-label')"/>
+			<select1 ref="/data/if_danger_signs_or_other_symptoms/transportation">
+				<label ref="jr:itext('if_danger_signs_or_other_symptoms/transportation-label')"/>
+				<item>
+					<label ref="jr:itext('if_danger_signs_or_other_symptoms/transportation-ambulance-label')"/>
+					<value>ambulance</value>
+				</item>
+				<item>
+					<label ref="jr:itext('if_danger_signs_or_other_symptoms/transportation-chariot-label')"/>
+					<value>chariot</value>
+				</item>
+				<item>
+					<label ref="jr:itext('if_danger_signs_or_other_symptoms/transportation-car-label')"/>
+					<value>car</value>
+				</item>
+				<item>
+					<label ref="jr:itext('if_danger_signs_or_other_symptoms/transportation-canoe-label')"/>
+					<value>canoe</value>
+				</item>
+				<item>
+					<label ref="jr:itext('if_danger_signs_or_other_symptoms/transportation-bicycle-label')"/>
+					<value>bicycle</value>
+				</item>
+				<item>
+					<label ref="jr:itext('if_danger_signs_or_other_symptoms/transportation-motorcycle-label')"/>
+					<value>motorcycle</value>
+				</item>
+				<item>
+					<label ref="jr:itext('if_danger_signs_or_other_symptoms/transportation-stretcher-label')"/>
+					<value>stretcher</value>
+				</item>
+				<item>
+					<label ref="jr:itext('if_danger_signs_or_other_symptoms/transportation-other-label')"/>
+					<value>other</value>
+				</item>
+			</select1>
+			<select ref="/data/if_danger_signs_or_other_symptoms/accompanying">
+				<label ref="jr:itext('if_danger_signs_or_other_symptoms/accompanying-label')"/>
+				<item>
+					<label ref="jr:itext('if_danger_signs_or_other_symptoms/accompanying-husband-label')"/>
+					<value>husband</value>
+				</item>
+				<item>
+					<label ref="jr:itext('if_danger_signs_or_other_symptoms/accompanying-ac-label')"/>
+					<value>ac</value>
+				</item>
+				<item>
+					<label ref="jr:itext('if_danger_signs_or_other_symptoms/accompanying-family-label')"/>
+					<value>family</value>
+				</item>
+				<item>
+					<label ref="jr:itext('if_danger_signs_or_other_symptoms/accompanying-matrone-label')"/>
+					<value>matrone</value>
+				</item>
+				<item>
+					<label ref="jr:itext('if_danger_signs_or_other_symptoms/accompanying-other-label')"/>
+					<value>other</value>
+				</item>
+				<item>
+					<label ref="jr:itext('if_danger_signs_or_other_symptoms/accompanying-noone-label')"/>
+					<value>noone</value>
+				</item>
+			</select>
+			<trigger ref="/data/if_danger_signs_or_other_symptoms/sending_info_to_health_center" appearance="minimal">
+				<label ref="jr:itext('if_danger_signs_or_other_symptoms/sending_info_to_health_center-label')"/>
+			</trigger>
+			<trigger ref="/data/if_danger_signs_or_other_symptoms/reminder_send_information" appearance="minimal">
+				<label ref="jr:itext('if_danger_signs_or_other_symptoms/reminder_send_information-label')"/>
+			</trigger>
+		</group>
+	</h:body>
+</h:html>

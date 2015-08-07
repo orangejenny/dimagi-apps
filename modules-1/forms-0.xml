@@ -1,0 +1,158 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:vellum="http://commcarehq.org/xforms/vellum">
+	<h:head>
+		<h:title>Approbation Agent Terrain</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/8059EF71-1FD4-4550-B317-EF3AA876C7EF" uiVersion="1" version="1985" name="Approbation Agent Terrain">
+					<intro_label/>
+					<password_agent_terrain/>
+					<household_name/>
+					<household_region/>
+					<household_district/>
+					<household_commune/>
+					<household_fkt/>
+					<verification>
+						<household_data_label/>
+						<is_adra_beneficiary/>
+						<no_code_yet/>
+						<household_code_asotry/>
+						<date_code_inputted/>
+						<code_adra_label/>
+					</verification>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><update><household_code_adra/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance id="commcaresession" src="jr://instance/session"/><instance id="casedb" src="jr://instance/casedb"/>
+			<bind nodeset="/data/intro_label"/>
+			<bind nodeset="/data/password_agent_terrain" type="xsd:string" constraint=". = 'adraasotry'" jr:constraintMsg="jr:itext('password_agent_terrain-constraintMsg')" required="true()"/>
+			<bind nodeset="/data/household_name"/>
+			<bind nodeset="/data/household_region"/>
+			<bind nodeset="/data/household_district"/>
+			<bind nodeset="/data/household_commune"/>
+			<bind nodeset="/data/household_fkt"/>
+			<bind nodeset="/data/verification"/>
+			<bind nodeset="/data/verification/household_data_label"/>
+			<bind nodeset="/data/verification/is_adra_beneficiary" required="true()"/>
+			<bind nodeset="/data/verification/no_code_yet" relevant="/data/verification/is_adra_beneficiary = 'no'"/>
+			<bind nodeset="/data/verification/household_code_asotry" type="xsd:string" relevant="/data/verification/is_adra_beneficiary = 'yes'" required="true()"/>
+			<bind nodeset="/data/verification/date_code_inputted" relevant="/data/verification/household_code_asotry != ''" calculate="today()"/>
+			<bind nodeset="/data/verification/code_adra_label" relevant="/data/verification/household_code_asotry != ''"/>
+			<itext>
+				<translation lang="fra" default="">
+					<text id="intro_label-label">
+						<value>Ce formulaire sera rempli uniquement par les Agents de Terrain pour v&#233;rifier qu'un m&#233;nage fait partie de la liste des b&#233;n&#233;ficiaires d'ADRA. </value>
+					</text>
+					<text id="password_agent_terrain-label">
+						<value>Notez le mot de passe pour les agents de terrain :</value>
+					</text>
+					<text id="password_agent_terrain-constraintMsg">
+						<value>Mot de passe incorrect.</value>
+					</text>
+					<text id="verification-label">
+						<value>verification</value>
+					</text>
+					<text id="verification/household_data_label-label">
+						<value>Vous v&#233;rifiez les informations pour le m&#233;nage ci dessous :
+
+Chef du m&#233;nage : <output value="/data/household_name"/>
+R&#233;gion : <output value="/data/household_region"/>
+District : <output value="/data/household_district"/>
+Commune : <output value="/data/household_commune"/>
+FKT : <output value="/data/household_fkt"/></value>
+					</text>
+					<text id="verification/is_adra_beneficiary-label">
+						<value>Est-ce que ce m&#233;nage fait partie de la liste des b&#233;n&#233;ficiaires d'ADRA ?</value>
+					</text>
+					<text id="verification/is_adra_beneficiary-yes-label">
+						<value>Oui</value>
+					</text>
+					<text id="verification/is_adra_beneficiary-no-label">
+						<value>Non</value>
+					</text>
+					<text id="verification/no_code_yet-label">
+						<value>Ce m&#233;nage restera au niveau de cette liste pour que vous puissez l'approuver la prochaine fois. </value>
+					</text>
+					<text id="verification/household_code_asotry-label">
+						<value>Notez le code ASOTRY pour ce m&#233;nage.</value>
+					</text>
+					<text id="verification/code_adra_label-label">
+						<value>Ce m&#233;nage ne figurera plus sur la liste "Code ADRA manquant"</value>
+					</text>
+				</translation>
+				<translation lang="mlg">
+					<text id="intro_label-label">
+						<value>Ce formulaire sera rempli uniquement par les Agents de Terrain pour v&#233;rifier qu'un m&#233;nage fait partie de la liste des b&#233;n&#233;ficiaires d'ADRA. </value>
+					</text>
+					<text id="password_agent_terrain-label">
+						<value>Notez le mot de passe pour les agents de terrain :</value>
+					</text>
+					<text id="password_agent_terrain-constraintMsg">
+						<value>Mot de passe incorrect.</value>
+					</text>
+					<text id="verification-label">
+						<value>verification</value>
+					</text>
+					<text id="verification/household_data_label-label">
+						<value>Vous v&#233;rifiez les informations pour le m&#233;nage ci dessous :
+
+Chef du m&#233;nage : <output value="/data/household_name"/>
+R&#233;gion : <output value="/data/household_region"/>
+District : <output value="/data/household_district"/>
+Commune : <output value="/data/household_commune"/>
+FKT : <output value="/data/household_fkt"/></value>
+					</text>
+					<text id="verification/is_adra_beneficiary-label">
+						<value>Est-ce que ce m&#233;nage fait partie de la liste des b&#233;n&#233;ficiaires d'ADRA ?</value>
+					</text>
+					<text id="verification/is_adra_beneficiary-yes-label">
+						<value>Oui</value>
+					</text>
+					<text id="verification/is_adra_beneficiary-no-label">
+						<value>Non</value>
+					</text>
+					<text id="verification/no_code_yet-label">
+						<value>Ce m&#233;nage restera au niveau de cette liste pour que vous puissez l'approuver la prochaine fois. </value>
+					</text>
+					<text id="verification/household_code_asotry-label">
+						<value>Notez le code ASOTRY pour ce m&#233;nage.</value>
+					</text>
+					<text id="verification/code_adra_label-label">
+						<value>Ce m&#233;nage ne figurera plus sur la liste "Code ADRA manquant"</value>
+					</text>
+				</translation>
+			</itext>
+		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><bind calculate="instance('commcaresession')/session/data/case_id" nodeset="/data/case/@case_id"/><bind calculate="/data/verification/household_code_asotry" nodeset="/data/case/update/household_code_adra" relevant="count(/data/verification/household_code_asotry) &gt; 0"/><setvalue event="xforms-ready" ref="/data/household_commune" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/commune"/><setvalue event="xforms-ready" ref="/data/household_region" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/region"/><setvalue event="xforms-ready" ref="/data/household_fkt" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/fokontany"/><setvalue event="xforms-ready" ref="/data/household_name" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/case_name"/><setvalue event="xforms-ready" ref="/data/household_district" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/district"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<trigger ref="/data/intro_label" appearance="minimal">
+			<label ref="jr:itext('intro_label-label')"/>
+		</trigger>
+		<secret ref="/data/password_agent_terrain">
+			<label ref="jr:itext('password_agent_terrain-label')"/>
+		</secret>
+		<group ref="/data/verification" appearance="field-list">
+			<label ref="jr:itext('verification-label')"/>
+			<trigger ref="/data/verification/household_data_label" appearance="minimal">
+				<label ref="jr:itext('verification/household_data_label-label')"/>
+			</trigger>
+			<select1 ref="/data/verification/is_adra_beneficiary">
+				<label ref="jr:itext('verification/is_adra_beneficiary-label')"/>
+				<item>
+					<label ref="jr:itext('verification/is_adra_beneficiary-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('verification/is_adra_beneficiary-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<trigger ref="/data/verification/no_code_yet" appearance="minimal">
+				<label ref="jr:itext('verification/no_code_yet-label')"/>
+			</trigger>
+			<input ref="/data/verification/household_code_asotry" appearance="numeric">
+				<label ref="jr:itext('verification/household_code_asotry-label')"/>
+			</input>
+			<trigger ref="/data/verification/code_adra_label" appearance="minimal">
+				<label ref="jr:itext('verification/code_adra_label-label')"/>
+			</trigger>
+		</group>
+	</h:body>
+</h:html>

@@ -1,0 +1,251 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:vellum="http://commcarehq.org/xforms/vellum">
+	<h:head>
+		<h:title>Enregistrer M&#233;nage</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/4FA00D3D-90B9-41AE-9BE6-C0514E08B742" uiVersion="1" version="1902" name="Enregistrer M&#233;nage">
+					<household_name/>
+					<has_pregnant_women/>
+					<has_cu5/>
+					<household_eligibility_status/>
+					<household_not_registered_label/>
+					<household_registered_label/>
+					<location_household>
+						<region/>
+						<district/>
+						<commune/>
+						<other_commune/>
+						<fokontany/>
+						<other_fokontany/>
+					</location_household>
+					<close_label/>
+					<household_code_asotry/>
+					<date_household_registration/>
+				<case_household><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>household</case_type></create><update><commune/><date_household_registration/><district/><fokontany/><household_code_asotry/><other_commune/><other_fokontany/><region/></update></case></case_household><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance id="commcaresession" src="jr://instance/session"/>
+			<instance src="jr://fixture/item-list:region" id="region"/>
+			<instance src="jr://fixture/item-list:district" id="district"/>
+			<instance src="jr://fixture/item-list:commune" id="commune"/>
+			<instance src="jr://fixture/item-list:fokontany" id="fokontany"/>
+			<bind nodeset="/data/household_name" type="xsd:string" required="true()"/>
+			<bind nodeset="/data/has_pregnant_women" required="true()"/>
+			<bind nodeset="/data/has_cu5" required="true()"/>
+			<bind nodeset="/data/household_eligibility_status" calculate="if(/data/has_pregnant_women=&quot;yes&quot; or /data/has_cu5 = &quot;yes&quot;, 'yes', 'no')"/>
+			<bind nodeset="/data/household_not_registered_label" relevant="/data/household_eligibility_status = 'no'"/>
+			<bind nodeset="/data/household_registered_label" relevant="/data/household_eligibility_status = 'yes'"/>
+			<bind nodeset="/data/location_household" relevant="/data/household_eligibility_status = 'yes'"/>
+			<bind nodeset="/data/location_household/region" required="true()"/>
+			<bind nodeset="/data/location_household/district" required="true()"/>
+			<bind nodeset="/data/location_household/commune" required="true()"/>
+			<bind nodeset="/data/location_household/other_commune" type="xsd:string" relevant="/data/location_household/commune = 'hors_zone'" required="true()"/>
+			<bind nodeset="/data/location_household/fokontany" required="true()"/>
+			<bind nodeset="/data/location_household/other_fokontany" type="xsd:string" relevant="/data/location_household/fokontany = 'hors_zone'" required="true()"/>
+			<bind nodeset="/data/close_label" relevant="/data/household_eligibility_status = 'yes'"/>
+			<bind nodeset="/data/household_code_asotry"/>
+			<bind nodeset="/data/date_household_registration" calculate="today()"/>
+			<itext>
+				<translation lang="fra" default="">
+					<text id="household_name-label">
+						<value>Nom du chef de m&#233;nage</value>
+						<value form="image">jr://file/commcare/image/data/household_name.jpg</value>
+					</text>
+					<text id="has_pregnant_women-label">
+						<value>Est-ce qu'il y a une ou plusieurs femmes enceintes dans ce m&#233;nage ?</value>
+						<value form="image">jr://file/commcare/image/data/has_pregnant_women.jpg</value>
+					</text>
+					<text id="has_cu5-label">
+						<value>Est-ce qu'il y a au moins 1 enfant de moins de 5 ans dans ce m&#233;nage ?</value>
+						<value form="image">jr://file/commcare/image/data/has_cu5.png</value>
+					</text>
+					<text id="has_cu5-yes-label">
+						<value>Oui</value>
+					</text>
+					<text id="has_cu5-no-label">
+						<value>Non</value>
+					</text>
+					<text id="household_not_registered_label-label">
+						<value>Ce m&#233;nage n'est pas &#233;ligible &#224; &#234;tre enregistrer dans ce programme.</value>
+					</text>
+					<text id="household_registered_label-label">
+						<value>Ce m&#233;nage est &#233;ligible pour ce programme. 
+
+1. Noter la location du m&#233;nage.
+2. Passer au formulaire suivant pour enregistrer :
+&gt; toute femme enceinte 
+&gt; tout enfant de moins de 5 ans et leur responsable.</value>
+						<value form="image">jr://file/commcare/image/data/household_registered_label.png</value>
+						<value form="markdown">Ce m&#233;nage est &#233;ligible pour ce programme. 
+
+1. Noter la location du m&#233;nage.
+2. Passer au formulaire suivant pour enregistrer :
+&gt; toute femme enceinte 
+&gt; tout enfant de moins de 5 ans et leur responsable.</value>
+					</text>
+					<text id="location_household-label">
+						<value>G&#233;ographie M&#233;nage</value>
+					</text>
+					<text id="location_household/region-label">
+						<value>R&#233;gion</value>
+						<value form="image">jr://file/commcare/image/data/location_household/region.jpg</value>
+					</text>
+					<text id="location_household/district-label">
+						<value>District</value>
+					</text>
+					<text id="location_household/commune-label">
+						<value>Commune</value>
+					</text>
+					<text id="location_household/other_commune-label">
+						<value>Sp&#233;cifier la commune hors zone</value>
+					</text>
+					<text id="location_household/fokontany-label">
+						<value>Fokontany</value>
+					</text>
+					<text id="location_household/other_fokontany-label">
+						<value>Sp&#233;cifier la Fokontany hors zone</value>
+					</text>
+					<text id="close_label-label">
+						<value>Vous avez compl&#233;t&#233; l'enregistrement du m&#233;nage. Passez au module "Enregistrer b&#233;n&#233;ficiaires" pour enregistrer femmes enceintes et enfants moins de 5 ans qui habitent dans ce m&#233;nage.</value>
+						<value form="image">jr://file/commcare/image/data/close_label.png</value>
+					</text>
+				</translation>
+				<translation lang="mlg">
+					<text id="household_name-label">
+						<value>Anaran'ny loham-pianakaviana</value>
+						<value form="image">jr://file/commcare/image/data/household_name.jpg</value>
+					</text>
+					<text id="has_pregnant_women-label">
+						<value>Misy vehivavy bevohoka iray na maromaro ve ao an-trano?</value>
+						<value form="image">jr://file/commcare/image/data/has_pregnant_women.jpg</value>
+					</text>
+					<text id="has_cu5-label">
+						<value>Misy zaza latsaka ny 5 taona ve ao an-tokantrano</value>
+						<value form="image">jr://file/commcare/image/data/has_cu5.png</value>
+					</text>
+					<text id="has_cu5-yes-label">
+						<value>Eny</value>
+					</text>
+					<text id="has_cu5-no-label">
+						<value>Tsia</value>
+					</text>
+					<text id="household_not_registered_label-label">
+						<value>Tsy azo raisina an-tsoratra handray anjara amin'ny tetikasa ity tokantrano ity</value>
+					</text>
+					<text id="household_registered_label-label">
+						<value>Azo raisina an-tsoratra amin'ny tetikasa ny tokantrano. 
+
+1. Soraty ny Fokontany misy ilay tokantrano.
+2. Mandehana amin'ny  formulaire manaraka mba hirakitra an-tsoratra :
+&gt; ny vehivavy bevohoka 
+&gt; ny zaza latsaka ny 5 taona sy ny mpiandraikitra ny zaza.</value>
+						<value form="image">jr://file/commcare/image/data/household_registered_label.png</value>
+						<value form="markdown">Azo raisina an-tsoratra amin'ny tetikasa ny tokantrano. 
+
+1. Soraty ny Fokontany misy ilay tokantrano.
+2. Mandehana amin'ny  formulaire manaraka mba hirakitra an-tsoratra :
+&gt; ny vehivavy bevohoka 
+&gt; ny zaza latsaka ny 5 taona sy ny mpiandraikitra ny zaza.</value>
+					</text>
+					<text id="location_household-label">
+						<value>Toerana misy ny tokantrano</value>
+					</text>
+					<text id="location_household/region-label">
+						<value>Faritra</value>
+						<value form="image">jr://file/commcare/image/data/location_household/region.jpg</value>
+					</text>
+					<text id="location_household/district-label">
+						<value>Distrika</value>
+					</text>
+					<text id="location_household/commune-label">
+						<value>Kaominina</value>
+					</text>
+					<text id="location_household/other_commune-label">
+						<value>Soraty raha kaominina ivelan'ny faritra iasan'ny tetikasa</value>
+					</text>
+					<text id="location_household/fokontany-label">
+						<value>Fokontany</value>
+					</text>
+					<text id="location_household/other_fokontany-label">
+						<value>Soraty raha fokontany ivelan'ny faritra iasan'ny tetikasa</value>
+					</text>
+					<text id="close_label-label">
+						<value>Efa vitanao ny fandraisana an-tsoratra ny tokantrano. Mandehana any amin'ny  "Fandraisana an-tsoratra ny mpahazo tombontsoa" handraisana an-tsoratra ny vehivavy bevohoka sy ny zaza latsaka ny 5 taona ao an-tokantrano.</value>
+						<value form="image">jr://file/commcare/image/data/close_label.png</value>
+					</text>
+				</translation>
+			</itext>
+		<bind calculate="/data/meta/timeEnd" nodeset="/data/case_household/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case_household/case/@user_id"/><bind nodeset="/data/case_household/case" relevant="/data/household_eligibility_status = 'yes'"/><setvalue event="xforms-ready" ref="/data/case_household/case/@case_id" value="instance('commcaresession')/session/data/case_id_new_household_0"/><bind calculate="/data/household_name" nodeset="/data/case_household/case/create/case_name"/><bind calculate="/data/meta/userID" nodeset="/data/case_household/case/create/owner_id"/><bind calculate="/data/location_household/commune" nodeset="/data/case_household/case/update/commune" relevant="count(/data/location_household/commune) &gt; 0"/><bind calculate="/data/date_household_registration" nodeset="/data/case_household/case/update/date_household_registration" relevant="count(/data/date_household_registration) &gt; 0"/><bind calculate="/data/location_household/district" nodeset="/data/case_household/case/update/district" relevant="count(/data/location_household/district) &gt; 0"/><bind calculate="/data/location_household/fokontany" nodeset="/data/case_household/case/update/fokontany" relevant="count(/data/location_household/fokontany) &gt; 0"/><bind calculate="/data/household_code_asotry" nodeset="/data/case_household/case/update/household_code_asotry" relevant="count(/data/household_code_asotry) &gt; 0"/><bind calculate="/data/location_household/other_commune" nodeset="/data/case_household/case/update/other_commune" relevant="count(/data/location_household/other_commune) &gt; 0"/><bind calculate="/data/location_household/other_fokontany" nodeset="/data/case_household/case/update/other_fokontany" relevant="count(/data/location_household/other_fokontany) &gt; 0"/><bind calculate="/data/location_household/region" nodeset="/data/case_household/case/update/region" relevant="count(/data/location_household/region) &gt; 0"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<input ref="/data/household_name">
+			<label ref="jr:itext('household_name-label')"/>
+		</input>
+		<select1 ref="/data/has_pregnant_women">
+			<label ref="jr:itext('has_pregnant_women-label')"/>
+			<item>
+				<label ref="jr:itext('has_cu5-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('has_cu5-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<select1 ref="/data/has_cu5">
+			<label ref="jr:itext('has_cu5-label')"/>
+			<item>
+				<label ref="jr:itext('has_cu5-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('has_cu5-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<trigger ref="/data/household_not_registered_label" appearance="minimal">
+			<label ref="jr:itext('household_not_registered_label-label')"/>
+		</trigger>
+		<trigger ref="/data/household_registered_label" appearance="minimal">
+			<label ref="jr:itext('household_registered_label-label')"/>
+		</trigger>
+		<group ref="/data/location_household">
+			<label ref="jr:itext('location_household-label')"/>
+			<select1 ref="/data/location_household/region">
+				<label ref="jr:itext('location_household/region-label')"/>
+				<itemset nodeset="instance('region')/region_list/region">
+					<label ref="name"/>
+					<value ref="id"/>
+				</itemset>
+			</select1>
+			<select1 ref="/data/location_household/district">
+				<label ref="jr:itext('location_household/district-label')"/>
+				<itemset nodeset="instance('district')/district_list/district[/data/location_household/region = region_id]">
+					<label ref="name"/>
+					<value ref="id"/>
+				</itemset>
+			</select1>
+			<select1 ref="/data/location_household/commune">
+				<label ref="jr:itext('location_household/commune-label')"/>
+				<itemset nodeset="instance('commune')/commune_list/commune[/data/location_household/district = district_id]">
+					<label ref="name"/>
+					<value ref="id"/>
+				</itemset>
+			</select1>
+			<input ref="/data/location_household/other_commune">
+				<label ref="jr:itext('location_household/other_commune-label')"/>
+			</input>
+			<select1 ref="/data/location_household/fokontany">
+				<label ref="jr:itext('location_household/fokontany-label')"/>
+				<itemset nodeset="instance('fokontany')/fokontany_list/fokontany[/data/location_household/commune = commune_id]">
+					<label ref="name"/>
+					<value ref="id"/>
+				</itemset>
+			</select1>
+			<input ref="/data/location_household/other_fokontany">
+				<label ref="jr:itext('location_household/other_fokontany-label')"/>
+			</input>
+		</group>
+		<trigger ref="/data/close_label" appearance="minimal">
+			<label ref="jr:itext('close_label-label')"/>
+		</trigger>
+	</h:body>
+</h:html>

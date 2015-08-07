@@ -1,0 +1,1090 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<suite version="1990" descriptor="Suite File">
+  <xform>
+    <resource id="e19774f0633d4ce6f63aaf59f81ea7e4baa16b4" version="1902" descriptor="Form: (Module Enregistrer Ménage) - Enregistrer Ménage">
+      <location authority="local">./modules-0/forms-0.xml</location>
+      <location authority="remote">./modules-0/forms-0.xml</location>
+    </resource>
+  </xform>
+  <xform>
+    <resource id="48f328e31fdd8cd0e15860702a7b401ddb8a2b16" version="1985" descriptor="Form: (Module Code ASOTRY manquant) - Approbation Agent Terrain">
+      <location authority="local">./modules-1/forms-0.xml</location>
+      <location authority="remote">./modules-1/forms-0.xml</location>
+    </resource>
+  </xform>
+  <xform>
+    <resource id="3bb05e1d38c60fda76f795f9296d1c1fd351803" version="1985" descriptor="Form: (Module Enregistrer bénéficiaires) - Enregistrement">
+      <location authority="local">./modules-2/forms-0.xml</location>
+      <location authority="remote">./modules-2/forms-0.xml</location>
+    </resource>
+  </xform>
+  <xform>
+    <resource id="cf11d8d790bdd52000352fee8f89453583f743f3" version="1990" descriptor="Form: (Module Suivi des femmes enceintes) - Suivi de la grossesse">
+      <location authority="local">./modules-3/forms-0.xml</location>
+      <location authority="remote">./modules-3/forms-0.xml</location>
+    </resource>
+  </xform>
+  <xform>
+    <resource id="f2d521243d7d4f284001104ca922a84b5b6c9916" version="1936" descriptor="Form: (Module Suivi des femmes enceintes) - Enregistrer accouchement et nouveau-né">
+      <location authority="local">./modules-3/forms-1.xml</location>
+      <location authority="remote">./modules-3/forms-1.xml</location>
+    </resource>
+  </xform>
+  <xform>
+    <resource id="1ae3b207ddf9bf9611d48330ed895b74eb5e7479" version="1936" descriptor="Form: (Module Suivi des femmes enceintes) - Signes Danger Post-Natal">
+      <location authority="local">./modules-3/forms-2.xml</location>
+      <location authority="remote">./modules-3/forms-2.xml</location>
+    </resource>
+  </xform>
+  <xform>
+    <resource id="9b3597e80809f76eafbb43685f6a72815a44260c" version="1936" descriptor="Form: (Module Suivi Enfant) - Suivi Croissance">
+      <location authority="local">./modules-4/forms-0.xml</location>
+      <location authority="remote">./modules-4/forms-0.xml</location>
+    </resource>
+  </xform>
+  <locale language="default">
+    <resource id="app_default_strings" version="1990" descriptor="Translations: Default Language">
+      <location authority="local">./default/app_strings.txt</location>
+      <location authority="remote">./default/app_strings.txt</location>
+    </resource>
+  </locale>
+  <locale language="fra">
+    <resource id="app_fra_strings" version="1990" descriptor="Translations: Unknown Language (fra)">
+      <location authority="local">./fra/app_strings.txt</location>
+      <location authority="remote">./fra/app_strings.txt</location>
+    </resource>
+  </locale>
+  <locale language="mlg">
+    <resource id="app_mlg_strings" version="1990" descriptor="Translations: Unknown Language (mlg)">
+      <location authority="local">./mlg/app_strings.txt</location>
+      <location authority="remote">./mlg/app_strings.txt</location>
+    </resource>
+  </locale>
+  <detail id="m0_case_short">
+    <title>
+      <text>
+        <locale id="m0.case_short.title"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_short.case_name_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </template>
+      <sort type="string" order="1" direction="ascending">
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </sort>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_short.case_household_code_adra_2.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="household_code_adra"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_short.case_date_household_registration_3.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(date_household_registration = '', '', format_date(date(if(date_household_registration = '', 0, date_household_registration)),'short'))"/>
+        </text>
+      </template>
+      <sort type="string">
+        <text>
+          <xpath function="date_household_registration"/>
+        </text>
+      </sort>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_short.case_status_4.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="@status"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="m0_case_long">
+    <title>
+      <text>
+        <locale id="m0.case_long.title"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="m0.case_long.case_name_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="m1_case_short">
+    <title>
+      <text>
+        <locale id="m1.case_short.title"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_short.case_name_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_short.case_date_household_registration_2.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(date_household_registration = '', '', format_date(date(if(date_household_registration = '', 0, date_household_registration)),'short'))"/>
+        </text>
+      </template>
+      <sort type="string" order="1" direction="ascending">
+        <text>
+          <xpath function="date_household_registration"/>
+        </text>
+      </sort>
+    </field>
+  </detail>
+  <detail id="m1_case_long">
+    <title>
+      <text>
+        <locale id="m1.case_long.title"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_name_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_date_household_registration_2.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(date_household_registration = '', '', format_date(date(if(date_household_registration = '', 0, date_household_registration)),'short'))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_region_3.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="region"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_district_4.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="district"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_commune_5.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="commune"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_other_commune_6.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="other_commune"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_fokontany_7.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="fokontany"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m1.case_long.case_other_fokontany_8.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="other_fokontany"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="m2_case_short">
+    <title>
+      <text>
+        <locale id="m2.case_short.title"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_short.case_name_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </template>
+      <sort type="string" order="1" direction="ascending">
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </sort>
+    </field>
+  </detail>
+  <detail id="m2_case_long">
+    <title>
+      <text>
+        <locale id="m2.case_long.title"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="m2.case_long.case_name_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="m3_case_short">
+    <title>
+      <text>
+        <locale id="m3.case_short.title"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_short.case_name_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </template>
+      <sort type="string" order="1" direction="ascending">
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </sort>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_short.case_woman_dob_2.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(woman_dob = '', '', string(int((today() - date(woman_dob)) div 365.25)))"/>
+        </text>
+      </template>
+      <sort type="string">
+        <text>
+          <xpath function="woman_dob"/>
+        </text>
+      </sort>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_short.case_lmp_3.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(lmp = '', '', string(int((today() - date(lmp)) div 30.4375)))"/>
+        </text>
+      </template>
+      <sort type="string">
+        <text>
+          <xpath function="lmp"/>
+        </text>
+      </sort>
+    </field>
+    <field>
+      <header width="0">
+        <text>
+          <locale id="m3.case_short.case_caregiver_tel_4.header"/>
+        </text>
+      </header>
+      <template width="0">
+        <text>
+          <xpath function="caregiver_tel"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="m3_case_long">
+    <title>
+      <text>
+        <locale id="m3.case_long.title"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_name_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_caregiver_tel_2.header"/>
+        </text>
+      </header>
+      <template form="phone">
+        <text>
+          <xpath function="caregiver_tel"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_woman_dob_3.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(woman_dob = '', '', string(int((today() - date(woman_dob)) div 365.25)))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_caregroup_name_4.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="caregroup_name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_lmp_5.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(lmp = '', '', string(int((today() - date(lmp)) div 30.4375)))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_edd_6.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(edd = '', '', format_date(date(if(edd = '', 0, edd)),'short'))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_number_cpns_completed_7.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="number_cpns_completed"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_date_next_appointment_8.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(date_next_appointment = '', '', format_date(date(if(date_next_appointment = '', 0, date_next_appointment)),'short'))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_screened_for_hiv_9.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(screened_for_hiv = 'yes', $kyes, if(screened_for_hiv = 'no', $kno, ''))">
+            <variable name="kno">
+              <locale id="m3.case_long.case_screened_for_hiv_9.enum.kno"/>
+            </variable>
+            <variable name="kyes">
+              <locale id="m3.case_long.case_screened_for_hiv_9.enum.kyes"/>
+            </variable>
+          </xpath>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_taken_1_vat_10.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(taken_1_vat = 'yes', $kyes, if(taken_1_vat = 'no', $kno, ''))">
+            <variable name="kno">
+              <locale id="m3.case_long.case_taken_1_vat_10.enum.kno"/>
+            </variable>
+            <variable name="kyes">
+              <locale id="m3.case_long.case_taken_1_vat_10.enum.kyes"/>
+            </variable>
+          </xpath>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_referred_11.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(referred = 'yes', $kyes, if(referred = 'no', $kno, ''))">
+            <variable name="kno">
+              <locale id="m3.case_long.case_referred_11.enum.kno"/>
+            </variable>
+            <variable name="kyes">
+              <locale id="m3.case_long.case_referred_11.enum.kyes"/>
+            </variable>
+          </xpath>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_date_referral_12.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(date_referral = '', '', format_date(date(if(date_referral = '', 0, date_referral)),'short'))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_user/referral_date_postnatal_13.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(instance('casedb')/casedb/case[@case_type='commcare-user'][hq_user_id=instance('commcaresession')/session/context/userid][1]/referral_date_postnatal = '', '', format_date(date(if(instance('casedb')/casedb/case[@case_type='commcare-user'][hq_user_id=instance('commcaresession')/session/context/userid][1]/referral_date_postnatal = '', 0, instance('casedb')/casedb/case[@case_type='commcare-user'][hq_user_id=instance('commcaresession')/session/context/userid][1]/referral_date_postnatal)),'short'))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_parent/fokontany_14.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="instance('casedb')/casedb/case[@case_id=index/parent]/fokontany"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m3.case_long.case_parent/household_code_asotry_15.header"/>
+        </text>
+      </header>
+      <template form="phone">
+        <text>
+          <xpath function="instance('casedb')/casedb/case[@case_id=index/parent]/household_code_asotry"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="m4_case_short">
+    <title>
+      <text>
+        <locale id="m4.case_short.title"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="m4.case_short.case_name_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </template>
+      <sort type="string" order="1" direction="ascending">
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </sort>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m4.case_short.case_parent/name_2.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="instance('casedb')/casedb/case[@case_id=index/parent]/case_name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m4.case_short.case_child_dob_3.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(child_dob = '', '', string(int((today() - date(child_dob)) div 30.4375)))"/>
+        </text>
+      </template>
+      <sort type="string">
+        <text>
+          <xpath function="child_dob"/>
+        </text>
+      </sort>
+    </field>
+  </detail>
+  <detail id="m4_case_long">
+    <title>
+      <text>
+        <locale id="m4.case_long.title"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="m4.case_long.case_name_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m4.case_long.case_child_gender_2.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="child_gender"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m4.case_long.case_parent/parent/fokontany_3.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="instance('casedb')/casedb/case[@case_id=instance('casedb')/casedb/case[@case_id=index/parent]/index/parent]/fokontany"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m4.case_long.case_parent/name_4.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="instance('casedb')/casedb/case[@case_id=index/parent]/case_name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m4.case_long.case_child_dob_5.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(child_dob = '', '', format_date(date(if(child_dob = '', 0, child_dob)),'short'))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m4.case_long.case_child_dob_6.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(child_dob = '', '', string(int((today() - date(child_dob)) div 30.4375)))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m4.case_long.case_visit_number_7.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="visit_number"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m4.case_long.case_visit_date_8.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="if(visit_date = '', '', format_date(date(if(visit_date = '', 0, visit_date)),'short'))"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m4.case_long.case_weight_9.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="weight"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m4.case_long.case_weight_1_visit_ago_10.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="weight_1_visit_ago"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m4.case_long.case_weight_2_visits_ago_11.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="weight_2_visits_ago"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m4.case_long.case_weight_3_visits_ago_12.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="weight_3_visits_ago"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="m4.case_long.case_Statut_13.header"/>
+        </text>
+      </header>
+      <template form="graph">
+        <graph type="xy">
+          <!--series nodeset="instance('item-list:zscore')/zscore_list/zscore[gender = current()/gender]"-->
+          <series nodeset="instance('item-list:zscore')/zscore_list/zscore[gender = 'female']">
+            <configuration>
+              <text id="line-color">
+                <xpath function="'#000000'"/>
+              </text>
+              <text id="point-style">
+                <xpath function="'none'"/>
+              </text>
+              <text id="name">
+                <xpath function="'-3'"/>
+              </text>
+            </configuration>
+            <x function="month"/>
+            <y function="sd3neg"/>
+          </series>
+          <configuration>
+            <text id="x-max">
+              <xpath function="60"/>
+            </text>
+            <text id="">
+              <xpath function="30"/>
+            </text>
+            <text id="x-min">
+              <xpath function="0"/>
+            </text>
+            <text id="y-min">
+              <xpath function="0"/>
+            </text>
+            <text id="secondary-y-title">
+              <locale id="m4.case_long.case_Statut_13.graph.key.secondary-y-title"/>
+            </text>
+            <text id="x-title">
+              <locale id="m4.case_long.case_Statut_13.graph.key.x-title"/>
+            </text>
+            <text id="y-title">
+              <locale id="m4.case_long.case_Statut_13.graph.key.y-title"/>
+            </text>
+          </configuration>
+        </graph>
+      </template>
+    </field>
+  </detail>
+  <detail id="m5_case_short">
+    <title>
+      <text>
+        <locale id="m5.case_short.title"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="m5.case_short.case_name_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </template>
+      <sort type="string" order="1" direction="ascending">
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </sort>
+    </field>
+  </detail>
+  <detail id="m5_case_long">
+    <title>
+      <text>
+        <locale id="m5.case_long.title"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="m5.case_long.case_name_1.header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="case_name"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <entry>
+    <form>http://openrosa.org/formdesigner/4FA00D3D-90B9-41AE-9BE6-C0514E08B742</form>
+    <command id="m0-f0">
+      <display>
+        <text>
+          <locale id="forms.m0f0"/>
+        </text>
+        <media image="jr://file/commcare/image/module0_form0.png"/>
+      </display>
+    </command>
+    <session>
+      <datum id="case_id_new_household_0" function="uuid()"/>
+    </session>
+    <stack>
+      <create/>
+    </stack>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/8059EF71-1FD4-4550-B317-EF3AA876C7EF</form>
+    <command id="m1-f0">
+      <display>
+        <text>
+          <locale id="forms.m1f0"/>
+        </text>
+        <media image="jr://file/commcare/image/module2_form0.png"/>
+      </display>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='household'][@status='open'][household_code_asotry='']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
+    </session>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/3bb05e1d38c60fda76f795f9296d1c1fd351803</form>
+    <command id="m2-f0">
+      <display>
+        <text>
+          <locale id="forms.m2f0"/>
+        </text>
+        <media image="jr://file/commcare/image/module1_form0.png"/>
+      </display>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <session>
+      <datum id="case_id_household" nodeset="instance('casedb')/casedb/case[@case_type='household'][@status='open'][household_code_asotry='']" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
+      <datum id="case_id_new_mother_caregiver_0" function="uuid()"/>
+    </session>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/b41463366e78ccf5b6cb0c45ff36059dca96fbd0</form>
+    <command id="m3-f0">
+      <display>
+        <text>
+          <locale id="forms.m3f0"/>
+        </text>
+        <media image="jr://file/commcare/image/module3_form0.png"/>
+      </display>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <instance id="commcaresession" src="jr://instance/session"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='mother_caregiver'][@status='open'][pregnancy_status = 'yes']" value="./@case_id" detail-select="m3_case_short" detail-confirm="m3_case_long"/>
+    </session>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/f2d521243d7d4f284001104ca922a84b5b6c9916</form>
+    <command id="m3-f1">
+      <display>
+        <text>
+          <locale id="forms.m3f1"/>
+        </text>
+        <media image="jr://file/commcare/image/module3_form1.png"/>
+      </display>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <instance id="commcaresession" src="jr://instance/session"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='mother_caregiver'][@status='open'][pregnancy_status = 'yes']" value="./@case_id" detail-select="m3_case_short" detail-confirm="m3_case_long"/>
+    </session>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/3DEB390A-AF60-4F12-B9DA-4E66B576611A</form>
+    <command id="m3-f2">
+      <display>
+        <text>
+          <locale id="forms.m3f2"/>
+        </text>
+        <media image="jr://file/commcare/image/module3_form2.png"/>
+      </display>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <instance id="commcaresession" src="jr://instance/session"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='mother_caregiver'][@status='open'][pregnancy_status = 'yes']" value="./@case_id" detail-select="m3_case_short" detail-confirm="m3_case_long"/>
+      <datum id="usercase_id" function="instance('casedb')/casedb/case[@case_type='commcare-user'][hq_user_id=instance('commcaresession')/session/context/userid][1]/@case_id"/>
+    </session>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/9b3597e80809f76eafbb43685f6a72815a44260c</form>
+    <command id="m4-f0">
+      <display>
+        <text>
+          <locale id="forms.m4f0"/>
+        </text>
+        <media image="jr://file/commcare/image/module4_form0.png"/>
+      </display>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <instance id="commcaresession" src="jr://instance/session"/>
+    <instance id="item-list:zscore" src="jr://fixture/item-list:zscore"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='child'][@status='open']" value="./@case_id" detail-select="m4_case_short" detail-confirm="m4_case_long"/>
+      <datum id="case_id_new_gmp_visit_0" function="uuid()"/>
+    </session>
+    <stack>
+      <create>
+        <command value="'m4'"/>
+        <datum id="case_id" value="instance('commcaresession')/session/data/case_id"/>
+        <datum id="case_id_new_gmp_visit_0" value="uuid()"/>
+      </create>
+    </stack>
+  </entry>
+  <entry>
+    <command id="m5-case-list">
+      <text>
+        <locale id="case_lists.m5"/>
+      </text>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='gmp_visit'][@status='open']" value="./@case_id" detail-select="m5_case_short" detail-confirm="m5_case_long"/>
+    </session>
+  </entry>
+  <menu id="root">
+    <display>
+      <text>
+        <locale id="modules.m0"/>
+      </text>
+      <media image="jr://file/commcare/image/module0.png"/>
+    </display>
+    <command id="m0-f0"/>
+  </menu>
+  <menu id="m1">
+    <display>
+      <text>
+        <locale id="modules.m1"/>
+      </text>
+      <media image="jr://file/commcare/image/module2.png"/>
+    </display>
+    <command id="m1-f0"/>
+  </menu>
+  <menu id="m2">
+    <display>
+      <text>
+        <locale id="modules.m2"/>
+      </text>
+      <media image="jr://file/commcare/image/module1.png"/>
+    </display>
+    <command id="m2-f0"/>
+  </menu>
+  <menu id="m3">
+    <display>
+      <text>
+        <locale id="modules.m3"/>
+      </text>
+      <media image="jr://file/commcare/image/module3.png"/>
+    </display>
+    <command id="m3-f0" relevant="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/delivery_date=''"/>
+    <command id="m3-f1" relevant="today() &gt;= date(date(instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/edd) - 91)"/>
+    <command id="m3-f2" relevant="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/delivery_status=&quot;yes&quot;"/>
+  </menu>
+  <menu id="m4">
+    <display>
+      <text>
+        <locale id="modules.m4"/>
+      </text>
+      <media image="jr://file/commcare/image/module4.png"/>
+    </display>
+    <command id="m4-f0"/>
+  </menu>
+  <menu relevant="false()" id="m5">
+    <text>
+      <locale id="modules.m5"/>
+    </text>
+    <command id="m5-case-list"/>
+  </menu>
+</suite>

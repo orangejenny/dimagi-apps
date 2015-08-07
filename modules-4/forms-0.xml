@@ -1,0 +1,1434 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:vellum="http://commcarehq.org/xforms/vellum">
+	<h:head>
+		<h:title>Suivi Croissance</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/9b3597e80809f76eafbb43685f6a72815a44260c" uiVersion="1" version="1936" name="Suivi Croissance">
+					<YES/>
+					<NO/>
+					<prev_visit_date/>
+					<visit_date/>
+					<child_name/>
+					<child_dob/>
+					<child_age_months/>
+					<prev_visit_number/>
+					<visit_number/>
+					<prev_referred/>
+					<intro_label/>
+					<prev_register_number/>
+					<has_register_number/>
+					<child_register_no/>
+					<first_child_today/>
+					<was_referred>
+						<respected_referral/>
+						<label_no_adherence/>
+					</was_referred>
+					<oedema_group>
+						<has_oedema/>
+						<classify_oedema/>
+					</oedema_group>
+					<muac_group>
+						<instructions_muac>
+							<pb_instructions/>
+							<pb_instructions_2/>
+							<pb_instructions_3/>
+						</instructions_muac>
+						<ask_muac_mm/>
+						<prev_muac/>
+						<change_in_muac/>
+					</muac_group>
+					<weight_group>
+						<instructions_weight>
+							<calibrate_balance/>
+							<adjust_balance/>
+							<undress_child/>
+							<eye_level/>
+						</instructions_weight>
+						<ask_weight/>
+						<prev_weight/>
+						<change_in_weight/>
+						<gained_weight/>
+						<lost_weight/>
+						<unchanged_weight/>
+					</weight_group>
+					<height_group>
+						<instructions_height>
+							<instructions_height_a/>
+							<instructions_height_b/>
+							<instructions_height_c/>
+						</instructions_height>
+						<instructions_height_2>
+							<instructions_height_d/>
+							<instructions_height_e/>
+							<instructions_height_f/>
+						</instructions_height_2>
+						<instructions_height_3>
+							<instructions_height_g/>
+							<instructions_height_h/>
+						</instructions_height_3>
+						<ask_height/>
+						<prev_height/>
+						<change_in_height/>
+					</height_group>
+					<referral_criteria>
+						<child_has_oedema/>
+						<pb_less_than_115/>
+						<stationary_weight/>
+						<sudden_weight_loss/>
+						<zscore_less_than_3/>
+						<trigger_referral/>
+						<referred/>
+					</referral_criteria>
+					<actions_recommendations>
+						<summary/>
+						<oedema_actions>
+							<shows_oedema/>
+						</oedema_actions>
+						<pb_actions>
+							<pb_below_115/>
+							<pb_below_115_2/>
+							<pb_between_115_and_125/>
+							<pb_above_125/>
+						</pb_actions>
+						<needs_referral/>
+					</actions_recommendations>
+					<debug_zscore/>
+					<weight_1_visit_ago/>
+					<weight_2_visits_ago/>
+					<weight_3_visits_ago/>
+					<weight_4_visits_ago/>
+					<weight_5_visits_ago/>
+					<weight_6_visits_ago/>
+					<gender/>
+					<calc_grade/>
+					<calc_grade_tenths/>
+					<calc_grade_tenths_with_zeros/>
+					<L/>
+					<M/>
+					<S/>
+					<height_measured_on/>
+					<weight/>
+					<height/>
+					<height_rounded/>
+					<zscore_unrounded/>
+					<sd3pos/>
+					<sd3neg/>
+					<sd2pos/>
+					<sd2neg/>
+					<conseils_display/>
+				<subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>gmp_visit</case_type></create><update><child_age_months/><gender/><visit_date/><weight/></update><index><parent case_type="child"/></index></case></subcase_0><case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><update><child_register_no/><has_register_number/><prev_visit_number/><referred/><visit_date/><visit_number/><weight/><weight_1_visit_ago/><weight_2_visits_ago/><weight_3_visits_ago/><weight_4_visits_ago/><weight_5_visits_ago/><weight_6_visits_ago/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance id="commcaresession" src="jr://instance/session"/><instance id="casedb" src="jr://instance/casedb"/>
+			<instance src="jr://fixture/item-list:zscore" id="zscores"/>
+			<instance id="age"><zscore><gender id="male">
+<age id="0"><L>0.3487</L><M>3.3464</M><S>0.14602</S></age>
+<age id="1"><L>0.2297</L><M>4.4709</M><S>0.13395</S></age>
+<age id="2"><L>0.197</L><M>5.5675</M><S>0.12385</S></age>
+<age id="3"><L>0.1738</L><M>6.3762</M><S>0.11727</S></age>
+<age id="4"><L>0.1553</L><M>7.0023</M><S>0.11316</S></age>
+<age id="5"><L>0.1395</L><M>7.5105</M><S>0.1108</S></age>
+<age id="6"><L>0.1257</L><M>7.934</M><S>0.10958</S></age>
+<age id="7"><L>0.1134</L><M>8.297</M><S>0.10902</S></age>
+<age id="8"><L>0.1021</L><M>8.6151</M><S>0.10882</S></age>
+<age id="9"><L>0.0917</L><M>8.9014</M><S>0.10881</S></age>
+<age id="10"><L>0.082</L><M>9.1649</M><S>0.10891</S></age>
+<age id="11"><L>0.073</L><M>9.4122</M><S>0.10906</S></age>
+<age id="12"><L>0.0644</L><M>9.6479</M><S>0.10925</S></age>
+<age id="13"><L>0.0563</L><M>9.8749</M><S>0.10949</S></age>
+<age id="14"><L>0.0487</L><M>10.0953</M><S>0.10976</S></age>
+<age id="15"><L>0.0413</L><M>10.3108</M><S>0.11007</S></age>
+<age id="16"><L>0.0343</L><M>10.5228</M><S>0.11041</S></age>
+<age id="17"><L>0.0275</L><M>10.7319</M><S>0.11079</S></age>
+<age id="18"><L>0.0211</L><M>10.9385</M><S>0.11119</S></age>
+<age id="19"><L>0.0148</L><M>11.143</M><S>0.11164</S></age>
+<age id="20"><L>0.0087</L><M>11.3462</M><S>0.11211</S></age>
+<age id="21"><L>0.0029</L><M>11.5486</M><S>0.11261</S></age>
+<age id="22"><L>-0.0028</L><M>11.7504</M><S>0.11314</S></age>
+<age id="23"><L>-0.0083</L><M>11.9514</M><S>0.11369</S></age>
+<age id="24"><L>-0.0137</L><M>12.1515</M><S>0.11426</S></age>
+<age id="25"><L>-0.0189</L><M>12.3502</M><S>0.11485</S></age>
+<age id="26"><L>-0.024</L><M>12.5466</M><S>0.11544</S></age>
+<age id="27"><L>-0.0289</L><M>12.7401</M><S>0.11604</S></age>
+<age id="28"><L>-0.0337</L><M>12.9303</M><S>0.11664</S></age>
+<age id="29"><L>-0.0385</L><M>13.1169</M><S>0.11723</S></age>
+<age id="30"><L>-0.0431</L><M>13.3</M><S>0.11781</S></age>
+<age id="31"><L>-0.0476</L><M>13.4798</M><S>0.11839</S></age>
+<age id="32"><L>-0.052</L><M>13.6567</M><S>0.11896</S></age>
+<age id="33"><L>-0.0564</L><M>13.8309</M><S>0.11953</S></age>
+<age id="34"><L>-0.0606</L><M>14.0031</M><S>0.12008</S></age>
+<age id="35"><L>-0.0648</L><M>14.1736</M><S>0.12062</S></age>
+<age id="36"><L>-0.0689</L><M>14.3429</M><S>0.12116</S></age>
+<age id="37"><L>-0.0729</L><M>14.5113</M><S>0.12168</S></age>
+<age id="38"><L>-0.0769</L><M>14.6791</M><S>0.1222</S></age>
+<age id="39"><L>-0.0808</L><M>14.8466</M><S>0.12271</S></age>
+<age id="40"><L>-0.0846</L><M>15.014</M><S>0.12322</S></age>
+<age id="41"><L>-0.0883</L><M>15.1813</M><S>0.12373</S></age>
+<age id="42"><L>-0.092</L><M>15.3486</M><S>0.12425</S></age>
+<age id="43"><L>-0.0957</L><M>15.5158</M><S>0.12478</S></age>
+<age id="44"><L>-0.0993</L><M>15.6828</M><S>0.12531</S></age>
+<age id="45"><L>-0.1028</L><M>15.8497</M><S>0.12586</S></age>
+<age id="46"><L>-0.1063</L><M>16.0163</M><S>0.12643</S></age>
+<age id="47"><L>-0.1097</L><M>16.1827</M><S>0.127</S></age>
+<age id="48"><L>-0.1131</L><M>16.3489</M><S>0.12759</S></age>
+<age id="49"><L>-0.1165</L><M>16.515</M><S>0.12819</S></age>
+<age id="50"><L>-0.1198</L><M>16.6811</M><S>0.1288</S></age>
+<age id="51"><L>-0.123</L><M>16.8471</M><S>0.12943</S></age>
+<age id="52"><L>-0.1262</L><M>17.0132</M><S>0.13005</S></age>
+<age id="53"><L>-0.1294</L><M>17.1792</M><S>0.13069</S></age>
+<age id="54"><L>-0.1325</L><M>17.3452</M><S>0.13133</S></age>
+<age id="55"><L>-0.1356</L><M>17.5111</M><S>0.13197</S></age>
+<age id="56"><L>-0.1387</L><M>17.6768</M><S>0.13261</S></age>
+<age id="57"><L>-0.1417</L><M>17.8422</M><S>0.13325</S></age>
+<age id="58"><L>-0.1447</L><M>18.0073</M><S>0.13389</S></age>
+<age id="59"><L>-0.1477</L><M>18.1722</M><S>0.13453</S></age>
+<age id="60"><L>-0.1506</L><M>18.3366</M><S>0.13517</S></age>
+</gender>
+<gender id="female">
+<age id="0"><L>0.3809</L><M>3.2322</M><S>0.14171</S></age>
+<age id="1"><L>0.1714</L><M>4.1873</M><S>0.13724</S></age>
+<age id="2"><L>0.0962</L><M>5.1282</M><S>0.13</S></age>
+<age id="3"><L>0.0402</L><M>5.8458</M><S>0.12619</S></age>
+<age id="4"><L>-0.005</L><M>6.4237</M><S>0.12402</S></age>
+<age id="5"><L>-0.043</L><M>6.8985</M><S>0.12274</S></age>
+<age id="6"><L>-0.0756</L><M>7.297</M><S>0.12204</S></age>
+<age id="7"><L>-0.1039</L><M>7.6422</M><S>0.12178</S></age>
+<age id="8"><L>-0.1288</L><M>7.9487</M><S>0.12181</S></age>
+<age id="9"><L>-0.1507</L><M>8.2254</M><S>0.12199</S></age>
+<age id="10"><L>-0.17</L><M>8.48</M><S>0.12223</S></age>
+<age id="11"><L>-0.1872</L><M>8.7192</M><S>0.12247</S></age>
+<age id="12"><L>-0.2024</L><M>8.9481</M><S>0.12268</S></age>
+<age id="13"><L>-0.2158</L><M>9.1699</M><S>0.12283</S></age>
+<age id="14"><L>-0.2278</L><M>9.387</M><S>0.12294</S></age>
+<age id="15"><L>-0.2384</L><M>9.6008</M><S>0.12299</S></age>
+<age id="16"><L>-0.2478</L><M>9.8124</M><S>0.12303</S></age>
+<age id="17"><L>-0.2562</L><M>10.0226</M><S>0.12306</S></age>
+<age id="18"><L>-0.2637</L><M>10.2315</M><S>0.12309</S></age>
+<age id="19"><L>-0.2703</L><M>10.4393</M><S>0.12315</S></age>
+<age id="20"><L>-0.2762</L><M>10.6464</M><S>0.12323</S></age>
+<age id="21"><L>-0.2815</L><M>10.8534</M><S>0.12335</S></age>
+<age id="22"><L>-0.2862</L><M>11.0608</M><S>0.1235</S></age>
+<age id="23"><L>-0.2903</L><M>11.2688</M><S>0.12369</S></age>
+<age id="24"><L>-0.2941</L><M>11.4775</M><S>0.1239</S></age>
+<age id="25"><L>-0.2975</L><M>11.6864</M><S>0.12414</S></age>
+<age id="26"><L>-0.3005</L><M>11.8947</M><S>0.12441</S></age>
+<age id="27"><L>-0.3032</L><M>12.1015</M><S>0.12472</S></age>
+<age id="28"><L>-0.3057</L><M>12.3059</M><S>0.12506</S></age>
+<age id="29"><L>-0.308</L><M>12.5073</M><S>0.12545</S></age>
+<age id="30"><L>-0.3101</L><M>12.7055</M><S>0.12587</S></age>
+<age id="31"><L>-0.312</L><M>12.9006</M><S>0.12633</S></age>
+<age id="32"><L>-0.3138</L><M>13.093</M><S>0.12683</S></age>
+<age id="33"><L>-0.3155</L><M>13.2837</M><S>0.12737</S></age>
+<age id="34"><L>-0.3171</L><M>13.4731</M><S>0.12794</S></age>
+<age id="35"><L>-0.3186</L><M>13.6618</M><S>0.12855</S></age>
+<age id="36"><L>-0.3201</L><M>13.8503</M><S>0.12919</S></age>
+<age id="37"><L>-0.3216</L><M>14.0385</M><S>0.12988</S></age>
+<age id="38"><L>-0.323</L><M>14.2265</M><S>0.13059</S></age>
+<age id="39"><L>-0.3243</L><M>14.414</M><S>0.13135</S></age>
+<age id="40"><L>-0.3257</L><M>14.601</M><S>0.13213</S></age>
+<age id="41"><L>-0.327</L><M>14.7873</M><S>0.13293</S></age>
+<age id="42"><L>-0.3283</L><M>14.9727</M><S>0.13376</S></age>
+<age id="43"><L>-0.3296</L><M>15.1573</M><S>0.1346</S></age>
+<age id="44"><L>-0.3309</L><M>15.341</M><S>0.13545</S></age>
+<age id="45"><L>-0.3322</L><M>15.524</M><S>0.1363</S></age>
+<age id="46"><L>-0.3335</L><M>15.7064</M><S>0.13716</S></age>
+<age id="47"><L>-0.3348</L><M>15.8882</M><S>0.138</S></age>
+<age id="48"><L>-0.3361</L><M>16.0697</M><S>0.13884</S></age>
+<age id="49"><L>-0.3374</L><M>16.2511</M><S>0.13968</S></age>
+<age id="50"><L>-0.3387</L><M>16.4322</M><S>0.14051</S></age>
+<age id="51"><L>-0.34</L><M>16.6133</M><S>0.14132</S></age>
+<age id="52"><L>-0.3414</L><M>16.7942</M><S>0.14213</S></age>
+<age id="53"><L>-0.3427</L><M>16.9748</M><S>0.14293</S></age>
+<age id="54"><L>-0.344</L><M>17.1551</M><S>0.14371</S></age>
+<age id="55"><L>-0.3453</L><M>17.3347</M><S>0.14448</S></age>
+<age id="56"><L>-0.3466</L><M>17.5136</M><S>0.14525</S></age>
+<age id="57"><L>-0.3479</L><M>17.6916</M><S>0.146</S></age>
+<age id="58"><L>-0.3492</L><M>17.8686</M><S>0.14675</S></age>
+<age id="59"><L>-0.3505</L><M>18.0445</M><S>0.14748</S></age>
+<age id="60"><L>-0.3518</L><M>18.2193</M><S>0.14821</S></age>
+</gender></zscore></instance>
+			<instance id="height"><zscore><gender id="male">
+<height id="65"><L>-0.3521</L><M>7.4327</M><S>0.08217</S></height>
+<height id="65.5"><L>-0.3521</L><M>7.5504</M><S>0.08214</S></height>
+<height id="66"><L>-0.3521</L><M>7.6673</M><S>0.08212</S></height>
+<height id="66.5"><L>-0.3521</L><M>7.7834</M><S>0.08212</S></height>
+<height id="67"><L>-0.3521</L><M>7.8986</M><S>0.08213</S></height>
+<height id="67.5"><L>-0.3521</L><M>8.0132</M><S>0.08214</S></height>
+<height id="68"><L>-0.3521</L><M>8.1272</M><S>0.08217</S></height>
+<height id="68.5"><L>-0.3521</L><M>8.241</M><S>0.08221</S></height>
+<height id="69"><L>-0.3521</L><M>8.3547</M><S>0.08226</S></height>
+<height id="69.5"><L>-0.3521</L><M>8.468</M><S>0.08231</S></height>
+<height id="70"><L>-0.3521</L><M>8.5808</M><S>0.08237</S></height>
+<height id="70.5"><L>-0.3521</L><M>8.6927</M><S>0.08243</S></height>
+<height id="71"><L>-0.3521</L><M>8.8036</M><S>0.0825</S></height>
+<height id="71.5"><L>-0.3521</L><M>8.9135</M><S>0.08257</S></height>
+<height id="72"><L>-0.3521</L><M>9.0221</M><S>0.08264</S></height>
+<height id="72.5"><L>-0.3521</L><M>9.1292</M><S>0.08272</S></height>
+<height id="73"><L>-0.3521</L><M>9.2347</M><S>0.08278</S></height>
+<height id="73.5"><L>-0.3521</L><M>9.339</M><S>0.08285</S></height>
+<height id="74"><L>-0.3521</L><M>9.442</M><S>0.08292</S></height>
+<height id="74.5"><L>-0.3521</L><M>9.5438</M><S>0.08298</S></height>
+<height id="75"><L>-0.3521</L><M>9.644</M><S>0.08303</S></height>
+<height id="75.5"><L>-0.3521</L><M>9.7425</M><S>0.08308</S></height>
+<height id="76"><L>-0.3521</L><M>9.8392</M><S>0.08312</S></height>
+<height id="76.5"><L>-0.3521</L><M>9.9341</M><S>0.08315</S></height>
+<height id="77"><L>-0.3521</L><M>10.0274</M><S>0.08317</S></height>
+<height id="77.5"><L>-0.3521</L><M>10.1194</M><S>0.08318</S></height>
+<height id="78"><L>-0.3521</L><M>10.2105</M><S>0.08317</S></height>
+<height id="78.5"><L>-0.3521</L><M>10.3012</M><S>0.08315</S></height>
+<height id="79"><L>-0.3521</L><M>10.3923</M><S>0.08311</S></height>
+<height id="79.5"><L>-0.3521</L><M>10.4845</M><S>0.08305</S></height>
+<height id="80"><L>-0.3521</L><M>10.5781</M><S>0.08298</S></height>
+<height id="80.5"><L>-0.3521</L><M>10.6737</M><S>0.0829</S></height>
+<height id="81"><L>-0.3521</L><M>10.7718</M><S>0.08279</S></height>
+<height id="81.5"><L>-0.3521</L><M>10.8728</M><S>0.08268</S></height>
+<height id="82"><L>-0.3521</L><M>10.9772</M><S>0.08255</S></height>
+<height id="82.5"><L>-0.3521</L><M>11.0851</M><S>0.08241</S></height>
+<height id="83"><L>-0.3521</L><M>11.1966</M><S>0.08225</S></height>
+<height id="83.5"><L>-0.3521</L><M>11.3114</M><S>0.08209</S></height>
+<height id="84"><L>-0.3521</L><M>11.429</M><S>0.08191</S></height>
+<height id="84.5"><L>-0.3521</L><M>11.549</M><S>0.08174</S></height>
+<height id="85"><L>-0.3521</L><M>11.6707</M><S>0.08156</S></height>
+<height id="85.5"><L>-0.3521</L><M>11.7937</M><S>0.08138</S></height>
+<height id="86"><L>-0.3521</L><M>11.9173</M><S>0.08121</S></height>
+<height id="86.5"><L>-0.3521</L><M>12.0411</M><S>0.08105</S></height>
+<height id="87"><L>-0.3521</L><M>12.1645</M><S>0.0809</S></height>
+<height id="87.5"><L>-0.3521</L><M>12.2871</M><S>0.08076</S></height>
+<height id="88"><L>-0.3521</L><M>12.4089</M><S>0.08064</S></height>
+<height id="88.5"><L>-0.3521</L><M>12.5298</M><S>0.08054</S></height>
+<height id="89"><L>-0.3521</L><M>12.6495</M><S>0.08045</S></height>
+<height id="89.5"><L>-0.3521</L><M>12.7683</M><S>0.08038</S></height>
+<height id="90"><L>-0.3521</L><M>12.8864</M><S>0.08032</S></height>
+<height id="90.5"><L>-0.3521</L><M>13.0038</M><S>0.08028</S></height>
+<height id="91"><L>-0.3521</L><M>13.1209</M><S>0.08025</S></height>
+<height id="91.5"><L>-0.3521</L><M>13.2376</M><S>0.08024</S></height>
+<height id="92"><L>-0.3521</L><M>13.3541</M><S>0.08025</S></height>
+<height id="92.5"><L>-0.3521</L><M>13.4705</M><S>0.08027</S></height>
+<height id="93"><L>-0.3521</L><M>13.587</M><S>0.08031</S></height>
+<height id="93.5"><L>-0.3521</L><M>13.7041</M><S>0.08036</S></height>
+<height id="94"><L>-0.3521</L><M>13.8217</M><S>0.08043</S></height>
+<height id="94.5"><L>-0.3521</L><M>13.9403</M><S>0.08051</S></height>
+<height id="95"><L>-0.3521</L><M>14.06</M><S>0.0806</S></height>
+<height id="95.5"><L>-0.3521</L><M>14.1811</M><S>0.08071</S></height>
+<height id="96"><L>-0.3521</L><M>14.3037</M><S>0.08083</S></height>
+<height id="96.5"><L>-0.3521</L><M>14.4282</M><S>0.08097</S></height>
+<height id="97"><L>-0.3521</L><M>14.5547</M><S>0.08112</S></height>
+<height id="97.5"><L>-0.3521</L><M>14.6832</M><S>0.08129</S></height>
+<height id="98"><L>-0.3521</L><M>14.814</M><S>0.08146</S></height>
+<height id="98.5"><L>-0.3521</L><M>14.9468</M><S>0.08165</S></height>
+<height id="99"><L>-0.3521</L><M>15.0818</M><S>0.08185</S></height>
+<height id="99.5"><L>-0.3521</L><M>15.2187</M><S>0.08206</S></height>
+<height id="100"><L>-0.3521</L><M>15.3576</M><S>0.08229</S></height>
+<height id="100.5"><L>-0.3521</L><M>15.4985</M><S>0.08252</S></height>
+<height id="101"><L>-0.3521</L><M>15.6412</M><S>0.08277</S></height>
+<height id="101.5"><L>-0.3521</L><M>15.7857</M><S>0.08302</S></height>
+<height id="102"><L>-0.3521</L><M>15.932</M><S>0.08328</S></height>
+<height id="102.5"><L>-0.3521</L><M>16.0801</M><S>0.08354</S></height>
+<height id="103"><L>-0.3521</L><M>16.2298</M><S>0.08381</S></height>
+<height id="103.5"><L>-0.3521</L><M>16.3812</M><S>0.08408</S></height>
+<height id="104"><L>-0.3521</L><M>16.5342</M><S>0.08436</S></height>
+<height id="104.5"><L>-0.3521</L><M>16.6889</M><S>0.08464</S></height>
+<height id="105"><L>-0.3521</L><M>16.8454</M><S>0.08493</S></height>
+<height id="105.5"><L>-0.3521</L><M>17.0036</M><S>0.08521</S></height>
+<height id="106"><L>-0.3521</L><M>17.1637</M><S>0.08551</S></height>
+<height id="106.5"><L>-0.3521</L><M>17.3256</M><S>0.0858</S></height>
+<height id="107"><L>-0.3521</L><M>17.4894</M><S>0.08611</S></height>
+<height id="107.5"><L>-0.3521</L><M>17.655</M><S>0.08641</S></height>
+<height id="108"><L>-0.3521</L><M>17.8226</M><S>0.08673</S></height>
+<height id="108.5"><L>-0.3521</L><M>17.9924</M><S>0.08704</S></height>
+<height id="109"><L>-0.3521</L><M>18.1645</M><S>0.08736</S></height>
+<height id="109.5"><L>-0.3521</L><M>18.339</M><S>0.08768</S></height>
+<height id="110"><L>-0.3521</L><M>18.5158</M><S>0.088</S></height>
+<height id="110.5"><L>-0.3521</L><M>18.6948</M><S>0.08832</S></height>
+<height id="111"><L>-0.3521</L><M>18.8759</M><S>0.08864</S></height>
+<height id="111.5"><L>-0.3521</L><M>19.059</M><S>0.08896</S></height>
+<height id="112"><L>-0.3521</L><M>19.2439</M><S>0.08928</S></height>
+<height id="112.5"><L>-0.3521</L><M>19.4304</M><S>0.0896</S></height>
+<height id="113"><L>-0.3521</L><M>19.6185</M><S>0.08991</S></height>
+<height id="113.5"><L>-0.3521</L><M>19.8081</M><S>0.09022</S></height>
+<height id="114"><L>-0.3521</L><M>19.999</M><S>0.09054</S></height>
+<height id="114.5"><L>-0.3521</L><M>20.1912</M><S>0.09085</S></height>
+<height id="115"><L>-0.3521</L><M>20.3846</M><S>0.09116</S></height>
+<height id="115.5"><L>-0.3521</L><M>20.5789</M><S>0.09147</S></height>
+<height id="116"><L>-0.3521</L><M>20.7741</M><S>0.09177</S></height>
+<height id="116.5"><L>-0.3521</L><M>20.97</M><S>0.09208</S></height>
+<height id="117"><L>-0.3521</L><M>21.1666</M><S>0.09239</S></height>
+<height id="117.5"><L>-0.3521</L><M>21.3636</M><S>0.0927</S></height>
+<height id="118"><L>-0.3521</L><M>21.5611</M><S>0.093</S></height>
+<height id="118.5"><L>-0.3521</L><M>21.7588</M><S>0.09331</S></height>
+<height id="119"><L>-0.3521</L><M>21.9568</M><S>0.09362</S></height>
+<height id="119.5"><L>-0.3521</L><M>22.1549</M><S>0.09393</S></height>
+<height id="120"><L>-0.3521</L><M>22.353</M><S>0.09424</S></height>
+</gender>
+<gender id="female">
+<height id="65"><L>-0.3833</L><M>7.2402</M><S>0.09113</S></height>
+<height id="65.5"><L>-0.3833</L><M>7.3523</M><S>0.09109</S></height>
+<height id="66"><L>-0.3833</L><M>7.463</M><S>0.09104</S></height>
+<height id="66.5"><L>-0.3833</L><M>7.5724</M><S>0.09099</S></height>
+<height id="67"><L>-0.3833</L><M>7.6806</M><S>0.09094</S></height>
+<height id="67.5"><L>-0.3833</L><M>7.7874</M><S>0.09088</S></height>
+<height id="68"><L>-0.3833</L><M>7.893</M><S>0.09083</S></height>
+<height id="68.5"><L>-0.3833</L><M>7.9976</M><S>0.09077</S></height>
+<height id="69"><L>-0.3833</L><M>8.1012</M><S>0.09071</S></height>
+<height id="69.5"><L>-0.3833</L><M>8.2039</M><S>0.09065</S></height>
+<height id="70"><L>-0.3833</L><M>8.3058</M><S>0.09059</S></height>
+<height id="70.5"><L>-0.3833</L><M>8.4071</M><S>0.09053</S></height>
+<height id="71"><L>-0.3833</L><M>8.5078</M><S>0.09047</S></height>
+<height id="71.5"><L>-0.3833</L><M>8.6078</M><S>0.09041</S></height>
+<height id="72"><L>-0.3833</L><M>8.707</M><S>0.09035</S></height>
+<height id="72.5"><L>-0.3833</L><M>8.8053</M><S>0.09028</S></height>
+<height id="73"><L>-0.3833</L><M>8.9025</M><S>0.09022</S></height>
+<height id="73.5"><L>-0.3833</L><M>8.9983</M><S>0.09016</S></height>
+<height id="74"><L>-0.3833</L><M>9.0928</M><S>0.09009</S></height>
+<height id="74.5"><L>-0.3833</L><M>9.1862</M><S>0.09003</S></height>
+<height id="75"><L>-0.3833</L><M>9.2786</M><S>0.08996</S></height>
+<height id="75.5"><L>-0.3833</L><M>9.3703</M><S>0.08989</S></height>
+<height id="76"><L>-0.3833</L><M>9.4617</M><S>0.08983</S></height>
+<height id="76.5"><L>-0.3833</L><M>9.5533</M><S>0.08976</S></height>
+<height id="77"><L>-0.3833</L><M>9.6456</M><S>0.08969</S></height>
+<height id="77.5"><L>-0.3833</L><M>9.739</M><S>0.08963</S></height>
+<height id="78"><L>-0.3833</L><M>9.8338</M><S>0.08956</S></height>
+<height id="78.5"><L>-0.3833</L><M>9.9303</M><S>0.0895</S></height>
+<height id="79"><L>-0.3833</L><M>10.0289</M><S>0.08943</S></height>
+<height id="79.5"><L>-0.3833</L><M>10.1298</M><S>0.08937</S></height>
+<height id="80"><L>-0.3833</L><M>10.2332</M><S>0.08932</S></height>
+<height id="80.5"><L>-0.3833</L><M>10.3393</M><S>0.08926</S></height>
+<height id="81"><L>-0.3833</L><M>10.4477</M><S>0.08921</S></height>
+<height id="81.5"><L>-0.3833</L><M>10.5586</M><S>0.08916</S></height>
+<height id="82"><L>-0.3833</L><M>10.6719</M><S>0.08912</S></height>
+<height id="82.5"><L>-0.3833</L><M>10.7874</M><S>0.08908</S></height>
+<height id="83"><L>-0.3833</L><M>10.9051</M><S>0.08905</S></height>
+<height id="83.5"><L>-0.3833</L><M>11.0248</M><S>0.08902</S></height>
+<height id="84"><L>-0.3833</L><M>11.1462</M><S>0.08899</S></height>
+<height id="84.5"><L>-0.3833</L><M>11.2691</M><S>0.08897</S></height>
+<height id="85"><L>-0.3833</L><M>11.3934</M><S>0.08896</S></height>
+<height id="85.5"><L>-0.3833</L><M>11.5186</M><S>0.08895</S></height>
+<height id="86"><L>-0.3833</L><M>11.6444</M><S>0.08895</S></height>
+<height id="86.5"><L>-0.3833</L><M>11.7705</M><S>0.08895</S></height>
+<height id="87"><L>-0.3833</L><M>11.8965</M><S>0.08896</S></height>
+<height id="87.5"><L>-0.3833</L><M>12.0223</M><S>0.08897</S></height>
+<height id="88"><L>-0.3833</L><M>12.1478</M><S>0.08899</S></height>
+<height id="88.5"><L>-0.3833</L><M>12.2729</M><S>0.08901</S></height>
+<height id="89"><L>-0.3833</L><M>12.3976</M><S>0.08904</S></height>
+<height id="89.5"><L>-0.3833</L><M>12.522</M><S>0.08907</S></height>
+<height id="90"><L>-0.3833</L><M>12.6461</M><S>0.08911</S></height>
+<height id="90.5"><L>-0.3833</L><M>12.77</M><S>0.08915</S></height>
+<height id="91"><L>-0.3833</L><M>12.8939</M><S>0.0892</S></height>
+<height id="91.5"><L>-0.3833</L><M>13.0177</M><S>0.08925</S></height>
+<height id="92"><L>-0.3833</L><M>13.1415</M><S>0.08931</S></height>
+<height id="92.5"><L>-0.3833</L><M>13.2654</M><S>0.08937</S></height>
+<height id="93"><L>-0.3833</L><M>13.3896</M><S>0.08944</S></height>
+<height id="93.5"><L>-0.3833</L><M>13.5142</M><S>0.08951</S></height>
+<height id="94"><L>-0.3833</L><M>13.6393</M><S>0.08959</S></height>
+<height id="94.5"><L>-0.3833</L><M>13.765</M><S>0.08967</S></height>
+<height id="95"><L>-0.3833</L><M>13.8914</M><S>0.08975</S></height>
+<height id="95.5"><L>-0.3833</L><M>14.0186</M><S>0.08984</S></height>
+<height id="96"><L>-0.3833</L><M>14.1466</M><S>0.08994</S></height>
+<height id="96.5"><L>-0.3833</L><M>14.2757</M><S>0.09004</S></height>
+<height id="97"><L>-0.3833</L><M>14.4059</M><S>0.09015</S></height>
+<height id="97.5"><L>-0.3833</L><M>14.5376</M><S>0.09026</S></height>
+<height id="98"><L>-0.3833</L><M>14.671</M><S>0.09037</S></height>
+<height id="98.5"><L>-0.3833</L><M>14.8062</M><S>0.09049</S></height>
+<height id="99"><L>-0.3833</L><M>14.9434</M><S>0.09062</S></height>
+<height id="99.5"><L>-0.3833</L><M>15.0828</M><S>0.09075</S></height>
+<height id="100"><L>-0.3833</L><M>15.2246</M><S>0.09088</S></height>
+<height id="100.5"><L>-0.3833</L><M>15.3687</M><S>0.09102</S></height>
+<height id="101"><L>-0.3833</L><M>15.5154</M><S>0.09116</S></height>
+<height id="101.5"><L>-0.3833</L><M>15.6646</M><S>0.09131</S></height>
+<height id="102"><L>-0.3833</L><M>15.8164</M><S>0.09146</S></height>
+<height id="102.5"><L>-0.3833</L><M>15.9707</M><S>0.09161</S></height>
+<height id="103"><L>-0.3833</L><M>16.1276</M><S>0.09177</S></height>
+<height id="103.5"><L>-0.3833</L><M>16.287</M><S>0.09193</S></height>
+<height id="104"><L>-0.3833</L><M>16.4488</M><S>0.09209</S></height>
+<height id="104.5"><L>-0.3833</L><M>16.6131</M><S>0.09226</S></height>
+<height id="105"><L>-0.3833</L><M>16.78</M><S>0.09243</S></height>
+<height id="105.5"><L>-0.3833</L><M>16.9496</M><S>0.09261</S></height>
+<height id="106"><L>-0.3833</L><M>17.122</M><S>0.09278</S></height>
+<height id="106.5"><L>-0.3833</L><M>17.2973</M><S>0.09296</S></height>
+<height id="107"><L>-0.3833</L><M>17.4755</M><S>0.09315</S></height>
+<height id="107.5"><L>-0.3833</L><M>17.6567</M><S>0.09333</S></height>
+<height id="108"><L>-0.3833</L><M>17.8407</M><S>0.09352</S></height>
+<height id="108.5"><L>-0.3833</L><M>18.0277</M><S>0.09371</S></height>
+<height id="109"><L>-0.3833</L><M>18.2174</M><S>0.0939</S></height>
+<height id="109.5"><L>-0.3833</L><M>18.4096</M><S>0.09409</S></height>
+<height id="110"><L>-0.3833</L><M>18.6043</M><S>0.09428</S></height>
+<height id="110.5"><L>-0.3833</L><M>18.8015</M><S>0.09448</S></height>
+<height id="111"><L>-0.3833</L><M>19.0009</M><S>0.09467</S></height>
+<height id="111.5"><L>-0.3833</L><M>19.2024</M><S>0.09487</S></height>
+<height id="112"><L>-0.3833</L><M>19.406</M><S>0.09507</S></height>
+<height id="112.5"><L>-0.3833</L><M>19.6116</M><S>0.09527</S></height>
+<height id="113"><L>-0.3833</L><M>19.819</M><S>0.09546</S></height>
+<height id="113.5"><L>-0.3833</L><M>20.028</M><S>0.09566</S></height>
+<height id="114"><L>-0.3833</L><M>20.2385</M><S>0.09586</S></height>
+<height id="114.5"><L>-0.3833</L><M>20.4502</M><S>0.09606</S></height>
+<height id="115"><L>-0.3833</L><M>20.6629</M><S>0.09626</S></height>
+<height id="115.5"><L>-0.3833</L><M>20.8766</M><S>0.09646</S></height>
+<height id="116"><L>-0.3833</L><M>21.0909</M><S>0.09666</S></height>
+<height id="116.5"><L>-0.3833</L><M>21.3059</M><S>0.09686</S></height>
+<height id="117"><L>-0.3833</L><M>21.5213</M><S>0.09707</S></height>
+<height id="117.5"><L>-0.3833</L><M>21.737</M><S>0.09727</S></height>
+<height id="118"><L>-0.3833</L><M>21.9529</M><S>0.09747</S></height>
+<height id="118.5"><L>-0.3833</L><M>22.169</M><S>0.09767</S></height>
+<height id="119"><L>-0.3833</L><M>22.3851</M><S>0.09788</S></height>
+<height id="119.5"><L>-0.3833</L><M>22.6012</M><S>0.09808</S></height>
+<height id="120"><L>-0.3833</L><M>22.8173</M><S>0.09828</S></height>
+</gender></zscore></instance>
+			<instance id="length"><zscore><gender id="male">
+<length id="45"><L>-0.3521</L><M>2.441</M><S>0.09182</S></length>
+<length id="45.5"><L>-0.3521</L><M>2.5244</M><S>0.09153</S></length>
+<length id="46"><L>-0.3521</L><M>2.6077</M><S>0.09124</S></length>
+<length id="46.5"><L>-0.3521</L><M>2.6913</M><S>0.09094</S></length>
+<length id="47"><L>-0.3521</L><M>2.7755</M><S>0.09065</S></length>
+<length id="47.5"><L>-0.3521</L><M>2.8609</M><S>0.09036</S></length>
+<length id="48"><L>-0.3521</L><M>2.948</M><S>0.09007</S></length>
+<length id="48.5"><L>-0.3521</L><M>3.0377</M><S>0.08977</S></length>
+<length id="49"><L>-0.3521</L><M>3.1308</M><S>0.08948</S></length>
+<length id="49.5"><L>-0.3521</L><M>3.2276</M><S>0.08919</S></length>
+<length id="50"><L>-0.3521</L><M>3.3278</M><S>0.0889</S></length>
+<length id="50.5"><L>-0.3521</L><M>3.4311</M><S>0.08861</S></length>
+<length id="51"><L>-0.3521</L><M>3.5376</M><S>0.08831</S></length>
+<length id="51.5"><L>-0.3521</L><M>3.6477</M><S>0.08801</S></length>
+<length id="52"><L>-0.3521</L><M>3.762</M><S>0.08771</S></length>
+<length id="52.5"><L>-0.3521</L><M>3.8814</M><S>0.08741</S></length>
+<length id="53"><L>-0.3521</L><M>4.006</M><S>0.08711</S></length>
+<length id="53.5"><L>-0.3521</L><M>4.1354</M><S>0.08681</S></length>
+<length id="54"><L>-0.3521</L><M>4.2693</M><S>0.08651</S></length>
+<length id="54.5"><L>-0.3521</L><M>4.4066</M><S>0.08621</S></length>
+<length id="55"><L>-0.3521</L><M>4.5467</M><S>0.08592</S></length>
+<length id="55.5"><L>-0.3521</L><M>4.6892</M><S>0.08563</S></length>
+<length id="56"><L>-0.3521</L><M>4.8338</M><S>0.08535</S></length>
+<length id="56.5"><L>-0.3521</L><M>4.9796</M><S>0.08507</S></length>
+<length id="57"><L>-0.3521</L><M>5.1259</M><S>0.08481</S></length>
+<length id="57.5"><L>-0.3521</L><M>5.2721</M><S>0.08455</S></length>
+<length id="58"><L>-0.3521</L><M>5.418</M><S>0.0843</S></length>
+<length id="58.5"><L>-0.3521</L><M>5.5632</M><S>0.08406</S></length>
+<length id="59"><L>-0.3521</L><M>5.7074</M><S>0.08383</S></length>
+<length id="59.5"><L>-0.3521</L><M>5.8501</M><S>0.08362</S></length>
+<length id="60"><L>-0.3521</L><M>5.9907</M><S>0.08342</S></length>
+<length id="60.5"><L>-0.3521</L><M>6.1284</M><S>0.08324</S></length>
+<length id="61"><L>-0.3521</L><M>6.2632</M><S>0.08308</S></length>
+<length id="61.5"><L>-0.3521</L><M>6.3954</M><S>0.08292</S></length>
+<length id="62"><L>-0.3521</L><M>6.5251</M><S>0.08279</S></length>
+<length id="62.5"><L>-0.3521</L><M>6.6527</M><S>0.08266</S></length>
+<length id="63"><L>-0.3521</L><M>6.7786</M><S>0.08255</S></length>
+<length id="63.5"><L>-0.3521</L><M>6.9028</M><S>0.08245</S></length>
+<length id="64"><L>-0.3521</L><M>7.0255</M><S>0.08236</S></length>
+<length id="64.5"><L>-0.3521</L><M>7.1467</M><S>0.08229</S></length>
+<length id="65"><L>-0.3521</L><M>7.2666</M><S>0.08223</S></length>
+<length id="65.5"><L>-0.3521</L><M>7.3854</M><S>0.08218</S></length>
+<length id="66"><L>-0.3521</L><M>7.5034</M><S>0.08215</S></length>
+<length id="66.5"><L>-0.3521</L><M>7.6206</M><S>0.08213</S></length>
+<length id="67"><L>-0.3521</L><M>7.737</M><S>0.08212</S></length>
+<length id="67.5"><L>-0.3521</L><M>7.8526</M><S>0.08212</S></length>
+<length id="68"><L>-0.3521</L><M>7.9674</M><S>0.08214</S></length>
+<length id="68.5"><L>-0.3521</L><M>8.0816</M><S>0.08216</S></length>
+<length id="69"><L>-0.3521</L><M>8.1955</M><S>0.08219</S></length>
+<length id="69.5"><L>-0.3521</L><M>8.3092</M><S>0.08224</S></length>
+<length id="70"><L>-0.3521</L><M>8.4227</M><S>0.08229</S></length>
+<length id="70.5"><L>-0.3521</L><M>8.5358</M><S>0.08235</S></length>
+<length id="71"><L>-0.3521</L><M>8.648</M><S>0.08241</S></length>
+<length id="71.5"><L>-0.3521</L><M>8.7594</M><S>0.08248</S></length>
+<length id="72"><L>-0.3521</L><M>8.8697</M><S>0.08254</S></length>
+<length id="72.5"><L>-0.3521</L><M>8.9788</M><S>0.08262</S></length>
+<length id="73"><L>-0.3521</L><M>9.0865</M><S>0.08269</S></length>
+<length id="73.5"><L>-0.3521</L><M>9.1927</M><S>0.08276</S></length>
+<length id="74"><L>-0.3521</L><M>9.2974</M><S>0.08283</S></length>
+<length id="74.5"><L>-0.3521</L><M>9.401</M><S>0.08289</S></length>
+<length id="75"><L>-0.3521</L><M>9.5032</M><S>0.08295</S></length>
+<length id="75.5"><L>-0.3521</L><M>9.6041</M><S>0.08301</S></length>
+<length id="76"><L>-0.3521</L><M>9.7033</M><S>0.08307</S></length>
+<length id="76.5"><L>-0.3521</L><M>9.8007</M><S>0.08311</S></length>
+<length id="77"><L>-0.3521</L><M>9.8963</M><S>0.08314</S></length>
+<length id="77.5"><L>-0.3521</L><M>9.9902</M><S>0.08317</S></length>
+<length id="78"><L>-0.3521</L><M>10.0827</M><S>0.08318</S></length>
+<length id="78.5"><L>-0.3521</L><M>10.1741</M><S>0.08318</S></length>
+<length id="79"><L>-0.3521</L><M>10.2649</M><S>0.08316</S></length>
+<length id="79.5"><L>-0.3521</L><M>10.3558</M><S>0.08313</S></length>
+<length id="80"><L>-0.3521</L><M>10.4475</M><S>0.08308</S></length>
+<length id="80.5"><L>-0.3521</L><M>10.5405</M><S>0.08301</S></length>
+<length id="81"><L>-0.3521</L><M>10.6352</M><S>0.08293</S></length>
+<length id="81.5"><L>-0.3521</L><M>10.7322</M><S>0.08284</S></length>
+<length id="82"><L>-0.3521</L><M>10.8321</M><S>0.08273</S></length>
+<length id="82.5"><L>-0.3521</L><M>10.935</M><S>0.0826</S></length>
+<length id="83"><L>-0.3521</L><M>11.0415</M><S>0.08246</S></length>
+<length id="83.5"><L>-0.3521</L><M>11.1516</M><S>0.08231</S></length>
+<length id="84"><L>-0.3521</L><M>11.2651</M><S>0.08215</S></length>
+<length id="84.5"><L>-0.3521</L><M>11.3817</M><S>0.08198</S></length>
+<length id="85"><L>-0.3521</L><M>11.5007</M><S>0.08181</S></length>
+<length id="85.5"><L>-0.3521</L><M>11.6218</M><S>0.08163</S></length>
+<length id="86"><L>-0.3521</L><M>11.7444</M><S>0.08145</S></length>
+<length id="86.5"><L>-0.3521</L><M>11.8678</M><S>0.08128</S></length>
+<length id="87"><L>-0.3521</L><M>11.9916</M><S>0.08111</S></length>
+<length id="87.5"><L>-0.3521</L><M>12.1152</M><S>0.08096</S></length>
+<length id="88"><L>-0.3521</L><M>12.2382</M><S>0.08082</S></length>
+<length id="88.5"><L>-0.3521</L><M>12.3603</M><S>0.08069</S></length>
+<length id="89"><L>-0.3521</L><M>12.4815</M><S>0.08058</S></length>
+<length id="89.5"><L>-0.3521</L><M>12.6017</M><S>0.08048</S></length>
+<length id="90"><L>-0.3521</L><M>12.7209</M><S>0.08041</S></length>
+<length id="90.5"><L>-0.3521</L><M>12.8392</M><S>0.08034</S></length>
+<length id="91"><L>-0.3521</L><M>12.9569</M><S>0.0803</S></length>
+<length id="91.5"><L>-0.3521</L><M>13.0742</M><S>0.08026</S></length>
+<length id="92"><L>-0.3521</L><M>13.191</M><S>0.08025</S></length>
+<length id="92.5"><L>-0.3521</L><M>13.3075</M><S>0.08025</S></length>
+<length id="93"><L>-0.3521</L><M>13.4239</M><S>0.08026</S></length>
+<length id="93.5"><L>-0.3521</L><M>13.5404</M><S>0.08029</S></length>
+<length id="94"><L>-0.3521</L><M>13.6572</M><S>0.08034</S></length>
+<length id="94.5"><L>-0.3521</L><M>13.7746</M><S>0.0804</S></length>
+<length id="95"><L>-0.3521</L><M>13.8928</M><S>0.08047</S></length>
+<length id="95.5"><L>-0.3521</L><M>14.012</M><S>0.08056</S></length>
+<length id="96"><L>-0.3521</L><M>14.1325</M><S>0.08067</S></length>
+<length id="96.5"><L>-0.3521</L><M>14.2544</M><S>0.08078</S></length>
+<length id="97"><L>-0.3521</L><M>14.3782</M><S>0.08092</S></length>
+<length id="97.5"><L>-0.3521</L><M>14.5038</M><S>0.08106</S></length>
+<length id="98"><L>-0.3521</L><M>14.6316</M><S>0.08122</S></length>
+<length id="98.5"><L>-0.3521</L><M>14.7614</M><S>0.08139</S></length>
+<length id="99"><L>-0.3521</L><M>14.8934</M><S>0.08157</S></length>
+<length id="99.5"><L>-0.3521</L><M>15.0275</M><S>0.08177</S></length>
+<length id="100"><L>-0.3521</L><M>15.1637</M><S>0.08198</S></length>
+<length id="100.5"><L>-0.3521</L><M>15.3018</M><S>0.0822</S></length>
+<length id="101"><L>-0.3521</L><M>15.4419</M><S>0.08243</S></length>
+<length id="101.5"><L>-0.3521</L><M>15.5838</M><S>0.08267</S></length>
+<length id="102"><L>-0.3521</L><M>15.7276</M><S>0.08292</S></length>
+<length id="102.5"><L>-0.3521</L><M>15.8732</M><S>0.08317</S></length>
+<length id="103"><L>-0.3521</L><M>16.0206</M><S>0.08343</S></length>
+<length id="103.5"><L>-0.3521</L><M>16.1697</M><S>0.0837</S></length>
+<length id="104"><L>-0.3521</L><M>16.3204</M><S>0.08397</S></length>
+<length id="104.5"><L>-0.3521</L><M>16.4728</M><S>0.08425</S></length>
+<length id="105"><L>-0.3521</L><M>16.6268</M><S>0.08453</S></length>
+<length id="105.5"><L>-0.3521</L><M>16.7826</M><S>0.08481</S></length>
+<length id="106"><L>-0.3521</L><M>16.9401</M><S>0.0851</S></length>
+<length id="106.5"><L>-0.3521</L><M>17.0995</M><S>0.08539</S></length>
+<length id="107"><L>-0.3521</L><M>17.2607</M><S>0.08568</S></length>
+<length id="107.5"><L>-0.3521</L><M>17.4237</M><S>0.08599</S></length>
+<length id="108"><L>-0.3521</L><M>17.5885</M><S>0.08629</S></length>
+<length id="108.5"><L>-0.3521</L><M>17.7553</M><S>0.0866</S></length>
+<length id="109"><L>-0.3521</L><M>17.9242</M><S>0.08691</S></length>
+<length id="109.5"><L>-0.3521</L><M>18.0954</M><S>0.08723</S></length>
+<length id="110"><L>-0.3521</L><M>18.2689</M><S>0.08755</S></length>
+</gender>
+<gender id="female">
+<length id="45"><L>-0.3833</L><M>2.4607</M><S>0.09029</S></length>
+<length id="45.5"><L>-0.3833</L><M>2.5457</M><S>0.09033</S></length>
+<length id="46"><L>-0.3833</L><M>2.6306</M><S>0.09037</S></length>
+<length id="46.5"><L>-0.3833</L><M>2.7155</M><S>0.0904</S></length>
+<length id="47"><L>-0.3833</L><M>2.8007</M><S>0.09044</S></length>
+<length id="47.5"><L>-0.3833</L><M>2.8867</M><S>0.09048</S></length>
+<length id="48"><L>-0.3833</L><M>2.9741</M><S>0.09052</S></length>
+<length id="48.5"><L>-0.3833</L><M>3.0636</M><S>0.09056</S></length>
+<length id="49"><L>-0.3833</L><M>3.156</M><S>0.0906</S></length>
+<length id="49.5"><L>-0.3833</L><M>3.252</M><S>0.09064</S></length>
+<length id="50"><L>-0.3833</L><M>3.3518</M><S>0.09068</S></length>
+<length id="50.5"><L>-0.3833</L><M>3.4557</M><S>0.09072</S></length>
+<length id="51"><L>-0.3833</L><M>3.5636</M><S>0.09076</S></length>
+<length id="51.5"><L>-0.3833</L><M>3.6754</M><S>0.0908</S></length>
+<length id="52"><L>-0.3833</L><M>3.7911</M><S>0.09085</S></length>
+<length id="52.5"><L>-0.3833</L><M>3.9105</M><S>0.09089</S></length>
+<length id="53"><L>-0.3833</L><M>4.0332</M><S>0.09093</S></length>
+<length id="53.5"><L>-0.3833</L><M>4.1591</M><S>0.09098</S></length>
+<length id="54"><L>-0.3833</L><M>4.2875</M><S>0.09102</S></length>
+<length id="54.5"><L>-0.3833</L><M>4.4179</M><S>0.09106</S></length>
+<length id="55"><L>-0.3833</L><M>4.5498</M><S>0.0911</S></length>
+<length id="55.5"><L>-0.3833</L><M>4.6827</M><S>0.09114</S></length>
+<length id="56"><L>-0.3833</L><M>4.8162</M><S>0.09118</S></length>
+<length id="56.5"><L>-0.3833</L><M>4.95</M><S>0.09121</S></length>
+<length id="57"><L>-0.3833</L><M>5.0837</M><S>0.09125</S></length>
+<length id="57.5"><L>-0.3833</L><M>5.2173</M><S>0.09128</S></length>
+<length id="58"><L>-0.3833</L><M>5.3507</M><S>0.0913</S></length>
+<length id="58.5"><L>-0.3833</L><M>5.4834</M><S>0.09132</S></length>
+<length id="59"><L>-0.3833</L><M>5.6151</M><S>0.09134</S></length>
+<length id="59.5"><L>-0.3833</L><M>5.7454</M><S>0.09135</S></length>
+<length id="60"><L>-0.3833</L><M>5.8742</M><S>0.09136</S></length>
+<length id="60.5"><L>-0.3833</L><M>6.0014</M><S>0.09137</S></length>
+<length id="61"><L>-0.3833</L><M>6.127</M><S>0.09137</S></length>
+<length id="61.5"><L>-0.3833</L><M>6.2511</M><S>0.09136</S></length>
+<length id="62"><L>-0.3833</L><M>6.3738</M><S>0.09135</S></length>
+<length id="62.5"><L>-0.3833</L><M>6.4948</M><S>0.09133</S></length>
+<length id="63"><L>-0.3833</L><M>6.6144</M><S>0.09131</S></length>
+<length id="63.5"><L>-0.3833</L><M>6.7328</M><S>0.09129</S></length>
+<length id="64"><L>-0.3833</L><M>6.8501</M><S>0.09126</S></length>
+<length id="64.5"><L>-0.3833</L><M>6.9662</M><S>0.09123</S></length>
+<length id="65"><L>-0.3833</L><M>7.0812</M><S>0.09119</S></length>
+<length id="65.5"><L>-0.3833</L><M>7.195</M><S>0.09115</S></length>
+<length id="66"><L>-0.3833</L><M>7.3076</M><S>0.0911</S></length>
+<length id="66.5"><L>-0.3833</L><M>7.4189</M><S>0.09106</S></length>
+<length id="67"><L>-0.3833</L><M>7.5288</M><S>0.09101</S></length>
+<length id="67.5"><L>-0.3833</L><M>7.6375</M><S>0.09096</S></length>
+<length id="68"><L>-0.3833</L><M>7.7448</M><S>0.0909</S></length>
+<length id="68.5"><L>-0.3833</L><M>7.8509</M><S>0.09085</S></length>
+<length id="69"><L>-0.3833</L><M>7.9559</M><S>0.09079</S></length>
+<length id="69.5"><L>-0.3833</L><M>8.0599</M><S>0.09074</S></length>
+<length id="70"><L>-0.3833</L><M>8.163</M><S>0.09068</S></length>
+<length id="70.5"><L>-0.3833</L><M>8.2651</M><S>0.09062</S></length>
+<length id="71"><L>-0.3833</L><M>8.3666</M><S>0.09056</S></length>
+<length id="71.5"><L>-0.3833</L><M>8.4676</M><S>0.0905</S></length>
+<length id="72"><L>-0.3833</L><M>8.5679</M><S>0.09043</S></length>
+<length id="72.5"><L>-0.3833</L><M>8.6674</M><S>0.09037</S></length>
+<length id="73"><L>-0.3833</L><M>8.7661</M><S>0.09031</S></length>
+<length id="73.5"><L>-0.3833</L><M>8.8638</M><S>0.09025</S></length>
+<length id="74"><L>-0.3833</L><M>8.9601</M><S>0.09018</S></length>
+<length id="74.5"><L>-0.3833</L><M>9.0552</M><S>0.09012</S></length>
+<length id="75"><L>-0.3833</L><M>9.149</M><S>0.09005</S></length>
+<length id="75.5"><L>-0.3833</L><M>9.2418</M><S>0.08999</S></length>
+<length id="76"><L>-0.3833</L><M>9.3337</M><S>0.08992</S></length>
+<length id="76.5"><L>-0.3833</L><M>9.4252</M><S>0.08985</S></length>
+<length id="77"><L>-0.3833</L><M>9.5166</M><S>0.08979</S></length>
+<length id="77.5"><L>-0.3833</L><M>9.6086</M><S>0.08972</S></length>
+<length id="78"><L>-0.3833</L><M>9.7015</M><S>0.08965</S></length>
+<length id="78.5"><L>-0.3833</L><M>9.7957</M><S>0.08959</S></length>
+<length id="79"><L>-0.3833</L><M>9.8915</M><S>0.08952</S></length>
+<length id="79.5"><L>-0.3833</L><M>9.9892</M><S>0.08946</S></length>
+<length id="80"><L>-0.3833</L><M>10.0891</M><S>0.0894</S></length>
+<length id="80.5"><L>-0.3833</L><M>10.1916</M><S>0.08934</S></length>
+<length id="81"><L>-0.3833</L><M>10.2965</M><S>0.08928</S></length>
+<length id="81.5"><L>-0.3833</L><M>10.4041</M><S>0.08923</S></length>
+<length id="82"><L>-0.3833</L><M>10.514</M><S>0.08918</S></length>
+<length id="82.5"><L>-0.3833</L><M>10.6263</M><S>0.08914</S></length>
+<length id="83"><L>-0.3833</L><M>10.741</M><S>0.0891</S></length>
+<length id="83.5"><L>-0.3833</L><M>10.8578</M><S>0.08906</S></length>
+<length id="84"><L>-0.3833</L><M>10.9767</M><S>0.08903</S></length>
+<length id="84.5"><L>-0.3833</L><M>11.0974</M><S>0.089</S></length>
+<length id="85"><L>-0.3833</L><M>11.2198</M><S>0.08898</S></length>
+<length id="85.5"><L>-0.3833</L><M>11.3435</M><S>0.08897</S></length>
+<length id="86"><L>-0.3833</L><M>11.4684</M><S>0.08895</S></length>
+<length id="86.5"><L>-0.3833</L><M>11.594</M><S>0.08895</S></length>
+<length id="87"><L>-0.3833</L><M>11.7201</M><S>0.08895</S></length>
+<length id="87.5"><L>-0.3833</L><M>11.8461</M><S>0.08895</S></length>
+<length id="88"><L>-0.3833</L><M>11.972</M><S>0.08896</S></length>
+<length id="88.5"><L>-0.3833</L><M>12.0976</M><S>0.08898</S></length>
+<length id="89"><L>-0.3833</L><M>12.2229</M><S>0.089</S></length>
+<length id="89.5"><L>-0.3833</L><M>12.3477</M><S>0.08903</S></length>
+<length id="90"><L>-0.3833</L><M>12.4723</M><S>0.08906</S></length>
+<length id="90.5"><L>-0.3833</L><M>12.5965</M><S>0.08909</S></length>
+<length id="91"><L>-0.3833</L><M>12.7205</M><S>0.08913</S></length>
+<length id="91.5"><L>-0.3833</L><M>12.8443</M><S>0.08918</S></length>
+<length id="92"><L>-0.3833</L><M>12.9681</M><S>0.08923</S></length>
+<length id="92.5"><L>-0.3833</L><M>13.092</M><S>0.08928</S></length>
+<length id="93"><L>-0.3833</L><M>13.2158</M><S>0.08934</S></length>
+<length id="93.5"><L>-0.3833</L><M>13.3399</M><S>0.08941</S></length>
+<length id="94"><L>-0.3833</L><M>13.4643</M><S>0.08948</S></length>
+<length id="94.5"><L>-0.3833</L><M>13.5892</M><S>0.08955</S></length>
+<length id="95"><L>-0.3833</L><M>13.7146</M><S>0.08963</S></length>
+<length id="95.5"><L>-0.3833</L><M>13.8408</M><S>0.08972</S></length>
+<length id="96"><L>-0.3833</L><M>13.9676</M><S>0.08981</S></length>
+<length id="96.5"><L>-0.3833</L><M>14.0953</M><S>0.0899</S></length>
+<length id="97"><L>-0.3833</L><M>14.2239</M><S>0.09</S></length>
+<length id="97.5"><L>-0.3833</L><M>14.3537</M><S>0.0901</S></length>
+<length id="98"><L>-0.3833</L><M>14.4848</M><S>0.09021</S></length>
+<length id="98.5"><L>-0.3833</L><M>14.6174</M><S>0.09033</S></length>
+<length id="99"><L>-0.3833</L><M>14.7519</M><S>0.09044</S></length>
+<length id="99.5"><L>-0.3833</L><M>14.8882</M><S>0.09057</S></length>
+<length id="100"><L>-0.3833</L><M>15.0267</M><S>0.09069</S></length>
+<length id="100.5"><L>-0.3833</L><M>15.1676</M><S>0.09083</S></length>
+<length id="101"><L>-0.3833</L><M>15.3108</M><S>0.09096</S></length>
+<length id="101.5"><L>-0.3833</L><M>15.4564</M><S>0.0911</S></length>
+<length id="102"><L>-0.3833</L><M>15.6046</M><S>0.09125</S></length>
+<length id="102.5"><L>-0.3833</L><M>15.7553</M><S>0.09139</S></length>
+<length id="103"><L>-0.3833</L><M>15.9087</M><S>0.09155</S></length>
+<length id="103.5"><L>-0.3833</L><M>16.0645</M><S>0.0917</S></length>
+<length id="104"><L>-0.3833</L><M>16.2229</M><S>0.09186</S></length>
+<length id="104.5"><L>-0.3833</L><M>16.3837</M><S>0.09203</S></length>
+<length id="105"><L>-0.3833</L><M>16.547</M><S>0.09219</S></length>
+<length id="105.5"><L>-0.3833</L><M>16.7129</M><S>0.09236</S></length>
+<length id="106"><L>-0.3833</L><M>16.8814</M><S>0.09254</S></length>
+<length id="106.5"><L>-0.3833</L><M>17.0527</M><S>0.09271</S></length>
+<length id="107"><L>-0.3833</L><M>17.2269</M><S>0.09289</S></length>
+<length id="107.5"><L>-0.3833</L><M>17.4039</M><S>0.09307</S></length>
+<length id="108"><L>-0.3833</L><M>17.5839</M><S>0.09326</S></length>
+<length id="108.5"><L>-0.3833</L><M>17.7668</M><S>0.09344</S></length>
+<length id="109"><L>-0.3833</L><M>17.9526</M><S>0.09363</S></length>
+<length id="109.5"><L>-0.3833</L><M>18.1412</M><S>0.09382</S></length>
+<length id="110"><L>-0.3833</L><M>18.3324</M><S>0.09401</S></length>
+</gender></zscore></instance>
+			<bind nodeset="/data/YES" calculate="'yes'"/>
+			<bind nodeset="/data/NO" calculate="'no'"/>
+			<bind nodeset="/data/prev_visit_date"/>
+			<bind nodeset="/data/visit_date" calculate="today()"/>
+			<bind nodeset="/data/child_name" required="true()"/>
+			<bind nodeset="/data/child_dob"/>
+			<bind nodeset="/data/child_age_months" calculate="int((today() - date(/data/child_dob)) div 30.4)"/>
+			<bind nodeset="/data/prev_visit_number"/>
+			<bind nodeset="/data/visit_number" calculate="coalesce(/data/prev_visit_number, 0) + 1"/>
+			<bind nodeset="/data/prev_referred"/>
+			<bind nodeset="/data/intro_label" required="true()"/>
+			<bind nodeset="/data/prev_register_number"/>
+			<bind nodeset="/data/has_register_number" relevant="/data/prev_register_number = '' or /data/prev_register_number = /data/NO" required="true()"/>
+			<bind nodeset="/data/child_register_no" type="xsd:int" relevant="/data/has_register_number = 'yes'" required="true()"/>
+			<bind nodeset="/data/first_child_today" required="true()"/>
+			<bind nodeset="/data/was_referred" relevant="/data/prev_referred = /data/YES"/>
+			<bind nodeset="/data/was_referred/respected_referral" required="true()"/>
+			<bind nodeset="/data/was_referred/label_no_adherence"/>
+			<bind nodeset="/data/oedema_group" relevant="/data/child_age_months &lt;= 60 and /data/child_age_months &gt;= 6"/>
+			<bind nodeset="/data/oedema_group/has_oedema" relevant="/data/child_age_months &gt;= 6 and /data/child_age_months &lt;= 60" required="true()"/>
+			<bind nodeset="/data/oedema_group/classify_oedema" relevant="/data/oedema_group/has_oedema = 'yes'" required="true()"/>
+			<bind nodeset="/data/muac_group"/>
+			<bind nodeset="/data/muac_group/instructions_muac" relevant="/data/first_child_today = 'yes'"/>
+			<bind nodeset="/data/muac_group/instructions_muac/pb_instructions"/>
+			<bind nodeset="/data/muac_group/instructions_muac/pb_instructions_2"/>
+			<bind nodeset="/data/muac_group/instructions_muac/pb_instructions_3"/>
+			<bind nodeset="/data/muac_group/ask_muac_mm" type="xsd:int" constraint=". &gt; 50 and . &lt; 270" jr:constraintMsg="jr:itext('muac_group/ask_muac_mm-constraintMsg')" required="true()"/>
+			<bind nodeset="/data/muac_group/prev_muac"/>
+			<bind nodeset="/data/muac_group/change_in_muac" relevant="/data/muac_group/prev_muac != ''" calculate="/data/muac_group/ask_muac_mm - /data/muac_group/prev_muac"/>
+			<bind nodeset="/data/weight_group"/>
+			<bind nodeset="/data/weight_group/instructions_weight" relevant="/data/first_child_today = 'yes'"/>
+			<bind nodeset="/data/weight_group/instructions_weight/calibrate_balance" relevant="/data/first_child_today = 'oui'"/>
+			<bind nodeset="/data/weight_group/instructions_weight/adjust_balance" relevant="/data/first_child_today = 'oui'"/>
+			<bind nodeset="/data/weight_group/instructions_weight/undress_child" relevant="/data/first_child_today = 'oui'"/>
+			<bind nodeset="/data/weight_group/instructions_weight/eye_level" relevant="/data/first_child_today = 'oui'"/>
+			<bind nodeset="/data/weight_group/ask_weight" type="xsd:string" constraint="(. &gt; 1.5 and . &lt; 40) and (regex(., '^[0-9]*\.[0-9]$'))" jr:constraintMsg="jr:itext('weight_group/ask_weight-constraintMsg')" required="true()"/>
+			<bind nodeset="/data/weight_group/prev_weight"/>
+			<bind nodeset="/data/weight_group/change_in_weight" relevant="/data/weight_group/prev_weight != ''" calculate="/data/weight_group/ask_weight - /data/weight_group/prev_weight"/>
+			<bind nodeset="/data/weight_group/gained_weight" relevant="/data/weight_group/change_in_weight &gt; 0"/>
+			<bind nodeset="/data/weight_group/lost_weight" relevant="/data/weight_group/change_in_weight &lt; 0"/>
+			<bind nodeset="/data/weight_group/unchanged_weight" relevant="/data/weight_group/change_in_weight = 0"/>
+			<bind nodeset="/data/height_group"/>
+			<bind nodeset="/data/height_group/instructions_height" relevant="/data/first_child_today = 'yes'"/>
+			<bind nodeset="/data/height_group/instructions_height/instructions_height_a"/>
+			<bind nodeset="/data/height_group/instructions_height/instructions_height_b"/>
+			<bind nodeset="/data/height_group/instructions_height/instructions_height_c"/>
+			<bind nodeset="/data/height_group/instructions_height_2" relevant="/data/first_child_today = 'yes'"/>
+			<bind nodeset="/data/height_group/instructions_height_2/instructions_height_d" relevant="/data/child_age_months &lt;= 24"/>
+			<bind nodeset="/data/height_group/instructions_height_2/instructions_height_e" relevant="/data/child_age_months &lt;= 24"/>
+			<bind nodeset="/data/height_group/instructions_height_2/instructions_height_f" relevant="/data/child_age_months &lt;= 24"/>
+			<bind nodeset="/data/height_group/instructions_height_3" relevant="/data/first_child_today = 'yes'"/>
+			<bind nodeset="/data/height_group/instructions_height_3/instructions_height_g"/>
+			<bind nodeset="/data/height_group/instructions_height_3/instructions_height_h"/>
+			<bind nodeset="/data/height_group/ask_height" type="xsd:double" required="true()"/>
+			<bind nodeset="/data/height_group/prev_height"/>
+			<bind nodeset="/data/height_group/change_in_height" relevant="/data/height_group/prev_height != ''" calculate="/data/height_group/ask_height - /data/height_group/prev_height"/>
+			<bind nodeset="/data/referral_criteria"/>
+			<bind nodeset="/data/referral_criteria/child_has_oedema" relevant="/data/oedema_group/has_oedema = /data/YES" calculate="/data/YES"/>
+			<bind nodeset="/data/referral_criteria/pb_less_than_115" relevant="/data/muac_group/ask_muac_mm &lt; 115" calculate="/data/YES"/>
+			<bind nodeset="/data/referral_criteria/stationary_weight" relevant="/data/weight_group/change_in_weight &lt;= 0" calculate="/data/YES"/>
+			<bind nodeset="/data/referral_criteria/sudden_weight_loss" relevant="/data/weight_group/ask_weight &lt;= 0.95 * /data/weight_group/prev_weight" calculate="/data/YES"/>
+			<bind nodeset="/data/referral_criteria/zscore_less_than_3"/>
+			<bind nodeset="/data/referral_criteria/trigger_referral" relevant="/data/referral_criteria/child_has_oedema = /data/YES or /data/referral_criteria/pb_less_than_115 = /data/YES or /data/referral_criteria/stationary_weight = /data/YES or /data/referral_criteria/sudden_weight_loss = /data/YES or /data/referral_criteria/zscore_less_than_3 = /data/YES" calculate="/data/YES"/>
+			<bind nodeset="/data/referral_criteria/referred" relevant="/data/referral_criteria/trigger_referral = 'yes'" calculate="/data/YES"/>
+			<bind nodeset="/data/actions_recommendations"/>
+			<bind nodeset="/data/actions_recommendations/summary"/>
+			<bind nodeset="/data/actions_recommendations/oedema_actions"/>
+			<bind nodeset="/data/actions_recommendations/oedema_actions/shows_oedema" relevant="/data/oedema_group/has_oedema = /data/YES" required="false()"/>
+			<bind nodeset="/data/actions_recommendations/pb_actions"/>
+			<bind nodeset="/data/actions_recommendations/pb_actions/pb_below_115" relevant="/data/muac_group/ask_muac_mm &lt; 115"/>
+			<bind nodeset="/data/actions_recommendations/pb_actions/pb_below_115_2" relevant="/data/muac_group/ask_muac_mm &lt; 115"/>
+			<bind nodeset="/data/actions_recommendations/pb_actions/pb_between_115_and_125" relevant="/data/muac_group/ask_muac_mm &gt;= 115 and /data/muac_group/ask_muac_mm &lt; 125"/>
+			<bind nodeset="/data/actions_recommendations/pb_actions/pb_above_125" relevant="/data/muac_group/ask_muac_mm &gt;= 125"/>
+			<bind nodeset="/data/actions_recommendations/needs_referral" relevant="/data/referral_criteria/trigger_referral = /data/YES"/>
+			<bind nodeset="/data/debug_zscore"/>
+			<bind nodeset="/data/weight_1_visit_ago"/>
+			<bind nodeset="/data/weight_2_visits_ago"/>
+			<bind nodeset="/data/weight_3_visits_ago"/>
+			<bind nodeset="/data/weight_4_visits_ago"/>
+			<bind nodeset="/data/weight_5_visits_ago"/>
+			<bind nodeset="/data/weight_6_visits_ago"/>
+			<bind nodeset="/data/gender"/>
+			<bind nodeset="/data/calc_grade" calculate="if(/data/zscore_unrounded &gt; 0,(int((/data/zscore_unrounded + 0.0005) * 1000)) div 1000, (int((/data/zscore_unrounded - 0.0005) * 1000)) div 1000)"/>
+			<bind nodeset="/data/calc_grade_tenths" calculate="if(/data/zscore_unrounded &gt; 0,(int((/data/zscore_unrounded + 0.05) * 10)) div 10, (int((/data/zscore_unrounded - 0.05) * 10)) div 10)"/>
+			<bind nodeset="/data/calc_grade_tenths_with_zeros" calculate="if(/data/calc_grade_tenths = -3, &quot;-3.0&quot;,&#10;if(/data/calc_grade_tenths = -2, &quot;-2.0&quot;,&#10;if(/data/calc_grade_tenths = -1, &quot;-1.0&quot;,&#10;if(/data/calc_grade_tenths = 0, &quot;0.0&quot;,&#10;if(/data/calc_grade_tenths = 1, &quot;1.0&quot;,&#10;if(/data/calc_grade_tenths = 2, &quot;2.0&quot;,&#10;if(/data/calc_grade_tenths = 3, &quot;3.0&quot;,/data/calc_grade_tenths&#10;)))))))"/>
+			<bind nodeset="/data/L" calculate="if(/data/child_age_months &lt; 6, instance('age')/zscore/gender[@id = /data/gender]/age[@id = /data/child_age_months]/L, if(/data/child_age_months &lt; 24, instance('length')/zscore/gender[@id = /data/gender]/length[@id = /data/height_rounded]/L, instance('height')/zscore/gender[@id = /data/gender]/height[@id = /data/height_rounded]/L))"/>
+			<bind nodeset="/data/M" calculate="if(/data/child_age_months &lt; 6, instance('age')/zscore/gender[@id = /data/gender]/age[@id = /data/child_age_months]/M, if(/data/child_age_months &lt; 24, instance('length')/zscore/gender[@id = /data/gender]/length[@id = /data/height_rounded]/M, instance('height')/zscore/gender[@id = /data/gender]/height[@id = /data/height_rounded]/M))"/>
+			<bind nodeset="/data/S" calculate="if(/data/child_age_months &lt; 6, instance('age')/zscore/gender[@id = /data/gender]/age[@id = /data/child_age_months]/S, if(/data/child_age_months &lt; 24, instance('length')/zscore/gender[@id = /data/gender]/length[@id = /data/height_rounded]/S, instance('height')/zscore/gender[@id = /data/gender]/height[@id = /data/height_rounded]/S))"/>
+			<bind nodeset="/data/height_measured_on" calculate="today()"/>
+			<bind nodeset="/data/weight" calculate="number(/data/weight_group/ask_weight)"/>
+			<bind nodeset="/data/height" calculate="number(/data/height_group/ask_height)"/>
+			<bind nodeset="/data/height_rounded" calculate="int((/data/height + .25)*2) div 2"/>
+			<bind nodeset="/data/zscore_unrounded" calculate="if(/data/weight &gt; /data/sd3pos, 3 + (/data/weight - /data/sd3pos) div (/data/sd3pos - /data/sd2pos), if(/data/weight &lt; /data/sd3neg, -3 + (/data/weight - /data/sd3neg) div (/data/sd2neg - /data/sd3neg), (pow(/data/weight div /data/M, /data/L) - 1) div (/data/S * /data/L)))"/>
+			<bind nodeset="/data/sd3pos" calculate="/data/M * pow(1+/data/L*/data/S*3,1 div /data/L)"/>
+			<bind nodeset="/data/sd3neg" calculate="/data/M * pow(1+/data/L*/data/S*-3,1 div /data/L)"/>
+			<bind nodeset="/data/sd2pos" calculate="/data/M * pow(1+/data/L*/data/S*2,1 div /data/L)"/>
+			<bind nodeset="/data/sd2neg" calculate="/data/M * pow(1+/data/L*/data/S*-2,1 div /data/L)"/>
+			<bind nodeset="/data/conseils_display"/>
+			<itext>
+				<translation lang="fra" default="">
+					<text id="intro_label-label">
+						<value>Vous avez choisi l'enfant suivant <output value="/data/child_name"/>, 
+&#226;g&#233; de <output value="/data/child_age_months"/> mois
+nombre de visites d&#233;j&#224; compl&#233;t&#233;es : <output value="/data/visit_number"/> visites.</value>
+					</text>
+					<text id="has_register_number-label">
+						<value>Est-ce que c'est enfant a num&#233;ro dans le registre ?</value>
+					</text>
+					<text id="child_register_no-label">
+						<value>Notez le num&#233;ro de cet enfant dans le registre :</value>
+					</text>
+					<text id="first_child_today-label">
+						<value>Est-ce le premier enfant que vous pesez aujourd'hui?</value>
+					</text>
+					<text id="first_child_today-yes-label">
+						<value>Oui</value>
+					</text>
+					<text id="first_child_today-no-label">
+						<value>Non</value>
+					</text>
+					<text id="was_referred-label">
+						<value>was_referred</value>
+					</text>
+					<text id="was_referred/respected_referral-label">
+						<value>Cet enfant a &#233;t&#233; r&#233;f&#233;r&#233; / orient&#233; au centre de sant&#233;. L'enfant s'est-il pr&#233;sent&#233; au service/centre de soins de r&#233;f&#233;rence ?</value>
+					</text>
+					<text id="was_referred/label_no_adherence-label">
+						<value>label_no_adherence</value>
+					</text>
+					<text id="oedema_group-label">
+						<value>Oed&#232;mes</value>
+					</text>
+					<text id="oedema_group/has_oedema-label">
+						<value>L'enfant a-t-il des &#339;d&#232;mes? Pressez les deux pieds de l'enfant avec vos pouces pendant trois secondes, puis l&#226;chez: s'il reste des d&#233;pressions (peau enfonc&#233;e) l&#224; o&#249; vous avez press&#233;, l'enfant a des &#339;d&#232;mes.
+</value>
+					</text>
+					<text id="oedema_group/classify_oedema-label">
+						<value>Classer les oed&#232;mes </value>
+					</text>
+					<text id="oedema_group/classify_oedema-feet_only-label">
+						<value>Oed&#232;mes sur les 2 pieds</value>
+					</text>
+					<text id="oedema_group/classify_oedema-feet_legs-label">
+						<value>Oed&#232;mes sur les 2 pieds et 2 des jambes </value>
+					</text>
+					<text id="oedema_group/classify_oedema-feet_legs_extremities-label">
+						<value>Oed&#232;mes sur les 2 pieds, 2 des jambes, les 2 mains et la face</value>
+					</text>
+					<text id="muac_group-label">
+						<value>P&#233;rim&#232;tre Bracchial</value>
+					</text>
+					<text id="muac_group/instructions_muac-label">
+						<value>instructions_muac</value>
+					</text>
+					<text id="muac_group/instructions_muac/pb_instructions-label">
+						<value>Instructions : pour la mesure du tour de bras (PB), utilisez le bras gauche.</value>
+					</text>
+					<text id="muac_group/instructions_muac/pb_instructions_2-label">
+						<value>Instructions : prenez la mesure de la partie situ&#233;e juste au milieu entre l'&#233;paule et le coude</value>
+					</text>
+					<text id="muac_group/instructions_muac/pb_instructions_3-label">
+						<value>Instructions : Pendant que vous prenez la mesure, le bras de l'enfant doit &#234;tre bien tendu</value>
+					</text>
+					<text id="muac_group/ask_muac_mm-label">
+						<value>Marquer la mesure du tour de bras (PB) de l'enfant (en mm). Mesurer le PB plusieurs fois pour vous assurez que ce soit correct.</value>
+					</text>
+					<text id="muac_group/ask_muac_mm-constraintMsg">
+						<value>Entre 50 and 270 mm. </value>
+					</text>
+					<text id="weight_group-label">
+						<value>Poids</value>
+					</text>
+					<text id="weight_group/instructions_weight-label">
+						<value>instructions_weight</value>
+					</text>
+					<text id="weight_group/instructions_weight/calibrate_balance-label">
+						<value>Calibrage de la balance : Verifiez que la balance est &#224; la hauteur des yeux</value>
+					</text>
+					<text id="weight_group/instructions_weight/adjust_balance-label">
+						<value>Avant de prendre le poids, veuillez ajuster la balance, de mani&#232;re que l'aiguille soit sur 0 avec le panier/crochet/la culotte de pesage, mais sans l'enfant.</value>
+					</text>
+					<text id="weight_group/instructions_weight/undress_child-label">
+						<value>Instructions : demandez &#224; la m&#232;re de d&#233;shabiller l'enfant</value>
+					</text>
+					<text id="weight_group/instructions_weight/eye_level-label">
+						<value>Instructions : Pendant que vous lisez la mesure (le poids), veuillez s'assurer que le cadran soit &#224; la hauteur des yeux
+</value>
+					</text>
+					<text id="weight_group/ask_weight-label">
+						<value>Inscrivez le poids de l'enfant en kg</value>
+					</text>
+					<text id="weight_group/ask_weight-constraintMsg">
+						<value>Sup&#233;rieur &#224; 1.5 et inf&#233;rieur &#224;  40.0 kg.</value>
+					</text>
+					<text id="weight_group/gained_weight-label">
+						<value>L'enfant a gagn&#233; <output value="/data/weight_group/change_in_weight"/> kg depuis la visite pr&#233;c&#233;dente le <output value="/data/prev_visit_date"/></value>
+					</text>
+					<text id="weight_group/lost_weight-label">
+						<value>L'enfant affiche une perte de poids de <output value="/data/weight_group/change_in_weight"/> kg depuis la visit&#233; pr&#233;c&#233;dente, le <output value="/data/prev_visit_date"/>.</value>
+					</text>
+					<text id="weight_group/unchanged_weight-label">
+						<value>L'enfant n'a ni gagn&#233; ni perdu de poids. </value>
+					</text>
+					<text id="height_group-label">
+						<value>Taille</value>
+					</text>
+					<text id="height_group/instructions_height-label">
+						<value>instructions_height</value>
+					</text>
+					<text id="height_group/instructions_height/instructions_height_a-label">
+						<value>Instructions : 
+La toise se trouve-t-elle sur une surface bien plane (uniforme) ?</value>
+					</text>
+					<text id="height_group/instructions_height/instructions_height_b-label">
+						<value>Les chaussures, le chapeau de l'enfant ont-ils &#233;t&#233; enlev&#233;s?</value>
+					</text>
+					<text id="height_group/instructions_height/instructions_height_c-label">
+						<value>Mesurer d&#233;bout les enfants de plus de 2 ans ou plus de 85cm et mesurer en position couch&#233;e les enfants de moins de 2 ans ou moins de 85 cm.</value>
+					</text>
+					<text id="height_group/instructions_height_2/instructions_height_d-label">
+						<value>Assurez-vous que la t&#234;te, les &#233;paules, le dos et le derri&#232;re de l'enfants sont pos&#233;s d'une mani&#232;re bien plane sur la toise
+</value>
+					</text>
+					<text id="height_group/instructions_height_2/instructions_height_e-label">
+						<value>La personne qui mesure devrait tenir le menton de l'enfant, tienne le curseur et le faire descendre petit &#224; petit, lis le resultat de la mesure pour l'aide</value>
+					</text>
+					<text id="height_group/instructions_height_2/instructions_height_f-label">
+						<value>Demandez &#224; votre assistant de s'agenouiller &#224; droite de l'enfant et presser doucement sur les genoux de l'enfant et v&#233;rifie que l'enfant est bien align&#233;</value>
+					</text>
+					<text id="height_group/instructions_height_3/instructions_height_g-label">
+						<value>La personne qui mesure devrait s'accroupir &#224; droite  de l'enfant, puis faire d&#233;placer le cursseur  jusqu'aux plantes des pieds de l'enfant, lis le r&#233;sultat de la mesure pour l'aide.</value>
+					</text>
+					<text id="height_group/instructions_height_3/instructions_height_h-label">
+						<value>Demander &#224; l'aide se s'agenouiller devant l'enfant, tient l'enfant et prend note la mesure obtenue.</value>
+					</text>
+					<text id="height_group/ask_height-label">
+						<value>Mesurez la taille de l'enfant.</value>
+					</text>
+					<text id="referral_criteria-label">
+						<value>referral_criteria</value>
+					</text>
+					<text id="actions_recommendations-label">
+						<value>actions_recommendations</value>
+					</text>
+					<text id="actions_recommendations/summary-label">
+						<value>Age : <output value="/data/child_age_months"/> mois
+Sexe : <output value="/data/gender"/>
+
+Oedema : <output value="/data/oedema_group/has_oedema"/>
+PB : <output value="/data/muac_group/ask_muac_mm"/>mm
+Taille : <output value="/data/height_group/ask_height"/>cm
+Poids: <output value="/data/weight_group/ask_weight"/>kg
+</value>
+					</text>
+					<text id="actions_recommendations/oedema_actions-label">
+						<value>Oedemes</value>
+					</text>
+					<text id="actions_recommendations/oedema_actions/shows_oedema-label">
+						<value>L'enfant pr&#233;sente des &#339;d&#232;mes.</value>
+					</text>
+					<text id="actions_recommendations/pb_actions-label">
+						<value>P&#233;rim&#232;tre bracchial</value>
+					</text>
+					<text id="actions_recommendations/pb_actions/pb_below_115-label">
+						<value>Le PB montre que l'enfant est inf&#233;rieur &#224; 115.</value>
+					</text>
+					<text id="actions_recommendations/pb_actions/pb_below_115_2-label">
+						<value>L'enfant est s&#233;rieusement &#233;maci&#233;, souffrant de la malnutrition aigue. </value>
+					</text>
+					<text id="actions_recommendations/pb_actions/pb_between_115_and_125-label">
+						<value>PB : <output value="/data/muac_group/ask_muac_mm"/> mm
+D'apr&#232;s la mesure du tour de bras (PB), l'enfant est mod&#233;r&#233;ment emaci&#233;/d&#233;nutri </value>
+					</text>
+					<text id="actions_recommendations/pb_actions/pb_above_125-label">
+						<value>PB : <output value="/data/muac_group/ask_muac_mm"/> mm
+
+D'apr&#232;s la mesure du tour de bras (PB), l'enfant ne souffre pas d'insuffisance pond&#233;rale</value>
+					</text>
+					<text id="actions_recommendations/needs_referral-label">
+						<value>Pour ces raisons, l'enfant devrait &#234;tre r&#233;f&#233;r&#233; &#224; un centre de sant&#233; imm&#233;diatement.</value>
+					</text>
+					<text id="debug_zscore-label">
+						<value>debug_zscore <output value="/data/zscore_unrounded"/>
+calc_grade <output value="/data/calc_grade_tenths"/>
+weight <output value="/data/weight"/> kg
+
+L <output value="/data/L"/>
+M <output value="/data/M"/>
+S <output value="/data/S"/></value>
+					</text>
+					<text id="conseils_display-label">
+						<value>conseils_display</value>
+					</text>
+				</translation>
+				<translation lang="mlg">
+					<text id="intro_label-label">
+						<value>Nisafidy ny zaza <output value="/data/child_name"/> age <output value="/data/child_age_months"/> mois lanao</value>
+					</text>
+					<text id="has_register_number-label">
+						<value>Est-ce que c'est enfant a num&#233;ro dans le registre ?</value>
+					</text>
+					<text id="child_register_no-label">
+						<value>Notez le num&#233;ro de cet enfant dans le registre :</value>
+					</text>
+					<text id="first_child_today-label">
+						<value>Izy ve no zaza nolanjainao voalohany androany?</value>
+					</text>
+					<text id="first_child_today-yes-label">
+						<value>Eny</value>
+					</text>
+					<text id="first_child_today-no-label">
+						<value>Tsia</value>
+					</text>
+					<text id="was_referred-label">
+						<value>was_referred</value>
+					</text>
+					<text id="was_referred/respected_referral-label">
+						<value>Nalefa tany amin'ny tobimpahasalamana ity zaza ity. Tena tonga tany tokoa ve izy?
+</value>
+					</text>
+					<text id="was_referred/label_no_adherence-label">
+						<value>label_no_adherence</value>
+					</text>
+					<text id="oedema_group-label">
+						<value>Oed&#232;mes</value>
+					</text>
+					<text id="oedema_group/has_oedema-label">
+						<value>Misy fivontosana ve ny zaza?Tsindrio mandritra ny 3 segondra ny tampon-tongotry ny zaza. Esorina ny tanana avy eo. Jerena raha misy lempona tavela ka ela vao afaka. Raha mamela lempona dia misy fivontosana ilay zaza</value>
+					</text>
+					<text id="oedema_group/classify_oedema-label">
+						<value>Sokajio ny fivontosana</value>
+					</text>
+					<text id="oedema_group/classify_oedema-feet_only-label">
+						<value>Eo antampotongotra roa (+)</value>
+					</text>
+					<text id="oedema_group/classify_oedema-feet_legs-label">
+						<value>Eo antampotongotra roa sy ny ranjo(++)</value>
+					</text>
+					<text id="oedema_group/classify_oedema-feet_legs_extremities-label">
+						<value>Eo antampotongotra roa sy ny ranjo, ny tanana roa ary ny tarehy (+++)</value>
+					</text>
+					<text id="muac_group-label">
+						<value>Refin-tsandry</value>
+					</text>
+					<text id="muac_group/instructions_muac-label">
+						<value>instructions_muac</value>
+					</text>
+					<text id="muac_group/instructions_muac/pb_instructions-label">
+						<value>Toromarika: ny sandry havia no hangalana ny refin-tsandry</value>
+					</text>
+					<text id="muac_group/instructions_muac/pb_instructions_2-label">
+						<value>Toromarika: eo amin'ny fisasahany ny  elanelan'ny  manasaraka ny foto-tsandry sy ny kiho  no refesina</value>
+					</text>
+					<text id="muac_group/instructions_muac/pb_instructions_3-label">
+						<value>Toromarika: tokony ho tony tsara ny zaza mandritra ny fandrefesana
+</value>
+					</text>
+					<text id="muac_group/ask_muac_mm-label">
+						<value>Mariho ny refin-tsandrin'ny zaza (mm)</value>
+					</text>
+					<text id="muac_group/ask_muac_mm-constraintMsg">
+						<value>Entre 50 and 270 mm. </value>
+					</text>
+					<text id="weight_group-label">
+						<value>Lanja</value>
+					</text>
+					<text id="weight_group/instructions_weight-label">
+						<value>instructions_weight</value>
+					</text>
+					<text id="weight_group/instructions_weight/calibrate_balance-label">
+						<value>Fanamarinana ny balance :
+Hamarino raha tandrifin&#8217;ny maso ny cadran</value>
+					</text>
+					<text id="weight_group/instructions_weight/adjust_balance-label">
+						<value>Atao manondro tsara ny &#8220;0&#8221; ny fanjaitra  efa miaraka amin&#8217;ny kilaoty na ny hamac fa tsy misy zaza</value>
+					</text>
+					<text id="weight_group/instructions_weight/undress_child-label">
+						<value>Toromarika: Asaivo esorin'ny reny ny akanjon'ny zaza sy izay mavesabesatra aminy</value>
+					</text>
+					<text id="weight_group/instructions_weight/eye_level-label">
+						<value>Toromarika: Rehefa hamaky ny lanja dia atao tandrifin'ny maso ny cadran n'ny balance</value>
+					</text>
+					<text id="weight_group/ask_weight-label">
+						<value>Soraty ny lanjan'ny zaza (kg)</value>
+					</text>
+					<text id="weight_group/ask_weight-constraintMsg">
+						<value>Sup&#233;rieur &#224; 1.5 et inf&#233;rieur &#224;  40.0 kg.</value>
+					</text>
+					<text id="weight_group/gained_weight-label">
+						<value>Nahazo lanja <output value="/data/weight_group/change_in_weight"/> kg depuis la visite pr&#233;c&#233;dente le <output value="/data/prev_visit_date"/></value>
+					</text>
+					<text id="weight_group/lost_weight-label">
+						<value>Latsaka <output value="/data/weight_group/change_in_weight"/> kg  ny lanjan'ny zaza, depuis la visit&#233; pr&#233;c&#233;dente, le <output value="/data/prev_visit_date"/>.</value>
+					</text>
+					<text id="weight_group/unchanged_weight-label">
+						<value>Tsy miova ny lanjan'ny zaza</value>
+					</text>
+					<text id="height_group-label">
+						<value>Taille</value>
+					</text>
+					<text id="height_group/instructions_height-label">
+						<value>instructions_height</value>
+					</text>
+					<text id="height_group/instructions_height/instructions_height_a-label">
+						<value>Toromarika:mipetraka amin'ny toerana marindrano tsara ve ny toise?</value>
+					</text>
+					<text id="height_group/instructions_height/instructions_height_b-label">
+						<value>Efa nesorina ve ny kiraro na ny satroka  ny zaza?
+</value>
+					</text>
+					<text id="height_group/instructions_height/instructions_height_c-label">
+						<value>Refesina matory ny zaza  latsaka ny 2 taona na latsaka ny 85 cm ary refesina mitsangana raha mihoatra ny 2 taona na mihoatra ny 85 cm.</value>
+					</text>
+					<text id="height_group/instructions_height_2/instructions_height_d-label">
+						<value>Hamarino tsara raha miankina  tsara amin'ny toise ny  loha, ny lamosina , ny fitombenan'ny zaza
+</value>
+					</text>
+					<text id="height_group/instructions_height_2/instructions_height_e-label">
+						<value>Raha mandrefy mitsangana , ny mpandrefy no mitazona tsara ny saokan'ny zaza , mitazona sy mampidina tsikelikely  ny korisa ary mamaky ny refy hoan'ny mpanampy.</value>
+					</text>
+					<text id="height_group/instructions_height_2/instructions_height_f-label">
+						<value>Asaivo mandohalika eo ankavanan'ny zaza ny mpanampy, mitazoninamoramora ny lohalika ary manamarina fa  mahitsy  ny zaza
+</value>
+					</text>
+					<text id="height_group/instructions_height_3/instructions_height_g-label">
+						<value>Raha mandrefy matory , ny mpandrefy no mandohalika eo ankavanan'ny zaza manakisaka  ny korisa hifanandrify tsara amin'ny faladian'ny zaza ary mamaky ny refy hoan'ny mpanampy.</value>
+					</text>
+					<text id="height_group/instructions_height_3/instructions_height_h-label">
+						<value>Asaivo mandohalika eo alohan'ny zaza ny mpanampy, mitazona tsara ny zaza ary manoratra ny refy.</value>
+					</text>
+					<text id="height_group/ask_height-label">
+						<value>Mesurez la taille de l'enfant.</value>
+					</text>
+					<text id="referral_criteria-label">
+						<value>referral_criteria</value>
+					</text>
+					<text id="actions_recommendations-label">
+						<value>actions_recommendations</value>
+					</text>
+					<text id="actions_recommendations/summary-label">
+						<value>Age : <output value="/data/child_age_months"/> mois
+Sexe : <output value="/data/gender"/>
+
+Oedema : <output value="/data/oedema_group/has_oedema"/>
+PB : <output value="/data/muac_group/ask_muac_mm"/>mm
+Taille : <output value="/data/height_group/ask_height"/>cm
+Poids: <output value="/data/weight_group/ask_weight"/>kg
+</value>
+					</text>
+					<text id="actions_recommendations/oedema_actions-label">
+						<value>Oedemes</value>
+					</text>
+					<text id="actions_recommendations/oedema_actions/shows_oedema-label">
+						<value>Misy fivontosana ny zaza, alefaso haingana eny amin'ny tobimpahasalamana</value>
+					</text>
+					<text id="actions_recommendations/pb_actions-label">
+						<value>P&#233;rim&#232;tre bracchial</value>
+					</text>
+					<text id="actions_recommendations/pb_actions/pb_below_115-label">
+						<value>Raha latsaka ny 115mm ny refin-tsandry, avereno refesina ho fanamarinana sy fanitsiana</value>
+					</text>
+					<text id="actions_recommendations/pb_actions/pb_below_115_2-label">
+						<value>Araka io refy io dia tena mahia ny zaza ka  alefaso haingana any amin'ny tobim-pahasalamana,</value>
+					</text>
+					<text id="actions_recommendations/pb_actions/pb_between_115_and_125-label">
+						<value>PB : <output value="/data/muac_group/ask_muac_mm"/> mm
+
+Araka io refy io dia efa mahia io zaza io</value>
+					</text>
+					<text id="actions_recommendations/pb_actions/pb_above_125-label">
+						<value>PB : <output value="/data/muac_group/ask_muac_mm"/> mm
+Araka io refy io dia mitombo ara-dalana ny zaza</value>
+					</text>
+					<text id="actions_recommendations/needs_referral-label">
+						<value>Pour ces raisons, l'enfant devrait &#234;tre r&#233;f&#233;r&#233; &#224; un centre de sant&#233; imm&#233;diatement.</value>
+					</text>
+					<text id="debug_zscore-label">
+						<value>debug_zscore <output value="/data/zscore_unrounded"/>
+calc_grade <output value="/data/calc_grade_tenths"/>
+weight <output value="/data/weight"/> kg
+
+L <output value="/data/L"/>
+M <output value="/data/M"/>
+S <output value="/data/S"/></value>
+					</text>
+					<text id="conseils_display-label">
+						<value>conseils_display</value>
+					</text>
+				</translation>
+			</itext>
+		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><bind calculate="instance('commcaresession')/session/data/case_id" nodeset="/data/case/@case_id"/><bind calculate="/data/child_register_no" nodeset="/data/case/update/child_register_no" relevant="count(/data/child_register_no) &gt; 0"/><bind calculate="/data/has_register_number" nodeset="/data/case/update/has_register_number" relevant="count(/data/has_register_number) &gt; 0"/><bind calculate="/data/prev_visit_number" nodeset="/data/case/update/prev_visit_number" relevant="count(/data/prev_visit_number) &gt; 0"/><bind calculate="/data/referral_criteria/referred" nodeset="/data/case/update/referred" relevant="count(/data/referral_criteria/referred) &gt; 0"/><bind calculate="/data/visit_date" nodeset="/data/case/update/visit_date" relevant="count(/data/visit_date) &gt; 0"/><bind calculate="/data/visit_number" nodeset="/data/case/update/visit_number" relevant="count(/data/visit_number) &gt; 0"/><bind calculate="/data/weight" nodeset="/data/case/update/weight" relevant="count(/data/weight) &gt; 0"/><bind calculate="/data/weight_1_visit_ago" nodeset="/data/case/update/weight_1_visit_ago" relevant="count(/data/weight_1_visit_ago) &gt; 0"/><bind calculate="/data/weight_2_visits_ago" nodeset="/data/case/update/weight_2_visits_ago" relevant="count(/data/weight_2_visits_ago) &gt; 0"/><bind calculate="/data/weight_3_visits_ago" nodeset="/data/case/update/weight_3_visits_ago" relevant="count(/data/weight_3_visits_ago) &gt; 0"/><bind calculate="/data/weight_4_visits_ago" nodeset="/data/case/update/weight_4_visits_ago" relevant="count(/data/weight_4_visits_ago) &gt; 0"/><bind calculate="/data/weight_5_visits_ago" nodeset="/data/case/update/weight_5_visits_ago" relevant="count(/data/weight_5_visits_ago) &gt; 0"/><bind calculate="/data/weight_6_visits_ago" nodeset="/data/case/update/weight_6_visits_ago" relevant="count(/data/weight_6_visits_ago) &gt; 0"/><setvalue event="xforms-ready" ref="/data/gender" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/child_gender"/><setvalue event="xforms-ready" ref="/data/prev_register_number" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/has_register_number"/><setvalue event="xforms-ready" ref="/data/weight_5_visits_ago" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/weight_4_visits_ago"/><setvalue event="xforms-ready" ref="/data/weight_3_visits_ago" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/weight_2_visits_ago"/><setvalue event="xforms-ready" ref="/data/weight_2_visits_ago" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/weight_1_visit_ago"/><setvalue event="xforms-ready" ref="/data/prev_visit_number" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/visit_number"/><setvalue event="xforms-ready" ref="/data/weight_4_visits_ago" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/weight_3_visits_ago"/><setvalue event="xforms-ready" ref="/data/weight_6_visits_ago" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/weight_5_visits_ago"/><setvalue event="xforms-ready" ref="/data/prev_visit_date" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/visit_date"/><setvalue event="xforms-ready" ref="/data/weight_1_visit_ago" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/weight"/><setvalue event="xforms-ready" ref="/data/child_dob" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/child_dob"/><setvalue event="xforms-ready" ref="/data/child_name" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/case_name"/><bind calculate="/data/meta/timeEnd" nodeset="/data/subcase_0/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/subcase_0/case/@user_id"/><setvalue event="xforms-ready" ref="/data/subcase_0/case/@case_id" value="instance('commcaresession')/session/data/case_id_new_gmp_visit_0"/><bind calculate="/data/child_name" nodeset="/data/subcase_0/case/create/case_name"/><bind calculate="/data/meta/userID" nodeset="/data/subcase_0/case/create/owner_id"/><bind calculate="/data/child_age_months" nodeset="/data/subcase_0/case/update/child_age_months" relevant="count(/data/child_age_months) &gt; 0"/><bind calculate="/data/gender" nodeset="/data/subcase_0/case/update/gender" relevant="count(/data/gender) &gt; 0"/><bind calculate="/data/visit_date" nodeset="/data/subcase_0/case/update/visit_date" relevant="count(/data/visit_date) &gt; 0"/><bind calculate="/data/weight" nodeset="/data/subcase_0/case/update/weight" relevant="count(/data/weight) &gt; 0"/><bind calculate="/data/case/@case_id" nodeset="/data/subcase_0/case/index/parent"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<trigger ref="/data/intro_label" appearance="minimal">
+			<label ref="jr:itext('intro_label-label')"/>
+		</trigger>
+		<select1 ref="/data/has_register_number">
+			<label ref="jr:itext('has_register_number-label')"/>
+			<item>
+				<label ref="jr:itext('first_child_today-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('first_child_today-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<input ref="/data/child_register_no">
+			<label ref="jr:itext('child_register_no-label')"/>
+		</input>
+		<select1 ref="/data/first_child_today">
+			<label ref="jr:itext('first_child_today-label')"/>
+			<item>
+				<label ref="jr:itext('first_child_today-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('first_child_today-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<group ref="/data/was_referred">
+			<label ref="jr:itext('was_referred-label')"/>
+			<select1 ref="/data/was_referred/respected_referral">
+				<label ref="jr:itext('was_referred/respected_referral-label')"/>
+				<item>
+					<label ref="jr:itext('first_child_today-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('first_child_today-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<trigger ref="/data/was_referred/label_no_adherence" appearance="minimal">
+				<label ref="jr:itext('was_referred/label_no_adherence-label')"/>
+			</trigger>
+		</group>
+		<group ref="/data/oedema_group">
+			<label ref="jr:itext('oedema_group-label')"/>
+			<select1 ref="/data/oedema_group/has_oedema">
+				<label ref="jr:itext('oedema_group/has_oedema-label')"/>
+				<item>
+					<label ref="jr:itext('first_child_today-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('first_child_today-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/oedema_group/classify_oedema">
+				<label ref="jr:itext('oedema_group/classify_oedema-label')"/>
+				<item>
+					<label ref="jr:itext('oedema_group/classify_oedema-feet_only-label')"/>
+					<value>feet_only</value>
+				</item>
+				<item>
+					<label ref="jr:itext('oedema_group/classify_oedema-feet_legs-label')"/>
+					<value>feet_legs</value>
+				</item>
+				<item>
+					<label ref="jr:itext('oedema_group/classify_oedema-feet_legs_extremities-label')"/>
+					<value>feet_legs_extremities</value>
+				</item>
+			</select1>
+		</group>
+		<group ref="/data/muac_group">
+			<label ref="jr:itext('muac_group-label')"/>
+			<group ref="/data/muac_group/instructions_muac" appearance="field-list">
+				<label ref="jr:itext('muac_group/instructions_muac-label')"/>
+				<trigger ref="/data/muac_group/instructions_muac/pb_instructions" appearance="minimal">
+					<label ref="jr:itext('muac_group/instructions_muac/pb_instructions-label')"/>
+				</trigger>
+				<trigger ref="/data/muac_group/instructions_muac/pb_instructions_2" appearance="minimal">
+					<label ref="jr:itext('muac_group/instructions_muac/pb_instructions_2-label')"/>
+				</trigger>
+				<trigger ref="/data/muac_group/instructions_muac/pb_instructions_3" appearance="minimal">
+					<label ref="jr:itext('muac_group/instructions_muac/pb_instructions_3-label')"/>
+				</trigger>
+			</group>
+			<input ref="/data/muac_group/ask_muac_mm">
+				<label ref="jr:itext('muac_group/ask_muac_mm-label')"/>
+			</input>
+		</group>
+		<group ref="/data/weight_group">
+			<label ref="jr:itext('weight_group-label')"/>
+			<group ref="/data/weight_group/instructions_weight" appearance="field-list">
+				<label ref="jr:itext('weight_group/instructions_weight-label')"/>
+				<trigger ref="/data/weight_group/instructions_weight/calibrate_balance" appearance="minimal">
+					<label ref="jr:itext('weight_group/instructions_weight/calibrate_balance-label')"/>
+				</trigger>
+				<trigger ref="/data/weight_group/instructions_weight/adjust_balance" appearance="minimal">
+					<label ref="jr:itext('weight_group/instructions_weight/adjust_balance-label')"/>
+				</trigger>
+				<trigger ref="/data/weight_group/instructions_weight/undress_child" appearance="minimal">
+					<label ref="jr:itext('weight_group/instructions_weight/undress_child-label')"/>
+				</trigger>
+				<trigger ref="/data/weight_group/instructions_weight/eye_level" appearance="minimal">
+					<label ref="jr:itext('weight_group/instructions_weight/eye_level-label')"/>
+				</trigger>
+			</group>
+			<input ref="/data/weight_group/ask_weight" appearance="numeric">
+				<label ref="jr:itext('weight_group/ask_weight-label')"/>
+			</input>
+			<trigger ref="/data/weight_group/gained_weight" appearance="minimal">
+				<label ref="jr:itext('weight_group/gained_weight-label')"/>
+			</trigger>
+			<trigger ref="/data/weight_group/lost_weight" appearance="minimal">
+				<label ref="jr:itext('weight_group/lost_weight-label')"/>
+			</trigger>
+			<trigger ref="/data/weight_group/unchanged_weight" appearance="minimal">
+				<label ref="jr:itext('weight_group/unchanged_weight-label')"/>
+			</trigger>
+		</group>
+		<group ref="/data/height_group">
+			<label ref="jr:itext('height_group-label')"/>
+			<group ref="/data/height_group/instructions_height" appearance="field-list">
+				<label ref="jr:itext('height_group/instructions_height-label')"/>
+				<trigger ref="/data/height_group/instructions_height/instructions_height_a" appearance="minimal">
+					<label ref="jr:itext('height_group/instructions_height/instructions_height_a-label')"/>
+				</trigger>
+				<trigger ref="/data/height_group/instructions_height/instructions_height_b" appearance="minimal">
+					<label ref="jr:itext('height_group/instructions_height/instructions_height_b-label')"/>
+				</trigger>
+				<trigger ref="/data/height_group/instructions_height/instructions_height_c" appearance="minimal">
+					<label ref="jr:itext('height_group/instructions_height/instructions_height_c-label')"/>
+				</trigger>
+			</group>
+			<group ref="/data/height_group/instructions_height_2" appearance="field-list">
+				<label ref="jr:itext('height_group/instructions_height-label')"/>
+				<trigger ref="/data/height_group/instructions_height_2/instructions_height_d" appearance="minimal">
+					<label ref="jr:itext('height_group/instructions_height_2/instructions_height_d-label')"/>
+				</trigger>
+				<trigger ref="/data/height_group/instructions_height_2/instructions_height_e" appearance="minimal">
+					<label ref="jr:itext('height_group/instructions_height_2/instructions_height_e-label')"/>
+				</trigger>
+				<trigger ref="/data/height_group/instructions_height_2/instructions_height_f" appearance="minimal">
+					<label ref="jr:itext('height_group/instructions_height_2/instructions_height_f-label')"/>
+				</trigger>
+			</group>
+			<group ref="/data/height_group/instructions_height_3" appearance="field-list">
+				<label ref="jr:itext('height_group/instructions_height-label')"/>
+				<trigger ref="/data/height_group/instructions_height_3/instructions_height_g" appearance="minimal">
+					<label ref="jr:itext('height_group/instructions_height_3/instructions_height_g-label')"/>
+				</trigger>
+				<trigger ref="/data/height_group/instructions_height_3/instructions_height_h" appearance="minimal">
+					<label ref="jr:itext('height_group/instructions_height_3/instructions_height_h-label')"/>
+				</trigger>
+			</group>
+			<input ref="/data/height_group/ask_height">
+				<label ref="jr:itext('height_group/ask_height-label')"/>
+			</input>
+		</group>
+		<group ref="/data/referral_criteria">
+			<label ref="jr:itext('referral_criteria-label')"/>
+		</group>
+		<group ref="/data/actions_recommendations">
+			<label ref="jr:itext('actions_recommendations-label')"/>
+			<trigger ref="/data/actions_recommendations/summary" appearance="minimal">
+				<label ref="jr:itext('actions_recommendations/summary-label')"/>
+			</trigger>
+			<group ref="/data/actions_recommendations/oedema_actions" appearance="field-list">
+				<label ref="jr:itext('actions_recommendations/oedema_actions-label')"/>
+				<trigger ref="/data/actions_recommendations/oedema_actions/shows_oedema" appearance="minimal">
+					<label ref="jr:itext('actions_recommendations/oedema_actions/shows_oedema-label')"/>
+				</trigger>
+			</group>
+			<group ref="/data/actions_recommendations/pb_actions" appearance="field-list">
+				<label ref="jr:itext('actions_recommendations/pb_actions-label')"/>
+				<trigger ref="/data/actions_recommendations/pb_actions/pb_below_115" appearance="minimal">
+					<label ref="jr:itext('actions_recommendations/pb_actions/pb_below_115-label')"/>
+				</trigger>
+				<trigger ref="/data/actions_recommendations/pb_actions/pb_below_115_2" appearance="minimal">
+					<label ref="jr:itext('actions_recommendations/pb_actions/pb_below_115_2-label')"/>
+				</trigger>
+				<trigger ref="/data/actions_recommendations/pb_actions/pb_between_115_and_125" appearance="minimal">
+					<label ref="jr:itext('actions_recommendations/pb_actions/pb_between_115_and_125-label')"/>
+				</trigger>
+				<trigger ref="/data/actions_recommendations/pb_actions/pb_above_125" appearance="minimal">
+					<label ref="jr:itext('actions_recommendations/pb_actions/pb_above_125-label')"/>
+				</trigger>
+			</group>
+			<trigger ref="/data/actions_recommendations/needs_referral" appearance="minimal">
+				<label ref="jr:itext('actions_recommendations/needs_referral-label')"/>
+			</trigger>
+		</group>
+		<trigger ref="/data/debug_zscore" appearance="minimal">
+			<label ref="jr:itext('debug_zscore-label')"/>
+		</trigger>
+		<group ref="/data/conseils_display">
+			<label ref="jr:itext('conseils_display-label')"/>
+		</group>
+	</h:body>
+</h:html>

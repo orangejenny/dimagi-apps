@@ -1,0 +1,731 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:vellum="http://commcarehq.org/xforms/vellum">
+	<h:head>
+		<h:title>Enregistrer accouchement et nouveau-n&#233;</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/f2d521243d7d4f284001104ca922a84b5b6c9916" uiVersion="1" version="1936" name="Enregistrer accouchement et nouveau-n&#233;">
+					<delivery_status/>
+					<delivery_status_label/>
+					<delivery>
+						<delivery_date/>
+						<delivery_place/>
+						<delivery_place_if_other/>
+						<why_not_health_center/>
+						<performed_delivery/>
+						<delivery_type/>
+						<complications_during_delivery/>
+						<perineum_incision/>
+						<care_for_episiotomie/>
+						<dificulty_retaining_urine/>
+						<refer_mother_to_csb/>
+						<number_children_born/>
+						<define_more_than_6/>
+						<number_children/>
+						<newborn_status jr:template="">
+							<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><create><case_name/><owner_id/><case_type>child</case_type></create><update><child_dob/><child_gender/></update><index><parent case_type="mother_caregiver"/></index></case><newborn_status/>
+							<child_name/>
+							<child_gender/>
+							<trigger_baby_case/>
+						</newborn_status>
+					</delivery>
+					<YES/>
+					<NO/>
+					<had_4_pncs/>
+					<seen_by_professional/>
+					<woman_name/>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><update><complications_during_delivery/><delivery_date/><delivery_place/><delivery_status/><number_children_born/><seen_by_professional/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance id="commcaresession" src="jr://instance/session"/><instance id="casedb" src="jr://instance/casedb"/>
+			<bind nodeset="/data/delivery_status" required="true()"/>
+			<bind nodeset="/data/delivery_status_label" relevant="/data/delivery_status = /data/NO" required="true()"/>
+			<bind nodeset="/data/delivery" relevant="/data/delivery_status = /data/YES"/>
+			<bind nodeset="/data/delivery/delivery_date" type="xsd:date" constraint=". &lt;= today()" jr:constraintMsg="jr:itext('delivery/delivery_date-constraintMsg')" required="true()"/>
+			<bind nodeset="/data/delivery/delivery_place" required="true()"/>
+			<bind nodeset="/data/delivery/delivery_place_if_other" relevant="/data/delivery/delivery_place = 'other'" required="true()"/>
+			<bind nodeset="/data/delivery/why_not_health_center" relevant="/data/delivery/delivery_place = 'matrone_home' or /data/delivery/delivery_place = 'health_hut' or /data/delivery/delivery_place = 'home' or /data/delivery/delivery_place_if_other = 'private_establishment' or /data/delivery/delivery_place_if_other = 'religious_establishment'" required="true()"/>
+			<bind nodeset="/data/delivery/performed_delivery" required="true()"/>
+			<bind nodeset="/data/delivery/delivery_type" required="true()"/>
+			<bind nodeset="/data/delivery/complications_during_delivery" required="true()"/>
+			<bind nodeset="/data/delivery/perineum_incision" required="true()"/>
+			<bind nodeset="/data/delivery/care_for_episiotomie" relevant="/data/delivery/perineum_incision = /data/YES" required="true()"/>
+			<bind nodeset="/data/delivery/dificulty_retaining_urine" relevant="/data/delivery/perineum_incision = /data/YES" required="true()"/>
+			<bind nodeset="/data/delivery/refer_mother_to_csb" relevant="/data/delivery/dificulty_retaining_urine = /data/YES"/>
+			<bind nodeset="/data/delivery/number_children_born" required="true()"/>
+			<bind nodeset="/data/delivery/define_more_than_6" type="xsd:int" relevant="/data/delivery/number_children_born = '6+'" required="true()"/>
+			<bind nodeset="/data/delivery/number_children" calculate="if(/data/delivery/number_children_born=&quot;6+&quot;, /data/delivery/define_more_than_6, /data/delivery/number_children_born)"/>
+			<bind nodeset="/data/delivery/newborn_status"/>
+			<bind nodeset="/data/delivery/newborn_status/newborn_status" required="true()"/>
+			<bind nodeset="/data/delivery/newborn_status/child_name" type="xsd:string" relevant="/data/delivery/newborn_status/newborn_status = 'alive'" required="true()"/>
+			<bind nodeset="/data/delivery/newborn_status/child_gender" relevant="/data/delivery/newborn_status/newborn_status = 'alive'" required="true()"/>
+			<bind nodeset="/data/delivery/newborn_status/trigger_baby_case" relevant="/data/delivery/newborn_status/newborn_status = 'alive'" calculate="'yes'"/>
+			<bind nodeset="/data/YES" calculate="'yes'"/>
+			<bind nodeset="/data/NO" calculate="'no'"/>
+			<bind nodeset="/data/had_4_pncs"/>
+			<bind nodeset="/data/seen_by_professional" relevant="/data/delivery_status = /data/YES" calculate="if(/data/delivery/delivery_place = 'health_post' or /data/delivery/delivery_place = 'other', /data/YES, /data/NO)"/>
+			<bind nodeset="/data/woman_name"/>
+			<itext>
+				<translation lang="fra" default="">
+					<text id="delivery_status-label">
+						<value>AC, demandez &#224; la femme : avez-vous accouch&#233; ?</value>
+						<value form="image">jr://file/commcare/image/data/delivery_status.jpg</value>
+					</text>
+					<text id="delivery_status_label-label">
+						<value>Remplissez ce questionnaire seulement si (et apr&#232;s que) la femme ait accouch&#233;</value>
+					</text>
+					<text id="delivery-label">
+						<value>Accouchement effectu&#233;</value>
+					</text>
+					<text id="date_accouche-label">
+						<value>Date de l'accouchement</value>
+						<value form="image">jr://file/commcare/image/data/delivery/delivery_date.png</value>
+					</text>
+					<text id="delivery/delivery_date-constraintMsg">
+						<value>La date de l'accouchement ne peut pas &#234;tre apr&#232;s aujourd'hui. </value>
+					</text>
+					<text id="lieu_accouchement-label">
+						<value>Lieu de l'accouchement</value>
+						<value form="image">jr://file/commcare/image/data/delivery/delivery_place.png</value>
+					</text>
+					<text id="delivery/delivery_place-home-label">
+						<value>A domicile</value>
+					</text>
+					<text id="lieu_accouchement-item1-label">
+						<value>Case de sant&#233;</value>
+					</text>
+					<text id="lieu_accouchement-item2-label">
+						<value>Centre de sant&#233;</value>
+					</text>
+					<text id="delivery/delivery_place-matrone_home-label">
+						<value>Chez la matrone</value>
+					</text>
+					<text id="delivery/delivery_place-other-label">
+						<value>Autre</value>
+					</text>
+					<text id="delivery/delivery_place_if_other-label">
+						<value>Si c'est autre, vous avez &#233;t&#233; accouch&#233;e o&#249; ?</value>
+						<value form="image">jr://file/commcare/image/data/delivery/delivery_place_if_other.png</value>
+					</text>
+					<text id="delivery/delivery_place_if_other-referred_health_center-label">
+						<value>Centre de sant&#233; de r&#233;f&#233;rence</value>
+					</text>
+					<text id="delivery/delivery_place_if_other-other_health_center-label">
+						<value>Centre de sant&#233; de base</value>
+					</text>
+					<text id="delivery/delivery_place_if_other-private_establishment-label">
+						<value>Etablissement priv&#233;</value>
+					</text>
+					<text id="delivery/delivery_place_if_other-religious_establishment-label">
+						<value>Etablissement priv&#233; confessionnel</value>
+					</text>
+					<text id="delivery/why_not_health_center-label">
+						<value>Pourquoi vous n'avez pas accouch&#233; au centre de sant&#233; ? Notez la raison principale.</value>
+						<value form="image">jr://file/commcare/image/data/delivery/why_not_health_center.png</value>
+					</text>
+					<text id="delivery/why_not_health_center-delivery_staff_absent_at_center-label">
+						<value>Le responsable du centre de sant&#233; &#233;tait absent</value>
+					</text>
+					<text id="delivery/why_not_health_center-man_on_duty_in_center-label">
+						<value>Le responsable du centre de sant&#233; est un homme</value>
+					</text>
+					<text id="delivery/why_not_health_center-trusts_matrone-label">
+						<value>Confiance &#224; la matrone</value>
+					</text>
+					<text id="accouchement/pourqoui_case_sante-undefined-label">
+						<value>Manque de transport</value>
+					</text>
+					<text id="delivery/why_not_health_center-family_influence-label">
+						<value>Influenc&#233;e par la famille</value>
+					</text>
+					<text id="delivery/why_not_health_center-home_distance-label">
+						<value>Proximit&#233; de la maison</value>
+					</text>
+					<text id="delivery/why_not_health_center-late_night_delivery-label">
+						<value>La femme a accouch&#233; tard dans la nuit</value>
+					</text>
+					<text id="delivery/why_not_health_center-lacks_funds-label">
+						<value>Manque de fonds</value>
+					</text>
+					<text id="delivery/why_not_health_center-has_always_delivered_at_home-label">
+						<value>Elle a toujours accouch&#233; &#224; domicile avant</value>
+					</text>
+					<text id="delivery/performed_delivery-label">
+						<value>Qui a effectu&#233; l'accouchement ?</value>
+						<value form="image">jr://file/commcare/image/data/delivery/performed_delivery.png</value>
+					</text>
+					<text id="delivery/performed_delivery-gynecologist-label">
+						<value>Gyn&#233;cologue</value>
+					</text>
+					<text id="delivery/performed_delivery-doctor-label">
+						<value>M&#233;decin</value>
+					</text>
+					<text id="delivery/performed_delivery-nurse-label">
+						<value>Infirmier</value>
+					</text>
+					<text id="delivery/performed_delivery-midwife-label">
+						<value>Sage Femme</value>
+					</text>
+					<text id="delivery/performed_delivery-matrone-label">
+						<value>Matrone</value>
+					</text>
+					<text id="delivery/performed_delivery-community_health_worker-label">
+						<value>AC</value>
+					</text>
+					<text id="delivery/delivery_type-label">
+						<value>Notez le type d'accouchement</value>
+					</text>
+					<text id="delivery/delivery_type-normal-label">
+						<value>Normal</value>
+					</text>
+					<text id="delivery/delivery_type-instrumental-label">
+						<value>Instrumental (assist&#233; par ventouse)</value>
+					</text>
+					<text id="delivery/delivery_type-cesarienne-label">
+						<value>C&#233;sarienne</value>
+					</text>
+					<text id="delivery/complications_during_delivery-label">
+						<value>Avez-vous eu des complications pendant l'accouchement ?</value>
+						<value form="image">jr://file/commcare/image/data/delivery/complications_during_delivery.jpg</value>
+					</text>
+					<text id="delivery/perineum_incision-label">
+						<value>Avez-vous eu une d&#233;chirure du p&#233;rin&#233;e ?</value>
+					</text>
+					<text id="delivery/care_for_episiotomie-label">
+						<value>Avez-vous re&#231;u des soins ?</value>
+						<value form="image">jr://file/commcare/image/data/delivery/care_for_episiotomie.png</value>
+					</text>
+					<text id="delivery/care_for_episiotomie-yes-label">
+						<value>Oui</value>
+					</text>
+					<text id="delivery/care_for_episiotomie-no-label">
+						<value>Non</value>
+					</text>
+					<text id="delivery/dificulty_retaining_urine-label">
+						<value>Avez-vous mal &#224; retenir l'urine?</value>
+						<value form="image">jr://file/commcare/image/data/delivery/dificulty_retaining_urine.jpg</value>
+					</text>
+					<text id="delivery/refer_mother_to_csb-label">
+						<value>AC: veuillez referer la m&#232;re au CSB</value>
+						<value form="image">jr://file/commcare/image/data/delivery/refer_mother_to_csb.jpg</value>
+					</text>
+					<text id="delivery/number_children_born-label">
+						<value>Combien d'enfants ont &#233;t&#233; n&#233;s ?</value>
+						<value form="image">jr://file/commcare/image/data/delivery/number_children_born.jpg</value>
+					</text>
+					<text id="delivery/number_children_born-1-label">
+						<value>1</value>
+					</text>
+					<text id="delivery/number_children_born-2-label">
+						<value>2</value>
+					</text>
+					<text id="delivery/number_children_born-3-label">
+						<value>3</value>
+					</text>
+					<text id="delivery/number_children_born-4-label">
+						<value>4</value>
+					</text>
+					<text id="delivery/number_children_born-5-label">
+						<value>5</value>
+					</text>
+					<text id="delivery/number_children_born-6+-label">
+						<value>6+</value>
+					</text>
+					<text id="delivery/define_more_than_6-label">
+						<value>Pr&#233;ciser nombre d'enfants :</value>
+					</text>
+					<text id="delivery/newborn_status-label">
+						<value>L'&#233;tat du nouveau n&#233;</value>
+					</text>
+					<text id="delivery/newborn_status/newborn_status-label">
+						<value>L'&#233;tat du nouveau n&#233; : inscrivez ces informations pour chaque nouveau n&#233; 1-&#224;-1.</value>
+						<value form="image">jr://file/commcare/image/data/delivery/newborn_status/newborn_status.jpg</value>
+					</text>
+					<text id="accouchement/etat_nouveau_ne/question19-item1-label">
+						<value>Vivant</value>
+					</text>
+					<text id="accouchement/etat_nouveau_ne/question19-item2-label">
+						<value>Mort-n&#233; </value>
+					</text>
+					<text id="delivery/newborn_status/newborn_status-deceased-label">
+						<value>D&#233;c&#233;d&#233; peu apr&#232;s la naissance</value>
+					</text>
+					<text id="delivery/newborn_status/child_name-label">
+						<value>Nom et pr&#233;nom du nouveau n&#233;</value>
+						<value form="image">jr://file/commcare/image/data/delivery/newborn_status/child_name.jpg</value>
+					</text>
+					<text id="delivery/newborn_status/child_gender-label">
+						<value>Sexe du nouveau n&#233;</value>
+						<value form="image">jr://file/commcare/image/data/delivery/newborn_status/child_gender.png</value>
+					</text>
+					<text id="delivery/newborn_status/child_gender-female-label">
+						<value>Fille</value>
+					</text>
+					<text id="delivery/newborn_status/child_gender-male-label">
+						<value>Gar&#231;on</value>
+					</text>
+				</translation>
+				<translation lang="mlg">
+					<text id="delivery_status-label">
+						<value>Mpanentana ara-pahasalamana, anontanio ilay vehivavy: efa niteraka ve ianao?</value>
+						<value form="image">jr://file/commcare/image/data/delivery_status.jpg</value>
+					</text>
+					<text id="delivery_status_label-label">
+						<value>Fenoy ny valim-panontaniana raha efa niteraka na avy niteraka ilay vehivavy</value>
+					</text>
+					<text id="delivery-label">
+						<value>Accouchement effectu&#233;</value>
+					</text>
+					<text id="date_accouche-label">
+						<value>Daty niterahana </value>
+						<value form="image">jr://file/commcare/image/data/delivery/delivery_date.png</value>
+					</text>
+					<text id="delivery/delivery_date-constraintMsg">
+						<value>Ny daty niterahana dia tsy tokony mihoatra ny androany.</value>
+					</text>
+					<text id="lieu_accouchement-label">
+						<value>Toerana niterahana</value>
+						<value form="image">jr://file/commcare/image/data/delivery/delivery_place.png</value>
+					</text>
+					<text id="delivery/delivery_place-home-label">
+						<value>Tao an-trano</value>
+					</text>
+					<text id="lieu_accouchement-item1-label">
+						<value>Toeram-piasan'ny AC</value>
+					</text>
+					<text id="lieu_accouchement-item2-label">
+						<value>Tobi-pahasalamana</value>
+					</text>
+					<text id="delivery/delivery_place-matrone_home-label">
+						<value>Tao amin'ny renin-jaza</value>
+					</text>
+					<text id="delivery/delivery_place-other-label">
+						<value>Hafa</value>
+					</text>
+					<text id="delivery/delivery_place_if_other-label">
+						<value>Raha hafa, dia taiza ianao no niteraka</value>
+						<value form="image">jr://file/commcare/image/data/delivery/delivery_place_if_other.png</value>
+					</text>
+					<text id="delivery/delivery_place_if_other-referred_health_center-label">
+						<value>Hopitaly be</value>
+					</text>
+					<text id="delivery/delivery_place_if_other-other_health_center-label">
+						<value>Centre de sant&#233; de base</value>
+					</text>
+					<text id="delivery/delivery_place_if_other-private_establishment-label">
+						<value>Toeram-pitsaboana tsy miankina</value>
+					</text>
+					<text id="delivery/delivery_place_if_other-religious_establishment-label">
+						<value>Toeram-pitsaboana ara-pinoana</value>
+					</text>
+					<text id="delivery/why_not_health_center-label">
+						<value>Inona ny antony tsy niterahanao tany amin'ny </value>
+						<value form="image">jr://file/commcare/image/data/delivery/why_not_health_center.png</value>
+					</text>
+					<text id="delivery/why_not_health_center-delivery_staff_absent_at_center-label">
+						<value>Tsy teo  an-toerana ny mpitsabo</value>
+					</text>
+					<text id="delivery/why_not_health_center-man_on_duty_in_center-label">
+						<value>Lehilahy ny mpitsabo</value>
+					</text>
+					<text id="delivery/why_not_health_center-trusts_matrone-label">
+						<value>Fahatokisana ny renin-jaza</value>
+					</text>
+					<text id="accouchement/pourqoui_case_sante-undefined-label">
+						<value>Tsy ampy ny fitaterana</value>
+					</text>
+					<text id="delivery/why_not_health_center-family_influence-label">
+						<value>Noresen'ny fianakaviana lahatra</value>
+					</text>
+					<text id="delivery/why_not_health_center-home_distance-label">
+						<value>Akaiky ny trano</value>
+					</text>
+					<text id="delivery/why_not_health_center-late_night_delivery-label">
+						<value>Alina be</value>
+					</text>
+					<text id="delivery/why_not_health_center-lacks_funds-label">
+						<value>Tsy ampy ny vola</value>
+					</text>
+					<text id="delivery/why_not_health_center-has_always_delivered_at_home-label">
+						<value>Niteraka tao an-trano teo aloha</value>
+					</text>
+					<text id="delivery/performed_delivery-label">
+						<value>Iza no nampiteraka</value>
+						<value form="image">jr://file/commcare/image/data/delivery/performed_delivery.png</value>
+					</text>
+					<text id="delivery/performed_delivery-gynecologist-label">
+						<value>Manampahaizana manokana momba ny fiterahana</value>
+					</text>
+					<text id="delivery/performed_delivery-doctor-label">
+						<value>Dokotera</value>
+					</text>
+					<text id="delivery/performed_delivery-nurse-label">
+						<value>Mpitsabo mpanampy</value>
+					</text>
+					<text id="delivery/performed_delivery-midwife-label">
+						<value>Rasazy</value>
+					</text>
+					<text id="delivery/performed_delivery-matrone-label">
+						<value>Renin-jaza</value>
+					</text>
+					<text id="delivery/performed_delivery-community_health_worker-label">
+						<value>Mpanentana ara-pahasalamana </value>
+					</text>
+					<text id="delivery/delivery_type-label">
+						<value>Soraty ny fomba niterahana</value>
+					</text>
+					<text id="delivery/delivery_type-normal-label">
+						<value>Ara-dalana</value>
+					</text>
+					<text id="delivery/delivery_type-instrumental-label">
+						<value>Nampiasa fitaovana</value>
+					</text>
+					<text id="delivery/delivery_type-cesarienne-label">
+						<value>Nodidiana</value>
+					</text>
+					<text id="delivery/complications_during_delivery-label">
+						<value>Nisy fahasarotana ve nandritra ny fiterahana</value>
+						<value form="image">jr://file/commcare/image/data/delivery/complications_during_delivery.jpg</value>
+					</text>
+					<text id="delivery/perineum_incision-label">
+						<value>Rovitra ve ianao tamin'ny niteraka?</value>
+					</text>
+					<text id="delivery/care_for_episiotomie-label">
+						<value>Efa nahazo fitsaboana tamin'izany aretina izany ve?</value>
+						<value form="image">jr://file/commcare/image/data/delivery/care_for_episiotomie.png</value>
+					</text>
+					<text id="delivery/care_for_episiotomie-yes-label">
+						<value>Eny</value>
+					</text>
+					<text id="delivery/care_for_episiotomie-no-label">
+						<value>Tsia</value>
+					</text>
+					<text id="delivery/dificulty_retaining_urine-label">
+						<value>Rovitra ve ianao tamin'ny niteraka?</value>
+						<value form="image">jr://file/commcare/image/data/delivery/dificulty_retaining_urine.jpg</value>
+					</text>
+					<text id="delivery/refer_mother_to_csb-label">
+						<value>AC: alefaso eny amin'ny tobimpahasalamana ny reny( raha tsy mahatana amany)</value>
+						<value form="image">jr://file/commcare/image/data/delivery/refer_mother_to_csb.jpg</value>
+					</text>
+					<text id="delivery/number_children_born-label">
+						<value>Firy ny zaza teraka ?</value>
+						<value form="image">jr://file/commcare/image/data/delivery/number_children_born.jpg</value>
+					</text>
+					<text id="delivery/number_children_born-1-label">
+						<value>1</value>
+					</text>
+					<text id="delivery/number_children_born-2-label">
+						<value>2</value>
+					</text>
+					<text id="delivery/number_children_born-3-label">
+						<value>3</value>
+					</text>
+					<text id="delivery/number_children_born-4-label">
+						<value>4</value>
+					</text>
+					<text id="delivery/number_children_born-5-label">
+						<value>5</value>
+					</text>
+					<text id="delivery/number_children_born-6+-label">
+						<value>6+</value>
+					</text>
+					<text id="delivery/define_more_than_6-label">
+						<value>Pr&#233;ciser nombre d'enfants :</value>
+					</text>
+					<text id="delivery/newborn_status-label">
+						<value>L'&#233;tat du nouveau n&#233;</value>
+					</text>
+					<text id="delivery/newborn_status/newborn_status-label">
+						<value>Toe-pahasalaman'ny (ireo) zaza teraka, soraty tsirairay</value>
+						<value form="image">jr://file/commcare/image/data/delivery/newborn_status/newborn_status.jpg</value>
+					</text>
+					<text id="accouchement/etat_nouveau_ne/question19-item1-label">
+						<value>Velona</value>
+					</text>
+					<text id="accouchement/etat_nouveau_ne/question19-item2-label">
+						<value>Vao teraka dia maty</value>
+					</text>
+					<text id="delivery/newborn_status/newborn_status-deceased-label">
+						<value>Maty tao aoriana kely ny nahaterahana</value>
+					</text>
+					<text id="delivery/newborn_status/child_name-label">
+						<value>Nom et pr&#233;nom du nouveau n&#233;</value>
+						<value form="image">jr://file/commcare/image/data/delivery/newborn_status/child_name.jpg</value>
+					</text>
+					<text id="delivery/newborn_status/child_gender-label">
+						<value>Fihotoan'ny zaza</value>
+						<value form="image">jr://file/commcare/image/data/delivery/newborn_status/child_gender.png</value>
+					</text>
+					<text id="delivery/newborn_status/child_gender-female-label">
+						<value>Vavy</value>
+					</text>
+					<text id="delivery/newborn_status/child_gender-male-label">
+						<value>Lahy</value>
+					</text>
+				</translation>
+			</itext>
+		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><bind calculate="instance('commcaresession')/session/data/case_id" nodeset="/data/case/@case_id"/><bind calculate="/data/delivery/complications_during_delivery" nodeset="/data/case/update/complications_during_delivery" relevant="count(/data/delivery/complications_during_delivery) &gt; 0"/><bind calculate="/data/delivery/delivery_date" nodeset="/data/case/update/delivery_date" relevant="count(/data/delivery/delivery_date) &gt; 0"/><bind calculate="/data/delivery/delivery_place" nodeset="/data/case/update/delivery_place" relevant="count(/data/delivery/delivery_place) &gt; 0"/><bind calculate="/data/delivery_status" nodeset="/data/case/update/delivery_status" relevant="count(/data/delivery_status) &gt; 0"/><bind calculate="/data/delivery/number_children_born" nodeset="/data/case/update/number_children_born" relevant="count(/data/delivery/number_children_born) &gt; 0"/><bind calculate="/data/seen_by_professional" nodeset="/data/case/update/seen_by_professional" relevant="count(/data/seen_by_professional) &gt; 0"/><setvalue event="xforms-ready" ref="/data/woman_name" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/case_name"/><setvalue event="xforms-ready" ref="/data/had_4_pncs" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/had_4_pncs"/><bind calculate="/data/meta/timeEnd" nodeset="/data/delivery/newborn_status/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/delivery/newborn_status/case/@user_id"/><bind nodeset="/data/delivery/newborn_status/case" relevant="/data/delivery/newborn_status/trigger_baby_case = 'yes'"/><bind calculate="uuid()" nodeset="/data/delivery/newborn_status/case/@case_id"/><bind calculate="/data/delivery/newborn_status/child_name" nodeset="/data/delivery/newborn_status/case/create/case_name"/><bind calculate="/data/meta/userID" nodeset="/data/delivery/newborn_status/case/create/owner_id"/><bind calculate="/data/delivery/delivery_date" nodeset="/data/delivery/newborn_status/case/update/child_dob" relevant="count(/data/delivery/delivery_date) &gt; 0"/><bind calculate="/data/delivery/newborn_status/child_gender" nodeset="/data/delivery/newborn_status/case/update/child_gender" relevant="count(/data/delivery/newborn_status/child_gender) &gt; 0"/><bind calculate="/data/case/@case_id" nodeset="/data/delivery/newborn_status/case/index/parent"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<select1 ref="/data/delivery_status">
+			<label ref="jr:itext('delivery_status-label')"/>
+			<item>
+				<label ref="jr:itext('delivery/care_for_episiotomie-yes-label')"/>
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('delivery/care_for_episiotomie-no-label')"/>
+				<value>no</value>
+			</item>
+		</select1>
+		<trigger ref="/data/delivery_status_label" appearance="minimal">
+			<label ref="jr:itext('delivery_status_label-label')"/>
+		</trigger>
+		<group ref="/data/delivery">
+			<label ref="jr:itext('delivery-label')"/>
+			<input ref="/data/delivery/delivery_date">
+				<label ref="jr:itext('date_accouche-label')"/>
+			</input>
+			<select1 ref="/data/delivery/delivery_place">
+				<label ref="jr:itext('lieu_accouchement-label')"/>
+				<item>
+					<label ref="jr:itext('delivery/delivery_place-home-label')"/>
+					<value>home</value>
+				</item>
+				<item>
+					<label ref="jr:itext('lieu_accouchement-item1-label')"/>
+					<value>health_hut</value>
+				</item>
+				<item>
+					<label ref="jr:itext('lieu_accouchement-item2-label')"/>
+					<value>health_post</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/delivery_place-matrone_home-label')"/>
+					<value>matrone_home</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/delivery_place-other-label')"/>
+					<value>other</value>
+				</item>
+			</select1>
+			<select1 ref="/data/delivery/delivery_place_if_other">
+				<label ref="jr:itext('delivery/delivery_place_if_other-label')"/>
+				<item>
+					<label ref="jr:itext('delivery/delivery_place_if_other-referred_health_center-label')"/>
+					<value>referred_health_center</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/delivery_place_if_other-other_health_center-label')"/>
+					<value>other_health_center</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/delivery_place_if_other-private_establishment-label')"/>
+					<value>private_establishment</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/delivery_place_if_other-religious_establishment-label')"/>
+					<value>religious_establishment</value>
+				</item>
+			</select1>
+			<select1 ref="/data/delivery/why_not_health_center">
+				<label ref="jr:itext('delivery/why_not_health_center-label')"/>
+				<item>
+					<label ref="jr:itext('delivery/why_not_health_center-delivery_staff_absent_at_center-label')"/>
+					<value>delivery_staff_absent_at_center</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/why_not_health_center-man_on_duty_in_center-label')"/>
+					<value>man_on_duty_in_center</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/why_not_health_center-trusts_matrone-label')"/>
+					<value>trusts_matrone</value>
+				</item>
+				<item>
+					<label ref="jr:itext('accouchement/pourqoui_case_sante-undefined-label')"/>
+					<value>lacks_transport</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/why_not_health_center-family_influence-label')"/>
+					<value>family_influence</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/why_not_health_center-home_distance-label')"/>
+					<value>home_distance</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/why_not_health_center-late_night_delivery-label')"/>
+					<value>late_night_delivery</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/why_not_health_center-lacks_funds-label')"/>
+					<value>lacks_funds</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/why_not_health_center-has_always_delivered_at_home-label')"/>
+					<value>has_always_delivered_at_home</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/delivery_place-other-label')"/>
+					<value>other</value>
+				</item>
+			</select1>
+			<select1 ref="/data/delivery/performed_delivery">
+				<label ref="jr:itext('delivery/performed_delivery-label')"/>
+				<item>
+					<label ref="jr:itext('delivery/performed_delivery-gynecologist-label')"/>
+					<value>gynecologist</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/performed_delivery-doctor-label')"/>
+					<value>doctor</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/performed_delivery-nurse-label')"/>
+					<value>nurse</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/performed_delivery-midwife-label')"/>
+					<value>midwife</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/performed_delivery-matrone-label')"/>
+					<value>matrone</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/performed_delivery-community_health_worker-label')"/>
+					<value>community_health_worker</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/delivery_place-other-label')"/>
+					<value>other</value>
+				</item>
+			</select1>
+			<select1 ref="/data/delivery/delivery_type">
+				<label ref="jr:itext('delivery/delivery_type-label')"/>
+				<item>
+					<label ref="jr:itext('delivery/delivery_type-normal-label')"/>
+					<value>normal</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/delivery_type-instrumental-label')"/>
+					<value>instrumental</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/delivery_type-cesarienne-label')"/>
+					<value>cesarienne</value>
+				</item>
+			</select1>
+			<select1 ref="/data/delivery/complications_during_delivery">
+				<label ref="jr:itext('delivery/complications_during_delivery-label')"/>
+				<item>
+					<label ref="jr:itext('delivery/care_for_episiotomie-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/care_for_episiotomie-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/delivery/perineum_incision">
+				<label ref="jr:itext('delivery/perineum_incision-label')"/>
+				<item>
+					<label ref="jr:itext('delivery/care_for_episiotomie-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/care_for_episiotomie-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/delivery/care_for_episiotomie">
+				<label ref="jr:itext('delivery/care_for_episiotomie-label')"/>
+				<item>
+					<label ref="jr:itext('delivery/care_for_episiotomie-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/care_for_episiotomie-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<select1 ref="/data/delivery/dificulty_retaining_urine">
+				<label ref="jr:itext('delivery/dificulty_retaining_urine-label')"/>
+				<item>
+					<label ref="jr:itext('delivery/care_for_episiotomie-yes-label')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/care_for_episiotomie-no-label')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<trigger ref="/data/delivery/refer_mother_to_csb" appearance="minimal">
+				<label ref="jr:itext('delivery/refer_mother_to_csb-label')"/>
+			</trigger>
+			<select1 ref="/data/delivery/number_children_born">
+				<label ref="jr:itext('delivery/number_children_born-label')"/>
+				<item>
+					<label ref="jr:itext('delivery/number_children_born-1-label')"/>
+					<value>1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/number_children_born-2-label')"/>
+					<value>2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/number_children_born-3-label')"/>
+					<value>3</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/number_children_born-4-label')"/>
+					<value>4</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/number_children_born-5-label')"/>
+					<value>5</value>
+				</item>
+				<item>
+					<label ref="jr:itext('delivery/number_children_born-6+-label')"/>
+					<value>6+</value>
+				</item>
+			</select1>
+			<input ref="/data/delivery/define_more_than_6">
+				<label ref="jr:itext('delivery/define_more_than_6-label')"/>
+			</input>
+			<group>
+				<label ref="jr:itext('delivery/newborn_status-label')"/>
+				<repeat jr:count="/data/delivery/number_children" jr:noAddRemove="true()" nodeset="/data/delivery/newborn_status">
+					<select1 ref="/data/delivery/newborn_status/newborn_status">
+						<label ref="jr:itext('delivery/newborn_status/newborn_status-label')"/>
+						<item>
+							<label ref="jr:itext('accouchement/etat_nouveau_ne/question19-item1-label')"/>
+							<value>alive</value>
+						</item>
+						<item>
+							<label ref="jr:itext('accouchement/etat_nouveau_ne/question19-item2-label')"/>
+							<value>stillborn</value>
+						</item>
+						<item>
+							<label ref="jr:itext('delivery/newborn_status/newborn_status-deceased-label')"/>
+							<value>deceased</value>
+						</item>
+					</select1>
+					<input ref="/data/delivery/newborn_status/child_name">
+						<label ref="jr:itext('delivery/newborn_status/child_name-label')"/>
+					</input>
+					<select1 ref="/data/delivery/newborn_status/child_gender">
+						<label ref="jr:itext('delivery/newborn_status/child_gender-label')"/>
+						<item>
+							<label ref="jr:itext('delivery/newborn_status/child_gender-female-label')"/>
+							<value>female</value>
+						</item>
+						<item>
+							<label ref="jr:itext('delivery/newborn_status/child_gender-male-label')"/>
+							<value>male</value>
+						</item>
+					</select1>
+				</repeat>
+			</group>
+		</group>
+	</h:body>
+</h:html>
