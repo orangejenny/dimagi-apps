@@ -1,0 +1,1495 @@
+
+<?xml version='1.0' encoding='UTF-8'?>
+<suite version="88" descriptor="Suite File">
+  <locale language="default">
+    <resource id="app_default_strings" version="88" descriptor="Translations: Default Language">
+      <location authority="local">./default/app_strings.txt</location>
+      <location authority="remote">./default/app_strings.txt</location>
+    </resource>
+  </locale>
+  <locale language="en">
+    <resource id="app_en_strings" version="88" descriptor="Translations: English">
+      <location authority="local">./en/app_strings.txt</location>
+      <location authority="remote">./en/app_strings.txt</location>
+    </resource>
+  </locale>
+  <detail id="reports.44cf3199b4f8c53fe178fb2ffc470c6b.select">
+    <title>
+      <text>
+        <locale id="cchq.report_menu"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_name_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="name"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.44cf3199b4f8c53fe178fb2ffc470c6b.summary">
+    <title>
+      <text>
+        <locale id="cchq.report_menu"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_name_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_description_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="description"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text/>
+      </header>
+      <template form="graph">
+        <graph type="bar">
+          <series nodeset="instance('reports')/reports/report[@id='44cf3199b4f8c53fe178fb2ffc470c6b']/rows/row">
+            <configuration>
+              <text id="line-color">
+                <xpath function="'#3399FF'"/>
+              </text>
+              <text id="name">
+                <xpath function="'Nouvelles'"/>
+              </text>
+            </configuration>
+            <x function="column[@id='csps']"/>
+            <y function="column[@id='new_consults']"/>
+          </series>
+          <series nodeset="instance('reports')/reports/report[@id='44cf3199b4f8c53fe178fb2ffc470c6b']/rows/row">
+            <configuration>
+              <text id="line-color">
+                <xpath function="'#000099'"/>
+              </text>
+              <text id="name">
+                <xpath function="'Toutes'"/>
+              </text>
+            </configuration>
+            <x function="column[@id='csps']"/>
+            <y function="column[@id='all_consults']"/>
+          </series>
+          <configuration>
+            <text id="show-legend">
+              <xpath function="true()"/>
+            </text>
+            <text id="zoom">
+              <xpath function="true()"/>
+            </text>
+          </configuration>
+        </graph>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.44cf3199b4f8c53fe178fb2ffc470c6b.data">
+    <title>
+      <text>
+        <locale id="cchq.reports.44cf3199b4f8c53fe178fb2ffc470c6b.name"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.44cf3199b4f8c53fe178fb2ffc470c6b.headers.csps"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='csps']"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.44cf3199b4f8c53fe178fb2ffc470c6b.headers.new_consults"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='new_consults']"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.44cf3199b4f8c53fe178fb2ffc470c6b.headers.all_consults"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='all_consults']"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.1aaa3576b94a588b2325e8e14a158f0a.select">
+    <title>
+      <text>
+        <locale id="cchq.report_menu"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_name_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="name"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.1aaa3576b94a588b2325e8e14a158f0a.summary">
+    <title>
+      <text>
+        <locale id="cchq.report_menu"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_name_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_description_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="description"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text/>
+      </header>
+      <template form="graph">
+        <graph type="bar">
+          <series nodeset="instance('reports')/reports/report[@id='1aaa3576b94a588b2325e8e14a158f0a']/rows/row">
+            <configuration>
+              <text id="line-color">
+                <xpath function="'#3399FF'"/>
+              </text>
+              <text id="name">
+                <xpath function="'Nouvelles'"/>
+              </text>
+            </configuration>
+            <x function="column[@id='nurse']"/>
+            <y function="column[@id='new_consults']"/>
+          </series>
+          <series nodeset="instance('reports')/reports/report[@id='1aaa3576b94a588b2325e8e14a158f0a']/rows/row">
+            <configuration>
+              <text id="line-color">
+                <xpath function="'#000099'"/>
+              </text>
+              <text id="name">
+                <xpath function="'Toutes'"/>
+              </text>
+            </configuration>
+            <x function="column[@id='nurse']"/>
+            <y function="column[@id='all_consults']"/>
+          </series>
+          <configuration>
+            <text id="show-legend">
+              <xpath function="true()"/>
+            </text>
+            <text id="zoom">
+              <xpath function="true()"/>
+            </text>
+          </configuration>
+        </graph>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.1aaa3576b94a588b2325e8e14a158f0a.data">
+    <title>
+      <text>
+        <locale id="cchq.reports.1aaa3576b94a588b2325e8e14a158f0a.name"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.1aaa3576b94a588b2325e8e14a158f0a.headers.nurse"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='nurse']"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.1aaa3576b94a588b2325e8e14a158f0a.headers.new_consults"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='new_consults']"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.1aaa3576b94a588b2325e8e14a158f0a.headers.all_consults"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='all_consults']"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.8742745eea3c40be912043e5776345c0.select">
+    <title>
+      <text>
+        <locale id="cchq.report_menu"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_name_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="name"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.8742745eea3c40be912043e5776345c0.summary">
+    <title>
+      <text>
+        <locale id="cchq.report_menu"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_name_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_description_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="description"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text/>
+      </header>
+      <template form="graph">
+        <graph type="time">
+          <series nodeset="instance('reports')/reports/report[@id='8742745eea3c40be912043e5776345c0']/rows/row">
+            <configuration>
+              <text id="line-color">
+                <xpath function="'#FF9900'"/>
+              </text>
+              <text id="point-style">
+                <xpath function="'diamond'"/>
+              </text>
+              <text id="name">
+                <xpath function="'Nouvelles'"/>
+              </text>
+            </configuration>
+            <x function="column[@id='visit_date']"/>
+            <y function="column[@id='new_consults']"/>
+          </series>
+          <series nodeset="instance('reports')/reports/report[@id='8742745eea3c40be912043e5776345c0']/rows/row">
+            <configuration>
+              <text id="line-color">
+                <xpath function="'#000099'"/>
+              </text>
+              <text id="point-style">
+                <xpath function="'triangle'"/>
+              </text>
+              <text id="name">
+                <xpath function="'Toutes'"/>
+              </text>
+            </configuration>
+            <x function="column[@id='visit_date']"/>
+            <y function="column[@id='all_consults']"/>
+          </series>
+          <configuration>
+            <text id="y-max">
+              <xpath function="'50'"/>
+            </text>
+            <text id="x-labels-time-format">
+              <xpath function="'dd'"/>
+            </text>
+            <text id="show-legend">
+              <xpath function="true()"/>
+            </text>
+            <text id="zoom">
+              <xpath function="true()"/>
+            </text>
+            <text id="y-min">
+              <xpath function="'0'"/>
+            </text>
+          </configuration>
+        </graph>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.8742745eea3c40be912043e5776345c0.data">
+    <title>
+      <text>
+        <locale id="cchq.reports.8742745eea3c40be912043e5776345c0.name"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.8742745eea3c40be912043e5776345c0.headers.visit_date"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='visit_date']"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.8742745eea3c40be912043e5776345c0.headers.new_consults"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='new_consults']"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.8742745eea3c40be912043e5776345c0.headers.all_consults"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='all_consults']"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.be9bd5e5474d14f5c6bddee4723ce480.select">
+    <title>
+      <text>
+        <locale id="cchq.report_menu"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_name_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="name"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.be9bd5e5474d14f5c6bddee4723ce480.summary">
+    <title>
+      <text>
+        <locale id="cchq.report_menu"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_name_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_description_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="description"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text/>
+      </header>
+      <template form="graph">
+        <graph type="xy">
+          <series nodeset="instance('reports')/reports/report[@id='be9bd5e5474d14f5c6bddee4723ce480']/rows/row">
+            <configuration>
+              <text id="line-color">
+                <xpath function="'#FF9900'"/>
+              </text>
+            </configuration>
+            <x function="column[@id='visit_date']"/>
+            <y function="column[@id='new_consults']"/>
+          </series>
+          <series nodeset="instance('reports')/reports/report[@id='be9bd5e5474d14f5c6bddee4723ce480']/rows/row">
+            <configuration>
+              <text id="line-color">
+                <xpath function="'#000099'"/>
+              </text>
+            </configuration>
+            <x function="column[@id='visit_date']"/>
+            <y function="column[@id='all_consults']"/>
+          </series>
+          <configuration>
+            <text id="x-labels-time-format">
+              <xpath function="'MM'"/>
+            </text>
+          </configuration>
+        </graph>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.be9bd5e5474d14f5c6bddee4723ce480.data">
+    <title>
+      <text>
+        <locale id="cchq.reports.be9bd5e5474d14f5c6bddee4723ce480.name"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.be9bd5e5474d14f5c6bddee4723ce480.headers.visit_date_year"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='visit_date_year']"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.be9bd5e5474d14f5c6bddee4723ce480.headers.visit_date_month"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='visit_date_month']"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.be9bd5e5474d14f5c6bddee4723ce480.headers.new_consults"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='new_consults']"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.be9bd5e5474d14f5c6bddee4723ce480.headers.all_consults"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='all_consults']"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.05fe942607c7fad2fcc676eee8fbf54f.select">
+    <title>
+      <text>
+        <locale id="cchq.report_menu"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_name_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="name"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.05fe942607c7fad2fcc676eee8fbf54f.summary">
+    <title>
+      <text>
+        <locale id="cchq.report_menu"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_name_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_description_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="description"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text/>
+      </header>
+      <template form="graph">
+        <graph type="bar">
+          <series nodeset="instance('reports')/reports/report[@id='05fe942607c7fad2fcc676eee8fbf54f']/rows/row">
+            <configuration>
+              <text id="line-color">
+                <xpath function="'#009933'"/>
+              </text>
+            </configuration>
+            <x function="column[@id='csps']"/>
+            <y function="column[@id='taux_utilisation_rec']"/>
+          </series>
+          <configuration>
+            <text id="y-max">
+              <xpath function="'100'"/>
+            </text>
+            <text id="y-min">
+              <xpath function="'0'"/>
+            </text>
+            <text id="show-legend">
+              <xpath function="true()"/>
+            </text>
+            <text id="zoom">
+              <xpath function="true()"/>
+            </text>
+            <text id="bar-orientation">
+              <xpath function="'vertical'"/>
+            </text>
+          </configuration>
+        </graph>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.05fe942607c7fad2fcc676eee8fbf54f.data">
+    <title>
+      <text>
+        <locale id="cchq.reports.05fe942607c7fad2fcc676eee8fbf54f.name"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.05fe942607c7fad2fcc676eee8fbf54f.headers.csps"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='csps']"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.05fe942607c7fad2fcc676eee8fbf54f.headers.taux_utilisation_rec"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='taux_utilisation_rec']"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.80b67963763a8be4cd87806be40bcb23.select">
+    <title>
+      <text>
+        <locale id="cchq.report_menu"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_name_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="name"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.80b67963763a8be4cd87806be40bcb23.summary">
+    <title>
+      <text>
+        <locale id="cchq.report_menu"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_name_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_description_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="description"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text/>
+      </header>
+      <template form="graph">
+        <graph type="time">
+          <series nodeset="instance('reports')/reports/report[@id='80b67963763a8be4cd87806be40bcb23']/rows/row">
+            <configuration>
+              <text id="line-color">
+                <xpath function="'#66FF66'"/>
+              </text>
+              <text id="point-style">
+                <xpath function="'circle'"/>
+              </text>
+              <text id="name">
+                <xpath function="'% Utilisation REC'"/>
+              </text>
+            </configuration>
+            <x function="column[@id='month_long']"/>
+            <y function="column[@id='taux_utilisation_rec']"/>
+          </series>
+          <configuration>
+            <text id="y-max">
+              <xpath function="'100'"/>
+            </text>
+            <text id="y-min">
+              <xpath function="'0'"/>
+            </text>
+            <text id="x-labels">
+              <xpath function="'3'"/>
+            </text>
+            <text id="show-legend">
+              <xpath function="true()"/>
+            </text>
+            <text id="zoom">
+              <xpath function="true()"/>
+            </text>
+          </configuration>
+        </graph>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.80b67963763a8be4cd87806be40bcb23.data">
+    <title>
+      <text>
+        <locale id="cchq.reports.80b67963763a8be4cd87806be40bcb23.name"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.80b67963763a8be4cd87806be40bcb23.headers.month_long"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='month_long']"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.80b67963763a8be4cd87806be40bcb23.headers.taux_utilisation_rec"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='taux_utilisation_rec']"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.3f8f1a47aa39a3da26508b2b0f561c90.select">
+    <title>
+      <text>
+        <locale id="cchq.report_menu"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_name_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="name"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.3f8f1a47aa39a3da26508b2b0f561c90.summary">
+    <title>
+      <text>
+        <locale id="cchq.report_menu"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_name_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_description_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="description"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text/>
+      </header>
+      <template form="graph">
+        <graph type="bar">
+          <series nodeset="instance('reports')/reports/report[@id='3f8f1a47aa39a3da26508b2b0f561c90']/rows/row">
+            <configuration>
+              <text id="line-color">
+                <xpath function="'#FFFFFF'"/>
+              </text>
+            </configuration>
+            <x function="column[@id='visit_date']"/>
+            <y function="column[@id='vih']"/>
+          </series>
+          <configuration>
+            <text id="show-axes">
+              <xpath function="false()"/>
+            </text>
+            <text id="show-grid">
+              <xpath function="false()"/>
+            </text>
+          </configuration>
+        </graph>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.3f8f1a47aa39a3da26508b2b0f561c90.data">
+    <title>
+      <text>
+        <locale id="cchq.reports.3f8f1a47aa39a3da26508b2b0f561c90.name"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.3f8f1a47aa39a3da26508b2b0f561c90.headers.age_range"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='age_range']"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.3f8f1a47aa39a3da26508b2b0f561c90.headers.diarrhee_non_sang"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='diarrhee_non_sang']"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.3f8f1a47aa39a3da26508b2b0f561c90.headers.diarrhee_sang"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='diarrhee_sang']"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.3f8f1a47aa39a3da26508b2b0f561c90.headers.dysenterie"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='dysenterie']"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.3f8f1a47aa39a3da26508b2b0f561c90.headers.rougeole"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='rougeole']"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.3f8f1a47aa39a3da26508b2b0f561c90.headers.paludisme_simple"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='paludisme_simple']"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.3f8f1a47aa39a3da26508b2b0f561c90.headers.paludisme_grave"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='paludisme_grave']"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.3f8f1a47aa39a3da26508b2b0f561c90.headers.ira_j13"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='ira_j13']"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.3f8f1a47aa39a3da26508b2b0f561c90.headers.ira_j20"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='ira_j20']"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.3f8f1a47aa39a3da26508b2b0f561c90.headers.vih"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='vih']"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.a46dbb991a1b727f31b0ae7e5e2ef4ed.select">
+    <title>
+      <text>
+        <locale id="cchq.report_menu"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_name_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="name"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.a46dbb991a1b727f31b0ae7e5e2ef4ed.summary">
+    <title>
+      <text>
+        <locale id="cchq.report_menu"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_name_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_description_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="description"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text/>
+      </header>
+      <template form="graph">
+        <graph type="time">
+          <series nodeset="instance('reports')/reports/report[@id='a46dbb991a1b727f31b0ae7e5e2ef4ed']/rows/row">
+            <configuration>
+              <text id="line-color">
+                <xpath function="'#66FF66'"/>
+              </text>
+              <text id="point-style">
+                <xpath function="'diamond'"/>
+              </text>
+            </configuration>
+            <x function="column[@id='month_long']"/>
+            <y function="column[@id='n_jours_rupture_rec']"/>
+          </series>
+          <configuration>
+            <text id="y-max">
+              <xpath function="'31'"/>
+            </text>
+            <text id="zoom">
+              <xpath function="true()"/>
+            </text>
+            <text id="y-min">
+              <xpath function="'0'"/>
+            </text>
+          </configuration>
+        </graph>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.a46dbb991a1b727f31b0ae7e5e2ef4ed.data">
+    <title>
+      <text>
+        <locale id="cchq.reports.a46dbb991a1b727f31b0ae7e5e2ef4ed.name"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.a46dbb991a1b727f31b0ae7e5e2ef4ed.headers.month_long"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='month_long']"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.a46dbb991a1b727f31b0ae7e5e2ef4ed.headers.n_jours_rupture_rec"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='n_jours_rupture_rec']"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.5916261f602d20c7df1b40a952b64c6d.select">
+    <title>
+      <text>
+        <locale id="cchq.report_menu"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_name_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="name"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.5916261f602d20c7df1b40a952b64c6d.summary">
+    <title>
+      <text>
+        <locale id="cchq.report_menu"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_name_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_description_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="description"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text/>
+      </header>
+      <template form="graph">
+        <graph type="time">
+          <series nodeset="instance('reports')/reports/report[@id='5916261f602d20c7df1b40a952b64c6d']/rows/row">
+            <configuration>
+              <text id="line-color">
+                <xpath function="'#66FF66'"/>
+              </text>
+              <text id="point-style">
+                <xpath function="'diamond'"/>
+              </text>
+            </configuration>
+            <x function="column[@id='month_long']"/>
+            <y function="column[@id='n_jours_rupture_materiel']"/>
+          </series>
+          <configuration>
+            <text id="y-max">
+              <xpath function="'31'"/>
+            </text>
+            <text id="zoom">
+              <xpath function="true()"/>
+            </text>
+            <text id="y-min">
+              <xpath function="'0'"/>
+            </text>
+          </configuration>
+        </graph>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.5916261f602d20c7df1b40a952b64c6d.data">
+    <title>
+      <text>
+        <locale id="cchq.reports.5916261f602d20c7df1b40a952b64c6d.name"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.5916261f602d20c7df1b40a952b64c6d.headers.month_long"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='month_long']"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.5916261f602d20c7df1b40a952b64c6d.headers.n_jours_rupture_materiel"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='n_jours_rupture_materiel']"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.cdd82e08be04e0b837e5da7969af5644.select">
+    <title>
+      <text>
+        <locale id="cchq.report_menu"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_name_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="name"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.cdd82e08be04e0b837e5da7969af5644.summary">
+    <title>
+      <text>
+        <locale id="cchq.report_menu"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_name_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="name"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.report_description_header"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="description"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text/>
+      </header>
+      <template form="graph">
+        <graph type="time">
+          <series nodeset="instance('reports')/reports/report[@id='cdd82e08be04e0b837e5da7969af5644']/rows/row">
+            <configuration>
+              <text id="line-color">
+                <xpath function="'#66FF66'"/>
+              </text>
+              <text id="point-style">
+                <xpath function="'diamond'"/>
+              </text>
+            </configuration>
+            <x function="column[@id='month_long']"/>
+            <y function="column[@id='n_jours_rupture_molecules']"/>
+          </series>
+          <configuration>
+            <text id="y-max">
+              <xpath function="'31'"/>
+            </text>
+            <text id="zoom">
+              <xpath function="true()"/>
+            </text>
+            <text id="y-min">
+              <xpath function="'0'"/>
+            </text>
+          </configuration>
+        </graph>
+      </template>
+    </field>
+  </detail>
+  <detail id="reports.cdd82e08be04e0b837e5da7969af5644.data">
+    <title>
+      <text>
+        <locale id="cchq.reports.cdd82e08be04e0b837e5da7969af5644.name"/>
+      </text>
+    </title>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.cdd82e08be04e0b837e5da7969af5644.headers.month_long"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='month_long']"/>
+        </text>
+      </template>
+    </field>
+    <field>
+      <header>
+        <text>
+          <locale id="cchq.reports.cdd82e08be04e0b837e5da7969af5644.headers.n_jours_rupture_molecules"/>
+        </text>
+      </header>
+      <template>
+        <text>
+          <xpath function="column[@id='n_jours_rupture_molecules']"/>
+        </text>
+      </template>
+    </field>
+  </detail>
+  <entry>
+    <form>fixmeclayton</form>
+    <command id="reports.44cf3199b4f8c53fe178fb2ffc470c6b">
+      <text>
+        <locale id="cchq.reports.44cf3199b4f8c53fe178fb2ffc470c6b.name"/>
+      </text>
+    </command>
+    <instance id="reports" src="jr://fixture/commcare:reports"/>
+    <session>
+      <datum id="report_id_44cf3199b4f8c53fe178fb2ffc470c6b" nodeset="instance('reports')/reports/report[@id='44cf3199b4f8c53fe178fb2ffc470c6b']" value="./@id" detail-select="reports.44cf3199b4f8c53fe178fb2ffc470c6b.select" detail-confirm="reports.44cf3199b4f8c53fe178fb2ffc470c6b.summary"/>
+      <datum id="throwaway_44cf3199b4f8c53fe178fb2ffc470c6b" nodeset="instance('reports')/reports/report[@id='44cf3199b4f8c53fe178fb2ffc470c6b']/rows/row" value="''" detail-select="reports.44cf3199b4f8c53fe178fb2ffc470c6b.data"/>
+    </session>
+  </entry>
+  <entry>
+    <form>fixmeclayton</form>
+    <command id="reports.1aaa3576b94a588b2325e8e14a158f0a">
+      <text>
+        <locale id="cchq.reports.1aaa3576b94a588b2325e8e14a158f0a.name"/>
+      </text>
+    </command>
+    <instance id="reports" src="jr://fixture/commcare:reports"/>
+    <session>
+      <datum id="report_id_1aaa3576b94a588b2325e8e14a158f0a" nodeset="instance('reports')/reports/report[@id='1aaa3576b94a588b2325e8e14a158f0a']" value="./@id" detail-select="reports.1aaa3576b94a588b2325e8e14a158f0a.select" detail-confirm="reports.1aaa3576b94a588b2325e8e14a158f0a.summary"/>
+      <datum id="throwaway_1aaa3576b94a588b2325e8e14a158f0a" nodeset="instance('reports')/reports/report[@id='1aaa3576b94a588b2325e8e14a158f0a']/rows/row" value="''" detail-select="reports.1aaa3576b94a588b2325e8e14a158f0a.data"/>
+    </session>
+  </entry>
+  <entry>
+    <form>fixmeclayton</form>
+    <command id="reports.8742745eea3c40be912043e5776345c0">
+      <text>
+        <locale id="cchq.reports.8742745eea3c40be912043e5776345c0.name"/>
+      </text>
+    </command>
+    <instance id="reports" src="jr://fixture/commcare:reports"/>
+    <session>
+      <datum id="report_id_8742745eea3c40be912043e5776345c0" nodeset="instance('reports')/reports/report[@id='8742745eea3c40be912043e5776345c0']" value="./@id" detail-select="reports.8742745eea3c40be912043e5776345c0.select" detail-confirm="reports.8742745eea3c40be912043e5776345c0.summary"/>
+      <datum id="throwaway_8742745eea3c40be912043e5776345c0" nodeset="instance('reports')/reports/report[@id='8742745eea3c40be912043e5776345c0']/rows/row" value="''" detail-select="reports.8742745eea3c40be912043e5776345c0.data"/>
+    </session>
+  </entry>
+  <entry>
+    <form>fixmeclayton</form>
+    <command id="reports.be9bd5e5474d14f5c6bddee4723ce480">
+      <text>
+        <locale id="cchq.reports.be9bd5e5474d14f5c6bddee4723ce480.name"/>
+      </text>
+    </command>
+    <instance id="reports" src="jr://fixture/commcare:reports"/>
+    <session>
+      <datum id="report_id_be9bd5e5474d14f5c6bddee4723ce480" nodeset="instance('reports')/reports/report[@id='be9bd5e5474d14f5c6bddee4723ce480']" value="./@id" detail-select="reports.be9bd5e5474d14f5c6bddee4723ce480.select" detail-confirm="reports.be9bd5e5474d14f5c6bddee4723ce480.summary"/>
+      <datum id="throwaway_be9bd5e5474d14f5c6bddee4723ce480" nodeset="instance('reports')/reports/report[@id='be9bd5e5474d14f5c6bddee4723ce480']/rows/row" value="''" detail-select="reports.be9bd5e5474d14f5c6bddee4723ce480.data"/>
+    </session>
+  </entry>
+  <entry>
+    <form>fixmeclayton</form>
+    <command id="reports.05fe942607c7fad2fcc676eee8fbf54f">
+      <text>
+        <locale id="cchq.reports.05fe942607c7fad2fcc676eee8fbf54f.name"/>
+      </text>
+    </command>
+    <instance id="reports" src="jr://fixture/commcare:reports"/>
+    <session>
+      <datum id="report_id_05fe942607c7fad2fcc676eee8fbf54f" nodeset="instance('reports')/reports/report[@id='05fe942607c7fad2fcc676eee8fbf54f']" value="./@id" detail-select="reports.05fe942607c7fad2fcc676eee8fbf54f.select" detail-confirm="reports.05fe942607c7fad2fcc676eee8fbf54f.summary"/>
+      <datum id="throwaway_05fe942607c7fad2fcc676eee8fbf54f" nodeset="instance('reports')/reports/report[@id='05fe942607c7fad2fcc676eee8fbf54f']/rows/row" value="''" detail-select="reports.05fe942607c7fad2fcc676eee8fbf54f.data"/>
+    </session>
+  </entry>
+  <entry>
+    <form>fixmeclayton</form>
+    <command id="reports.80b67963763a8be4cd87806be40bcb23">
+      <text>
+        <locale id="cchq.reports.80b67963763a8be4cd87806be40bcb23.name"/>
+      </text>
+    </command>
+    <instance id="reports" src="jr://fixture/commcare:reports"/>
+    <session>
+      <datum id="report_id_80b67963763a8be4cd87806be40bcb23" nodeset="instance('reports')/reports/report[@id='80b67963763a8be4cd87806be40bcb23']" value="./@id" detail-select="reports.80b67963763a8be4cd87806be40bcb23.select" detail-confirm="reports.80b67963763a8be4cd87806be40bcb23.summary"/>
+      <datum id="throwaway_80b67963763a8be4cd87806be40bcb23" nodeset="instance('reports')/reports/report[@id='80b67963763a8be4cd87806be40bcb23']/rows/row" value="''" detail-select="reports.80b67963763a8be4cd87806be40bcb23.data"/>
+    </session>
+  </entry>
+  <entry>
+    <form>fixmeclayton</form>
+    <command id="reports.3f8f1a47aa39a3da26508b2b0f561c90">
+      <text>
+        <locale id="cchq.reports.3f8f1a47aa39a3da26508b2b0f561c90.name"/>
+      </text>
+    </command>
+    <instance id="reports" src="jr://fixture/commcare:reports"/>
+    <session>
+      <datum id="report_id_3f8f1a47aa39a3da26508b2b0f561c90" nodeset="instance('reports')/reports/report[@id='3f8f1a47aa39a3da26508b2b0f561c90']" value="./@id" detail-select="reports.3f8f1a47aa39a3da26508b2b0f561c90.select" detail-confirm="reports.3f8f1a47aa39a3da26508b2b0f561c90.summary"/>
+      <datum id="throwaway_3f8f1a47aa39a3da26508b2b0f561c90" nodeset="instance('reports')/reports/report[@id='3f8f1a47aa39a3da26508b2b0f561c90']/rows/row" value="''" detail-select="reports.3f8f1a47aa39a3da26508b2b0f561c90.data"/>
+    </session>
+  </entry>
+  <entry>
+    <form>fixmeclayton</form>
+    <command id="reports.a46dbb991a1b727f31b0ae7e5e2ef4ed">
+      <text>
+        <locale id="cchq.reports.a46dbb991a1b727f31b0ae7e5e2ef4ed.name"/>
+      </text>
+    </command>
+    <instance id="reports" src="jr://fixture/commcare:reports"/>
+    <session>
+      <datum id="report_id_a46dbb991a1b727f31b0ae7e5e2ef4ed" nodeset="instance('reports')/reports/report[@id='a46dbb991a1b727f31b0ae7e5e2ef4ed']" value="./@id" detail-select="reports.a46dbb991a1b727f31b0ae7e5e2ef4ed.select" detail-confirm="reports.a46dbb991a1b727f31b0ae7e5e2ef4ed.summary"/>
+      <datum id="throwaway_a46dbb991a1b727f31b0ae7e5e2ef4ed" nodeset="instance('reports')/reports/report[@id='a46dbb991a1b727f31b0ae7e5e2ef4ed']/rows/row" value="''" detail-select="reports.a46dbb991a1b727f31b0ae7e5e2ef4ed.data"/>
+    </session>
+  </entry>
+  <entry>
+    <form>fixmeclayton</form>
+    <command id="reports.5916261f602d20c7df1b40a952b64c6d">
+      <text>
+        <locale id="cchq.reports.5916261f602d20c7df1b40a952b64c6d.name"/>
+      </text>
+    </command>
+    <instance id="reports" src="jr://fixture/commcare:reports"/>
+    <session>
+      <datum id="report_id_5916261f602d20c7df1b40a952b64c6d" nodeset="instance('reports')/reports/report[@id='5916261f602d20c7df1b40a952b64c6d']" value="./@id" detail-select="reports.5916261f602d20c7df1b40a952b64c6d.select" detail-confirm="reports.5916261f602d20c7df1b40a952b64c6d.summary"/>
+      <datum id="throwaway_5916261f602d20c7df1b40a952b64c6d" nodeset="instance('reports')/reports/report[@id='5916261f602d20c7df1b40a952b64c6d']/rows/row" value="''" detail-select="reports.5916261f602d20c7df1b40a952b64c6d.data"/>
+    </session>
+  </entry>
+  <entry>
+    <form>fixmeclayton</form>
+    <command id="reports.cdd82e08be04e0b837e5da7969af5644">
+      <text>
+        <locale id="cchq.reports.cdd82e08be04e0b837e5da7969af5644.name"/>
+      </text>
+    </command>
+    <instance id="reports" src="jr://fixture/commcare:reports"/>
+    <session>
+      <datum id="report_id_cdd82e08be04e0b837e5da7969af5644" nodeset="instance('reports')/reports/report[@id='cdd82e08be04e0b837e5da7969af5644']" value="./@id" detail-select="reports.cdd82e08be04e0b837e5da7969af5644.select" detail-confirm="reports.cdd82e08be04e0b837e5da7969af5644.summary"/>
+      <datum id="throwaway_cdd82e08be04e0b837e5da7969af5644" nodeset="instance('reports')/reports/report[@id='cdd82e08be04e0b837e5da7969af5644']/rows/row" value="''" detail-select="reports.cdd82e08be04e0b837e5da7969af5644.data"/>
+    </session>
+  </entry>
+  <menu id="m0">
+    <text>
+      <locale id="modules.m0"/>
+    </text>
+    <command id="reports.44cf3199b4f8c53fe178fb2ffc470c6b"/>
+    <command id="reports.1aaa3576b94a588b2325e8e14a158f0a"/>
+    <command id="reports.8742745eea3c40be912043e5776345c0"/>
+    <command id="reports.be9bd5e5474d14f5c6bddee4723ce480"/>
+    <command id="reports.05fe942607c7fad2fcc676eee8fbf54f"/>
+    <command id="reports.80b67963763a8be4cd87806be40bcb23"/>
+    <command id="reports.3f8f1a47aa39a3da26508b2b0f561c90"/>
+    <command id="reports.a46dbb991a1b727f31b0ae7e5e2ef4ed"/>
+    <command id="reports.5916261f602d20c7df1b40a952b64c6d"/>
+    <command id="reports.cdd82e08be04e0b837e5da7969af5644"/>
+  </menu>
+</suite>
