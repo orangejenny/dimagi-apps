@@ -145,19 +145,6 @@
   </detail>
   <entry>
     <form>fixmeclayton</form>
-    <command id="reports.ecf62de6907121edaf3448d1af76f1d2">
-      <text>
-        <locale id="cchq.reports.ecf62de6907121edaf3448d1af76f1d2.name"/>
-      </text>
-    </command>
-    <instance id="reports" src="jr://fixture/commcare:reports"/>
-    <session>
-      <datum id="report_id_ecf62de6907121edaf3448d1af76f1d2" nodeset="instance('reports')/reports/report[@id='ecf62de6907121edaf3448d1af76f1d2']" value="./@id" detail-select="reports.ecf62de6907121edaf3448d1af76f1d2.select" detail-confirm="reports.ecf62de6907121edaf3448d1af76f1d2.summary"/>
-      <datum id="throwaway_ecf62de6907121edaf3448d1af76f1d2" nodeset="instance('reports')/reports/report[@id='ecf62de6907121edaf3448d1af76f1d2']/rows/row" value="''" detail-select="reports.ecf62de6907121edaf3448d1af76f1d2.data"/>
-    </session>
-  </entry>
-  <entry>
-    <form>fixmeclayton</form>
     <command id="reports.3b221c171e91fdfd85c2b55228f644cc">
       <text>
         <locale id="cchq.reports.3b221c171e91fdfd85c2b55228f644cc.name"/>
