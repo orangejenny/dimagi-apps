@@ -1,18 +1,18 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<suite version="13" descriptor="Suite File">
+<suite version="19" descriptor="Suite File">
     <locale language="default">
-        <resource id="app_default_strings" version="13" descriptor="Translations: Default Language">
+        <resource id="app_default_strings" version="19" descriptor="Translations: Default Language">
             <location authority="local">./default/app_strings.txt</location>
             <location authority="remote">./default/app_strings.txt</location>
         </resource>
     </locale>
     <locale language="en">
-        <resource id="app_en_strings" version="13" descriptor="Translations: English">
+        <resource id="app_en_strings" version="19" descriptor="Translations: English">
             <location authority="local">./en/app_strings.txt</location>
             <location authority="remote">./en/app_strings.txt</location>
         </resource>
     </locale>
-    <detail id="reports.3b221c171e91fdfd85c2b55228f644cc.select">
+    <detail id="reports.x6a53ct6w4x3whfrtxxo4j8ienvu0udi.select">
         <title>
             <text>
                 <locale id="cchq.report_menu"/>
@@ -31,152 +31,83 @@
             </template>
         </field>
     </detail>
-    <detail id="reports.3b221c171e91fdfd85c2b55228f644cc.summary">
+    <detail id="reports.x6a53ct6w4x3whfrtxxo4j8ienvu0udi.data" nodeset="rows/row">
         <title>
             <text>
-                <value>parent detail</value>
+                <locale id="cchq.reports.x6a53ct6w4x3whfrtxxo4j8ienvu0udi.name"/>
             </text>
         </title>
-        <detail id="some-sort-of-fake-id">
-            <title>
+        <field>
+            <header>
                 <text>
-                    <locale id="cchq.report_menu"/>
+                    <locale
+                        id="cchq.reports.x6a53ct6w4x3whfrtxxo4j8ienvu0udi.headers.applicant_type"/>
                 </text>
-            </title>
-            <field>
-                <header>
-                    <text>
-                        <locale id="cchq.report_name_header"/>
-                    </text>
-                </header>
-                <template>
-                    <text>
-                        <xpath function="name"/>
-                    </text>
-                </template>
-            </field>
-            <field>
-                <header>
-                    <text>
-                        <locale id="cchq.report_description_header"/>
-                    </text>
-                </header>
-                <template>
-                    <text>
-                        <xpath function="description"/>
-                    </text>
-                </template>
-            </field>
-            <field>
-                <header>
-                    <text/>
-                </header>
-                <template form="graph">
-                    <graph type="bar">
-                        <series
-                            nodeset="instance('reports')/reports/report[@id='3b221c171e91fdfd85c2b55228f644cc']/rows/row">
-                            <configuration/>
-                            <x function="column[@id='applicant_type']"/>
-                            <y function="column[@id='remote_choices_no']"/>
-                        </series>
-                        <series
-                            nodeset="instance('reports')/reports/report[@id='3b221c171e91fdfd85c2b55228f644cc']/rows/row">
-                            <configuration/>
-                            <x function="column[@id='applicant_type']"/>
-                            <y function="column[@id='remote_choices_yes']"/>
-                        </series>
-                        <series
-                            nodeset="instance('reports')/reports/report[@id='3b221c171e91fdfd85c2b55228f644cc']/rows/row">
-                            <configuration/>
-                            <x function="column[@id='applicant_type']"/>
-                            <y function="column[@id='remote_choices_unknown']"/>
-                        </series>
-                        <configuration/>
-                    </graph>
-                </template>
-            </field>
-        </detail>
-        <detail id="reports.3b221c171e91fdfd85c2b55228f644cc.data"
-                xnodeset="instance('reports')/reports/report[@id='3b221c171e91fdfd85c2b55228f644cc']/rows/row"
-                nodeset="rows/row">
-            <title>
+            </header>
+            <template>
                 <text>
-                    <locale id="cchq.reports.3b221c171e91fdfd85c2b55228f644cc.name"/>
+                    <xpath function="column[@id='applicant_type']"/>
                 </text>
-            </title>
-            <field>
-                <header>
-                    <text>
-                        <locale
-                            id="cchq.reports.3b221c171e91fdfd85c2b55228f644cc.headers.applicant_type"/>
-                    </text>
-                </header>
-                <template>
-                    <text>
-                        <xpath function="column[@id='applicant_type']"/>
-                    </text>
-                </template>
-            </field>
-            <field>
-                <header>
-                    <text>
-                        <locale
-                            id="cchq.reports.3b221c171e91fdfd85c2b55228f644cc.headers.remote_choices_no"/>
-                    </text>
-                </header>
-                <template>
-                    <text>
-                        <xpath function="column[@id='remote_choices_no']"/>
-                    </text>
-                </template>
-            </field>
-            <field>
-                <header>
-                    <text>
-                        <locale
-                            id="cchq.reports.3b221c171e91fdfd85c2b55228f644cc.headers.remote_choices_yes"/>
-                    </text>
-                </header>
-                <template>
-                    <text>
-                        <xpath function="column[@id='remote_choices_yes']"/>
-                    </text>
-                </template>
-            </field>
-            <field>
-                <header>
-                    <text>
-                        <locale
-                            id="cchq.reports.3b221c171e91fdfd85c2b55228f644cc.headers.remote_choices_unknown"/>
-                    </text>
-                </header>
-                <template>
-                    <text>
-                        <xpath function="column[@id='remote_choices_unknown']"/>
-                    </text>
-                </template>
-            </field>
-        </detail>
+            </template>
+        </field>
+        <field>
+            <header>
+                <text>
+                    <locale
+                        id="cchq.reports.x6a53ct6w4x3whfrtxxo4j8ienvu0udi.headers.remote_choices_no"/>
+                </text>
+            </header>
+            <template>
+                <text>
+                    <xpath function="column[@id='remote_choices_no']"/>
+                </text>
+            </template>
+        </field>
+        <field>
+            <header>
+                <text>
+                    <locale
+                        id="cchq.reports.x6a53ct6w4x3whfrtxxo4j8ienvu0udi.headers.remote_choices_yes"/>
+                </text>
+            </header>
+            <template>
+                <text>
+                    <xpath function="column[@id='remote_choices_yes']"/>
+                </text>
+            </template>
+        </field>
+        <field>
+            <header>
+                <text>
+                    <locale
+                        id="cchq.reports.x6a53ct6w4x3whfrtxxo4j8ienvu0udi.headers.remote_choices_unknown"/>
+                </text>
+            </header>
+            <template>
+                <text>
+                    <xpath function="column[@id='remote_choices_unknown']"/>
+                </text>
+            </template>
+        </field>
     </detail>
     <entry>
-        <command id="reports.3b221c171e91fdfd85c2b55228f644cc">
+        <command id="reports.x6a53ct6w4x3whfrtxxo4j8ienvu0udi">
             <text>
-                <locale id="cchq.reports.3b221c171e91fdfd85c2b55228f644cc.name"/>
+                <locale id="cchq.reports.x6a53ct6w4x3whfrtxxo4j8ienvu0udi.name"/>
             </text>
         </command>
         <instance id="reports" src="jr://fixture/commcare:reports"/>
         <session>
-            <datum id="report_id_3b221c171e91fdfd85c2b55228f644cc"
-                   nodeset="instance('reports')/reports/report[@id='3b221c171e91fdfd85c2b55228f644cc']"
-                   value="./@id" detail-select="reports.3b221c171e91fdfd85c2b55228f644cc.select"
-                   detail-confirm="reports.3b221c171e91fdfd85c2b55228f644cc.summary"/>
-            <!--datum id="throwaway_3b221c171e91fdfd85c2b55228f644cc" nodeset="instance('reports')/reports/report[@id='3b221c171e91fdfd85c2b55228f644cc']/rows/row" value="" detail-select="reports.3b221c171e91fdfd85c2b55228f644cc.data"/-->
+            <datum id="report_id_x6a53ct6w4x3whfrtxxo4j8ienvu0udi"
+                   nodeset="instance('reports')/reports/report[@id='x6a53ct6w4x3whfrtxxo4j8ienvu0udi']"
+                   value="./@id" detail-select="reports.x6a53ct6w4x3whfrtxxo4j8ienvu0udi.select"
+                   detail-confirm="reports.x6a53ct6w4x3whfrtxxo4j8ienvu0udi.data"/>
         </session>
     </entry>
     <menu id="m0">
         <text>
-            <value>this is a module</value>
+            <locale id="modules.m0"/>
         </text>
-        <command id="reports.3b221c171e91fdfd85c2b55228f644cc"/>
+        <command id="reports.x6a53ct6w4x3whfrtxxo4j8ienvu0udi"/>
     </menu>
 </suite>

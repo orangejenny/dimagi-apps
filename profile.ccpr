@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<profile version="13"
-         update="https://www.commcarehq.org/a/dimagi/apps/download/48d1c283e0ac340c5befa9abe9c69413/media_profile.ccpr?latest=true"
+<profile version="19"
+         update="https://www.commcarehq.org/a/dimagi/apps/download/d8037144ce8150ae2df5f2229140a334/media_profile.ccpr?latest=true"
          requiredMajor="2"
-         requiredMinor="20"
+         requiredMinor="22"
          uniqueid="197146733c3b0c6b2cf127948c44b58f"
          name="Dimagi Reports"
          descriptor="Profile File">
@@ -11,8 +11,8 @@
     <property key="restore-url" value="file:///E:/CommCare.Backup"/>
     <property key="ota-restore-url" value="https://www.commcarehq.org/a/dimagi/phone/restore/"/>
     <property key="ota-restore-url-testing" value="https://www.commcarehq.org/a/dimagi/phone/restore/"/>
-    <property key="PostURL" value="https://www.commcarehq.org/a/dimagi/receiver/48d1c283e0ac340c5befa9abe9c69413/" force="true"/>
-    <property key="PostTestURL" value="https://www.commcarehq.org/a/dimagi/receiver/48d1c283e0ac340c5befa9abe9c69413/" force="true"/>
+    <property key="PostURL" value="https://www.commcarehq.org/a/dimagi/receiver/d8037144ce8150ae2df5f2229140a334/" force="true"/>
+    <property key="PostTestURL" value="https://www.commcarehq.org/a/dimagi/receiver/d8037144ce8150ae2df5f2229140a334/" force="true"/>
     <property key="key_server" value="https://www.commcarehq.org/a/dimagi/phone/keys/"/>
     <property key="cur_locale" value="en"/>
     <property key="cc_user_domain" value="dimagi.commcarehq.org"/>
@@ -43,6 +43,8 @@
         <property key="log_prop_daily" value="log_never"/>
     
         <property key="ViewStyle" value="v_chatterbox"/>
+    
+        <property key="cc-login-duration-seconds" value="86400"/>
     
         <property key="cc-resize-images" value="none"/>
     
@@ -87,18 +89,18 @@
         </users>
     </features>
 
-    <suite><resource id="suite" version="13">
+    <suite><resource id="suite" version="19">
         
             <location authority="local">./suite.xml</location>
         
-        <location authority="remote">https://www.commcarehq.org/a/dimagi/apps/download/48d1c283e0ac340c5befa9abe9c69413/suite.xml</location>
+        <location authority="remote">https://www.commcarehq.org/a/dimagi/apps/download/d8037144ce8150ae2df5f2229140a334/suite.xml</location>
     </resource></suite>
     
-    <suite><resource id="media-suite" version="13">
+    <suite><resource id="media-suite" version="19">
         
             <location authority="local">./media_suite.xml</location>
         
-        <location authority="remote">https://www.commcarehq.org/a/dimagi/apps/download/48d1c283e0ac340c5befa9abe9c69413/media_suite.xml</location>
+        <location authority="remote">https://www.commcarehq.org/a/dimagi/apps/download/d8037144ce8150ae2df5f2229140a334/media_suite.xml</location>
     </resource></suite>
     
 </profile>
