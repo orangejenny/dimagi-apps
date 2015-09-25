@@ -1,0 +1,144 @@
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:vellum="http://commcarehq.org/xforms/vellum">
+	<h:head>
+		<h:title>Update Song</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/FED2D613-1326-4074-8F98-752F74B28260" uiVersion="1" version="6" name="Update Song">
+					<basics>
+						<name/>
+						<artist/>
+						<old_name/>
+						<old_artist/>
+					</basics>
+					<opinions>
+						<rating/>
+						<mood/>
+						<energy/>
+						<old_rating/>
+						<old_mood/>
+						<old_energy/>
+					</opinions>
+				<orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance id="commcaresession" src="jr://instance/session"/>
+			<bind nodeset="/data/basics"/>
+			<bind nodeset="/data/basics/name" type="xsd:string" calculate="/data/basics/old_name"/>
+			<bind nodeset="/data/basics/artist" type="xsd:string"/>
+			<bind nodeset="/data/basics/old_name"/>
+			<bind nodeset="/data/basics/old_artist" calculate="/data/basics/artist"/>
+			<bind nodeset="/data/opinions"/>
+			<bind nodeset="/data/opinions/rating" calculate="/data/opinions/old_rating"/>
+			<bind nodeset="/data/opinions/mood" calculate="/data/opinions/old_mood"/>
+			<bind nodeset="/data/opinions/energy" calculate="/data/opinions/old_energy"/>
+			<bind nodeset="/data/opinions/old_rating"/>
+			<bind nodeset="/data/opinions/old_mood"/>
+			<bind nodeset="/data/opinions/old_energy"/>
+			<itext>
+				<translation lang="en" default="">
+					<text id="name-label">
+						<value>Name?</value>
+					</text>
+					<text id="artist-label">
+						<value>Artist?</value>
+					</text>
+					<text id="rating-label">
+						<value>Rating?</value>
+					</text>
+					<text id="rating-5-label">
+						<value>*****</value>
+					</text>
+					<text id="mood-label">
+						<value>Mood?</value>
+					</text>
+					<text id="energy-label">
+						<value>Energy?</value>
+					</text>
+					<text id="energy-4-label">
+						<value>****</value>
+					</text>
+					<text id="energy-3-label">
+						<value>***</value>
+					</text>
+					<text id="energy-2-label">
+						<value>**</value>
+					</text>
+					<text id="energy-1-label">
+						<value>*</value>
+					</text>
+				</translation>
+			</itext>
+		<setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
+	</h:head>
+	<h:body>
+		<group ref="/data/basics" appearance="field-list">
+			<input ref="/data/basics/name">
+				<label ref="jr:itext('name-label')"/>
+			</input>
+			<input ref="/data/basics/artist">
+				<label ref="jr:itext('artist-label')"/>
+			</input>
+		</group>
+		<group ref="/data/opinions" appearance="field-list">
+			<select1 ref="/data/opinions/rating">
+				<label ref="jr:itext('rating-label')"/>
+				<item>
+					<label ref="jr:itext('rating-5-label')"/>
+					<value>5</value>
+				</item>
+				<item>
+					<label ref="jr:itext('energy-4-label')"/>
+					<value>4</value>
+				</item>
+				<item>
+					<label ref="jr:itext('energy-3-label')"/>
+					<value>3</value>
+				</item>
+				<item>
+					<label ref="jr:itext('energy-2-label')"/>
+					<value>2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('energy-1-label')"/>
+					<value>1</value>
+				</item>
+			</select1>
+			<select1 ref="/data/opinions/mood">
+				<label ref="jr:itext('mood-label')"/>
+				<item>
+					<label ref="jr:itext('energy-4-label')"/>
+					<value>4</value>
+				</item>
+				<item>
+					<label ref="jr:itext('energy-3-label')"/>
+					<value>3</value>
+				</item>
+				<item>
+					<label ref="jr:itext('energy-2-label')"/>
+					<value>2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('energy-1-label')"/>
+					<value>1</value>
+				</item>
+			</select1>
+			<select1 ref="/data/opinions/energy">
+				<label ref="jr:itext('energy-label')"/>
+				<item>
+					<label ref="jr:itext('energy-4-label')"/>
+					<value>4</value>
+				</item>
+				<item>
+					<label ref="jr:itext('energy-3-label')"/>
+					<value>3</value>
+				</item>
+				<item>
+					<label ref="jr:itext('energy-2-label')"/>
+					<value>2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('energy-1-label')"/>
+					<value>1</value>
+				</item>
+			</select1>
+		</group>
+	</h:body>
+</h:html>
