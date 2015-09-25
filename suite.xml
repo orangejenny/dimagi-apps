@@ -1,0 +1,271 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<suite version="261" descriptor="Suite File">
+    <locale language="default">
+        <resource id="app_default_strings" version="261"
+                  descriptor="Translations: Default Language">
+            <location authority="local">./default/app_strings.txt</location>
+            <location authority="remote">./default/app_strings.txt</location>
+        </resource>
+    </locale>
+    <locale language="fra">
+        <resource id="app_fra_strings" version="261"
+                  descriptor="Translations: Unknown Language (fra)">
+            <location authority="local">./fra/app_strings.txt</location>
+            <location authority="remote">./fra/app_strings.txt</location>
+        </resource>
+    </locale>
+    <locale language="en">
+        <resource id="app_en_strings" version="261" descriptor="Translations: English">
+            <location authority="local">./en/app_strings.txt</location>
+            <location authority="remote">./en/app_strings.txt</location>
+        </resource>
+    </locale>
+    <detail id="reports.wmw2vcp0ufzp8pvi4zbl9872vq60qkt9.select">
+        <title>
+            <text>
+                <locale id="cchq.report_menu"/>
+            </text>
+        </title>
+        <field>
+            <header>
+                <text>
+                    <locale id="cchq.report_name_header"/>
+                </text>
+            </header>
+            <template>
+                <text>
+                    <locale id="cchq.reports.wmw2vcp0ufzp8pvi4zbl9872vq60qkt9.name"/>
+                </text>
+            </template>
+        </field>
+    </detail>
+    <detail id="reports.wmw2vcp0ufzp8pvi4zbl9872vq60qkt9.summary">
+        <title>
+            <text>
+                <locale id="cchq.report_menu"/>
+            </text>
+        </title>
+        <detail>
+            <title>
+                <text>
+                    <locale id="cchq.report_menu"/>
+                </text>
+            </title>
+            <field>
+                <header>
+                    <text>
+                        <locale id="cchq.report_name_header"/>
+                    </text>
+                </header>
+                <template>
+                    <text>
+                        <locale id="cchq.reports.wmw2vcp0ufzp8pvi4zbl9872vq60qkt9.name"/>
+                    </text>
+                </template>
+            </field>
+            <field>
+                <header>
+                    <text>
+                        <locale id="cchq.report_description_header"/>
+                    </text>
+                </header>
+                <template>
+                    <text>
+                        <xpath function="description"/>
+                    </text>
+                </template>
+            </field>
+            <field>
+                <header>
+                    <text/>
+                </header>
+                <template form="graph">
+                    <graph type="bar">
+                        <series
+                            nodeset="instance('reports')/reports/report[@id='wmw2vcp0ufzp8pvi4zbl9872vq60qkt9']/rows[1]/row">
+                            <configuration>
+                                <text id="line-color">
+                                    <xpath function="'#66FF66'"/>
+                                </text>
+                                <text id="name">
+                                    <xpath function="'Nouvelles'"/>
+                                </text>
+                            </configuration>
+                            <x function="column[@id='nurse']"/>
+                            <y function="if(column[@id='nurse'] = 'Demo', column[@id='new_consults'], 0)"/>
+                        </series>
+                        <series
+                            nodeset="instance('reports')/reports/report[@id='wmw2vcp0ufzp8pvi4zbl9872vq60qkt9']/rows[1]/row">
+                            <configuration>
+                                <text id="line-color">
+                                    <xpath function="'#6666FF'"/>
+                                </text>
+                                <text id="name">
+                                    <xpath function="'Nouvelles'"/>
+                                </text>
+                            </configuration>
+                            <x function="column[@id='nurse']"/>
+                            <y function="if(column[@id='nurse'] != 'Demo', column[@id='new_consults'], 0)"/>
+                        </series>
+                        <!--series
+                            nodeset="instance('reports')/reports/report[@id='wmw2vcp0ufzp8pvi4zbl9872vq60qkt9']/rows[1]/row[column[@id='nurse'] = 'Demo']">
+                            <configuration>
+                                <text id="line-color">
+                                    <xpath function="'#66FF66'"/>
+                                </text>
+                                <text id="name">
+                                    <xpath function="'Nouvelles'"/>
+                                </text>
+                            </configuration>
+                            <x function="column[@id='nurse']"/>
+                            <y function="column[@id='new_consults']"/>
+                        </series>
+                        <series
+                            nodeset="instance('reports')/reports/report[@id='wmw2vcp0ufzp8pvi4zbl9872vq60qkt9']/rows[1]/row[column[@id='nurse'] != 'Demo']">
+                            <configuration>
+                                <text id="line-color">
+                                    <xpath function="'#6666FF'"/>
+                                </text>
+                                <text id="name">
+                                    <xpath function="'Nouvelles'"/>
+                                </text>
+                            </configuration>
+                            <x function="column[@id='nurse']"/>
+                            <y function="column[@id='new_consults']"/>
+                        </series-->
+                        <!--series nodeset="instance('reports')/reports/report[@id='wmw2vcp0ufzp8pvi4zbl9872vq60qkt9']/rows/row">
+                          <configuration>
+                            <text id="line-color">
+                              <xpath function="'#66FF66'"/>
+                            </text>
+                            <text id="name">
+                              <xpath function="'Nouvelles'"/>
+                            </text>
+                          </configuration>
+                          <x function="column[@id='nurse']"/>
+                          <y function="column[@id='new_consults']"/>
+                        </series-->
+                        <configuration>
+                            <text id="y-max">
+                                <xpath
+                                    function="max(instance('reports')/reports/report[@id='wmw2vcp0ufzp8pvi4zbl9872vq60qkt9']/rows/row/column[@id='all_consults'])+10"/>
+                            </text>
+                            <text id="show-legend">
+                                <xpath function="true()"/>
+                            </text>
+                            <text id="zoom">
+                                <xpath function="true()"/>
+                            </text>
+                            <text id="zoom-location">
+                                <xpath function="'top-right'"/>
+                            </text>
+                            <text id="y-min">
+                                <xpath function="'0'"/>
+                            </text>
+                            <text id="stack">
+                                <xpath function="true()"/>
+                            </text>
+                        </configuration>
+                    </graph>
+                </template>
+            </field>
+            <field>
+                <header>
+                    <text>
+                        <locale id="cchq.report_last_sync"/>
+                    </text>
+                </header>
+                <template>
+                    <text>
+                        <xpath
+                            function="format-date(date(instance('reports')/reports/@last_sync), '%Y-%m-%d %H:%M')"/>
+                    </text>
+                </template>
+            </field>
+        </detail>
+        <detail nodeset="rows/row" id="reports.wmw2vcp0ufzp8pvi4zbl9872vq60qkt9.data">
+            <title>
+                <text>
+                    <locale id="cchq.report_data_table"/>
+                </text>
+            </title>
+            <field>
+                <header>
+                    <text>
+                        <locale id="cchq.reports.wmw2vcp0ufzp8pvi4zbl9872vq60qkt9.headers.nurse"/>
+                    </text>
+                </header>
+                <template>
+                    <text>
+                        <xpath function="column[@id='nurse']"/>
+                    </text>
+                </template>
+            </field>
+            <field>
+                <header>
+                    <text>
+                        <locale
+                            id="cchq.reports.wmw2vcp0ufzp8pvi4zbl9872vq60qkt9.headers.new_consults"/>
+                    </text>
+                </header>
+                <template>
+                    <text>
+                        <xpath function="column[@id='new_consults']"/>
+                    </text>
+                </template>
+            </field>
+            <field>
+                <header>
+                    <text>
+                        <locale
+                            id="cchq.reports.wmw2vcp0ufzp8pvi4zbl9872vq60qkt9.headers.all_consults"/>
+                    </text>
+                </header>
+                <template>
+                    <text>
+                        <xpath function="column[@id='all_consults']"/>
+                    </text>
+                </template>
+            </field>
+        </detail>
+    </detail>
+    <detail id="reports.eljkerhjsgb0ggb9d6qp8nf77qa1yvi.select">
+        <title>
+            <text>
+                <locale id="cchq.report_menu"/>
+            </text>
+        </title>
+        <field>
+            <header>
+                <text>
+                    <locale id="cchq.report_name_header"/>
+                </text>
+            </header>
+            <template>
+                <text>
+                    <locale id="cchq.reports.eljkerhjsgb0ggb9d6qp8nf77qa1yvi.name"/>
+                </text>
+            </template>
+        </field>
+    </detail>
+    <entry>
+        <command id="reports.wmw2vcp0ufzp8pvi4zbl9872vq60qkt9">
+            <text>
+                <locale id="cchq.reports.wmw2vcp0ufzp8pvi4zbl9872vq60qkt9.name"/>
+            </text>
+        </command>
+        <instance id="reports" src="jr://fixture/commcare:reports"/>
+        <session>
+            <datum id="report_id_wmw2vcp0ufzp8pvi4zbl9872vq60qkt9"
+                   nodeset="instance('reports')/reports/report[@id='wmw2vcp0ufzp8pvi4zbl9872vq60qkt9']"
+                   value="./@id" detail-select="reports.wmw2vcp0ufzp8pvi4zbl9872vq60qkt9.select"
+                   detail-confirm="reports.wmw2vcp0ufzp8pvi4zbl9872vq60qkt9.summary"/>
+        </session>
+    </entry>
+    <menu id="m0">
+        <text>
+            <locale id="modules.m0"/>
+        </text>
+        <command id="reports.wmw2vcp0ufzp8pvi4zbl9872vq60qkt9"/>
+    </menu>
+</suite>

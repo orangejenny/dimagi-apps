@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<suite version="261" descriptor="Media Suite File">
+  <media path="../../commcare/logo/data">
+    <resource descriptor="Image File: hq_logo_android_login.png" id="media-2654c6e7aaa0d7f31c9ca42e2ec33b2a-hq_logo_android_login.png" version="191">
+      <location authority="local">./commcare/logo/data/hq_logo_android_login.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/7477f26ac4ea4c2b3bc0fc616c849a86/hq_logo_android_login.png</location>
+    </resource>
+  </media>
+  <media path="../../commcare/logo/data">
+    <resource descriptor="Image File: hq_logo_android_home.png" id="media-14bdf6b9684e8422d0046c22dbe0d1ff-hq_logo_android_home.png" version="191">
+      <location authority="local">./commcare/logo/data/hq_logo_android_home.png</location>
+      <location authority="remote">https://www.commcarehq.org/hq/multimedia/file/CommCareImage/7477f26ac4ea4c2b3bc0fc616c849a86/hq_logo_android_home.png</location>
+    </resource>
+  </media>
+</suite>
