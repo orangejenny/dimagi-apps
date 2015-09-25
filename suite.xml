@@ -217,9 +217,7 @@
   <entry>
     <form>http://openrosa.org/formdesigner/B520859B-BE3D-4DAB-B8E9-585C3E1019C5</form>
     <command id="m0-f0">
-      <text>
-        <locale id="forms.m0f0"/>
-      </text>
+      <text><value>Add Song</value></text>
     </command>
     <session>
       <datum id="case_id_new_song_0" function="uuid()"/>
@@ -228,9 +226,27 @@
   <entry>
     <form>http://openrosa.org/formdesigner/EBAB623F-3DF8-421B-A083-ED7CEF5A9A97</form>
     <command id="m0-f1">
-      <text>
-        <locale id="forms.m0f1"/>
-      </text>
+      <text><value>Play Song (Happy)</value></text>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='song'][@status='open'][mood &gt; 3]" value="./@case_id" detail-select="m0_case_short" detail-confirm="m0_case_long"/>
+    </session>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/EBAB623F-3DF8-421B-A083-ED7CEF5A9A97</form>
+    <command id="m0-f1-prime">
+      <text><value>Play Song (Unhappy)</value></text>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='song'][@status='open'][mood &lt;= 3]" value="./@case_id" detail-select="m0_case_short" detail-confirm="m0_case_long"/>
+    </session>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/FED2D613-1326-4074-8F98-752F74B28260</form>
+    <command id="m0-f2">
+      <text><value>Update Song (Happy)</value></text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
     <session>
@@ -239,65 +255,70 @@
   </entry>
   <entry>
     <form>http://openrosa.org/formdesigner/FED2D613-1326-4074-8F98-752F74B28260</form>
-    <command id="m0-f2">
-      <text>
-        <locale id="forms.m0f2"/>
-      </text>
+    <command id="m0-f2-prime">
+      <text><value>Update Song (Unhappy)</value></text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
     <session>
-      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='song'][@status='open'][mood &gt; 3]" value="./@case_id" detail-select="m0_case_short" detail-confirm="m0_case_long"/>
-    </session>
-  </entry>
-  <entry>
-    <command id="m0-case-list">
-      <text>
-        <locale id="case_lists.m0"/>
-      </text>
-    </command>
-    <instance id="casedb" src="jr://instance/casedb"/>
-    <session>
-      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='song'][@status='open']" value="./@case_id" detail-select="m0_case_short" detail-confirm="m0_case_long"/>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='song'][@status='open'][mood &lt;= 3]" value="./@case_id" detail-select="m0_case_short" detail-confirm="m0_case_long"/>
     </session>
   </entry>
   <entry>
     <form>http://openrosa.org/formdesigner/7A609719-EEF0-4CA5-893B-2099A5707FB8</form>
     <command id="m1-f0">
-      <text>
-        <locale id="forms.m1f0"/>
-      </text>
+      <text><value>Karaoke (Happy)</value></text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
     <session>
-      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='song'][@status='open'][rating &gt; 2]" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='song'][@status='open'][mood &gt; 3]" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
+    </session>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/7A609719-EEF0-4CA5-893B-2099A5707FB8</form>
+    <command id="m1-f0-prime">
+      <text><value>Karaoke (Unhappy)</value></text>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='song'][@status='open'][mood &lt;= 3]" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
     </session>
   </entry>
   <entry>
     <form>http://openrosa.org/formdesigner/5B61717B-0A47-4DE0-9ED3-5E9F6492016A</form>
     <command id="m1-f1">
-      <text>
-        <locale id="forms.m1f1"/>
-      </text>
+      <text><value>Dance (Happy)</value></text>
     </command>
     <instance id="casedb" src="jr://instance/casedb"/>
     <session>
-      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='song'][@status='open'][rating &gt; 2]" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='song'][@status='open'][mood &gt; 3]" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
+    </session>
+  </entry>
+  <entry>
+    <form>http://openrosa.org/formdesigner/5B61717B-0A47-4DE0-9ED3-5E9F6492016A</form>
+    <command id="m1-f1-prime">
+      <text><value>Dance (Unhappy)</value></text>
+    </command>
+    <instance id="casedb" src="jr://instance/casedb"/>
+    <session>
+      <datum id="case_id" nodeset="instance('casedb')/casedb/case[@case_type='song'][@status='open'][mood &lt;= 3]" value="./@case_id" detail-select="m1_case_short" detail-confirm="m1_case_long"/>
     </session>
   </entry>
   <menu id="root">
-    <text>
-      <locale id="modules.m0"/>
-    </text>
+    <text><value>Songs (Happy)</value></text>
     <command id="m0-f0"/>
     <command id="m0-f1"/>
     <command id="m0-f2"/>
-    <command id="m0-case-list"/>
+    <command id="m0-f1-prime"/>
+    <command id="m0-f2-prime"/>
   </menu>
   <menu id="m1">
-    <text>
-      <locale id="modules.m1"/>
-    </text>
+    <text><value>More stuff to do (Happy)</value></text>
     <command id="m1-f0"/>
     <command id="m1-f1"/>
+  </menu>
+  <menu id="m1-prime">
+    <text><value>More stuff to do (Unhappy)</value></text>
+    <command id="m1-f0-prime"/>
+    <command id="m1-f1-prime"/>
   </menu>
 </suite>
