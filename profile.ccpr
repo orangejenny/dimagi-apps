@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<profile version="14"
-         update="https://www.commcarehq.org/a/jennytraining/apps/download/0a635cced94bc46327be47c86b05a734/media_profile.ccpr?latest=true"
+<profile version="20"
+         update="https://www.commcarehq.org/a/jennytraining/apps/download/460f8f84707a9cccd588d63b350c895c/media_profile.ccpr?latest=true"
          requiredMajor="2"
          requiredMinor="22"
          uniqueid="2a9cb7d5576d57536f438d6d2dce696e"
@@ -11,8 +11,8 @@
     <property key="restore-url" value="file:///E:/CommCare.Backup"/>
     <property key="ota-restore-url" value="https://www.commcarehq.org/a/jennytraining/phone/restore/"/>
     <property key="ota-restore-url-testing" value="https://www.commcarehq.org/a/jennytraining/phone/restore/"/>
-    <property key="PostURL" value="https://www.commcarehq.org/a/jennytraining/receiver/secure/0a635cced94bc46327be47c86b05a734/" force="true"/>
-    <property key="PostTestURL" value="https://www.commcarehq.org/a/jennytraining/receiver/secure/0a635cced94bc46327be47c86b05a734/" force="true"/>
+    <property key="PostURL" value="https://www.commcarehq.org/a/jennytraining/receiver/secure/460f8f84707a9cccd588d63b350c895c/" force="true"/>
+    <property key="PostTestURL" value="https://www.commcarehq.org/a/jennytraining/receiver/secure/460f8f84707a9cccd588d63b350c895c/" force="true"/>
     <property key="key_server" value="https://www.commcarehq.org/a/jennytraining/phone/keys/"/>
     <property key="cur_locale" value="en"/>
     <property key="cc_user_domain" value="jennytraining.commcarehq.org"/>
@@ -89,18 +89,18 @@
         </users>
     </features>
 
-    <suite><resource id="suite" version="14">
+    <suite><resource id="suite" version="20">
         
             <location authority="local">./suite.xml</location>
         
-        <location authority="remote">https://www.commcarehq.org/a/jennytraining/apps/download/0a635cced94bc46327be47c86b05a734/suite.xml</location>
+        <location authority="remote">https://www.commcarehq.org/a/jennytraining/apps/download/460f8f84707a9cccd588d63b350c895c/suite.xml</location>
     </resource></suite>
     
-    <suite><resource id="media-suite" version="14">
+    <suite><resource id="media-suite" version="20">
         
             <location authority="local">./media_suite.xml</location>
         
-        <location authority="remote">https://www.commcarehq.org/a/jennytraining/apps/download/0a635cced94bc46327be47c86b05a734/media_suite.xml</location>
+        <location authority="remote">https://www.commcarehq.org/a/jennytraining/apps/download/460f8f84707a9cccd588d63b350c895c/media_suite.xml</location>
     </resource></suite>
     
 </profile>

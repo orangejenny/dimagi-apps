@@ -3,35 +3,25 @@
 		<h:title>Update Song</h:title>
 		<model>
 			<instance>
-				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/FED2D613-1326-4074-8F98-752F74B28260" uiVersion="1" version="6" name="Update Song">
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/FED2D613-1326-4074-8F98-752F74B28260" uiVersion="1" version="16" name="Update Song">
 					<basics>
 						<name/>
 						<artist/>
-						<old_name/>
-						<old_artist/>
 					</basics>
 					<opinions>
 						<rating/>
 						<mood/>
 						<energy/>
-						<old_rating/>
-						<old_mood/>
-						<old_energy/>
 					</opinions>
-				<orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
-			</instance><instance id="commcaresession" src="jr://instance/session"/>
+				<case xmlns="http://commcarehq.org/case/transaction/v2" case_id="" date_modified="" user_id=""><update><artist/><case_name/><energy/><mood/><rating/></update></case><orx:meta xmlns:cc="http://commcarehq.org/xforms"><orx:deviceID/><orx:timeStart/><orx:timeEnd/><orx:username/><orx:userID/><orx:instanceID/><cc:appVersion/></orx:meta></data>
+			</instance><instance id="commcaresession" src="jr://instance/session"/><instance id="casedb" src="jr://instance/casedb"/>
 			<bind nodeset="/data/basics"/>
-			<bind nodeset="/data/basics/name" type="xsd:string" calculate="/data/basics/old_name"/>
+			<bind nodeset="/data/basics/name" type="xsd:string"/>
 			<bind nodeset="/data/basics/artist" type="xsd:string"/>
-			<bind nodeset="/data/basics/old_name"/>
-			<bind nodeset="/data/basics/old_artist" calculate="/data/basics/artist"/>
 			<bind nodeset="/data/opinions"/>
-			<bind nodeset="/data/opinions/rating" calculate="/data/opinions/old_rating"/>
-			<bind nodeset="/data/opinions/mood" calculate="/data/opinions/old_mood"/>
-			<bind nodeset="/data/opinions/energy" calculate="/data/opinions/old_energy"/>
-			<bind nodeset="/data/opinions/old_rating"/>
-			<bind nodeset="/data/opinions/old_mood"/>
-			<bind nodeset="/data/opinions/old_energy"/>
+			<bind nodeset="/data/opinions/rating"/>
+			<bind nodeset="/data/opinions/mood"/>
+			<bind nodeset="/data/opinions/energy"/>
 			<itext>
 				<translation lang="en" default="">
 					<text id="name-label">
@@ -66,7 +56,7 @@
 					</text>
 				</translation>
 			</itext>
-		<setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
+		<bind calculate="/data/meta/timeEnd" nodeset="/data/case/@date_modified" type="xsd:dateTime"/><bind calculate="/data/meta/userID" nodeset="/data/case/@user_id"/><bind calculate="instance('commcaresession')/session/data/case_id" nodeset="/data/case/@case_id"/><bind calculate="/data/basics/artist" nodeset="/data/case/update/artist" relevant="count(/data/basics/artist) &gt; 0"/><bind calculate="/data/basics/name" nodeset="/data/case/update/case_name" relevant="count(/data/basics/name) &gt; 0"/><bind calculate="/data/opinions/energy" nodeset="/data/case/update/energy" relevant="count(/data/opinions/energy) &gt; 0"/><bind calculate="/data/opinions/mood" nodeset="/data/case/update/mood" relevant="count(/data/opinions/mood) &gt; 0"/><bind calculate="/data/opinions/rating" nodeset="/data/case/update/rating" relevant="count(/data/opinions/rating) &gt; 0"/><setvalue event="xforms-ready" ref="/data/basics/artist" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/artist"/><setvalue event="xforms-ready" ref="/data/opinions/rating" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/rating"/><setvalue event="xforms-ready" ref="/data/opinions/mood" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/mood"/><setvalue event="xforms-ready" ref="/data/basics/name" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/case_name"/><setvalue event="xforms-ready" ref="/data/opinions/energy" value="instance('casedb')/casedb/case[@case_id=instance('commcaresession')/session/data/case_id]/energy"/><setvalue event="xforms-ready" ref="/data/meta/deviceID" value="instance('commcaresession')/session/context/deviceid"/><setvalue event="xforms-ready" ref="/data/meta/timeStart" value="now()"/><bind nodeset="/data/meta/timeStart" type="xsd:dateTime"/><setvalue event="xforms-revalidate" ref="/data/meta/timeEnd" value="now()"/><bind nodeset="/data/meta/timeEnd" type="xsd:dateTime"/><setvalue event="xforms-ready" ref="/data/meta/username" value="instance('commcaresession')/session/context/username"/><setvalue event="xforms-ready" ref="/data/meta/userID" value="instance('commcaresession')/session/context/userid"/><setvalue event="xforms-ready" ref="/data/meta/instanceID" value="uuid()"/><setvalue event="xforms-ready" ref="/data/meta/appVersion" value="instance('commcaresession')/session/context/appversion"/></model>
 	</h:head>
 	<h:body>
 		<group ref="/data/basics" appearance="field-list">
