@@ -4,7 +4,7 @@
          requiredMajor="2"
          requiredMinor="22"
          uniqueid="2a9cb7d5576d57536f438d6d2dce696e"
-         name="Music (tabs)"
+         name="Music (tabs) (local)"
          descriptor="Profile File">
     <property key="BackupMode" value="file_mode"/>
     <property key="backup-url" value="file:///E:/CommCare.Backup"/>
